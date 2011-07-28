@@ -1,0 +1,117 @@
+
+/* Header configuration */
+
+#header {
+    width: 800px;
+    margin: auto;
+}
+
+#space {
+    height: 44px;
+    background: url("/bundles/andro/images/header_bottom.png");
+}
+
+#twitter_logo {
+    margin-top: 15px;
+    float: left;
+}
+
+#twitter {
+    float: left;
+    margin: 4px 0 0 10px;
+    width: 400px;
+    height: 111px;
+    position: relative;
+}
+
+#loader {
+    padding-top:45px;
+    text-align: center;
+}
+
+
+#tweet_text .time {
+    font-style:italic;
+}
+
+#tweet_follow {
+    margin-top: 7px;
+}
+
+#logo {
+    width: 284px;
+    height: 75px;
+    float: right;
+    margin: 20px 10px 0 0;
+    position: relative;
+}
+
+/* Content */
+
+#content {
+    float: right;
+    width: 550px;
+}
+
+/* Side bar */
+
+#sidebar {
+    float: left;
+    width: 230px;
+}
+
+#sidebar ul {
+    list-style: none;
+    line-height: normal;
+}
+
+#sidebar li {
+    margin-bottom: 30px;
+    padding: 0 0 10px 0px;
+}
+
+#sidebar li ul {
+    margin: 0px 14px;
+}
+
+#sidebar li li {
+    margin: 0;
+    padding: 12px 0px;
+    border-bottom: 1px solid #E9E8DD;
+}
+
+#sidebar li li a {
+    padding-left: 20px;
+}
+
+.author {
+    margin-top: 5px;
+}
+
+#facebook {
+    text-align: center;
+}
+
+.app {
+    text-align: center;
+}
+
+.app .title {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+/* Others */
+
+#page {
+    width: 800px;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+
+.ok {
+    text-align: center;
+    color: #618C04;
+    font-weight: bold;
+    margin: 10px 0;
+}

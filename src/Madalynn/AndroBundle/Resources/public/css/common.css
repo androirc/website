@@ -1,0 +1,231 @@
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #8A8A8A;
+    background-color: #fff;
+}
+
+p, ul, ol {
+    margin-top: 0;
+    text-align: justify;
+    line-height: 1.6;
+}
+
+/* General configuration */
+
+h1, h2, h3 {
+    margin: 0;
+    font-weight: normal;
+    color: #026995;
+}
+
+h1 { 
+    font-size: 25px; 
+}
+
+h2 { 
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+a { 
+    color: #026995; 
+    text-decoration: none; 
+}
+
+a:hover { 
+    text-decoration: underline; 
+}
+
+strong {
+    font-weight: bold;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+/* Logo */
+
+#logo span {
+    position: absolute;
+    top: 62px;
+    right:10px;
+}
+
+/* Header */
+
+#up {
+    background: url('/bundles/andro/images/header_up.png');
+    height: 115px;
+}
+
+#menu {
+    height: 43px;
+    background-image: url('/bundles/andro/images/menu.png');
+    text-align: center;
+}
+
+#menu ul {
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+    line-height: normal;
+}
+
+#menu li {
+    float: left;
+    width: 100px;
+}
+
+#menu a {
+    display: block;
+    height: 30px;
+    margin: 0;
+    padding-top: 13px;
+    background: url("/bundles/andro/images/border.png") no-repeat left top;
+    text-decoration: none;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+#menu .last {
+    background: url("/bundles/andro/images/border.png") no-repeat right top;
+}
+
+/* Others */
+
+.button {
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font: 14px/100% Arial, Helvetica, sans-serif;
+    padding: .5em 2em .55em;
+    text-shadow: 0 1px 1px rgba(0,0,0,.3);
+    -webkit-border-radius: .5em; 
+    -moz-border-radius: .5em;
+    border-radius: .5em;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    box-shadow: 0 1px 2px rgba(0,0,0,.2);
+}
+
+.button:hover {
+    text-decoration: none;
+}
+
+.button:active {
+    position: relative;
+    top: 1px;
+}
+
+.blue {
+    color: #d9eef7;
+    border: solid 1px #0076a3;
+    background: #0095cd;
+    background: -webkit-gradient(linear, left top, left bottom, from(#00adee), to(#0078a5));
+    background: -moz-linear-gradient(top,  #00adee,  #0078a5);
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#00adee', endColorstr='#0078a5');
+}
+
+.blue:hover {
+    background: #007ead;
+    background: -webkit-gradient(linear, left top, left bottom, from(#0095cc), to(#00678e));
+    background: -moz-linear-gradient(top,  #0095cc,  #00678e);
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#0095cc', endColorstr='#00678e');
+}
+
+.blue:active {
+    color: #80bed6;
+    background: -webkit-gradient(linear, left top, left bottom, from(#0078a5), to(#00adee));
+    background: -moz-linear-gradient(top,  #0078a5,  #00adee);
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#0078a5', endColorstr='#00adee');
+}
+
+.famfamfam {
+    position: relative;
+    top: 3px;
+    margin-right: 7px;
+}
+
+.clear {
+    clear: both;
+}
+
+.center {
+    text-align: center;
+}
+
+#content ul {
+    margin: 10px 0 10px 40px;
+}
+
+#content li{
+    list-style-type: none;
+    background-image: url("/bundles/andro/images/puce.png");
+    background-repeat: no-repeat;
+    background-position: 0 -2px;
+    padding-left: 22px;
+    display : list-item;
+    list-style-position:inside;
+    padding-bottom: 2px;
+}
+
+/* Article */
+
+.article {
+    background-color: #eee;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.06, rgb(232,232,232)),color-stop(0.52, rgb(245,245,245)));
+    background-image: -moz-linear-gradient(center bottom, rgb(232,232,232) 6%, rgb(245,245,245) 52%);
+    border-radius: 10px;  
+    -moz-border-radius: 10px;  
+    -webkit-border-radius: 10px;  
+}
+
+.article .title {
+    font-size: 19px;
+    color: #026995;
+    padding: 0 0 5px 10px;
+}
+
+.article .by {
+    background-color: #3d3d3d;
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.06, rgb(77,77,77)), color-stop(0.52, rgb(61,61,61)));
+    background-image: -moz-linear-gradient(center bottom, rgb(77,77,77) 6%, rgb(61,61,61) 52%);
+    padding: 5px 10px;
+    color: white;
+    font-size: 9px;
+    border-radius: 4px;  
+    -moz-border-radius: 4px;  
+    -webkit-border-radius: 4px;  
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.article .content {
+    line-height: 1.6;
+    text-align: justify;
+    text-shadow: 1px 1px 1px #fff;
+}
+
+.article .comments {
+    text-align: right;
+    text-shadow: 2px 1px 2px #fff;
+}
+
+/* Beta page */
+
+#beta {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#beta .button {
+    margin-bottom: 10px;
+}

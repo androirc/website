@@ -1,0 +1,67 @@
+/* Menu length */
+
+#menu ul {
+    width: 700px;
+}
+
+/* Footer */
+
+#footer {
+    margin-top: 15px;
+    background-color: #EEEEEE;
+}
+
+#footer > div {
+    width: 840px;
+    margin: 0 auto;
+}
+
+#footer .column {
+    color: #777777;
+    width: 240px;
+    float: left;
+    margin: 20px;
+}
+
+#footer .cell {
+    display: table-cell;
+    width: 200px;
+    padding: 0 20px;
+}
+
+/* Posts */
+
+#introduction {
+    margin: 15px 0;
+}
+
+.article .content {
+    margin-bottom: 10px;
+}
+
+.article .share {
+    float: left;
+    width: 410px;
+}
+
+.addthis_counter {
+    margin-right: 10px;
+}
+
+/* Donate page */
+
+#donate {
+    margin-top: 10px;
+}
+
+/* Others */
+
+#ads {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+#switch_format {
+    text-align: center;
+    margin-bottom: 15px;
+}
