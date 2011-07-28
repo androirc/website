@@ -8,3 +8,6 @@ framework:
 web_profiler:
     toolbar: true
     intercept_redirects: false
+
+assetic:
+    use_controller: true

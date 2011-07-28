@@ -12,11 +12,15 @@
 
         <link rel="shortcut icon" href="/favicon.ico" />
 
-        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/andro/css/reset.css') }}" />
-        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/andro/css/common.css') }}" />
-        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/andro/css/design.css') }}" />
-        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/andro/css/front.css') }}" />
-        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/andro/css/form.css') }}" />
+        {% stylesheets filter="?yui_css"
+            '@AndroBundle/Resources/public/css/reset.css'
+            '@AndroBundle/Resources/public/css/common.css'
+            '@AndroBundle/Resources/public/css/design.css'
+            '@AndroBundle/Resources/public/css/front.css'
+            '@AndroBundle/Resources/public/css/form.css'
+        %}
+            <link rel="stylesheet" type="text/css" href="{{ asset_url }}" />
+        {% endstylesheets %}
 
         <script async="async" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
         <script async="async" type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=mewt"></script>
