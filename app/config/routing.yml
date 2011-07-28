@@ -1,0 +1,2 @@
+androbundle:
+    resource: '@AndroBundle/Resources/config/routing.yml'
