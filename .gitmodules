@@ -16,3 +16,9 @@
 [submodule "vendor/twig-extensions"]
 	path = vendor/twig-extensions
 	url = git://github.com/fabpot/Twig-extensions.git
+[submodule "vendor/assetic"]
+	path = vendor/assetic
+	url = git://github.com/kriswallsmith/assetic.git
+[submodule "vendor/bundles/Symfony/Bundle/AsseticBundle"]
+	path = vendor/bundles/Symfony/Bundle/AsseticBundle
+	url = git://github.com/symfony/AsseticBundle.git
