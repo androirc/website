@@ -160,21 +160,6 @@ p {
     text-align: center;
 }
 
-#content ul {
-    margin: 10px 0 10px 40px;
-}
-
-#content li{
-    list-style-type: none;
-    background-image: url("/bundles/andro/images/puce.png");
-    background-repeat: no-repeat;
-    background-position: 0 -2px;
-    padding-left: 22px;
-    display : list-item;
-    list-style-position:inside;
-    padding-bottom: 2px;
-}
-
 /* Article */
 
 .article {

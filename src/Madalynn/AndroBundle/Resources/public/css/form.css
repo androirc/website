@@ -33,16 +33,20 @@ th {
     padding: 10px;
 }
 
-#form .submit {
+.form_submit {
     text-align: right;
     padding: 10px 0;
 }
 
-#form .error {
+.form {
+    padding-top: 10px;
+}
+
+.form .error {
     display:inline-block;
 }
 
-#form ul {
+.form ul {
     margin:0 !important;
     padding: 0;
     color:#B43F3F;
@@ -50,26 +54,26 @@ th {
     font-weight:bold;
 }
 
-#form ul li {
+.form ul li {
     padding: 3px 15px !important;
     list-style:none;
     color:#B43F3F;
     background-image: none !important;
 }
 
-#form ul li:before {
+.form ul li:before {
     content: '↑ ';
 }
 
-#form ul li:after {
+.form ul li:after {
     content: ' ↑';
 }
 
-#form .datas {
+.form .datas {
     margin-left: 60px;
 }
 
-#form label {
+.form label {
     display:block;
     padding:6px 1em 3px 0;
     text-align:right;

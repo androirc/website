@@ -76,22 +76,31 @@
     padding-top: 30px;
 }
 
-#page ul, #page ol {
-     margin-left: 40px;
-     line-height: 1.4;
+#page ul {
+    margin: 10px 0 10px 30px;
 }
 
 #page li {
-    list-style-type: circle;
+    list-style-type: none;
+    background-image: url("/bundles/andro/images/puce.png");
+    background-repeat: no-repeat;
+    background-position: 0 -2px;
+    padding-left: 22px;
+    display : list-item;
+    list-style-position:inside;
+    padding-bottom: 2px;
 }
+
 
 #page ol {
     list-style-type: decimal;
 }
 
-.ok {
+.flash-notice {
     text-align: center;
-    color: #618C04;
     font-weight: bold;
-    margin: 10px 0;
+    background-color: #008c00;
+    padding: 10px;
+    margin-bottom: 10px;
+    color: white;
 }

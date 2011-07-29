@@ -1,0 +1,17 @@
+{% extends "AndroBundle::layout.html.twig" %}
+{% form_theme form 'AndroBundle:Form:fields.html.twig' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+    <p>You can use this form to contact the team either to submit a bug or jsut to ask something.</p>
+    
+    <form action="{{ path('contact') }}" method="post" {{ form_enctype(form) }}>
+        <div class="form">
+            {{ form_widget(form) }}
+        </div>
+        <div class="form_submit">
+            <input type="submit" />
+        </div>
+    </form>
+{% endblock %}
