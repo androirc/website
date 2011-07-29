@@ -4,38 +4,25 @@
 #header {
     width: 800px;
     margin: auto;
+    position: relative;
+}
+
+#ads {
+    position: absolute;
+    top: 30px;
+    left: 5px;
+}
+
+#social {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    z-index: 10;
 }
 
 #space {
     height: 44px;
     background: url("/bundles/andro/images/header_bottom.png");
-}
-
-#twitter_logo {
-    margin-top: 15px;
-    float: left;
-}
-
-#twitter {
-    float: left;
-    margin: 4px 0 0 10px;
-    width: 400px;
-    height: 111px;
-    position: relative;
-}
-
-#loader {
-    padding-top:45px;
-    text-align: center;
-}
-
-
-#tweet_text .time {
-    font-style:italic;
-}
-
-#tweet_follow {
-    margin-top: 7px;
 }
 
 #logo {
@@ -60,32 +47,12 @@
     width: 230px;
 }
 
-#sidebar ul {
-    list-style: none;
-    line-height: normal;
+.sidebar_box {
+    margin-bottom: 20px;
 }
 
-#sidebar li {
-    margin-bottom: 30px;
-    padding: 0 0 10px 0px;
-}
-
-#sidebar li ul {
-    margin: 0px 14px;
-}
-
-#sidebar li li {
-    margin: 0;
-    padding: 12px 0px;
-    border-bottom: 1px solid #E9E8DD;
-}
-
-#sidebar li li a {
-    padding-left: 20px;
-}
-
-.author {
-    margin-top: 5px;
+.team_member {
+    padding: 5px 20px;
 }
 
 #facebook {
@@ -107,6 +74,19 @@
     width: 800px;
     margin: 0 auto;
     padding-top: 30px;
+}
+
+#page ul, #page ol {
+     margin-left: 40px;
+     line-height: 1.4;
+}
+
+#page li {
+    list-style-type: circle;
+}
+
+#page ol {
+    list-style-type: decimal;
 }
 
 .ok {
