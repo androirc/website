@@ -25,3 +25,6 @@
 [submodule "vendor/swiftmailer"]
 	path = vendor/swiftmailer
 	url = git://github.com/swiftmailer/swiftmailer.git
+[submodule "vendor/bundles/FOS/UserBundle"]
+	path = vendor/bundles/FOS/UserBundle
+	url = git://github.com/FriendsOfSymfony/FOSUserBundle.git

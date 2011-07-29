@@ -3,6 +3,7 @@ imports:
 
 framework:
     secret:          %secret%
+    translator:      { fallback: en }
     charset:         UTF-8
     router:          { resource: "%kernel.root_dir%/config/routing.yml" }
     form:            true
@@ -12,6 +13,28 @@ framework:
     session:
         default_locale: %locale%
         auto_start:     true
+
+# Security Configuration
+security:
+    providers:
+        fos_userbundle:
+            id: fos_user.user_manager
+    firewalls:
+        dev:
+            pattern:  ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        main:
+            pattern:      .*
+            form_login:
+                provider:       fos_userbundle
+                login_path:     /login
+                use_forward:    false
+                check_path:     /login_check
+                failure_path:   null
+            logout:       true
+            anonymous:    true
+    access_control:
+        - { path: ^/admin/, role: ROLE_ADMIN }
 
 # Twig Configuration
 twig:
@@ -46,3 +69,9 @@ doctrine:
 # Swiftmailer Configuration
 swiftmailer:
     transport:  mail
+
+# UserBundle Configuration
+fos_user:
+    db_driver:     orm
+    firewall_name: main
+    user_class:    Madalynn\UserBundle\Entity\User
