@@ -53,4 +53,9 @@ class MainController extends Controller
             'form' => $form->createView()
         ));
     }
+
+    public function eulaAction()
+    {
+        return $this->render('AndroBundle:Main:eula.html.twig');
+    }
 }

@@ -5,3 +5,7 @@ homepage:
 contact:
     pattern: /contact
     defaults: { _controller: AndroBundle:Main:contact }
+
+eula:
+    pattern: /eula
+    defaults: { _controller: AndroBundle:Main:eula }
