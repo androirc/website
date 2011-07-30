@@ -1,0 +1,22 @@
+{% extends "AndroBundle::layout.html.twig" %}
+
+{% block title %}{{ article.getTitle }}{% endblock %}
+
+{% block content %}
+    {% include 'AndroBundle:Article:article.html.twig' with { 'article': article } %}
+
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'androirc';
+        var disqus_identifier = {{ article.getId }};
+        var disqus_url = '{{ url('article_show', { 'id': article.getId, 'slug': article.getSlug }) }}';
+
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+{% endblock %}
+

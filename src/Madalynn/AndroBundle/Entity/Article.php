@@ -48,7 +48,7 @@ class Article
      * @ORM\Column(type="text")
      */
     protected $content;
-    
+
     /**
      * @ORM\Column(type="boolean")
      */
@@ -64,7 +64,10 @@ class Article
      */
     protected $updated;
 
-    public function __construct()
+    /**
+     * @ORM\PrePersist
+     */
+    public function created()
     {
         $this->created = new \DateTime();
     }
@@ -97,7 +100,7 @@ class Article
         if (null === $this->slug) {
             $this->slug = StringHelper::slugize($title);
         }
-        
+
         $this->title = $title;
     }
 
@@ -224,7 +227,7 @@ class Article
     /**
      * Get is_visible
      *
-     * @return boolean 
+     * @return boolean
      */
     public function getIsVisible()
     {

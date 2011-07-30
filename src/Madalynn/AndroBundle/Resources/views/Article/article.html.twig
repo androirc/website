@@ -1,0 +1,31 @@
+<div class="article">
+    <div class="title">
+        <a href="{{ path('article_show', { 'id': article.getId, 'slug': article.getSlug }) }}">{{ article.getTitle }}</a>
+    </div>
+    <div class="by">
+        {{ article.getCreated | date('m/d/Y') }} | News posted by {{ article.getUser }}
+    </div>
+
+    <div class="content">
+        {{ article.getContent }}
+    </div>
+
+    <div class="footer">
+        <div class="share addthis_toolbox addthis_default_style"
+             addthis:url="{{ url('article_show', { 'id': article.getId, 'slug': article.getSlug }) }}"
+             addthis:title="{{ article.getTitle }} - AndroIRC (Android IRC Client)">
+
+            <a class="addthis_counter addthis_pill_style"></a>
+            <a class="addthis_button_tweet" tw:via="androirc"></a>
+            <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+            <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+        </div>
+        {% if sumup is defined %}
+            <div class="comments">
+                <img src="/bundles/andro/images/comment.png" />
+                <a href="{{ path('article_show', { 'id': article.getId, 'slug': article.getSlug }) }}#disqus_thread" data-disqus-identifier="{{ article.getId }}">Comments</a>
+            </div>
+        {% endif %}
+    </div>
+    <div class="clear"></div>
+</div>

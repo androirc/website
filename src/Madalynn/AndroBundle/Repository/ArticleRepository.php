@@ -16,4 +16,13 @@ use Doctrine\ORM\EntityRepository;
 
 class ArticleRepository extends EntityRepository
 {
+    public function getLastArticles($limit = 10)
+    {
+        return $this->createQueryBuilder('a')
+                    ->where('a.is_visible = true')
+                    ->orderBy('a.created', 'desc')
+                    ->setMaxResults($limit)
+                    ->getQuery()
+                    ->getResult();
+    }
 }

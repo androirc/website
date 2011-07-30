@@ -9,3 +9,7 @@ contact:
 eula:
     pattern: /eula
     defaults: { _controller: AndroBundle:Main:eula }
+
+article_show:
+    pattern: /article/{id}/{slug}
+    defaults: { _controller: AndroBundle:Article:show }

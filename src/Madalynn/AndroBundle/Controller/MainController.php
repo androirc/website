@@ -22,7 +22,14 @@ class MainController extends Controller
 {
     public function homepageAction()
     {
-        return $this->render('AndroBundle:Main:homepage.html.twig');
+        $em = $this->getDoctrine()->getEntityManager();
+        $repo = $em->getRepository('Madalynn\AndroBundle\Entity\Article');
+
+        $articles = $repo->getLastArticles();
+
+        return $this->render('AndroBundle:Main:homepage.html.twig', array(
+            'articles' => $articles
+        ));
     }
 
     public function contactAction(Request $request)

@@ -1,5 +1,7 @@
 {% extends "AndroBundle::layout.html.twig" %}
 
 {% block content %}
-    Hello!
+    {% for article in articles %}
+        {% include 'AndroBundle:Article:article.html.twig' with { 'article': article, 'sumup': true } %}
+    {% endfor %}
 {% endblock %}
