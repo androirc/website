@@ -17,6 +17,10 @@ use Symfony\Component\Validator\Constraints as Assert;
 class Contact
 {
     /**
+     * @Assert\NotBlank()
+     */
+    public $name;
+    /**
      * @Assert\Email()
      * @Assert\NotBlank()
      */

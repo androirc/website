@@ -43,12 +43,15 @@ class MainController extends Controller
             if ($form->isValid()) {
                 $message = \Swift_Message::newInstance();
 
-                $message->setSubject('[AndroIRC] Someone used the web form to contact us');
+                $message->setSubject("[AndroIRC] {$contact->name} used the web form to contact us");
                 $message->setFrom('contact@androirc.com', 'AndroIRC');
                 $message->setTo('contact@androirc.com');
                 $message->setReplyTo($contact->email);
 
-                $message->setBody($this->renderView('AndroBundle:Mail:contact.html.twig', array('content' => $contact->content)));
+                $message->setBody($this->renderView('AndroBundle:Mail:contact.html.twig', array(
+                    'name'    => $contact->name,
+                    'content' => $contact->content
+                )));
 
                 $this->get('mailer')->send($message);
                 $this->get('session')->setFlash('notice', 'Your message has been sent!');
