@@ -34,3 +34,6 @@
 [submodule "vendor/bundles/Symfony/Bundle/DoctrineFixturesBundle"]
 	path = vendor/bundles/Symfony/Bundle/DoctrineFixturesBundle
 	url = git://github.com/symfony/DoctrineFixturesBundle.git
+[submodule "vendor/buzz"]
+	path = vendor/buzz
+	url = git://github.com/kriswallsmith/Buzz.git
