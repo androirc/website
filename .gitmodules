@@ -37,3 +37,6 @@
 [submodule "vendor/buzz"]
 	path = vendor/buzz
 	url = git://github.com/kriswallsmith/Buzz.git
+[submodule "vendor/bundles/Ornicar/AkismetBundle"]
+	path = vendor/bundles/Ornicar/AkismetBundle
+	url = git://github.com/ornicar/OrnicarAkismetBundle.git

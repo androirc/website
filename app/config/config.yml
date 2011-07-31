@@ -75,3 +75,8 @@ fos_user:
     db_driver:     orm
     firewall_name: main
     user_class:    Madalynn\UserBundle\Entity\User
+
+# AkismetBundle Configuration
+ornicar_akismet:
+    api_key: %akismet_api_key%
+    url:     http://www.androirc.com

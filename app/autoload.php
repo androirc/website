@@ -22,6 +22,7 @@ $loader->registerNamespaces(array(
     'Doctrine'                       => __DIR__.'/../vendor/doctrine/lib',
     'Assetic'                        => __DIR__.'/../vendor/assetic/src',
     'FOS'                            => __DIR__.'/../vendor/bundles',
+    'Ornicar'                        => __DIR__.'/../vendor/bundles',
     'Buzz'                           => __DIR__.'/../vendor/buzz/lib',
 ));
 $loader->registerPrefixes(array(
