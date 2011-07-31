@@ -32,4 +32,16 @@ class ArticleController extends Controller
             'article' => $article
         ));
     }
+
+    public function atomAction()
+    {
+        $em = $this->getDoctrine()->getEntityManager();
+        $repo = $em->getRepository('Madalynn\AndroBundle\Entity\Article');
+
+        $articles = $repo->getLastArticles(20);
+
+        return $this->render('AndroBundle:Article:atom.html.twig', array(
+            'articles' => $articles
+        ));
+    }
 }

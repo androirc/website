@@ -14,6 +14,8 @@ namespace Madalynn\AndroBundle\Twig;
 
 use Symfony\Component\Routing\RouterInterface;
 
+use Madalynn\AndroBundle\Entity\Article;
+
 class AndroExtension extends \Twig_Extension
 {
     protected $router;
@@ -31,6 +33,13 @@ class AndroExtension extends \Twig_Extension
         );
     }
 
+    public function getFunctions()
+    {
+        return array(
+            'andro_url_article' => new \Twig_Function_Method($this, 'articleUrl', array('is_safe' => array('html')))
+        );
+    }
+
     public function sha1($text)
     {
         return sha1($text);
@@ -41,6 +50,15 @@ class AndroExtension extends \Twig_Extension
         return md5($text);
     }
 
+    public function articleUrl(Article $article, $absolute = false)
+    {
+        $params = array(
+            'id'   => $article->getId(),
+            'slug' => $article->getSlug()
+        );
+
+        return $this->router->generate('article_show', $params, $absolute);
+    }
     public function getName()
     {
         return 'andro';

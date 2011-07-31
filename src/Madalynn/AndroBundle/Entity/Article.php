@@ -174,6 +174,11 @@ class Article
         return $this->created;
     }
 
+    public function getFormattedCreated()
+    {
+        return gmstrftime('%Y-%m-%dT%H:%M:%SZ', $this->created->format('U'));
+    }
+
     /**
      * Set updated
      *

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>AndroIRC</title>
+    <subtitle>Latest articles</subtitle>
+    <link href="{{ url('article_atom') }}" rel="self" />
+    <link href="{{ url('homepage') }}" />
+    <author>
+        <name>AndroIRC Team</name>
+    </author>
+    <id>{{ url('article_atom') | sha1 }}</id>
+
+    {% for article in articles %}
+        <entry>
+            <title>{{ article.getTitle }}</title>
+            <link href="{{ andro_url_article(article, true) }}" />
+            <id>{{ andro_url_article(article, true) | sha1 }}</id>
+            <updated>{{ article.getFormattedCreated }}</updated>
+            <author>
+                <name>{{ article.getUser }}</name>
+            </author>
+            <content type="html">{{ article.getContent }}</content>
+        </entry>
+    {% endfor %}
+</feed>

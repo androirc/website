@@ -17,3 +17,7 @@ donate:
 article_show:
     pattern: /article/{id}/{slug}
     defaults: { _controller: AndroBundle:Article:show }
+
+article_atom:
+    pattern: /articles/atom
+    defaults: { _controller: AndroBundle:Article:atom, _format: atom }
