@@ -13,7 +13,6 @@
 namespace Madalynn\AndroBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Request;
 
 class ArticleController extends Controller
 {
