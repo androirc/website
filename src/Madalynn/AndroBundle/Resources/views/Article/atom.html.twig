@@ -16,7 +16,7 @@
             <id>{{ andro_url_article(article, true) | sha1 }}</id>
             <updated>{{ article.getFormattedCreated }}</updated>
             <author>
-                <name>{{ article.getUser }}</name>
+                <name>{{ article.getAuthor }}</name>
             </author>
             <content type="html">{{ article.getContent }}</content>
         </entry>

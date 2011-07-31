@@ -42,7 +42,7 @@ class Article
     /**
      * @ORM\ManyToOne(targetEntity="Madalynn\UserBundle\Entity\User")
      */
-    protected $user;
+    protected $author;
 
     /**
      * @ORM\Column(type="text")
@@ -200,23 +200,23 @@ class Article
     }
 
     /**
-     * Set user
+     * Set author
      *
-     * @param Madalynn\UserBundle\Entity\User $user
+     * @param Madalynn\UserBundle\Entity\User $author
      */
-    public function setUser(\Madalynn\UserBundle\Entity\User $user)
+    public function setAuthor(\Madalynn\UserBundle\Entity\User $author)
     {
-        $this->user = $user;
+        $this->author = $author;
     }
 
     /**
-     * Get user
+     * Get author
      *
      * @return Madalynn\UserBundle\Entity\User
      */
-    public function getUser()
+    public function getAuthor()
     {
-        return $this->user;
+        return $this->author;
     }
 
     /**
