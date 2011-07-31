@@ -1,0 +1,23 @@
+{% extends "AndroBundle::layout.html.twig" %}
+
+{% block title %}Download the latest beta{% endblock %}
+
+{% block content %}
+    <h2>Latest AndroIRC beta version</h2>
+
+    <p>
+        You can now download the latest beta of AndroIRC! This file is not available in the Android Market
+        because <strong>it still contains bugs</strong>. Keep in mind that it's just a beta release ;).
+        If you find a bug, you can <a href="{{ path('contact') }}">contact us</a> or just post a new ticket
+        in <a href="http://bugs.androirc.com/">the bug tracker</a>. Thanks!
+    </p>
+
+    <div id="beta">
+        {% if beta == null %}
+            No beta right now... come back later!
+        {% else %}
+            <a class="awesome large" style="margin-bottom: 5px;" href="{{ path('beta_download') }}">Download the latest beta of AndroIRC</a><br />
+            <span>(Version {{ beta.getVersion }} - {{ beta.getCreated | date('m/d/Y') }})</span>
+        {% endif %}
+    </div>
+{% endblock %}
