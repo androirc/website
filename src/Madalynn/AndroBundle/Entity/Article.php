@@ -70,6 +70,7 @@ class Article
     public function created()
     {
         $this->created = new \DateTime();
+        $this->updated = new \DateTime();
     }
 
     /**
