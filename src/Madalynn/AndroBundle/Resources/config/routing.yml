@@ -10,6 +10,10 @@ eula:
     pattern: /eula
     defaults: { _controller: AndroBundle:Main:eula }
 
+donate:
+    pattern: /donate
+    defaults: { _controller: AndroBundle:Main:donate }
+
 article_show:
     pattern: /article/{id}/{slug}
     defaults: { _controller: AndroBundle:Article:show }

@@ -78,4 +78,16 @@ class MainController extends Controller
     {
         return $this->render('AndroBundle:Main:eula.html.twig');
     }
+
+    public function donateAction()
+    {
+        $em = $this->getDoctrine()->getEntityManager();
+        $repo = $em->getRepository('Madalynn\AndroBundle\Entity\Donator');
+
+        $donators = $repo->getDonators();
+
+        return $this->render('AndroBundle:Main:donate.html.twig', array(
+            'donators' => $donators
+        ));
+    }
 }
