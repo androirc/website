@@ -1,6 +1,19 @@
 {% extends "AndroBundle::layout.html.twig" %}
 
 {% block content %}
+    <div class="center">
+        <a href="{{ path('donate') }}">
+            <img src="{{ asset('bundles/andro/images/donate.png') }}" />
+        </a>
+    </div>
+
+    <p id="introduction">
+        AndroIRC is an <strong>Android IRC client</strong> which can connect to several server (secured or not)
+        at the same time. Features: supports <a href="http://www.mirc.com">mIRC</a> colors, auto join channels
+        on startup, nickserv/sasl auth, logging, themes... You can see screenshots <a href="{{ path('homepage') }}">here</a>!
+        Feel free to contact us via the <a href="{{ path('contact') }}>">online form</a>.
+    </p>
+
     {% for article in articles %}
         {% include 'AndroBundle:Article:article.html.twig' with { 'article': article, 'sumup': true } %}
     {% endfor %}
