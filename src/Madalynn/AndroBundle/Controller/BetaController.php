@@ -46,7 +46,6 @@ class BetaController extends Controller
 
         $location = new Location($request->getClientIp());
         $download = new BetaDownload();
-        $response = new Response();
 
         $download->setBetaRelease($beta);
         $download->setLocation($location->getLocation());
@@ -54,18 +53,13 @@ class BetaController extends Controller
         $em->persist($download);
         $em->flush();
 
-        $path = ''; // TODO
+        $response = new Response(@readfile($beta->getPath()));
 
         $response->headers->set('Content-Type', 'application/vnd.android.package-archive');
-        $response->headers->set('Content-Disposition', 'attachment; filename="' . basename($path).'"');
+        $response->headers->set('Content-Disposition', 'attachment; filename="' . basename($beta->getPath()).'"');
         $response->headers->set('Content-Transfer-Encoding', 'binary');
-        $response->headers->set('Content-Length', filesize($path));
-        $response->headers->set('Connection', 'close');
-        $response->sendHeaders();
+        $response->headers->set('Content-Length', filesize($beta->getPath()));
 
-        @readfile($path);
-
-        //TODO: It's correct? Not sur...
         return $response;
     }
 }
