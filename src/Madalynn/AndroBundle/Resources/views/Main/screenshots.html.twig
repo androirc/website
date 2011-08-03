@@ -1,5 +1,17 @@
 {% extends "AndroBundle::layout.html.twig" %}
 
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ asset('bundles/andro/js/jquery.bxSlider.min.js') }}"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $('#screenshots').bxSlider({
+        });
+    });
+    </script>
+{% endblock %}
+
 {% block title %}Screenshots{% endblock %}
 
 {% block content %}

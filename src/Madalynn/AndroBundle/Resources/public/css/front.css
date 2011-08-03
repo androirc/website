@@ -54,9 +54,43 @@
     margin-top: 10px;
 }
 
+#screenshots {
+    width: 300px;
+}
+
 /* Others */
 
 #switch_format {
     text-align: center;
     margin-bottom: 15px;
+}
+
+.bx-next {
+    position:absolute;
+    top:40%;
+    right:-50px;
+    z-index:999;
+    width: 30px;
+    height: 30px;
+    text-indent: -999999px;
+    background: url("/bundles/andro/images/gray_next.png") no-repeat 0 -30px;
+}
+
+.bx-prev {
+    position:absolute;
+    top:40%;
+    left:-50px;
+    z-index:999;
+    width: 30px;
+    height: 30px;
+    text-indent: -999999px;
+    background: url("/bundles/andro/images/gray_prev.png") no-repeat 0 -30px;
+}
+
+.bx-next:hover, .bx-prev:hover {
+    background-position: 0 0;
+}
+
+.bx-pager .pager-active, .bx-pager a:hover {
+    background-position: 0 0;
 }
