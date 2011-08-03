@@ -29,3 +29,11 @@ beta:
 beta_download:
     pattern: /beta/download
     defaults: { _controller: AndroBundle:Beta:download }
+
+tip:
+    pattern: /tip/{lang}/{date}
+    defaults: { _controller: AndroBundle:Main:tip }
+
+tip_without_lang:
+    pattern: /tip/{lang}
+    defaults: { _controller: AndroBundle:Main:tip }
