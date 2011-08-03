@@ -80,6 +80,11 @@ class MainController extends Controller
         return $this->render('AndroBundle:Main:eula.html.twig');
     }
 
+    public function screenshotsAction()
+    {
+        return $this->render('AndroBundle:Main:screenshots.html.twig');
+    }
+
     public function donateAction()
     {
         $em = $this->getDoctrine()->getEntityManager();
