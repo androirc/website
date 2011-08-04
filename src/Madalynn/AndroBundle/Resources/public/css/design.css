@@ -10,13 +10,13 @@
 #ads {
     position: absolute;
     top: 30px;
-    left: 5px;
+    right: 25px;
 }
 
 #social {
     position: absolute;
     top: 15px;
-    right: 25px;
+    left: 215px;
     z-index: 10;
 }
 
@@ -28,23 +28,21 @@
 #logo {
     width: 284px;
     height: 75px;
-    float: right;
-    margin: 20px 10px 0 0;
-    position: relative;
+    top: 20px;
+    position: absolute;
 }
 
 /* Content */
 
 #content {
-    float: right;
     width: 550px;
 }
 
 /* Side bar */
 
 #sidebar {
-    float: left;
     width: 230px;
+    float: right;
 }
 
 .sidebar_box {
