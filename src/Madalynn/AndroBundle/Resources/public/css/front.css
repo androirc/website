@@ -55,7 +55,17 @@
 }
 
 #screenshots {
-    width: 300px;
+    background-image: none;
+    margin: 0;
+    padding: 0;
+    width:300px;
+    margin: 0 auto;
+}
+
+#screenshots li {
+    background-image: none;
+    padding: 0;
+    margin: 0;
 }
 
 /* Others */
@@ -88,9 +98,5 @@
 }
 
 .bx-next:hover, .bx-prev:hover {
-    background-position: 0 0;
-}
-
-.bx-pager .pager-active, .bx-pager a:hover {
     background-position: 0 0;
 }

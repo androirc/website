@@ -7,6 +7,10 @@
     <script type="text/javascript">
     $(document).ready(function(){
         $('#screenshots').bxSlider({
+            mode: 'fade',
+            auto: true,
+            controls: true,
+            randomStart: true
         });
     });
     </script>
@@ -15,4 +19,15 @@
 {% block title %}Screenshots{% endblock %}
 
 {% block content %}
+<h2>Screenshots</h2>
+<div class="center">
+<ul id="screenshots" class="center">
+    <li><img src="{{ asset('bundles/andro/screenshots/1.png') }}" width="300" height="500" /></li>
+    <li><img src="{{ asset('bundles/andro/screenshots/2.png') }}" width="300" height="500" /></li>
+    <li><img src="{{ asset('bundles/andro/screenshots/3.png') }}" width="300" height="500" /></li>
+    <li><img src="{{ asset('bundles/andro/screenshots/4.png') }}" width="300" height="500" /></li>
+    <li><img src="{{ asset('bundles/andro/screenshots/5.png') }}" width="300" height="500" /></li>
+    <li><img src="{{ asset('bundles/andro/screenshots/6.png') }}" width="300" height="500" /></li>
+</ul>
+    </div>
 {% endblock %}
