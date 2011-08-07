@@ -21,9 +21,11 @@ $loader->registerNamespaces(array(
     'Doctrine\\DBAL'                 => __DIR__.'/../vendor/doctrine-dbal/lib',
     'Doctrine'                       => __DIR__.'/../vendor/doctrine/lib',
     'Assetic'                        => __DIR__.'/../vendor/assetic/src',
+    'Buzz'                           => __DIR__.'/../vendor/buzz/lib',
+    'Pagerfanta'                     => __DIR__.'/../vendor/pagerfanta/src',
     'FOS'                            => __DIR__.'/../vendor/bundles',
     'Ornicar'                        => __DIR__.'/../vendor/bundles',
-    'Buzz'                           => __DIR__.'/../vendor/buzz/lib',
+    'WhiteOctober'                   => __DIR__.'/../vendor/bundles',
 ));
 $loader->registerPrefixes(array(
     'Twig_Extensions_' => __DIR__.'/../vendor/twig-extensions/lib',

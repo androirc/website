@@ -40,3 +40,9 @@
 [submodule "vendor/bundles/Ornicar/AkismetBundle"]
 	path = vendor/bundles/Ornicar/AkismetBundle
 	url = git://github.com/ornicar/OrnicarAkismetBundle.git
+[submodule "vendor/pagerfanta"]
+	path = vendor/pagerfanta
+	url = git://github.com/whiteoctober/Pagerfanta.git
+[submodule "vendor/bundles/WhiteOctober/PagerfantaBundle"]
+	path = vendor/bundles/WhiteOctober/PagerfantaBundle
+	url = git://github.com/whiteoctober/WhiteOctoberPagerfantaBundle.git
