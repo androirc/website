@@ -10,7 +10,7 @@
     </div>
 
     {% for article in pager %}
-        {% include 'AndroBundle:Article:article.html.twig' with { 'article': article } %}
+        {% include 'AndroBundle:Article:article.html.twig' with { 'article': article, 'sumup': true } %}
     {% endfor %}
 
     <div class="paginator">
