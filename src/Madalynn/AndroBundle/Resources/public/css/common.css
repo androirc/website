@@ -19,22 +19,22 @@ h1, h2, h3 {
     color: #026995;
 }
 
-h1 { 
-    font-size: 25px; 
+h1 {
+    font-size: 25px;
 }
 
-h2 { 
+h2 {
     font-size: 18px;
     margin-bottom: 10px;
 }
 
-a { 
-    color: #026995; 
-    text-decoration: none; 
+a {
+    color: #026995;
+    text-decoration: none;
 }
 
-a:hover { 
-    text-decoration: underline; 
+a:hover {
+    text-decoration: underline;
 }
 
 strong {
@@ -113,6 +113,10 @@ p {
     cursor: pointer;
 }
 
+a.awesome:hover {
+    text-decoration: none;
+}
+
 .awesome:hover {
     background-color: #111;
     color: #fff;
@@ -156,9 +160,9 @@ p {
     margin-bottom: 20px;
     background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.06, rgb(232,232,232)),color-stop(0.52, rgb(245,245,245)));
     background-image: -moz-linear-gradient(center bottom, rgb(232,232,232) 6%, rgb(245,245,245) 52%);
-    border-radius: 10px;  
-    -moz-border-radius: 10px;  
-    -webkit-border-radius: 10px;  
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
 }
 
 .article .title {
@@ -174,9 +178,9 @@ p {
     padding: 5px 10px;
     color: white;
     font-size: 9px;
-    border-radius: 4px;  
-    -moz-border-radius: 4px;  
-    -webkit-border-radius: 4px;  
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
     font-weight: bold;
     margin-bottom: 10px;
 }

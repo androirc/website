@@ -14,6 +14,9 @@ namespace Madalynn\AndroBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
+use Pagerfanta\Pagerfanta;
+use Pagerfanta\Adapter\DoctrineORMAdapter;
+
 class ArticleController extends Controller
 {
     public function showAction($id)
@@ -41,6 +44,25 @@ class ArticleController extends Controller
 
         return $this->render('AndroBundle:Article:atom.html.twig', array(
             'articles' => $articles
+        ));
+    }
+
+    public function archivesAction($page)
+    {
+        $em = $this->getDoctrine()->getEntityManager();
+        $repo = $em->getRepository('Madalynn\AndroBundle\Entity\Article');
+
+        $adapter = new DoctrineORMAdapter($repo->getQueryBuilder()->getQuery(), true);
+        $pager = new Pagerfanta($adapter);
+
+        try {
+            $pager->setCurrentPage($page);
+        } catch (\Exception $e) {
+            throw $this->createNotFoundException('This page does not exist');
+        }
+
+        return $this->render('AndroBundle:Article:archives.html.twig', array(
+            'pager' => $pager
         ));
     }
 }

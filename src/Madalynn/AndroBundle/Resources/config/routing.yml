@@ -6,6 +6,10 @@ contact:
     pattern: /contact
     defaults: { _controller: AndroBundle:Main:contact }
 
+archives:
+    pattern: /archives/{page}
+    defaults: { _controller: AndroBundle:Article:archives, page: 1 }
+
 eula:
     pattern: /eula
     defaults: { _controller: AndroBundle:Main:eula }
