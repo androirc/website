@@ -225,7 +225,7 @@ class Article
      *
      * @param boolean $isVisible
      */
-    public function setIsVisible($isVisible)
+    public function setVisible($isVisible)
     {
         $this->is_visible = $isVisible;
     }
@@ -235,7 +235,7 @@ class Article
      *
      * @return boolean
      */
-    public function getIsVisible()
+    public function isVisible()
     {
         return $this->is_visible;
     }

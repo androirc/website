@@ -18,11 +18,16 @@ class ArticleRepository extends EntityRepository
 {
     public function getLastArticles($limit = 10)
     {
-        return $this->createQueryBuilder('a')
-                    ->where('a.is_visible = true')
-                    ->orderBy('a.created', 'desc')
+        return $this->getQueryBuilder()
                     ->setMaxResults($limit)
                     ->getQuery()
                     ->getResult();
+    }
+
+    public function getQueryBuilder()
+    {
+        return $this->createQueryBuilder('a')
+                    ->where('a.is_visible = true')
+                    ->orderBy('a.created', 'desc');
     }
 }

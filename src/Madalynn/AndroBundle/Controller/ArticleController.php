@@ -23,7 +23,7 @@ class ArticleController extends Controller
 
         $article = $repo->find($id);
 
-        if (null === $article) {
+        if (null === $article || false === $article->isVisible()) {
             throw $this->createNotFoundException('This article does not exist');
         }
 
