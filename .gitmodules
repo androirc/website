@@ -46,3 +46,6 @@
 [submodule "vendor/bundles/WhiteOctober/PagerfantaBundle"]
 	path = vendor/bundles/WhiteOctober/PagerfantaBundle
 	url = git://github.com/whiteoctober/WhiteOctoberPagerfantaBundle.git
+[submodule "vendor/bundles/JMS/DebuggingBundle"]
+	path = vendor/bundles/JMS/DebuggingBundle
+	url = git://github.com/schmittjoh/JMSDebuggingBundle.git

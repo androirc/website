@@ -24,6 +24,7 @@ $loader->registerNamespaces(array(
     'Buzz'                           => __DIR__.'/../vendor/buzz/lib',
     'Pagerfanta'                     => __DIR__.'/../vendor/pagerfanta/src',
     'FOS'                            => __DIR__.'/../vendor/bundles',
+    'JMS'                            => __DIR__.'/../vendor/bundles',
     'Ornicar'                        => __DIR__.'/../vendor/bundles',
     'WhiteOctober'                   => __DIR__.'/../vendor/bundles',
 ));
