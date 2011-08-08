@@ -100,9 +100,23 @@ class MainController extends Controller
     public function tipAction($lang, $date = null)
     {
         $em = $this->getDoctrine()->getEntityManager();
-        $repo = $em->getRepository('Madalynn\AndroBundle\Entity\Tip');
+        $tip = null;
 
-        $tip = $repo->getTip($lang);
+        if (null !== $date) {
+            try {
+                $date = new \DateTime($date);
+            } catch (\Exception $e) {
+                throw $this->createNotFoundException('Unable to parse the datetime');
+            }
+
+            $repo = $em->getRepository('Madalynn\AndroBundle\Entity\TipHoliday');
+            $tip = $repo->findByDate($lang, $date);
+        }
+
+        if (null === $tip) {
+            $repo = $em->getRepository('Madalynn\AndroBundle\Entity\Tip');
+            $tip = $repo->getTip($lang);
+        }
 
         if (null === $tip) {
             return new Reponse('No tips to display');
