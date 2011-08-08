@@ -13,7 +13,6 @@
 namespace Madalynn\AndroBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
-use Doctrine\ORM\Query;
 
 class TipRepository extends EntityRepository
 {
