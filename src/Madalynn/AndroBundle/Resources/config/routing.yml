@@ -41,3 +41,7 @@ beta_download:
 tip:
     pattern: /tip/{lang}/{date}
     defaults: { _controller: AndroBundle:Main:tip, date: null }
+
+quickstart:
+    pattern: /quickstart/{version}/{lang}
+    defaults: { _controller: AndroBundle:Main:quickstart }

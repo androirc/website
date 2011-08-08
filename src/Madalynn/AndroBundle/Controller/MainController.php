@@ -124,4 +124,16 @@ class MainController extends Controller
 
         return new Response($tip->getContent());
     }
+
+    public function quickstartAction($version, $lang)
+    {
+        $em = $this->getDoctrine()->getEntityManager();
+        $repo = $em->getRepository('Madalynn\AndroBundle\Entity\QuickStart');
+
+        $quickstart = $repo->findByVersion($version, $lang);
+
+        return $this->render('AndroBundle:Basic:quickstart.html.twig', array(
+            'quickstart' => $quickstart
+        ));
+    }
 }

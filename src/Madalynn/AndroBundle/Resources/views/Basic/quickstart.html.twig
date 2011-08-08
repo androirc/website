@@ -1,0 +1,11 @@
+{% extends "AndroBundle:Basic:layout.html.twig" %}
+
+{% block title %}Quick start{% endblock %}
+
+{% block content %}
+    {% if quickstart == null %}
+        No help...yet!
+    {% else %}
+        {{ quickstart.getContent | raw }}
+    {% endif %}
+{% endblock %}
