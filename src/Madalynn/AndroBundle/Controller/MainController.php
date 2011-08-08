@@ -105,9 +105,9 @@ class MainController extends Controller
         $tip = $repo->getTip($lang);
 
         if (null === $tip) {
-            $tip = 'No tips to display';
+            return new Reponse('No tips to display');
         }
 
-        return new Response($tip);
+        return new Response($tip->getContent());
     }
 }

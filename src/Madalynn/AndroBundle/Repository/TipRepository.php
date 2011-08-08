@@ -13,11 +13,31 @@
 namespace Madalynn\AndroBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
+use Doctrine\ORM\Query;
 
 class TipRepository extends EntityRepository
 {
     public function getTip($lang = 'en')
     {
-        return null;
+        $dql = 'SELECT COUNT(t) FROM AndroBundle:Tip t WHERE t.language = :lang';
+
+        $query = $this->_em->createQuery($dql);
+        $query->setParameter('lang', $lang);
+
+        $count = $query->getSingleScalarResult();
+
+        if ($count == 0) {
+            return null;
+        }
+
+        $offset = rand(0, $count - 1);
+
+        return $this->createQueryBuilder('t')
+                    ->where('t.language = :lang')
+                    ->setFirstResult($offset)
+                    ->setMaxResults(1)
+                    ->setParameter('lang', $lang)
+                    ->getQuery()
+                    ->getSingleResult();
     }
 }
