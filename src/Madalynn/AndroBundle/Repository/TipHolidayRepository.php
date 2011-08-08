@@ -27,7 +27,10 @@ class TipHolidayRepository extends EntityRepository
                       ->setParameter('day', $date->format('d'))
                       ->getQuery();
 
+        try {
             return $query->getSingleResult();
-
+        } catch (\Exception $e) {
+            return null;
+        }
     }
 }
