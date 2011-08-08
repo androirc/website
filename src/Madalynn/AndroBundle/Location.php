@@ -12,6 +12,8 @@
 
 namespace Madalynn\AndroBundle;
 
+use Buzz\Browser;
+
 class Location
 {
     private $ip;
@@ -33,7 +35,8 @@ class Location
             return $this->location;
         }
 
-        $this->location = file_get_contents('http://geoip.wtanaka.com/cc/' . $this->ip);
+        $browser = new Browser();
+        $this->location = $browser->get('http://geoip.wtanaka.com/cc/' . $this->ip);
 
         return $this->location;
     }
