@@ -52,7 +52,7 @@ class Article
     /**
      * @ORM\Column(type="boolean")
      */
-    protected $is_visible;
+    protected $visible;
 
     /**
      * @ORM\Column(type="datetime")
@@ -221,22 +221,22 @@ class Article
     }
 
     /**
-     * Set is_visible
+     * Set visible
      *
-     * @param boolean $isVisible
+     * @param boolean $visible
      */
-    public function setVisible($isVisible)
+    public function setVisible($visible)
     {
-        $this->is_visible = $isVisible;
+        $this->visible = $visible;
     }
 
     /**
-     * Get is_visible
+     * Get visible
      *
      * @return boolean
      */
     public function isVisible()
     {
-        return $this->is_visible;
+        return $this->visible;
     }
 }
