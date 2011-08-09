@@ -12,6 +12,8 @@
 
 namespace Madalynn\AdminBundle\Admin;
 
+use Symfony\Component\Security\Core\SecurityContextInterface;
+
 use Sonata\AdminBundle\Admin\Admin;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
@@ -22,6 +24,19 @@ use Knp\Bundle\MenuBundle\MenuItem;
 
 class ArticleAdmin extends Admin
 {
+    protected $securityContext;
+
+    public function setSecurityContext(SecurityContextInterface $securityContext)
+    {
+        $this->securityContext = $securityContext;
+    }
+
+    public function prePersist($object)
+    {
+        $user = $this->securityContext->getToken()->getUser();
+        $object->setAuthor($user);
+    }
+
     protected function configureShowField(ShowMapper $showMapper)
     {
         $showMapper
@@ -35,7 +50,6 @@ class ArticleAdmin extends Admin
     {
         $formMapper
             ->add('title')
-            ->add('author')
             ->add('content')
             ->add('visible')
         ;
@@ -45,6 +59,7 @@ class ArticleAdmin extends Admin
     {
         $listMapper
             ->addIdentifier('title')
+            ->add('author')
         ;
     }
 
