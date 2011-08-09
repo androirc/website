@@ -49,3 +49,15 @@
 [submodule "vendor/bundles/JMS/DebuggingBundle"]
 	path = vendor/bundles/JMS/DebuggingBundle
 	url = git://github.com/schmittjoh/JMSDebuggingBundle.git
+[submodule "vendor/bundles/Sonata/jQueryBundle"]
+	path = vendor/bundles/Sonata/jQueryBundle
+	url = git://github.com/sonata-project/SonatajQueryBundle.git
+[submodule "vendor/bundles/Sonata/BluePrintBundle"]
+	path = vendor/bundles/Sonata/BluePrintBundle
+	url = git://github.com/sonata-project/SonataBluePrintBundle.git
+[submodule "vendor/bundles/Sonata/AdminBundle"]
+	path = vendor/bundles/Sonata/AdminBundle
+	url = git://github.com/sonata-project/SonataAdminBundle.git
+[submodule "vendor/bundles/Knp/Bundle/MenuBundle"]
+	path = vendor/bundles/Knp/Bundle/MenuBundle
+	url = git://github.com/knplabs/KnpMenuBundle.git
