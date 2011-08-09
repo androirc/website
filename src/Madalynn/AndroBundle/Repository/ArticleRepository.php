@@ -27,7 +27,7 @@ class ArticleRepository extends EntityRepository
     public function getQueryBuilder()
     {
         return $this->createQueryBuilder('a')
-                    ->where('a.is_visible = true')
+                    ->where('a.visible = true')
                     ->orderBy('a.created', 'desc');
     }
 }
