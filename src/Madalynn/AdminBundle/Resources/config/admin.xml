@@ -11,7 +11,7 @@
 
     <services>
         <service id="androirc.admin.article" class="%androirc.admin.article.class%">
-            <tag name="sonata.admin" manager_type="orm" group="androirc" label="article" show_in_dashboard="true" />
+            <tag name="sonata.admin" manager_type="orm" group="AndroIRC" label="Article" show_in_dashboard="true" />
             <argument />
             <argument>%androirc.admin.article.entity%</argument>
             <argument>%androirc.admin.article.controller%</argument>
