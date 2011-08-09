@@ -20,8 +20,6 @@ use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
 
-use Knp\Bundle\MenuBundle\MenuItem;
-
 class ArticleAdmin extends Admin
 {
     protected $securityContext;
