@@ -11,6 +11,8 @@
 
     {% for article in pager %}
         {% include 'AndroBundle:Article:article.html.twig' with { 'article': article, 'sumup': true } %}
+    {% else %}
+        No articles at this time
     {% endfor %}
 
     <div class="paginator">
