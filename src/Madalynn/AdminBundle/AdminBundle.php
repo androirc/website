@@ -10,10 +10,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Madalynn\AndroBundle;
+namespace Madalynn\AdminBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class AndroBundle extends Bundle
+class AdminBundle extends Bundle
 {
 }
