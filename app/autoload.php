@@ -26,6 +26,7 @@ $loader->registerNamespaces(array(
     'FOS'                            => __DIR__.'/../vendor/bundles',
     'JMS'                            => __DIR__.'/../vendor/bundles',
     'Ornicar'                        => __DIR__.'/../vendor/bundles',
+    'Sensio'                         => __DIR__.'/../vendor/bundles',
     'WhiteOctober'                   => __DIR__.'/../vendor/bundles',
 ));
 $loader->registerPrefixes(array(
