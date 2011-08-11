@@ -27,8 +27,6 @@ $loader->registerNamespaces(array(
     'JMS'                            => __DIR__.'/../vendor/bundles',
     'Ornicar'                        => __DIR__.'/../vendor/bundles',
     'WhiteOctober'                   => __DIR__.'/../vendor/bundles',
-    'Sonata'                         => __DIR__.'/../vendor/bundles',
-    'Knp'                            => __DIR__.'/../vendor/bundles',
 ));
 $loader->registerPrefixes(array(
     'Twig_Extensions_' => __DIR__.'/../vendor/twig-extensions/lib',

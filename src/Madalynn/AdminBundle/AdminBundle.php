@@ -10,14 +10,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Madalynn\AdminBundle;
+namespace Madalynn\AndroBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class AdminBundle extends Bundle
+class AndroBundle extends Bundle
 {
-    public function getParent()
-    {
-        return 'SonataAdminBundle';
-    }
 }
