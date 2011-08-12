@@ -1,0 +1,40 @@
+{% extends "AndroBundle::layout.html.twig" %}
+
+{% block stylesheets %}
+    {% stylesheets filter="?yui_css"
+        '@AndroBundle/Resources/public/css/reset.css'
+        '@AndroBundle/Resources/public/css/common.css'
+        '@AndroBundle/Resources/public/css/design.css'
+        '@AdminBundle/Resources/public/css/back.css'
+        '@AndroBundle/Resources/public/css/form.css'
+    %}
+        <link rel="stylesheet" type="text/css" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block header %}
+    <div id="admin_title">
+        Administration center
+    </div>
+{% endblock %}
+       
+{% block menu %}
+    {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+         <ul>
+            <li><a href="{{ path('admin_article') }}">Article</a></li>
+            <li><a href="{{ path('homepage') }}">Donator</a></li>
+            <li><a href="{{ path('homepage') }}">User</a></li>
+            <li><a href="{{ path('homepage') }}">Beta</a></li>
+            <li><a href="{{ path('homepage') }}">Tip</a></li>
+            <li><a href="{{ path('homepage') }}">Crash</a></li>
+            <li><a href="{{ path('homepage') }}">Quick Start</a></li>
+            <li><a href="{{ path('homepage') }}">Holiday</a></li>
+            <li><a href="{{ path('homepage') }}">Change Log</a></li>
+            <li class="last"><a href="{{ path('donate') }}">Logout</a></li>
+        </ul>
+    {% endif %}
+{% endblock %}
+
+{% block page %}
+    {% block content %}{% endblock %}
+{% endblock %}

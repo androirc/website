@@ -1,5 +1,5 @@
 {% extends "AdminBundle::backend.html.twig" %}
 
 {% block content %}
-    {% block fos_user_content %}{% endblock %}
-{% endblock%}
+    <h1>Welcome {{ app.user.getUsername }}</h1>
+{% endblock %}

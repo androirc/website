@@ -1,0 +1,35 @@
+#menu ul {
+    width: 1100px;
+}
+
+h1 {
+    font-size: 27px;
+    font-family: Delicious;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: Delicious;
+    src: url('/bundles/admin/fonts/Delicious-Roman.otf');
+}
+
+@font-face {
+    font-family: Delicious;
+    font-weight: bold;
+    src: url('/bundles/admin/fonts/Delicious-Bold.otf');
+}
+
+#admin_title {
+    color: #0369a8;
+    position: absolute;
+    top: 42px;
+    right: 20px;
+    font-size: 33px;
+    font-family: Delicious;
+    font-weight: bold;
+}
+
+#page {
+    min-height: 550px;
+}

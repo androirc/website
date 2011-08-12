@@ -1,5 +1,9 @@
-androbundle:
+androirc:
     resource: '@AndroBundle/Resources/config/routing.yml'
+
+androirc_admin:
+    resource: '@AdminBundle/Resources/config/routing.yml'
+    prefix:   /admin
 
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"

@@ -1,0 +1,9 @@
+# Dashboard
+admin_dashboard:
+    pattern: /
+    defaults: { _controller: AdminBundle:Main:dashboard }
+    
+# Article
+admin_base_article:
+    resource: 'routing/article.yml'
+    prefix:   /article
