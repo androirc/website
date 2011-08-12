@@ -2,8 +2,12 @@
 
 {% block content %}
     {% if error %}
-        <div>{{ error }}</div>
+        <div class="flash error">
+            {{ error }}
+        </div>
     {% endif %}
+
+    <h1>You need to signin please</h1>
 
     <form action="{{ path("fos_user_security_check") }}" method="post">
         <label for="username">{{ 'security.login.username'|trans({}, 'FOSUserBundle') }}</label>
