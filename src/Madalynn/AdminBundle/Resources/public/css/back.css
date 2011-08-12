@@ -33,3 +33,12 @@ h1 {
 #page {
     min-height: 550px;
 }
+
+label {
+    width: 130px;
+}
+
+textarea {
+    width: 550px;
+    height: 200px;
+}
