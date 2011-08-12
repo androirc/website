@@ -42,3 +42,20 @@ textarea {
     width: 550px;
     height: 200px;
 }
+
+.record_actions button {
+    float: none;
+    margin-top: 0;
+}
+
+.record_actions li {
+    background-image: none !important;
+    display: inline !important;
+    float: left;
+    margin: 0 !important;
+    padding: 0 10px 0 0 !important;
+}
+
+ul.record_actions {
+    margin: 10px 0 0 0 !important;
+}

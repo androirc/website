@@ -1,4 +1,4 @@
-input[type=submit], input[type=reset] {
+input[type=submit], input[type=reset], button[type=submit], button[type=reset] {
     background: #EEE url("/bundles/andro/images/button.png") repeat-x 0px 0px;
     border-color: #999 #999 #888;
     border-style: solid;
@@ -11,17 +11,18 @@ input[type=submit], input[type=reset] {
     padding: 0px 10px;
     -moz-box-shadow:0 0 3px #aaa;
     -webkit-box-shadow:0 0 3px #aaa;
-    float: right;
     margin-top: 10px;
     position: relative;
+    float: right;
 }
 
-input[type=submit]:active, input[type=reset]:active {
+input[type=submit]:active, input[type=reset]:active, button[type=submit]:active, button[type=reset]:active {
     top: 1px;
 }
 
 form p {
     margin-bottom: 10px;
+    clear: left;
 }
 
 form p:last-child {
@@ -73,7 +74,7 @@ input[type=text]:focus, input[type=password]:focus, textarea:focus {
     outline: none;
 }
 
-input[type=submit]:hover, input[type=reset]:hover {
+input[type=submit]:hover, input[type=reset]:hover, button[type=submit]:hover, button[type=reset]:hover {
     -moz-box-shadow: 0 0 3px #026995;
     -webkit-box-shadow: 0 0 3px #026995;
     outline: none;
