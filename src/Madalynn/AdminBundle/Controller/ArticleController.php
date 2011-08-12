@@ -77,7 +77,7 @@ class ArticleController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('article_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('admin_article_show', array('id' => $entity->getId())));
         }
 
         return $this->render('AdminBundle:Article:new.html.twig', array(
@@ -127,7 +127,7 @@ class ArticleController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('article_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('admin_article_edit', array('id' => $id)));
         }
 
         return $this->render('AdminBundle:Article:edit.html.twig', array(
@@ -156,7 +156,7 @@ class ArticleController extends Controller
             $em->flush();
         }
 
-        return $this->redirect($this->generateUrl('article'));
+        return $this->redirect($this->generateUrl('admin_article'));
     }
 
     private function createDeleteForm($id)
