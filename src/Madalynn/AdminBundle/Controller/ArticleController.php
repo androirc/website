@@ -69,6 +69,11 @@ class ArticleController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getEntityManager();
+
+            // we inject the current user
+            $user = $this->get('security.context')->getToken()->getUser();
+            $entity->setAuthor($user);
+
             $em->persist($entity);
             $em->flush();
 
