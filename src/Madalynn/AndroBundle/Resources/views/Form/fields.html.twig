@@ -1,9 +1,7 @@
 {% block field_row %}
-    <div class="form_row">
+    <p>
         {{ form_label(form, label) }}
-        <div class="datas">
-            {{ form_widget(form, _context) }}
-            {{ form_errors(form) }}
-        </div>
-    </div>
+        {{ form_widget(form, _context) }}
+        {{ form_errors(form) }}
+    </p>
 {% endblock field_row %}

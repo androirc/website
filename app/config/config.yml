@@ -43,6 +43,9 @@ security:
 twig:
     debug:            %kernel.debug%
     strict_variables: %kernel.debug%
+    form:
+        resources:
+            - 'AndroBundle:Form:fields.html.twig'
 
 # Assetic Configuration
 assetic:
