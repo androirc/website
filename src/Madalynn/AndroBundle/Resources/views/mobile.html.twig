@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" >
+    <head>
+        <title>{% block title %}Home{% endblock %} - AndroIRC (Android IRC Client)</title>
+        <meta name="google-site-verification" content="NxLzVTaSpM7YMWZ_DqGdF19nVKrNl4IcQxcT3jtACqw" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;"/>
+        <meta name="title" content="{{ block('title') }} - AndroIRC (Android IRC Client)" />
+        <meta name="description" content="AndroIRC is an Android IRC client which can connect to several server (secured or not) at the same time. Features: mIRC colors, auto join channels on startup, themes (black or white), nickserv auth, sasl auth, android notifications, copy &amp; paste, logging, easy access menu to kick, ban .. and much more!" />
+        <meta name="keywords" content="android, irc, client, free, app, mirc, androirc, market, logging, sasl, authentication, blowfish, plain, identification, nickserv, themes, smartphone, application, apps, ircd, communication, internet, relay, chat, server, freenode, epiknet, quakenet, efnet, undernet, ident, nick, nickname, chan, channel, kick, ban, op, halfop, voice" />
+        <meta name="language" content="en" />
+        <meta name="robots" content="index, follow" />
+
+        <link href="http://feeds.feedburner.com/AndroIRC" type="application/atom+xml" rel="alternate" title="Last articles" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        {% block stylesheets %}
+            {% stylesheets filter="?yui_css" output="css/mobile.css"
+                '@AndroBundle/Resources/public/css/reset.css'
+                '@AndroBundle/Resources/public/css/common.css'
+                '@AndroBundle/Resources/public/css/mobile.css'
+            %}
+                <link rel="stylesheet" type="text/css" href="{{ asset_url }}" />
+            {% endstylesheets %}
+        {% endblock %}
+    </head>
+    <body>
+        <div id="up">
+            <div id="header">
+                <div id="logo">
+                    <a href="{{ path('homepage') }}">
+                        <img src="{{ asset('bundles/andro/images/logo.png') }}" />
+                    </a>
+                    <span>Android IRC Client</span>
+                </div>
+            </div>
+        </div>
+        <div id="menu">
+            <ul>
+                <li><a href="http://market.android.com/details?id=com.androirc">Download</a></li> 
+                <li><a href="{{ path('eula') }}">EULA</a></li> 
+                <li class="last"><a href="{{ path('beta') }}">Beta</a></li> 
+            </ul>
+        </div>
+        <div id="content">
+            <div id="switch">
+                <a href="#" class="awesome">Switch to the web version</a>
+            </div>
+
+            {% block content %}{% endblock %}
+        </div>
+        <div class="clear"></div>
+
+        <div id="footer">
+            Copyright &copy; AndroIRC.com. All rights reserved. Powered by Symfony2
+        </div>
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-133630-5']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+    </body>
+</html>
