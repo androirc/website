@@ -48,7 +48,7 @@ class MobileVersionListener
             }
         }
 
-        $mobileVersion = preg_match('/^m\./i', $request->getHost());
+        $mobileVersion = 0 !== preg_match('/^m\./i', $request->getHost());
 
         if (true === $mobileVersion) {
             $request->setRequestFormat('mobile');
