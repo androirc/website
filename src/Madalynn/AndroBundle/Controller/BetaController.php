@@ -12,14 +12,13 @@
 
 namespace Madalynn\AndroBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 
 use Madalynn\AndroBundle\Entity\BetaDownload;
 use Madalynn\AndroBundle\Location;
 
-class BetaController extends Controller
+class BetaController extends MobileController
 {
     public function showAction()
     {

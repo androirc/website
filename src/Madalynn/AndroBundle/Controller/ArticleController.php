@@ -12,12 +12,10 @@
 
 namespace Madalynn\AndroBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-
 use Pagerfanta\Pagerfanta;
 use Pagerfanta\Adapter\DoctrineORMAdapter;
 
-class ArticleController extends Controller
+class ArticleController extends MobileController
 {
     public function showAction($id)
     {

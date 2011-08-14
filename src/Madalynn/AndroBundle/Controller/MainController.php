@@ -17,6 +17,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 use Madalynn\AndroBundle\Entity\Contact;
 use Madalynn\AndroBundle\Form\ContactType;
+use Madalynn\AndroBundle\Mobile;
 
 class MainController extends MobileController
 {
