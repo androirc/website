@@ -29,6 +29,7 @@ class MobileVersionListener
     public function onKernelRequest(GetResponseEvent $event)
     {
         $request = $event->getRequest();
+
         $uamatches = array(
             'midp', 'j2me', 'avantg', 'docomo', 'novarra', 'palmos',
             'palmsource', '240x320', 'opwv', 'chtml', 'pda', 'windows ce',
@@ -51,7 +52,7 @@ class MobileVersionListener
         $mobileVersion = 0 !== preg_match('/^m\./i', $request->getHost());
 
         if (true === $mobileVersion) {
-            $request->setRequestFormat('mobile');
+            $request->headers->set('X-AndroIRC-Mobile', true);
         }
 
         if (true === $this->session->get('first_visit', true)) {
