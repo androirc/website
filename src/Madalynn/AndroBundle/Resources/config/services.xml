@@ -3,13 +3,14 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <parameters>
-        <parameter key="androirc.twig.extension.class">Madalynn\AndroBundle\Twig\AndroExtension</parameter>
-        <parameter key="androirc.kernel.listener.mobileversion.class">Madalynn\AndroBundle\Listener\MobileVersionListener</parameter>
+        <parameter key="androirc.twig.extension.class">Madalynn\AndroBundle\Twig\Extension\AndroExtension</parameter>
+        <parameter key="androirc.kernel.listener.mobileversion.class">Madalynn\AndroBundle\EventListener\MobileVersionListener</parameter>
     </parameters>
 
     <services>
         <service id="androirc.twig.extension" class="%androirc.twig.extension.class%" public="false">
             <argument type="service" id="router" />
+            <argument type="service" id="session" />
             <tag name="twig.extension" />
         </service>
 

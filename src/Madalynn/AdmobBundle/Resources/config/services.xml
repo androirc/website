@@ -1,0 +1,32 @@
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="madalynn.admob.class">Madalynn\AdmobBundle\AdMob</parameter>
+        <parameter key="madalynn.kernel.listener.cookie.class">Madalynn\AdmobBundle\EventListener\CookieListener</parameter>
+        <parameter key="madalynn.admob.twig.extension.class">Madalynn\AdmobBundle\Twig\Extension\MadalynnAdmobExtension</parameter>
+    </parameters>
+
+    <services>
+        <service id="madalynn.admob" class="%madalynn.admob.class%">
+            <argument type="service" id="session" />
+            <argument>%madalynn.admob.publisher_id%</argument>
+            <argument>%madalynn.admob.analytics_id%</argument>
+            <argument>%madalynn.admob.ad_request%</argument>
+            <argument>%madalynn.admob.analytics_request%</argument>
+            <argument>%madalynn.admob.test_mode%</argument>
+            <argument>%madalynn.admob.options%</argument>
+        </service>
+
+        <service id="madalynn.admob.twig.extension" class="%madalynn.admob.twig.extension.class%" public="false">
+            <tag name="twig.extension" />
+            <argument type="service" id="madalynn.admob" />
+        </service>
+
+        <service id="madalynn.kernel.listener.cookie" class="%madalynn.kernel.listener.cookie.class%">
+            <tag name="kernel.event_listener" event="kernel.response" method="onKernelResponse" />
+            <argument type="service" id="madalynn.admob" />
+        </service>
+    </services>
+</container>

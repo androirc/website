@@ -32,6 +32,7 @@ class AppKernel extends Kernel
             new Madalynn\AndroBundle\AndroBundle(),
             new Madalynn\UserBundle\UserBundle(),
             new Madalynn\AdminBundle\AdminBundle(),
+            new Madalynn\AdmobBundle\MadalynnAdmobBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

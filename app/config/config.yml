@@ -86,3 +86,9 @@ fos_user:
 ornicar_akismet:
     api_key: %akismet_api_key%
     url:     http://www.androirc.com
+
+# AdmobBundle Configuration
+madalynn_admob:
+    publisher_id: a14de4eeeb0ee01
+    analytics_id: a14debd8eddb7a3
+    analytics_request: true

@@ -43,15 +43,17 @@
         </div>
         <div id="content">
             <div id="switch">
-                <a href="#" class="awesome">Switch to the web version</a>
+                {{ andro_switch_version(app.request) }}
             </div>
-
+            <div id="ads">
+                {{ madalynn_admob(app.request) }}
+            </div>
             {% block content %}{% endblock %}
         </div>
         <div class="clear"></div>
 
         <div id="footer">
-            Copyright &copy; AndroIRC.com. All rights reserved. Powered by Symfony2
+            {{ 'now' | date('Y') }} &copy; AndroIRC. All rights reserved. Powered by <a href="http://symfony.com">Symfony2</a>
         </div>
         <script type="text/javascript">
             var _gaq = _gaq || [];

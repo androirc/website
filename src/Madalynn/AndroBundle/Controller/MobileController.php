@@ -21,7 +21,7 @@ class MobileController extends Controller
     {
         $request = $this->get('request');
 
-        if ($request->getRequestFormat() == 'mobile') {
+        if (true === $request->headers->has('X-AndroIRC-Mobile')) {
             $view = str_replace('.html', '.mobile.html', $view);
         }
 
