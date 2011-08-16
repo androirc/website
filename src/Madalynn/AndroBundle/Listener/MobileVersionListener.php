@@ -30,25 +30,30 @@ class MobileVersionListener
     {
         $request = $event->getRequest();
 
-        $uamatches = array(
-            'midp', 'j2me', 'avantg', 'docomo', 'novarra', 'palmos',
-            'palmsource', '240x320', 'opwv', 'chtml', 'pda', 'windows ce',
-            'mmp\/', 'blackberry', 'mib\/', 'symbian', 'wireless', 'nokia',
-            'hand', 'mobi', 'phone', 'cdm', 'up\.b', 'audio', 'SIE\-', 'SEC\-',
-            'samsung', 'HTC', 'mot\-', 'mitsu', 'sagem', 'sony', 'alcatel', 'lg',
-            'erics', 'vx', 'NEC', 'philips', 'mmm', 'xx', 'panasonic', 'sharp',
-            'wap', 'sch', 'rover', 'pocket', 'benq', 'java', 'pt', 'pg', 'vox',
-            'amoi', 'bird', 'compal', 'kg', 'voda', 'sany', 'kdd', 'dbt', 'sendo', 'sgh', 'webos'
-        );
+        if (false === $this->session->has('from_mobile')) {
+            $uamatches = array(
+                'midp', 'j2me', 'avantg', 'docomo', 'novarra', 'palmos',
+                'palmsource', '240x320', 'opwv', 'chtml', 'pda', 'windows ce',
+                'mmp\/', 'blackberry', 'mib\/', 'symbian', 'wireless', 'nokia',
+                'hand', 'mobi', 'phone', 'cdm', 'up\.b', 'audio', 'SIE\-', 'SEC\-',
+                'samsung', 'HTC', 'mot\-', 'mitsu', 'sagem', 'sony', 'alcatel', 'lg',
+                'erics', 'vx', 'NEC', 'philips', 'mmm', 'xx', 'panasonic', 'sharp',
+                'wap', 'sch', 'rover', 'pocket', 'benq', 'java', 'pt', 'pg', 'vox',
+                'amoi', 'bird', 'compal', 'kg', 'voda', 'sany', 'kdd', 'dbt', 'sendo', 'sgh', 'webos'
+            );
 
-        $fromMobile = false;
-        foreach ($uamatches as $uamatch) {
-            if (preg_match('/' . $uamatch . '/i', $request->headers->get('User-Agent'))) {
-                $fromMobile = true;
-                break;
+            $fromMobile = false;
+            foreach ($uamatches as $uamatch) {
+                if (preg_match('/' . $uamatch . '/i', $request->headers->get('User-Agent'))) {
+                    $fromMobile = true;
+                    break;
+                }
             }
+
+            $this->session->set('from_mobile', $fromMobile);
         }
 
+        $fromMobile = $this->session->get('from_mobile');
         $mobileVersion = 0 !== preg_match('/^m\./i', $request->getHost());
 
         if (true === $mobileVersion) {

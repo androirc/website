@@ -43,7 +43,7 @@
         </div>
         <div id="content">
             <div id="switch">
-                <a href="#" class="awesome">Switch to the web version</a>
+                {{ andro_switch_version(app.request) }}
             </div>
 
             {% block content %}{% endblock %}

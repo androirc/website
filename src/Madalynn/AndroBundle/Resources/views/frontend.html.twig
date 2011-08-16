@@ -43,6 +43,15 @@
 
 {% block page %}
     <div id="sidebar">
+    {% if andro_from_mobile() %}
+        <div class="sidebar_box">
+            <h2>Mobile version</h2>
+
+            <div class="center">
+                {{ andro_switch_version(app.request) }}
+            </div>
+        </div>
+    {% endif %}
         <div class="sidebar_box">
             <h2>Android Market</h2>
 

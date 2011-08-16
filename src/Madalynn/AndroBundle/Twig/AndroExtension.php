@@ -13,16 +13,20 @@
 namespace Madalynn\AndroBundle\Twig;
 
 use Symfony\Component\Routing\RouterInterface;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Session;
 
 use Madalynn\AndroBundle\Entity\Article;
 
 class AndroExtension extends \Twig_Extension
 {
     protected $router;
+    protected $session;
 
-    public function __construct(RouterInterface $router)
+    public function __construct(RouterInterface $router, Session $session)
     {
         $this->router = $router;
+        $this->session = $session;
     }
 
     public function getFilters()
@@ -36,7 +40,9 @@ class AndroExtension extends \Twig_Extension
     public function getFunctions()
     {
         return array(
-            'andro_url_article' => new \Twig_Function_Method($this, 'articleUrl', array('is_safe' => array('html')))
+            'andro_url_article'    => new \Twig_Function_Method($this, 'articleUrl', array('is_safe' => array('html'))),
+            'andro_switch_version' => new \Twig_Function_Method($this, 'switchVersion', array('is_safe' => array('html'))),
+            'andro_from_mobile'    => new \Twig_Function_Method($this, 'fromMobile', array('is_safe' => array('html')))
         );
     }
 
@@ -59,6 +65,32 @@ class AndroExtension extends \Twig_Extension
 
         return $this->router->generate('article_show', $params, $absolute);
     }
+
+    public function switchVersion(Request $request)
+    {
+        $uri = $request->getUri();
+        $text = '';
+        $html = '<a href="{{ link }}" class="awesome">{{ text }}</a>';
+
+        if (true === $request->headers->has('X-AndroIRC-Mobile')) {
+            $uri = str_replace('m.', 'www.', $uri);
+            $text = 'Switch to the web version';
+        } else {
+            $uri = str_replace('www.', 'm.', $uri);
+            $text = 'Switch to the mobile version';
+        }
+
+        return strtr($html, array(
+            '{{ link }}' => $uri,
+            '{{ text }}' => $text
+        ));
+    }
+
+    public function fromMobile()
+    {
+        return $this->session->get('from_mobile', false);
+    }
+
     public function getName()
     {
         return 'andro';
