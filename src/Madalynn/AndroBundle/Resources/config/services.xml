@@ -4,7 +4,7 @@
 
     <parameters>
         <parameter key="androirc.twig.extension.class">Madalynn\AndroBundle\Twig\Extension\AndroExtension</parameter>
-        <parameter key="androirc.kernel.listener.mobileversion.class">Madalynn\AndroBundle\Listener\MobileVersionListener</parameter>
+        <parameter key="androirc.kernel.listener.mobileversion.class">Madalynn\AndroBundle\EventListener\MobileVersionListener</parameter>
     </parameters>
 
     <services>

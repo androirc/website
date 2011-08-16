@@ -10,7 +10,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Madalynn\AndroBundle\Listener;
+namespace Madalynn\AndroBundle\EventListener;
 
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 use Symfony\Component\HttpFoundation\Response;
