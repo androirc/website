@@ -10,7 +10,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Madalynn\AndroBundle\Twig;
+namespace Madalynn\AndroBundle\Twig\Extension;
 
 use Symfony\Component\Routing\RouterInterface;
 use Symfony\Component\HttpFoundation\Request;
