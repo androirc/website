@@ -28,7 +28,7 @@ class ArticleController extends MobileController
             throw $this->createNotFoundException('This article does not exist');
         }
 
-        return $this->render('AndroBundle:Article:show.html.twig', array(
+        return $this->renderWithMobile('AndroBundle:Article:show.html.twig', array(
             'article' => $article
         ));
     }

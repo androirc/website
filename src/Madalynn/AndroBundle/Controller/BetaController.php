@@ -27,7 +27,7 @@ class BetaController extends MobileController
 
         $beta = $repo->getLastBeta();
 
-        return $this->render('AndroBundle:Beta:last.html.twig', array(
+        return $this->renderWithMobile('AndroBundle:Beta:last.html.twig', array(
             'beta' => $beta
         ));
     }
