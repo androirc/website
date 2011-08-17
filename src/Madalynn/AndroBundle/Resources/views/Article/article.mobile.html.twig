@@ -6,8 +6,12 @@
         {{ article.getCreated | date('m/d/Y') }} | News posted by {{ article.getAuthor }}
     </div>
 
-    <div class="content">
-        {{ article.getContent | truncate(200) }}
+    <div class="content">s
+        {% if sumup is defined %}
+            {{ article.getContent | truncate(200) }}
+        {% else %}
+            {{ article.getContent }}
+        {% endif %}
     </div>
 
     <div class="footer">
