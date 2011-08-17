@@ -29,10 +29,11 @@ class AppKernel extends Kernel
             new Ornicar\AkismetBundle\OrnicarAkismetBundle(),
             new WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle(),
 
+            new Madalynn\AdmobBundle\MadalynnAdmobBundle(),
+            new Madalynn\DeployBundle\MadalynnDeployBundle(),
             new Madalynn\AndroBundle\AndroBundle(),
             new Madalynn\UserBundle\UserBundle(),
             new Madalynn\AdminBundle\AdminBundle(),
-            new Madalynn\AdmobBundle\MadalynnAdmobBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
