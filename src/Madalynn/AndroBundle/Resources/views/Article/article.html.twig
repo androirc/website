@@ -1,4 +1,4 @@
-<div class="article">
+<div class="article {% if (false == article.isVisible) %} not_visible{% endif %}">
     <div class="title">
         <a href="{{ path('article_show', { 'id': article.getId, 'slug': article.getSlug }) }}">{{ article.getTitle }}</a>
     </div>

@@ -16,18 +16,23 @@ use Doctrine\ORM\EntityRepository;
 
 class ArticleRepository extends EntityRepository
 {
-    public function getLastArticles($limit = 10)
+    public function getLastArticles($isSuperAdmin = false, $limit = 10)
     {
-        return $this->getQueryBuilder()
+        return $this->getQueryBuilder($isSuperAdmin)
                     ->setMaxResults($limit)
                     ->getQuery()
                     ->getResult();
     }
 
-    public function getQueryBuilder()
+    public function getQueryBuilder($isSuperAdmin = false)
     {
-        return $this->createQueryBuilder('a')
-                    ->where('a.visible = true')
-                    ->orderBy('a.created', 'desc');
+        $query = $this->createQueryBuilder('a')
+                      ->orderBy('a.created', 'desc');
+
+        if (false === $isSuperAdmin) {
+            $query->where('a.visible = true');
+        }
+
+        return $query;
     }
 }

@@ -26,7 +26,7 @@ class MainController extends MobileController
         $em = $this->getDoctrine()->getEntityManager();
         $repo = $em->getRepository('Madalynn\AndroBundle\Entity\Article');
 
-        $articles = $repo->getLastArticles();
+        $articles = $repo->getLastArticles($this->isSuperAdmin());
 
         return $this->renderWithMobile('AndroBundle:Main:homepage.html.twig', array(
             'articles' => $articles
