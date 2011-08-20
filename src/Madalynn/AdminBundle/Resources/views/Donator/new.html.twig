@@ -1,0 +1,16 @@
+{% extends "AdminBundle::backend.html.twig" %}
+
+{% block content %}
+    <h1>Donator creation</h1>
+
+    <form action="{{ path('admin_donator_create') }}" method="post" {{ form_enctype(form) }}>
+        {{ form_widget(form) }}
+        <p>
+            <button type="submit">Create</button>
+        </p>
+    </form>
+
+    <a class="awesome" href="{{ path('admin_donator') }}">
+        Back to the list
+    </a>
+{% endblock %}

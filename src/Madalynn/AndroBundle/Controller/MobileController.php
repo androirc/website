@@ -12,12 +12,11 @@
 
 namespace Madalynn\AndroBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 
-class MobileController extends Controller
+class MobileController extends AbstractController
 {
-    public function render($view, array $parameters = array(), Response $response = null)
+    public function renderWithMobile($view, array $parameters = array(), Response $response = null)
     {
         $request = $this->get('request');
 
@@ -25,6 +24,6 @@ class MobileController extends Controller
             $view = str_replace('.html', '.mobile.html', $view);
         }
 
-        return parent::render($view, $parameters, $response);
+        return $this->render($view, $parameters, $response);
     }
 }

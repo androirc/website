@@ -24,11 +24,11 @@ class ArticleController extends MobileController
 
         $article = $repo->find($id);
 
-        if (null === $article || false === $article->isVisible()) {
+        if (null === $article || (false === $this->isSuperAdmin() && false === $article->isVisible())) {
             throw $this->createNotFoundException('This article does not exist');
         }
 
-        return $this->render('AndroBundle:Article:show.html.twig', array(
+        return $this->renderWithMobile('AndroBundle:Article:show.html.twig', array(
             'article' => $article
         ));
     }
@@ -38,7 +38,7 @@ class ArticleController extends MobileController
         $em = $this->getDoctrine()->getEntityManager();
         $repo = $em->getRepository('Madalynn\AndroBundle\Entity\Article');
 
-        $articles = $repo->getLastArticles(20);
+        $articles = $repo->getLastArticles(false, 20);
 
         return $this->render('AndroBundle:Article:atom.html.twig', array(
             'articles' => $articles
@@ -50,7 +50,7 @@ class ArticleController extends MobileController
         $em = $this->getDoctrine()->getEntityManager();
         $repo = $em->getRepository('Madalynn\AndroBundle\Entity\Article');
 
-        $adapter = new DoctrineORMAdapter($repo->getQueryBuilder()->getQuery(), true);
+        $adapter = new DoctrineORMAdapter($repo->getQueryBuilder($this->isSuperAdmin())->getQuery(), true);
         $pager = new Pagerfanta($adapter);
         $pager->setMaxPerPage(5);
 

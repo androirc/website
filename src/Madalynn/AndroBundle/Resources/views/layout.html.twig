@@ -44,6 +44,15 @@
         </div>
 
         <div id="page">
+            {% if app.session.hasFlash('notice') %}
+                <div class="flash notice">
+                    {{ app.session.flash('notice') }}
+                </div>
+            {% elseif app.session.hasFlash('error') %}
+                <div class="flash error">
+                    {{ app.session.flash('error') }}
+                </div>
+            {% endif %}
             {% block page %}{% endblock %}
             <div class="clear"></div>
         </div>

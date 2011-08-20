@@ -1,0 +1,31 @@
+admin_donator:
+    pattern:  /{page}
+    defaults: { _controller: "AdminBundle:Donator:index", page: 1 }
+    requirements:
+        page:  \d+
+
+admin_donator_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "AdminBundle:Donator:show" }
+
+admin_donator_new:
+    pattern:  /new
+    defaults: { _controller: "AdminBundle:Donator:new" }
+
+admin_donator_create:
+    pattern:  /create
+    defaults: { _controller: "AdminBundle:Donator:create" }
+    requirements: { _method: post }
+
+admin_donator_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "AdminBundle:Donator:edit" }
+
+admin_donator_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "AdminBundle:Donator:update" }
+    requirements: { _method: post }
+
+admin_donator_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "AdminBundle:Donator:delete" }

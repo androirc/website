@@ -26,9 +26,9 @@ class MainController extends MobileController
         $em = $this->getDoctrine()->getEntityManager();
         $repo = $em->getRepository('Madalynn\AndroBundle\Entity\Article');
 
-        $articles = $repo->getLastArticles();
+        $articles = $repo->getLastArticles($this->isSuperAdmin());
 
-        return $this->render('AndroBundle:Main:homepage.html.twig', array(
+        return $this->renderWithMobile('AndroBundle:Main:homepage.html.twig', array(
             'articles' => $articles
         ));
     }
@@ -77,7 +77,7 @@ class MainController extends MobileController
 
     public function eulaAction()
     {
-        return $this->render('AndroBundle:Main:eula.html.twig');
+        return $this->renderWithMobile('AndroBundle:Main:eula.html.twig');
     }
 
     public function screenshotsAction()
@@ -92,7 +92,7 @@ class MainController extends MobileController
 
         $donators = $repo->getDonators();
 
-        return $this->render('AndroBundle:Main:donate.html.twig', array(
+        return $this->renderWithMobile('AndroBundle:Main:donate.html.twig', array(
             'donators' => $donators
         ));
     }

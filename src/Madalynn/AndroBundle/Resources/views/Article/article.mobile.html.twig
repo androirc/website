@@ -1,0 +1,26 @@
+<div class="article">
+    <div class="title">
+        <a href="{{ path('article_show', { 'id': article.getId, 'slug': article.getSlug }) }}">{{ article.getTitle }}</a>
+    </div>
+    <div class="by">
+        {{ article.getCreated | date('m/d/Y') }} | News posted by {{ article.getAuthor }}
+    </div>
+
+    <div class="content">s
+        {% if sumup is defined %}
+            {{ article.getContent | truncate(200) }}
+        {% else %}
+            {{ article.getContent }}
+        {% endif %}
+    </div>
+
+    <div class="footer">
+        {% if sumup is defined %}
+            <div class="comments">
+                <img src="/bundles/andro/images/comment.png" />
+                <a href="{{ path('article_show', { 'id': article.getId, 'slug': article.getSlug }) }}#disqus_thread" data-disqus-identifier="{{ article.getId }}">Comments</a>
+            </div>
+        {% endif %}
+    </div>
+    <div style="clear: left;"></div>
+</div>

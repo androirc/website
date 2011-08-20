@@ -12,22 +12,22 @@
 
 namespace Madalynn\AdminBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Doctrine\ORM\QueryBuilder;
 
 use Madalynn\AndroBundle\Entity\Article;
 use Madalynn\AdminBundle\Form\ArticleType;
 
-class ArticleController extends Controller
+class ArticleController extends CRUDController
 {
-    public function indexAction()
+    protected function prePersist($entity)
     {
-        $em = $this->getDoctrine()->getEntityManager();
+        $user = $this->get('security.context')->getToken()->getUser();
+        $entity->setAuthor($user);
+    }
 
-        $entities = $em->getRepository('AndroBundle:Article')->findAll();
-
-        return $this->render('AdminBundle:Article:index.html.twig', array(
-            'entities' => $entities
-        ));
+    protected function filterQuery(QueryBuilder $qb)
+    {
+        $qb->orderBy('e.created', 'desc');
     }
 
     public function showAction($id)
@@ -39,130 +39,24 @@ class ArticleController extends Controller
             throw $this->createNotFoundException('Unable to find Article entity.');
         }
 
-        $deleteForm = $this->createDeleteForm($id);
-
-        return $this->render('AdminBundle:Article:show.html.twig', array(
-            'entity'      => $entity,
-            'delete_form' => $deleteForm->createView(),
-
-        ));
+        return $this->redirect($this->generateUrl('article_show', array(
+            'id'   => $entity->getId(),
+            'slug' => $entity->getSlug(),
+        )));
     }
 
-    public function newAction()
+    protected function getEntityName()
     {
-        $entity = new Article();
-        $form   = $this->createForm(new ArticleType(), $entity);
-
-        return $this->render('AdminBundle:Article:new.html.twig', array(
-            'entity' => $entity,
-            'form'   => $form->createView()
-        ));
+        return 'Article';
     }
 
-    public function createAction()
+    protected function getForm()
     {
-        $entity  = new Article();
-        $request = $this->getRequest();
-        $form    = $this->createForm(new ArticleType(), $entity);
-
-        $form->bindRequest($request);
-
-        if ($form->isValid()) {
-            $em = $this->getDoctrine()->getEntityManager();
-
-            // we inject the current user
-            $user = $this->get('security.context')->getToken()->getUser();
-            $entity->setAuthor($user);
-
-            $em->persist($entity);
-            $em->flush();
-
-            return $this->redirect($this->generateUrl('admin_article_show', array('id' => $entity->getId())));
-        }
-
-        return $this->render('AdminBundle:Article:new.html.twig', array(
-            'entity' => $entity,
-            'form'   => $form->createView()
-        ));
+        return new ArticleType();
     }
 
-    public function editAction($id)
+    protected function getEntity()
     {
-        $em = $this->getDoctrine()->getEntityManager();
-
-        $entity = $em->getRepository('AndroBundle:Article')->find($id);
-
-        if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Article entity.');
-        }
-
-        $editForm = $this->createForm(new ArticleType(), $entity);
-        $deleteForm = $this->createDeleteForm($id);
-
-        return $this->render('AdminBundle:Article:edit.html.twig', array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
-        ));
-    }
-
-    public function updateAction($id)
-    {
-        $em = $this->getDoctrine()->getEntityManager();
-
-        $entity = $em->getRepository('AndroBundle:Article')->find($id);
-
-        if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Article entity.');
-        }
-
-        $editForm   = $this->createForm(new ArticleType(), $entity);
-        $deleteForm = $this->createDeleteForm($id);
-
-        $request = $this->getRequest();
-
-        $editForm->bindRequest($request);
-
-        if ($editForm->isValid()) {
-            $em->persist($entity);
-            $em->flush();
-
-            return $this->redirect($this->generateUrl('admin_article_edit', array('id' => $id)));
-        }
-
-        return $this->render('AdminBundle:Article:edit.html.twig', array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
-        ));
-    }
-
-    public function deleteAction($id)
-    {
-        $form = $this->createDeleteForm($id);
-        $request = $this->getRequest();
-
-        $form->bindRequest($request);
-
-        if ($form->isValid()) {
-            $em = $this->getDoctrine()->getEntityManager();
-            $entity = $em->getRepository('AndroBundle:Article')->find($id);
-
-            if (!$entity) {
-                throw $this->createNotFoundException('Unable to find Article entity.');
-            }
-
-            $em->remove($entity);
-            $em->flush();
-        }
-
-        return $this->redirect($this->generateUrl('admin_article'));
-    }
-
-    private function createDeleteForm($id)
-    {
-        return $this->createFormBuilder(array('id' => $id))
-                    ->add('id', 'hidden')
-                    ->getForm();
+        return new Article();
     }
 }

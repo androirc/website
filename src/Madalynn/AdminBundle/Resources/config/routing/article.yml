@@ -1,6 +1,8 @@
 admin_article:
-    pattern:  /
-    defaults: { _controller: "AdminBundle:Article:index" }
+    pattern:  /{page}
+    defaults: { _controller: "AdminBundle:Article:index", page: 1 }
+    requirements:
+        page:  \d+
 
 admin_article_show:
     pattern:  /{id}/show
@@ -27,4 +29,3 @@ admin_article_update:
 admin_article_delete:
     pattern:  /{id}/delete
     defaults: { _controller: "AdminBundle:Article:delete" }
-    requirements: { _method: post }

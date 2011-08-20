@@ -15,24 +15,23 @@ namespace Madalynn\AdminBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilder;
 
-class ArticleType extends AbstractType
+class DonatorType extends AbstractType
 {
     public function buildForm(FormBuilder $builder, array $options)
     {
-        $builder->add('title')
-                ->add('content')
-                ->add('visible');
+        $builder->add('name')
+                ->add('amount', 'money', array('currency' => 'USD'));
     }
 
     public function getName()
     {
-        return 'admin_article';
+        return 'admin_donator';
     }
 
     public function getDefaultOptions(array $options)
     {
         return array(
-            'data_class' => 'Madalynn\AndroBundle\Entity\Article',
+            'data_class' => 'Madalynn\AndroBundle\Entity\Donator',
         );
     }
 }
