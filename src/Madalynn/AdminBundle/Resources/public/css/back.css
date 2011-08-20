@@ -49,13 +49,42 @@ textarea {
 }
 
 .record_actions li {
-    background-image: none !important;
-    display: inline !important;
+    display: inline;
     float: left;
-    margin: 0 !important;
-    padding: 0 10px 0 0 !important;
+    padding: 0 10px 0 0;
 }
 
 ul.record_actions {
     margin: 10px 0 0 0 !important;
+}
+
+.records_list {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.records_list th {
+    background-color: #0369a8;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    height: 30px;
+}
+
+.records_list tr{
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #DDD;
+    border-top: 1px solid #DDD;
+}
+
+.records_list td {
+    padding: 6px;
+}
+
+.records_list tr:hover {
+    background-color: #eeeeee;
+}
+
+.records_list li {
+    display: inline;
 }

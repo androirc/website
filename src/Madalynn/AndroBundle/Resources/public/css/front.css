@@ -75,3 +75,25 @@
 .bx-next:hover, .bx-prev:hover {
     background-position: 0 0;
 }
+
+/* Listes */
+
+#page ul {
+    margin: 10px 0 10px 30px;
+}
+
+#page li {
+    list-style-type: none;
+    background-image: url("/bundles/andro/images/puce.png");
+    background-repeat: no-repeat;
+    background-position: 0 -2px;
+    padding-left: 22px;
+    display : list-item;
+    list-style-position:inside;
+    padding-bottom: 2px;
+}
+
+
+#page ol {
+    list-style-type: decimal;
+}
