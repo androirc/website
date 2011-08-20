@@ -17,7 +17,7 @@ use Madalynn\AdminBundle\Form\ArticleType;
 
 class ArticleController extends CRUDController
 {
-    public function postPersist($entity)
+    public function prePersist($entity)
     {
         $user = $this->get('security.context')->getToken()->getUser();
         $entity->setAuthor($user);
