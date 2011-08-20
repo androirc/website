@@ -20,7 +20,7 @@ class DonatorType extends AbstractType
     public function buildForm(FormBuilder $builder, array $options)
     {
         $builder->add('name')
-                ->add('amount');
+                ->add('amount', 'money', array('currency' => 'USD'));
     }
 
     public function getName()
