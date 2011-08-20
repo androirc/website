@@ -14,17 +14,32 @@ namespace Madalynn\AdminBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
+use Pagerfanta\Pagerfanta;
+use Pagerfanta\Adapter\DoctrineORMAdapter;
+
 abstract class CRUDController extends Controller
 {
-    public function indexAction()
+    protected $maxPerPage = 15;
+
+    public function indexAction($page)
     {
         $em = $this->getDoctrine()->getEntityManager();
         $en = $this->getEntityName();
 
-        $entities = $em->getRepository('AndroBundle:' . $en)->findAll();
+        $query = $em->createQuery('SELECT e FROM AndroBundle:' . $en . ' e');
+        $adapter = new DoctrineORMAdapter($query, true);
+
+        $pager = new Pagerfanta($adapter);
+        $pager->setMaxPerPage($this->maxPerPage);
+
+        try {
+            $pager->setCurrentPage($page);
+        } catch (\Exception $e) {
+            throw $this->createNotFoundException('This page does not exist');
+        }
 
         return $this->render('AdminBundle:' . $en . ':index.html.twig', array(
-            'entities' => $entities
+            'pager' => $pager
         ));
     }
 

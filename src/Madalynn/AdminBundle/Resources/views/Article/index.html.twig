@@ -13,7 +13,7 @@
             </tr>
         </thead>
         <tbody>
-        {% for entity in entities %}
+        {% for entity in pager %}
             <tr>
                 <td><a href="{{ path('admin_article_show', { 'id': entity.id }) }}">{{ entity.title }}</a></td>
                 <td>
@@ -42,4 +42,8 @@
     <a class="awesome" href="{{ path('admin_article_new') }}">
         Create a new entry
     </a>
+
+    <div class="paginator">
+        {{ pagerfanta(pager) }}
+    </div>
 {% endblock %}
