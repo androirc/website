@@ -1,7 +1,7 @@
 {% extends "AdminBundle::backend.html.twig" %}
 
 {% block content %}
-    <h1>Article edit</h1>
+    <h1>"{{ entity.title }}" article</h1>
 
     <form action="{{ path('admin_article_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
         {{ form_widget(edit_form) }}
