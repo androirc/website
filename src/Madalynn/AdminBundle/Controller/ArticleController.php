@@ -39,13 +39,10 @@ class ArticleController extends Controller
             throw $this->createNotFoundException('Unable to find Article entity.');
         }
 
-        $deleteForm = $this->createDeleteForm($id);
-
-        return $this->render('AdminBundle:Article:show.html.twig', array(
-            'entity'      => $entity,
-            'delete_form' => $deleteForm->createView(),
-
-        ));
+        return $this->redirect($this->generateUrl('article_show', array(
+            'id'   => $entity->getId(),
+            'slug' => $entity->getSlug()
+        )));
     }
 
     public function newAction()
