@@ -26,6 +26,13 @@ class ArticleType extends AbstractType
 
     public function getName()
     {
-        return 'article';
+        return 'admin_article';
+    }
+
+    public function getDefaultOptions(array $options)
+    {
+        return array(
+            'data_class' => 'Madalynn\AndroBundle\Entity\Article',
+        );
     }
 }
