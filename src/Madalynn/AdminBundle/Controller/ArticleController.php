@@ -121,6 +121,8 @@ class ArticleController extends Controller
             $em->persist($entity);
             $em->flush();
 
+            $this->get('session')->setFlash('notice', 'The item was updated successfully.');
+
             return $this->redirect($this->generateUrl('admin_article_edit', array('id' => $id)));
         }
 
@@ -133,7 +135,7 @@ class ArticleController extends Controller
     public function deleteAction($id)
     {
         $request = $this->getRequest();
-        
+
         $em = $this->getDoctrine()->getEntityManager();
         $entity = $em->getRepository('AndroBundle:Article')->find($id);
 
