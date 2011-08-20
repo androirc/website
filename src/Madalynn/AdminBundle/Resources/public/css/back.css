@@ -82,6 +82,7 @@ ul.record_actions {
 
 .records_list li {
     display: inline;
+    margin-right: 10px;
 }
 
 .records_list ul img {

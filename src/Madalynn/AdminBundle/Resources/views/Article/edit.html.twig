@@ -17,7 +17,7 @@
             </a>
         </li>
         <li>
-            <a class="awesome" href="{{ path('admin_article_delete', { 'id': entity.id }) }}" onclick="confirm('Are you sure?')">
+            <a class="awesome" href="{{ path('admin_article_delete', { 'id': entity.id }) }}" onclick="return confirm('Are you sure?')">
                 Delete
             </a>
         </li>

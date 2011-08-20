@@ -9,7 +9,7 @@
                 <th>Title</th>
                 <th>Visible</th>
                 <th>Created</th>
-                <th>Actions</th>
+                <th width="140px;">Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -28,6 +28,9 @@
                     <ul>
                         <li>
                             <img src="{{ asset('bundles/andro/images/icons/page_edit.png') }}" /> <a href="{{ path('admin_article_edit', { 'id': entity.id }) }}">Edit</a>
+                        </li>
+                        <li>
+                            <img src="{{ asset('bundles/andro/images/icons/cross.png') }}" /> <a onclick="return confirm('Are you sure?')" href="{{ path('admin_article_delete', { 'id': entity.id }) }}">Delete</a>
                         </li>
                     </ul>
                 </td>
