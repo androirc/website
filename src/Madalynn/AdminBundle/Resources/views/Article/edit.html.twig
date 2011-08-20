@@ -17,10 +17,9 @@
             </a>
         </li>
         <li>
-            <form action="{{ path('admin_article_delete', { 'id': entity.id }) }}" method="post">
-                {{ form_widget(delete_form) }}
-                <button type="submit">Delete</button>
-            </form>
+            <a class="awesome" href="{{ path('admin_article_delete', { 'id': entity.id }) }}" onclick="confirm('Are you sure?')">
+                Delete
+            </a>
         </li>
     </ul>
 {% endblock %}

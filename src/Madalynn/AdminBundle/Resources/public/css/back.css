@@ -43,19 +43,14 @@ textarea {
     height: 200px;
 }
 
-.record_actions button {
-    float: none;
-    margin-top: 0;
-}
-
 .record_actions li {
     display: inline;
     float: left;
-    padding: 0 10px 0 0;
+    padding-right: 10px
 }
 
 ul.record_actions {
-    margin: 10px 0 0 0 !important;
+    margin-bottom: 10px;
 }
 
 .records_list {
@@ -87,4 +82,9 @@ ul.record_actions {
 
 .records_list li {
     display: inline;
+}
+
+.records_list ul img {
+    top: 2px;
+    position: relative;
 }

@@ -27,4 +27,3 @@ admin_article_update:
 admin_article_delete:
     pattern:  /{id}/delete
     defaults: { _controller: "AdminBundle:Article:delete" }
-    requirements: { _method: post }

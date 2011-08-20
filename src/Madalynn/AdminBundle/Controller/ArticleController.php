@@ -23,7 +23,8 @@ class ArticleController extends Controller
     {
         $em = $this->getDoctrine()->getEntityManager();
 
-        $entities = $em->getRepository('AndroBundle:Article')->findAll();
+        $query = $em->createQuery('SELECT a FROM Madalynn\AndroBundle\Entity\Article a');
+        $entities = $query->getResult();
 
         return $this->render('AdminBundle:Article:index.html.twig', array(
             'entities' => $entities
@@ -94,12 +95,10 @@ class ArticleController extends Controller
         }
 
         $editForm = $this->createForm(new ArticleType(), $entity);
-        $deleteForm = $this->createDeleteForm($id);
 
         return $this->render('AdminBundle:Article:edit.html.twig', array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
         ));
     }
 
@@ -113,9 +112,7 @@ class ArticleController extends Controller
             throw $this->createNotFoundException('Unable to find Article entity.');
         }
 
-        $editForm   = $this->createForm(new ArticleType(), $entity);
-        $deleteForm = $this->createDeleteForm($id);
-
+        $editForm = $this->createForm(new ArticleType(), $entity);
         $request = $this->getRequest();
 
         $editForm->bindRequest($request);
@@ -130,36 +127,23 @@ class ArticleController extends Controller
         return $this->render('AdminBundle:Article:edit.html.twig', array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
         ));
     }
 
     public function deleteAction($id)
     {
-        $form = $this->createDeleteForm($id);
         $request = $this->getRequest();
+        
+        $em = $this->getDoctrine()->getEntityManager();
+        $entity = $em->getRepository('AndroBundle:Article')->find($id);
 
-        $form->bindRequest($request);
-
-        if ($form->isValid()) {
-            $em = $this->getDoctrine()->getEntityManager();
-            $entity = $em->getRepository('AndroBundle:Article')->find($id);
-
-            if (!$entity) {
-                throw $this->createNotFoundException('Unable to find Article entity.');
-            }
-
-            $em->remove($entity);
-            $em->flush();
+        if (!$entity) {
+            throw $this->createNotFoundException('Unable to find Article entity.');
         }
 
-        return $this->redirect($this->generateUrl('admin_article'));
-    }
+        $em->remove($entity);
+        $em->flush();
 
-    private function createDeleteForm($id)
-    {
-        return $this->createFormBuilder(array('id' => $id))
-                    ->add('id', 'hidden')
-                    ->getForm();
+        return $this->redirect($this->generateUrl('admin_article'));
     }
 }
