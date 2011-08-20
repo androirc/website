@@ -12,23 +12,15 @@
 
 namespace Madalynn\AdminBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-
 use Madalynn\AndroBundle\Entity\Article;
 use Madalynn\AdminBundle\Form\ArticleType;
 
-class ArticleController extends Controller
+class ArticleController extends CRUDController
 {
-    public function indexAction()
+    public function postPersist($entity)
     {
-        $em = $this->getDoctrine()->getEntityManager();
-
-        $query = $em->createQuery('SELECT a FROM Madalynn\AndroBundle\Entity\Article a');
-        $entities = $query->getResult();
-
-        return $this->render('AdminBundle:Article:index.html.twig', array(
-            'entities' => $entities
-        ));
+        $user = $this->get('security.context')->getToken()->getUser();
+        $entity->setAuthor($user);
     }
 
     public function showAction($id)
@@ -42,110 +34,22 @@ class ArticleController extends Controller
 
         return $this->redirect($this->generateUrl('article_show', array(
             'id'   => $entity->getId(),
-            'slug' => $entity->getSlug()
+            'slug' => $entity->getSlug(),
         )));
     }
 
-    public function newAction()
+    protected function getEntityName()
     {
-        $entity = new Article();
-        $form   = $this->createForm(new ArticleType(), $entity);
-
-        return $this->render('AdminBundle:Article:new.html.twig', array(
-            'entity' => $entity,
-            'form'   => $form->createView()
-        ));
+        return 'Article';
     }
 
-    public function createAction()
+    protected function getForm()
     {
-        $entity  = new Article();
-        $request = $this->getRequest();
-        $form    = $this->createForm(new ArticleType(), $entity);
-
-        $form->bindRequest($request);
-
-        if ($form->isValid()) {
-            $em = $this->getDoctrine()->getEntityManager();
-
-            // we inject the current user
-            $user = $this->get('security.context')->getToken()->getUser();
-            $entity->setAuthor($user);
-
-            $em->persist($entity);
-            $em->flush();
-
-            return $this->redirect($this->generateUrl('admin_article_show', array('id' => $entity->getId())));
-        }
-
-        return $this->render('AdminBundle:Article:new.html.twig', array(
-            'entity' => $entity,
-            'form'   => $form->createView()
-        ));
+        return new ArticleType();
     }
 
-    public function editAction($id)
+    protected function getEntity()
     {
-        $em = $this->getDoctrine()->getEntityManager();
-
-        $entity = $em->getRepository('AndroBundle:Article')->find($id);
-
-        if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Article entity.');
-        }
-
-        $editForm = $this->createForm(new ArticleType(), $entity);
-
-        return $this->render('AdminBundle:Article:edit.html.twig', array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
-        ));
-    }
-
-    public function updateAction($id)
-    {
-        $em = $this->getDoctrine()->getEntityManager();
-
-        $entity = $em->getRepository('AndroBundle:Article')->find($id);
-
-        if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Article entity.');
-        }
-
-        $editForm = $this->createForm(new ArticleType(), $entity);
-        $request = $this->getRequest();
-
-        $editForm->bindRequest($request);
-
-        if ($editForm->isValid()) {
-            $em->persist($entity);
-            $em->flush();
-
-            $this->get('session')->setFlash('notice', 'The item was updated successfully.');
-
-            return $this->redirect($this->generateUrl('admin_article_edit', array('id' => $id)));
-        }
-
-        return $this->render('AdminBundle:Article:edit.html.twig', array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
-        ));
-    }
-
-    public function deleteAction($id)
-    {
-        $request = $this->getRequest();
-
-        $em = $this->getDoctrine()->getEntityManager();
-        $entity = $em->getRepository('AndroBundle:Article')->find($id);
-
-        if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Article entity.');
-        }
-
-        $em->remove($entity);
-        $em->flush();
-
-        return $this->redirect($this->generateUrl('admin_article'));
+        return new Article();
     }
 }
