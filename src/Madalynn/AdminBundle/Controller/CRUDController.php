@@ -203,9 +203,9 @@ abstract class CRUDController extends Controller
     {
     }
 
+    abstract protected function getEntity();
+
     abstract protected function getEntityName();
 
     abstract protected function getForm();
-
-    abstract protected function getEntity();
 }

@@ -1,0 +1,25 @@
+{% extends "AdminBundle::backend.html.twig" %}
+
+{% block content %}
+    <h1>"{{ entity.name }}" donator</h1>
+
+    <form action="{{ path('admin_donator_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
+        {{ form_widget(edit_form) }}
+        <p>
+            <button type="submit">Edit</button>
+        </p>
+    </form>
+
+    <ul class="record_actions">
+        <li>
+            <a class="awesome" href="{{ path('admin_donator') }}">
+                Back to the list
+            </a>
+        </li>
+        <li>
+            <a class="awesome" href="{{ path('admin_donator_delete', { 'id': entity.id }) }}" onclick="return confirm('Are you sure?')">
+                Delete
+            </a>
+        </li>
+    </ul>
+{% endblock %}

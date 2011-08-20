@@ -1,0 +1,41 @@
+{% extends "AdminBundle::backend.html.twig" %}
+
+{% block content %}
+    <h1>Donator list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Amount</th>
+                <th width="140px;">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in pager %}
+            <tr>
+                <td><a href="{{ path('admin_donator_show', { 'id': entity.id }) }}">{{ entity.name }}</a></td>
+                <td>{{ entity.amount }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <img src="{{ asset('bundles/andro/images/icons/page_edit.png') }}" /> <a href="{{ path('admin_donator_edit', { 'id': entity.id }) }}">Edit</a>
+                        </li>
+                        <li>
+                            <img src="{{ asset('bundles/andro/images/icons/cross.png') }}" /> <a onclick="return confirm('Are you sure?')" href="{{ path('admin_donator_delete', { 'id': entity.id }) }}">Delete</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a class="awesome" href="{{ path('admin_donator_new') }}">
+        Create a new entry
+    </a>
+
+    <div class="paginator">
+        {{ pagerfanta(pager) }}
+    </div>
+{% endblock %}
