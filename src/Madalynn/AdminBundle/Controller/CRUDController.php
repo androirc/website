@@ -14,6 +14,8 @@ namespace Madalynn\AdminBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
+use Doctrine\ORM\QueryBuilder;
+
 use Pagerfanta\Pagerfanta;
 use Pagerfanta\Adapter\DoctrineORMAdapter;
 
@@ -26,8 +28,12 @@ abstract class CRUDController extends Controller
         $em = $this->getDoctrine()->getEntityManager();
         $en = $this->getEntityName();
 
-        $query = $em->createQuery('SELECT e FROM AndroBundle:' . $en . ' e');
-        $adapter = new DoctrineORMAdapter($query, true);
+        $qb = $em->createQueryBuilder()
+                 ->select('e')
+                 ->from('AndroBundle:' . $en, 'e');
+
+        $this->filterQuery($qb);
+        $adapter = new DoctrineORMAdapter($qb->getQuery(), true);
 
         $pager = new Pagerfanta($adapter);
         $pager->setMaxPerPage($this->maxPerPage);
@@ -177,6 +183,10 @@ abstract class CRUDController extends Controller
         $this->get('session')->setFlash('notice', 'The item was deleted successfully.');
 
         return $this->redirect($this->generateUrl('admin_' . strtolower($en)));
+    }
+
+    protected function filterQuery(QueryBuilder $qb)
+    {
     }
 
     protected function preUpdate($entity)

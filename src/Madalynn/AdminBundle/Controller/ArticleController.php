@@ -12,15 +12,22 @@
 
 namespace Madalynn\AdminBundle\Controller;
 
+use Doctrine\ORM\QueryBuilder;
+
 use Madalynn\AndroBundle\Entity\Article;
 use Madalynn\AdminBundle\Form\ArticleType;
 
 class ArticleController extends CRUDController
 {
-    public function prePersist($entity)
+    protected function prePersist($entity)
     {
         $user = $this->get('security.context')->getToken()->getUser();
         $entity->setAuthor($user);
+    }
+
+    protected function filterQuery(QueryBuilder $qb)
+    {
+        $qb->orderBy('e.created', 'desc');
     }
 
     public function showAction($id)
