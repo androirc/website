@@ -159,6 +159,8 @@ abstract class CRUDController extends Controller
 
         $this->postRemove($entity);
 
+        $this->get('session')->setFlash('notice', 'The item was deleted successfully.');
+
         return $this->redirect($this->generateUrl('admin_' . strtolower($en)));
     }
 
