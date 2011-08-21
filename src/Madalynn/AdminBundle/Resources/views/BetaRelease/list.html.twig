@@ -1,0 +1,43 @@
+{% extends "AdminBundle:Base:list.html.twig" %}
+
+{% block title %}Beta list{% endblock %}
+
+{% block content %}
+  <table class="records_list">
+        <thead>
+            <tr>
+                <th>Version</th>
+                <th>Downloadable</th>
+                <th>Revision</th>
+                <th>Downloads</th>
+                <th width="140px;">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in pager %}
+            <tr>
+                <td><a href="{{ path('admin_beta_release_show', { 'id': entity.id }) }}">{{ entity.version }}</a></td>
+                <td style="text-align: center">
+                    {% if (entity.downloadable) %}
+                        <img src="{{ asset('bundles/andro/images/icons/tick.png') }}" />
+                    {% else %}
+                        <img src="{{ asset('bundles/andro/images/icons/cross.png') }}" />
+                    {% endif %}
+                </td>
+                <td style="text-align: center">{{ entity.revision }}</td>
+                <td style="text-align: center">{{ entity.downloads | length }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <img src="{{ asset('bundles/andro/images/icons/page_edit.png') }}" /> <a href="{{ path('admin_beta_release_edit', { 'id': entity.id }) }}">Edit</a>
+                        </li>
+                        <li>
+                            <img src="{{ asset('bundles/andro/images/icons/cross.png') }}" /> <a onclick="return confirm('Are you sure?')" href="{{ path('admin_beta_release_delete', { 'id': entity.id }) }}">Delete</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

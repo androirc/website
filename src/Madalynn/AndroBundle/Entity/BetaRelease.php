@@ -13,6 +13,7 @@
 namespace Madalynn\AndroBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="Madalynn\AndroBundle\Repository\BetaReleaseRepository")
@@ -47,6 +48,11 @@ class BetaRelease
      * @ORM\Column(length=255)
      */
     protected $path;
+
+    /**
+     * @Assert\File(maxSize="6000000")
+     */
+    public $file;
 
     /**
      * @ORM\Column(type="integer")
@@ -136,26 +142,6 @@ class BetaRelease
     }
 
     /**
-     * Set path
-     *
-     * @param string $path
-     */
-    public function setPath($path)
-    {
-        $this->path = $path;
-    }
-
-    /**
-     * Get path
-     *
-     * @return string
-     */
-    public function getPath()
-    {
-        return $this->path;
-    }
-
-    /**
      * Set revision
      *
      * @param integer $revision
@@ -173,6 +159,26 @@ class BetaRelease
     public function getRevision()
     {
         return $this->revision;
+    }
+
+    /**
+     * Set path
+     *
+     * @param string $path
+     */
+    public function setPath($path)
+    {
+        $this->path = $path;
+    }
+
+    /**
+     * Get path
+     *
+     * @return string
+     */
+    public function getPath()
+    {
+        return $this->path;
     }
 
     /**
@@ -233,5 +239,57 @@ class BetaRelease
     public function getDownloads()
     {
         return $this->downloads;
+    }
+
+    public function getAbsolutePath()
+    {
+        return null === $this->path ? null : $this->getUploadRootDir().'/' . $this->path;
+    }
+
+    protected function getUploadRootDir()
+    {
+        return __DIR__ . '/../../../../web/' . $this->getUploadDir();
+    }
+
+    protected function getUploadDir()
+    {
+        return 'uploads/betas';
+    }
+
+    /**
+     * @ORM\PrePersist()
+     * @ORM\PreUpdate()
+     */
+    public function preUpload()
+    {
+        if (null !== $this->file) {
+            $this->setPath($this->getRevision() . '.apk');
+        }
+    }
+
+    /**
+     * @ORM\PostRemove()
+     */
+    public function removeUpload()
+    {
+        if ($file = $this->getAbsolutePath()) {
+            @unlink($file);
+        }
+    }
+
+    /**
+     * @ORM\PostPersist()
+     * @ORM\PostUpdate()
+     */
+    public function upload()
+    {
+        if (null === $this->file) {
+            return;
+        }
+
+        $this->file->move($this->getUploadRootDir(), $this->getPath());
+
+        $this->path = $this->file->getClientOriginalName();
+        unset($this->file);
     }
 }

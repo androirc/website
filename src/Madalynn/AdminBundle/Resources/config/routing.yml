@@ -12,3 +12,8 @@ admin_base_article:
 admin_base_donator:
     resource: 'routing/donator.yml'
     prefix:   /donator
+
+# Beta Release
+admin_base_beta_release:
+    resource: 'routing/beta_release.yml'
+    prefix:   /beta

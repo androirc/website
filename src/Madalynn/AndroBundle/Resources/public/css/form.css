@@ -48,7 +48,7 @@ form p:hover label:after {
     content: " »";
 }
 
-input[type=text], input[type=password], textarea {
+input[type=text], input[type=number], input[type=password], textarea {
     background: rgba(255, 255, 255, 0.9);
     background:-moz-linear-gradient(90deg, #fff, #eee);
     background:-webkit-gradient(linear, left top, left bottom, from(#eee), to(#fff), color-stop(0.2, #fff));
