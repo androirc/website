@@ -15,7 +15,7 @@
         {% for entity in pager %}
             <tr>
                 <td><a href="{{ path('admin_donator_show', { 'id': entity.id }) }}">{{ entity.name }}</a></td>
-                <td>${{ entity.amount }}</td>
+                <td style="text-align: center">${{ entity.amount }}</td>
                 <td>
                     <ul>
                         <li>

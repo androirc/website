@@ -17,15 +17,15 @@
             {% for entity in pager %}
             <tr>
                 <td><a href="{{ path('admin_article_show', { 'id' : entity.id }) }}">{{ entity.title }}</a></td>
-                <td>
+                <td style="text-align: center">
                     {% if (entity.visible) %}
                         <img src="{{ asset('bundles/andro/images/icons/tick.png') }}" />
                     {% else %}
                         <img src="{{ asset('bundles/andro/images/icons/cross.png') }}" />
                     {% endif %}
                 </td>
-                <td>{{ entity.author }}</td>
-                <td>{{ entity.created | date('Y-m-d') }}</td>
+                <td style="text-align: center">{{ entity.author }}</td>
+                <td style="text-align: center">{{ entity.created | date('Y-m-d') }}</td>
                 <td>
                     <ul>
                         <li>
