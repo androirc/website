@@ -263,7 +263,7 @@ class BetaRelease
     public function preUpload()
     {
         if (null !== $this->file) {
-            $this->setPath($this->getRevision() . '.apk');
+            $this->setPath($this->file->getClientOriginalName());
         }
     }
 

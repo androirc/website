@@ -52,12 +52,12 @@ class BetaController extends MobileController
         $em->persist($download);
         $em->flush();
 
-        $response = new Response(@readfile($beta->getPath()));
+        $response = new Response(@readfile($beta->getAbsolutePath()));
 
         $response->headers->set('Content-Type', 'application/vnd.android.package-archive');
-        $response->headers->set('Content-Disposition', 'attachment; filename="' . basename($beta->getPath()).'"');
+        $response->headers->set('Content-Disposition', 'attachment; filename="' . basename($beta->getAbsolutePath()).'"');
         $response->headers->set('Content-Transfer-Encoding', 'binary');
-        $response->headers->set('Content-Length', filesize($beta->getPath()));
+        $response->headers->set('Content-Length', filesize($beta->getAbsolutePath()));
 
         return $response;
     }
