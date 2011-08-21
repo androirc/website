@@ -242,7 +242,7 @@ abstract class CRUDController extends Controller
                 throw new \Exception(sprintf('Unable to find the bundle for the %s entity.', $class));
             }
 
-           $this->repositoryName = $name . ':' . $this->getEntityName();
+            $this->repositoryName = $name . ':' . $this->getEntityName();
         }
 
         return $this->getDoctrine()->getRepository($this->repositoryName);
