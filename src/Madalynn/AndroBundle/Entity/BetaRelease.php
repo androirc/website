@@ -41,7 +41,7 @@ class BetaRelease
     /**
      * @ORM\Column(type="boolean")
      */
-    protected $is_downloadable;
+    protected $downloadable;
 
     /**
      * @ORM\Column(length=255)
@@ -116,23 +116,23 @@ class BetaRelease
     }
 
     /**
-     * Set is_downloadable
+     * Set downloadable
      *
      * @param boolean $isDownloadable
      */
-    public function setIsDownloadable($isDownloadable)
+    public function setDownloadable($isDownloadable)
     {
-        $this->is_downloadable = $isDownloadable;
+        $this->downloadable = $isDownloadable;
     }
 
     /**
-     * Get is_downloadable
+     * Get downloadable
      *
      * @return boolean
      */
-    public function getIsDownloadable()
+    public function isDownloadable()
     {
-        return $this->is_downloadable;
+        return $this->downloadable;
     }
 
     /**

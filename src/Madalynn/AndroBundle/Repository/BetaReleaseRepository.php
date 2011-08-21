@@ -20,7 +20,7 @@ class BetaReleaseRepository extends EntityRepository
     public function getLastBeta()
     {
         $query = $this->createQueryBuilder('b')
-                      ->where('b.is_downloadable = true')
+                      ->where('b.downloadable = true')
                       ->orderBy('b.created', 'desc')
                       ->getQuery()
                       ->setMaxResults(1);
