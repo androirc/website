@@ -83,7 +83,7 @@ abstract class CRUDController extends Controller
 
             $this->postPersist($entity);
 
-            return $this->redirect($this->generateUrl('admin_' . $this->urlize($en) . '_edit', array(
+            return $this->redirect($this->generateUrl('admin_' . $this->underscore($en) . '_edit', array(
                 'id' => $entity->getId()
             )));
         }
@@ -137,7 +137,7 @@ abstract class CRUDController extends Controller
 
             $this->get('session')->setFlash('notice', 'The item was updated successfully.');
 
-            return $this->redirect($this->generateUrl('admin_' . $this->urlize($en) . '_edit', array(
+            return $this->redirect($this->generateUrl('admin_' . $this->underscore($en) . '_edit', array(
                 'id' => $id
             )));
         }
@@ -169,44 +169,17 @@ abstract class CRUDController extends Controller
 
         $this->get('session')->setFlash('notice', 'The item was deleted successfully.');
 
-        return $this->redirect($this->generateUrl('admin_' . $this->urlize($en) . '_list'));
+        return $this->redirect($this->generateUrl('admin_' . $this->underscore($en) . '_list'));
     }
 
-    /**
-     * @param QueryBuilder $qb
-     */
-    protected function filterQuery(QueryBuilder $qb)
+    protected function camelize($id)
     {
-        $qb->orderBy('e.id', 'desc');
+        return preg_replace_callback('/(^|_|\.)+(.)/', function ($match) { return ('.' === $match[1] ? '_' : '').strtoupper($match[2]); }, $id);
     }
 
-    protected function preUpdate($entity)
+    protected function underscore($id)
     {
-    }
-
-    protected function postUpdate($entity)
-    {
-    }
-
-    protected function prePersist($entity)
-    {
-    }
-
-    protected function postPersist($entity)
-    {
-    }
-
-    protected function preRemove($entity)
-    {
-    }
-
-    protected function postRemove($entity)
-    {
-    }
-
-    protected function urlize($word, $sep = '_')
-    {
-        return strtolower(preg_replace('/[^a-z0-9_]/i', $sep.'$1', $word));
+        return strtolower(preg_replace(array('/([A-Z]+)([A-Z][a-z])/', '/([a-z\d])([A-Z])/'), array('\\1_\\2', '\\1_\\2'), strtr($id, '_', '.')));
     }
 
     protected function getEntityName()
@@ -253,9 +226,38 @@ abstract class CRUDController extends Controller
 
     public function render($view, array $parameters = array(), Response $response = null)
     {
-        $parameters['entity_name'] = $this->urlize($this->getEntityName());
+        $parameters['entity_name'] = $this->underscore($this->getEntityName());
 
         return $this->container->get('templating')->renderResponse($view, $parameters, $response);
+    }
+
+    protected function filterQuery(QueryBuilder $qb)
+    {
+        $qb->orderBy('e.id', 'desc');
+    }
+
+    protected function preUpdate($entity)
+    {
+    }
+
+    protected function postUpdate($entity)
+    {
+    }
+
+    protected function prePersist($entity)
+    {
+    }
+
+    protected function postPersist($entity)
+    {
+    }
+
+    protected function preRemove($entity)
+    {
+    }
+
+    protected function postRemove($entity)
+    {
     }
 
     abstract protected function getClass();
