@@ -10,6 +10,8 @@
     </a>
 
     <div class="paginator">
-        {{ pagerfanta(pager) }}
+        {% if pager.haveToPaginate %}
+            {{ pagerfanta(pager) }}
+        {% endif %}
     </div>
 {% endblock %}
