@@ -3,7 +3,7 @@
         <a href="{{ path('admin_article_edit', { 'id': article.id }) }}"><img style="float: right;" src="{{ asset('bundles/andro/images/icons/page_edit.png') }}" /></a>
     {% endif %}
     <div class="title">
-        <a href="{{ path('article_show', { 'id': article.getId, 'slug': article.getSlug }) }}">{{ article.getTitle }}</a>
+        <a href="{{ andro_url_article(article) }}">{{ article.getTitle }}</a>
     </div>
     <div class="by">
         {{ article.getCreated | date('m/d/Y') }} | News posted by {{ article.getAuthor }}
@@ -15,7 +15,7 @@
 
     <div class="footer">
         <div class="share addthis_toolbox addthis_default_style"
-             addthis:url="{{ url('article_show', { 'id': article.getId, 'slug': article.getSlug }) }}"
+             addthis:url="{{ andro_url_article(article, true) }} }}"
              addthis:title="{{ article.getTitle }} - AndroIRC (Android IRC Client)">
 
             <a class="addthis_counter addthis_pill_style"></a>
@@ -26,7 +26,7 @@
         {% if sumup is defined %}
             <div class="comments">
                 <img src="/bundles/andro/images/comment.png" />
-                <a href="{{ path('article_show', { 'id': article.getId, 'slug': article.getSlug }) }}#disqus_thread" data-disqus-identifier="{{ article.getId }}">Comments</a>
+                <a href="{{ andro_url_article(article) }}#disqus_thread" data-disqus-identifier="{{ article.getId }}">Comments</a>
             </div>
         {% endif %}
     </div>
