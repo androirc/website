@@ -46,10 +46,6 @@ class Admob
      */
     public function __construct(Session $session, $publisherId, $analyticsId, $adRequest = true, $analyticsRequest = false, $testMode = true, array $options = array())
     {
-        if (false === function_exists('curl_init')) {
-            throw new \Exception('AdmobBundle needs the curl extension.');
-        }
-
         $this->session = $session;
         $this->publisherId = $publisherId;
         $this->analyticsId = $analyticsId;
@@ -70,6 +66,10 @@ class Admob
      */
     public function render(Request $request)
     {
+        if (false === function_exists('curl_init')) {
+            throw new \Exception('AdmobBundle needs the curl extension.');
+        }
+
         $this->pixelSent = false;
         $analyticsMode = false;
         $adMode = false;
