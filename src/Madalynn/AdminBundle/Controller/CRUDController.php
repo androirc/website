@@ -22,17 +22,15 @@ use Pagerfanta\Adapter\DoctrineORMAdapter;
 abstract class CRUDController extends Controller
 {
     protected $maxPerPage = 15;
+    protected $repositoryName;
+    protected $entityName;
 
     public function indexAction($page)
     {
-        $em = $this->getDoctrine()->getEntityManager();
-        $en = $this->getEntityName();
-
-        $qb = $em->createQueryBuilder()
-                 ->select('e')
-                 ->from('AndroBundle:' . $en, 'e');
-
+        // Filter Doctrine Query
+        $qb = $this->getRepository()->createQueryBuilder('e');
         $this->filterQuery($qb);
+
         $adapter = new DoctrineORMAdapter($qb->getQuery(), true);
 
         $pager = new Pagerfanta($adapter);
@@ -44,20 +42,18 @@ abstract class CRUDController extends Controller
             throw $this->createNotFoundException('This page does not exist');
         }
 
-        return $this->render('AdminBundle:' . $en . ':index.html.twig', array(
+        return $this->render('AdminBundle:' . $this->getEntityName() . ':index.html.twig', array(
             'pager' => $pager
         ));
     }
 
     public function showAction($id)
     {
-        $em = $this->getDoctrine()->getEntityManager();
-        $en = $this->getEntityName();
-
-        $entity = $em->getRepository('AndroBundle:' . $en)->find($id);
+        $en     = $this->getEntityName();
+        $entity = $this->getRepository()->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find ' . $en . ' entity.');
+            throw $this->createNotFoundException(sprintf('Unable to find %s entity.', $en));
         }
 
         return $this->render('AdminBundle:' . $en . ':show.html.twig', array(
@@ -95,7 +91,7 @@ abstract class CRUDController extends Controller
 
             $this->postPersist($entity);
 
-            return $this->redirect($this->generateUrl('admin_' . strtolower($en) . '_edit', array(
+            return $this->redirect($this->generateUrl('admin_' . $this->urlize($en) . '_edit', array(
                 'id' => $entity->getId()
             )));
         }
@@ -108,10 +104,8 @@ abstract class CRUDController extends Controller
 
     public function editAction($id)
     {
-        $em = $this->getDoctrine()->getEntityManager();
-        $en = $this->getEntityName();
-
-        $entity = $em->getRepository('AndroBundle:' . $en)->find($id);
+        $en     = $this->getEntityName();
+        $entity = $this->getRepository()->find($id);
 
         if (!$entity) {
             throw $this->createNotFoundException(sprintf('Unable to find %s entity.', $en));
@@ -127,10 +121,8 @@ abstract class CRUDController extends Controller
 
     public function updateAction($id)
     {
-        $em = $this->getDoctrine()->getEntityManager();
-        $en = $this->getEntityName();
-
-        $entity = $em->getRepository('AndroBundle:' . $en)->find($id);
+        $en     = $this->getEntityName();
+        $entity = $this->getRepository()->find($id);
 
         if (!$entity) {
             throw $this->createNotFoundException(sprintf('Unable to find %s entity.', $en));
@@ -142,6 +134,8 @@ abstract class CRUDController extends Controller
         $editForm->bindRequest($request);
 
         if ($editForm->isValid()) {
+            $em = $this->getDoctrine()->getEntityManager();
+
             $this->preUpdate($entity);
 
             $em->persist($entity);
@@ -151,7 +145,7 @@ abstract class CRUDController extends Controller
 
             $this->get('session')->setFlash('notice', 'The item was updated successfully.');
 
-            return $this->redirect($this->generateUrl('admin_' . strtolower($en) . '_edit', array(
+            return $this->redirect($this->generateUrl('admin_' . $this->urlize($en) . '_edit', array(
                 'id' => $id
             )));
         }
@@ -165,13 +159,14 @@ abstract class CRUDController extends Controller
     public function deleteAction($id)
     {
         $request = $this->getRequest();
-        $em      = $this->getDoctrine()->getEntityManager();
         $en      = $this->getEntityName();
-        $entity  = $em->getRepository('AndroBundle:' . $en)->find($id);
+        $entity  = $this->getRepository()->find($id);
 
         if (!$entity) {
             throw $this->createNotFoundException(sprintf('Unable to find %s entity.', $en));
         }
+
+        $em = $this->getDoctrine()->getEntityManager();
 
         $this->preRemove($entity);
 
@@ -182,7 +177,7 @@ abstract class CRUDController extends Controller
 
         $this->get('session')->setFlash('notice', 'The item was deleted successfully.');
 
-        return $this->redirect($this->generateUrl('admin_' . strtolower($en)));
+        return $this->redirect($this->generateUrl('admin_' . $this->urlize($en)));
     }
 
     protected function filterQuery(QueryBuilder $qb)
@@ -213,9 +208,54 @@ abstract class CRUDController extends Controller
     {
     }
 
-    abstract protected function getEntity();
+    protected function urlize($word, $sep = '_')
+    {
+        return strtolower(preg_replace('/[^a-z0-9_]/i', $sep.'$1', $word));
+    }
 
-    abstract protected function getEntityName();
+    protected function getEntityName()
+    {
+        if ($this->entityName) {
+            return $this->entityName;
+        }
+
+        $class = $this->getClass();
+
+        return $this->entityName = substr($class, strrpos($class, '\\') + 1);
+    }
+
+    protected function getRepository()
+    {
+        if (!$this->repositoryName) {
+            $bundles = $this->get('kernel')->getBundles();
+            $class   = $this->getClass();
+            $name    = '';
+
+            foreach ($bundles as $bundle) {
+                if (0 === strpos($class, $bundle->getNamespace())) {
+                    $name = $bundle->getName();
+                    break;
+                }
+            }
+
+            if (!$name) {
+                throw new \Exception(sprintf('Unable to find the bundle for the %s entity.', $class));
+            }
+
+           $this->repositoryName = $name . ':' . $this->getEntityName();
+        }
+
+        return $this->getDoctrine()->getRepository($this->repositoryName);
+    }
+
+    protected function getEntity()
+    {
+        $reflexion = new \ReflectionClass($this->getClass());
+
+        return $reflexion->newInstance();
+    }
+
+    abstract protected function getClass();
 
     abstract protected function getForm();
 }

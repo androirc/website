@@ -12,23 +12,17 @@
 
 namespace Madalynn\AdminBundle\Controller;
 
-use Madalynn\AndroBundle\Entity\Donator;
 use Madalynn\AdminBundle\Form\DonatorType;
 
 class DonatorController extends CRUDController
 {
-    protected function getEntityName()
-    {
-        return 'Donator';
-    }
-
     protected function getForm()
     {
         return new DonatorType();
     }
 
-    protected function getEntity()
+    protected function getClass()
     {
-        return new Donator();
+        return 'Madalynn\AndroBundle\Entity\Donator';
     }
 }

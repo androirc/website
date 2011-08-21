@@ -14,7 +14,6 @@ namespace Madalynn\AdminBundle\Controller;
 
 use Doctrine\ORM\QueryBuilder;
 
-use Madalynn\AndroBundle\Entity\Article;
 use Madalynn\AdminBundle\Form\ArticleType;
 
 class ArticleController extends CRUDController
@@ -45,18 +44,13 @@ class ArticleController extends CRUDController
         )));
     }
 
-    protected function getEntityName()
+    protected function getClass()
     {
-        return 'Article';
+        return 'Madalynn\AndroBundle\Entity\Article';
     }
 
     protected function getForm()
     {
         return new ArticleType();
-    }
-
-    protected function getEntity()
-    {
-        return new Article();
     }
 }
