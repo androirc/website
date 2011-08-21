@@ -183,6 +183,7 @@ abstract class CRUDController extends Controller
 
     protected function filterQuery(QueryBuilder $qb)
     {
+        $qb->orderBy('e.id', 'desc');
     }
 
     protected function preUpdate($entity)
