@@ -31,8 +31,7 @@ class ArticleController extends CRUDController
 
     public function showAction($id)
     {
-        $em = $this->getDoctrine()->getEntityManager();
-        $entity = $em->getRepository('AndroBundle:Article')->find($id);
+        $entity = $this->getRepository()->find($id);
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Article entity.');
