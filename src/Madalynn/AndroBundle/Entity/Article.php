@@ -13,6 +13,8 @@
 namespace Madalynn\AndroBundle\Entity;
 
 use Madalynn\AndroBundle\Helper\StringHelper;
+
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -31,6 +33,8 @@ class Article
 
     /**
      * @ORM\Column(length=255)
+     *
+     * @Assert\NotBlank
      */
     protected $title;
 
@@ -46,6 +50,8 @@ class Article
 
     /**
      * @ORM\Column(type="text")
+     *
+     * @Assert\NotBlank
      */
     protected $content;
 

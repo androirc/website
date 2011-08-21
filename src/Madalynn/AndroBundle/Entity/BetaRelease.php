@@ -31,6 +31,8 @@ class BetaRelease
 
     /**
      * @ORM\Column(length=100)
+     *
+     * @Assert\NotBlank
      */
     protected $version;
 
@@ -46,6 +48,8 @@ class BetaRelease
 
     /**
      * @ORM\Column(length=255)
+     *
+     * @Assert\NotBlank
      */
     protected $path;
 
@@ -56,6 +60,8 @@ class BetaRelease
 
     /**
      * @ORM\Column(type="integer")
+     *
+     * @Assert\NotBlank
      */
     protected $revision;
 
