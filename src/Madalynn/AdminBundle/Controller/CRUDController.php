@@ -83,6 +83,8 @@ abstract class CRUDController extends Controller
 
             $this->postPersist($entity);
 
+            $this->get('session')->setFlash('notice', 'The item was created successfully.');
+
             return $this->redirect($this->generateUrl('admin_' . $this->underscore($en) . '_edit', array(
                 'id' => $entity->getId()
             )));
