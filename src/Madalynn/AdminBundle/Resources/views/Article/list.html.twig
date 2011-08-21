@@ -8,6 +8,7 @@
             <tr>
                 <th>Title</th>
                 <th>Visible</th>
+                <th>Author</th>
                 <th>Created</th>
                 <th width="140px;">Actions</th>
             </tr>
@@ -23,6 +24,7 @@
                         <img src="{{ asset('bundles/andro/images/icons/cross.png') }}" />
                     {% endif %}
                 </td>
+                <td>{{ entity.author }}</td>
                 <td>{{ entity.created | date('Y-m-d') }}</td>
                 <td>
                     <ul>

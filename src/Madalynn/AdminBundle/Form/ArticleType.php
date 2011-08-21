@@ -21,7 +21,7 @@ class ArticleType extends AbstractType
     {
         $builder->add('title')
                 ->add('content')
-                ->add('visible');
+                ->add('visible', null, array('required' => false));
     }
 
     public function getName()
