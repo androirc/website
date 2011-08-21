@@ -1,6 +1,6 @@
-admin_donator:
+admin_donator_list:
     pattern:  /{page}
-    defaults: { _controller: "AdminBundle:Donator:index", page: 1 }
+    defaults: { _controller: "AdminBundle:Donator:list", page: 1 }
     requirements:
         page:  \d+
 

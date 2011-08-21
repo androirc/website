@@ -1,6 +1,6 @@
-admin_article:
+admin_article_list:
     pattern:  /{page}
-    defaults: { _controller: "AdminBundle:Article:index", page: 1 }
+    defaults: { _controller: "AdminBundle:Article:list", page: 1 }
     requirements:
         page:  \d+
 

@@ -1,0 +1,15 @@
+{% extends "AdminBundle::backend.html.twig" %}
+
+{% block page %}
+    <h1>{{ block('title') }}</h1>
+
+    {% block content %}{% endblock %}
+
+    <a class="awesome" href="{{ path('admin_' ~ entity_name ~ '_new') }}">
+        Create a new entry
+    </a>
+
+    <div class="paginator">
+        {{ pagerfanta(pager) }}
+    </div>
+{% endblock %}

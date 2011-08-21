@@ -23,8 +23,8 @@
 {% block menu %}
     {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
          <ul>
-            <li><a href="{{ path('admin_article') }}">Article</a></li>
-            <li><a href="{{ path('admin_donator') }}">Donator</a></li>
+            <li><a href="{{ path('admin_article_list') }}">Article</a></li>
+            <li><a href="{{ path('admin_donator_list') }}">Donator</a></li>
             <li><a href="{{ path('homepage') }}">User</a></li>
             <li><a href="{{ path('homepage') }}">Beta</a></li>
             <li><a href="{{ path('homepage') }}">Tip</a></li>
@@ -35,8 +35,4 @@
             <li class="last"><a href="{{ path('donate') }}">Logout</a></li>
         </ul>
     {% endif %}
-{% endblock %}
-
-{% block page %}
-    {% block content %}{% endblock %}
 {% endblock %}

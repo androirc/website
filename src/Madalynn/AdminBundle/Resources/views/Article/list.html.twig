@@ -1,8 +1,8 @@
-{% extends "AdminBundle::backend.html.twig" %}
+{% extends "AdminBundle:Base:list.html.twig" %}
+
+{% block title %}Article list{% endblock %}
 
 {% block content %}
-    <h1>Article list</h1>
-
     <table class="records_list">
         <thead>
             <tr>
@@ -13,17 +13,17 @@
             </tr>
         </thead>
         <tbody>
-        {% for entity in pager %}
+            {% for entity in pager %}
             <tr>
-                <td><a href="{{ path('admin_article_show', { 'id': entity.id }) }}">{{ entity.title }}</a></td>
+                <td><a href="{{ path('admin_article_show', { 'id' : entity.id }) }}">{{ entity.title }}</a></td>
                 <td>
-                {% if (entity.visible) %}
-                    <img src="{{ asset('bundles/andro/images/icons/tick.png') }}" />
-                {% else %}
-                    <img src="{{ asset('bundles/andro/images/icons/cross.png') }}" />
-                {% endif %}
+                    {% if (entity.visible) %}
+                        <img src="{{ asset('bundles/andro/images/icons/tick.png') }}" />
+                    {% else %}
+                        <img src="{{ asset('bundles/andro/images/icons/cross.png') }}" />
+                    {% endif %}
                 </td>
-                <td>{{ entity.created |date('Y-m-d') }}</td>
+                <td>{{ entity.created | date('Y-m-d') }}</td>
                 <td>
                     <ul>
                         <li>
@@ -35,15 +35,7 @@
                     </ul>
                 </td>
             </tr>
-        {% endfor %}
+            {% endfor %}
         </tbody>
     </table>
-
-    <a class="awesome" href="{{ path('admin_article_new') }}">
-        Create a new entry
-    </a>
-
-    <div class="paginator">
-        {{ pagerfanta(pager) }}
-    </div>
 {% endblock %}

@@ -13,6 +13,7 @@
 namespace Madalynn\AdminBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Response;
 
 use Doctrine\ORM\QueryBuilder;
 
@@ -25,7 +26,7 @@ abstract class CRUDController extends Controller
     protected $repositoryName;
     protected $entityName;
 
-    public function indexAction($page)
+    public function listAction($page)
     {
         // Filter Doctrine Query
         $qb = $this->getRepository()->createQueryBuilder('e');
@@ -42,7 +43,7 @@ abstract class CRUDController extends Controller
             throw $this->createNotFoundException('This page does not exist');
         }
 
-        return $this->render('AdminBundle:' . $this->getEntityName() . ':index.html.twig', array(
+        return $this->render('AdminBundle:' . $this->getEntityName() . ':list.html.twig', array(
             'pager' => $pager
         ));
     }
@@ -177,7 +178,7 @@ abstract class CRUDController extends Controller
 
         $this->get('session')->setFlash('notice', 'The item was deleted successfully.');
 
-        return $this->redirect($this->generateUrl('admin_' . $this->urlize($en)));
+        return $this->redirect($this->generateUrl('admin_' . $this->urlize($en) . '_list'));
     }
 
     protected function filterQuery(QueryBuilder $qb)
@@ -253,6 +254,13 @@ abstract class CRUDController extends Controller
         $reflexion = new \ReflectionClass($this->getClass());
 
         return $reflexion->newInstance();
+    }
+
+    public function render($view, array $parameters = array(), Response $response = null)
+    {
+        $parameters['entity_name'] = $this->urlize($this->getEntityName());
+
+        return $this->container->get('templating')->renderResponse($view, $parameters, $response);
     }
 
     abstract protected function getClass();
