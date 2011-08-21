@@ -181,6 +181,9 @@ abstract class CRUDController extends Controller
         return $this->redirect($this->generateUrl('admin_' . $this->urlize($en) . '_list'));
     }
 
+    /**
+     * @param QueryBuilder $qb
+     */
     protected function filterQuery(QueryBuilder $qb)
     {
         $qb->orderBy('e.id', 'desc');
