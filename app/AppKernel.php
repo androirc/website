@@ -25,14 +25,12 @@ class AppKernel extends Kernel
             new Symfony\Bundle\DoctrineFixturesBundle\DoctrineFixturesBundle(),
             new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
-            new FOS\UserBundle\FOSUserBundle(),
             new Ornicar\AkismetBundle\OrnicarAkismetBundle(),
             new WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle(),
 
             new Madalynn\AdmobBundle\MadalynnAdmobBundle(),
             new Madalynn\DeployBundle\MadalynnDeployBundle(),
             new Madalynn\AndroBundle\AndroBundle(),
-            new Madalynn\UserBundle\UserBundle(),
             new Madalynn\AdminBundle\AdminBundle(),
         );
 
