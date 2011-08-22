@@ -122,7 +122,9 @@ class MainController extends MobileController
             return new Reponse('No tips to display');
         }
 
-        return new Response($tip->getContent());
+        return new Response($tip->getContent(), 200, array(
+            'X-AndroIRC' => uniqid()
+        ));
     }
 
     public function quickstartAction($version, $lang)
@@ -132,8 +134,11 @@ class MainController extends MobileController
 
         $quickstart = $repo->findByVersion($version, $lang);
 
+        $response = new Response();
+        $response->headers->set('X-AndroIRC', uniqid());
+
         return $this->render('AndroBundle:Basic:quickstart.html.twig', array(
             'quickstart' => $quickstart
-        ));
+        ), $response);
     }
 }
