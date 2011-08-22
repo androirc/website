@@ -36,7 +36,7 @@ class Location
         }
 
         $browser = new Browser();
-        $this->location = $browser->get('http://geoip.wtanaka.com/cc/' . $this->ip);
+        $this->location = $browser->get('http://geoip.wtanaka.com/cc/' . $this->ip)->getContent();
 
         return $this->location;
     }
