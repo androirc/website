@@ -30,10 +30,10 @@ abstract class AbstractController extends Controller
         return $user instanceof User ? $user : null;
     }
 
-    public function isSuperAdmin()
+    public function isAdmin()
     {
         $user = $this->getUser();
 
-        return null !== $user && true === $user->isSuperAdmin();
+        return null !== $user && true === $user->isAdmin();
     }
 }

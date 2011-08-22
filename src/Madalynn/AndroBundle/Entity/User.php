@@ -309,6 +309,25 @@ class User implements UserInterface
     }
 
     /**
+     * @param string $role
+     */
+    public function hasRole($role)
+    {
+        foreach ($this->userRoles as $role) {
+            if ($role == $role->getRole()) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public function isAdmin()
+    {
+        return $this->hasRole('ROLE_ADMIN');
+    }
+
+    /**
      * @param Madalynn\AndroBundle\Entity\Role $role
      */
     public function removeUserRole($role)

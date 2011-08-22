@@ -1,5 +1,5 @@
 <div class="article {% if (false == article.isVisible) %} not_visible{% endif %}">
-    {% if app.user and app.user.isSuperAdmin %}
+    {% if app.user and app.user.isAdmin %}
         <a href="{{ path('admin_article_edit', { 'id': article.id }) }}"><img style="float: right;" src="{{ asset('bundles/andro/images/icons/page_edit.png') }}" /></a>
     {% endif %}
     <div class="title">
