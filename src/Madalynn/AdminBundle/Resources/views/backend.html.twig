@@ -22,7 +22,8 @@
 
 {% block menu %}
     {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
-         <ul>
+        <ul>
+            <li><a href="{{ path('homepage') }}">Frontend</a></li>
             <li><a href="{{ path('admin_article_list') }}">Article</a></li>
             <li><a href="{{ path('admin_donator_list') }}">Donator</a></li>
             <li><a href="{{ path('homepage') }}">User</a></li>
