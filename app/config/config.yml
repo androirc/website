@@ -37,6 +37,11 @@ security:
                 failure_path:   null
             logout:       true
             anonymous:    true
+            remember_me:
+                key:      %secret%
+                lifetime: 3600
+                path:     /
+                domain:   ~
     access_control:
         - { path: ^/admin/, role: ROLE_ADMIN }
     role_hierarchy:
