@@ -17,8 +17,13 @@ framework:
 # Security Configuration
 security:
     providers:
-        fos_userbundle:
-            id: fos_user.user_manager
+        main:
+            entity: { class: Madalynn\AndroBundle\Entity\User, property: username }
+    encoders:
+        Madalynn\AndroBundle\Entity\User:
+            algorithm: sha512
+            encode-as-base64: true
+            iterations: 10
     firewalls:
         dev:
             pattern:  ^/(_(profiler|wdt)|css|images|js)/
@@ -26,7 +31,6 @@ security:
         main:
             pattern:      .*
             form_login:
-                provider:       fos_userbundle
                 login_path:     /login
                 use_forward:    false
                 check_path:     /login_check

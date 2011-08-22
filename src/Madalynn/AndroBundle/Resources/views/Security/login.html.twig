@@ -1,0 +1,30 @@
+{% extends "AdminBundle::backend.html.twig" %}
+
+{% block title %}You need to signin please{% endblock %}
+
+{% block page %}
+    {% if error %}
+        <div class="flash error">
+            {{ error }}
+        </div>
+    {% endif %}
+
+    <h1>You need to signin please</h1>
+
+    <form action="{{ path("login_check") }}" method="post">
+        <p>
+            <label for="username">Username</label>
+            <input type="text" id="username" name="_username" value="{{ last_username }}" />
+        </p>
+        <p>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="_password" />
+        </p>
+        <p>
+            <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+            <label for="remember_me">Remember</label>
+        </p>
+
+        <input type="submit" id="_submit" name="_submit" value="Submit" />
+    </form>
+{% endblock %}

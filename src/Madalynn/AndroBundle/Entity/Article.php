@@ -44,7 +44,7 @@ class Article
     protected $slug;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Madalynn\UserBundle\Entity\User")
+     * @ORM\ManyToOne(targetEntity="Madalynn\AndroBundle\Entity\User")
      */
     protected $author;
 
@@ -209,9 +209,9 @@ class Article
     /**
      * Set author
      *
-     * @param Madalynn\UserBundle\Entity\User $author
+     * @param Madalynn\AndroBundle\Entity\User $author
      */
-    public function setAuthor(\Madalynn\UserBundle\Entity\User $author)
+    public function setAuthor(User $author)
     {
         $this->author = $author;
     }
@@ -219,7 +219,7 @@ class Article
     /**
      * Get author
      *
-     * @return Madalynn\UserBundle\Entity\User
+     * @return Madalynn\AndroBundle\Entity\User
      */
     public function getAuthor()
     {

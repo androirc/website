@@ -14,7 +14,7 @@ namespace Madalynn\AndroBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-use Madalynn\UserBundle\Entity\User;
+use Madalynn\AndroBundle\Entity\User;
 
 abstract class AbstractController extends Controller
 {
