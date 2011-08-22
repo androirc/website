@@ -5,9 +5,11 @@
 {% block content %}
     <h2>Articles archive</h2>
     
-    <div class="paginator">
-        {{ pagerfanta(pager) }}
-    </div>
+    {% if pager.haveToPaginate %}
+        <div class="paginator">
+            {{ pagerfanta(pager) }}
+        </div>
+    {% endif %}
 
     {% for article in pager %}
         {% include 'AndroBundle:Article:article.html.twig' with { 'article': article, 'sumup': true } %}
@@ -15,7 +17,9 @@
         No articles at this time
     {% endfor %}
 
-    <div class="paginator">
-        {{ pagerfanta(pager) }}
-    </div>
+    {% if pager.haveToPaginate %}
+        <div class="paginator">
+            {{ pagerfanta(pager) }}
+        </div>
+    {% endif %}
 {% endblock %}
