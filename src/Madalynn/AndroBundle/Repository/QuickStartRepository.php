@@ -23,13 +23,13 @@ class QuickStartRepository extends EntityRepository
                             ->setParameter('lang', $lang)
                             ->getQuery()
                             ->getResult();
-        
+
         foreach ($quickstarts as $quickstart) {
             if (version_compare($quickstart->getVersionMin(), $version, '<=') && version_compare($version, $quickstart->getVersionMax(), '<=')) {
                 return $quickstart;
             }
         }
-        
+
         return null;
     }
 }
