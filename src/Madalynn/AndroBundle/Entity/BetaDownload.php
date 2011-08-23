@@ -30,6 +30,7 @@ class BetaDownload
 
     /**
      * @ORM\ManyToOne(targetEntity="Madalynn\AndroBundle\Entity\BetaRelease")
+     * @ORM\JoinColumn(onDelete="CASCADE", onUpdate="CASCADE")
      */
     protected $beta_release;
 
