@@ -20,22 +20,13 @@ use Madalynn\AdminBundle\Controller\Action\PostActionInterface;
 
 class ActionListener
 {
-    protected $controller;
-
     public function onKernelController(FilterControllerEvent $event)
     {
         $controller = $event->getController();
-        $this->controller = $controller[0];
+        $controller = $controller[0];
 
-        if ($this->controller instanceof PreActionInterface) {
-            call_user_func(array($this->controller, 'preAction'), $event->getRequest());
-        }
-    }
-
-    public function onKernelResponse(FilterResponseEvent $event)
-    {
-        if ($this->controller instanceof PostActionInterface) {
-            call_user_func(array($this->controller, 'postAction'), $event->getRequest(), $event->getResponse());
+        if ($controller instanceof PreActionInterface) {
+            call_user_func(array($controller, 'preAction'), $event->getRequest());
         }
     }
 }

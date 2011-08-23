@@ -9,7 +9,6 @@
     <services>
         <service id="androirc.kernel.listener.actions" class="%androirc.kernel.listener.actions.class%">
             <tag name="kernel.event_listener" event="kernel.controller" method="onKernelController" />
-            <tag name="kernel.event_listener" event="kernel.response" method="onKernelResponse" />
         </service>
     </services>
 </container>
