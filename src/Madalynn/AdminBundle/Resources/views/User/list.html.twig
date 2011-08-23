@@ -1,0 +1,33 @@
+{% extends "AdminBundle:Base:list.html.twig" %}
+
+{% block title %}User list{% endblock %}
+
+{% block content %}
+  <table class="records_list">
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Last login</th>
+                <th width="140px;">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in pager %}
+            <tr>
+                <td><a href="{{ path('admin_user_show', { 'id': entity.id }) }}">{{ entity.username }}</a></td>
+                <td style="text-align: center">{{ entity.lastLogin | date('Y-m-d') }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <img src="{{ asset('bundles/andro/images/icons/page_edit.png') }}" /> <a href="{{ path('admin_user_edit', { 'id': entity.id }) }}">Edit</a>
+                        </li>
+                        <li>
+                            <img src="{{ asset('bundles/andro/images/icons/cross.png') }}" /> <a onclick="return confirm('Are you sure?')" href="{{ path('admin_user_delete', { 'id': entity.id }) }}">Delete</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

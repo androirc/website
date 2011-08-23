@@ -1,0 +1,31 @@
+admin_user_list:
+    pattern:  /{page}
+    defaults: { _controller: "AdminBundle:User:list", page: 1 }
+    requirements:
+        page:  \d+
+
+admin_user_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "AdminBundle:User:show" }
+
+admin_user_new:
+    pattern:  /new
+    defaults: { _controller: "AdminBundle:User:new" }
+
+admin_user_create:
+    pattern:  /create
+    defaults: { _controller: "AdminBundle:User:create" }
+    requirements: { _method: post }
+
+admin_user_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "AdminBundle:User:edit" }
+
+admin_user_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "AdminBundle:User:update" }
+    requirements: { _method: post }
+
+admin_user_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "AdminBundle:User:delete" }
