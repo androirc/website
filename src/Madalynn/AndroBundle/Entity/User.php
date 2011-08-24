@@ -47,6 +47,8 @@ class User implements UserInterface
      */
     protected $password;
 
+    protected $plainPassword;
+
     /**
      * @ORM\Column
      */
@@ -178,6 +180,26 @@ class User implements UserInterface
     }
 
     /**
+     * Set plainPassword
+     *
+     * @param string $plainPassword
+     */
+    public function setPlainPassword($plainPassword)
+    {
+        $this->plainPassword = $plainPassword;
+    }
+
+    /**
+     * Get plainPassword
+     *
+     * @return string
+     */
+    public function getPlainPassword()
+    {
+        return $this->plainPassword;
+    }
+
+    /**
      * Set salt
      *
      * @param string $salt
@@ -290,6 +312,11 @@ class User implements UserInterface
     public function getUserRoles()
     {
         return $this->userRoles;
+    }
+
+    public function setUserRoles($roles)
+    {
+        $this->userRoles = $roles;
     }
 
     /**

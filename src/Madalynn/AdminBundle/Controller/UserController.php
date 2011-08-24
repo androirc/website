@@ -16,6 +16,16 @@ use Madalynn\AdminBundle\Form\UserType;
 
 class UserController extends CRUDController
 {
+    protected function prePersist($entity)
+    {
+        $this->updatePassword($entity);
+    }
+
+    protected function preUpdate($entity)
+    {
+        $this->updatePassword($entity);
+    }
+
     protected function getForm()
     {
         return new UserType();
@@ -24,5 +34,16 @@ class UserController extends CRUDController
     protected function getClass()
     {
         return 'Madalynn\AndroBundle\Entity\User';
+    }
+
+    private function updatePassword($entity)
+    {
+        if (null !== $password = $entity->getPlainPassword()) {
+            $factory = $this->container->get('security.encoder_factory');
+            $encoder = $factory->getEncoder($entity);
+
+            $entity->setPassword($encoder->encodePassword($password, $entity->getSalt()));
+            $entity->setPlainPassword(null);
+        }
     }
 }

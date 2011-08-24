@@ -20,7 +20,18 @@ class UserType extends AbstractType
     public function buildForm(FormBuilder $builder, array $options)
     {
         $builder->add('username')
-                ->add('email', 'email');
+                ->add('email', 'email')
+                ->add('plainPassword', 'password', array(
+                    'label'    => 'Password',
+                    'required' => false
+                ))
+                ->add('userRoles', 'entity', array(
+                    'class'    => 'Madalynn\AndroBundle\Entity\Role',
+                    'multiple' => true,
+                    'label'    => 'Roles',
+                ));
+
+        $builder->addValidator(new Validator\UserValidator());
     }
 
     public function getName()

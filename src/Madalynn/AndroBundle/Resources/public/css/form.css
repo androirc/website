@@ -48,7 +48,7 @@ form p:hover label:after {
     content: " »";
 }
 
-input[type=text], input[type=number], input[type=email], input[type=password], textarea {
+input[type=text], input[type=number], input[type=email], input[type=password], select, textarea {
     background: rgba(255, 255, 255, 0.9);
     background:-moz-linear-gradient(90deg, #fff, #eee);
     background:-webkit-gradient(linear, left top, left bottom, from(#eee), to(#fff), color-stop(0.2, #fff));
@@ -59,6 +59,11 @@ input[type=text], input[type=number], input[type=email], input[type=password], t
     -webkit-box-shadow:0 0 3px #aaa;
     padding:2px 5px;
     width: 200px;
+}
+
+select {
+    width: 300px;
+    height: 100px;
 }
 
 textarea {
@@ -98,4 +103,33 @@ select:active, select:focus{
     -moz-box-shadow:0 0 3px #026995;
     -webkit-box-shadow:0 0 3px #026995;
     outline:none;
+}
+
+/* Errors */
+
+form .error {
+    display:inline-block;
+}
+
+form ul {
+    margin:0 !important;
+    padding: 0;
+    color:#B43F3F;
+    border:none;
+    font-weight:bold;
+}
+
+form ul li {
+    padding: 3px 15px !important;
+    list-style:none;
+    color:#B43F3F;
+    background-image: none !important;
+}
+
+form ul li:before {
+    content: '↑ ';
+}
+
+form ul li:after {
+    content: ' ↑';
 }
