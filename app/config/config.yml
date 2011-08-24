@@ -18,9 +18,9 @@ framework:
 security:
     providers:
         main:
-            entity: { class: Madalynn\AndroBundle\Entity\User, property: username }
+            entity: { class: MDL\AndroBundle\Entity\User, property: username }
     encoders:
-        Madalynn\AndroBundle\Entity\User:
+        MDL\AndroBundle\Entity\User:
             algorithm: sha512
             encode-as-base64: true
             iterations: 10
@@ -91,13 +91,13 @@ ornicar_akismet:
     url:     http://www.androirc.com
 
 # AdmobBundle Configuration
-madalynn_admob:
+mdl_admob:
     publisher_id: a14de4eeeb0ee01
     analytics_id: a14debd8eddb7a3
     analytics_request: true
 
 # DeployBundle Configuration
-madalynn_deploy:
+mdl_deploy:
     servers:
         bender:
             host: bender.madalynn.eu
