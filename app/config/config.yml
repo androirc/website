@@ -96,9 +96,14 @@ madalynn_admob:
     analytics_id: a14debd8eddb7a3
     analytics_request: true
 
+# DeployBundle Configuration
 madalynn_deploy:
     servers:
         bender:
             host: bender.madalynn.eu
             user: web
             dir: /home/web/androirc.com/beta
+
+# GravatarBundle Configuration
+gravatar:
+    size: 50

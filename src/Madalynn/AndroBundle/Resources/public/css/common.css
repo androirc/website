@@ -170,6 +170,15 @@ a.awesome:hover {
     background-image: -moz-linear-gradient(center bottom, rgb(255,250,217) 6%, rgb(255,252,242) 52%);
 }
 
+.avatar {
+    float: right;
+}
+
+
+.article .header {
+    margin-right: 60px;
+}
+
 .article .title {
     font-size: 19px;
     color: #026995;
