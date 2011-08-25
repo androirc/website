@@ -29,6 +29,7 @@ class UserType extends AbstractType
                     'class'    => 'MDL\AndroBundle\Entity\Role',
                     'multiple' => true,
                     'label'    => 'Roles',
+                    'required' => false
                 ));
 
         $builder->addValidator(new Validator\UserValidator());
