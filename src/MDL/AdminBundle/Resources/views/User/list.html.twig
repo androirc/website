@@ -7,6 +7,7 @@
         <thead>
             <tr>
                 <th>Username</th>
+                <th>Administrator</th>
                 <th>Last login</th>
                 <th width="140px;">Actions</th>
             </tr>
@@ -15,6 +16,13 @@
         {% for entity in pager %}
             <tr>
                 <td><a href="{{ path('admin_user_show', { 'id': entity.id }) }}">{{ entity.username }}</a></td>
+                <td style="text-align: center">
+                    {% if (entity.admin) %}
+                        <img src="{{ asset('bundles/andro/images/icons/tick.png') }}" />
+                    {% else %}
+                        <img src="{{ asset('bundles/andro/images/icons/cross.png') }}" />
+                    {% endif %}
+                </td>
                 <td style="text-align: center">{{ entity.lastLogin | date('Y-m-d') }}</td>
                 <td>
                     <ul>
