@@ -25,15 +25,15 @@ input[type=submit]:active, input[type=reset]:active, button[type=submit]:active,
 }
 
 .label {
-    padding-top: 7px;
+    padding-top: 6px;
 }
 
 .form td {
-    padding-bottom: 20px;
+    padding-bottom: 15px;
     vertical-align: top;
 }
 
-label{
+label {
     cursor: pointer;
     display: block;
     font-weight: bold;
