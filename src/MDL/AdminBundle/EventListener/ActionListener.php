@@ -16,7 +16,6 @@ use Symfony\Component\HttpKernel\Event\FilterControllerEvent;
 use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
 
 use MDL\AdminBundle\Controller\Action\PreActionInterface;
-use MDL\AdminBundle\Controller\Action\PostActionInterface;
 
 class ActionListener
 {
