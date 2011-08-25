@@ -2,4 +2,10 @@
 
 {% block page %}
     <h1>Welcome {{ app.user.getUsername }}</h1>
+
+    <div style="text-align: center">
+        <img src="{{ asset('bundles/admin/images/android.png') }}" />
+
+        <div style="font-size:18px; font-weight: bold; margin-top: 15px;">Welcome to the administration center</div>
+    </div>
 {% endblock %}
