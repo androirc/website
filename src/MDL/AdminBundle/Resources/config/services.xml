@@ -5,6 +5,7 @@
     <parameters>
         <parameter key="androirc.kernel.listener.actions.class">MDL\AdminBundle\EventListener\ActionListener</parameter>
         <parameter key="form.type.tinymce.class">MDL\AdminBundle\Type\TinymceType</parameter>
+        <parameter key="form.type.version.class">MDL\AdminBundle\Type\VersionType</parameter>
     </parameters>
 
     <services>
@@ -12,8 +13,13 @@
             <tag name="kernel.event_listener" event="kernel.controller" method="onKernelController" />
         </service>
 
+        <!-- Form types -->
         <service id="form.type.tinymce" class="%form.type.tinymce.class%">
             <tag name="form.type" alias="tinymce" />
+        </service>
+
+        <service id="form.type.version" class="%form.type.version.class%">
+            <tag name="form.type" alias="version" />
         </service>
     </services>
 </container>
