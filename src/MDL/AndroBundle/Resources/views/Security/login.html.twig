@@ -12,18 +12,32 @@
     <h1>You need to signin please</h1>
 
     <form action="{{ path("login_check") }}" method="post">
-        <p>
-            <label for="username">Username</label>
-            <input type="text" id="username" name="_username" value="{{ last_username }}" />
-        </p>
-        <p>
-            <label for="password">Password</label>
-            <input type="password" id="password" name="_password" />
-        </p>
-        <p>
-            <input type="checkbox" id="remember_me" name="_remember_me" checked="checked" />
-            <label for="remember_me">Remember</label>
-        </p>
+    <table id="admin_article" class="form">
+        <tr>
+            <td class="label">
+                <label for="username">Username</label>
+            </td>
+            <td>
+                <input type="text" id="username" name="_username" value="{{ last_username }}" />
+            </td>
+        </tr>
+        <tr>
+            <td class="label">
+                <label for="password">Password</label>
+            </td>
+            <td>
+                <input type="password" id="password" name="_password" />
+            </td>
+        </tr>
+        <tr>
+            <td class="label">
+                <label for="remember_me">Remember</label>
+            </td>
+            <td>
+                <input type="checkbox" id="remember_me" name="_remember_me" />
+            </td>
+        </tr>
+    </table>
 
         <input type="submit" id="_submit" name="_submit" value="Submit" />
     </form>

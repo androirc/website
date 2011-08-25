@@ -1,7 +1,22 @@
 {% block field_row %}
-    <p>
-        {{ form_label(form, label) }}
-        {{ form_widget(form, _context) }}
-        {{ form_errors(form) }}
-    </p>
+{% spaceless %}
+    <tr>
+        <td class="label">
+            {{ form_label(form, label|default(null)) }}
+        </td>
+        <td>
+            {{ form_widget(form) }}
+            {{ form_errors(form) }}
+        </td>
+    </tr>
+{% endspaceless %}
 {% endblock field_row %}
+
+{% block form_widget %}
+{% spaceless %}
+    <table {{ block('widget_container_attributes') }} class="form">
+        {{ block('field_rows') }}
+        {{ form_rest(form) }}
+    </table>
+{% endspaceless %}
+{% endblock form_widget %}

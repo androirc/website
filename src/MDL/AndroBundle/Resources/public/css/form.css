@@ -3,7 +3,7 @@ input[type=submit], input[type=reset], button[type=submit], button[type=reset] {
     border-color: #999 #999 #888;
     border-style: solid;
     border-width: 1px;
-    color: #444 !important;
+    color: #444;
     cursor: pointer;
     font-size: 12px;
     font-weight: bold;
@@ -19,32 +19,32 @@ input[type=submit]:active, input[type=reset]:active, button[type=submit]:active,
     top: 1px;
 }
 
-form p {
-    margin-bottom: 10px;
-    clear: left;
+.form {
+    margin-bottom: 15px;
+    font-size: 13px;
 }
 
-form p:last-child {
-    margin-bottom: 30px;
+.label {
+    padding-top: 7px;
+}
+
+.form td {
+    padding-bottom: 20px;
+    vertical-align: top;
 }
 
 label{
     cursor: pointer;
     display: block;
-    float: left;
-    font-size: 13px;
     font-weight: bold;
-    line-height: 28px;
-    margin-bottom: 5px;
     width: 80px;
-    padding-right: 5px;
 }
 
-form p:hover label{
+.form label:hover{
     color: #026995;
 }
 
-form p:hover label:after {
+form label:hover:after {
     content: " »";
 }
 
@@ -57,13 +57,8 @@ input[type=text], input[type=number], input[type=email], input[type=password], s
     -webkit-border-radius:3px;
     -moz-box-shadow:0 0 3px #aaa;
     -webkit-box-shadow:0 0 3px #aaa;
-    padding:2px 5px;
+    padding:4px 5px;
     width: 200px;
-}
-
-select {
-    width: 300px;
-    height: 100px;
 }
 
 textarea {
@@ -91,14 +86,16 @@ input[type=checkbox] {
     -webkit-box-shadow: 0 0 3px #aaa;
 }
 
-select {
+.form select {
     cursor: pointer;
     padding: 3px;
     -moz-box-shadow: 0 0 3px #aaa;
     -webkit-box-shadow: 0 0 3px #aaa;
+    width: 300px;
+    height: 100px;
 }
 
-select:active, select:focus{
+.form select:active, select:focus{
     border:1px solid #093c75;
     -moz-box-shadow:0 0 3px #026995;
     -webkit-box-shadow:0 0 3px #026995;
@@ -107,29 +104,25 @@ select:active, select:focus{
 
 /* Errors */
 
-form .error {
-    display:inline-block;
-}
-
-form ul {
+.form ul {
     margin:0 !important;
-    padding: 0;
+    padding: 0 !important;
     color:#B43F3F;
     border:none;
     font-weight:bold;
 }
 
-form ul li {
-    padding: 3px 15px !important;
+.form ul li {
+    padding: 3px 0 !important;
     list-style:none;
     color:#B43F3F;
     background-image: none !important;
 }
 
-form ul li:before {
+.form ul li:before {
     content: '↑ ';
 }
 
-form ul li:after {
+.form ul li:after {
     content: ' ↑';
 }
