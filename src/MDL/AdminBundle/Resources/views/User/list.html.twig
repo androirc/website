@@ -23,7 +23,11 @@
                         <img src="{{ asset('bundles/andro/images/icons/cross.png') }}" />
                     {% endif %}
                 </td>
-                <td style="text-align: center">{{ entity.lastLogin | date('Y-m-d') }}</td>
+                <td style="text-align: center">
+                    {% if entity.lastLogin %}
+                        {{ entity.lastLogin | date('Y-m-d') }}
+                    {% endif %}
+                </td>
                 <td>
                     <ul>
                         <li>
