@@ -55,6 +55,7 @@ twig:
     form:
         resources:
             - 'AndroBundle:Form:fields.html.twig'
+            - 'AdminBundle:Form:fields.html.twig'
 
 # Assetic Configuration
 assetic:

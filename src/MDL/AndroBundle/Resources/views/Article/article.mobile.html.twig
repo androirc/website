@@ -8,9 +8,9 @@
 
     <div class="content">s
         {% if sumup is defined %}
-            {{ article.getContent | truncate(200) }}
+            {{ article.getContent | raw | truncate(200) }}
         {% else %}
-            {{ article.getContent }}
+            {{ article.getContent | raw }}
         {% endif %}
     </div>
 

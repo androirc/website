@@ -14,6 +14,10 @@
     {% endstylesheets %}
 {% endblock %}
 
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('bundles/admin/js/tinymce/tiny_mce.js') }}"></script>
+{% endblock %}
+
 {% block header %}
     <div id="admin_title">
         Administration center

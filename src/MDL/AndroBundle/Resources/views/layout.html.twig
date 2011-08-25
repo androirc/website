@@ -13,6 +13,7 @@
         <link href="http://feeds.feedburner.com/AndroIRC" type="application/atom+xml" rel="alternate" title="Last articles" />
         <link rel="shortcut icon" href="/favicon.ico" />
         {% block stylesheets %}{% endblock %}
+        {% block javascripts %}{% endblock %}
     </head>
     <body>
         <div id="up">
@@ -101,6 +102,5 @@
                 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
             })();
         </script>
-        {% block javascripts %}{% endblock %}
     </body>
 </html>

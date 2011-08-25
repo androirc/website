@@ -4,11 +4,16 @@
 
     <parameters>
         <parameter key="androirc.kernel.listener.actions.class">MDL\AdminBundle\EventListener\ActionListener</parameter>
+        <parameter key="form.type.tinymce.class">MDL\AdminBundle\Type\TinymceType</parameter>
     </parameters>
 
     <services>
         <service id="androirc.kernel.listener.actions" class="%androirc.kernel.listener.actions.class%">
             <tag name="kernel.event_listener" event="kernel.controller" method="onKernelController" />
+        </service>
+
+        <service id="form.type.tinymce" class="%form.type.tinymce.class%">
+            <tag name="form.type" alias="tinymce" />
         </service>
     </services>
 </container>
