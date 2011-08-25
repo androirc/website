@@ -1,0 +1,31 @@
+admin_tip_list:
+    pattern:  /{page}
+    defaults: { _controller: "AdminBundle:Tip:list", page: 1 }
+    requirements:
+        page:  \d+
+
+admin_tip_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "AdminBundle:Tip:show" }
+
+admin_tip_new:
+    pattern:  /new
+    defaults: { _controller: "AdminBundle:Tip:new" }
+
+admin_tip_create:
+    pattern:  /create
+    defaults: { _controller: "AdminBundle:Tip:create" }
+    requirements: { _method: post }
+
+admin_tip_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "AdminBundle:Tip:edit" }
+
+admin_tip_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "AdminBundle:Tip:update" }
+    requirements: { _method: post }
+
+admin_tip_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "AdminBundle:Tip:delete" }

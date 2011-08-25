@@ -22,3 +22,8 @@ admin_base_beta_release:
 admin_base_user:
     resource: 'routing/user.yml'
     prefix:   /user
+
+# Tip
+admin_base_tip:
+    resource: 'routing/tip.yml'
+    prefix:   /tip
