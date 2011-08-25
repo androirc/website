@@ -23,10 +23,13 @@ class ActionListener
     public function onKernelController(FilterControllerEvent $event)
     {
         $controller = $event->getController();
-        $controller = $controller[0];
 
-        if ($controller instanceof PreActionInterface) {
-            call_user_func(array($controller, 'preAction'), $event->getRequest());
+        if (true === is_array($controller)) {
+            $controller = $controller[0];
+
+            if ($controller instanceof PreActionInterface) {
+                call_user_func(array($controller, 'preAction'), $event->getRequest());
+            }
         }
     }
 }
