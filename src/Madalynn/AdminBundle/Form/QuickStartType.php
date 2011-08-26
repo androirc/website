@@ -10,36 +10,30 @@
  * file that was distributed with this source code.
  */
 
-namespace Madalynn\AdminBundle\Type;
+namespace Madalynn\AdminBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilder;
 
-use Madalynn\AdminBundle\DataTransformer\VersionTransformer;
-
-class VersionType extends AbstractType
+class QuickStartType extends AbstractType
 {
-    /**
-     * {@inheritdoc}
-     */
     public function buildForm(FormBuilder $builder, array $options)
     {
-        $builder->appendClientTransformer(new VersionTransformer());
+        $builder->add('language', 'language', array('preferred_choices' => array('en', 'fr')))
+                ->add('versionMin', 'version')
+                ->add('versionMax', 'version')
+                ->add('content', 'tinymce');
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getName()
     {
-        return 'version';
+        return 'admin_quick_start';
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function getParent(array $options)
+    public function getDefaultOptions(array $options)
     {
-        return 'field';
+        return array(
+            'data_class' => 'Madalynn\AndroBundle\Entity\QuickStart',
+        );
     }
 }

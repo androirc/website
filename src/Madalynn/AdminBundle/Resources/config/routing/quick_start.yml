@@ -1,0 +1,31 @@
+admin_quick_start_list:
+    pattern:  /{page}
+    defaults: { _controller: "AdminBundle:QuickStart:list", page: 1 }
+    requirements:
+        page:  \d+
+
+admin_quick_start_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "AdminBundle:QuickStart:show" }
+
+admin_quick_start_new:
+    pattern:  /new
+    defaults: { _controller: "AdminBundle:QuickStart:new" }
+
+admin_quick_start_create:
+    pattern:  /create
+    defaults: { _controller: "AdminBundle:QuickStart:create" }
+    requirements: { _method: post }
+
+admin_quick_start_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "AdminBundle:QuickStart:edit" }
+
+admin_quick_start_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "AdminBundle:QuickStart:update" }
+    requirements: { _method: post }
+
+admin_quick_start_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "AdminBundle:QuickStart:delete" }

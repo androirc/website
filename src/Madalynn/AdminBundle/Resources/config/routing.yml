@@ -37,3 +37,8 @@ admin_base_tip_holiday:
 admin_base_crash_report:
     resource: 'routing/crash_report.yml'
     prefix:   /crash
+
+# QuickStart
+admin_base_quick_start:
+    resource: 'routing/quick_start.yml'
+    prefix:   /quickstart
