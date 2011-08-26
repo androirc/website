@@ -46,4 +46,9 @@ class UserController extends CRUDController
             $entity->setPlainPassword(null);
         }
     }
+
+    public function showAction($id)
+    {
+        throw new \BadMethodCallException('The show action is not supported for this entity.');
+    }
 }

@@ -27,9 +27,14 @@ class BetaReleaseController extends CRUDController
     {
         return 'Madalynn\AndroBundle\Entity\BetaRelease';
     }
-    
+
     protected function filterQuery(QueryBuilder $qb)
     {
         $qb->orderBy('e.revision', 'desc');
+    }
+
+    public function showAction($id)
+    {
+        throw new \BadMethodCallException('The show action is not supported for this entity.');
     }
 }

@@ -25,4 +25,9 @@ class DonatorController extends CRUDController
     {
         return 'Madalynn\AndroBundle\Entity\Donator';
     }
+
+    public function showAction($id)
+    {
+        throw new \BadMethodCallException('The show action is not supported for this entity.');
+    }
 }

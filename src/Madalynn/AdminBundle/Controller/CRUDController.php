@@ -50,7 +50,16 @@ abstract class CRUDController extends Controller
 
     public function showAction($id)
     {
-        throw $this->createNotFoundException('The show action is not supported for the moment.');
+        $en     = $this->getEntityName();
+        $entity = $this->getRepository()->find($id);
+
+        if (!$entity) {
+            throw $this->createNotFoundException(sprintf('Unable to find %s entity.', $en));
+        }
+
+        return $this->render('AdminBundle:' . $en . ':show.html.twig', array(
+            'entity' => $entity
+        ));
     }
 
     public function newAction()
