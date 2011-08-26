@@ -33,14 +33,14 @@ class QuickStart
     protected $language;
 
     /**
-     * @ORM\Column(length=20)
+     * @ORM\Column(length=20, name="version_min")
      */
-    protected $version_min;
+    protected $versionMin;
 
     /**
-     * @ORM\Column(length=20)
+     * @ORM\Column(length=20, name="version_max")
      */
-    protected $version_max;
+    protected $versionMax;
 
     /**
      * @ORM\Column(type="text")
@@ -78,43 +78,43 @@ class QuickStart
     }
 
     /**
-     * Set version_min
+     * Set version min
      *
      * @param string $versionMin
      */
     public function setVersionMin($versionMin)
     {
-        $this->version_min = $versionMin;
+        $this->versionMin = $versionMin;
     }
 
     /**
-     * Get version_min
+     * Get version min
      *
      * @return string
      */
     public function getVersionMin()
     {
-        return $this->version_min;
+        return $this->versionMin;
     }
 
     /**
-     * Set version_max
+     * Set version max
      *
      * @param string $versionMax
      */
     public function setVersionMax($versionMax)
     {
-        $this->version_max = $versionMax;
+        $this->versionMax = $versionMax;
     }
 
     /**
-     * Get version_max
+     * Get version max
      *
      * @return string
      */
     public function getVersionMax()
     {
-        return $this->version_max;
+        return $this->versionMax;
     }
 
     /**

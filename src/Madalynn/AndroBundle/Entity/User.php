@@ -314,7 +314,11 @@ class User implements UserInterface
         return $this->userRoles;
     }
 
-    public function setUserRoles($roles)
+    /**
+     *
+     * @param Doctrine\Common\Collections\ArrayCollection $roles
+     */
+    public function setUserRoles(ArrayCollection $roles)
     {
         $this->userRoles = $roles;
     }
@@ -322,7 +326,7 @@ class User implements UserInterface
     /**
      * @param Madalynn\AndroBundle\Entity\Role $role
      */
-    public function addUserRole($role)
+    public function addUserRole(Role $role)
     {
         $this->userRoles->add($role);
     }
@@ -330,7 +334,7 @@ class User implements UserInterface
     /**
      * @param Madalynn\AndroBundle\Entity\Role $role
      */
-    public function hasUserRole($role)
+    public function hasUserRole(Role $role)
     {
         return $this->userRoles->contains($role);
     }
@@ -357,7 +361,7 @@ class User implements UserInterface
     /**
      * @param Madalynn\AndroBundle\Entity\Role $role
      */
-    public function removeUserRole($role)
+    public function removeUserRole(Role $role)
     {
         $this->userRoles->remove($role);
     }
@@ -369,6 +373,7 @@ class User implements UserInterface
      */
     public function eraseCredentials()
     {
+        $this->plainPassword = null;
     }
 
     /**

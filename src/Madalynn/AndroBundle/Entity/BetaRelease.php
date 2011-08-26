@@ -12,7 +12,9 @@
 
 namespace Madalynn\AndroBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -37,7 +39,7 @@ class BetaRelease
     protected $version;
 
     /**
-     * @ORM\OneToMany(targetEntity="Madalynn\AndroBundle\Entity\BetaDownload", mappedBy="beta_release")
+     * @ORM\OneToMany(targetEntity="Madalynn\AndroBundle\Entity\BetaDownload", mappedBy="betaRelease")
      */
     protected $downloads;
 
@@ -75,7 +77,7 @@ class BetaRelease
 
     public function __construct()
     {
-        $this->downloads = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->downloads = new ArrayCollection();
     }
 
     /**
@@ -230,7 +232,7 @@ class BetaRelease
      *
      * @param Madalynn\AndroBundle\Entity\BetaDownload $downloads
      */
-    public function addDownloads(\Madalynn\AndroBundle\Entity\BetaDownload $downloads)
+    public function addDownloads(BetaDownload $downloads)
     {
         $this->downloads[] = $downloads;
     }

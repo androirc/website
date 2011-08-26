@@ -30,9 +30,9 @@ class BetaDownload
 
     /**
      * @ORM\ManyToOne(targetEntity="Madalynn\AndroBundle\Entity\BetaRelease")
-     * @ORM\JoinColumn(onDelete="CASCADE")
+     * @ORM\JoinColumn(onDelete="CASCADE", name="beta_release_id")
      */
-    protected $beta_release;
+    protected $betaRelease;
 
     /**
      * @ORM\Column(length=50)
@@ -45,25 +45,11 @@ class BetaDownload
     protected $created;
 
     /**
-     * @ORM\Column(type="datetime")
-     */
-    protected $updated;
-
-    /**
      * @ORM\PrePersist
      */
     public function created()
     {
         $this->created = new \DateTime();
-        $this->updated = new \DateTime();
-    }
-
-    /**
-     * @ORM\PreUpdate
-     */
-    public function updated()
-    {
-        $this->updated = new \DateTime();
     }
 
     /**
@@ -137,22 +123,22 @@ class BetaDownload
     }
 
     /**
-     * Set beta_release
+     * Set beta release
      *
      * @param Madalynn\AndroBundle\Entity\BetaRelease $betaRelease
      */
-    public function setBetaRelease(\Madalynn\AndroBundle\Entity\BetaRelease $betaRelease)
+    public function setBetaRelease(BetaRelease $betaRelease)
     {
-        $this->beta_release = $betaRelease;
+        $this->betaRelease = $betaRelease;
     }
 
     /**
-     * Get beta_release
+     * Get beta release
      *
      * @return Madalynn\AndroBundle\Entity\BetaRelease 
      */
     public function getBetaRelease()
     {
-        return $this->beta_release;
+        return $this->betaRelease;
     }
 }
