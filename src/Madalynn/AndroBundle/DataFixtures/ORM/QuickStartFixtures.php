@@ -14,16 +14,19 @@ namespace Madalynn\AndroBundle\DataFixtures\ORM;
 
 use Doctrine\Common\DataFixtures\FixtureInterface;
 
+use Madalynn\AdminBundle\DataTransformer\VersionTransformer;
 use Madalynn\AndroBundle\Entity\QuickStart;
 
 class QuickStartFixtures implements FixtureInterface
 {
     public function load($em)
     {
+        $transformer = new VersionTransformer();
+
         $french = new QuickStart();
 
-        $french->setVersionMin('0');
-        $french->setVersionMax('3.9.9');
+        $french->setVersionMin($transformer->transform('0'));
+        $french->setVersionMax($transformer->transform('3.9.9'));
         $french->setLanguage('fr');
 
         $french->setContent(<<<EOF
@@ -78,8 +81,8 @@ EOF
         $english = new QuickStart();
 
         $english->setLanguage('en');
-        $english->setVersionMin('0');
-        $english->setVersionMax('3.9.9');
+        $english->setVersionMin($transformer->transform('0'));
+        $english->setVersionMax($transformer->transform('3.9.9'));
 
         $english->setContent(<<<EOF
 <h1>Welcome!</h1>

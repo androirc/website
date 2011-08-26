@@ -33,12 +33,12 @@ class QuickStart
     protected $language;
 
     /**
-     * @ORM\Column(length=20, name="version_min")
+     * @ORM\Column(type="integer", name="version_min")
      */
     protected $versionMin;
 
     /**
-     * @ORM\Column(length=20, name="version_max")
+     * @ORM\Column(type="integer", name="version_max")
      */
     protected $versionMax;
 
