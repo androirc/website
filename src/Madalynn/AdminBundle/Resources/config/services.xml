@@ -1,0 +1,25 @@
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="androirc.kernel.listener.actions.class">Madalynn\AdminBundle\EventListener\ActionListener</parameter>
+        <parameter key="form.type.tinymce.class">Madalynn\AdminBundle\Type\TinymceType</parameter>
+        <parameter key="form.type.version.class">Madalynn\AdminBundle\Type\VersionType</parameter>
+    </parameters>
+
+    <services>
+        <service id="androirc.kernel.listener.actions" class="%androirc.kernel.listener.actions.class%">
+            <tag name="kernel.event_listener" event="kernel.controller" method="onKernelController" />
+        </service>
+
+        <!-- Form types -->
+        <service id="form.type.tinymce" class="%form.type.tinymce.class%">
+            <tag name="form.type" alias="tinymce" />
+        </service>
+
+        <service id="form.type.version" class="%form.type.version.class%">
+            <tag name="form.type" alias="version" />
+        </service>
+    </services>
+</container>

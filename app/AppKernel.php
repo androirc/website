@@ -29,10 +29,10 @@ class AppKernel extends Kernel
             new WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle(),
             new Bundle\GravatarBundle\GravatarBundle(),
 
-            new MDL\AdmobBundle\MDLAdmobBundle(),
-            new MDL\DeployBundle\MDLDeployBundle(),
-            new MDL\AndroBundle\AndroBundle(),
-            new MDL\AdminBundle\AdminBundle(),
+            new Madalynn\AdmobBundle\MadalynnAdmobBundle(),
+            new Madalynn\DeployBundle\MadalynnDeployBundle(),
+            new Madalynn\AndroBundle\AndroBundle(),
+            new Madalynn\AdminBundle\AdminBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
