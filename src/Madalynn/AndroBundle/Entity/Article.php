@@ -45,7 +45,7 @@ class Article
 
     /**
      * @ORM\ManyToOne(targetEntity="Madalynn\AndroBundle\Entity\User")
-     * @ORM\JoinColumn(onDelete="SET NULL", onUpdate="CASCADE")
+     * @ORM\JoinColumn(onDelete="SET NULL")
      */
     protected $author;
 
