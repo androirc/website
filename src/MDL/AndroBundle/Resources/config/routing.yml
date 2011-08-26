@@ -46,6 +46,11 @@ quickstart:
     pattern: /quickstart/{version}/{lang}
     defaults: { _controller: AndroBundle:Main:quickstart }
 
+crash_report:
+    pattern: /crashreport
+    defaults: { _controller: AndroBundle:CrashReport:add }
+    requirements: { _method: post }
+
 # Security
 
 login:

@@ -1,0 +1,14 @@
+Nouveau rapport de crash :
+
+    Phone model        : {{ crashReport.getPhoneModel }}
+    Android version    : {{ crashReport.getAndroidVersion }}
+    Thread name        : {{ crashReport.getThreadName }}
+    Error Message      : {{ crashReport.getErrorMessage }}
+    AndroIRC version   : {{ crashReport.getAndroircVersion }}
+    Callstack          :
+
+    {{ crashReport.getCallstack }}
+
+Vous pouvez supprimer simplement ce rapport dans le backend du site, rubrique "Crashreport"
+--
+AndroIRC

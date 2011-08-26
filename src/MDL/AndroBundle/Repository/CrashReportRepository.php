@@ -14,6 +14,12 @@ namespace MDL\AndroBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
 
+use MDL\AndroBundle\Entity\CrashReport;
+
 class CrashReportRepository extends EntityRepository
 {
+    public function alreadyExist(CrashReport $crashReport)
+    {
+        return false;
+    }
 }
