@@ -43,6 +43,15 @@
 
 {% block page %}
     <div id="sidebar">
+    {% if app.user and app.user.isAdmin %}
+        <div class="sidebar_box">
+            <h2>Administration</h2>
+
+            <div class="center">
+                <a href="{{ path('admin_dashboard') }}" class="awesome">Go to the administration center</a>
+            </div>
+        </div>
+    {% endif %}
     {% if andro_from_mobile() %}
         <div class="sidebar_box">
             <h2>Mobile version</h2>
