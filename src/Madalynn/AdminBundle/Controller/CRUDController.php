@@ -22,10 +22,33 @@ use Pagerfanta\Adapter\DoctrineORMAdapter;
 
 abstract class CRUDController extends Controller
 {
+    /**
+     * The number of entities per page
+     *
+     * @var integer $maxPerPage
+     */
     protected $maxPerPage = 15;
+
+    /**
+     * The name of the repository (e.g AndroBundle:Article)
+     *
+     * @var string $repositoryName
+     */
     protected $repositoryName;
+
+    /**
+     * The name of the Entity (e.g. Article)
+     *
+     * @var string $entityName
+     */
     protected $entityName;
 
+    /**
+     * Execute the list action
+     *
+     * @param integer $page The page for the pager
+     * @return Response
+     */
     public function listAction($page)
     {
         // Filter Doctrine Query
@@ -48,6 +71,12 @@ abstract class CRUDController extends Controller
         ));
     }
 
+    /**
+     * Execute the show action
+     *
+     * @param integer $id The id of the entity
+     * @return Response
+     */
     public function showAction($id)
     {
         $en     = $this->getEntityName();
@@ -62,6 +91,11 @@ abstract class CRUDController extends Controller
         ));
     }
 
+    /**
+     * Execute the new action
+     *
+     * @return Response
+     */
     public function newAction()
     {
         $entity = $this->getEntity();
@@ -73,6 +107,11 @@ abstract class CRUDController extends Controller
         ));
     }
 
+    /**
+     * Create a new entity based on the request
+     *
+     * @return Response
+     */
     public function createAction()
     {
         $entity  = $this->getEntity();
@@ -105,6 +144,12 @@ abstract class CRUDController extends Controller
         ));
     }
 
+    /**
+     * Edit an entity
+     *
+     * @param integer $id The id of the entity
+     * @return Response
+     */
     public function editAction($id)
     {
         $en     = $this->getEntityName();
@@ -122,6 +167,12 @@ abstract class CRUDController extends Controller
         ));
     }
 
+    /**
+     * Update the entity based on the request parameters
+     *
+     * @param integer $id The id of the entity
+     * @return Response
+     */
     public function updateAction($id)
     {
         $en     = $this->getEntityName();
@@ -159,6 +210,12 @@ abstract class CRUDController extends Controller
         ));
     }
 
+    /**
+     * Remove an entity
+     *
+     * @param integer $id The id of the entity
+     * @return Response
+     */
     public function deleteAction($id)
     {
         $request = $this->getRequest();
