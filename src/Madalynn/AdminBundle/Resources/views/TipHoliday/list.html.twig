@@ -1,0 +1,35 @@
+{% extends "AdminBundle:Base:list.html.twig" %}
+
+{% block title %}Tip Holiday list{% endblock %}
+
+{% block content %}
+  <table class="records_list">
+        <thead>
+            <tr>
+                <th>Language</th>
+                <th>Date</th>
+                <th>Content</th>
+                <th width="140px;">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in pager %}
+            <tr>
+                <td style="text-align: center">{{ entity.language }}</td>
+                <td style="text-align: center">{{ '%02d/%02d' | format(entity.getMonth, entity.getDay) }}</td>
+                <td><a href="{{ path('admin_tip_holiday_show', { 'id': entity.id }) }}">{{ entity.content | truncate(100) | raw }}</a></td>
+                <td>
+                    <ul>
+                        <li>
+                            <img src="{{ asset('bundles/andro/images/icons/page_edit.png') }}" /> <a href="{{ path('admin_tip_holiday_edit', { 'id': entity.id }) }}">Edit</a>
+                        </li>
+                        <li>
+                            <img src="{{ asset('bundles/andro/images/icons/cross.png') }}" /> <a onclick="return confirm('Are you sure?')" href="{{ path('admin_tip_holiday_delete', { 'id': entity.id }) }}">Delete</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

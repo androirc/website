@@ -28,6 +28,11 @@ admin_base_tip:
     resource: 'routing/tip.yml'
     prefix:   /tip
 
+# Tip Holiday
+admin_base_tip_holiday:
+    resource: 'routing/tip_holiday.yml'
+    prefix:   /holiday
+
 # CrashReport
 admin_base_crash_report:
     resource: 'routing/crash_report.yml'
