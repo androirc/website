@@ -12,6 +12,8 @@
 
 namespace Madalynn\AdminBundle\Controller;
 
+use Doctrine\ORM\QueryBuilder;
+
 use Madalynn\AdminBundle\Form\BetaReleaseType;
 
 class CrashReportController extends CRUDController
@@ -24,6 +26,11 @@ class CrashReportController extends CRUDController
     protected function getClass()
     {
         return 'Madalynn\AndroBundle\Entity\CrashReport';
+    }
+
+    protected function filterQuery(QueryBuilder $qb)
+    {
+        $qb->orderBy('e.count', 'desc');
     }
 
     public function deleteAllAction()
