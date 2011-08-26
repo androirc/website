@@ -37,27 +37,27 @@ class CrashReport
     protected $created;
 
     /**
-     * @ORM\Column(length=200)
+     * @ORM\Column(length=200, name="phone_model")
      */
     protected $phoneModel;
 
     /**
-     * @ORM\Column(length=200)
+     * @ORM\Column(length=200, name="android_version")
      */
     protected $androidVersion;
 
     /**
-     * @ORM\Column(length=200)
+     * @ORM\Column(length=200, name="androirc_version")
      */
     protected $androircVersion;
 
     /**
-     * @ORM\Column(length=200)
+     * @ORM\Column(length=200, name="thread_name")
      */
     protected $threadName;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", name="error_message")
      */
     protected $errorMessage;
 
