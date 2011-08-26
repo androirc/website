@@ -19,7 +19,7 @@ class TipType extends AbstractType
 {
     public function buildForm(FormBuilder $builder, array $options)
     {
-        $builder->add('language', 'language')
+        $builder->add('language', 'language', array('preferred_choices' => array('en', 'fr')))
                 ->add('content', 'textarea');
     }
 
