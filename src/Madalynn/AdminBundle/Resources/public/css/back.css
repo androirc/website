@@ -89,3 +89,8 @@ ul.record_actions {
     top: 2px;
     position: relative;
 }
+
+#entity_actions a {
+    float: left;
+    margin-right: 10px;
+}

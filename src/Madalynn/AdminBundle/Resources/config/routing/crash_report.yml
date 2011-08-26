@@ -1,0 +1,40 @@
+admin_crash_report_list:
+    pattern:  /{page}
+    defaults: { _controller: "AdminBundle:CrashReport:list", page: 1 }
+    requirements:
+        page:  \d+
+
+admin_crash_report_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "AdminBundle:CrashReport:show" }
+
+admin_crash_report_new:
+    pattern:  /new
+    defaults: { _controller: "AdminBundle:CrashReport:new" }
+
+admin_crash_report_create:
+    pattern:  /create
+    defaults: { _controller: "AdminBundle:CrashReport:create" }
+    requirements: { _method: post }
+
+admin_crash_report_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "AdminBundle:CrashReport:edit" }
+
+admin_crash_report_resolved:
+    pattern:  /{id}/resolved
+    defaults: { _controller: "AdminBundle:CrashReport:resolved" }
+
+admin_crash_report_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "AdminBundle:CrashReport:update" }
+    requirements: { _method: post }
+
+admin_crash_report_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "AdminBundle:CrashReport:delete" }
+
+admin_crash_report_delete_all:
+    pattern:  /delete
+    defaults: { _controller: "AdminBundle:CrashReport:deleteAll" }
+

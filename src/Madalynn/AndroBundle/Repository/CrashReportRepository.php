@@ -22,4 +22,11 @@ class CrashReportRepository extends EntityRepository
     {
         return false;
     }
+
+    public function deleteAll()
+    {
+        $query = $this->_em->createQuery('DELETE FROM AndroBundle:CrashReport');
+
+        return $query->execute();
+    }
 }

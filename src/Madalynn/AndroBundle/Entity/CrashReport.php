@@ -257,7 +257,7 @@ class CrashReport
      *
      * @return boolean
      */
-    public function getResolved()
+    public function isResolved()
     {
         return $this->resolved;
     }

@@ -5,9 +5,13 @@
 
     {% block content %}{% endblock %}
 
-    <a class="awesome" href="{{ path('admin_' ~ entity_name ~ '_new') }}">
-        Create a new entry
-    </a>
+    <div id="entity_actions">
+        {% block entity_actions %}
+            <a class="awesome" href="{{ path('admin_' ~ entity_name ~ '_new') }}">
+                Create a new entry
+            </a>
+        {% endblock %}
+    </div>
 
     <div class="paginator">
         {% if pager.haveToPaginate %}

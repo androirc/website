@@ -1,0 +1,52 @@
+{% extends "AdminBundle:Base:list.html.twig" %}
+
+{% block title %}Crash Report list{% endblock %}
+
+{% block content %}
+  <table class="records_list">
+        <thead>
+            <tr>
+                <th>AndroIRC version</th>
+                <th>Android version</th>
+                <th>Count</th>
+                <th>Resolved</th>
+                <th width="220px;">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in pager %}
+            <tr>
+                <td><a href="{{ path('admin_crash_report_show', { 'id': entity.id }) }}">{{ entity.getAndroircVersion }}</a></td>
+                <td style="text-align: center">{{ entity.getAndroidVersion }}</td>
+                <td style="text-align: center">{{ entity.getCount }}</td>
+                <td style="text-align: center">
+                    {% if (entity.isResolved) %}
+                        <img src="{{ asset('bundles/andro/images/icons/tick.png') }}" />
+                    {% else %}
+                        <img src="{{ asset('bundles/andro/images/icons/cross.png') }}" />
+                    {% endif %}
+                </td>
+                <td>
+                    <ul>
+                        <li>
+                            <img src="{{ asset('bundles/andro/images/icons/accept.png') }}" /> <a href="{{ path('admin_crash_report_resolved', { 'id': entity.id }) }}">Resolved</a>
+                        </li>
+                        <li>
+                            <img src="{{ asset('bundles/andro/images/icons/page.png') }}" /> <a href="{{ path('admin_crash_report_show', { 'id': entity.id }) }}">Show</a>
+                        </li>
+                        <li>
+                            <img src="{{ asset('bundles/andro/images/icons/cross.png') }}" /> <a onclick="return confirm('Are you sure?')" href="{{ path('admin_crash_report_delete', { 'id': entity.id }) }}">Delete</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+
+{% block entity_actions %}
+    <a onclick="return confirm('Are you sure?')" class="awesome" href="{{ path('admin_crash_report_delete_all') }}">
+        Delete all
+    </a>
+{% endblock %}

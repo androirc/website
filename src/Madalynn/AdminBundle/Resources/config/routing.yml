@@ -27,3 +27,8 @@ admin_base_user:
 admin_base_tip:
     resource: 'routing/tip.yml'
     prefix:   /tip
+
+# CrashReport
+admin_base_crash_report:
+    resource: 'routing/crash_report.yml'
+    prefix:   /crash
