@@ -20,6 +20,17 @@ class CrashReportRepository extends EntityRepository
 {
     public function alreadyExist(CrashReport $crashReport)
     {
+        $crashReports = $this->createQueryBuilder('c')
+                             ->orderBy('c.created', 'desc')
+                             ->getQuery()
+                             ->getResult();
+
+        foreach ($crashReports as $tmp) {
+            if (true === $tmp->equals($crashReport)) {
+                return $tmp;
+            }
+        }
+
         return false;
     }
 

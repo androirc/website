@@ -295,6 +295,25 @@ class CrashReport
         return null;
     }
 
+    /**
+     * Check if the crashreport is equals at this object
+     *
+     * @param CrashReport $crashReport
+     * @return boolean
+     */
+    public function equals(CrashReport $crashReport)
+    {
+        if ($this->getCrashMessage() != $crashReport->getCrashMessage()) {
+            return false;
+        }
+
+        if ($this->getCrashLocation() != $crashReport->getCrashLocation()) {
+            return false;
+        }
+
+        return true;
+    }
+
     public function getCrashMessage()
     {
         $lines = $this->getExplodedCallstack();
