@@ -29,6 +29,8 @@ class Donator
 
     /**
      * @ORM\Column(length=255)
+     *
+     * @Assert\NotBlank
      */
     protected $name;
 
