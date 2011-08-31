@@ -21,6 +21,9 @@ class CrashReportController extends AbstractController
 {
     public function addAction(Request $request)
     {
+        $response = new Response();
+        $response->headers->set('X-AndroIRC', uniqid());
+
         $phoneModel = $request->attributes->get('phone_model');
         $androidVersion = $request->attributes->get('android_version');
         $threadName = $request->attributes->get('thread_name');
@@ -29,12 +32,16 @@ class CrashReportController extends AbstractController
         $androircVersion = $request->attributes->get('version', 'Unknown');
 
         if (!$callstack || !$phoneModel || !$androidVersion) {
-            return new Response('Missing arguments.');
+            $response->setContent('Missing arguments.');
+
+            return $response;
         }
 
         // We check if the crash report is coming from a testing mobilephone
         if (preg_match('#sdk#', $phoneModel)) {
-            return new Response('Coming from a SDK Android phone.');
+            $response->setContent('Coming from a SDK Android phone.');
+
+            return $response;
         }
 
         $crashReport = new CrashReport();
@@ -50,6 +57,7 @@ class CrashReportController extends AbstractController
         $repo = $em->getRepository('AndroBundle:CrashReport');
 
         $tmp = $repo->alreadyExist($crashReport);
+        $response->setContent('ok');
 
         if (false !== $tmp) {
             $tmp->incCount();
@@ -57,7 +65,7 @@ class CrashReportController extends AbstractController
             $em->persist($tmp);
             $em->flush();
 
-            return new Response('ok');
+            return $response;
         }
 
         $em->persist($crashReport);
@@ -75,6 +83,6 @@ class CrashReportController extends AbstractController
 
         $this->get('mailer')->send($message);
 
-        return new Response('ok');
+        return $response;
     }
 }
