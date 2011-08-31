@@ -17,7 +17,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class QuickStartController extends Controller
 {    
-    public function quickstartAction($version, $lang)
+    public function showAction($version, $lang)
     {
         $em = $this->getDoctrine()->getEntityManager();
         $repo = $em->getRepository('AndroBundle:QuickStart');

@@ -14,22 +14,31 @@ namespace Madalynn\AndroBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
 
+use Madalynn\AdminBundle\DataTransformer\VersionTransformer;
+
 class QuickStartRepository extends EntityRepository
 {
     public function findByVersion($version, $lang)
     {
-        $quickstarts = $this->createQueryBuilder('q')
-                            ->where('q.language = :lang')
-                            ->setParameter('lang', $lang)
-                            ->getQuery()
-                            ->getResult();
+        $version = VersionTransformer::reverseTransform($version);
 
-        foreach ($quickstarts as $quickstart) {
-            if (version_compare($quickstart->getVersionMin(), $version, '<=') && version_compare($version, $quickstart->getVersionMax(), '<=')) {
-                return $quickstart;
-            }
+        $query = $this->createQueryBuilder('q')
+                       ->where('q.language = :lang')
+                       ->andWhere('q.versionMin <= :version and :version <= q.versionMax')
+                       ->setParameters(array(
+                            'lang'    => $lang,
+                            'version' => $version
+                        ))
+                        ->getQuery();
+
+        try {
+            $quickstart = $query->getSingleResult();
+        } catch (\Exception $e) {
+            // We have an exception if the getSingleResult return
+            // 0 or more than one result ...
+            return null;
         }
 
-        return null;
+        return $quickstart;
     }
 }
