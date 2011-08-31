@@ -47,7 +47,7 @@ class CrashReportController extends AbstractController
         $crashReport->setAndroircVersion($androircVersion);
 
         $em = $this->getDoctrine()->getEntityManager();
-        $repo = $em->getRepository();
+        $repo = $em->getRepository('AndroBundle:CrashReport');
 
         $tmp = $repo->alreadyExist($crashReport);
 

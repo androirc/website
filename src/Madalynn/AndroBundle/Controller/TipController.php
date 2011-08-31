@@ -29,12 +29,12 @@ class TipController extends Controller
                 throw $this->createNotFoundException('Unable to parse the datetime');
             }
 
-            $repo = $em->getRepository('Madalynn\AndroBundle\Entity\TipHoliday');
+            $repo = $em->getRepository('AndroBundle:TipHoliday');
             $tip = $repo->findByDate($lang, $date);
         }
 
         if (null === $tip) {
-            $repo = $em->getRepository('Madalynn\AndroBundle\Entity\Tip');
+            $repo = $em->getRepository('AndroBundle:Tip');
             $tip = $repo->getTip($lang);
         }
 

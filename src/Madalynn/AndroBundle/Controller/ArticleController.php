@@ -20,7 +20,7 @@ class ArticleController extends MobileController
     public function showAction($id)
     {
         $em = $this->getDoctrine()->getEntityManager();
-        $repo = $em->getRepository('Madalynn\AndroBundle\Entity\Article');
+        $repo = $em->getRepository('AndroBundle:Article');
 
         $article = $repo->find($id);
 
@@ -36,7 +36,7 @@ class ArticleController extends MobileController
     public function atomAction()
     {
         $em = $this->getDoctrine()->getEntityManager();
-        $repo = $em->getRepository('Madalynn\AndroBundle\Entity\Article');
+        $repo = $em->getRepository('AndroBundle:Article');
 
         $articles = $repo->getLastArticles(false, 20);
 
@@ -48,7 +48,7 @@ class ArticleController extends MobileController
     public function archivesAction($page)
     {
         $em = $this->getDoctrine()->getEntityManager();
-        $repo = $em->getRepository('Madalynn\AndroBundle\Entity\Article');
+        $repo = $em->getRepository('AndroBundle:Article');
 
         $adapter = new DoctrineORMAdapter($repo->getQueryBuilder($this->isAdmin())->getQuery(), true);
         $pager = new Pagerfanta($adapter);

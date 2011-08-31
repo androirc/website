@@ -20,7 +20,7 @@ class QuickStartController extends Controller
     public function quickstartAction($version, $lang)
     {
         $em = $this->getDoctrine()->getEntityManager();
-        $repo = $em->getRepository('Madalynn\AndroBundle\Entity\QuickStart');
+        $repo = $em->getRepository('AndroBundle:QuickStart');
 
         $quickstart = $repo->findByVersion($version, $lang);
 

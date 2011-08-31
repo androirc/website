@@ -20,7 +20,7 @@ class MainController extends MobileController
     public function homepageAction()
     {
         $em = $this->getDoctrine()->getEntityManager();
-        $repo = $em->getRepository('Madalynn\AndroBundle\Entity\Article');
+        $repo = $em->getRepository('AndroBundle:Article');
 
         $articles = $repo->getLastArticles($this->isAdmin());
 
@@ -42,7 +42,7 @@ class MainController extends MobileController
     public function donateAction()
     {
         $em = $this->getDoctrine()->getEntityManager();
-        $repo = $em->getRepository('Madalynn\AndroBundle\Entity\Donator');
+        $repo = $em->getRepository('AndroBundle:Donator');
 
         $donators = $repo->getDonators();
 

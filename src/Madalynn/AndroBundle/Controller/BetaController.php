@@ -23,7 +23,7 @@ class BetaController extends MobileController
     public function showAction()
     {
         $em = $this->getDoctrine()->getEntityManager();
-        $repo = $em->getRepository('Madalynn\AndroBundle\Entity\BetaRelease');
+        $repo = $em->getRepository('AndroBundle:BetaRelease');
 
         $beta = $repo->getLastBeta();
 
@@ -35,7 +35,7 @@ class BetaController extends MobileController
     public function downloadAction(Request $request)
     {
         $em = $this->getDoctrine()->getEntityManager();
-        $repo = $em->getRepository('Madalynn\AndroBundle\Entity\BetaRelease');
+        $repo = $em->getRepository('AndroBundle:BetaRelease');
 
         $beta = $repo->getLastBeta();
 
