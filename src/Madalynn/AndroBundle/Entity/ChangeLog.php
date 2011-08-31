@@ -192,8 +192,6 @@ class ChangeLog
         }
 
         usort($changes, array($this, 'sortChanges'));
-        
-
 
         return $this->changes = $changes;
     }
