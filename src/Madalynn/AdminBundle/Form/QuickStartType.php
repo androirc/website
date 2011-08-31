@@ -20,8 +20,8 @@ class QuickStartType extends AbstractType
     public function buildForm(FormBuilder $builder, array $options)
     {
         $builder->add('language', 'language', array('preferred_choices' => array('en', 'fr')))
-                ->add('versionMin', 'version')
-                ->add('versionMax', 'version')
+                ->add('versionMin', 'text', array('label' => 'Version min'))
+                ->add('versionMax', 'text', array('label' => 'Version max'))
                 ->add('content', 'tinymce');
     }
 

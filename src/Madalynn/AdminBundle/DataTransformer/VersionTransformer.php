@@ -12,10 +12,7 @@
 
 namespace Madalynn\AdminBundle\DataTransformer;
 
-use Symfony\Component\Form\DataTransformerInterface;
-use Symfony\Component\Form\Exception\UnexpectedTypeException;
-
-class VersionTransformer implements DataTransformerInterface
+class VersionTransformer
 {
     /**
      * Tranformation : 3990 => 3.9.9
@@ -23,16 +20,8 @@ class VersionTransformer implements DataTransformerInterface
      * @param type $value
      * @return type
      */
-    public function transform($value)
+    public static function transform($value)
     {
-        if (null === $value) {
-            return '0';
-        }
-
-        if (!is_integer($value)) {
-            throw new UnexpectedTypeException($value, 'integer');
-        }
-
         $value = trim($value, '0');
 
         if (!$value) {
@@ -48,9 +37,13 @@ class VersionTransformer implements DataTransformerInterface
      * @param type $value
      * @return type
      */
-    public function reverseTransform($value)
+    public static function reverseTransform($value)
     {
         $value = str_replace('.', '', $value);
+
+        if (!$value) {
+            return 0;
+        }
 
         return (int) str_pad($value, 4, '0', STR_PAD_RIGHT);
     }

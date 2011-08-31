@@ -12,7 +12,10 @@
 
 namespace Madalynn\AndroBundle\Entity;
 
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
+
+use Madalynn\AdminBundle\DataTransformer\VersionTransformer;
 
 /**
  * @ORM\Entity(repositoryClass="Madalynn\AndroBundle\Repository\QuickStartRepository")
@@ -44,8 +47,17 @@ class QuickStart
 
     /**
      * @ORM\Column(type="text")
+     *
+     * @Assert\NotBlank
      */
     protected $content;
+
+    public function __construct()
+    {
+        $this->versionMin = 0;
+        $this->versionMax = 0;
+    }
+
 
     /**
      * Get id
@@ -84,7 +96,7 @@ class QuickStart
      */
     public function setVersionMin($versionMin)
     {
-        $this->versionMin = $versionMin;
+        $this->versionMin = VersionTransformer::reverseTransform($versionMin);
     }
 
     /**
@@ -94,7 +106,7 @@ class QuickStart
      */
     public function getVersionMin()
     {
-        return $this->versionMin;
+        return VersionTransformer::transform($this->versionMin);
     }
 
     /**
@@ -104,7 +116,7 @@ class QuickStart
      */
     public function setVersionMax($versionMax)
     {
-        $this->versionMax = $versionMax;
+        $this->versionMax = VersionTransformer::reverseTransform($versionMax);
     }
 
     /**
@@ -114,7 +126,7 @@ class QuickStart
      */
     public function getVersionMax()
     {
-        return $this->versionMax;
+        return VersionTransformer::transform($this->versionMax);
     }
 
     /**
