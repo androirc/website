@@ -32,11 +32,6 @@ class ChangeLog
     protected $id;
 
     /**
-     * @ORM\Column(length=10)
-     */
-    protected $language;
-
-    /**
      * @ORM\Column(type="integer")
      */
     protected $version;
@@ -64,26 +59,6 @@ class ChangeLog
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set language
-     *
-     * @param string $language
-     */
-    public function setLanguage($language)
-    {
-        $this->language = $language;
-    }
-
-    /**
-     * Get language
-     *
-     * @return string
-     */
-    public function getLanguage()
-    {
-        return $this->language;
     }
 
     /**
