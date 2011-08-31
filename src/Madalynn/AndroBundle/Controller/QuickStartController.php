@@ -12,10 +12,9 @@
 
 namespace Madalynn\AndroBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 
-class QuickStartController extends Controller
+class QuickStartController extends AbstractController
 {    
     public function showAction($version, $lang)
     {

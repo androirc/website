@@ -15,7 +15,7 @@ namespace Madalynn\AndroBundle\Controller;
 use Pagerfanta\Pagerfanta;
 use Pagerfanta\Adapter\DoctrineORMAdapter;
 
-class ArticleController extends MobileController
+class ArticleController extends AbstractController
 {
     public function showAction($id)
     {

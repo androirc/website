@@ -12,10 +12,9 @@
 
 namespace Madalynn\AndroBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 
-class TipController extends Controller
+class TipController extends AbstractController
 {
     public function showAction($lang, $date = null)
     {

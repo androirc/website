@@ -12,9 +12,7 @@
 
 namespace Madalynn\AndroBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-
-class ChangeLogController extends Controller
+class ChangeLogController extends AbstractController
 {
     public function showAction($version)
     {

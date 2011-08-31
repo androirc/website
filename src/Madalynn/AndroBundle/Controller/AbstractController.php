@@ -36,4 +36,15 @@ abstract class AbstractController extends Controller
 
         return null !== $user && true === $user->isAdmin();
     }
+
+    public function renderWithMobile($view, array $parameters = array(), Response $response = null)
+    {
+        $request = $this->get('request');
+
+        if (true === $request->headers->has('X-AndroIRC-Mobile')) {
+            $view = str_replace('.html', '.mobile.html', $view);
+        }
+
+        return $this->render($view, $parameters, $response);
+    }
 }

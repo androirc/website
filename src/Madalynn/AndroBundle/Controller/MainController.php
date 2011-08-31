@@ -15,7 +15,7 @@ namespace Madalynn\AndroBundle\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class MainController extends MobileController
+class MainController extends AbstractController
 {
     public function homepageAction()
     {

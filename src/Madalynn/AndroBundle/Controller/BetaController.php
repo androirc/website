@@ -18,7 +18,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Madalynn\AndroBundle\Entity\BetaDownload;
 use Madalynn\AndroBundle\Location;
 
-class BetaController extends MobileController
+class BetaController extends AbstractController
 {
     public function showAction()
     {

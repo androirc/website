@@ -12,14 +12,13 @@
 
 namespace Madalynn\AndroBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 
 use Madalynn\AndroBundle\Entity\Contact;
 use Madalynn\AndroBundle\Form\ContactType;
 
-class ContactController extends Controller
+class ContactController extends AbstractController
 {
     public function showAction(Request $request)
     {
