@@ -296,6 +296,6 @@ class BetaRelease
         $this->file->move($this->getUploadRootDir(), $this->getPath());
 
         $this->path = $this->file->getClientOriginalName();
-        unset($this->file);
+        $this->file = null;
     }
 }
