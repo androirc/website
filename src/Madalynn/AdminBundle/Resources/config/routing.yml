@@ -42,3 +42,8 @@ admin_base_crash_report:
 admin_base_quick_start:
     resource: 'routing/quick_start.yml'
     prefix:   /quickstart
+
+# ChangeLog
+admin_base_change_log:
+    resource: 'routing/change_log.yml'
+    prefix:   /changelog

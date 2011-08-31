@@ -1,0 +1,31 @@
+{% extends "AdminBundle:Base:list.html.twig" %}
+
+{% block title %}ChangeLog list{% endblock %}
+
+{% block content %}
+  <table class="records_list">
+        <thead>
+            <tr>
+                <th>Version</th>
+                <th width="140px;">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in pager %}
+            <tr>
+                <td style="text-align: center">{{ entity.getVersion }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <img src="{{ asset('bundles/andro/images/icons/page_edit.png') }}" /> <a href="{{ path('admin_change_log_edit', { 'id': entity.id }) }}">Edit</a>
+                        </li>
+                        <li>
+                            <img src="{{ asset('bundles/andro/images/icons/cross.png') }}" /> <a onclick="return confirm('Are you sure?')" href="{{ path('admin_change_log_delete', { 'id': entity.id }) }}">Delete</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
