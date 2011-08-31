@@ -40,7 +40,7 @@ class BetaController extends MobileController
         $beta = $repo->getLastBeta();
 
         if (null === $beta) {
-            throw $this->createNotFoundException('There is no beta for download at the moment');
+            throw $this->createNotFoundException('There is no beta to download at the moment');
         }
 
         $location = new Location($request->getClientIp());
