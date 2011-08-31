@@ -4,7 +4,7 @@ homepage:
 
 contact:
     pattern: /contact
-    defaults: { _controller: AndroBundle:Main:contact }
+    defaults: { _controller: AndroBundle:Contact:show }
 
 archives:
     pattern: /archives/{page}
@@ -40,11 +40,11 @@ beta_download:
 
 tip:
     pattern: /tip/{lang}/{date}
-    defaults: { _controller: AndroBundle:Main:tip, date: null }
+    defaults: { _controller: AndroBundle:Tip:show, date: null }
 
 quickstart:
     pattern: /quickstart/{version}/{lang}
-    defaults: { _controller: AndroBundle:Main:quickstart }
+    defaults: { _controller: AndroBundle:QuickStart:show }
 
 crash_report:
     pattern: /crashreport
