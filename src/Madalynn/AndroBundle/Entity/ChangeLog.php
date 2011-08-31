@@ -51,6 +51,11 @@ class ChangeLog
      */
     public $file;
 
+    public function __construct()
+    {
+        $this->version = 0;
+    }
+
     /**
      * Get id
      *
@@ -88,7 +93,7 @@ class ChangeLog
      */
     public function setVersion($version)
     {
-        $this->version = $version;
+        $this->version = VersionTransformer::reverseTransform($version);
     }
 
     /**
@@ -98,7 +103,7 @@ class ChangeLog
      */
     public function getVersion()
     {
-        return $this->version;
+        return VersionTransformer::transform($this->version);
     }
 
     /**
@@ -135,7 +140,7 @@ class ChangeLog
     {
         return 'uploads/changelogs';
     }
-    
+
     /**
      * @ORM\PrePersist()
      * @ORM\PreUpdate()
