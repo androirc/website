@@ -15,6 +15,11 @@ namespace Madalynn\AndroBundle\Controller;
 use Pagerfanta\Pagerfanta;
 use Pagerfanta\Adapter\DoctrineORMAdapter;
 
+/**
+ * Article Controller
+ *
+ * @author Julien Brochet <mewt@androirc.com>
+ */
 class ArticleController extends AbstractController
 {
     public function showAction($id)

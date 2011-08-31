@@ -62,6 +62,7 @@ class Admob
      * Render the advertising
      *
      * @param Request $request The request
+     *
      * @return string The <img /> tag
      */
     public function render(Request $request)
