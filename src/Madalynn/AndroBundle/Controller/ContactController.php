@@ -58,7 +58,7 @@ class ContactController extends Controller
             }
         }
 
-        return $this->render('AndroBundle:Main:contact.html.twig', array(
+        return $this->render('AndroBundle:Contact:show.html.twig', array(
             'form' => $form->createView()
         ));
     }
