@@ -1,0 +1,25 @@
+{% extends "AndroBundle::basic.html.twig" %}
+
+{% block title %}Changelogs{% endblock %}
+
+{% block content %}
+    {% if changelog %}
+        <h1>Changelog v{{ changelog.getVersion }}</h1>
+
+        <ul>
+            {% for change in changelog.getChanges %}
+                <li>
+                    {% if change['key'] %}
+                        <strong>{{ change['key'] }}</strong>
+                    {% endif %}
+
+                    {{ change['content'] }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <h1>Oops!</h1>
+
+        No changelog for this version
+    {% endif %}
+{% endblock %}

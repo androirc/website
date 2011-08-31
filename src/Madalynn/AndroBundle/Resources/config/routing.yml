@@ -51,6 +51,10 @@ crash_report:
     defaults: { _controller: AndroBundle:CrashReport:add }
     requirements: { _method: post }
 
+changelog:
+    pattern: /changelog/{version}
+    defaults: { _controller: AndroBundle:ChangeLog:show }
+
 # Security
 
 login:
