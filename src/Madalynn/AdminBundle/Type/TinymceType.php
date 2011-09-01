@@ -21,22 +21,26 @@ use Symfony\Component\Form\AbstractType;
  */
 class TinymceType extends AbstractType
 {
-    /**
-     * {@inheritdoc}
-     */
     public function getName()
     {
         return 'tinymce';
     }
 
     /**
-     * {@inheritdoc}
+     * @param array $options
+     *
+     * @return string
      */
     public function getParent(array $options)
     {
         return 'textarea';
     }
 
+    /**
+     * @param array $options
+     *
+     * @return array
+     */
     public function getDefaultOptions(array $options)
     {
         return array(

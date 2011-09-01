@@ -23,6 +23,9 @@ class MadalynnAdmobExtension extends \Twig_Extension
 {
     protected $admob;
 
+    /**
+     * @param Admob $admob
+     */
     public function __construct(Admob $admob)
     {
         $this->admob = $admob;

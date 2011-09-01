@@ -25,6 +25,9 @@ class DeployerManager
     protected $serverManager;
     protected $directory;
 
+    /**
+     * @param array $servers
+     */
     public function __construct(array $servers)
     {
         $this->serverManager = new ServerManager();
