@@ -12,6 +12,11 @@
 
 namespace Madalynn\DeployBundle\Server;
 
+/**
+ * Server
+ *
+ * @author Julien Brochet <mewt@madalynn.eu>
+ */
 class Server
 {
     protected $host;

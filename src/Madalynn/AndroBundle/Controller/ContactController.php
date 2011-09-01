@@ -18,6 +18,11 @@ use Symfony\Component\HttpFoundation\Request;
 use Madalynn\AndroBundle\Entity\Contact;
 use Madalynn\AndroBundle\Form\ContactType;
 
+/**
+ * Contact Controller
+ *
+ * @author Julien Brochet <mewt@androirc.com>
+ */
 class ContactController extends AbstractController
 {
     public function showAction(Request $request)

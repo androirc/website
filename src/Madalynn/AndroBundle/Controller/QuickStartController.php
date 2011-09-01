@@ -14,8 +14,13 @@ namespace Madalynn\AndroBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
 
+/**
+ * QuickStart Controller
+ *
+ * @author Julien Brochet <mewt@androirc.com>
+ */
 class QuickStartController extends AbstractController
-{    
+{
     public function showAction($version, $lang)
     {
         $em = $this->getDoctrine()->getEntityManager();

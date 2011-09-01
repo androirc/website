@@ -27,11 +27,17 @@ class CookieListener
 {
     protected $admob;
 
+    /**
+     * @param Admob $admob
+     */
     public function __construct(Admob $admob)
     {
         $this->admob = $admob;
     }
 
+    /**
+     * @param FilterResponseEvent $event
+     */
     public function onKernelResponse(FilterResponseEvent $event)
     {
         $request = $event->getRequest();

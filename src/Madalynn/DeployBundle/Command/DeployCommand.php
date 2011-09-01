@@ -19,6 +19,11 @@ use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Process\Process;
 
+/**
+ * Deploy Command
+ *
+ * @author Julien Brochet <mewt@madalynn.eu>
+ */
 class DeployCommand extends ContainerAwareCommand
 {
     protected function configure()

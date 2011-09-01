@@ -15,6 +15,11 @@ namespace Madalynn\AndroBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Security\Core\SecurityContext;
 
+/**
+ * Security Controller
+ *
+ * @author Julien Brochet <mewt@androirc.com>
+ */
 class SecurityController extends Controller
 {
     public function loginAction()

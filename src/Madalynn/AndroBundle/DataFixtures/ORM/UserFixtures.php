@@ -21,6 +21,11 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 use Madalynn\AndroBundle\Entity\User;
 
+/**
+ * User Fixtures
+ *
+ * @author Julien Brochet <mewt@androirc.com>
+ */
 class UserFixtures extends AbstractFixture implements FixtureInterface, ContainerAwareInterface, OrderedFixtureInterface
 {
     private $container;
@@ -30,6 +35,11 @@ class UserFixtures extends AbstractFixture implements FixtureInterface, Containe
         $this->container = $container;
     }
 
+    /**
+     * Load data fixtures with the passed EntityManager
+     *
+     * @param object $manager
+     */
     public function load($em)
     {
         $admin = new User();
@@ -44,12 +54,25 @@ class UserFixtures extends AbstractFixture implements FixtureInterface, Containe
         $this->addReference('user_admin', $admin);
     }
 
+    /**
+     * Get the order of this fixture
+     *
+     * @return integer
+     */
     public function getOrder()
     {
         return 2;
     }
 
-    private function encryptPassword($user, $password)
+    /**
+     * Encrypt the password for the current user
+     *
+     * @param User $user The user
+     * @param type $password The plain password to encrypt
+     *
+     * @return User The same instance with the encrypted password
+     */
+    private function encryptPassword(User $user, $password)
     {
         $factory = $this->container->get('security.encoder_factory');
         $encoder = $factory->getEncoder($user);

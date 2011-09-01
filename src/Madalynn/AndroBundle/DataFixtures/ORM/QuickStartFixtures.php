@@ -17,8 +17,18 @@ use Doctrine\Common\DataFixtures\FixtureInterface;
 use Madalynn\AdminBundle\DataTransformer\VersionTransformer;
 use Madalynn\AndroBundle\Entity\QuickStart;
 
+/**
+ * QuickStart Fixtures
+ *
+ * @author Julien Brochet <mewt@androirc.com>
+ */
 class QuickStartFixtures implements FixtureInterface
 {
+    /**
+     * Load data fixtures with the passed EntityManager
+     *
+     * @param object $manager
+     */
     public function load($em)
     {
         $transformer = new VersionTransformer();

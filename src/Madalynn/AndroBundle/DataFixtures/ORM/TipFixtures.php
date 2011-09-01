@@ -16,8 +16,18 @@ use Doctrine\Common\DataFixtures\FixtureInterface;
 
 use Madalynn\AndroBundle\Entity\Tip;
 
+/**
+ * Tip Fixtures
+ *
+ * @author Julien Brochet <mewt@androirc.com>
+ */
 class TipFixtures implements FixtureInterface
 {
+    /**
+     * Load data fixtures with the passed EntityManager
+     *
+     * @param object $manager
+     */
     public function load($em)
     {
         $tips = array(

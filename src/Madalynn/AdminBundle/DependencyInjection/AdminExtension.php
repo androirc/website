@@ -19,10 +19,36 @@ use Symfony\Component\Config\FileLocator;
 
 class AdminExtension extends Extension
 {
+    /**
+     * Responds to the app.config configuration parameter.
+     *
+     * @param array            $configs
+     * @param ContainerBuilder $container
+     */
     public function load(array $configs, ContainerBuilder $container)
     {
         $loader = new XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
 
         $loader->load('services.xml');
+    }
+
+    /**
+     * Returns the namespace to be used for this extension (XML namespace).
+     *
+     * @return string The XML namespace
+     */
+    public function getNamespace()
+    {
+        return 'http://www.androirc.com/schema/dic/admin';
+    }
+
+    /**
+     * Return the alias for this extension
+     *
+     * @return string The alias name
+     */
+    public function getAlias()
+    {
+        return 'admin';
     }
 }

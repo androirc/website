@@ -45,8 +45,23 @@ class MadalynnAdmobExtension extends Extension
         }
     }
 
+    /**
+     * Returns the namespace to be used for this extension (XML namespace).
+     *
+     * @return string The XML namespace
+     */
     public function getNamespace()
     {
-        return 'http://www.madalynn.eu/symfony/schema/';
+        return 'http://www.madalynn.eu/schema/dic/admob';
+    }
+
+    /**
+     * Return the alias for this extension
+     *
+     * @return string The alias name
+     */
+    public function getAlias()
+    {
+        return 'madalynn_admob';
     }
 }

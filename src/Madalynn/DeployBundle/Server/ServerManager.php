@@ -12,6 +12,11 @@
 
 namespace Madalynn\DeployBundle\Server;
 
+/**
+ * Server Manager
+ *
+ * @author Julien Brochet <mewt@madalynn.eu>
+ */
 class ServerManager
 {
     protected $servers;
@@ -21,6 +26,10 @@ class ServerManager
         $this->servers = array();
     }
 
+    /**
+     * @param string $key
+     * @param Server $server
+     */
     public function add($key, Server $server)
     {
         if (true === array_key_exists($key, $this->servers)) {

@@ -16,8 +16,18 @@ use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
+/**
+ * Tree Configuration
+ *
+ * @author Julien Brochet <mewt@madalynn.eu>
+ */
 class Configuration implements ConfigurationInterface
 {
+    /**
+     * Generates the configuration tree builder.
+     *
+     * @return TreeBuilder The tree builder
+     */
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();

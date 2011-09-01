@@ -21,10 +21,17 @@ class InteractiveLoginListener
 {
     protected $doctrine;
 
+    /**
+     * @param RegistryInterface $doctrine
+     */
     public function __construct(RegistryInterface $doctrine)
     {
         $this->doctrine = $doctrine;
     }
+
+    /**
+     * @param InteractiveLoginEvent $event
+     */
     public function onSecurityInteractiveLogin(InteractiveLoginEvent $event)
     {
         $user = $event->getAuthenticationToken()->getUser();

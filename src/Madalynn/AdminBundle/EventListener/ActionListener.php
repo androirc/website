@@ -17,8 +17,16 @@ use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
 
 use Madalynn\AdminBundle\Controller\Action\PreActionInterface;
 
+/**
+ * Action Listener
+ *
+ * @author Julien Brochet <mewt@androirc.com>
+ */
 class ActionListener
 {
+    /**
+     * @param FilterControllerEvent $event
+     */
     public function onKernelController(FilterControllerEvent $event)
     {
         $controller = $event->getController();

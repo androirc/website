@@ -14,6 +14,11 @@ namespace Madalynn\AdminBundle\Type;
 
 use Symfony\Component\Form\AbstractType;
 
+/**
+ * TinyMCE Type
+ *
+ * @author Julien Brochet <mewt@androirc.com>
+ */
 class TinymceType extends AbstractType
 {
     /**

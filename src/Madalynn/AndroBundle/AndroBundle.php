@@ -14,6 +14,11 @@ namespace Madalynn\AndroBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
+/**
+ * AndroIRC Bundle
+ *
+ * @author Julien Brochet <mewt@androirc.com>
+ */
 class AndroBundle extends Bundle
 {
 }
