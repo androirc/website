@@ -10,6 +10,7 @@
 
     <services>
         <service id="madalynn.admob" class="%madalynn.admob.class%">
+            <argument type="service" id="request" strict="false" />
             <argument type="service" id="session" />
             <argument>%madalynn.admob.publisher_id%</argument>
             <argument>%madalynn.admob.analytics_id%</argument>
