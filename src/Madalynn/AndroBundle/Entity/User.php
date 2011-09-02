@@ -81,9 +81,9 @@ class User implements UserInterface
     protected $updated;
 
     /**
-     * @ORM\Column(type="datetime", nullable=true)
+     * @ORM\Column(type="datetime", nullable=true, name="last_login")
      */
-    protected $last_login;
+    protected $lastLogin;
 
     public function __construct()
     {
@@ -246,7 +246,7 @@ class User implements UserInterface
      */
     public function setLastLogin($lastLogin)
     {
-        $this->last_login = $lastLogin;
+        $this->lastLogin = $lastLogin;
     }
 
     /**
@@ -256,7 +256,7 @@ class User implements UserInterface
      */
     public function getLastLogin()
     {
-        return $this->last_login;
+        return $this->lastLogin;
     }
 
     /**
