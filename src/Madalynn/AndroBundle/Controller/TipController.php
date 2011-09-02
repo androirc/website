@@ -46,11 +46,6 @@ class TipController extends AbstractController
             return new Response('No tips to display');
         }
 
-        $response = new Response();
-
-        $response->headers->set('X-AndroIRC', uniqid());
-        $response->setContent($tip->getContent());
-
-        return $response;
+        return new Response($tip->getContent());
     }
 }

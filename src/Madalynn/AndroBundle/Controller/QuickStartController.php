@@ -28,11 +28,8 @@ class QuickStartController extends AbstractController
 
         $quickstart = $repo->findByVersion($version, $lang);
 
-        $response = new Response();
-        $response->headers->set('X-AndroIRC', uniqid());
-
         return $this->render('AndroBundle:QuickStart:show.html.twig', array(
             'quickstart' => $quickstart
-        ), $response);
+        ));
     }
 }
