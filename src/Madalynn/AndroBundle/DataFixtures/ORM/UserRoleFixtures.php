@@ -18,8 +18,18 @@ use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 
 use Madalynn\AndroBundle\Entity\Role;
 
+/**
+ * User Role Fixtures
+ *
+ * @author Julien Brochet <mewt@androirc.com>
+ */
 class UserRoleFixtures extends AbstractFixture implements FixtureInterface, OrderedFixtureInterface
 {
+    /**
+     * Load data fixtures with the passed EntityManager
+     *
+     * @param object $manager
+     */
     public function load($em)
     {
         $userAdmin = $this->getReference('user_admin');
@@ -31,6 +41,11 @@ class UserRoleFixtures extends AbstractFixture implements FixtureInterface, Orde
         $em->flush();
     }
 
+    /**
+     * Get the order of this fixture
+     *
+     * @return integer
+     */
     public function getOrder()
     {
         return 3;

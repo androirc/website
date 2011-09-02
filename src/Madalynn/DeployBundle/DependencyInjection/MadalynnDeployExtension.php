@@ -20,8 +20,19 @@ use Symfony\Component\Config\FileLocator;
 
 use Madalynn\DeployBundle\Server\Server;
 
+/**
+ * Deploy extension
+ *
+ * @author Julien Brochet <mewt@madalynn.eu>
+ */
 class MadalynnDeployExtension extends Extension
 {
+    /**
+     * Responds to the app.config configuration parameter.
+     *
+     * @param array            $configs
+     * @param ContainerBuilder $container
+     */
     public function load(array $configs, ContainerBuilder $container)
     {
         $processor = new Processor();
@@ -37,11 +48,21 @@ class MadalynnDeployExtension extends Extension
         $deployer->addMethodCall('setDirectory', array($config['rsync_dir']));
     }
 
+    /**
+     * Returns the namespace to be used for this extension (XML namespace).
+     *
+     * @return string The XML namespace
+     */
     public function getNamespace()
     {
         return 'http://www.madalynn.eu/schema/dic/deploy';
     }
 
+    /**
+     * Return the alias for this extension
+     *
+     * @return string The alias name
+     */
     public function getAlias()
     {
         return 'madalynn_deploy';

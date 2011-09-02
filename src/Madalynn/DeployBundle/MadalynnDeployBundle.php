@@ -14,6 +14,11 @@ namespace Madalynn\DeployBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
+/**
+ * Deploy Bundle
+ *
+ * @author Julien Brochet <mewt@madalynn.eu>
+ */
 class MadalynnDeployBundle extends Bundle
 {
 }

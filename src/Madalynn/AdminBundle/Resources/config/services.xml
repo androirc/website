@@ -17,9 +17,5 @@
         <service id="form.type.tinymce" class="%form.type.tinymce.class%">
             <tag name="form.type" alias="tinymce" />
         </service>
-
-        <service id="form.type.version" class="%form.type.version.class%">
-            <tag name="form.type" alias="version" />
-        </service>
     </services>
 </container>

@@ -16,8 +16,20 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use Madalynn\AndroBundle\Entity\User;
 
+/**
+ * Abstract Controller
+ *
+ * @author Julien Brochet <mewt@androirc.com>
+ */
 abstract class AbstractController extends Controller
 {
+    /**
+     * Get a user from the Security Context
+     *
+     * @return mixed
+     *
+     * @throws \LogicException If SecurityBundle is not available
+     */
     public function getUser()
     {
         if (!$this->container->has('security.context')) {
@@ -30,6 +42,11 @@ abstract class AbstractController extends Controller
         return $user instanceof User ? $user : null;
     }
 
+    /**
+     * Check if the current user has the 'ROLE_ADMIN' role
+     *
+     * @return boolean True if he is, false otherwise
+     */
     public function isAdmin()
     {
         $user = $this->getUser();
@@ -37,6 +54,15 @@ abstract class AbstractController extends Controller
         return null !== $user && true === $user->isAdmin();
     }
 
+    /**
+     * Renders a different view if the user is coming from the mobile version
+     *
+     * @param string   $view The view name
+     * @param array    $parameters An array of parameters to pass to the view
+     * @param Response $response A response instance
+     *
+     * @return Response A Response instance
+     */
     public function renderWithMobile($view, array $parameters = array(), Response $response = null)
     {
         $request = $this->get('request');

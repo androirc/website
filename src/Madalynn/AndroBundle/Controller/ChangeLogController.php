@@ -12,6 +12,11 @@
 
 namespace Madalynn\AndroBundle\Controller;
 
+/**
+ * ChangeLog Controller
+ *
+ * @author Julien Brochet <mewt@androirc.com>
+ */
 class ChangeLogController extends AbstractController
 {
     public function showAction($version)

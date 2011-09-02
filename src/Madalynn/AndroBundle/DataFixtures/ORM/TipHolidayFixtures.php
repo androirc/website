@@ -16,8 +16,18 @@ use Doctrine\Common\DataFixtures\FixtureInterface;
 
 use Madalynn\AndroBundle\Entity\TipHoliday;
 
+/**
+ * Tip Holiday Fixtures
+ *
+ * @author Julien Brochet <mewt@androirc.com>
+ */
 class TipHolidayFixtures implements FixtureInterface
 {
+    /**
+     * Load data fixtures with the passed EntityManager
+     *
+     * @param object $manager
+     */
     public function load($em)
     {
         $tips = array(

@@ -17,15 +17,29 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Session;
 
+/**
+ * Check if the user is coming from a mobile phone
+ *
+ * If the user is coming from an Android phone, this listener add
+ * a 'X-AndroIRC-Mobile' header to the request
+ *
+ * @author Julien Brochet <mewt@androirc.com>
+ */
 class MobileVersionListener
 {
     protected $session;
 
+    /**
+     * @param Session $session
+     */
     public function __construct(Session $session)
     {
         $this->session = $session;
     }
 
+    /**
+     * @param GetResponseEvent $event
+     */
     public function onKernelRequest(GetResponseEvent $event)
     {
         $request = $event->getRequest();

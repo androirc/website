@@ -12,6 +12,11 @@
 
 namespace Madalynn\AndroBundle\Helper;
 
+/**
+ * String helper
+ *
+ * @author Julien Brochet <mewt@androirc.com>
+ */
 class StringHelper
 {
     static public function slugize($text)

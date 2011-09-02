@@ -16,8 +16,18 @@ use Doctrine\Common\DataFixtures\FixtureInterface;
 
 use Madalynn\AndroBundle\Entity\Donator;
 
+/**
+ * Donator Fixtures
+ *
+ * @author Julien Brochet <mewt@androirc.com>
+ */
 class DonatorFixtures implements FixtureInterface
 {
+    /**
+     * Load data fixtures with the passed EntityManager
+     *
+     * @param object $manager
+     */
     public function load($em)
     {
         $martin = new Donator();

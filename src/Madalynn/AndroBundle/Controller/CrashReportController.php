@@ -17,6 +17,11 @@ use Symfony\Component\HttpFoundation\Request;
 
 use Madalynn\AndroBundle\Entity\CrashReport;
 
+/**
+ * CrashReport Controller
+ *
+ * @author Julien Brochet <mewt@androirc.com>
+ */
 class CrashReportController extends AbstractController
 {
     public function addAction(Request $request)

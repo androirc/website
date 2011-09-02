@@ -14,6 +14,11 @@ namespace Madalynn\AdminBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
+/**
+ * AndroIRC Admin Bundle
+ *
+ * @author Julien Brochet <mewt@androirc.com>
+ */
 class AdminBundle extends Bundle
 {
 }

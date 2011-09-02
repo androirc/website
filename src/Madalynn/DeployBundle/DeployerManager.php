@@ -15,11 +15,19 @@ namespace Madalynn\DeployBundle;
 use Madalynn\DeployBundle\Server\ServerManager;
 use Madalynn\DeployBundle\Server\Server;
 
+/**
+ * Deployer Manager
+ *
+ * @author Julien Brochet <mewt@madalynn.eu>
+ */
 class DeployerManager
 {
     protected $serverManager;
     protected $directory;
 
+    /**
+     * @param array $servers
+     */
     public function __construct(array $servers)
     {
         $this->serverManager = new ServerManager();

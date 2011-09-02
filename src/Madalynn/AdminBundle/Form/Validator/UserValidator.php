@@ -16,12 +16,22 @@ use Symfony\Component\Form\FormValidatorInterface;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\Form\FormError;
 
+/**
+ * User Validator
+ *
+ * @author Julien Brochet <mewt@androirc.com>
+ */
 class UserValidator implements FormValidatorInterface
 {
+    /**
+     * Validate the User form
+     *
+     * @param FormInterface $form
+     */
     function validate(FormInterface $form)
     {
         $user = $form->getData();
-        
+
         if (null === $user->getPassword() && null === $form['plainPassword']->getData()) {
             $form['plainPassword']->addError(new FormError('You need to enter a password.'));
         }

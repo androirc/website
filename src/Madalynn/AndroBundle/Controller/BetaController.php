@@ -18,6 +18,11 @@ use Symfony\Component\HttpFoundation\Request;
 use Madalynn\AndroBundle\Entity\BetaDownload;
 use Madalynn\AndroBundle\Location;
 
+/**
+ * Beta Controller
+ *
+ * @author Julien Brochet <mewt@androirc.com>
+ */
 class BetaController extends AbstractController
 {
     public function showAction()

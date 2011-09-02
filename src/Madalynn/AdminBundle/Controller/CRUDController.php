@@ -20,6 +20,11 @@ use Doctrine\ORM\QueryBuilder;
 use Pagerfanta\Pagerfanta;
 use Pagerfanta\Adapter\DoctrineORMAdapter;
 
+/**
+ * CRUD Controller
+ *
+ * @author Julien Brochet <mewt@androirc.com>
+ */
 abstract class CRUDController extends Controller
 {
     /**

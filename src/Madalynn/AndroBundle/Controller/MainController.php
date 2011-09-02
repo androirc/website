@@ -15,6 +15,11 @@ namespace Madalynn\AndroBundle\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
+/**
+ * Main Controller
+ *
+ * @author Julien Brochet <mewt@madalynn.eu>
+ */
 class MainController extends AbstractController
 {
     public function homepageAction()

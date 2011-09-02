@@ -12,8 +12,6 @@
 
 namespace Madalynn\AdmobBundle\Twig\Extension;
 
-use Symfony\Component\HttpFoundation\Request;
-
 use Madalynn\AdmobBundle\Admob;
 
 /**
@@ -25,6 +23,9 @@ class MadalynnAdmobExtension extends \Twig_Extension
 {
     protected $admob;
 
+    /**
+     * @param Admob $admob
+     */
     public function __construct(Admob $admob)
     {
         $this->admob = $admob;
@@ -37,9 +38,9 @@ class MadalynnAdmobExtension extends \Twig_Extension
         );
     }
 
-    public function render(Request $request)
+    public function render()
     {
-        return $this->admob->render($request);
+        return $this->admob->render();
     }
 
     public function getName()

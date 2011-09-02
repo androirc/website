@@ -22,7 +22,9 @@ use Symfony\Component\HttpFoundation\Session;
  */
 class Admob
 {
+    protected $request;
     protected $session;
+
     protected $publisherId;
     protected $analyticsId;
     protected $sessionId;
@@ -36,6 +38,7 @@ class Admob
     /**
      * Creates the AdMob instance
      *
+     * @param Request $request
      * @param Session $session
      * @param string  $publisherId
      * @param string  $analyticsId
@@ -44,9 +47,11 @@ class Admob
      * @param Boolean $testMode
      * @param array   $options
      */
-    public function __construct(Session $session, $publisherId, $analyticsId, $adRequest = true, $analyticsRequest = false, $testMode = true, array $options = array())
+    public function __construct(Request $request, Session $session, $publisherId, $analyticsId, $adRequest = true, $analyticsRequest = false, $testMode = true, array $options = array())
     {
+        $this->request = $request;
         $this->session = $session;
+
         $this->publisherId = $publisherId;
         $this->analyticsId = $analyticsId;
 
@@ -61,10 +66,9 @@ class Admob
     /**
      * Render the advertising
      *
-     * @param Request $request The request
      * @return string The <img /> tag
      */
-    public function render(Request $request)
+    public function render()
     {
         if (false === function_exists('curl_init')) {
             throw new \Exception('AdmobBundle needs the curl extension.');
@@ -91,9 +95,9 @@ class Admob
         list($usec, $sec) = explode(' ', microtime());
         $params = array('rt=' . $rt,
                   'z=' . ($sec + $usec),
-                  'u=' . urlencode($request->server->get('HTTP_USER_AGENT')),
-                  'i=' . urlencode($request->getClientIp()),
-                  'p=' . urlencode($request->getUri()),
+                  'u=' . urlencode($this->request->server->get('HTTP_USER_AGENT')),
+                  'i=' . urlencode($this->request->getClientIp()),
+                  'p=' . urlencode($this->request->getUri()),
                   'v=' . urlencode('20081105-PHPCURL-acda0040bcdea222'));
 
         if (false === $this->sessionId) {
@@ -112,8 +116,8 @@ class Admob
             $params[] = 'a=' . $this->analyticsId;
         }
 
-        if (true === $request->cookies->has('admobuu')) {
-            $params[] = 'o=' . $request->cookies->get('admobuu');
+        if (true === $this->request->cookies->has('admobuu')) {
+            $params[] = 'o=' . $this->request->cookies->get('admobuu');
         }
 
         if (true === $this->testMode) {
@@ -133,7 +137,7 @@ class Admob
         );
 
         // Ignore somes HTTP_ header
-        $path = $request->server->all();
+        $path = $this->request->server->all();
         foreach ($path as $key => $value) {
             if (substr($key, 0, 4) == 'HTTP' && false === in_array($key, $ignore)) {
                 $params[] = urlencode('h[' . $key . ']') . '=' . urlencode($value);
@@ -169,12 +173,12 @@ class Admob
         if (false === $this->pixelSent) {
             $this->pixelSent = true;
 
-            $contents .= '<img src=' . $request->getScheme() . '://p.admob.com/e0?'
+            $contents .= '<img src=' . $this->request->getScheme() . '://p.admob.com/e0?'
                   . 'rt=' . $rt
                   . '&amp;z=' . ($sec + $usec)
                   . '&amp;a=' . (true === $analyticsMode ? $this->analyticsId : '')
                   . '&amp;s=' . (true === $adMode ? $this->publisherId : '')
-                  . '&amp;o=' . (true ===  $request->cookies->has('admobuu') ? $request->cookies->get('admobuu') : '')
+                  . '&amp;o=' . (true ===  $this->request->cookies->has('admobuu') ? $this->request->cookies->get('admobuu') : '')
                   . '&amp;lt=' . ($secEnd + $usecEnd - $secStart - $usecStart)
                   . '&amp;to=' . $curlTimeout
                   . '" alt="" width="1" height="1"/>';

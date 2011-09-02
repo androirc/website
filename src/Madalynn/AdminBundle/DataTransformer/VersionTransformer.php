@@ -12,13 +12,19 @@
 
 namespace Madalynn\AdminBundle\DataTransformer;
 
+/**
+ * Version transformer
+ *
+ * Transform a 'version' type to a string
+ */
 class VersionTransformer
 {
     /**
-     * Tranformation : 3990 => 3.9.9
+     * Tranformation : 3990 -> 3.9.9
      *
-     * @param type $value
-     * @return type
+     * @param integer $value
+     *
+     * @return string
      */
     public static function transform($value)
     {
@@ -32,10 +38,11 @@ class VersionTransformer
     }
 
     /**
-     * Reverse the tranformation : 3.9.9 => 3990
+     * Reverse the tranformation (e.g. 3.9.9 -> 3990)
      *
-     * @param type $value
-     * @return type
+     * @param string $value
+     *
+     * @return int A 4 digit integer
      */
     public static function reverseTransform($value)
     {
