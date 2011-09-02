@@ -112,6 +112,18 @@ class TipFixtures implements FixtureInterface
                 'content' => 'Vous aimez AndroIRC ? Alors ajoutez un commentaire sur l\'Android Market, ça fait toujours plaisir ;)'
             ),
             array(
+                'lang'    => 'fr',
+                'content' => 'Vous pouvez supporter AndroIRC en téléchargeant l\'application "AndroIRC premium" qui désactive la publicité !'
+            ),
+            array(
+                'lang'    => 'fr',
+                'content' => 'Vous pouvez effectuer une auto-complétion des utilisateurs via la touche <i>Recherche</i> de votre téléphone'
+            ),
+            array(
+                'lang'    => 'fr',
+                'content' => 'AndroIRC supporte maintenant le protocole <b>FiSH</b>. Plus d\'informations sur le wiki'
+            ),
+            array(
                 'lang'    => 'en',
                 'content' => 'AndroIRC is now on Twitter ! twitter.com/androirc'
             ),
@@ -159,6 +171,22 @@ class TipFixtures implements FixtureInterface
                 'lang'    => 'en',
                 'content' => 'Verizon blocks IRC over 3G. You won\'t be able to use AndroIRC over 3G, you will need to use WiFi'
             ),
+            array(
+                'lang'    => 'en',
+                'content' => 'You can help us translating AndroIRC on translation.androirc.com'
+            ),
+            array(
+                'lang'    => 'en',
+                'content' => 'You can support AndroIRC by downloading the application "AndroIRC premium" which disable the advertising!'
+            ),
+            array(
+                'lang'    => 'en',
+                'content' => 'You can perform auto-complete via the <i>research</i> button on your phone'
+            ),
+            array(
+                'lang'    => 'en',
+                'content' => 'AndroIRC now supports the <b>FiSH</b> protocol. More information on the wiki'
+            )
         );
 
         foreach ($tips as $tip) {
