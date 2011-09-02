@@ -12,6 +12,8 @@
 
 namespace Madalynn\AdminBundle\Controller;
 
+use Doctrine\ORM\QueryBuilder;
+
 use Madalynn\AdminBundle\Form\UserType;
 
 class UserController extends CRUDController
@@ -45,6 +47,11 @@ class UserController extends CRUDController
             $entity->setPassword($encoder->encodePassword($password, $entity->getSalt()));
             $entity->setPlainPassword(null);
         }
+    }
+
+    protected function filterQuery(QueryBuilder $qb)
+    {
+        $qb->orderBy('e.lastLogin', 'desc');
     }
 
     public function showAction($id)
