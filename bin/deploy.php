@@ -18,6 +18,8 @@ $server = array(
     'dir'  => '/home/web/androirc.com/beta/'
 );
 
+$files = __DIR__ . '/..';
+
 $path = __DIR__ . '/../app/config';
 $options = '-azC --force --delete --progress';
 
@@ -38,9 +40,10 @@ if (file_exists($path . '/rsync.txt')) {
     $options .= sprintf(' --files-from=%s/rsync.txt', $path);
 }
 
-$command = sprintf('rsync %s -e %s ../ %s',
+$command = sprintf('rsync %s -e %s %s %s',
         $options,
         $informations['ssh'],
+        $files,
         $informations['login']
 );
 
