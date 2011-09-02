@@ -15,7 +15,7 @@ $server = array(
     'user' => 'web',
     'host' => 'bender.madalynn.eu',
     'port' => 2222,
-    'dir'  => '/home/androirc.com/beta/'
+    'dir'  => '/home/web/androirc.com/beta/'
 );
 
 $path = __DIR__ . '/../app/config';
