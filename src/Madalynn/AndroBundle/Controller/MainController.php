@@ -27,7 +27,7 @@ class MainController extends AbstractController
         $em = $this->getDoctrine()->getEntityManager();
         $repo = $em->getRepository('AndroBundle:Article');
 
-        $articles = $repo->getLastArticles($this->isAdmin());
+        $articles = $repo->getLastArticles($this->isAdmin(), 5);
 
         return $this->renderWithMobile('AndroBundle:Main:homepage.html.twig', array(
             'articles' => $articles
