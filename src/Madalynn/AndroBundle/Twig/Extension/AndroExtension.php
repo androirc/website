@@ -32,8 +32,9 @@ class AndroExtension extends \Twig_Extension
     public function getFilters()
     {
         return array(
-            'sha1' => new \Twig_Filter_Method($this, 'sha1'),
-            'md5'  => new \Twig_Filter_Method($this, 'md5')
+            'sha1'       => new \Twig_Filter_Method($this, 'sha1'),
+            'md5'        => new \Twig_Filter_Method($this, 'md5'),
+            'strip_tags' => new \Twig_Filter_Method($this, 'stripTags', array('is_safe' => array('html'))),
         );
     }
 
@@ -44,6 +45,11 @@ class AndroExtension extends \Twig_Extension
             'andro_switch_version' => new \Twig_Function_Method($this, 'switchVersion', array('is_safe' => array('html'))),
             'andro_from_mobile'    => new \Twig_Function_Method($this, 'fromMobile', array('is_safe' => array('html')))
         );
+    }
+
+    public function stripTags($text)
+    {
+        return strip_tags($text);
     }
 
     public function sha1($text)

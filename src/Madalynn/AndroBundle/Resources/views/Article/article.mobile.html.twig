@@ -8,7 +8,7 @@
 
     <div class="content">
         {% if sumup is defined %}
-            {{ article.getContent | truncate(200) | raw  }}
+            {{ article.getContent | strip_tags | truncate(300)  }}
         {% else %}
             {{ article.getContent | raw }}
         {% endif %}
