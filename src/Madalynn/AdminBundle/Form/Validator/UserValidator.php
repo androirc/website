@@ -33,7 +33,7 @@ class UserValidator implements FormValidatorInterface
         $user = $form->getData();
 
         if (null === $user->getPassword() && null === $form['plainPassword']->getData()) {
-            $form['plainPassword']->addError(new FormError('You need to enter a password.'));
+            $form['plainPassword']->addError(new FormError('You need to enter a password'));
         }
     }
 }
