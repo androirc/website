@@ -21,6 +21,8 @@ class ChangeLogType extends AbstractType
     {
         $builder->add('version', 'text')
                 ->add('file');
+
+        $builder->addValidator(new Validator\FileValidator());
     }
 
     public function getName()

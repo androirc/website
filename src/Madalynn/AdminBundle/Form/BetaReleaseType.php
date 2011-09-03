@@ -23,6 +23,8 @@ class BetaReleaseType extends AbstractType
                 ->add('revision')
                 ->add('file')
                 ->add('downloadable', null, array('required' => false));
+
+        $builder->addValidator(new Validator\FileValidator());
     }
 
     public function getName()
