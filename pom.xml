@@ -13,5 +13,6 @@
     <properties> 
         <sonar.language>php</sonar.language>
         <sonar.phpUnit.shouldRun>false</sonar.phpUnit.shouldRun>
+        <sonar.phpUnit.coverage.shouldRun>false</sonar.phpUnit.coverage.shouldRun>
     </properties> 
 </project>
