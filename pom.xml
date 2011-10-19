@@ -11,6 +11,7 @@
         <testSourceDirectory>test</testSourceDirectory>
     </build> 
     <properties> 
-        <sonar.language>php</sonar.language> 
+        <sonar.language>php</sonar.language>
+        <sonar.phpUnit.shouldRun>false</sonar.phpUnit.shouldRun>
     </properties> 
 </project>
