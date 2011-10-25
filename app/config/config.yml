@@ -87,6 +87,10 @@ doctrine:
 swiftmailer:
     transport:  mail
 
+# GravatarBundle Configuration
+ornicar_gravatar:
+    size: 50
+
 # AkismetBundle Configuration
 ornicar_akismet:
     api_key: %akismet_api_key%
@@ -105,7 +109,3 @@ madalynn_deploy:
             host: bender.madalynn.eu
             user: web
             dir: /home/web/androirc.com/beta
-
-# GravatarBundle Configuration
-gravatar:
-    size: 50

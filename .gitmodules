@@ -49,6 +49,6 @@
 [submodule "vendor/bundles/Sensio/Bundle/GeneratorBundle"]
 	path = vendor/bundles/Sensio/Bundle/GeneratorBundle
 	url = git://github.com/sensio/SensioGeneratorBundle.git
-[submodule "vendor/bundles/Bundle/GravatarBundle"]
-	path = vendor/bundles/Bundle/GravatarBundle
+[submodule "vendor/bundles/Ornicar/GravatarBundle"]
+	path = vendor/bundles/Ornicar/GravatarBundle
 	url = git://github.com/ornicar/GravatarBundle.git
