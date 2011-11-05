@@ -97,3 +97,35 @@
 #page ol {
     list-style-type: decimal;
 }
+
+/* Screenshots */
+
+#slider {
+    margin: 0 !important;
+}
+
+#slider .device {
+    text-align: center;
+}
+
+#slider li {
+    background-image: none !important;
+    background-position: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: list-item !important;
+}
+
+.thumbs {
+    border-top: 3px solid #bfbfbf;
+    padding-top: 5px;
+    margin-top: 15px;
+}
+
+.thumbs img {
+    margin: 10px 5px;
+}
+
+.pager-active {
+    border-bottom: solid #026995 2px;
+}

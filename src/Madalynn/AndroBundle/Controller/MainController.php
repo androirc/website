@@ -14,6 +14,7 @@ namespace Madalynn\AndroBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Finder\Finder;
 
 /**
  * Main Controller
@@ -41,7 +42,14 @@ class MainController extends AbstractController
 
     public function screenshotsAction()
     {
-        return $this->render('AndroBundle:Main:screenshots.html.twig');
+        $screenshots = Finder::create()->name("device-*.png")
+                                       ->in(__DIR__.'/../Resources/public/images/device')
+                                       ->depth('== 0')
+                                       ->sortByName();
+
+        return $this->render('AndroBundle:Main:screenshots.html.twig', array(
+            'screenshots' => $screenshots
+        ));
     }
 
     public function donateAction()
