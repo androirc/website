@@ -28,7 +28,7 @@ input[type=submit]:active, input[type=reset]:active, button[type=submit]:active,
     padding-top: 6px;
 }
 
-.form td {
+.form > tbody > tr > td {
     padding-bottom: 15px;
     vertical-align: top;
 }

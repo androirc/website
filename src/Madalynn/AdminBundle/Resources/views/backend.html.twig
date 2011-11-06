@@ -15,7 +15,27 @@
 {% endblock %}
 
 {% block javascripts %}
-    <script type="text/javascript" src="{{ asset('bundles/admin/js/tinymce/tiny_mce.js') }}"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ asset('bundles/admin/js/ckeditor/ckeditor.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/admin/js/ckeditor/adapters/jquery.js') }}"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var config = {
+                toolbar: [
+                    [ 'Source' ],
+                    [ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo' ],
+                    [ 'Bold', 'Italic', 'Underline', '-', 'RemoveFormat' ],
+                    [ 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'NumberedList', 'BulletedList' ],
+                    [ 'Format' ]
+                ],
+                resize_enabled: false,
+                width: 670,
+                height: 300
+            };
+
+            $('.editor').ckeditor(config);
+        });
+    </script>
 {% endblock %}
 
 {% block header %}

@@ -22,7 +22,7 @@ class QuickStartType extends AbstractType
         $builder->add('language', 'language', array('preferred_choices' => array('en', 'fr')))
                 ->add('versionMin', 'text', array('label' => 'Version min'))
                 ->add('versionMax', 'text', array('label' => 'Version max'))
-                ->add('content', 'tinymce');
+                ->add('content', 'editor');
     }
 
     public function getName()

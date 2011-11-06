@@ -1,25 +1,6 @@
-{# TinyMCE Widget #}
+{# Editor Widget #}
 
-{% block tinymce_widget %}
-    {% set attr = attr|merge({ 'class' : 'tinymce' }) %}
+{% block editor_widget %}
+    {% set attr = attr|merge({ 'class' : 'editor' }) %}
     {{ block('textarea_widget') }}
-
-    <script type="text/javascript">
-        tinyMCE.init({
-            mode:                              "exact",
-            elements:                          "{{ id }}",
-            theme:                             "advanced",
-            width:                             "650px",
-            height:                            "350px",
-            theme_advanced_toolbar_location:   "top",
-            skin :                             "o2k7",
-            skin_variant :                     "black",
-            theme_advanced_buttons1 :          "bold, italic, underline, strikethrough, |, justifyleft, justifycenter, justifyright, justifyfull, |, bullist, numlist, |, cut,copy,paste, |, cleanup, code, |, undo,redo,|, formatselect, |, link, unlink, image, forecolorpicker, preview",
-            theme_advanced_buttons2 :          "",
-            theme_advanced_toolbar_align:      "left",
-            theme_advanced_statusbar_location: "bottom",
-            theme_advanced_resizing:           false,
-            relative_urls:                     false,
-        });
-    </script>
 {% endblock %}

@@ -4,8 +4,7 @@
 
     <parameters>
         <parameter key="androirc.kernel.listener.actions.class">Madalynn\AdminBundle\EventListener\ActionListener</parameter>
-        <parameter key="form.type.tinymce.class">Madalynn\AdminBundle\Type\TinymceType</parameter>
-        <parameter key="form.type.version.class">Madalynn\AdminBundle\Type\VersionType</parameter>
+        <parameter key="form.type.editor.class">Madalynn\AdminBundle\Type\EditorType</parameter>
     </parameters>
 
     <services>
@@ -14,8 +13,8 @@
         </service>
 
         <!-- Form types -->
-        <service id="form.type.tinymce" class="%form.type.tinymce.class%">
-            <tag name="form.type" alias="tinymce" />
+        <service id="form.type.editor" class="%form.type.editor.class%">
+            <tag name="form.type" alias="editor" />
         </service>
     </services>
 </container>

@@ -20,7 +20,7 @@ class ArticleType extends AbstractType
     public function buildForm(FormBuilder $builder, array $options)
     {
         $builder->add('title')
-                ->add('content', 'tinymce')
+                ->add('content', 'editor')
                 ->add('visible', null, array('required' => false));
     }
 
