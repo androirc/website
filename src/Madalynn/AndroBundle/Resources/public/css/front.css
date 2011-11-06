@@ -23,6 +23,24 @@
     margin-right: 10px;
 }
 
+#support_link {
+    font-size: 26px;
+    position: relative;
+    color: #464646;
+}
+
+#support_link:hover {
+    text-decoration: none;
+}
+
+#support_link span {
+	background: url("/bundles/andro/images/gradient-glossy.png") repeat-x;
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 18px;
+}
+
 /* Donate page */
 
 #donate {
