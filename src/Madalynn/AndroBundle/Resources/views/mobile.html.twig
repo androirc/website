@@ -24,7 +24,6 @@
                 <link rel="stylesheet" type="text/css" href="{{ asset_url }}" />
             {% endstylesheets %}
         {% endblock %}
-        {% block javascripts %}{% endblock %}
     </head>
     <body>
         <div id="up">
@@ -49,7 +48,6 @@
                 {{ andro_switch_version(app.request) }}
             </div>
             <div id="ads">
-                {{ madalynn_admob() }}
             </div>
             {% block content %}{% endblock %}
         </div>
@@ -69,5 +67,8 @@
                 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
             })();
         </script>
+        {% block javascripts %}
+            {{ madalynn_admob('ads') }}
+        {% endblock %}
     </body>
 </html>

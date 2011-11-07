@@ -38,9 +38,9 @@ class MadalynnAdmobExtension extends \Twig_Extension
         );
     }
 
-    public function render()
+    public function render($id)
     {
-        return $this->admob->render();
+        return $this->admob->render($id);
     }
 
     public function getName()

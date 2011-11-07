@@ -36,15 +36,10 @@ class Configuration implements ConfigurationInterface
         $rootNode
             ->children()
                 ->scalarNode('publisher_id')->isRequired()->end()
-                ->scalarNode('analytics_id')->isRequired()->end()
-                ->scalarNode('ad_request')->defaultValue(true)->end()
-                ->scalarNode('analytics_request')->defaultValue(false)->end()
                 ->scalarNode('test_mode')->defaultValue('%kernel.debug%')->end()
-                ->arrayNode('options')
-                    ->useAttributeAsKey('name')
-                    ->prototype('scalar')
-                ->end()
-        ->end();
+                ->scalarNode('bgcolor')->defaultValue('FFFFFF')->end()
+                ->scalarNode('textcolor')->defaultValue('000000')->end()
+            ->end();
 
         return $treeBuilder;
     }
