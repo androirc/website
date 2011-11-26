@@ -16,6 +16,7 @@ use Doctrine\Common\Annotations\AnnotationRegistry;
 $loader = new UniversalClassLoader();
 $loader->registerNamespaces(array(
     'Symfony'                        => array(__DIR__.'/../vendor/symfony/src', __DIR__.'/../vendor/bundles'),
+    'Madalynn'                       => array(__DIR__.'/../vendor/bundles', __DIR__.'/../src'),
     'Doctrine\\Common\\DataFixtures' => __DIR__.'/../vendor/doctrine-fixtures/lib',
     'Doctrine\\Common'               => __DIR__.'/../vendor/doctrine-common/lib',
     'Doctrine\\DBAL'                 => __DIR__.'/../vendor/doctrine-dbal/lib',

@@ -103,8 +103,7 @@ madalynn_admob:
 
 # DeployBundle Configuration
 madalynn_deploy:
-    servers:
-        bender:
-            host: bender.madalynn.eu
-            user: web
-            dir: /home/web/androirc.com/beta
+    bender:
+        host: bender.madalynn.eu
+        user: web
+        dir: /home/web/androirc.com/beta

@@ -52,3 +52,6 @@
 [submodule "vendor/bundles/Ornicar/GravatarBundle"]
 	path = vendor/bundles/Ornicar/GravatarBundle
 	url = git://github.com/ornicar/GravatarBundle.git
+[submodule "vendor/bundles/Madalynn/DeployBundle"]
+	path = vendor/bundles/Madalynn/DeployBundle
+	url = git://github.com/aerialls/MadalynnDeployBundle.git
