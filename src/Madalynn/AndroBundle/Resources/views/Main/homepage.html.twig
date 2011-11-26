@@ -8,7 +8,7 @@
     <p id="introduction">
         AndroIRC is an <strong>Android IRC client</strong> which can connect to several server (secured or not)
         at the same time. Features: supports <a href="http://www.mirc.com">mIRC</a> colors, auto join channels
-        on startup, nickserv/sasl auth, logging, themes... You can see screenshots <a href="{{ path('homepage') }}">here</a>!
+        on startup, nickserv/sasl auth, logging, themes... You can see screenshots <a href="{{ path('screenshots') }}">here</a>!
         Feel free to contact us via the <a href="{{ path('contact') }}>">online form</a>.
     </p>
 
@@ -17,4 +17,17 @@
     {% endfor %}
 
     <a style="float: right; "class="awesome" href="{{ path('archives') }}">» Archives</a>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript">
+        var disqus_shortname = 'androirc';
+        (function () {
+            var s = document.createElement('script'); s.async = true;
+            s.type = 'text/javascript';
+            s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
 {% endblock %}
