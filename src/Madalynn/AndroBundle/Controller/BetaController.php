@@ -37,6 +37,16 @@ class BetaController extends AbstractController
         ));
     }
 
+    public function latestAction()
+    {
+        $em = $this->getDoctrine()->getEntityManager();
+        $repo = $em->getRepository('AndroBundle:BetaRelease');
+
+        $beta = $repo->getLastBeta();
+
+        return (null === $beta) ? new Response('-1') : new Response($beta->getRevision());
+    }
+
     public function downloadAction(Request $request)
     {
         $em = $this->getDoctrine()->getEntityManager();
