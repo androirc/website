@@ -26,12 +26,12 @@ class CrashReportController extends AbstractController
 {
     public function addAction(Request $request)
     {
-        $phoneModel = $request->query->get('phone_model');
-        $androidVersion = $request->query->get('android_version');
-        $threadName = $request->query->get('thread_name');
-        $errorMessage = $request->query->get('error_message');
-        $callstack = $request->query->get('callstack');
-        $androircVersion = $request->query->get('version', 'Unknown');
+        $phoneModel = $request->request->get('phone_model');
+        $androidVersion = $request->request->get('android_version');
+        $threadName = $request->request->get('thread_name');
+        $errorMessage = $request->request->get('error_message');
+        $callstack = $request->request->get('callstack');
+        $androircVersion = $request->request->get('version', 'Unknown');
 
         if (!$callstack || !$phoneModel || !$androidVersion) {
             return new Response('Missing arguments.');
