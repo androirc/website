@@ -94,3 +94,7 @@ ul.record_actions {
     float: left;
     margin-right: 10px;
 }
+
+.callstack {
+    white-space:pre;
+}

@@ -6,8 +6,8 @@
   <table class="records_list">
         <thead>
             <tr>
-                <th>AndroIRC version</th>
-                <th>Android version</th>
+                <th>Error message</th>
+                <th>AndroIRC</th>
                 <th>Count</th>
                 <th>Resolved</th>
                 <th width="220px;">Actions</th>
@@ -16,8 +16,8 @@
         <tbody>
         {% for entity in pager %}
             <tr>
-                <td><a href="{{ path('admin_crash_report_show', { 'id': entity.id }) }}">{{ entity.getAndroircVersion }}</a></td>
-                <td style="text-align: center">{{ entity.getAndroidVersion }}</td>
+                <td><a href="{{ path('admin_crash_report_show', { 'id': entity.id }) }}">{{ entity.getErrorMessage | truncate(60) }}</a></td>
+                <td style="text-align: center">{{ entity.getMajorAndroircVersion }}</td>
                 <td style="text-align: center">{{ entity.getCount }}</td>
                 <td style="text-align: center">
                     {% if (entity.isResolved) %}
@@ -46,7 +46,7 @@
 {% endblock %}
 
 {% block entity_actions %}
-    <a onclick="return confirm('Are you sure?')" class="awesome" href="{{ path('admin_crash_report_delete_all') }}">
+    <a onclick="return confirm('Are you sure?')" class="awesome red" href="{{ path('admin_crash_report_delete_all') }}">
         Delete all
     </a>
 {% endblock %}

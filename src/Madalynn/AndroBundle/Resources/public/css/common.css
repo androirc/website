@@ -138,6 +138,30 @@ a.awesome:hover {
     padding: 8px 14px 9px;
 }
 
+.orange.awesome, .orange.awesome:visited {
+    background-color: #ff5c00;
+}
+
+.orange.awesome:hover {
+    background-color: #d45500;
+}
+
+.red.awesome, .red.awesome:visited {
+    background-color: #e33100;
+}
+
+.red.awesome:hover {
+    background-color: #872300;
+}
+
+.magenta.awesome, .magenta.awesome:visited {
+    background-color: #a9014b;
+}
+
+.magenta.awesome:hover {
+    background-color: #630030;
+}
+
 .famfamfam {
     position: relative;
     top: 3px;

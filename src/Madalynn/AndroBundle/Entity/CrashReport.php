@@ -328,6 +328,13 @@ class CrashReport
         return $this->count;
     }
 
+    public function getMajorAndroircVersion()
+    {
+        $tmp = explode(' ', $this->androircVersion);
+
+        return $tmp[0];
+    }
+
     private function getExplodedCallstack()
     {
         if ($this->explodedCallstack) {

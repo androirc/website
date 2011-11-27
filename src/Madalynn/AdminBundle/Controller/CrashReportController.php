@@ -60,7 +60,7 @@ class CrashReportController extends CRUDController
             throw $this->createNotFoundException('Unable to find CrashReport entity.');
         }
 
-        $crashReport->setResolved(true);
+        $crashReport->setResolved(!$crashReport->isResolved());
 
         $em->persist($crashReport);
         $em->flush();
