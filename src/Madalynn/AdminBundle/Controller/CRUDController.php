@@ -49,6 +49,13 @@ abstract class CRUDController extends Controller
     protected $entityName;
 
     /**
+     * The filters
+     *
+     * @var array $filters
+     */
+    protected $filters = array();
+
+    /**
      * Execute the list action
      *
      * @param integer $page The page for the pager
@@ -72,7 +79,8 @@ abstract class CRUDController extends Controller
         }
 
         return $this->render('AdminBundle:' . $this->getEntityName() . ':list.html.twig', array(
-            'pager' => $pager
+            'pager'       => $pager,
+            'filter_form' => $this->createFilterForm()->createView()
         ));
     }
 
@@ -302,6 +310,17 @@ abstract class CRUDController extends Controller
         $parameters['entity_name'] = $this->underscore($this->getEntityName());
 
         return $this->container->get('templating')->renderResponse($view, $parameters, $response);
+    }
+
+    protected function createFilterForm()
+    {
+        $form = $this->createFormBuilder();
+
+        foreach($this->filters as $filter) {
+            $form->add($filter['name'], $filter['type']);
+        }
+
+        return $form->getForm();
     }
 
     protected function filterQuery(QueryBuilder $qb)

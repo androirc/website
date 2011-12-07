@@ -4,6 +4,10 @@ admin_change_log_list:
     requirements:
         page:  \d+
 
+admin_change_log_filter:
+    pattern:  /filter
+    defaults: { _controller: "AdminBundle:ChangeLog:filter" }
+
 admin_change_log_show:
     pattern:  /{id}/show
     defaults: { _controller: "AdminBundle:ChangeLog:show" }

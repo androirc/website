@@ -4,6 +4,10 @@ admin_user_list:
     requirements:
         page:  \d+
 
+admin_user_filter:
+    pattern:  /filter
+    defaults: { _controller: "AdminBundle:User:filter" }
+
 admin_user_show:
     pattern:  /{id}/show
     defaults: { _controller: "AdminBundle:User:show" }

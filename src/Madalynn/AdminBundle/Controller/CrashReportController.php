@@ -18,6 +18,14 @@ use Madalynn\AdminBundle\Form\BetaReleaseType;
 
 class CrashReportController extends CRUDController
 {
+    protected $filters = array(
+        array(
+            'name'  => 'androircVersion',
+            'type'  => 'text',
+            'label' => 'AndroIRC version'
+        )
+    );
+
     protected function getForm()
     {
         return null;

@@ -4,6 +4,10 @@ admin_crash_report_list:
     requirements:
         page:  \d+
 
+admin_crash_report_filter:
+    pattern:  /filter
+    defaults: { _controller: "AdminBundle:CrashReport:filter" }
+
 admin_crash_report_show:
     pattern:  /{id}/show
     defaults: { _controller: "AdminBundle:CrashReport:show" }
@@ -37,4 +41,3 @@ admin_crash_report_delete:
 admin_crash_report_delete_all:
     pattern:  /delete
     defaults: { _controller: "AdminBundle:CrashReport:deleteAll" }
-

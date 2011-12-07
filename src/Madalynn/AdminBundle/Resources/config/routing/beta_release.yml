@@ -4,6 +4,10 @@ admin_beta_release_list:
     requirements:
         page:  \d+
 
+admin_beta_release_filter:
+    pattern:  /filter
+    defaults: { _controller: "AdminBundle:BetaRelease:filter" }
+
 admin_beta_release_show:
     pattern:  /{id}/show
     defaults: { _controller: "AdminBundle:BetaRelease:show" }

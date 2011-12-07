@@ -3,6 +3,14 @@
 {% block page %}
     <h1>{{ block('title') }}</h1>
 
+    <div id="filters">
+        <form action="{{ path('admin_' ~ entity_name ~ '_filter') }}" method="post" {{ form_enctype(filter_form) }}>
+            {{ form_widget(filter_form) }}
+
+            <input type="submit" />
+        </form>
+    </div>
+
     {% block content %}{% endblock %}
 
     <div id="entity_actions">

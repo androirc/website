@@ -4,6 +4,10 @@ admin_tip_list:
     requirements:
         page:  \d+
 
+admin_tip_filter:
+    pattern:  /filter
+    defaults: { _controller: "AdminBundle:Tip:filter" }
+
 admin_tip_show:
     pattern:  /{id}/show
     defaults: { _controller: "AdminBundle:Tip:show" }

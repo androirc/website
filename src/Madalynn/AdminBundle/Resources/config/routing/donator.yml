@@ -4,6 +4,10 @@ admin_donator_list:
     requirements:
         page:  \d+
 
+admin_donator_filter:
+    pattern:  /filter
+    defaults: { _controller: "AdminBundle:Donator:filter" }
+
 admin_donator_show:
     pattern:  /{id}/show
     defaults: { _controller: "AdminBundle:Donator:show" }
