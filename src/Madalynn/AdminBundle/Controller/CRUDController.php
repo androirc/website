@@ -91,7 +91,7 @@ abstract class CRUDController extends Controller
      */
     public function filterAction()
     {
-        $en     = $this->getEntityName();
+        $en = $this->getEntityName();
 
         return $this->redirect($this->generateUrl('admin_' . $this->underscore($en) . '_list'));
     }
