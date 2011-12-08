@@ -1,13 +1,18 @@
 {% extends "AdminBundle::backend.html.twig" %}
 
 {% block page %}
+    <div id="filter-a">
+        <a href="javascript:;" class="awesome magenta">Filter results</a>
+    </div>
+
     <h1>{{ block('title') }}</h1>
 
-    <div id="filters">
+    <div id="filter">
         <form action="{{ path('admin_' ~ entity_name ~ '_filter') }}" method="post" {{ form_enctype(filter_form) }}>
             {{ form_widget(filter_form) }}
-
-            <input type="submit" />
+            <p>
+                <button type="submit">Let's go !</button>
+            </p>
         </form>
     </div>
 

@@ -2,11 +2,19 @@
     width: 1100px;
 }
 
+h1, h2, h3 {
+    font-family: Delicious;
+}
+
 h1 {
     font-size: 27px;
-    font-family: Delicious;
     margin: 0 0 20px 20px;
     font-weight: bold;
+}
+
+h2 {
+    font-size: 18px;
+    margin: 0 0 20px 40px;
 }
 
 @font-face {
@@ -97,4 +105,24 @@ ul.record_actions {
 
 .callstack {
     white-space:pre;
+}
+
+#filter-a {
+    float: right;
+    margin-top: 7px;
+}
+
+#filter {
+    display: none;
+    background-color: #f9f9f9;
+    padding: 15px;
+}
+
+#filter button {
+    float: none !important;
+}
+
+#filter p {
+    text-align: right;
+    margin-top: -10px;
 }
