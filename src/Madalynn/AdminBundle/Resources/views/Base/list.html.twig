@@ -7,14 +7,16 @@
 
     <h1>{{ block('title') }}</h1>
 
-    <div id="filter">
-        <form action="{{ path('admin_' ~ entity_name ~ '_filter') }}" method="post" {{ form_enctype(filter_form) }}>
-            {{ form_widget(filter_form) }}
-            <p>
-                <button type="submit">Let's go !</button>
-            </p>
-        </form>
-    </div>
+    {% if filter_form.count > 1 %}
+        <div id="filter">
+            <form action="{{ path('admin_' ~ entity_name ~ '_filter') }}" method="post" {{ form_enctype(filter_form) }}>
+                {{ form_widget(filter_form) }}
+                <p>
+                    <button type="submit">Let's go !</button>
+                </p>
+            </form>
+        </div>
+    {% endif %}
 
     {% block content %}{% endblock %}
 
