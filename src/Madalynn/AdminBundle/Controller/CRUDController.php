@@ -85,6 +85,18 @@ abstract class CRUDController extends Controller
     }
 
     /**
+     * Execute the filter action
+     *
+     * @return Response
+     */
+    public function filterAction()
+    {
+        $en     = $this->getEntityName();
+
+        return $this->redirect($this->generateUrl('admin_' . $this->underscore($en) . '_list'));
+    }
+
+    /**
      * Execute the show action
      *
      * @param integer $id The id of the entity
