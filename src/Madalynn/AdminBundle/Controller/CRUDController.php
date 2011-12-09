@@ -63,8 +63,14 @@ abstract class CRUDController extends Controller
      */
     public function listAction($page)
     {
-        // Filter Doctrine Query
-        $qb = $this->getRepository()->createQueryBuilder('e');
+        $en = $this->getEntityName();
+        $qb = null;
+        //$qb = $this->get('session')->get('androirc.admin.filter.' + $this->underscore($en));
+
+        if (null === $qb) {
+            $qb = $this->getRepository()->createQueryBuilder('e');
+        }
+
         $this->filterQuery($qb);
 
         $adapter = new DoctrineORMAdapter($qb->getQuery(), true);
@@ -80,7 +86,7 @@ abstract class CRUDController extends Controller
 
         return $this->render('AdminBundle:' . $this->getEntityName() . ':list.html.twig', array(
             'pager'       => $pager,
-            'filter_form' => $this->createFilterForm()->createView()
+            'filter_form' => $this->getFilterForm()->createView()
         ));
     }
 
@@ -91,7 +97,25 @@ abstract class CRUDController extends Controller
      */
     public function filterAction()
     {
-        $en = $this->getEntityName();
+        $en      = $this->getEntityName();
+        $form    = $this->getFilterForm();
+        $request = $this->getRequest();
+        $qb      = $this->getRepository()->createQueryBuilder('e');
+
+        $form->bindRequest($request);
+
+        if ($form->isValid()) {
+            $data = $form->getData();
+            $i = 0;
+            foreach ($data as $key => $value) {
+                $qb->where(sprintf("%s LIKE '?%d'", $key, $i));
+                $qb->setParameter($i, $value);
+                $i++;
+            }
+
+        }
+
+        $this->get('session')->set('androirc.admin.filter.' . $this->underscore($en), $qb->getQuery());
 
         return $this->redirect($this->generateUrl('admin_' . $this->underscore($en) . '_list'));
     }
@@ -324,7 +348,7 @@ abstract class CRUDController extends Controller
         return $this->container->get('templating')->renderResponse($view, $parameters, $response);
     }
 
-    protected function createFilterForm()
+    protected function getFilterForm()
     {
         $form = $this->createFormBuilder();
 
