@@ -32,9 +32,4 @@ class BetaReleaseController extends CRUDController
     {
         $qb->orderBy('e.revision', 'desc');
     }
-
-    public function showAction($id)
-    {
-        throw new \BadMethodCallException('The show action is not supported for this entity.');
-    }
 }

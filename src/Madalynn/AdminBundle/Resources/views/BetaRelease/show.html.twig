@@ -1,0 +1,47 @@
+{% extends "AdminBundle:Base:show.html.twig" %}
+
+{% block title %}AndroIRC beta - {{ entity.getVersion }}{% endblock %}
+
+{% block content %}
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <thead>
+            <tr>
+                <td>Version</td>
+                <td>{{ entity.getVersion }}</td>
+            </tr>
+            <tr>
+                <td>Downloadable</td>
+                <td>
+                    {% if (entity.isDownloadable) %}
+                        <img src="{{ asset('bundles/andro/images/icons/tick.png') }}" />
+                    {% else %}
+                        <img src="{{ asset('bundles/andro/images/icons/cross.png') }}" />
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <td>Revision</td>
+                <td>{{ entity.getRevision }}</td>
+            </tr>
+            <tr>
+                <td>Downloads</td>
+                <td>{{ entity.getDownloads | length }}</td>
+            </tr>
+        </thead>
+    </table>
+
+    <div id="entity_actions">
+        <a class="awesome red" onclick="return confirm('Are you sure?')" href="{{ path('admin_beta_release_delete', { 'id': entity.id }) }}">
+            Delete
+        </a>
+        <a class="awesome" href="{{ path('admin_beta_release_list') }}">
+            Back to the list
+        </a>
+    </div>
+{% endblock %}
