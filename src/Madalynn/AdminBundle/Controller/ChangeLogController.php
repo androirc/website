@@ -28,6 +28,14 @@ class ChangeLogController extends CRUDController
 
     public function showAction($id)
     {
-        throw new \BadMethodCallException('The show action is not supported for this entity.');
+        $entity = $this->getRepository()->find($id);
+
+        if (!$entity) {
+            throw $this->createNotFoundException('Unable to find ChangeLog entity.');
+        }
+
+        return $this->redirect($this->generateUrl('changelog', array(
+            'version'=> $entity->getVersion()
+        )));
     }
 }

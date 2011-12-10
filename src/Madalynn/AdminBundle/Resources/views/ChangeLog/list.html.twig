@@ -13,7 +13,7 @@
         <tbody>
         {% for entity in pager %}
             <tr>
-                <td style="text-align: center">{{ entity.getVersion }}</td>
+                <td style="text-align: center"><a href="{{ path('admin_change_log_show', { 'id' : entity.id }) }}">{{ entity.getVersion }}</a></td>
                 <td>
                     <ul>
                         <li>
