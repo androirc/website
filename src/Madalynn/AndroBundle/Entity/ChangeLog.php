@@ -42,7 +42,7 @@ class ChangeLog
     protected $path;
 
     /**
-     * @Assert\File(maxSize="6000000")
+     * @Assert\File(maxSize="6000000", mimeTypes="text/plain")
      */
     public $file;
 
