@@ -64,7 +64,7 @@ abstract class CRUDController extends Controller
     public function listAction($page)
     {
         $en         = $this->getEntityName();
-        $filterData = $this->get('session')->get('androirc.admin.filter.' + $this->underscore($en));
+        $filterData = $this->get('session')->get('androirc.admin.filter.' . $this->underscore($en));
         $qb         = $this->getRepository()->createQueryBuilder('e');
 
         if (null !== $filterData) {
@@ -104,7 +104,7 @@ abstract class CRUDController extends Controller
     {
         $en = $this->getEntityName();
 
-        $this->get('session')->remove('androirc.admin.filter.' + $this->underscore($en));
+        $this->get('session')->remove('androirc.admin.filter.' . $this->underscore($en));
 
         return $this->redirect($this->generateUrl('admin_' . $this->underscore($en) . '_list'));
     }
@@ -124,7 +124,7 @@ abstract class CRUDController extends Controller
         $form->bindRequest($request);
 
         if ($form->isValid()) {
-            $this->get('session')->set('androirc.admin.filter.' + $this->underscore($en), $form->getData());
+            $this->get('session')->set('androirc.admin.filter.' . $this->underscore($en), $form->getData());
         }
 
         return $this->redirect($this->generateUrl('admin_' . $this->underscore($en) . '_list'));
