@@ -8,6 +8,10 @@ admin_tip_holiday_filter:
     pattern:  /filter
     defaults: { _controller: "AdminBundle:TipHoliday:filter" }
 
+admin_tip_holiday_clear:
+    pattern:  /clear
+    defaults: { _controller: "AdminBundle:TipHoliday:clear" }
+
 admin_tip_holiday_show:
     pattern:  /{id}/show
     defaults: { _controller: "AdminBundle:TipHoliday:show" }

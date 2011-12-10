@@ -63,11 +63,22 @@ abstract class CRUDController extends Controller
      */
     public function listAction($page)
     {
-        // Filter Doctrine Query
-        $qb = $this->getRepository()->createQueryBuilder('e');
+        $en         = $this->getEntityName();
+        $filterData = $this->get('session')->get('androirc.admin.filter.' + $this->underscore($en));
+        $qb         = $this->getRepository()->createQueryBuilder('e');
+
+        if (null !== $filterData) {
+            $i = 0;
+            foreach ($filterData as $key => $value) {
+                $qb->andWhere($qb->expr()->like('e.' . $key, '?' . $i));
+                $qb->setParameter($i, '%' . $value . '%');
+                $i++;
+            }
+        }
+
         $this->filterQuery($qb);
 
-        $adapter = new DoctrineORMAdapter($qb->getQuery(), true);
+        $adapter = new DoctrineORMAdapter($qb, true);
 
         $pager = new Pagerfanta($adapter);
         $pager->setMaxPerPage($this->maxPerPage);
@@ -80,8 +91,22 @@ abstract class CRUDController extends Controller
 
         return $this->render('AdminBundle:' . $this->getEntityName() . ':list.html.twig', array(
             'pager'       => $pager,
-            'filter_form' => $this->createFilterForm()->createView()
+            'filter_form' => $this->getFilterForm()->createView()
         ));
+    }
+
+    /**
+     * Execute the filter action
+     *
+     * @return Response
+     */
+    public function clearAction()
+    {
+        $en = $this->getEntityName();
+
+        $this->get('session')->remove('androirc.admin.filter.' + $this->underscore($en));
+
+        return $this->redirect($this->generateUrl('admin_' . $this->underscore($en) . '_list'));
     }
 
     /**
@@ -91,7 +116,16 @@ abstract class CRUDController extends Controller
      */
     public function filterAction()
     {
-        $en = $this->getEntityName();
+        $en      = $this->getEntityName();
+        $form    = $this->getFilterForm();
+        $request = $this->getRequest();
+        $qb      = $this->getRepository()->createQueryBuilder('e');
+
+        $form->bindRequest($request);
+
+        if ($form->isValid()) {
+            $this->get('session')->set('androirc.admin.filter.' + $this->underscore($en), $form->getData());
+        }
 
         return $this->redirect($this->generateUrl('admin_' . $this->underscore($en) . '_list'));
     }
@@ -324,7 +358,7 @@ abstract class CRUDController extends Controller
         return $this->container->get('templating')->renderResponse($view, $parameters, $response);
     }
 
-    protected function createFilterForm()
+    protected function getFilterForm()
     {
         $form = $this->createFormBuilder();
 
