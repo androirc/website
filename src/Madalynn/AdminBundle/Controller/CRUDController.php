@@ -63,17 +63,22 @@ abstract class CRUDController extends Controller
      */
     public function listAction($page)
     {
-        $en = $this->getEntityName();
-        $qb = null;
-        //$qb = $this->get('session')->get('androirc.admin.filter.' + $this->underscore($en));
+        $en         = $this->getEntityName();
+        $filterData = $this->get('session')->get('androirc.admin.filter.' + $this->underscore($en));
+        $qb         = $this->getRepository()->createQueryBuilder('e');
 
-        if (null === $qb) {
-            $qb = $this->getRepository()->createQueryBuilder('e');
+        if (null !== $filterData) {
+            $i = 0;
+            foreach ($filterData as $key => $value) {
+                $qb->andWhere($qb->expr()->like('e.' . $key, '?' . $i));
+                $qb->setParameter($i, '%' . $value . '%');
+                $i++;
+            }
         }
 
         $this->filterQuery($qb);
 
-        $adapter = new DoctrineORMAdapter($qb->getQuery(), true);
+        $adapter = new DoctrineORMAdapter($qb, true);
 
         $pager = new Pagerfanta($adapter);
         $pager->setMaxPerPage($this->maxPerPage);
@@ -95,6 +100,20 @@ abstract class CRUDController extends Controller
      *
      * @return Response
      */
+    public function clearAction()
+    {
+        $en = $this->getEntityName();
+
+        $this->get('session')->remove('androirc.admin.filter.' + $this->underscore($en));
+
+        return $this->redirect($this->generateUrl('admin_' . $this->underscore($en) . '_list'));
+    }
+
+    /**
+     * Execute the filter action
+     *
+     * @return Response
+     */
     public function filterAction()
     {
         $en      = $this->getEntityName();
@@ -105,17 +124,8 @@ abstract class CRUDController extends Controller
         $form->bindRequest($request);
 
         if ($form->isValid()) {
-            $data = $form->getData();
-            $i = 0;
-            foreach ($data as $key => $value) {
-                $qb->where(sprintf("%s LIKE '?%d'", $key, $i));
-                $qb->setParameter($i, $value);
-                $i++;
-            }
-
+            $this->get('session')->set('androirc.admin.filter.' + $this->underscore($en), $form->getData());
         }
-
-        $this->get('session')->set('androirc.admin.filter.' . $this->underscore($en), $qb->getQuery());
 
         return $this->redirect($this->generateUrl('admin_' . $this->underscore($en) . '_list'));
     }

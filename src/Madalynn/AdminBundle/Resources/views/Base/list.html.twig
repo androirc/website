@@ -1,9 +1,12 @@
 {% extends "AdminBundle::backend.html.twig" %}
 
 {% block page %}
-    <div id="filter-a">
-        <a href="javascript:;" class="awesome magenta">Filter results</a>
-    </div>
+    {% if filter_form.count > 1 %}
+        <div id="filter-a">
+            <a href="{{ path('admin_' ~ entity_name ~ '_clear') }}" class="awesome red">Clear all filters</a>
+            <a id="filter-results" href="javascript:;" class="awesome magenta">Filter results</a>
+        </div>
+    {% endif %}
 
     <h1>{{ block('title') }}</h1>
 

@@ -8,6 +8,10 @@ admin_quick_start_filter:
     pattern:  /filter
     defaults: { _controller: "AdminBundle:QuickStart:filter" }
 
+admin_quick_start_clear:
+    pattern:  /clear
+    defaults: { _controller: "AdminBundle:QuickStart:clear" }
+
 admin_quick_start_show:
     pattern:  /{id}/show
     defaults: { _controller: "AdminBundle:QuickStart:show" }

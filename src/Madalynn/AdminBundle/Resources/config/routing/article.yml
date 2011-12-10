@@ -8,6 +8,10 @@ admin_article_filter:
     pattern:  /filter
     defaults: { _controller: "AdminBundle:Article:filter" }
 
+admin_article_clear:
+    pattern:  /clear
+    defaults: { _controller: "AdminBundle:Article:clear" }
+
 admin_article_show:
     pattern:  /{id}/show
     defaults: { _controller: "AdminBundle:Article:show" }

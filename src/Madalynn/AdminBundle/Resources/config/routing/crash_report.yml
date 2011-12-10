@@ -8,6 +8,10 @@ admin_crash_report_filter:
     pattern:  /filter
     defaults: { _controller: "AdminBundle:CrashReport:filter" }
 
+admin_crash_report_clear:
+    pattern:  /clear
+    defaults: { _controller: "AdminBundle:CrashReport:clear" }
+
 admin_crash_report_show:
     pattern:  /{id}/show
     defaults: { _controller: "AdminBundle:CrashReport:show" }
