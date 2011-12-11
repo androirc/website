@@ -32,4 +32,19 @@ class BetaReleaseController extends CRUDController
     {
         $qb->orderBy('e.revision', 'desc');
     }
+
+    public function showAction($id)
+    {
+        $en     = $this->getEntityName();
+        $entity = $this->getRepository()->find($id);
+
+        if (!$entity) {
+            throw $this->createNotFoundException(sprintf('Unable to find %s entity.', $en));
+        }
+
+        return $this->render('AdminBundle:' . $en . ':show.html.twig', array(
+            'entity'      => $entity,
+            'repartition' => $this->getDoctrine()->getRepository('AndroBundle:BetaDownload')->getDownloadsRepartition($entity)
+        ));
+    }
 }

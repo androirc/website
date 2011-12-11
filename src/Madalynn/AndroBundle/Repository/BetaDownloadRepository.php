@@ -12,8 +12,18 @@
 
 namespace Madalynn\AndroBundle\Repository;
 
+use Madalynn\AndroBundle\Entity\BetaRelease;
+
 use Doctrine\ORM\EntityRepository;
 
 class BetaDownloadRepository extends EntityRepository
 {
+    public function getDownloadsRepartition(BetaRelease $release)
+    {
+        return $this->createQueryBuilder('d')
+                    ->select('d.location, COUNT(d.id) AS downloadsCount')
+                    ->groupBy('d.location')
+                    ->getQuery()
+                    ->execute();
+    }
 }
