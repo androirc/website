@@ -1,4 +1,4 @@
-<div class="article {% if (false == article.isVisible) %} not_visible{% endif %}">
+<div class="article {%- if (not article.isVisible) %} not_visible{% endif %}">
     <div class="avatar">
         <img src="{{ gravatar(article.author.getEmail) }}" />
     </div>
@@ -19,7 +19,7 @@
     </div>
 
     <div class="footer">
-        <div class="share addthis_toolbox addthis_default_style"
+        <div class="share addthis_toolbox addthis_default_style {%- if (sumup is defined) %} sharenotsumup{% endif %}"
              addthis:url="{{ andro_url_article(article, true) }}"
              addthis:title="{{ article.getTitle }} - AndroIRC (Android IRC Client)">
 
