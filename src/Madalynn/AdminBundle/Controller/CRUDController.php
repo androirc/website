@@ -65,16 +65,7 @@ abstract class CRUDController extends Controller
     {
         $en         = $this->getEntityName();
         $filterData = $this->get('session')->get('androirc.admin.filter.' . $this->underscore($en));
-        $qb         = $this->getRepository()->createQueryBuilder('e');
-
-        if (null !== $filterData) {
-            $i = 0;
-            foreach ($filterData as $key => $value) {
-                $qb->andWhere($qb->expr()->like('e.' . $key, '?' . $i));
-                $qb->setParameter($i, '%' . $value . '%');
-                $i++;
-            }
-        }
+        $qb         = $this->generateFilterQuery();
 
         $this->filterQuery($qb);
 
@@ -307,6 +298,26 @@ abstract class CRUDController extends Controller
     protected function underscore($id)
     {
         return strtolower(preg_replace(array('/([A-Z]+)([A-Z][a-z])/', '/([a-z\d])([A-Z])/'), array('\\1_\\2', '\\1_\\2'), strtr($id, '_', '.')));
+    }
+
+    protected function generateFilterQuery(QueryBuilder $qb = null)
+    {
+        if (null == $qb) {
+            $qb = $this->getRepository()->createQueryBuilder('e');
+        }
+
+        $data = $this->get('session')->get('androirc.admin.filter.' . $this->underscore($this->getEntityName()));
+
+        if (null !== $data) {
+            $i = 0;
+            foreach ($data as $key => $value) {
+                $qb->andWhere($qb->expr()->like('e.' . $key, '?' . $i));
+                $qb->setParameter($i, '%' . $value . '%');
+                $i++;
+            }
+        }
+
+        return $qb;
     }
 
     protected function getEntityName()
