@@ -45,3 +45,7 @@ admin_crash_report_delete:
 admin_crash_report_delete_all:
     pattern:  /delete
     defaults: { _controller: "AdminBundle:CrashReport:deleteAll" }
+
+admin_crash_report_delete_selected:
+    pattern:  /deleteSelected
+    defaults: { _controller: "AdminBundle:CrashReport:deleteSelected" }

@@ -63,15 +63,13 @@ abstract class CRUDController extends Controller
      */
     public function listAction($page)
     {
-        $en         = $this->getEntityName();
-        $filterData = $this->get('session')->get('androirc.admin.filter.' . $this->underscore($en));
-        $qb         = $this->generateFilterQuery();
+        $qb = $this->generateFilterQueryBuilder();
 
         $this->sortQuery($qb);
 
         $adapter = new DoctrineORMAdapter($qb, true);
+        $pager   = new Pagerfanta($adapter);
 
-        $pager = new Pagerfanta($adapter);
         $pager->setMaxPerPage($this->maxPerPage);
 
         try {
@@ -87,7 +85,7 @@ abstract class CRUDController extends Controller
     }
 
     /**
-     * Execute the filter action
+     * Execute the clear action
      *
      * @return Response
      */
@@ -95,7 +93,7 @@ abstract class CRUDController extends Controller
     {
         $en = $this->getEntityName();
 
-        $this->get('session')->remove('androirc.admin.filter.' . $this->underscore($en));
+        $this->get('session')->remove($this->getSessionFilterName());
 
         return $this->redirect($this->generateUrl('admin_' . $this->underscore($en) . '_list'));
     }
@@ -115,7 +113,7 @@ abstract class CRUDController extends Controller
         $form->bindRequest($request);
 
         if ($form->isValid()) {
-            $this->get('session')->set('androirc.admin.filter.' . $this->underscore($en), $form->getData());
+            $this->get('session')->set($this->getSessionFilterName(), $form->getData());
         }
 
         return $this->redirect($this->generateUrl('admin_' . $this->underscore($en) . '_list'));
@@ -300,13 +298,13 @@ abstract class CRUDController extends Controller
         return strtolower(preg_replace(array('/([A-Z]+)([A-Z][a-z])/', '/([a-z\d])([A-Z])/'), array('\\1_\\2', '\\1_\\2'), strtr($id, '_', '.')));
     }
 
-    protected function generateFilterQuery(QueryBuilder $qb = null)
+    protected function generateFilterQueryBuilder(QueryBuilder $qb = null)
     {
         if (null == $qb) {
             $qb = $this->getRepository()->createQueryBuilder('e');
         }
 
-        $data = $this->get('session')->get('androirc.admin.filter.' . $this->underscore($this->getEntityName()));
+        $data = $this->get('session')->get($this->getSessionFilterName());
 
         if (null !== $data) {
             $i = 0;
@@ -380,6 +378,11 @@ abstract class CRUDController extends Controller
         }
 
         return $form->getForm();
+    }
+
+    protected function getSessionFilterName()
+    {
+        return 'androirc.admin.filter.' . $this->underscore($this->getEntityName());
     }
 
     protected function sortQuery(QueryBuilder $qb)

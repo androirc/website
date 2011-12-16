@@ -51,6 +51,21 @@ class CrashReportController extends CRUDController
         return $this->redirect($this->generateUrl('admin_crash_report_list'));
     }
 
+    public function deleteSelectedAction()
+    {
+        $em   = $this->getDoctrine()->getEntityManager();
+        $repo = $em->getRepository('AndroBundle:CrashReport');
+        $list = $this->generateFilterQueryBuilder()->getQuery()->execute();
+
+        foreach ($list as $crash) {
+            $em->remove($crash);
+        }
+
+        $em->flush();
+
+        return $this->redirect($this->generateUrl('admin_crash_report_list'));
+    }
+
     /**
      * Execute the resolved action
      *
