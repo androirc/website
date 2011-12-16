@@ -67,7 +67,7 @@ abstract class CRUDController extends Controller
         $filterData = $this->get('session')->get('androirc.admin.filter.' . $this->underscore($en));
         $qb         = $this->generateFilterQuery();
 
-        $this->filterQuery($qb);
+        $this->sortQuery($qb);
 
         $adapter = new DoctrineORMAdapter($qb, true);
 
@@ -382,7 +382,7 @@ abstract class CRUDController extends Controller
         return $form->getForm();
     }
 
-    protected function filterQuery(QueryBuilder $qb)
+    protected function sortQuery(QueryBuilder $qb)
     {
         $qb->orderBy('e.id', 'desc');
     }

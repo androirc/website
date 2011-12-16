@@ -24,7 +24,7 @@ class ArticleController extends CRUDController
         $entity->setAuthor($user);
     }
 
-    protected function filterQuery(QueryBuilder $qb)
+    protected function sortQuery(QueryBuilder $qb)
     {
         $qb->orderBy('e.created', 'desc');
     }

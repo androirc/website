@@ -49,7 +49,7 @@ class UserController extends CRUDController
         }
     }
 
-    protected function filterQuery(QueryBuilder $qb)
+    protected function sortQuery(QueryBuilder $qb)
     {
         $qb->orderBy('e.lastLogin', 'desc');
     }

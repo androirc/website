@@ -36,7 +36,7 @@ class CrashReportController extends CRUDController
         return 'Madalynn\AndroBundle\Entity\CrashReport';
     }
 
-    protected function filterQuery(QueryBuilder $qb)
+    protected function sortQuery(QueryBuilder $qb)
     {
         $qb->orderBy('e.count', 'desc');
     }

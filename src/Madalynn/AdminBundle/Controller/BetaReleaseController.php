@@ -28,7 +28,7 @@ class BetaReleaseController extends CRUDController
         return 'Madalynn\AndroBundle\Entity\BetaRelease';
     }
 
-    protected function filterQuery(QueryBuilder $qb)
+    protected function sortQuery(QueryBuilder $qb)
     {
         $qb->orderBy('e.revision', 'desc');
     }
