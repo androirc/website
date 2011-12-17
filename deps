@@ -1,0 +1,76 @@
+[symfony]
+    git=http://github.com/symfony/symfony.git
+
+[twig]
+    git=http://github.com/fabpot/Twig.git
+    version=origin/master
+
+[doctrine-common]
+    git=http://github.com/doctrine/common.git
+    version=origin/master
+
+[doctrine-dbal]
+    git=http://github.com/doctrine/dbal.git
+    version=origin/master
+
+[doctrine-fixtures]
+    git=http://github.com/doctrine/data-fixtures.git
+    version=origin/master
+
+[doctrine]
+    git=http://github.com/doctrine/doctrine2.git
+    version=origin/master
+
+[buzz]
+    git=https://github.com/kriswallsmith/Buzz.git
+
+[pagerfanta]
+    git=https://github.com/whiteoctober/Pagerfanta.git
+
+[swiftmailer]
+    git=http://github.com/swiftmailer/swiftmailer.git
+    version=v4.1.3
+
+[assetic]
+    git=http://github.com/kriswallsmith/assetic.git
+    version=v1.0.2
+
+[twig-extensions]
+    git=http://github.com/fabpot/Twig-extensions.git
+
+[SensioDistributionBundle]
+    git=http://github.com/sensio/SensioDistributionBundle.git
+    target=/bundles/Sensio/Bundle/DistributionBundle
+
+[SensioGeneratorBundle]
+    git=http://github.com/sensio/SensioGeneratorBundle.git
+    target=/bundles/Sensio/Bundle/GeneratorBundle
+
+[AsseticBundle]
+    git=http://github.com/symfony/AsseticBundle.git
+    target=/bundles/Symfony/Bundle/AsseticBundle
+    version=v1.0.1
+
+[JMSDebuggingBundle]
+    git=https://github.com/schmittjoh/JMSDebuggingBundle.git
+    target=/bundles/JMS/DebuggingBundle
+
+[MadalynnDeployBundle]
+    git=https://github.com/aerialls/MadalynnDeployBundle.git
+    target=/bundles/Madalynn/DeployBundle
+
+[OrnicarAkismetBundle]
+    git=https://github.com/ornicar/OrnicarAkismetBundle.git
+    target=/bundles/Ornicar/AkismetBundle
+
+[OrnicarGravatarBundle]
+    git=https://github.com/ornicar/GravatarBundle.git
+    target=/bundles/Ornicar/GravatarBundle
+
+[DoctrineFixturesBundle]
+    git=https://github.com/symfony/DoctrineFixturesBundle.git
+    target=/bundles/Symfony/Bundle/DoctrineFixturesBundle
+
+[WhiteOctoberPagerfantaBundle]
+    git=https://github.com/whiteoctober/WhiteOctoberPagerfantaBundle.git
+    target=/bundles/WhiteOctober/PagerfantaBundle
