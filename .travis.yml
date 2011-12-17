@@ -1,0 +1,16 @@
+language: php
+
+php:
+    - 5.3
+
+before_script:
+    - php bin/vendors install
+    - ./bin/test.sh
+
+script: phpunit --coverage-text -c app/
+
+notifications:
+    email:
+        - mewt@madalynn.eu
+    irc:
+        - "irc.epiknet.org#androirc"
