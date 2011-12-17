@@ -46,7 +46,7 @@ class UserFixtures extends AbstractFixture implements FixtureInterface, Containe
 
         $admin->setEmail('admin@madalynn.eu');
         $admin->setUsername('admin');
-        $this->encryptPassword($admin, 'adm456P');
+        $this->encryptPassword($admin, 'admin');
 
         $em->persist($admin);
         $em->flush();
