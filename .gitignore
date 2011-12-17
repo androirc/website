@@ -2,8 +2,9 @@ web/bundles/
 web/js/
 web/css/
 web/uploads/
-app/bootstrap*
+app/bootstrap.php.cache
 app/cache/*
 app/logs/*
 build/
 app/config/parameters.ini
+vendor/
