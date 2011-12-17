@@ -62,6 +62,7 @@ class CrashReportController extends CRUDController
         }
 
         $em->flush();
+        $this->get('session')->remove($this->getSessionFilterName());
 
         return $this->redirect($this->generateUrl('admin_crash_report_list'));
     }
