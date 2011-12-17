@@ -24,6 +24,9 @@
 [buzz]
     git=https://github.com/kriswallsmith/Buzz.git
 
+[faker]
+    git=https://github.com/fzaninotto/Faker.git
+
 [pagerfanta]
     git=https://github.com/whiteoctober/Pagerfanta.git
 
