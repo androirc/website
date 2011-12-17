@@ -4,7 +4,7 @@ php:
     - 5.3
 
 before_script:
-    - cp app/config/parameters.yml.test app/config/parameters.yml
+    - cp app/config/parameters.ini.test app/config/parameters.ini
     - php bin/vendors install
     - ./bin/travis
 
