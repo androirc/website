@@ -46,7 +46,7 @@ class MobileVersionListener
 
         if (false === $this->session->has('from_mobile')) {
             $uamatches = array(
-                'midp', 'j2me', 'avantg', 'docomo', 'novarra', 'palmos',
+                'midp', 'j2me', 'avantg', 'android', 'docomo', 'novarra', 'palmos',
                 'palmsource', '240x320', 'opwv', 'chtml', 'pda', 'windows ce',
                 'mmp\/', 'blackberry', 'mib\/', 'symbian', 'wireless', 'nokia',
                 'hand', 'mobi', 'phone', 'cdm', 'up\.b', 'audio', 'SIE\-', 'SEC\-',
