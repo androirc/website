@@ -1,6 +1,3 @@
-; These parameters can be imported into other config files
-; by enclosing the key with % (like %database_user%)
-; Comments start with ';', as in php.ini
 [parameters]
     database_driver   = pdo_mysql
     database_host     = localhost
@@ -12,6 +9,6 @@
     java_path         = "C:\java\bin\java.exe"
     locale            = en
 
-    secret            = ThisTokenIsNotSoSecretChangeIt
+    secret            = 2748285f70343363563f4627716a6361
 
-    akismet_api_key   = ThisTokenIsNotSoSecretChangeIt
+    akismet_api_key   = 4c2966625c536b392131254e5f7b2e78

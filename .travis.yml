@@ -4,8 +4,9 @@ php:
     - 5.3
 
 before_script:
+    - cp app/config/parameters.yml.test app/config/parameters.yml
     - php bin/vendors install
-    - ./bin/test.sh
+    - ./bin/travis
 
 script: phpunit --coverage-text -c app/
 
