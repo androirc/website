@@ -17,4 +17,5 @@ madalynn_deploy:
     bender:
         host: bender.madalynn.eu
         user: web
-        dir: /home/web/androirc.com/beta
+        dir:  /home/web/androirc.com/www
+        port: 2222
