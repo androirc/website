@@ -34,7 +34,7 @@ class CrashReportController extends AbstractController
         $androircVersion = $request->request->get('version', 'Unknown');
 
         if (!$callstack || !$phoneModel || !$androidVersion) {
-            return new Response('Missing arguments.');
+            return $this->createNotFoundException('Missing arguments.');
         }
 
         // We check if the crash report is coming from a testing mobilephone
