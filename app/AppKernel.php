@@ -30,7 +30,6 @@ class AppKernel extends Kernel
             new WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle(),
 
             new Madalynn\AdmobBundle\MadalynnAdmobBundle(),
-            new Madalynn\DeployBundle\MadalynnDeployBundle(),
             new Madalynn\AndroBundle\AndroBundle(),
             new Madalynn\AdminBundle\AdminBundle(),
         );
@@ -39,6 +38,7 @@ class AppKernel extends Kernel
             $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
             $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
             $bundles[] = new JMS\DebuggingBundle\JMSDebuggingBundle($this);
+            $bundles[] = new Madalynn\DeployBundle\MadalynnDeployBundle();
         }
 
         return $bundles;

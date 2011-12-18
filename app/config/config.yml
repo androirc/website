@@ -100,10 +100,3 @@ ornicar_akismet:
 madalynn_admob:
     publisher_id: a14de4eeeb0ee01
     textcolor: '026995'
-
-# DeployBundle Configuration
-madalynn_deploy:
-    bender:
-        host: bender.madalynn.eu
-        user: web
-        dir: /home/web/androirc.com/beta

@@ -11,3 +11,10 @@ web_profiler:
 
 assetic:
     use_controller: true
+
+# DeployBundle Configuration
+madalynn_deploy:
+    bender:
+        host: bender.madalynn.eu
+        user: web
+        dir: /home/web/androirc.com/beta
