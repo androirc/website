@@ -66,6 +66,11 @@
     font-size: 15px;
 }
 
+#team_box .member {
+    float: left;
+    padding-left: 20px;
+}
+
 /* Others */
 
 #page {

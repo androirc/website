@@ -7,21 +7,26 @@
         '@AndroBundle/Resources/public/css/design.css'
         '@AndroBundle/Resources/public/css/front.css'
         '@AndroBundle/Resources/public/css/form.css'
+        '@AndroBundle/Resources/public/css/tipsy.css'
     %}
         <link rel="stylesheet" type="text/css" href="{{ asset_url }}" />
     {% endstylesheets %}
 {% endblock %}
 
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ asset('bundles/andro/js/jquery.tipsy.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/andro/js/androirc.js') }}"></script>
+{% endblock %}
+
 {% block header %}
      <div id="ads">
         <script type="text/javascript">
-            <!--
             google_ad_client = "pub-1704888906932150";
-            /* AndroIRC */
             google_ad_slot = "8016140658";
             google_ad_width = 468;
             google_ad_height = 60;
-            //-->
         </script>
         <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
         </script>
@@ -81,11 +86,18 @@
         <div class="sidebar_box">
             <h2>AndroIRC Team</h2>
 
-            <ul>
-                <li><a href="http://julien.brochet.me">Julien Brochet</a></li>
-                <li><a href="http://twitter.com/blinkseb">Sébastien Brochet</a></li>
-                <li><a href="http://twitter.com/maxxmx">Maxx Maury</a></li>
-            </ul>
+            <div id="team_box">
+                <div class="member">
+                    <img src="{{ gravatar('mewt@madalynn.eu') }}" class="tooltip" title="Julien Brochet"/>
+                </div>
+                <div class="member">
+                    <img src="{{ gravatar('blinkseb@madalynn.eu') }}" class="tooltip" title="Sébastien Brochet"/>
+                </div>
+                <div class="member">
+                    <img src="{{ gravatar('maxxmaury@gmail.com') }}" class="tooltip" title="Maxx Maury"/>
+                </div>
+                <div style="clear: left;"></div>
+            </div>
         </div>
 
         <div class="sidebar_box">
