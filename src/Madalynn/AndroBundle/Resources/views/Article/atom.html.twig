@@ -7,13 +7,13 @@
     <author>
         <name>AndroIRC Team</name>
     </author>
-    <id>{{ url('article_atom') | sha1 }}</id>
+    <id>{{ url('article_atom')|sha1 }}</id>
 
     {% for article in articles %}
         <entry>
             <title>{{ article.getTitle }}</title>
             <link href="{{ andro_url_article(article, true) }}" />
-            <id>{{ andro_url_article(article, true) | sha1 }}</id>
+            <id>{{ andro_url_article(article, true)|sha1 }}</id>
             <updated>{{ article.getFormattedCreated }}</updated>
             <author>
                 <name>{{ article.getAuthor }}</name>

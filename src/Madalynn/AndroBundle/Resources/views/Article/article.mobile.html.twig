@@ -3,14 +3,14 @@
         <a href="{{ path('article_show', { 'id': article.getId, 'slug': article.getSlug }) }}">{{ article.getTitle }}</a>
     </div>
     <div class="by">
-        {{ article.getCreated | date('m/d/Y') }} | News posted by {{ article.getAuthor }}
+        {{ article.getCreated|date('m/d/Y') }} | News posted by {{ article.getAuthor }}
     </div>
 
     <div class="content">
         {% if sumup is defined %}
-            {{ article.getContent | strip_tags | truncate(300) | raw }}
+            {{ article.getContent|strip_tags|truncate(300)|raw }}
         {% else %}
-            {{ article.getContent | raw }}
+            {{ article.getContent|raw }}
         {% endif %}
     </div>
 

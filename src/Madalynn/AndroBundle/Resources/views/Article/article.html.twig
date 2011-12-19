@@ -10,17 +10,17 @@
             <a href="{{ andro_url_article(article) }}">{{ article.getTitle }}</a>
         </div>
         <div class="by">
-            {{ article.getCreated | date('m/d/Y') }} | News posted by {{ article.getAuthor }}
+            {{ article.getCreated|date('m/d/Y') }} | News posted by {{ article.getAuthor }}
         </div>
     </div>
 
     {% if not sumup %}
         <div class="content">
-            {{ article.getContent | raw }}
+            {{ article.getContent|raw }}
         </div>
 
         <div class="footer">
-            <div class="share addthis_toolbox addthis_default_style {%- if (sumup is defined) %} sharenotsumup{% endif %}"
+            <div class="share addthis_toolbox addthis_default_style"
                  addthis:url="{{ andro_url_article(article, true) }}"
                  addthis:title="{{ article.getTitle }} - AndroIRC (Android IRC Client)">
 
