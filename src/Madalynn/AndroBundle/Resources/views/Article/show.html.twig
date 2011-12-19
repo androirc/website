@@ -3,7 +3,7 @@
 {% block title %}{{ article.getTitle }}{% endblock %}
 
 {% block content %}
-    {% include 'AndroBundle:Article:article.html.twig' with { 'article': article } %}
+    {% include 'AndroBundle:Article:article.html.twig' with { 'article': article, 'sumup': false } %}
 
     <div id="disqus_thread"></div>
     <script type="text/javascript">

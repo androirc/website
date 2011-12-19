@@ -14,26 +14,26 @@
         </div>
     </div>
 
-    <div class="content">
-        {{ article.getContent | raw }}
-    </div>
-
-    <div class="footer">
-        <div class="share addthis_toolbox addthis_default_style {%- if (sumup is defined) %} sharenotsumup{% endif %}"
-             addthis:url="{{ andro_url_article(article, true) }}"
-             addthis:title="{{ article.getTitle }} - AndroIRC (Android IRC Client)">
-
-            <a class="addthis_counter addthis_pill_style"></a>
-            <a class="addthis_button_tweet" tw:via="androirc"></a>
-            <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
-            <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    {% if not sumup %}
+        <div class="content">
+            {{ article.getContent | raw }}
         </div>
-        {% if sumup is defined %}
+
+        <div class="footer">
+            <div class="share addthis_toolbox addthis_default_style {%- if (sumup is defined) %} sharenotsumup{% endif %}"
+                 addthis:url="{{ andro_url_article(article, true) }}"
+                 addthis:title="{{ article.getTitle }} - AndroIRC (Android IRC Client)">
+
+                <a class="addthis_counter addthis_pill_style"></a>
+                <a class="addthis_button_tweet" tw:via="androirc"></a>
+                <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+                <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+            </div>
             <div class="comments">
                 <img src="/bundles/andro/images/comment.png" />
                 <a href="{{ andro_url_article(article) }}#disqus_thread" data-disqus-identifier="{{ article.getId }}">Comments</a>
             </div>
-        {% endif %}
-    </div>
+        </div>
+    {% endif %}
     <div style="clear: left;"></div>
 </div>

@@ -15,7 +15,7 @@
     </div>
 
     <div class="footer">
-        {% if sumup is defined %}
+        {% if sumup %}
             <div class="comments">
                 <img src="/bundles/andro/images/comment.png" />
                 <a href="{{ path('article_show', { 'id': article.getId, 'slug': article.getSlug }) }}#disqus_thread" data-disqus-identifier="{{ article.getId }}">Comments</a>
