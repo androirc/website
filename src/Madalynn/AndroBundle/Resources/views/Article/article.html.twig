@@ -7,7 +7,11 @@
             <a href="{{ path('admin_article_edit', { 'id': article.id }) }}"><img style="float: right;" src="{{ asset('bundles/andro/images/icons/page_edit.png') }}" /></a>
         {% endif %}
         <div class="title">
-            <a href="{{ andro_url_article(article) }}">{{ article.getTitle }}</a>
+            {% if not sumup -%}
+                {{ article.getTitle }}
+            {% else -%}
+                <a href="{{ andro_url_article(article) }}">{{ article.getTitle }}</a>
+            {% endif %}
         </div>
         <div class="by">
             {{ article.getCreated|date('m/d/Y') }} | News posted by {{ article.getAuthor }}

@@ -1,6 +1,10 @@
 <div class="article">
     <div class="title">
-        <a href="{{ path('article_show', { 'id': article.getId, 'slug': article.getSlug }) }}">{{ article.getTitle }}</a>
+        {% if not sumup -%}
+            {{ article.getTitle }}
+        {% else -%}
+            <a href="{{ andro_url_article(article) }}">{{ article.getTitle }}</a>
+        {% endif %}
     </div>
     <div class="by">
         {{ article.getCreated|date('m/d/Y') }} | News posted by {{ article.getAuthor }}
