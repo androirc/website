@@ -7,7 +7,7 @@
     </div>
 
     <div class="content">
-        {% if sumup is defined %}
+        {% if sumup %}
             {{ article.getContent|strip_tags|truncate(300)|raw }}
         {% else %}
             {{ article.getContent|raw }}
