@@ -12,7 +12,7 @@ class ArticleControllerTest extends WebTestCase
         $crawler = $client->request('GET', '/archives');
 
         $this->assertTrue($client->getResponse()->isSuccessful());
-        $this->assertEquals(6, $crawler->filter('.paginator a')->count());
+        $this->assertEquals(4, $crawler->filter('.paginator a')->count());
     }
 
     public function testArchiveNumberOfArticle()
@@ -20,6 +20,6 @@ class ArticleControllerTest extends WebTestCase
         $client = self::createClient();
         $crawler = $client->request('GET', '/archives');
 
-        $this->assertEquals(5, $crawler->filter('.article')->count());
+        $this->assertEquals(10, $crawler->filter('.article')->count());
     }
 }

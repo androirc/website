@@ -57,7 +57,7 @@ class ArticleController extends AbstractController
 
         $adapter = new DoctrineORMAdapter($repo->getQueryBuilder($this->isAdmin())->getQuery(), true);
         $pager = new Pagerfanta($adapter);
-        $pager->setMaxPerPage(5);
+        $pager->setMaxPerPage(10);
 
         try {
             $pager->setCurrentPage($page);
