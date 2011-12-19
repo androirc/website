@@ -8,7 +8,7 @@ before_script:
     - php bin/vendors install
     - ./bin/travis
 
-script: phpunit --coverage-text -c app/
+script: phpunit -c app/
 
 notifications:
     email:
