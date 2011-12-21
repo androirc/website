@@ -60,7 +60,7 @@
 
 [MadalynnDeployBundle]
     git=https://github.com/aerialls/MadalynnDeployBundle.git
-    target=/bundles/Madalynn/DeployBundle
+    target=/bundles/Madalynn/Bundle/DeployBundle
 
 [OrnicarAkismetBundle]
     git=https://github.com/ornicar/OrnicarAkismetBundle.git
