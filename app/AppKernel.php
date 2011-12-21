@@ -29,9 +29,9 @@ class AppKernel extends Kernel
             new Ornicar\GravatarBundle\OrnicarGravatarBundle(),
             new WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle(),
 
-            new Madalynn\AdmobBundle\MadalynnAdmobBundle(),
-            new Madalynn\AndroBundle\AndroBundle(),
-            new Madalynn\AdminBundle\AdminBundle(),
+            new Madalynn\Bundle\AdmobBundle\MadalynnAdmobBundle(),
+            new Madalynn\Bundle\AndroBundle\AndroBundle(),
+            new Madalynn\Bundle\AdminBundle\AdminBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

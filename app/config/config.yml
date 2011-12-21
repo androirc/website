@@ -18,9 +18,9 @@ framework:
 security:
     providers:
         main:
-            entity: { class: Madalynn\AndroBundle\Entity\User, property: username }
+            entity: { class: Madalynn\Bundle\AndroBundle\Entity\User, property: username }
     encoders:
-        Madalynn\AndroBundle\Entity\User:
+        Madalynn\Bundle\AndroBundle\Entity\User:
             algorithm: sha512
             encode-as-base64: true
             iterations: 10
