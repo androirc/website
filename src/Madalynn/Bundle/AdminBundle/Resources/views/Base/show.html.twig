@@ -4,4 +4,15 @@
     <h1>{{ block('title') }}</h1>
 
     {% block content %}{% endblock %}
+
+    <div id="entity_actions">
+        {% block entity_actions %}
+            <a class="awesome red" onclick="return confirm('Are you sure?')" href="{{ path('admin_' ~ entity_name ~ '_delete', { 'id': entity.id }) }}">
+                Delete
+            </a>
+            <a class="awesome" href="{{ path('admin_' ~ entity_name ~ '_list') }}">
+                Back to the list
+            </a>
+        {% endblock %}
+    </div>
 {% endblock %}

@@ -47,20 +47,20 @@
             </tr>
         </thead>
     </table>
+{% endblock %}
 
-    <div id="entity_actions">
-        <a class="awesome red" onclick="return confirm('Are you sure?')" href="{{ path('admin_crash_report_delete', { 'id': entity.id }) }}">
-            Delete
-        </a>
-        <a class="awesome magenta" href="{{ path('admin_crash_report_resolved', { 'id': entity.id }) }}">
-            {% if (entity.isResolved) %}
-                Unresolved
-            {% else %}
-                Resolved
-            {% endif %}
-        </a>
-        <a class="awesome" href="{{ path('admin_crash_report_list') }}">
-            Back to the list
-        </a>
-    </div>
+{% block entity_actions %}
+    <a class="awesome red" onclick="return confirm('Are you sure?')" href="{{ path('admin_crash_report_delete', { 'id': entity.id }) }}">
+        Delete
+    </a>
+    <a class="awesome magenta" href="{{ path('admin_crash_report_resolved', { 'id': entity.id }) }}">
+        {% if (entity.isResolved) %}
+            Unresolved
+        {% else %}
+            Resolved
+        {% endif %}
+    </a>
+    <a class="awesome" href="{{ path('admin_crash_report_list') }}">
+        Back to the list
+    </a>
 {% endblock %}

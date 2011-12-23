@@ -68,13 +68,4 @@
             </tr>
         </thead>
     </table>
-
-    <div id="entity_actions">
-        <a class="awesome red" onclick="return confirm('Are you sure?')" href="{{ path('admin_beta_release_delete', { 'id': entity.id }) }}">
-            Delete
-        </a>
-        <a class="awesome" href="{{ path('admin_beta_release_list') }}">
-            Back to the list
-        </a>
-    </div>
 {% endblock %}
