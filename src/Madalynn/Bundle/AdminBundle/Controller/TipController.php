@@ -25,9 +25,4 @@ class TipController extends CRUDController
     {
         return 'Madalynn\Bundle\AndroBundle\Entity\Tip';
     }
-
-    public function showAction($id)
-    {
-        throw new \BadMethodCallException('The show action is not supported for this entity.');
-    }
 }

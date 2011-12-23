@@ -1,0 +1,27 @@
+{% extends "AdminBundle:Base:show.html.twig" %}
+
+{% block title %}Tip #{{entity.getId }}{% endblock %}
+
+{% block content %}
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th></th>
+            </tr>
+        </thead>
+        <thead>
+            <tr>
+                <td>{{ entity.content|raw }}</td>
+            </tr>
+        </thead>
+    </table>
+
+    <div id="entity_actions">
+        <a class="awesome red" onclick="return confirm('Are you sure?')" href="{{ path('admin_tip_delete', { 'id': entity.id }) }}">
+            Delete
+        </a>
+        <a class="awesome" href="{{ path('admin_crash_report_list') }}">
+            Back to the list
+        </a>
+    </div>
+{% endblock %}
