@@ -1,0 +1,18 @@
+{% extends "AdminBundle:Base:show.html.twig" %}
+
+{% block title %}Tip Holiday #{{entity.getId }}{% endblock %}
+
+{% block content %}
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th></th>
+            </tr>
+        </thead>
+        <thead>
+            <tr>
+                <td>{{ entity.content|raw }}</td>
+            </tr>
+        </thead>
+    </table>
+{% endblock %}
