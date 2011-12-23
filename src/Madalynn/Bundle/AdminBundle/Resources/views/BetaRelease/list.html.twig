@@ -16,7 +16,7 @@
         <tbody>
         {% for entity in pager %}
             <tr>
-                <td><a href="{{ path('admin_beta_release_show', { 'id': entity.id }) }}">{{ entity.getVersion }}</a></td>
+                <td><a href="{{ path('admin_beta_release_show', { 'id': entity.id }) }}">{{ entity.version }}</a></td>
                 <td style="text-align: center">
                     {% if (entity.downloadable) %}
                         <img src="{{ asset('bundles/andro/images/icons/tick.png') }}" />
@@ -24,8 +24,8 @@
                         <img src="{{ asset('bundles/andro/images/icons/cross.png') }}" />
                     {% endif %}
                 </td>
-                <td style="text-align: center">{{ entity.getRevision }}</td>
-                <td style="text-align: center">{{ entity.getDownloads | length }}</td>
+                <td style="text-align: center">{{ entity.revision }}</td>
+                <td style="text-align: center">{{ entity.downloads|length }}</td>
                 <td>
                     <ul>
                         <li>

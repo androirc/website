@@ -15,9 +15,9 @@
         <tbody>
         {% for entity in pager %}
             <tr>
-                <td style="text-align: center">{{ entity.getLanguage }}</td>
-                <td style="text-align: center">{{ '%02d/%02d' | format(entity.getMonth, entity.getDay) }}</td>
-                <td><a href="{{ path('admin_tip_holiday_show', { 'id': entity.id }) }}">{{ entity.getContent | truncate(100) | raw }}</a></td>
+                <td style="text-align: center">{{ entity.language }}</td>
+                <td style="text-align: center">{{ '%02d/%02d' | format(entity.month, entity.day) }}</td>
+                <td><a href="{{ path('admin_tip_holiday_show', { 'id': entity.id }) }}">{{ entity.content|truncate(100)|raw }}</a></td>
                 <td>
                     <ul>
                         <li>

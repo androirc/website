@@ -16,11 +16,11 @@
         <tbody>
         {% for entity in pager %}
             <tr>
-                <td><a href="{{ path('admin_crash_report_show', { 'id': entity.id }) }}">{{ entity.getErrorMessage | truncate(60) }}</a></td>
-                <td style="text-align: center">{{ entity.getMajorAndroircVersion }}</td>
-                <td style="text-align: center">{{ entity.getCount }}</td>
+                <td><a href="{{ path('admin_crash_report_show', { 'id': entity.id }) }}">{{ entity.errorMessage|truncate(60) }}</a></td>
+                <td style="text-align: center">{{ entity.majorAndroircVersion }}</td>
+                <td style="text-align: center">{{ entity.count }}</td>
                 <td style="text-align: center">
-                    {% if (entity.isResolved) %}
+                    {% if (entity.resolved) %}
                         <img src="{{ asset('bundles/andro/images/icons/tick.png') }}" />
                     {% else %}
                         <img src="{{ asset('bundles/andro/images/icons/cross.png') }}" />
