@@ -25,4 +25,18 @@ class QuickStartController extends CRUDController
     {
         return 'Madalynn\Bundle\AndroBundle\Entity\QuickStart';
     }
+
+    public function showAction($id)
+    {
+        $entity = $this->getRepository()->find($id);
+
+        if (!$entity) {
+            throw $this->createNotFoundException('Unable to find QuickStart entity.');
+        }
+
+        return $this->redirect($this->generateUrl('quickstart', array(
+            'version' => $entity->getVersionMin(),
+            'lang'    => $entity->getLanguage()
+        )));
+    }
 }

@@ -9,7 +9,7 @@
                 <th>Language</th>
                 <th>Version min</th>
                 <th>Version max</th>
-                <th width="140px;">Actions</th>
+                <th width="210px;">Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -20,6 +20,9 @@
                 <td style="text-align: center">{{ entity.versionMax }}</td>
                 <td>
                     <ul>
+                        <li>
+                            <img src="{{ asset('bundles/andro/images/icons/page.png') }}" /> <a href="{{ path('admin_quick_start_show', { 'id': entity.id }) }}">Show</a>
+                        </li>
                         <li>
                             <img src="{{ asset('bundles/andro/images/icons/page_edit.png') }}" /> <a href="{{ path('admin_quick_start_edit', { 'id': entity.id }) }}">Edit</a>
                         </li>
