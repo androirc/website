@@ -12,8 +12,8 @@ web_profiler:
 assetic:
     use_controller: true
 
-# DeployBundle Configuration
-madalynn_deploy:
+# PlumBundle Configuration
+madalynn_plum:
     deployers:
         - Plum\Deployer\RsyncDeployer
     servers:
@@ -23,4 +23,4 @@ madalynn_deploy:
             dir:  /home/web/androirc.com/www
             port: 2222
             options:
-                dry_run: true
+                rsync_exclude: "%kernel.root_dir%/config/rsync_exclude.txt"

@@ -61,9 +61,9 @@
     git=https://github.com/schmittjoh/JMSDebuggingBundle.git
     target=/bundles/JMS/DebuggingBundle
 
-[MadalynnDeployBundle]
-    git=https://github.com/aerialls/MadalynnDeployBundle.git
-    target=/bundles/Madalynn/Bundle/DeployBundle
+[MadalynnPlumBundle]
+    git=https://github.com/aerialls/MadalynnPlumBundle.git
+    target=/bundles/Madalynn/Bundle/PlumBundle
 
 [OrnicarAkismetBundle]
     git=https://github.com/ornicar/OrnicarAkismetBundle.git
