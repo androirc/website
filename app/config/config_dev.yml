@@ -14,8 +14,13 @@ assetic:
 
 # DeployBundle Configuration
 madalynn_deploy:
-    bender:
-        host: bender.madalynn.eu
-        user: web
-        dir:  /home/web/androirc.com/www
-        port: 2222
+    deployers:
+        - Plum\Deployer\RsyncDeployer
+    servers:
+        bender:
+            host: bender.madalynn.eu
+            user: web
+            dir:  /home/web/androirc.com/www
+            port: 2222
+            options:
+                dry_run: true

@@ -30,6 +30,7 @@ $loader->registerNamespaces(array(
     'Sensio'                         => __DIR__.'/../vendor/bundles',
     'WhiteOctober'                   => __DIR__.'/../vendor/bundles',
     'Faker'                          => __DIR__.'/../vendor/faker/src',
+    'Plum'                           => __DIR__.'/../vendor/plum/src',
 ));
 $loader->registerPrefixes(array(
     'Twig_Extensions_' => __DIR__.'/../vendor/twig-extensions/lib',

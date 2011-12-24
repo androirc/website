@@ -27,6 +27,9 @@
 [faker]
     git=https://github.com/fzaninotto/Faker.git
 
+[plum]
+    git=https://github.com/aerialls/Plum.git
+
 [pagerfanta]
     git=https://github.com/whiteoctober/Pagerfanta.git
 
