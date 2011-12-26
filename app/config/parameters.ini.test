@@ -12,3 +12,5 @@
     secret            = 3e6a2b79284b767d6e2163424d464776
 
     akismet_api_key   = 274d586b2d68255d71794b4a2d283552
+
+    deploy_password   = 2d68255d9284b76
