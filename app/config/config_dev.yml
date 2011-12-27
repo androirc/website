@@ -14,19 +14,9 @@ assetic:
 
 # PlumBundle Configuration
 madalynn_plum:
+    options:
+        dry_run: true
+        rsync_exclude: "%kernel.root_dir%/config/rsync_exclude.txt"
     deployers:
         - Plum\Deployer\RsyncDeployer
         - Plum\Deployer\SshDeployer
-    servers:
-        bender:
-            host: bender.madalynn.eu
-            user: web
-            dir:  /home/web/androirc.com/www
-            port: 2222
-            password: %deploy_password%
-            options:
-                rsync_exclude: "%kernel.root_dir%/config/rsync_exclude.txt"
-                commands:
-                    - "php app/console assets:install --symlink web"
-                    - "php app/console assetic:dump --env=prod --no-debug"
-                    - "php app/console cache:clear --env=prod --no-debug"

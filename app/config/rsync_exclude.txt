@@ -1,6 +1,7 @@
 # Project files
 /app/config/parameters.ini
 /app/config/parameters.yml
+/app/config/deployment.yml
 /app/cache/*
 /app/logs/*
 /web/app_dev.php

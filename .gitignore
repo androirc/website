@@ -7,5 +7,6 @@ app/cache/*
 app/logs/*
 build/
 app/config/parameters.ini
+app/config/deployment.yml
 vendor/
 .DS_Store
