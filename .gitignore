@@ -10,3 +10,5 @@ app/config/parameters.ini
 app/config/deployment.yml
 vendor/
 .DS_Store
+composer.lock
+composer.phar

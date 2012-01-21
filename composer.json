@@ -1,0 +1,22 @@
+{
+    "require": {
+        "php": ">=5.3.2",
+        "symfony/symfony": "2.1.0-dev",
+        "fzaninotto/faker": "master-dev",
+        "kriswallsmith/buzz": "master-dev",
+        "twig/extensions": "master-dev",
+
+        "doctrine/doctrine-bundle": "master-dev",
+        "doctrine/doctrine-fixtures-bundle": "master-dev",
+        "madalynn/plum-bundle": "master-dev",
+        "symfony/assetic-bundle": "master-dev",
+        "ornicar/gravatar-bundle": "master-dev",
+        "white-october/pagerfanta-bundle": "master-dev"
+    },
+
+    "autoload": {
+        "psr-0": {
+            "Madalynn": "src/"
+        }
+    }
+}
