@@ -26,11 +26,11 @@ class CrashReportController extends AbstractController
 {
     public function addAction(Request $request)
     {
-        $phoneModel = $request->request->get('phone_model');
-        $androidVersion = $request->request->get('android_version');
-        $threadName = $request->request->get('thread_name');
-        $errorMessage = $request->request->get('error_message');
-        $callstack = $request->request->get('callstack');
+        $phoneModel      = $request->request->get('phone_model');
+        $androidVersion  = $request->request->get('android_version');
+        $threadName      = $request->request->get('thread_name');
+        $errorMessage    = $request->request->get('error_message');
+        $callstack       = $request->request->get('callstack');
         $androircVersion = $request->request->get('version', 'Unknown');
 
         if (!$callstack || !$phoneModel || !$androidVersion) {

@@ -24,7 +24,7 @@ class ArticleController extends AbstractController
 {
     public function showAction($id)
     {
-        $em = $this->getDoctrine()->getEntityManager();
+        $em   = $this->getDoctrine()->getEntityManager();
         $repo = $em->getRepository('AndroBundle:Article');
 
         $article = $repo->find($id);
@@ -40,7 +40,7 @@ class ArticleController extends AbstractController
 
     public function atomAction()
     {
-        $em = $this->getDoctrine()->getEntityManager();
+        $em   = $this->getDoctrine()->getEntityManager();
         $repo = $em->getRepository('AndroBundle:Article');
 
         $articles = $repo->getLastArticles(false, 20);
@@ -52,18 +52,14 @@ class ArticleController extends AbstractController
 
     public function archivesAction($page)
     {
-        $em = $this->getDoctrine()->getEntityManager();
+        $em   = $this->getDoctrine()->getEntityManager();
         $repo = $em->getRepository('AndroBundle:Article');
 
         $adapter = new DoctrineORMAdapter($repo->getQueryBuilder($this->isAdmin())->getQuery(), true);
-        $pager = new Pagerfanta($adapter);
-        $pager->setMaxPerPage(10);
+        $pager   = new Pagerfanta($adapter);
 
-        try {
-            $pager->setCurrentPage($page);
-        } catch (\Exception $e) {
-            throw $this->createNotFoundException('This page does not exist');
-        }
+        $pager->setMaxPerPage(10);
+        $pager->setCurrentPage($page, true, true);
 
         return $this->render('AndroBundle:Article:archives.html.twig', array(
             'pager' => $pager

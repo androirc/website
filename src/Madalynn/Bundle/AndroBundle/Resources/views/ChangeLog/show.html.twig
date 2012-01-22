@@ -7,13 +7,13 @@
         <h1>Changelog v{{ changelog.getVersion }}</h1>
 
         <ul>
-            {% for change in changelog.getChanges %}
+            {% for change in changelog.changes %}
                 <li>
-                    {% if change['key'] %}
-                        <strong>{{ change['key'] }}</strong>
+                    {% if change.key %}
+                        <strong>{{ change.key }}</strong>
                     {% endif %}
 
-                    {{ change['content'] }}
+                    {{ change.content }}
                 </li>
             {% endfor %}
         </ul>

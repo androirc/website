@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html xml:lang="en" lang="en">
     <head>
         <title>{% block title %}Home{% endblock %} - AndroIRC (Android IRC Client)</title>
         <meta name="google-site-verification" content="NxLzVTaSpM7YMWZ_DqGdF19nVKrNl4IcQxcT3jtACqw" />
@@ -51,15 +51,11 @@
         </div>
 
         <div id="page">
-            {% if app.session.hasFlash('notice') %}
-                <div class="flash notice">
-                    {{ app.session.flash('notice') }}
+            {% for key,message in app.session.flashes %}
+                <div class="flash {{ key }}">
+                    <p>{{ message }}</p>
                 </div>
-            {% elseif app.session.hasFlash('error') %}
-                <div class="flash error">
-                    {{ app.session.flash('error') }}
-                </div>
-            {% endif %}
+            {% endfor %}
             {% block page %}{% endblock %}
             <div class="clear"></div>
         </div>
@@ -89,7 +85,7 @@
                 <div class="column">
                     <h2>Copyright</h2>
                     <p>
-                        {{ 'now' | date('Y') }} &copy; AndroIRC. All rights reserved.
+                        {{ 'now'|date('Y') }} &copy; AndroIRC. All rights reserved.
                     </p>
                     <p>
                         Powered by <a href="http://symfony.com">Symfony2</a>

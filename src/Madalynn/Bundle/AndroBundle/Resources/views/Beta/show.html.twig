@@ -13,11 +13,11 @@
     </p>
 
     <div id="beta">
-        {% if beta == null %}
+        {% if not beta %}
             No beta right now... come back later!
         {% else %}
             <a class="awesome large" style="margin-bottom: 5px;" href="{{ path('beta_download') }}">Download the latest beta of AndroIRC</a><br />
-            <span>(Version {{ beta.getVersion }} - {{ beta.getCreated | date('m/d/Y') }})</span>
+            <span>(Version {{ beta.vVersion }} - {{ beta.created|date('m/d/Y') }})</span>
         {% endif %}
     </div>
 {% endblock %}

@@ -21,13 +21,11 @@ class ChangeLogController extends AbstractController
 {
     public function showAction($version)
     {
-        $em = $this->getDoctrine()->getEntityManager();
+        $em   = $this->getDoctrine()->getEntityManager();
         $repo = $em->getRepository('AndroBundle:ChangeLog');
 
-        $changelog = $repo->findByVersion($version);
-
         return $this->render('AndroBundle:ChangeLog:show.html.twig', array(
-            'changelog' => $changelog
+            'changelog' => $repo->findByVersion($version)
         ));
     }
 }

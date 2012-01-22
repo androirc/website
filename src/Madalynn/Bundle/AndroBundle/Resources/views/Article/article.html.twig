@@ -1,32 +1,32 @@
-<div class="article {%- if (not article.isVisible) %} not_visible{% endif %}">
+<div class="article {%- if (not article.visible) %} not_visible{% endif %}">
     <div class="avatar">
-        <img src="{{ gravatar(article.author.getEmail) }}" />
+        <img src="{{ gravatar(article.author.email) }}" />
     </div>
     <div class="header">
-        {% if app.user and app.user.isAdmin %}
+        {% if app.user and app.user.admin %}
             <a href="{{ path('admin_article_edit', { 'id': article.id }) }}"><img style="float: right;" src="{{ asset('bundles/andro/images/icons/page_edit.png') }}" /></a>
         {% endif %}
         <div class="title">
             {% if not sumup -%}
                 {{ article.getTitle }}
             {% else -%}
-                <a href="{{ andro_url_article(article) }}">{{ article.getTitle }}</a>
+                <a href="{{ andro_url_article(article) }}">{{ article.title }}</a>
             {% endif %}
         </div>
         <div class="by">
-            {{ article.getCreated|date('m/d/Y') }} | News posted by {{ article.getAuthor }}
+            {{ article.created|date('m/d/Y') }} | News posted by {{ article.author }}
         </div>
     </div>
 
     {% if not sumup %}
         <div class="content">
-            {{ article.getContent|raw }}
+            {{ article.content|raw }}
         </div>
 
         <div class="footer">
             <div class="share addthis_toolbox addthis_default_style"
                  addthis:url="{{ andro_url_article(article, true) }}"
-                 addthis:title="{{ article.getTitle }} - AndroIRC (Android IRC Client)">
+                 addthis:title="{{ article.title }} - AndroIRC (Android IRC Client)">
 
                 <a class="addthis_counter addthis_pill_style"></a>
                 <a class="addthis_button_tweet" tw:via="androirc"></a>
@@ -35,7 +35,7 @@
             </div>
             <div class="comments">
                 <img src="{{ asset('bundles/andro/images/comment.png') }}" />
-                <a href="{{ andro_url_article(article) }}#disqus_thread" data-disqus-identifier="{{ article.getId }}">Comments</a>
+                <a href="{{ andro_url_article(article) }}#disqus_thread" data-disqus-identifier="{{ article.id }}">Comments</a>
             </div>
         </div>
     {% endif %}

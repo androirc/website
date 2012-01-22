@@ -24,25 +24,6 @@ use Madalynn\Bundle\AndroBundle\Entity\User;
 abstract class AbstractController extends Controller
 {
     /**
-     * Get a user from the Security Context
-     *
-     * @return mixed
-     *
-     * @throws \LogicException If SecurityBundle is not available
-     */
-    public function getUser()
-    {
-        if (!$this->container->has('security.context')) {
-            throw new \LogicException('The SecurityBundle is not installed in your application.');
-        }
-
-        $token = $this->container->get('security.context')->getToken();
-        $user = null === $token ? null : $token->getUser();
-
-        return $user instanceof User ? $user : null;
-    }
-
-    /**
      * Check if the current user has the 'ROLE_ADMIN' role
      *
      * @return boolean True if he is, false otherwise
@@ -65,10 +46,8 @@ abstract class AbstractController extends Controller
      */
     public function renderWithMobile($view, array $parameters = array(), Response $response = null)
     {
-        $request = $this->get('request');
-
-        if (true === $request->headers->has('X-AndroIRC-Mobile')) {
-            $view = str_replace('.html', '.mobile.html', $view);
+        if (true === $this->get('request')->headers->has('X-AndroIRC-Mobile')) {
+            $view = str_replace('.html', '-mobile.html', $view);
         }
 
         return $this->render($view, $parameters, $response);

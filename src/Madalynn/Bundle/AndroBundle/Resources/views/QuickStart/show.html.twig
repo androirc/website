@@ -3,9 +3,9 @@
 {% block title %}Quick start{% endblock %}
 
 {% block content %}
-    {% if quickstart == null %}
+    {% if not quickstart %}
         No help...yet!
     {% else %}
-        {{ quickstart.getContent | raw }}
+        {{ quickstart.content|raw }}
     {% endif %}
 {% endblock %}

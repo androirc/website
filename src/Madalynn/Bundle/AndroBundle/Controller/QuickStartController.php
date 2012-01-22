@@ -26,10 +26,8 @@ class QuickStartController extends AbstractController
         $em = $this->getDoctrine()->getEntityManager();
         $repo = $em->getRepository('AndroBundle:QuickStart');
 
-        $quickstart = $repo->findByVersion($version, $lang);
-
         return $this->render('AndroBundle:QuickStart:show.html.twig', array(
-            'quickstart' => $quickstart
+            'quickstart' => $repo->findByVersion($version, $lang)
         ));
     }
 }

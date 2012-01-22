@@ -13,6 +13,7 @@
 namespace Madalynn\Bundle\AndroBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\StreamedResponse;
 use Symfony\Component\HttpFoundation\Request;
 
 use Madalynn\Bundle\AndroBundle\Entity\BetaDownload;
@@ -27,19 +28,17 @@ class BetaController extends AbstractController
 {
     public function showAction()
     {
-        $em = $this->getDoctrine()->getEntityManager();
+        $em   = $this->getDoctrine()->getEntityManager();
         $repo = $em->getRepository('AndroBundle:BetaRelease');
 
-        $beta = $repo->getLastBeta();
-
         return $this->renderWithMobile('AndroBundle:Beta:show.html.twig', array(
-            'beta' => $beta
+            'beta' => $repo->getLastBeta()
         ));
     }
 
     public function latestAction()
     {
-        $em = $this->getDoctrine()->getEntityManager();
+        $em   = $this->getDoctrine()->getEntityManager();
         $repo = $em->getRepository('AndroBundle:BetaRelease');
 
         $beta = $repo->getLastBeta();
@@ -49,7 +48,7 @@ class BetaController extends AbstractController
 
     public function downloadAction(Request $request)
     {
-        $em = $this->getDoctrine()->getEntityManager();
+        $em   = $this->getDoctrine()->getEntityManager();
         $repo = $em->getRepository('AndroBundle:BetaRelease');
 
         $beta = $repo->getLastBeta();
@@ -67,7 +66,9 @@ class BetaController extends AbstractController
         $em->persist($download);
         $em->flush();
 
-        $response = new Response(@readfile($beta->getAbsolutePath()));
+        $response = new StreamedResponse(function () use ($beta) {
+            return @readfile($beta->getAbsolutePath());
+        });
 
         $response->headers->set('Content-Type', 'application/vnd.android.package-archive');
         $response->headers->set('Content-Disposition', 'attachment; filename="' . basename($beta->getAbsolutePath()).'"');

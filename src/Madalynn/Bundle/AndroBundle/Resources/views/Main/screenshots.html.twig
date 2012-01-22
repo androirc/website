@@ -33,7 +33,7 @@
     {% for screen in screenshots %}
         <li>
             <div class="device">
-                <img src="{{ asset('bundles/andro/images/device/' ~ screen.getFilename) }}" alt="{{ screen.getFilename }}" />
+                <img src="{{ asset('bundles/andro/images/device/' ~ screen.filename) }}" alt="{{ screen.filename }}" />
             </div>
         </li>
     {% endfor %}
@@ -41,7 +41,7 @@
 
 <div class="thumbs">
     {% for screen in screenshots %}
-        <a href="#"><img src="{{ asset('bundles/andro/images/device/thumbnail/' ~ screen.getFilename) }}" alt="{{ screen.getFilename }}" /></a>
+        <a href="#"><img src="{{ asset('bundles/andro/images/device/thumbnail/' ~ screen.filename) }}" alt="{{ screen.filename }}" /></a>
     {% endfor %}
 </div>
 {% endblock %}

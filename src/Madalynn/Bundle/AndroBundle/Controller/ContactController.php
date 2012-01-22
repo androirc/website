@@ -34,29 +34,20 @@ class ContactController extends AbstractController
             $form->bindRequest($request);
 
             if ($form->isValid()) {
-                // we need to check if Akismet is ok with the contact form
-                $akismet = $this->get('ornicar_akismet');
-                $isSpam = $akismet->isSpam(array(
-                    'comment_author'  => $contact->name,
-                    'comment_content' => $contact->content
-                ));
+                $message = \Swift_Message::newInstance();
 
-                if (false === $isSpam) {
-                    $message = \Swift_Message::newInstance();
+                $message->setSubject("[AndroIRC] {$contact->name} used the web form to contact us");
+                $message->setFrom('contact@androirc.com', 'AndroIRC');
+                $message->setTo('contact@androirc.com');
+                $message->setReplyTo($contact->email);
 
-                    $message->setSubject("[AndroIRC] {$contact->name} used the web form to contact us");
-                    $message->setFrom('contact@androirc.com', 'AndroIRC');
-                    $message->setTo('contact@androirc.com');
-                    $message->setReplyTo($contact->email);
+                $message->setBody($this->renderView('AndroBundle:Mail:contact.html.twig', array(
+                    'name'    => $contact->name,
+                    'content' => $contact->content
+                )));
 
-                    $message->setBody($this->renderView('AndroBundle:Mail:contact.html.twig', array(
-                        'name'    => $contact->name,
-                        'content' => $contact->content
-                    )));
-
-                    $this->get('mailer')->send($message);
-                    $this->get('session')->setFlash('notice', 'Your message has been sent!');
-                }
+                $this->get('mailer')->send($message);
+                $this->get('session')->setFlash('notice', 'Your message has been sent!');
 
                 $form->setData(new Contact());
             }

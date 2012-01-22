@@ -9,7 +9,7 @@
     <script type="text/javascript">
         var disqus_shortname = 'androirc';
         var disqus_identifier = {{ article.getId }};
-        var disqus_url = '{{ url('article_show', { 'id': article.getId, 'slug': article.getSlug }) }}';
+        var disqus_url = '{{ andro_url_article(article, true) }}';
 
         (function() {
             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

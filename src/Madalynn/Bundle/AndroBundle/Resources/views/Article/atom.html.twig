@@ -11,14 +11,14 @@
 
     {% for article in articles %}
         <entry>
-            <title>{{ article.getTitle }}</title>
+            <title>{{ article.title }}</title>
             <link href="{{ andro_url_article(article, true) }}" />
             <id>{{ andro_url_article(article, true)|sha1 }}</id>
-            <updated>{{ article.getFormattedCreated }}</updated>
+            <updated>{{ article.formattedCreated }}</updated>
             <author>
-                <name>{{ article.getAuthor }}</name>
+                <name>{{ article.author }}</name>
             </author>
-            <content type="html">{{ article.getContent }}</content>
+            <content type="html">{{ article.content }}</content>
         </entry>
     {% endfor %}
 </feed>

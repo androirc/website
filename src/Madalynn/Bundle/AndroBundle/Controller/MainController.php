@@ -25,7 +25,7 @@ class MainController extends AbstractController
 {
     public function homepageAction()
     {
-        $em = $this->getDoctrine()->getEntityManager();
+        $em   = $this->getDoctrine()->getEntityManager();
         $repo = $em->getRepository('AndroBundle:Article');
 
         $articles = $repo->getLastArticles($this->isAdmin(), 5);
@@ -54,13 +54,11 @@ class MainController extends AbstractController
 
     public function donateAction()
     {
-        $em = $this->getDoctrine()->getEntityManager();
+        $em   = $this->getDoctrine()->getEntityManager();
         $repo = $em->getRepository('AndroBundle:Donator');
 
-        $donators = $repo->getDonators();
-
         return $this->renderWithMobile('AndroBundle:Main:donate.html.twig', array(
-            'donators' => $donators
+            'donators' => $repo->getDonators()
         ));
     }
 }

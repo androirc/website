@@ -1,15 +1,15 @@
-{% extends "AndroBundle:Article:layout.mobile.html.twig" %}
+{% extends "AndroBundle:Article:layout-mobile.html.twig" %}
 
-{% block title %}{{ article.getTitle }}{% endblock %}
+{% block title %}{{ article.title }}{% endblock %}
 
 {% block content %}
-    {% include 'AndroBundle:Article:article.mobile.html.twig' with { 'article': article, 'sumup': false } %}
+    {% include 'AndroBundle:Article:article-mobile.html.twig' with { 'article': article, 'sumup': false } %}
 
     <div id="disqus_thread"></div>
     <script type="text/javascript">
         var disqus_shortname = 'androirc';
-        var disqus_identifier = {{ article.getId }};
-        var disqus_url = '{{ url('article_show', { 'id': article.getId, 'slug': article.getSlug }) }}';
+        var disqus_identifier = {{ article.id }};
+        var disqus_url = '{{ andro_url_article(article, true) }}';
 
         (function() {
             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

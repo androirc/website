@@ -15,7 +15,7 @@
 
 {% block javascripts %}
     {{ parent() }}
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script type="text/javascript" src="{{ asset('bundles/andro/js/jquery.tipsy.js') }}"></script>
     <script type="text/javascript" src="{{ asset('bundles/andro/js/androirc.js') }}"></script>
 {% endblock %}
@@ -48,7 +48,7 @@
 
 {% block page %}
     <div id="sidebar">
-    {% if app.user and app.user.isAdmin %}
+    {% if app.user and app.user.admin %}
         <div class="sidebar_box">
             <h2>Administration</h2>
 

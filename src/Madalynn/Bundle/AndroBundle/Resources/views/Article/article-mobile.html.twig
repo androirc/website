@@ -1,20 +1,20 @@
 <div class="article">
     <div class="title">
         {% if not sumup -%}
-            {{ article.getTitle }}
+            {{ article.title }}
         {% else -%}
-            <a href="{{ andro_url_article(article) }}">{{ article.getTitle }}</a>
+            <a href="{{ andro_url_article(article) }}">{{ article.title }}</a>
         {% endif %}
     </div>
     <div class="by">
-        {{ article.getCreated|date('m/d/Y') }} | News posted by {{ article.getAuthor }}
+        {{ article.created|date('m/d/Y') }} | News posted by {{ article.author }}
     </div>
 
     <div class="content">
         {% if sumup %}
-            {{ article.getContent|strip_tags|truncate(300)|raw }}
+            {{ article.content|strip_tags|truncate(300)|raw }}
         {% else %}
-            {{ article.getContent|raw }}
+            {{ article.content|raw }}
         {% endif %}
     </div>
 
@@ -22,7 +22,7 @@
         {% if sumup %}
             <div class="comments">
                 <img src="/bundles/andro/images/comment.png" />
-                <a href="{{ path('article_show', { 'id': article.getId, 'slug': article.getSlug }) }}#disqus_thread" data-disqus-identifier="{{ article.getId }}">Comments</a>
+                <a href="{{ andro_url_article(article) }}#disqus_thread" data-disqus-identifier="{{ article.id }}">Comments</a>
             </div>
         {% endif %}
     </div>
