@@ -10,6 +10,9 @@
         var disqus_shortname = 'androirc';
         var disqus_identifier = {{ article.id }};
         var disqus_url = '{{ andro_url_article(article, true) }}';
+        {% if app.debug -%}
+            var disqus_developer = 1;
+        {%- endif %}
 
         (function() {
             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
