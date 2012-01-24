@@ -74,7 +74,7 @@ class Article
     /**
      * @ORM\PrePersist
      */
-    public function created()
+    public function prePersist()
     {
         $this->created = new \DateTime();
         $this->updated = new \DateTime();
@@ -83,7 +83,7 @@ class Article
     /**
      * @ORM\PreUpdate
      */
-    public function updated()
+    public function preUpdate()
     {
         $this->updated = new \DateTime();
     }

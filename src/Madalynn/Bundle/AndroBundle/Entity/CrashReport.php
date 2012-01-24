@@ -87,7 +87,7 @@ class CrashReport
     /**
      * @ORM\PrePersist
      */
-    public function created()
+    public function prePersist()
     {
         $this->created = new \DateTime();
     }
