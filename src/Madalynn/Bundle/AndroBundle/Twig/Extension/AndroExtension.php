@@ -14,7 +14,7 @@ namespace Madalynn\Bundle\AndroBundle\Twig\Extension;
 
 use Symfony\Component\Routing\RouterInterface;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Session;
+use Symfony\Component\HttpFoundation\Session\Session;
 
 use Madalynn\Bundle\AndroBundle\Entity\Article;
 
@@ -25,7 +25,7 @@ class AndroExtension extends \Twig_Extension
 
     public function __construct(RouterInterface $router, Session $session)
     {
-        $this->router = $router;
+        $this->router  = $router;
         $this->session = $session;
     }
 

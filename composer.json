@@ -2,8 +2,7 @@
     "require": {
         "php": ">=5.3.2",
         "symfony/symfony": "2.1.0-dev",
-        "twig/twig": "1.6.0-dev",
-        "monolog/monolog": "1.0.2",
+        "twig/twig": "1.7.0-dev",
         "swiftmailer/swiftmailer": "4.1.6-dev",
         "fzaninotto/faker": "master-dev",
         "kriswallsmith/buzz": "master-dev",
@@ -11,10 +10,11 @@
         "madalynn/plum": "master-dev",
         "doctrine/orm": "master-dev",
 
+        "symfony/swiftmailer-bundle": "2.1.0-dev",
         "doctrine/doctrine-bundle": "master-dev",
         "doctrine/doctrine-fixtures-bundle": "master-dev",
         "madalynn/plum-bundle": "master-dev",
-        "symfony/assetic-bundle": "master-dev",
+        "symfony/assetic-bundle": "2.1.0-dev",
         "ornicar/gravatar-bundle": "master-dev",
         "white-october/pagerfanta-bundle": "master-dev"
     },

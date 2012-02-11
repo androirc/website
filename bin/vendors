@@ -42,11 +42,11 @@ if (!file_exists($rootDir.'/composer.phar')) {
     );
 } else {
     // Update Composer
-    system(sprintf('%s %s %s', $interpreter, escapeshellarg($rootDir.'/composer.phar'), 'self-update'));
+    system(sprintf('%s %s self-update', $interpreter, escapeshellarg($rootDir.'/composer.phar')));
 }
 
 // Install/update dependencies
-system(sprintf('%s %s %s', $interpreter, escapeshellarg($rootDir.'/composer.phar'), $command));
+system(sprintf('%s %s %s --install-suggests', $interpreter, escapeshellarg($rootDir.'/composer.phar'), $command));
 
 // Update the bootstrap files
 system(sprintf('%s %s', $interpreter, escapeshellarg($rootDir.'/bin/build_bootstrap')));
