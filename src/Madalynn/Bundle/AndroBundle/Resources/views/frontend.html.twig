@@ -47,7 +47,8 @@
 {% endblock %}
 
 {% block page %}
-    <div id="sidebar">
+    <aside>
+    {# Administration section #}
     {% if app.user and app.user.admin %}
         <div class="sidebar_box">
             <h2>Administration</h2>
@@ -57,6 +58,8 @@
             </div>
         </div>
     {% endif %}
+
+    {# Mobile version section #}
     {% if andro_from_mobile() %}
         <div class="sidebar_box">
             <h2>Mobile version</h2>
@@ -66,6 +69,7 @@
             </div>
         </div>
     {% endif %}
+
         <div class="sidebar_box">
             <h2>Android Market</h2>
 
@@ -113,9 +117,9 @@
                 <iframe src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fandroirc&amp;width=220&amp;colorscheme=light&amp;show_faces=false&amp;border_color&amp;stream=false&amp;header=false&amp;height=62" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:220px; height:62px;" allowTransparency="true"></iframe>
             </div>
         </div>
-    </div>
+    </aside>
 
-    <div id="content">
+    <section id="content">
         {% block content %}{% endblock %}
-    </div>
+    </section>
 {% endblock %}

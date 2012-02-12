@@ -12,14 +12,17 @@
         <meta name="robots" content="index, follow" />
 
         <link href="https://plus.google.com/105275534595142567234/" rel="publisher" />
-        <link href="http://feeds.feedburner.com/AndroIRC" type="application/atom+xml" rel="alternate" title="Latest articles" />
+        <link href="http://feeds.feedburner.com/AndroIRC" type="application/atom+xml" rel="alternate" title="Articles - AndroIRC" />
         <link rel="shortcut icon" href="/favicon.ico" />
+        <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
         {% block stylesheets %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </head>
     <body>
         <div id="up">
-            <div id="header">
+            <header>
                 {% block header %}{% endblock %}
                 <div id="social">
                     <a href="http://feeds.feedburner.com/AndroIRC">
@@ -40,12 +43,12 @@
                     <img src="{{ asset('bundles/andro/images/logo.png') }}" />
                     <span><em>Android IRC Client</em></span>
                 </div>
-            </div>
+            </header>
         </div>
 
-        <div id="menu">
+        <nav id="menu">
             {% block menu %}{% endblock %}
-        </div>
+        </nav>
 
         <div id="space">
         </div>
@@ -59,9 +62,9 @@
             {% block page %}{% endblock %}
             <div class="clear"></div>
         </div>
-        <div id="footer">
+        <footer>
             <div>
-                <div class="column">
+                <section class="column">
                     <h2>Community</h2>
                     <p>You can join us on IRC. We're on <a href="irc://irc.freenode.net">freenode</a>, channel #AndroIRC</p>
                     <ul>
@@ -70,8 +73,8 @@
                         <li><img class="famfamfam" src="{{ asset('bundles/andro/images/gplus_16.png') }}" /> <a href="https://plus.google.com/105275534595142567234/">Google+ page</a></li>
                     </ul>
 
-                </div>
-                <div class="column">
+                </section>
+                <section class="column">
                     <h2>Other pages</h2>
                     <ul>
                         <li><img class="famfamfam" src="{{ asset('bundles/andro/images/marker.png') }}" /> <a href="{{ path('beta') }}">Download the latest beta</a></li>
@@ -81,19 +84,20 @@
                         <li><img class="famfamfam" src="{{ asset('bundles/andro/images/book_open.png') }}" /> <a href="http://translation.androirc.com/">Help us translating AndroIRC</a></li>
                         <li><img class="famfamfam" src="{{ asset('bundles/andro/images/mail-open.png') }}" /> <a href="{{ path('contact') }}">Contact us</a></li>
                     </ul>
-                </div>
-                <div class="column">
+                </section>
+                <section class="column">
                     <h2>Copyright</h2>
                     <p>
-                        {{ 'now'|date('Y') }} &copy; AndroIRC. All rights reserved.
+                        &copy; {{ 'now'|date('Y') }} <a href="http://www.madalynn.eu">Madalynn</a>, all rights reserved. Android is a trademark of Google Inc.
                     </p>
-                    <p>
-                        Powered by <a href="http://symfony.com">Symfony2</a>
+                    <p id="about">
+                        <img src="{{ asset('bundles/andro/images/html5.png') }}" />
+                        <img src="{{ asset('bundles/andro/images/symfony2.png') }}" />
                     </p>
-                </div>
+                </section>
             </div>
             <div class="clear"></div>
-        </div>
+        </footer>
         <script type="text/javascript">
             var _gaq = _gaq || [];
             _gaq.push(['_setAccount', 'UA-133630-2']);
