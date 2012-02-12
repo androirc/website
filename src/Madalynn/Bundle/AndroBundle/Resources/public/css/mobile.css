@@ -4,7 +4,7 @@
     width: 300px;
 }
 
-#header {
+header {
     padding-top: 20px;
     text-align: center;
 }
@@ -25,7 +25,7 @@
     margin: 10px 0 20px 0;
 }
 
-#footer {
+footer {
     text-align: center;
     background-color: #eeeeee;
     padding: 10px 0;

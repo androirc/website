@@ -27,35 +27,35 @@
     </head>
     <body>
         <div id="up">
-            <div id="header">
+            <header>
                 <div id="logo">
                     <a href="{{ path('homepage') }}">
                         <img src="{{ asset('bundles/andro/images/logo.png') }}" />
                     </a>
                     <span>Android IRC Client</span>
                 </div>
-            </div>
+            </header>
         </div>
-        <div id="menu">
+        <nav id="menu">
             <ul>
                 <li><a href="http://market.android.com/details?id=com.androirc">Download</a></li>
                 <li><a href="{{ path('eula') }}">EULA</a></li>
                 <li class="last"><a href="{{ path('beta') }}">Beta</a></li>
             </ul>
-        </div>
-        <div id="content">
+        </nav>
+        <section id="content">
             <div id="switch">
                 {{ andro_switch_version(app.request) }}
             </div>
             <div id="ads">
             </div>
             {% block content %}{% endblock %}
-        </div>
+        </section>
         <div class="clear"></div>
 
-        <div id="footer">
+        <footer>
             {{ 'now'|date('Y') }} &copy; AndroIRC. All rights reserved. Powered by <a href="http://symfony.com">Symfony2</a>
-        </div>
+        </footer>
         <script type="text/javascript">
             var _gaq = _gaq || [];
             _gaq.push(['_setAccount', 'UA-133630-5']);
