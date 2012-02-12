@@ -27,6 +27,7 @@ class AppKernel extends Kernel
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Ornicar\GravatarBundle\OrnicarGravatarBundle(),
             new WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle(),
+            new Sensio\Bundle\BuzzBundle\SensioBuzzBundle(),
 
             new Madalynn\Bundle\AdmobBundle\MadalynnAdmobBundle(),
             new Madalynn\Bundle\AndroBundle\AndroBundle(),

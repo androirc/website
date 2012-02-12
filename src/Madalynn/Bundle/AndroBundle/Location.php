@@ -16,28 +16,16 @@ use Buzz\Browser;
 
 class Location
 {
-    private $ip;
-    private $location;
+    private $buzz;
 
-    public function __construct($ip)
+    public function __construct(Browser $buzz)
     {
-        $this->ip = $ip;
+        $this->buzz = $buzz;
     }
 
-    public function getIp()
+    public function searchLocation($ip)
     {
-        return $this->ip;
-    }
-
-    public function getLocation()
-    {
-        if ($this->location) {
-            return $this->location;
-        }
-
-        $browser = new Browser();
-        $this->location = $browser->get('http://geoip.wtanaka.com/cc/' . $this->ip)->getContent();
-
-        return $this->location;
+        return $this->buzz->get('http://geoip.wtanaka.com/cc/'.$ip)
+                          ->getContent();
     }
 }

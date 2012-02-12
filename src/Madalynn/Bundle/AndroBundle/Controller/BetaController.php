@@ -57,11 +57,11 @@ class BetaController extends AbstractController
             throw $this->createNotFoundException('There is no beta to download at the moment');
         }
 
-        $location = new Location($request->getClientIp());
+        $ip       = $request->getClientIp();
         $download = new BetaDownload();
 
         $download->setBetaRelease($beta);
-        $download->setLocation($location->getLocation());
+        $download->setLocation($this->get('androirc.location')->searchLocation($ip));
 
         $em->persist($download);
         $em->flush();

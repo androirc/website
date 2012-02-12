@@ -5,11 +5,11 @@
         "twig/twig": "1.7.0-dev",
         "swiftmailer/swiftmailer": "4.1.6-dev",
         "fzaninotto/faker": "master-dev",
-        "kriswallsmith/buzz": "master-dev",
         "twig/extensions": "master-dev",
         "madalynn/plum": "master-dev",
         "doctrine/orm": "master-dev",
 
+        "sensio/buzz-bundle": "master-dev",
         "symfony/swiftmailer-bundle": "2.1.0-dev",
         "doctrine/doctrine-bundle": "master-dev",
         "doctrine/doctrine-fixtures-bundle": "master-dev",
