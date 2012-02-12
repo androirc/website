@@ -12,21 +12,17 @@
 
 namespace Madalynn\Bundle\AndroBundle\Twig\Extension;
 
-use Symfony\Component\Routing\RouterInterface;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Session\Session;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 use Madalynn\Bundle\AndroBundle\Entity\Article;
 
 class AndroExtension extends \Twig_Extension
 {
-    protected $router;
-    protected $session;
+    protected $container;
 
-    public function __construct(RouterInterface $router, Session $session)
+    public function __construct(ContainerInterface $container)
     {
-        $this->router  = $router;
-        $this->session = $session;
+        $this->container = $container;
     }
 
     public function getFilters()
@@ -69,14 +65,15 @@ class AndroExtension extends \Twig_Extension
             'slug' => $article->getSlug()
         );
 
-        return $this->router->generate('article_show', $params, $absolute);
+        return $this->container->get('router')->generate('article_show', $params, $absolute);
     }
 
-    public function switchVersion(Request $request)
+    public function switchVersion()
     {
-        $uri = $request->getUri();
-        $text = '';
-        $html = '<a href="{{ link }}" class="awesome">{{ text }}</a>';
+        $request = $this->container->get('request');
+        $uri     = $request->getUri();
+        $text    = '';
+        $html    = '<a href="{{ link }}" class="awesome">{{ text }}</a>';
 
         if (true === $request->headers->has('X-AndroIRC-Mobile')) {
             $uri = str_replace('m.', 'www.', $uri);
@@ -94,7 +91,7 @@ class AndroExtension extends \Twig_Extension
 
     public function fromMobile()
     {
-        return $this->session->get('from_mobile', false);
+        return $this->container->get('session')->get('from_mobile', false);
     }
 
     public function getName()

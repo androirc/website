@@ -12,8 +12,7 @@
 
     <services>
         <service id="androirc.twig.extension" class="%androirc.twig.extension.class%" public="false">
-            <argument type="service" id="router" />
-            <argument type="service" id="session" />
+            <argument type="service" id="service_container" />
             <tag name="twig.extension" />
         </service>
 
