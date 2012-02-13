@@ -1,43 +1,40 @@
-<div class="article {%- if (not article.visible) %} not_visible{% endif %}">
-    <div class="avatar">
-        <img src="{{ gravatar(article.author.email) }}" />
-    </div>
+<article {%- if not article.visible %} class="not-visible"{% endif %}>
     <div class="header">
-        {% if app.user and app.user.admin %}
-            <a href="{{ path('admin_article_edit', { 'id': article.id }) }}"><img style="float: right;" src="{{ asset('bundles/andro/images/icons/page_edit.png') }}" /></a>
-        {% endif %}
-        <div class="title">
-            {% if not sumup -%}
-                {{ article.getTitle }}
-            {% else -%}
-                <a href="{{ andro_url_article(article) }}">{{ article.title }}</a>
-            {% endif %}
+        <div class="avatar">
+            <img src="{{ gravatar(article.author.email) }}" />
         </div>
-        <div class="by">
-            {{ article.created|date('m/d/Y') }} | News posted by {{ article.author }}
+        <div class="informations">
+            <div class="title">
+                {% if sumup %}
+                    <a href="{{ andro_url_article(article) }}">{{ article.title }}</a>
+                {% else %}
+                    {{ article.title }}
+                {% endif %}
+                {% if not article.visible %}(not visible){% endif %}
+            </div>
+            <div class="subtitle">
+                {{ article.created|date('m/d/Y') }} | News posted by {{ article.author }} | <a href="{{ andro_url_article(article) }}#disqus_thread" data-disqus-identifier="{{ article.id }}">0 comment</a>
+                {% if app.user and app.user.admin %}
+                    | <a href="{{ path('admin_article_edit', { 'id': article.id }) }}">edit</a>
+                {% endif %}
+            </div>
         </div>
+        <div style="clear: left;"></div>
     </div>
+    <section class="content">
+        {% if sumup %}
+            {{ article.content|strip_tags|truncate(300)|raw }}
+        {% else %}
+            {{ article.content|raw }}
+        {% endif %}
+    </section>
 
     {% if not sumup %}
-        <div class="content">
-            {{ article.content|raw }}
-        </div>
-
-        <div class="footer">
-            <div class="share addthis_toolbox addthis_default_style"
-                 addthis:url="{{ andro_url_article(article, true) }}"
-                 addthis:title="{{ article.title }} - AndroIRC (Android IRC Client)">
-
-                <a class="addthis_counter addthis_pill_style"></a>
-                <a class="addthis_button_tweet" tw:via="androirc"></a>
-                <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
-                <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
-            </div>
-            <div class="comments">
-                <img src="{{ asset('bundles/andro/images/comment.png') }}" />
-                <a href="{{ andro_url_article(article) }}#disqus_thread" data-disqus-identifier="{{ article.id }}">Comments</a>
-            </div>
+        <div class="socialnetworks">
+            <span class='st_facebook_hcount' displayText='Facebook'></span>
+            <span class='st_plusone_hcount' displayText='Google +1'></span>
+            <span class='st_twitter_hcount' displayText='Tweet'></span>
+            <span class='st_email_hcount' displayText='Email'></span>
         </div>
     {% endif %}
-    <div style="clear: left;"></div>
-</div>
+</article>

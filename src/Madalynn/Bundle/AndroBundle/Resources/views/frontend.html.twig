@@ -1,6 +1,7 @@
 {% extends "AndroBundle::layout.html.twig" %}
 
 {% block stylesheets %}
+    <link href='http://fonts.googleapis.com/css?family=Share' rel='stylesheet' type='text/css'>
     {% stylesheets filter="?yui_css" output="css/frontend.css"
         '@AndroBundle/Resources/public/css/reset.css'
         '@AndroBundle/Resources/public/css/common.css'
@@ -28,8 +29,7 @@
             google_ad_width = 468;
             google_ad_height = 60;
         </script>
-        <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-        </script>
+        <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
     </div>
 {% endblock %}
 

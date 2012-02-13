@@ -2,21 +2,5 @@
 
 {% block javascripts %}
     {{ parent() }}
-    <script async="async" type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=mewt"></script>
-    <script type="text/javascript">
-        var addthis_config = {
-            data_track_clickback : true,
-            ui_click: true,
-            ui_cobrand: 'AndroIRC'
-        }
-    </script>
-    <script type="text/javascript">
-        var disqus_shortname = 'androirc';
-        (function () {
-            var s = document.createElement('script'); s.async = true;
-            s.type = 'text/javascript';
-            s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
-            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-        }());
-    </script>
+    {% include 'AndroBundle:Article:javascript.html.twig' %}
 {% endblock %}

@@ -182,59 +182,45 @@ a.awesome:hover {
 
 /* Article */
 
-.article {
-    background-color: #eee;
-    padding: 15px;
-    margin-bottom: 20px;
-    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.06, rgb(232,232,232)),color-stop(0.52, rgb(245,245,245)));
-    background-image: -moz-linear-gradient(center bottom, rgb(232,232,232) 6%, rgb(245,245,245) 52%);
-    border-radius: 10px;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-}
-
-.not_visible {
-    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.06, rgb(255,250,217)),color-stop(0.52, rgb(255,252,242)));
-    background-image: -moz-linear-gradient(center bottom, rgb(255,250,217) 6%, rgb(255,252,242) 52%);
-}
-
-.avatar {
-    float: right;
-}
-
-.article .header {
-    margin-right: 60px;
-}
-
-.article .title {
-    font-size: 19px;
-    color: #026995;
-    padding: 0 0 5px 10px;
-}
-
-.article .by {
-    background-color: #3d3d3d;
-    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.06, rgb(77,77,77)), color-stop(0.52, rgb(61,61,61)));
-    background-image: -moz-linear-gradient(center bottom, rgb(77,77,77) 6%, rgb(61,61,61) 52%);
-    padding: 5px 10px;
-    color: white;
-    font-size: 9px;
-    border-radius: 4px;
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
-    font-weight: bold;
+article {
     margin-bottom: 10px;
 }
 
-.article .content {
-    line-height: 1.6;
-    text-align: justify;
-    text-shadow: 1px 1px 1px #fff;
+article .avatar {
+    float: left;
 }
 
-.article .comments {
+article .informations {
+    margin-left: 60px;
+}
+
+article .title {
+    color: #026995;
+    font-family: Share, Arial, Helvetica, sans-serif;
+    font-size: 27px;
+    margin-bottom: 2px;
+}
+
+article .subtitle {
+    font-family: Share, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    margin-left: 2px;
+}
+
+article .content {
+    margin-top: 10px;
+    clear: left;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+article .socialnetworks {
+    padding-top: 5px;
     text-align: right;
-    text-shadow: 2px 1px 2px #fff;
+}
+
+article.not-visible .title a, article.not-visible .title {
+    color: #D15600;
 }
 
 /* Beta page */
