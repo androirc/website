@@ -35,14 +35,14 @@
 
 {% block menu %}
      <ul>
-        <li><a href="{{ path('homepage') }}">News</a></li>
-        <li><a href="http://wiki.androirc.com/">Wiki</a></li>
-        <li><a href="{{ path('screenshots') }}">Screenshots</a></li>
-        <li><a href="{{ path('contact') }}">Contact</a></li>
-        <li><a href="{{ path('beta') }}">Beta</a></li>
-        <li><a href="http://market.android.com/details?id=com.androirc">Download</a></li>
-        <li><a href="{{ path('eula') }}">EULA</a></li>
-        <li class="last"><a href="{{ path('donate') }}">Donate</a></li>
+        <li><a href="{{ path('homepage') }}">{{ 'menu.news'|trans }}</a></li>
+        <li><a href="http://wiki.androirc.com/">{{ 'menu.wiki'|trans }}</a></li>
+        <li><a href="{{ path('screenshots') }}">{{ 'menu.screens'|trans }}</a></li>
+        <li><a href="{{ path('contact') }}">{{ 'menu.contact'|trans }}</a></li>
+        <li><a href="{{ path('beta') }}">{{ 'menu.beta'|trans }}</a></li>
+        <li><a href="http://market.android.com/details?id=com.androirc">{{ 'menu.download'|trans }}</a></li>
+        <li><a href="{{ path('eula') }}">{{ 'menu.eula'|trans }}</a></li>
+        <li class="last"><a href="{{ path('donate') }}">{{ 'menu.donate'|trans }}</a></li>
     </ul>
 {% endblock %}
 
@@ -51,10 +51,10 @@
     {# Administration section #}
     {% if app.user and app.user.admin %}
         <div class="sidebar_box">
-            <h2>Administration</h2>
+            <h2>{{ 'sidebar.admin.name'|trans }}</h2>
 
             <div class="center">
-                <a href="{{ path('admin_dashboard') }}" class="awesome">Go to the administration center</a>
+                <a href="{{ path('admin_dashboard') }}" class="awesome">{{ 'sidebar.admin.button'|trans }}</a>
             </div>
         </div>
     {% endif %}
@@ -62,7 +62,7 @@
     {# Mobile version section #}
     {% if andro_from_mobile() %}
         <div class="sidebar_box">
-            <h2>Mobile version</h2>
+            <h2>{{ 'sidebar.mobile.name'|trans }}</h2>
 
             <div class="center">
                 {{ andro_switch_version() }}

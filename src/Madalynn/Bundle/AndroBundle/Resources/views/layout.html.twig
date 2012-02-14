@@ -6,8 +6,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="author" content="Julien Brochet, Sébastien Brochet" />
         <meta name="title" content="{{ block('title') }} - AndroIRC (Android IRC Client)" />
-        <meta name="description" content="AndroIRC is an Android IRC client which can connect to several server (secured or not) at the same time. Features: mIRC colors, auto join channels on startup, themes (black or white), nickserv auth, sasl auth, android notifications, copy &amp; paste, logging, easy access menu to kick, ban .. and much more!" />
-        <meta name="keywords" content="android, irc, client, free, app, mirc, androirc, market, logging, sasl, authentication, blowfish, plain, identification, nickserv, themes, smartphone, application, apps, ircd, communication, internet, relay, chat, server, freenode, epiknet, quakenet, efnet, undernet, ident, nick, nickname, chan, channel, kick, ban, op, halfop, voice" />
+        <meta name="description" content="{{ 'meta.description'|trans }}" />
+        <meta name="keywords" content="{{ 'meta.keywords'|trans }}" />
         <meta name="language" content="en" />
         <meta name="robots" content="index, follow" />
 
@@ -40,7 +40,7 @@
                 </div>
                 <div id="logo">
                     <img src="{{ asset('bundles/andro/images/logo.png') }}" />
-                    <span><em>Android IRC Client</em></span>
+                    <span><em>{{ 'header.subtitle'|trans }}</em></span>
                 </div>
             </header>
         </div>
@@ -65,30 +65,30 @@
         <footer>
             <div>
                 <section class="column">
-                    <h2>Community</h2>
-                    <p>You can join us on IRC. We're on <a href="irc://irc.freenode.net">freenode</a>, channel #AndroIRC</p>
+                    <h2>{{ 'footer.community.name'|trans }}</h2>
+                    <p>{{ 'footer.community.desc'|trans|replace({'freenode': '<a href="irc://irc.freenode.org/androirc">freenode</a>'})|raw }}</p>
                     <ul>
-                        <li><img class="famfamfam" src="{{ asset('bundles/andro/images/facebook_16.png') }}" /> <a href="http://facebook.com/androirc">Facebook page</a></li>
-                        <li><img class="famfamfam" src="{{ asset('bundles/andro/images/twitter_16.png') }}" /> <a href="http://twitter.com/androirc">Follow us on twitter</a></li>
-                        <li><img class="famfamfam" src="{{ asset('bundles/andro/images/gplus_16.png') }}" /> <a href="https://plus.google.com/105275534595142567234/">Google+ page</a></li>
+                        <li><img class="famfamfam" src="{{ asset('bundles/andro/images/facebook_16.png') }}" /> <a href="http://facebook.com/androirc">{{ 'footer.community.facebook'|trans }}</a></li>
+                        <li><img class="famfamfam" src="{{ asset('bundles/andro/images/twitter_16.png') }}" /> <a href="http://twitter.com/androirc">{{ 'footer.community.twitter'|trans }}</a></li>
+                        <li><img class="famfamfam" src="{{ asset('bundles/andro/images/gplus_16.png') }}" /> <a href="https://plus.google.com/105275534595142567234/">{{ 'footer.community.googleplus'|trans }}</a></li>
                     </ul>
 
                 </section>
                 <section class="column">
-                    <h2>Other pages</h2>
+                    <h2>{{ 'footer.otherpages.name'|trans }}</h2>
                     <ul>
-                        <li><img class="famfamfam" src="{{ asset('bundles/andro/images/marker.png') }}" /> <a href="{{ path('beta') }}">Download the latest beta</a></li>
-                        <li><img class="famfamfam" src="{{ asset('bundles/andro/images/bug.png') }}" /> <a href="http://bugs.androirc.com/">Bug tracker website</a></li>
-                        <li><img class="famfamfam" src="{{ asset('bundles/andro/images/feed.png') }}" /> <a href="http://feeds.feedburner.com/AndroIRC">RSS Feed</a></li>
-                        <li><img class="famfamfam" src="{{ asset('bundles/andro/images/coins.png') }}" /> <a href="https://market.android.com/details?id=com.androirc.premium">Download AndroIRC premium</a></li>
-                        <li><img class="famfamfam" src="{{ asset('bundles/andro/images/book_open.png') }}" /> <a href="http://translation.androirc.com/">Help us translating AndroIRC</a></li>
-                        <li><img class="famfamfam" src="{{ asset('bundles/andro/images/mail-open.png') }}" /> <a href="{{ path('contact') }}">Contact us</a></li>
+                        <li><img class="famfamfam" src="{{ asset('bundles/andro/images/marker.png') }}" /> <a href="{{ path('beta') }}">{{ 'footer.otherpages.beta'|trans }}</a></li>
+                        <li><img class="famfamfam" src="{{ asset('bundles/andro/images/bug.png') }}" /> <a href="http://bugs.androirc.com/">{{ 'footer.otherpages.bug'|trans }}</a></li>
+                        <li><img class="famfamfam" src="{{ asset('bundles/andro/images/feed.png') }}" /> <a href="http://feeds.feedburner.com/AndroIRC">{{ 'footer.otherpages.rss'|trans }}</a></li>
+                        <li><img class="famfamfam" src="{{ asset('bundles/andro/images/coins.png') }}" /> <a href="https://market.android.com/details?id=com.androirc.premium">{{ 'footer.otherpages.premium'|trans }}</a></li>
+                        <li><img class="famfamfam" src="{{ asset('bundles/andro/images/book_open.png') }}" /> <a href="http://translation.androirc.com/">{{ 'footer.otherpages.translation'|trans }}</a></li>
+                        <li><img class="famfamfam" src="{{ asset('bundles/andro/images/mail-open.png') }}" /> <a href="{{ path('contact') }}">{{ 'footer.otherpages.contact'|trans }}</a></li>
                     </ul>
                 </section>
                 <section class="column">
-                    <h2>Copyright</h2>
+                    <h2>{{ 'footer.copyright.name'|trans }}</h2>
                     <p>
-                        &copy; {{ 'now'|date('Y') }} <a href="http://www.madalynn.eu">Madalynn</a>, all rights reserved. Android is a trademark of Google Inc.
+                        &copy; {{ 'footer.copyright.desc'|trans({'%year%': 'now'|date('Y')})|replace({'Madalynn': '<a href="http://www.madalynn.eu/">Madalynn</a>'})|raw }}
                     </p>
                     <p id="about">
                         <img src="{{ asset('bundles/andro/images/html5.png') }}" />

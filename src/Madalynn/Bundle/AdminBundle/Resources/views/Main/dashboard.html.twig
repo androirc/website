@@ -1,7 +1,7 @@
 {% extends "AdminBundle::backend.html.twig" %}
 
 {% block page %}
-    <h1>Welcome {{ app.user.getUsername }}</h1>
+    <h1>Welcome {{ app.user.username }}</h1>
 
     <div style="text-align: center">
         <img src="{{ asset('bundles/admin/images/android.png') }}" />

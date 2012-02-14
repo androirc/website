@@ -65,7 +65,7 @@ login:
     pattern:   /login
     defaults:  { _controller: AndroBundle:Security:login }
 
-login_check:
+_login_check:
     pattern:   /login_check
 
 logout:

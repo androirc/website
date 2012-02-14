@@ -4,17 +4,6 @@ nav#menu ul {
     width: 800px;
 }
 
-#locales {
-    width: 730px;
-    margin: auto;
-    padding-top: 10px;
-}
-
-.locale {
-    float: right;
-    margin-left: 5px;
-}
-
 /* Posts */
 
 #introduction {
@@ -32,11 +21,11 @@ nav#menu ul {
 }
 
 #support_link span {
-	background: url("/bundles/andro/images/gradient-glossy.png") repeat-x;
-	position: absolute;
-	display: block;
-	width: 100%;
-	height: 18px;
+    background: url("/bundles/andro/images/gradient-glossy.png") repeat-x;
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 18px;
 }
 
 /* Donate page */

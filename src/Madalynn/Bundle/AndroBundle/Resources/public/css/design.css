@@ -31,6 +31,17 @@ header {
     position: absolute;
 }
 
+#locales {
+    width: 730px;
+    margin: auto;
+    padding-top: 10px;
+}
+
+.locale {
+    float: right;
+    margin-left: 5px;
+}
+
 /* Content */
 
 #content {

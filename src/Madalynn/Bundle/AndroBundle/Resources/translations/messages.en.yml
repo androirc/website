@@ -1,0 +1,54 @@
+meta:
+    description: |
+        AndroIRC is an Android IRC client which can connect to several server
+        (secured or not) at the same time. Features: mIRC colors, auto join
+        channels on startup, themes (black or white), nickserv auth, sasl auth,
+        android notifications, copy &amp; paste, logging, easy access menu
+        to kick, ban .. and much more!
+    keywords: |
+        android, irc, client, free, app, mirc, androirc, market, logging,
+        sasl, authentication, blowfish, plain, identification, nickserv,
+        themes, smartphone, application, apps, ircd, communication, internet,
+        relay, chat, server, freenode, epiknet, quakenet, efnet, undernet,
+        ident, nick, nickname, chan, channel, kick, ban, op, halfop, voice
+
+header:
+    subtitle: Android IRC Client
+
+menu:
+    news: News
+    wiki: Wiki
+    screens: Screenshots
+    contact: Contact
+    beta: Beta
+    download: Download
+    eula: EULA
+    donate: Donate
+
+sidebar:
+    admin:
+        name: Administration
+        button: Go to the administration center
+    mobile:
+        name: Mobile version
+        to_mobile: x
+        to_web: y
+
+footer:
+    community:
+        name: Community
+        desc: You can join us on IRC. We're on freenode.
+        facebook: Facebook page
+        twitter: Follow us on twitter
+        googleplus: Google+ page
+    otherpages:
+        name: Other pages
+        beta: Download the latest beta
+        bug: Bug tracker website
+        rss: RSS Feed
+        premium: Download AndroIRC premium
+        translation: Help us translating AndroIRC
+        contact: Contact us
+    copyright:
+        name: Copyright
+        desc: %year% Madalynn, all rights reserved. Android is a trademark of Google Inc.
