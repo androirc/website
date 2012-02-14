@@ -71,9 +71,9 @@
     {% endif %}
 
         <div class="sidebar_box">
-            <h2>Android Market</h2>
+            <h2>{{ 'sidebar.market.name'|trans }}</h2>
 
-            <p>You can download AndroIRC directly from the Android Market or scan one of the following barcodes :</p>
+            <p>{{ 'sidebar.market.desc'|trans }}</p>
 
             <div class="center">
                 <img src="{{ asset('bundles/andro/images/qrcode.png') }}" />
@@ -88,7 +88,7 @@
         </div>
 
         <div class="sidebar_box">
-            <h2>AndroIRC Team</h2>
+            <h2>{{ 'sidebar.team'|trans }}</h2>
 
             <div id="team_box">
                 <div class="member">
@@ -111,7 +111,7 @@
         </div>
 
         <div class="sidebar_box">
-            <h2>Facebook</h2>
+            <h2>{{ 'sidebar.facebook'|trans }}</h2>
 
             <div id="facebook">
                 <iframe src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fandroirc&amp;width=220&amp;colorscheme=light&amp;show_faces=false&amp;border_color&amp;stream=false&amp;header=false&amp;height=62" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:220px; height:62px;" allowTransparency="true"></iframe>

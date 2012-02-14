@@ -4,9 +4,11 @@
 
 {% block content %}
     <div class="center">
-        <a id="support_link" href="{{ path('donate') }}"><span></span>You like AndroIRC? Support it!</a>
+        <a id="support_link" href="{{ path('donate') }}"><span></span>{{ 'homepage.support_it'|trans }}</a>
 
-        <p id="donate">AndroIRC is <strong>free</strong> and you can download it <strong>FOR FREE</strong> in the Market. But we have <strong>charges</strong> concerning the server administration. If you want to support AndroIRC, you have currently two ways :</p>
+        <p id="donate">
+            {{ 'donate.desc'|trans|raw }}
+        </p>
 
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
             <input type="hidden" name="cmd" value="_s-xclick" />
@@ -16,7 +18,7 @@
         </form>
     </div>
 
-    <p>Many thanks to :</p>
+    <p>{{ 'donate.thanks'|trans }}</p>
     <ul>
         {% for donator in donators %}
             <li><strong>{{ donator.name }}</strong> (${{ donator.amount }})</li>
@@ -24,7 +26,6 @@
     </ul>
 
     <p>
-        You can also download the premium application "<strong>AndroIRC premium</strong>".
-        This application just disable ads on AndroIRC. More information <a href="https://market.android.com/details?id=com.androirc.premium">here</a>
+        {{ 'donate.also'|trans }}
     </p>
 {% endblock %}

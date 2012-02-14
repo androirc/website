@@ -2,19 +2,16 @@
 
 {% block content %}
     <div class="center">
-        <a id="support_link" href="{{ path('donate') }}"><span></span>You like AndroIRC? Support it!</a>
+        <a id="support_link" href="{{ path('donate') }}"><span></span>{{ 'homepage.support_it'|trans }}</a>
     </div>
 
     <p id="introduction">
-        AndroIRC is an <strong>Android IRC client</strong> which can connect to several server (secured or not)
-        at the same time. Features: supports <a href="http://www.mirc.com">mIRC</a> colors, auto join channels
-        on startup, nickserv/sasl auth, logging, themes... You can see screenshots <a href="{{ path('screenshots') }}">here</a>!
-        Feel free to contact us via the <a href="{{ path('contact') }}>">online form</a>.
+       {{ 'homepage.introduction'|trans }}
     </p>
 
     {% for article in articles %}
         {% include 'AndroBundle:Article:article.html.twig' with { 'article': article, 'sumup': true } %}
     {% endfor %}
 
-    <a style="float: right; "class="awesome" href="{{ path('archives') }}">» Archives</a>
+    <a style="float: right; "class="awesome" href="{{ path('archives') }}">» {{ 'article.archives'|trans }}</a>
 {% endblock %}

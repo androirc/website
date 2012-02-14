@@ -4,13 +4,13 @@
 
 {% block content %}
     <p>You can use this form to contact the team either to submit a bug or just to ask something.</p>
-    
+
     <form action="{{ path('contact') }}" method="post" {{ form_enctype(form) }}>
         <div class="form">
             {{ form_widget(form) }}
         </div>
         <div class="form_submit">
-            <input type="submit" />
+            <input type="submit" value="{{ 'contact.submit'|trans }}"/>
         </div>
     </form>
 {% endblock %}

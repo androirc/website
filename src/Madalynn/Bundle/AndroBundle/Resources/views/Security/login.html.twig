@@ -9,13 +9,13 @@
         </div>
     {% endif %}
 
-    <h1>You need to signin please</h1>
+    <h1>{{ 'login.title'|trans }}</h1>
 
     <form action="{{ path('_login_check') }}" method="post">
     <table id="admin_article" class="form">
         <tr>
             <td class="label">
-                <label for="username">Username</label>
+                <label for="username">{{ 'login.username'|trans }}</label>
             </td>
             <td>
                 <input type="text" id="username" name="_username" value="{{ last_username }}" />
@@ -23,7 +23,7 @@
         </tr>
         <tr>
             <td class="label">
-                <label for="password">Password</label>
+                <label for="password">{{ 'login.password'|trans }}</label>
             </td>
             <td>
                 <input type="password" id="password" name="_password" />
@@ -31,7 +31,7 @@
         </tr>
         <tr>
             <td class="label">
-                <label for="remember_me">Remember</label>
+                <label for="remember_me">{{ 'login.remember_me'|trans }}</label>
             </td>
             <td>
                 <input type="checkbox" id="remember_me" name="_remember_me" />
@@ -39,6 +39,6 @@
         </tr>
     </table>
 
-        <input type="submit" id="_submit" name="_submit" value="Submit" />
+        <input type="submit" id="_submit" name="_submit" value="{{ 'login.submit'|trans }}" />
     </form>
 {% endblock %}

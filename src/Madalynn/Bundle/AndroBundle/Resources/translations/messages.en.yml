@@ -31,8 +31,69 @@ sidebar:
         button: Go to the administration center
     mobile:
         name: Mobile version
-        to_mobile: x
-        to_web: y
+        to_mobile: Switch to the mobile version
+        to_web: Switch to the web version
+    market:
+        name: Android Market
+        desc: |
+            You can download AndroIRC directly from the Android Market
+            or scan one of the following barcodes
+    team: AndroIRC Team
+    facebook: Facebook
+
+homepage:
+    support_it: You like AndroIRC? Support it!
+    introduction: |
+        AndroIRC is an Android IRC client which can connect to several server
+        (secured or not) at the same time. Features: supports mIRC colors,
+        auto join channels on startup, nickserv/sasl auth, logging, themes...
+        You can see screenshots here! Feel free to contact us via the
+        online form.
+
+screenshots:
+    name: Screenshots
+
+beta:
+    name: Latest AndroIRC beta version
+    desc: |
+        You can now download the latest beta of AndroIRC! This file is not
+        available in the Android Market because <strong>it still contains
+        bugs</strong>. Keep in mind that it's just a beta release ;). If you
+        find a bug, you can contact us or just post a new ticket in the bug
+        tracker. Thanks!
+    button: Download the latest beta of AndroIRC
+    subtitle: Version %version% - %date%
+    no_beta: No beta right now... come back later!
+
+donate:
+    desc: |
+        AndroIRC is <strong>free</strong> and you can download it <strong>
+        FOR FREE</strong> in the Market. But we have <strong>charges</strong>
+        concerning the server administration. If you want to support AndroIRC,
+        you have currently two ways :
+    thanks: Many thanks to
+    also: |
+        You can also download the premium application "AndroIRC premium". This
+        application just disable ads on AndroIRC.
+
+contact:
+    desc: You can use this form to contact the team either to submit a bug or just to ask something.
+    name: Name
+    email: Email
+    content: Content
+    submit: Send
+
+article:
+    archives: Archives
+    posted_by: News posted by %name%
+    edit: edit
+
+login:
+    title: You need to signin please
+    username: Username
+    password: Password
+    remember_me: Remember
+    submit: Submit
 
 footer:
     community:
