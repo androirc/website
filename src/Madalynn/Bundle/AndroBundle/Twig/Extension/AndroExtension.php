@@ -77,10 +77,10 @@ class AndroExtension extends \Twig_Extension
 
         if (true === $request->headers->has('X-AndroIRC-Mobile')) {
             $uri = str_replace('m.', 'www.', $uri);
-            $text = 'Switch to the web version';
+            $text = $this->container->get('translator')->trans('sidebar.mobile.to_web');
         } else {
             $uri = str_replace('www.', 'm.', $uri);
-            $text = 'Switch to the mobile version';
+            $text = $this->container->get('translator')->trans('sidebar.mobile.to_mobile');
         }
 
         return strtr($html, array(
