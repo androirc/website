@@ -8,7 +8,7 @@
     <div id="disqus_thread"></div>
     <script type="text/javascript">
         var disqus_shortname = 'androirc';
-        var disqus_identifier = {{ article.getId }};
+        var disqus_identifier = {{ article.id }};
         var disqus_url = '{{ andro_url_article(article, true) }}';
         {% if app.debug -%}
             var disqus_developer = 1;

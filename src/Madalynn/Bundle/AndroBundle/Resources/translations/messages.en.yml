@@ -87,6 +87,7 @@ article:
     archives: Archives
     posted_by: News posted by %name%
     edit: edit
+    not_visible: not visible
 
 login:
     title: You need to signin please
