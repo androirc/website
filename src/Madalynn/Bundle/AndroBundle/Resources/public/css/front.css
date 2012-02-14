@@ -4,23 +4,21 @@ nav#menu ul {
     width: 800px;
 }
 
+#locales {
+    width: 730px;
+    margin: auto;
+    padding-top: 10px;
+}
+
+.locale {
+    float: right;
+    margin-left: 5px;
+}
+
 /* Posts */
 
 #introduction {
     margin: 15px 0;
-}
-
-.article .content {
-    margin-bottom: 10px;
-}
-
-.article .share {
-    float: left;
-    width: 410px;
-}
-
-.addthis_counter {
-    margin-right: 10px;
 }
 
 #support_link {

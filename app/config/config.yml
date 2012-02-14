@@ -3,7 +3,7 @@ imports:
 
 framework:
     secret:          %secret%
-    translator:      { fallback: en }
+    translator:      { enabled: true, fallback: en }
     default_locale:  %locale%
     charset:         UTF-8
     router:          { resource: "%kernel.root_dir%/config/routing.yml" }
@@ -95,3 +95,9 @@ ornicar_gravatar:
 madalynn_admob:
     publisher_id: a14eb7d2147c5a9
     textcolor: '026995'
+
+# i18n Routing Configuration
+jms_i18n_routing:
+    default_locale: en
+    locales: [en, fr]
+    strategy: prefix_except_default

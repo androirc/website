@@ -28,6 +28,7 @@ class AppKernel extends Kernel
             new Ornicar\GravatarBundle\OrnicarGravatarBundle(),
             new WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle(),
             new Sensio\Bundle\BuzzBundle\SensioBuzzBundle(),
+            new JMS\I18nRoutingBundle\JMSI18nRoutingBundle(),
 
             new Madalynn\Bundle\AdmobBundle\MadalynnAdmobBundle(),
             new Madalynn\Bundle\AndroBundle\AndroBundle(),

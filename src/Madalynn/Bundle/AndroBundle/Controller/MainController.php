@@ -61,4 +61,13 @@ class MainController extends AbstractController
             'donators' => $repo->getDonators()
         ));
     }
+
+    public function localesAction()
+    {
+        $locales = $this->container->getParameter('jms_i18n_routing.locales');
+
+        return $this->render('AndroBundle:Main:locales.html.twig', array(
+            'locales' => $locales
+        ));
+    }
 }
