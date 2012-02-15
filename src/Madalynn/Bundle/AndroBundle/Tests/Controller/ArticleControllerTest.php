@@ -20,6 +20,6 @@ class ArticleControllerTest extends WebTestCase
         $client = self::createClient();
         $crawler = $client->request('GET', '/archives');
 
-        $this->assertEquals(10, $crawler->filter('.article')->count());
+        $this->assertEquals(10, $crawler->filter('article')->count());
     }
 }
