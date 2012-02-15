@@ -23,7 +23,7 @@
     </div>
     <section class="content">
         {% if sumup %}
-            {{ article.content|strip_tags|truncate(300)|raw }}
+            {{ article.content|striptags|truncate(300)|raw }}
         {% else %}
             {{ article.content|raw }}
         {% endif %}

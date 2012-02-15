@@ -35,8 +35,7 @@ class AndroExtension extends \Twig_Extension
     {
         return array(
             'sha1'       => new \Twig_Filter_Method($this, 'sha1'),
-            'md5'        => new \Twig_Filter_Method($this, 'md5'),
-            'strip_tags' => new \Twig_Filter_Method($this, 'stripTags', array('is_safe' => array('html'))),
+            'md5'        => new \Twig_Filter_Method($this, 'md5')
         );
     }
 
@@ -50,11 +49,6 @@ class AndroExtension extends \Twig_Extension
             'andro_current_locale'      => new \Twig_Function_Method($this, 'getCurrentLocale'),
             'andro_locales'             => new \Twig_Function_Method($this, 'getLocales'),
         );
-    }
-
-    public function stripTags($text)
-    {
-        return strip_tags($text);
     }
 
     public function sha1($text)
