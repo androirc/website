@@ -12,6 +12,7 @@
 
 namespace Madalynn\Bundle\AndroBundle\DataFixtures\ORM;
 
+use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\Common\DataFixtures\FixtureInterface;
 
 use Madalynn\Bundle\AndroBundle\Entity\Donator;
@@ -28,7 +29,7 @@ class DonatorFixtures implements FixtureInterface
      *
      * @param object $manager
      */
-    public function load($em)
+    public function load(ObjectManager $em)
     {
         $martin = new Donator();
 

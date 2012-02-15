@@ -12,6 +12,7 @@
 
 namespace Madalynn\Bundle\AndroBundle\DataFixtures\ORM;
 
+use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
@@ -30,7 +31,7 @@ class RoleFixtures extends AbstractFixture implements FixtureInterface, OrderedF
      *
      * @param object $manager
      */
-    public function load($em)
+    public function load(ObjectManager $em)
     {
         $admin = $this->createRole('ROLE_ADMIN', 'The administrator role');
 

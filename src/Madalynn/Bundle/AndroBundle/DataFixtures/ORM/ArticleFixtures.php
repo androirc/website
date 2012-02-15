@@ -12,6 +12,7 @@
 
 namespace Madalynn\Bundle\AndroBundle\DataFixtures\ORM;
 
+use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
@@ -32,7 +33,7 @@ class ArticleFixtures extends AbstractFixture implements FixtureInterface, Order
      *
      * @param object $manager
      */
-    public function load($em)
+    public function load(ObjectManager $em)
     {
         $faker = FakerFactory::create();
         $admin = $this->getReference('user_admin');

@@ -12,6 +12,7 @@
 
 namespace Madalynn\Bundle\AndroBundle\DataFixtures\ORM;
 
+use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\Common\DataFixtures\FixtureInterface;
 
 use Madalynn\Bundle\AndroBundle\Entity\TipHoliday;
@@ -28,7 +29,7 @@ class TipHolidayFixtures implements FixtureInterface
      *
      * @param object $manager
      */
-    public function load($em)
+    public function load(ObjectManager $em)
     {
         $tips = array(
             array(

@@ -12,6 +12,7 @@
 
 namespace Madalynn\Bundle\AndroBundle\DataFixtures\ORM;
 
+use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
@@ -40,7 +41,7 @@ class UserFixtures extends AbstractFixture implements FixtureInterface, Containe
      *
      * @param object $manager
      */
-    public function load($em)
+    public function load(ObjectManager $em)
     {
         $admin = new User();
 

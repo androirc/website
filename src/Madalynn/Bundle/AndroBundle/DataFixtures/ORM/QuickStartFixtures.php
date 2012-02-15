@@ -12,6 +12,7 @@
 
 namespace Madalynn\Bundle\AndroBundle\DataFixtures\ORM;
 
+use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\Common\DataFixtures\FixtureInterface;
 
 use Madalynn\Bundle\AdminBundle\DataTransformer\VersionTransformer;
@@ -29,7 +30,7 @@ class QuickStartFixtures implements FixtureInterface
      *
      * @param object $manager
      */
-    public function load($em)
+    public function load(ObjectManager $em)
     {
         $transformer = new VersionTransformer();
 
