@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html xml:lang="en" lang="en">
+<html xml:lang="{{ andro_current_locale() }}" lang="{{ andro_current_locale() }}">
     <head>
-        <title>{% block title %}{{ 'homepage.title'|trans }}{% endblock %} - AndroIRC (Android IRC Client)</title>
+        <title>{% block title %}{{ 'homepage.title'|trans }}{% endblock %} - AndroIRC ({{ 'header.subtitle'|trans }})</title>
         <meta name="google-site-verification" content="NxLzVTaSpM7YMWZ_DqGdF19nVKrNl4IcQxcT3jtACqw" />
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="author" content="Julien Brochet, Sébastien Brochet" />
-        <meta name="title" content="{{ block('title') }} - AndroIRC (Android IRC Client)" />
+        <meta name="title" content="{{ block('title') }} - AndroIRC ({{ 'header.subtitle'|trans }})" />
         <meta name="description" content="{% spaceless %}{{ 'meta.description'|trans }}{% endspaceless %}" />
         <meta name="keywords" content="{{ 'meta.keywords'|trans }}" />
-        <meta name="language" content="en" />
+        <meta name="language" content="{{ andro_locales()|join(',') }}" />
         <meta name="robots" content="index, follow" />
 
         <link href="https://plus.google.com/105275534595142567234/" rel="publisher" />
         <link href="http://feeds.feedburner.com/AndroIRC" type="application/atom+xml" rel="alternate" title="Articles - AndroIRC" />
-        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
         <!--[if lt IE 9]>
             <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->

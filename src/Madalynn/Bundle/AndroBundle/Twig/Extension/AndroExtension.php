@@ -21,6 +21,11 @@ class AndroExtension extends \Twig_Extension
 {
     protected $container;
 
+    /**
+     * Contructor
+     *
+     * @param ContainerInterface $container The container
+     */
     public function __construct(ContainerInterface $container)
     {
         $this->container = $container;
@@ -42,6 +47,8 @@ class AndroExtension extends \Twig_Extension
             'andro_switch_version'      => new \Twig_Function_Method($this, 'switchVersion', array('is_safe' => array('html'))),
             'andro_from_mobile'         => new \Twig_Function_Method($this, 'fromMobile', array('is_safe' => array('html'))),
             'andro_current_path_locale' => new \Twig_Function_Method($this, 'currentPathToLocale', array('is_safe' => array('html'))),
+            'andro_current_locale'      => new \Twig_Function_Method($this, 'getCurrentLocale'),
+            'andro_locales'             => new \Twig_Function_Method($this, 'getLocales'),
         );
     }
 
@@ -58,6 +65,26 @@ class AndroExtension extends \Twig_Extension
     public function md5($text)
     {
         return md5($text);
+    }
+
+    /**
+     * Returns the current locale
+     *
+     * @return string The locale
+     */
+    public function getCurrentLocale()
+    {
+        return $this->container->get('request')->attributes->get('_locale');
+    }
+
+    /**
+     * Returns locales supported by the application
+     *
+     * @return array Locales
+     */
+    public function getLocales()
+    {
+        return $this->container->getParameter('jms_i18n_routing.locales');
     }
 
     /**
@@ -88,6 +115,14 @@ class AndroExtension extends \Twig_Extension
         return $router->generate($id, array_merge($parameters, array('_locale' => $locale)), $absolute) . $query;;
     }
 
+    /**
+     * Generate an article url
+     *
+     * @param Article $article An article object
+     * @param boolean $absolute Absolute url or not
+     *
+     * @return string The article url
+     */
     public function articleUrl(Article $article, $absolute = false)
     {
         $params = array(
@@ -98,6 +133,11 @@ class AndroExtension extends \Twig_Extension
         return $this->container->get('router')->generate('article_show', $params, $absolute);
     }
 
+    /**
+     * Generate the HTML link for switch web/mobile version
+     *
+     * @return string The HTML content
+     */
     public function switchVersion()
     {
         $request = $this->container->get('request');
@@ -119,6 +159,9 @@ class AndroExtension extends \Twig_Extension
         ));
     }
 
+    /**
+     * Returns true if the user is comming from a mobile or not
+     */
     public function fromMobile()
     {
         return $this->container->get('session')->get('from_mobile', false);
