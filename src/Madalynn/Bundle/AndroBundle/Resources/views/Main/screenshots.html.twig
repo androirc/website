@@ -24,10 +24,10 @@
     </script>
 {% endblock %}
 
-{% block title %}Screenshots{% endblock %}
+{% block title %}{{ 'screenshots.name'|trans }}{% endblock %}
 
 {% block content %}
-<h2>Screenshots</h2>
+<h2>{{ 'screenshots.name'|trans }}</h2>
 
 <ul id="slider">
     {% for screen in screenshots %}

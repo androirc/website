@@ -3,7 +3,7 @@
 {% block title %}Contact{% endblock %}
 
 {% block content %}
-    <p>You can use this form to contact the team either to submit a bug or just to ask something.</p>
+    <p>{{ 'contact.desc'|trans }}</p>
 
     <form action="{{ path('contact') }}" method="post" {{ form_enctype(form) }}>
         <div class="form">

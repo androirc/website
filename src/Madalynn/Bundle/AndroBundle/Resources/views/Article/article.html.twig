@@ -13,7 +13,7 @@
                 {% if not article.visible %}({{ 'article.not_visible'|trans }}){% endif %}
             </div>
             <div class="subtitle">
-                {{ article.created|date('m/d/Y') }} | {{ 'article.posted_by'|trans({'%name%': article.author}) }} | <a href="{{ andro_url_article(article) }}#disqus_thread" data-disqus-identifier="{{ article.id }}">0 comment</a>
+                {{ article.created|date('article.date_format'|trans) }} | {{ 'article.posted_by'|trans({'%name%': article.author}) }} | <a href="{{ andro_url_article(article) }}#disqus_thread" data-disqus-identifier="{{ article.id }}">0 comment</a>
                 {% if app.user and app.user.admin %}
                     | <a href="{{ path('admin_article_edit', { 'id': article.id }) }}">{{ 'article.edit'|trans }}</a>
                 {% endif %}

@@ -3,7 +3,7 @@ meta:
         AndroIRC is an Android IRC client which can connect to several server
         (secured or not) at the same time. Features: mIRC colors, auto join
         channels on startup, themes (black or white), nickserv auth, sasl auth,
-        android notifications, copy &amp; paste, logging, easy access menu
+        android notifications, copy & paste, logging, easy access menu
         to kick, ban .. and much more!
     keywords: |
         android, irc, client, free, app, mirc, androirc, market, logging,
@@ -42,13 +42,13 @@ sidebar:
     facebook: Facebook
 
 homepage:
+    title: Home
     support_it: You like AndroIRC? Support it!
     introduction: |
         AndroIRC is an Android IRC client which can connect to several server
         (secured or not) at the same time. Features: supports mIRC colors,
         auto join channels on startup, nickserv/sasl auth, logging, themes...
-        You can see screenshots here! Feel free to contact us via the
-        online form.
+        Feel free to contact us via the online form.
 
 screenshots:
     name: Screenshots
@@ -63,6 +63,7 @@ beta:
         tracker. Thanks!
     button: Download the latest beta of AndroIRC
     subtitle: Version %version% - %date%
+    date_format: m/d/Y
     no_beta: No beta right now... come back later!
 
 donate:
@@ -84,6 +85,7 @@ contact:
     submit: Send
 
 article:
+    date_format: m/d/Y
     archives: Archives
     posted_by: News posted by %name%
     edit: edit

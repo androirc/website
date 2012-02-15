@@ -1,3 +1,20 @@
+meta:
+    description: |
+        AndroIRC is an Android IRC client which can connect to several server
+        (secured or not) at the same time. Features: mIRC colors, auto join
+        channels on startup, themes (black or white), nickserv auth, sasl auth,
+        android notifications, copy & paste, logging, easy access menu
+        to kick, ban .. and much more!
+    keywords: |
+        android, irc, client, free, app, mirc, androirc, market, logging,
+        sasl, authentication, blowfish, plain, identification, nickserv,
+        themes, smartphone, application, apps, ircd, communication, internet,
+        relay, chat, server, freenode, epiknet, quakenet, efnet, undernet,
+        ident, nick, nickname, chan, channel, kick, ban, op, halfop, voice
+
+header:
+    subtitle: Client IRC pour Android
+
 menu:
     news: Actualités
     wiki: Wiki
@@ -7,3 +24,100 @@ menu:
     download: Télécharger
     eula: EULA
     donate: Donation
+
+sidebar:
+    admin:
+        name: Administration
+        button: Aller au centre d'administration
+    mobile:
+        name: Version mobile
+        to_mobile: Passer sur la version mobile
+        to_web: Passer sur la version web
+    market:
+        name: Android Market
+        desc: |
+            Vous pouvez télécharger AndroIRC directement depuis l'Android Market
+            ou alors en scannant l'un des codes barres suivants
+    team: L'équipe AndroIRC
+    facebook: Facebook
+
+homepage:
+    title: Accueil
+    support_it: Vous aimez AndroIRC ? Supportez le !
+    introduction: |
+        AndroIRC est un client IRC pour Android permettant la connexion à
+        plusieurs serveurs (de manière sécurisée ou non) en même temps. Support
+        les couleurs mIRC, rejoindre ses salons automatiquement à la connexion,
+        identification via NickServ/SASL, logging, plusieurs thèmes et bien
+        plus !
+
+screenshots:
+    name: Images provenant de AndroIRC
+
+beta:
+    name: Dernière version beta de AndroIRC
+    desc: |
+        Vous pouvez maintenant télécharger la dernière version beta de AndroIRC !
+        Cette version n'est pas (et ne sera jamais) disponible sur l'Android
+        Market parcequ'elle <strong>contient toujours des bugs</strong>. Il est
+        nécesaire de garder en tête que celà reste une version beta ;) Si vous
+        trouvez un nouveau bug, vous pouvez nous contacter via le formulaire
+        en ligne ou alors en postant une nouvelle entrée dans le bug tracker
+        (le lien est disponible en bas de page). Merci !
+    button: Télécharger la dernière beta de AndroIRC
+    date_format: d/m/Y
+    subtitle: Version %version% - %date%
+    no_beta: Aucune beta pour le moment ...
+
+donate:
+    desc: |
+        AndroIRC est <stong>gratuit</strong> et vous pouvez le télécharger
+        gratuitement sur l'Android Market. Cependant, nous nous des <strong>
+        charges</strong> notamment au niveau de l'administration de nos
+        serveurs. Si vous souhaitez supporter AndroIRC, il existe deux
+        solutions :
+    thanks: Merci à
+    also: |
+        Vous pouvez aussi télécharger l'application premium "AndroIRC premium"
+        disponible sur l'Android Market. Cette application s'occupe de supprimer
+        l'ensemble des publicités présentes sur l'application originel.
+
+contact:
+    desc: Vous pouvez utiliser ce formulaire pour contacter l'équipe, soumettre un bug ou juste pour poser une question.
+    name: Nom
+    email: Email
+    content: Contenu
+    submit: Envoyer
+
+article:
+    date_format: d/m/Y
+    archives: Archives
+    posted_by: Actualité postée par %name%
+    edit: editer
+    not_visible: non visible
+
+login:
+    title: Vous devez êter identifié
+    username: Nom d'utilisateur
+    password: Mot de passe
+    remember_me: Se souvenir
+    submit: Envoyer
+
+footer:
+    community:
+        name: Communauté
+        desc: Vous pouvez nous rejoindre sur IRC sur le serveur freenode.
+        facebook: Page Facebook
+        twitter: Suivez-nous sur Twitter
+        googleplus: Page Google+
+    otherpages:
+        name: Autres pages
+        beta: Télécharger la dernière beta
+        bug: Site web du bug tracker
+        rss: Flux RSS
+        premium: Télécharger AndroIRC premium
+        translation: Aidez nous à traduire AndroIRC
+        contact: Contactez nous
+    copyright:
+        name: Copyright
+        desc: %year% Madalynn, tous droits réservés. Android est une marque de Google Inc.
