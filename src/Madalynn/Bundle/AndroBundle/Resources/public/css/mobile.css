@@ -42,3 +42,13 @@ footer {
     text-align: center;
     margin: 10px 0;
 }
+
+#locales {
+    text-align: center;
+    margin-top: 5px;
+}
+
+.locale {
+    display: inline;
+    padding: 5px;
+}

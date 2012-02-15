@@ -33,10 +33,6 @@ a {
     text-decoration: none;
 }
 
-a:hover {
-    text-decoration: underline;
-}
-
 strong {
     font-weight: bold;
 }

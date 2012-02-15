@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html xml:lang="en" lang="en">
+<html xml:lang="{{ andro_current_locale() }}" lang="{{ andro_current_locale() }}">
     <head>
-        <title>{% block title %}Home{% endblock %} - AndroIRC (Android IRC Client)</title>
+        <title>{% block title %}{{ 'homepage.title'|trans }}{% endblock %} - AndroIRC ({{ 'header.subtitle'|trans }})</title>
         <meta name="google-site-verification" content="NxLzVTaSpM7YMWZ_DqGdF19nVKrNl4IcQxcT3jtACqw" />
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="author" content="Julien Brochet, Sébastien Brochet" />
         <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;"/>
-        <meta name="title" content="{{ block('title') }} - AndroIRC (Android IRC Client)" />
+        <meta name="title" content="{{ block('title') }} - AndroIRC ({{ 'header.subtitle'|trans }})" />
         <meta name="format-detection" content="telephone=no" />
-        <meta name="description" content="AndroIRC is an Android IRC client which can connect to several server (secured or not) at the same time. Features: mIRC colors, auto join channels on startup, themes (black or white), nickserv auth, sasl auth, android notifications, copy &amp; paste, logging, easy access menu to kick, ban .. and much more!" />
-        <meta name="keywords" content="android, irc, client, free, app, mirc, androirc, market, logging, sasl, authentication, blowfish, plain, identification, nickserv, themes, smartphone, application, apps, ircd, communication, internet, relay, chat, server, freenode, epiknet, quakenet, efnet, undernet, ident, nick, nickname, chan, channel, kick, ban, op, halfop, voice" />
-        <meta name="language" content="en" />
+        <meta name="description" content="{{ 'meta.description'|trans }}" />
+        <meta name="keywords" content="{{ 'meta.keywords'|trans }}" />
+        <meta name="language" content="{{ andro_locales()|join(',') }}" />
         <meta name="robots" content="index, follow" />
 
         <link href="http://feeds.feedburner.com/AndroIRC" type="application/atom+xml" rel="alternate" title="Last articles" />
@@ -32,15 +32,15 @@
                     <a href="{{ path('homepage') }}">
                         <img src="{{ asset('bundles/andro/images/logo.png') }}" />
                     </a>
-                    <span>Android IRC Client</span>
+                    <span>{{ 'header.subtitle'|trans }}</span>
                 </div>
             </header>
         </div>
         <nav id="menu">
             <ul>
-                <li><a href="http://market.android.com/details?id=com.androirc">Download</a></li>
-                <li><a href="{{ path('eula') }}">EULA</a></li>
-                <li class="last"><a href="{{ path('beta') }}">Beta</a></li>
+                <li><a href="http://market.android.com/details?id=com.androirc">{{ 'menu.download'|trans }}</a></li>
+                <li><a href="{{ path('eula') }}">{{ 'menu.eula'|trans }}</a></li>
+                <li class="last"><a href="{{ path('beta') }}">{{ 'menu.beta'|trans }}</a></li>
             </ul>
         </nav>
         <section id="content">
@@ -54,7 +54,9 @@
         <div class="clear"></div>
 
         <footer>
-            {{ 'now'|date('Y') }} &copy; AndroIRC. All rights reserved. Powered by <a href="http://symfony.com">Symfony2</a>
+             &copy; {{ 'footer.copyright.desc'|trans({'%year%': 'now'|date('Y')})|replace({'Madalynn': '<a href="http://www.madalynn.eu/">Madalynn</a>'})|raw }}
+
+             {% render 'AndroBundle:Main:locales' with {'request': app.request} %}
         </footer>
         <script type="text/javascript">
             var _gaq = _gaq || [];

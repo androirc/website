@@ -34,8 +34,8 @@ class AndroExtension extends \Twig_Extension
     public function getFilters()
     {
         return array(
-            'sha1'       => new \Twig_Filter_Method($this, 'sha1'),
-            'md5'        => new \Twig_Filter_Method($this, 'md5')
+            'sha1' => new \Twig_Filter_Method($this, 'sha1'),
+            'md5'  => new \Twig_Filter_Method($this, 'md5')
         );
     }
 
@@ -51,11 +51,17 @@ class AndroExtension extends \Twig_Extension
         );
     }
 
+    /**
+     * Filter sha1
+     */
     public function sha1($text)
     {
         return sha1($text);
     }
 
+    /**
+     * Filter md5
+     */
     public function md5($text)
     {
         return md5($text);

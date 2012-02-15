@@ -1,21 +1,21 @@
 {% extends "AndroBundle::mobile.html.twig" %}
 
-{% block title %}Download the latest beta{% endblock %}
+{% block title %}{{ 'beta.name'|trans }}{% endblock %}
 
 {% block content %}
+    <h2>{{ 'beta.name'|trans }}</h2>
+
     <p>
-        You can now download the latest beta of AndroIRC! This file is not available in the Android Market
-        because <strong>it still contains bugs</strong>. Keep in mind that it's just a beta release ;).
-        If you find a bug, you can contact us or just post a new ticket
-        in <a href="http://bugs.androirc.com/">the bug tracker</a>. Thanks!
+        {{ 'beta.desc'|trans|raw }}
     </p>
 
     <div id="beta">
-        {% if beta == null %}
-            No beta right now... come back later!
+        {% if not beta %}
+            {{ 'beta.no_beta'|trans }}
         {% else %}
-            <a class="awesome large" style="margin-bottom: 5px;" href="{{ path('beta_download') }}">Download the latest beta of AndroIRC</a><br />
-            <span>(Version {{ beta.version }} - {{ beta.created|date('m/d/Y') }})</span>
+            <a class="awesome large" style="margin-bottom: 5px;" href="{{ path('beta_download') }}">{{ 'beta.button'|trans }}</a><br />
+            <span>({{ 'beta.subtitle'|trans({'%version%': beta.version, '%date%': beta.created|date('beta.date_format'|trans)}) }})</span>
         {% endif %}
     </div>
 {% endblock %}
+
