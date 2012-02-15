@@ -8,6 +8,7 @@
         "twig/extensions": "master-dev",
         "madalynn/plum": "master-dev",
         "doctrine/orm": "master-dev",
+        "doctrine/data-fixtures": "master-dev",
 
         "nercury-jms/i18n-routing-bundle": "master-dev",
         "sensio/buzz-bundle": "master-dev",
