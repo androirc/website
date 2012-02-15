@@ -62,12 +62,13 @@ class MainController extends AbstractController
         ));
     }
 
-    public function localesAction()
+    public function localesAction($request)
     {
         $locales = $this->container->getParameter('jms_i18n_routing.locales');
 
         return $this->render('AndroBundle:Main:locales.html.twig', array(
-            'locales' => $locales
+            'locales' => $locales,
+            'request' => $request
         ));
     }
 }

@@ -1,7 +1,7 @@
 <div id="locales">
     {% for locale in locales %}
         <div class="locale">
-            <a href="{{ path('homepage', {'_locale': locale}) }}">
+            <a href="{{ andro_current_path_locale(request, locale) }}">
                 <img src="{{ asset('bundles/andro/images/flags/' ~ locale ~ '.png') }}" />
             </a>
         </div>

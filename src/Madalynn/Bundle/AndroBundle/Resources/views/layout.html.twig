@@ -50,7 +50,7 @@
         </nav>
 
         <div id="space">
-            {% render 'AndroBundle:Main:locales' %}
+            {% render 'AndroBundle:Main:locales' with {'request': app.request}%}
         </div>
 
         <div id="page">

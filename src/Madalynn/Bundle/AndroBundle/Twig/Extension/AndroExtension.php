@@ -13,6 +13,7 @@
 namespace Madalynn\Bundle\AndroBundle\Twig\Extension;
 
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\HttpFoundation\Request;
 
 use Madalynn\Bundle\AndroBundle\Entity\Article;
 
@@ -37,9 +38,10 @@ class AndroExtension extends \Twig_Extension
     public function getFunctions()
     {
         return array(
-            'andro_url_article'    => new \Twig_Function_Method($this, 'articleUrl', array('is_safe' => array('html'))),
-            'andro_switch_version' => new \Twig_Function_Method($this, 'switchVersion', array('is_safe' => array('html'))),
-            'andro_from_mobile'    => new \Twig_Function_Method($this, 'fromMobile', array('is_safe' => array('html')))
+            'andro_url_article'         => new \Twig_Function_Method($this, 'articleUrl', array('is_safe' => array('html'))),
+            'andro_switch_version'      => new \Twig_Function_Method($this, 'switchVersion', array('is_safe' => array('html'))),
+            'andro_from_mobile'         => new \Twig_Function_Method($this, 'fromMobile', array('is_safe' => array('html'))),
+            'andro_current_path_locale' => new \Twig_Function_Method($this, 'currentPathToLocale', array('is_safe' => array('html'))),
         );
     }
 
@@ -56,6 +58,34 @@ class AndroExtension extends \Twig_Extension
     public function md5($text)
     {
         return md5($text);
+    }
+
+    /**
+     * Regenerate a URI based on the current request URI, but containing the locale provided
+     *
+     * @param Request $request   The old request
+     * @param string  $locale    The locale applied in the returned url
+     * @param bool    $absolute  Whether the returned url should be absolute
+     *
+     * @return string $url The current url transformed with the locale provided
+     *
+     * @see http://it.works-for-me.net/symfony2/2011/08/10/symfony2-generate-the-current-url-with-another-locale/
+     */
+    public function currentPathToLocale(Request $request, $locale = 'en', $absolute = false)
+    {
+        $id = $request->attributes->get('_route');
+        $parameters = $request->attributes->all();
+
+        foreach ($parameters as $key => $val) {
+            if (substr($key, 0, 1) == '_') {
+                unset($parameters[$key]);
+            }
+        }
+
+        $query = $request->getQueryString() ? '?' . $request->getQueryString() : '';
+        $router = $this->container->get('router');
+
+        return $router->generate($id, array_merge($parameters, array('_locale' => $locale)), $absolute) . $query;;
     }
 
     public function articleUrl(Article $article, $absolute = false)
