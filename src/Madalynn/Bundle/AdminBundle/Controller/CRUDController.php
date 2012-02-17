@@ -294,6 +294,13 @@ abstract class CRUDController extends Controller
         return strtolower(preg_replace(array('/([A-Z]+)([A-Z][a-z])/', '/([a-z\d])([A-Z])/'), array('\\1_\\2', '\\1_\\2'), strtr($string, '_', '.')));
     }
 
+    /**
+     * Creates a Query Builder from the data extracts from the session
+     *
+     * @param QueryBuilder $qb A Query Builder instance
+     *
+     * @return QueryBuilder The Query Builder with the filter informations
+     */
     protected function generateFilterQueryBuilder(QueryBuilder $qb = null)
     {
         if (null == $qb) {
@@ -314,6 +321,11 @@ abstract class CRUDController extends Controller
         return $qb;
     }
 
+    /**
+     * Returns the entity name from the full class name
+     *
+     * @return string Entity Name
+     */
     protected function getEntityName()
     {
         if ($this->entityName) {
@@ -347,6 +359,11 @@ abstract class CRUDController extends Controller
         return $this->container->get('templating')->renderResponse($view, $parameters, $response);
     }
 
+    /**
+     * Creates the filter form
+     *
+     * @return Form
+     */
     protected function getFilterForm()
     {
         $form = $this->createFormBuilder();
