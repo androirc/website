@@ -3,6 +3,8 @@
 {% block title %}Archives{% endblock %}
 
 {% block content %}
+    {% include 'AndroBundle:Main:translation_not_available.html.twig' %}
+
     {% if pager.haveToPaginate %}
         <div class="paginator">
             {{ pagerfanta(pager) }}

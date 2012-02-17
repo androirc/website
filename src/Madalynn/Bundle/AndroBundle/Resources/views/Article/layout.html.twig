@@ -4,3 +4,7 @@
     {{ parent() }}
     {% include 'AndroBundle:Article:javascript.html.twig' %}
 {% endblock %}
+
+{% block content %}
+    {% include 'AndroBundle:Main:translation_not_available.html.twig' %}
+{% endblock %}

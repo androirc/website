@@ -3,6 +3,8 @@
 {% block title %}{{ article.getTitle }}{% endblock %}
 
 {% block content %}
+    {{ parent() }}
+
     {# Article layout #}
     {% include 'AndroBundle:Article:article.html.twig' with {'article': article, 'sumup': false} %}
 

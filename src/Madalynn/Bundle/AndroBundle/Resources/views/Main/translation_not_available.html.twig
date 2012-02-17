@@ -1,0 +1,5 @@
+{% if app.request.locale != 'en' %}
+    <div class="alert alert-info">
+        {{ 'header.untranslated'|trans }}
+    </div>
+{% endif %}
