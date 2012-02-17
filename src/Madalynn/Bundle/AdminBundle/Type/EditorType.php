@@ -45,6 +45,9 @@ class EditorType extends AbstractType
     {
         return array(
             'required' => false,
+            'attr'     => array(
+                'class' => 'editor'
+            )
         );
     }
 }
