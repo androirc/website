@@ -5,7 +5,7 @@
     var disqus_identifier = {{ article.id }};
     var disqus_url = '{{ article_url(article, true) }}';
     var disqus_config = function () {
-        this.language = '{{ andro_current_locale() }}';
+        this.language = '{{ app.request.locale }}';
     };
     {% if app.debug -%}
         var disqus_developer = 1;
