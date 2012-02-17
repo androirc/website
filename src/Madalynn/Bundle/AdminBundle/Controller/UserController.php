@@ -35,7 +35,7 @@ class UserController extends CRUDController
 
     protected function getClass()
     {
-        return 'Madalynn\Bundle\AndroBundle\Entity\User';
+        return 'Madalynn\\Bundle\\AndroBundle\\Entity\\User';
     }
 
     private function updatePassword($entity)

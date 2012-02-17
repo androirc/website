@@ -23,7 +23,7 @@ class ChangeLogController extends CRUDController
 
     protected function getClass()
     {
-        return 'Madalynn\Bundle\AndroBundle\Entity\ChangeLog';
+        return 'Madalynn\\Bundle\\AndroBundle\\Entity\\ChangeLog';
     }
 
     public function showAction($id)

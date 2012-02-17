@@ -20,8 +20,7 @@ class ArticleController extends CRUDController
 {
     protected function prePersist($entity)
     {
-        $user = $this->get('security.context')->getToken()->getUser();
-        $entity->setAuthor($user);
+        $entity->setAuthor($this->getUser());
     }
 
     protected function sortQuery(QueryBuilder $qb)
@@ -45,7 +44,7 @@ class ArticleController extends CRUDController
 
     protected function getClass()
     {
-        return 'Madalynn\Bundle\AndroBundle\Entity\Article';
+        return 'Madalynn\\Bundle\\AndroBundle\\Entity\\Article';
     }
 
     protected function getForm()

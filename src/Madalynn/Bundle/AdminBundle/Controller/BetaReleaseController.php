@@ -25,7 +25,7 @@ class BetaReleaseController extends CRUDController
 
     protected function getClass()
     {
-        return 'Madalynn\Bundle\AndroBundle\Entity\BetaRelease';
+        return 'Madalynn\\Bundle\\AndroBundle\\Entity\\BetaRelease';
     }
 
     protected function sortQuery(QueryBuilder $qb)
@@ -35,14 +35,13 @@ class BetaReleaseController extends CRUDController
 
     public function showAction($id)
     {
-        $en     = $this->getEntityName();
         $entity = $this->getRepository()->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException(sprintf('Unable to find %s entity.', $en));
+            throw $this->createNotFoundException('Unable to find the BetaRelease entity.');
         }
 
-        return $this->render('AdminBundle:' . $en . ':show.html.twig', array(
+        return $this->render('AdminBundle:BetaRelease:show.html.twig', array(
             'entity'      => $entity,
             'repartition' => $this->getDoctrine()->getRepository('AndroBundle:BetaDownload')->getDownloadsRepartition($entity)
         ));

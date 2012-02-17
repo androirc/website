@@ -35,13 +35,6 @@ abstract class CRUDController extends Controller
     protected $maxPerPage = 15;
 
     /**
-     * The name of the repository (e.g AndroBundle:Article)
-     *
-     * @var string $repositoryName
-     */
-    protected $repositoryName;
-
-    /**
      * The name of the Entity (e.g. Article)
      *
      * @var string $entityName
@@ -59,6 +52,7 @@ abstract class CRUDController extends Controller
      * Execute the list action
      *
      * @param integer $page The page for the pager
+     *
      * @return Response
      */
     public function listAction($page)
@@ -71,12 +65,7 @@ abstract class CRUDController extends Controller
         $pager   = new Pagerfanta($adapter);
 
         $pager->setMaxPerPage($this->maxPerPage);
-
-        try {
-            $pager->setCurrentPage($page);
-        } catch (\Exception $e) {
-            throw $this->createNotFoundException('This page does not exist');
-        }
+        $pager->setCurrentPage($page, true, true);
 
         return $this->render('AdminBundle:' . $this->getEntityName() . ':list.html.twig', array(
             'pager'       => $pager,
@@ -108,7 +97,6 @@ abstract class CRUDController extends Controller
         $en      = $this->getEntityName();
         $form    = $this->getFilterForm();
         $request = $this->getRequest();
-        $qb      = $this->getRepository()->createQueryBuilder('e');
 
         $form->bindRequest($request);
 
@@ -123,6 +111,7 @@ abstract class CRUDController extends Controller
      * Execute the show action
      *
      * @param integer $id The id of the entity
+     *
      * @return Response
      */
     public function showAction($id)
@@ -196,6 +185,7 @@ abstract class CRUDController extends Controller
      * Edit an entity
      *
      * @param integer $id The id of the entity
+     *
      * @return Response
      */
     public function editAction($id)
@@ -219,6 +209,7 @@ abstract class CRUDController extends Controller
      * Update the entity based on the request parameters
      *
      * @param integer $id The id of the entity
+     *
      * @return Response
      */
     public function updateAction($id)
@@ -262,13 +253,13 @@ abstract class CRUDController extends Controller
      * Remove an entity
      *
      * @param integer $id The id of the entity
+     *
      * @return Response
      */
     public function deleteAction($id)
     {
-        $request = $this->getRequest();
-        $en      = $this->getEntityName();
-        $entity  = $this->getRepository()->find($id);
+        $en     = $this->getEntityName();
+        $entity = $this->getRepository()->find($id);
 
         if (!$entity) {
             throw $this->createNotFoundException(sprintf('Unable to find %s entity.', $en));
@@ -288,14 +279,19 @@ abstract class CRUDController extends Controller
         return $this->redirect($this->generateUrl('admin_' . $this->underscore($en) . '_list'));
     }
 
-    protected function camelize($id)
+    /**
+     * Camelize a string
+     *
+     * @param string $string The string
+     */
+    protected function camelize($string)
     {
-        return preg_replace_callback('/(^|_|\.)+(.)/', function ($match) { return ('.' === $match[1] ? '_' : '').strtoupper($match[2]); }, $id);
+        return preg_replace_callback('/(^|_|\.)+(.)/', function ($match) { return ('.' === $match[1] ? '_' : '').strtoupper($match[2]); }, $string);
     }
 
-    protected function underscore($id)
+    protected function underscore($string)
     {
-        return strtolower(preg_replace(array('/([A-Z]+)([A-Z][a-z])/', '/([a-z\d])([A-Z])/'), array('\\1_\\2', '\\1_\\2'), strtr($id, '_', '.')));
+        return strtolower(preg_replace(array('/([A-Z]+)([A-Z][a-z])/', '/([a-z\d])([A-Z])/'), array('\\1_\\2', '\\1_\\2'), strtr($string, '_', '.')));
     }
 
     protected function generateFilterQueryBuilder(QueryBuilder $qb = null)
@@ -331,33 +327,17 @@ abstract class CRUDController extends Controller
 
     protected function getRepository()
     {
-        if (!$this->repositoryName) {
-            $bundles = $this->get('kernel')->getBundles();
-            $class   = $this->getClass();
-            $name    = '';
-
-            foreach ($bundles as $bundle) {
-                if (0 === strpos($class, $bundle->getNamespace())) {
-                    $name = $bundle->getName();
-                    break;
-                }
-            }
-
-            if (!$name) {
-                throw new \Exception(sprintf('Unable to find the bundle for the %s entity.', $class));
-            }
-
-            $this->repositoryName = $name . ':' . $this->getEntityName();
-        }
-
-        return $this->getDoctrine()->getRepository($this->repositoryName);
+        return $this->getDoctrine()->getRepository($this->getClass());
     }
 
+    /**
+     * Create a new instance of the entity
+     */
     protected function getEntity()
     {
-        $reflexion = new \ReflectionClass($this->getClass());
+        $class = $this->getClass();
 
-        return $reflexion->newInstance();
+        return new $class;
     }
 
     public function render($view, array $parameters = array(), Response $response = null)

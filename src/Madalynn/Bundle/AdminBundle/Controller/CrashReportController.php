@@ -33,7 +33,7 @@ class CrashReportController extends CRUDController
 
     protected function getClass()
     {
-        return 'Madalynn\Bundle\AndroBundle\Entity\CrashReport';
+        return 'Madalynn\\Bundle\\AndroBundle\\Entity\\CrashReport';
     }
 
     protected function sortQuery(QueryBuilder $qb)
@@ -54,7 +54,6 @@ class CrashReportController extends CRUDController
     public function deleteSelectedAction()
     {
         $em   = $this->getDoctrine()->getEntityManager();
-        $repo = $em->getRepository('AndroBundle:CrashReport');
         $list = $this->generateFilterQueryBuilder()->getQuery()->execute();
 
         foreach ($list as $crash) {

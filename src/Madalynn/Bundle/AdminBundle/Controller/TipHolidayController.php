@@ -23,6 +23,6 @@ class TipHolidayController extends CRUDController
 
     protected function getClass()
     {
-        return 'Madalynn\Bundle\AndroBundle\Entity\TipHoliday';
+        return 'Madalynn\\Bundle\\AndroBundle\\Entity\\TipHoliday';
     }
 }
