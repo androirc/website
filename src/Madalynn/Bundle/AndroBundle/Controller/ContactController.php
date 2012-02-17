@@ -36,7 +36,7 @@ class ContactController extends AbstractController
             if ($form->isValid()) {
                 $message = \Swift_Message::newInstance();
 
-                $message->setSubject("[AndroIRC] {$contact->name} used the web form to contact us");
+                $message->setSubject(sprintf('[AndroIRC] %s used the web form to contact us', $contact->name));
                 $message->setFrom('contact@androirc.com', 'AndroIRC');
                 $message->setTo('contact@androirc.com');
                 $message->setReplyTo($contact->email);
@@ -47,9 +47,9 @@ class ContactController extends AbstractController
                 )));
 
                 $this->get('mailer')->send($message);
-                $this->get('session')->setFlash('notice', 'Your message has been sent!');
+                $this->get('session')->getFlashBag()->set('success', 'Your message has been sent!');
 
-                $form->setData(new Contact());
+                return $this->redirect($this->generateUrl('contact'));
             }
         }
 

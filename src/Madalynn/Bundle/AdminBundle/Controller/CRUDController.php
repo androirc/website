@@ -168,7 +168,7 @@ abstract class CRUDController extends Controller
 
             $this->postPersist($entity);
 
-            $this->get('session')->setFlash('notice', 'The item was created successfully.');
+            $this->get('session')->getFlashBag()->set('success', 'The item was created successfully.');
 
             return $this->redirect($this->generateUrl('admin_' . $this->underscore($en) . '_edit', array(
                 'id' => $entity->getId()
@@ -236,7 +236,7 @@ abstract class CRUDController extends Controller
 
             $this->postUpdate($entity);
 
-            $this->get('session')->setFlash('notice', 'The item was updated successfully.');
+            $this->get('session')->getFlashBag()->set('success', 'The item was updated successfully.');
 
             return $this->redirect($this->generateUrl('admin_' . $this->underscore($en) . '_edit', array(
                 'id' => $id
@@ -274,7 +274,7 @@ abstract class CRUDController extends Controller
 
         $this->postRemove($entity);
 
-        $this->get('session')->setFlash('notice', 'The item was deleted successfully.');
+        $this->get('session')->getFlashBag()->set('success', 'The item was deleted successfully.');
 
         return $this->redirect($this->generateUrl('admin_' . $this->underscore($en) . '_list'));
     }
