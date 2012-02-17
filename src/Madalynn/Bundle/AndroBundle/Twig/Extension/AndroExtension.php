@@ -46,7 +46,6 @@ class AndroExtension extends \Twig_Extension
             'andro_switch_version'      => new \Twig_Function_Method($this, 'switchVersion', array('is_safe' => array('html'))),
             'andro_from_mobile'         => new \Twig_Function_Method($this, 'fromMobile', array('is_safe' => array('html'))),
             'andro_current_path_locale' => new \Twig_Function_Method($this, 'currentPathToLocale', array('is_safe' => array('html'))),
-            'andro_current_locale'      => new \Twig_Function_Method($this, 'getCurrentLocale'),
             'andro_locales'             => new \Twig_Function_Method($this, 'getLocales'),
         );
     }
@@ -65,16 +64,6 @@ class AndroExtension extends \Twig_Extension
     public function md5($text)
     {
         return md5($text);
-    }
-
-    /**
-     * Returns the current locale
-     *
-     * @return string The locale
-     */
-    public function getCurrentLocale()
-    {
-        return $this->container->get('request')->attributes->get('_locale');
     }
 
     /**
