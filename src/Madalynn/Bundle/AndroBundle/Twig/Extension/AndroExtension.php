@@ -42,11 +42,11 @@ class AndroExtension extends \Twig_Extension
     public function getFunctions()
     {
         return array(
-            'andro_url_article'         => new \Twig_Function_Method($this, 'articleUrl', array('is_safe' => array('html'))),
-            'andro_switch_version'      => new \Twig_Function_Method($this, 'switchVersion', array('is_safe' => array('html'))),
-            'andro_from_mobile'         => new \Twig_Function_Method($this, 'fromMobile', array('is_safe' => array('html'))),
-            'andro_current_path_locale' => new \Twig_Function_Method($this, 'currentPathToLocale', array('is_safe' => array('html'))),
-            'andro_locales'             => new \Twig_Function_Method($this, 'getLocales'),
+            'article_url'    => new \Twig_Function_Method($this, 'generateArticleUrl', array('is_safe' => array('html'))),
+            'switch_version' => new \Twig_Function_Method($this, 'switchVersion', array('is_safe' => array('html'))),
+            'from_mobile'    => new \Twig_Function_Method($this, 'fromMobile', array('is_safe' => array('html'))),
+            'path_locale'    => new \Twig_Function_Method($this, 'getPathLocale', array('is_safe' => array('html'))),
+            'locales'        => new \Twig_Function_Method($this, 'getLocales'),
         );
     }
 
@@ -87,7 +87,7 @@ class AndroExtension extends \Twig_Extension
      *
      * @see http://it.works-for-me.net/symfony2/2011/08/10/symfony2-generate-the-current-url-with-another-locale/
      */
-    public function currentPathToLocale(Request $request, $locale = 'en', $absolute = false)
+    public function getPathLocale(Request $request, $locale = 'en', $absolute = false)
     {
         $id = $request->attributes->get('_route');
         $parameters = $request->attributes->all();
@@ -112,7 +112,7 @@ class AndroExtension extends \Twig_Extension
      *
      * @return string The article url
      */
-    public function articleUrl(Article $article, $absolute = false)
+    public function generateArticleUrl(Article $article, $absolute = false)
     {
         $params = array(
             'id'   => $article->getId(),
@@ -158,6 +158,6 @@ class AndroExtension extends \Twig_Extension
 
     public function getName()
     {
-        return 'andro';
+        return 'androirc';
     }
 }

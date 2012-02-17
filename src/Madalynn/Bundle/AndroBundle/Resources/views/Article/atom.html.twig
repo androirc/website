@@ -12,8 +12,8 @@
     {% for article in articles %}
         <entry>
             <title>{{ article.title }}</title>
-            <link href="{{ andro_url_article(article, true) }}" />
-            <id>{{ andro_url_article(article, true)|sha1 }}</id>
+            <link href="{{ article_url(article, true) }}" />
+            <id>{{ article_url(article, true)|sha1 }}</id>
             <updated>{{ article.formattedCreated }}</updated>
             <author>
                 <name>{{ article.author }}</name>

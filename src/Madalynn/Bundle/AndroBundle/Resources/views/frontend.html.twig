@@ -60,12 +60,12 @@
     {% endif %}
 
     {# Mobile version section #}
-    {% if andro_from_mobile() %}
+    {% if from_mobile() %}
         <div class="sidebar_box">
             <h2>{{ 'sidebar.mobile.name'|trans }}</h2>
 
             <div class="center">
-                {{ andro_switch_version() }}
+                {{ switch_version() }}
             </div>
         </div>
     {% endif %}

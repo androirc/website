@@ -3,7 +3,7 @@
 <script type="text/javascript">
     var disqus_shortname = 'androirc';
     var disqus_identifier = {{ article.id }};
-    var disqus_url = '{{ andro_url_article(article, true) }}';
+    var disqus_url = '{{ article_url(article, true) }}';
     var disqus_config = function () {
         this.language = '{{ andro_current_locale() }}';
     };

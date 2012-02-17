@@ -10,7 +10,7 @@
         <meta name="format-detection" content="telephone=no" />
         <meta name="description" content="{{ 'meta.description'|trans }}" />
         <meta name="keywords" content="{{ 'meta.keywords'|trans }}" />
-        <meta name="language" content="{{ andro_locales()|join(',') }}" />
+        <meta name="language" content="{{ locales()|join(',') }}" />
         <meta name="robots" content="index, follow" />
 
         <link href="http://feeds.feedburner.com/AndroIRC" type="application/atom+xml" rel="alternate" title="Last articles" />
@@ -45,7 +45,7 @@
         </nav>
         <section id="content">
             <div id="switch">
-                {{ andro_switch_version() }}
+                {{ switch_version() }}
             </div>
             <div id="ads">
             </div>
