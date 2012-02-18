@@ -3,8 +3,8 @@
 {% block page %}
     {% if filter_form.count > 1 %}
         <div id="filter-a">
-            <a href="{{ path('admin_' ~ entity_name ~ '_clear') }}" class="awesome red">Clear all filters</a>
-            <a id="filter-results" href="javascript:;" class="awesome magenta">Filter results</a>
+            <a href="{{ path('admin_' ~ entity_name ~ '_clear') }}" class="btn btn-danger">Clear all filters</a>
+            <a id="filter-results" href="javascript:;" class="btn btn-info">Filter results</a>
         </div>
     {% endif %}
 
@@ -15,7 +15,7 @@
             <form action="{{ path('admin_' ~ entity_name ~ '_filter') }}" method="post" {{ form_enctype(filter_form) }}>
                 {{ form_widget(filter_form) }}
                 <p>
-                    <button type="submit">Let's go !</button>
+                    <button type="submit" class="btn btn-success">Let's go !</button>
                 </p>
             </form>
         </div>
@@ -25,7 +25,7 @@
 
     <div id="entity_actions">
         {% block entity_actions %}
-            <a class="awesome" href="{{ path('admin_' ~ entity_name ~ '_new') }}">
+            <a class="btn btn-success" href="{{ path('admin_' ~ entity_name ~ '_new') }}">
                 Create a new entry
             </a>
         {% endblock %}

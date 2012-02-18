@@ -46,10 +46,10 @@
 {% endblock %}
 
 {% block entity_actions %}
-    <a onclick="return confirm('Are you sure?')" class="awesome red" href="{{ path('admin_crash_report_delete_all') }}">
+    <a onclick="return confirm('Are you sure?')" class="btn btn-danger" href="{{ path('admin_crash_report_delete_all') }}">
         Delete all
     </a>
-    <a onclick="return confirm('Are you sure?')" class="awesome red" href="{{ path('admin_crash_report_delete_selected') }}">
+    <a onclick="return confirm('Are you sure?')" class="btn btn-danger" href="{{ path('admin_crash_report_delete_selected') }}">
         Delete selected
     </a>
 {% endblock %}
