@@ -5,10 +5,9 @@
 {% block content %}
     <p>{{ 'contact.desc'|trans }}</p>
 
-    <form action="{{ path('contact') }}" method="post" {{ form_enctype(form) }}>
-        <div class="form">
-            {{ form_widget(form) }}
-        </div>
+    <form class="form-horizontal" action="{{ path('contact') }}" method="post" {{ form_enctype(form) }}>
+        {{ form_widget(form) }}
+
         <div class="form_submit">
             <input type="submit" value="{{ 'contact.submit'|trans }}"/>
         </div>

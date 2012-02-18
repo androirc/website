@@ -47,6 +47,10 @@
 {% endblock %}
 
 {% block page %}
+    <section id="content">
+        {% block content %}{% endblock %}
+    </section>
+
     <aside>
     {# Administration section #}
     {% if app.user and app.user.admin %}
@@ -118,8 +122,4 @@
             </div>
         </div>
     </aside>
-
-    <section id="content">
-        {% block content %}{% endblock %}
-    </section>
 {% endblock %}

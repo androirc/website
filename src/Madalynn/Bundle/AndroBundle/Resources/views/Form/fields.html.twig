@@ -1,22 +1,22 @@
 {% block field_row %}
 {% spaceless %}
-    <tr>
-        <td class="label">
-            {{ form_label(form, label|default(null)) }}
-        </td>
-        <td>
+    <div class="control-group">
+        {{ form_label(form, label|default(null)) }}
+
+        <div class="controls">
             {{ form_widget(form) }}
             {{ form_errors(form) }}
-        </td>
-    </tr>
+        </div>
+    </div>
 {% endspaceless %}
 {% endblock field_row %}
 
-{% block form_widget %}
+{% block generic_label %}
 {% spaceless %}
-    <table {{ block('widget_container_attributes') }} class="form">
-        {{ block('field_rows') }}
-        {{ form_rest(form) }}
-    </table>
+    {% if required %}
+        {% set attr = attr|merge({'class': attr.class|default('') ~ ' required'}) %}
+    {% endif %}
+    {% set attr = attr|merge({'class': attr.class ~ ' control-label'}) %}
+    <label{% for attrname,attrvalue in attr %} {{attrname}}="{{attrvalue}}"{% endfor %}>{{ label|trans({}, translation_domain) }}</label>
 {% endspaceless %}
-{% endblock form_widget %}
+{% endblock %}

@@ -45,14 +45,16 @@ header {
 /* Content */
 
 #content {
-    width: 550px;
+    width: 540px;
+    float: left;
+    padding-right: 10px;
 }
 
 /* Side bar */
 
 aside {
     width: 230px;
-    float: right;
+    float: left;
 }
 
 .sidebar_box {
