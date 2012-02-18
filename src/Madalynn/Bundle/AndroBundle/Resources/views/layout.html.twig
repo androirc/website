@@ -38,6 +38,9 @@
                         <img src="{{ asset('bundles/andro/images/gplus_16.png') }}" />
                     </a>
                 </div>
+
+                {% render 'AndroBundle:Main:locales' with {'request': app.request} %}
+
                 <div id="logo">
                     <img src="{{ asset('bundles/andro/images/logo.png') }}" />
                     <span><em>{{ 'header.subtitle'|trans }}</em></span>
@@ -50,7 +53,6 @@
         </nav>
 
         <div id="space">
-            {% render 'AndroBundle:Main:locales' with {'request': app.request} %}
         </div>
 
         <div id="page">

@@ -32,9 +32,10 @@ header {
 }
 
 #locales {
-    width: 730px;
-    margin: auto;
-    padding-top: 10px;
+    position: absolute;
+    top: 12px;
+    left: 100px;
+    z-index: 50;
 }
 
 .locale {
