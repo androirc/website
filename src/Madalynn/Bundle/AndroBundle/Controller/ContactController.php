@@ -47,7 +47,7 @@ class ContactController extends AbstractController
                 )));
 
                 $this->get('mailer')->send($message);
-                $this->get('session')->getFlashBag()->set('success', 'Your message has been sent!');
+                $this->get('session')->getFlashBag()->set('success', 'Your message has been sent.');
 
                 return $this->redirect($this->generateUrl('contact'));
             }

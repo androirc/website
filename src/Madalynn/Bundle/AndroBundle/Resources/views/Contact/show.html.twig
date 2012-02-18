@@ -8,8 +8,8 @@
     <form class="form-horizontal" action="{{ path('contact') }}" method="post" {{ form_enctype(form) }}>
         {{ form_widget(form) }}
 
-        <div class="form_submit">
-            <input type="submit" value="{{ 'contact.submit'|trans }}"/>
+        <div class="actions-right">
+            <input type="submit" class="btn" value="{{ 'contact.submit'|trans }}"/>
         </div>
     </form>
 {% endblock %}
