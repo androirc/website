@@ -1,5 +1,5 @@
 {
-    "hash": "4de351488d00dc08548d9f33c1dc39d7",
+    "hash": "b0a7c26d8520f5f258c1dd963b8b8196",
     "packages": [
         {
             "package": "doctrine/common",
@@ -75,6 +75,11 @@
             "package": "sensio/buzz-bundle",
             "version": "dev-master",
             "source-reference": "45e0d283c08bd2ffdb98ead985aa0bdaeeb3a431"
+        },
+        {
+            "package": "sensio/distribution-bundle",
+            "version": "dev-master",
+            "source-reference": "12882a093af81f89ac13078904e81c308784e883"
         },
         {
             "package": "swiftmailer/swiftmailer",
