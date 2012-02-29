@@ -16,6 +16,9 @@ header:
     subtitle: Client IRC pour Android
     untranslated: Certains éléments de cette page ne sont pas disponibles dans cette langue
 
+global:
+    cancel: Annuler
+
 menu:
     news: Actualités
     wiki: Wiki
@@ -88,7 +91,7 @@ contact:
     name: Nom
     email: Email
     content: Contenu
-    submit: Envoyer
+    submit: Envoyer votre message
 
 article:
     date_format: d/m/Y

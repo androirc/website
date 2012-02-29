@@ -8,8 +8,9 @@
     <form class="form-horizontal" action="{{ path('contact') }}" method="post" {{ form_enctype(form) }}>
         {{ form_widget(form) }}
 
-        <div class="actions-right">
-            <input type="submit" class="btn" value="{{ 'contact.submit'|trans }}"/>
+        <div class="actions">
+            <input type="submit" class="btn btn-primary" value="{{ 'contact.submit'|trans }}"/>
+            <button type="reset" class="btn">{{ 'global.cancel'|trans }}</button>
         </div>
     </form>
 {% endblock %}
