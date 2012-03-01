@@ -17,7 +17,7 @@
         {
             "package": "doctrine/doctrine-bundle",
             "version": "dev-master",
-            "source-reference": "caecd032878c45c05a962d6ddfac4f45a7a39fb1"
+            "source-reference": "ff676b6147a83b695b0033b228e160d920612365"
         },
         {
             "package": "doctrine/doctrine-fixtures-bundle",
@@ -36,7 +36,7 @@
         {
             "package": "kriswallsmith/assetic",
             "version": "dev-master",
-            "source-reference": "58e9c45aa27be35d16add0394e1e254b82f3f914"
+            "source-reference": "ba88ad4e2c7122b270a2e06a2b79f6dba6413050"
         },
         {
             "package": "kriswallsmith/buzz",
@@ -88,7 +88,7 @@
         {
             "package": "symfony/assetic-bundle",
             "version": "dev-master",
-            "source-reference": "da4a46ce37557dcf3068b8493b12bdbbe47455e2"
+            "source-reference": "52cf0eaa7160cbe33bcf1ed7224c7619ceeebbdc"
         },
         {
             "package": "symfony/monolog-bundle",
@@ -108,8 +108,7 @@
         {
             "package": "symfony/symfony",
             "version": "dev-master",
-            "source-reference": "3de31c62d6d695477803d797177fbfe2a2fa3ef5",
-            "alias": "2.1.9999999.9999999-dev"
+            "source-reference": "42923f30448e4aa5897139c3bec727fc9797cde0"
         },
         {
             "package": "twig/extensions",
@@ -118,7 +117,7 @@
         },
         {
             "package": "twig/twig",
-            "version": "1.6.0"
+            "version": "1.6.1"
         },
         {
             "package": "white-october/pagerfanta-bundle",

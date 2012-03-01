@@ -10,9 +10,14 @@ framework:
     form:            true
     csrf_protection: true
     validation:      { enable_annotations: true }
-    templating:      { engines: ['twig'] }
+    templating:
+        engines:               ['twig']
+        assets_version:        2012030101
+        assets_version_format: %%s?v=%%s
     session:
-        auto_start:     true
+        auto_start:      true
+        cookie_domain:   androirc.com
+        cookie_lifetime: 72000
 
 # Security Configuration
 security:
