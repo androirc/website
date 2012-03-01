@@ -103,10 +103,10 @@ article:
     not_visible: non visible
 
 login:
-    title: Vous devez êter identifié
+    title: Vous devez être identifié pour visualiser cette page
     username: Nom d'utilisateur
     password: Mot de passe
-    remember_me: Se souvenir
+    remember_me: Se souvenir de moi
     submit: Envoyer
 
 footer:

@@ -1,44 +1,42 @@
 {% extends "AdminBundle::backend.html.twig" %}
 
-{% block title %}You need to signin please{% endblock %}
+{% block title %}{{ 'login.title'|trans }}{% endblock %}
 
 {% block page %}
     {% if error %}
         <div class="flash error">
-            {{ error.message }}
+            {{ error.message|trans }}
         </div>
     {% endif %}
 
     <h1>{{ 'login.title'|trans }}</h1>
 
-    <form action="{{ path('_login_check') }}" method="post">
-    <table id="admin_article" class="form">
-        <tr>
-            <td class="label">
-                <label for="username">{{ 'login.username'|trans }}</label>
-            </td>
-            <td>
-                <input type="text" id="username" name="_username" value="{{ last_username }}" />
-            </td>
-        </tr>
-        <tr>
-            <td class="label">
-                <label for="password">{{ 'login.password'|trans }}</label>
-            </td>
-            <td>
-                <input type="password" id="password" name="_password" />
-            </td>
-        </tr>
-        <tr>
-            <td class="label">
-                <label for="remember_me">{{ 'login.remember_me'|trans }}</label>
-            </td>
-            <td>
-                <input type="checkbox" id="remember_me" name="_remember_me" />
-            </td>
-        </tr>
-    </table>
+    <form class="form-horizontal" action="{{ path('_login_check') }}" method="post">
+        <div class="control-group">
+            <label class="required control-label" for="username">{{ 'login.username'|trans }}</label>
 
-        <input type="submit" id="_submit" name="_submit" value="{{ 'login.submit'|trans }}" />
+            <div class="controls">
+                <input type="text" required="required" id="username" name="_username" value="{{ last_username }}" />
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="required control-label" for="password">{{ 'login.password'|trans }}</label>
+
+            <div class="controls">
+                <input type="password" required="required" id="password" name="_password" />
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="controls">
+                <label for="remember_me" class="checkbox">
+                    <input type="checkbox" id="remember_me" name="_remember_me" />
+                    {{ 'login.remember_me'|trans }}
+                </label>
+            </div>
+        </div>
+
+        <div class="actions">
+            <input type="submit" id="_submit" name="_submit" class="btn btn-primary" value="{{ 'login.submit'|trans }}" />
+        </div>
     </form>
 {% endblock %}

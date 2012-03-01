@@ -101,7 +101,7 @@ login:
     title: You need to signin please
     username: Username
     password: Password
-    remember_me: Remember
+    remember_me: Remember me
     submit: Submit
 
 footer:
