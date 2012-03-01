@@ -10,7 +10,6 @@
         "symfony/assetic-bundle": "dev-master",
         "doctrine/doctrine-bundle": "dev-master",
         "doctrine/doctrine-fixtures-bundle": "dev-master",
-        "ornicar/gravatar-bundle": "dev-master",
         "white-october/pagerfanta-bundle": "dev-master",
         "madalynn/plum-bundle": "dev-master",
         "sensio/buzz-bundle": "dev-master",

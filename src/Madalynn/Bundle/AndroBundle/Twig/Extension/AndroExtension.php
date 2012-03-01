@@ -47,6 +47,7 @@ class AndroExtension extends \Twig_Extension
             'from_mobile'    => new \Twig_Function_Method($this, 'fromMobile', array('is_safe' => array('html'))),
             'path_locale'    => new \Twig_Function_Method($this, 'getPathLocale', array('is_safe' => array('html'))),
             'locales'        => new \Twig_Function_Method($this, 'getLocales'),
+            'gravatar'       => new \Twig_Function_Method($this, 'gravatar')
         );
     }
 
@@ -64,6 +65,13 @@ class AndroExtension extends \Twig_Extension
     public function md5($text)
     {
         return md5($text);
+    }
+
+    public function gravatar($email, $size = 50, $default = 'mm')
+    {
+        $hash = md5(strtolower($email));
+
+        return sprintf('http://www.gravatar.com/avatar/'.$hash.'?s='.$size.'&d='.$default);
     }
 
     /**

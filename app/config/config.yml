@@ -91,10 +91,6 @@ doctrine:
 swiftmailer:
     transport:  mail
 
-# GravatarBundle Configuration
-ornicar_gravatar:
-    size: 50
-
 # AdmobBundle Configuration
 madalynn_admob:
     publisher_id: a14eb7d2147c5a9
