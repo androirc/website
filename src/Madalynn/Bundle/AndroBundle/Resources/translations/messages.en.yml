@@ -98,11 +98,11 @@ article:
     not_visible: not visible
 
 login:
-    title: You need to signin please
+    title: You need to signin to see this page
     username: Username
     password: Password
     remember_me: Remember me
-    submit: Submit
+    submit: Sign in
 
 footer:
     community:

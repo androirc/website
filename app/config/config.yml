@@ -16,7 +16,6 @@ framework:
         assets_version_format: %%s?v=%%s
     session:
         auto_start:      true
-        cookie_domain:   androirc.com
         cookie_lifetime: 72000
 
 # Security Configuration
