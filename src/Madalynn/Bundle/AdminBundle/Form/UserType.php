@@ -43,7 +43,7 @@ class UserType extends AbstractType
     public function getDefaultOptions(array $options)
     {
         return array(
-            'data_class' => 'Madalynn\Bundle\AndroBundle\Entity\User',
+            'data_class' => 'Madalynn\\Bundle\\AndroBundle\\Entity\\User',
         );
     }
 }

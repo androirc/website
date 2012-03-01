@@ -31,7 +31,7 @@ class TipType extends AbstractType
     public function getDefaultOptions(array $options)
     {
         return array(
-            'data_class' => 'Madalynn\Bundle\AndroBundle\Entity\Tip',
+            'data_class' => 'Madalynn\\Bundle\\AndroBundle\\Entity\\Tip',
         );
     }
 }

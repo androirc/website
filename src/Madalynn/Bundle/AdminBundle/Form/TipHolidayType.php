@@ -22,7 +22,7 @@ class TipHolidayType extends AbstractType
     {
         $days = range(1, 31);
         $months = range(1, 12);
-        
+
         $builder->add('language', 'language', array('preferred_choices' => array('en', 'fr')))
                 ->add('day', 'choice', array('choices' => array_combine($days, $days)))
                 ->add('month', 'choice', array('choices' => array_combine($months, $months)))
@@ -37,7 +37,7 @@ class TipHolidayType extends AbstractType
     public function getDefaultOptions(array $options)
     {
         return array(
-            'data_class' => 'Madalynn\Bundle\AndroBundle\Entity\TipHoliday',
+            'data_class' => 'Madalynn\\Bundle\\AndroBundle\\Entity\\TipHoliday',
         );
     }
 }
