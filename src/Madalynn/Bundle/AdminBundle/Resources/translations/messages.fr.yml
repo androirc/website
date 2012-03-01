@@ -1,2 +1,19 @@
 layout:
     header: Centre d'administration
+
+dashboard:
+    welcome: Bienvenue %username% !
+    subtitle: Bienvenue dans le centre d'administration
+
+menu:
+    frontend: Retour
+    article: Article
+    donator: Donateur
+    user: Utilisateur
+    beta: Beta
+    tip: Tip
+    crash: Crash
+    quickstart: Quick Start
+    holiday: Holiday
+    changelog: Change Log
+    logout: Déconnexion

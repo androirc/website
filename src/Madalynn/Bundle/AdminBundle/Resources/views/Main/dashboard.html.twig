@@ -1,11 +1,11 @@
 {% extends "AdminBundle::backend.html.twig" %}
 
 {% block page %}
-    <h1>Welcome {{ app.user.username }}</h1>
+    <h1>{{ 'dashboard.welcome'|trans({'%username%': app.user.username})}}</h1>
 
     <div style="text-align: center">
         <img src="{{ asset('bundles/admin/images/android.png') }}" />
 
-        <div style="font-size:18px; font-weight: bold; margin-top: 15px;">Welcome to the administration center</div>
+        <div style="font-size:18px; font-weight: bold; margin-top: 15px;">{{ 'dashboard.subtitle'|trans }}</div>
     </div>
 {% endblock %}

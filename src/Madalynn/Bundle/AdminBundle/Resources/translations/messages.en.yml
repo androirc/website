@@ -1,2 +1,19 @@
 layout:
     header: Administration center
+
+dashboard:
+    welcome: Welcome %username%!
+    subtitle: Welcome to the administration center
+
+menu:
+    frontend: Frontend
+    article: Article
+    donator: Donator
+    user: User
+    beta: Beta
+    tip: Tip
+    crash: Crash
+    quickstart: Quick Start
+    holiday: Holiday
+    changelog: Change Log
+    logout: Logout

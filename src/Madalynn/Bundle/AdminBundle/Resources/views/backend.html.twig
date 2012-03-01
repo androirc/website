@@ -49,17 +49,17 @@
 {% block menu %}
     {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
         <ul>
-            <li><a href="{{ path('homepage') }}">Frontend</a></li>
-            <li><a href="{{ path('admin_article_list') }}">Article</a></li>
-            <li><a href="{{ path('admin_donator_list') }}">Donator</a></li>
-            <li><a href="{{ path('admin_user_list') }}">User</a></li>
-            <li><a href="{{ path('admin_beta_release_list') }}">Beta</a></li>
-            <li><a href="{{ path('admin_tip_list') }}">Tip</a></li>
-            <li><a href="{{ path('admin_crash_report_list') }}">Crash</a></li>
-            <li><a href="{{ path('admin_quick_start_list') }}">Quick Start</a></li>
-            <li><a href="{{ path('admin_tip_holiday_list') }}">Holiday</a></li>
-            <li><a href="{{ path('admin_change_log_list') }}">Change Log</a></li>
-            <li class="last"><a href="{{ path('_logout') }}">Logout</a></li>
+            <li><a href="{{ path('homepage') }}">{{ 'menu.frontend'|trans }}</a></li>
+            <li><a href="{{ path('admin_article_list') }}">{{ 'menu.article'|trans }}</a></li>
+            <li><a href="{{ path('admin_donator_list') }}">{{ 'menu.donator'|trans }}</a></li>
+            <li><a href="{{ path('admin_user_list') }}">{{ 'menu.user'|trans }}</a></li>
+            <li><a href="{{ path('admin_beta_release_list') }}">{{ 'menu.beta'|trans }}</a></li>
+            <li><a href="{{ path('admin_tip_list') }}">{{ 'menu.tip'|trans }}</a></li>
+            <li><a href="{{ path('admin_crash_report_list') }}">{{ 'menu.crash'|trans }}</a></li>
+            <li><a href="{{ path('admin_quick_start_list') }}">{{ 'menu.quickstart'|trans }}</a></li>
+            <li><a href="{{ path('admin_tip_holiday_list') }}">{{ 'menu.holiday'|trans }}</a></li>
+            <li><a href="{{ path('admin_change_log_list') }}">{{ 'menu.changelog'|trans }}</a></li>
+            <li class="last"><a href="{{ path('_logout') }}">{{ 'menu.logout'|trans }}</a></li>
         </ul>
     {% endif %}
 {% endblock %}
