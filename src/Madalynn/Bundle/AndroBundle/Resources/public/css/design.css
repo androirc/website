@@ -70,6 +70,36 @@ aside {
     margin-bottom: 10px;
 }
 
+#qrcodes-box {
+    width: 230px;
+    height: 120px;
+    position: relative;
+}
+
+#qrcodes {
+    position: absolute;
+    left: 14px;
+    top: 20px;
+}
+
+#qrcodes-free, #qrcodes-premium {
+    position: absolute;
+    width: 87px;
+    height: 20px;
+    text-align: center;
+    color: #026995;
+    font-size: 14px;
+    top: -5px;
+}
+
+#qrcodes-free {
+    left: 14px;
+}
+
+#qrcodes-premium {
+    left: 129px;
+}
+
 .app {
     text-align: center;
 }
