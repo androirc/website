@@ -84,9 +84,14 @@ donate:
         application just disable ads on AndroIRC.
 
 contact:
-    desc: You can use this form to contact the team either to submit a bug or just to ask something.
+    desc: |
+        You can use this form to contact the team either to submit a bug or
+        just to ask something. If you want to report a bug, you can also choose
+        the AndroIRC version and the Android version.
     name: Name
     email: Email
+    androirc_version: AndroIRC version
+    android_version: Android version
     content: Content
     submit: Send your message
 

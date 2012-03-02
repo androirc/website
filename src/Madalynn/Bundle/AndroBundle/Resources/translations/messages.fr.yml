@@ -89,9 +89,16 @@ donate:
         l'ensemble des publicités présentes sur l'application originel.
 
 contact:
-    desc: Vous pouvez utiliser ce formulaire pour contacter l'équipe, soumettre un bug ou juste pour poser une question.
+    desc: |
+        Vous pouvez utiliser ce formulaire pour contacter l'équipe, soumettre
+        un bug ou juste pour poser une question. Si vous utilisez ce formulaire
+        pour soumettre un bug, merci de remplir les champs concernant les
+        versions de Android et AndroIRC pour simplifier l'identification du
+        problème.
     name: Nom
     email: Email
+    androirc_version: Version d'AndroIRC
+    android_version: Version d'Android
     content: Contenu
     submit: Envoyer votre message
 

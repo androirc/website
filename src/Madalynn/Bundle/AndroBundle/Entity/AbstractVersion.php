@@ -47,6 +47,13 @@ abstract class AbstractVersion
      */
     protected $revision;
 
+    public function __construct($major, $minor, $revision = 0)
+    {
+        $this->major = (int) $major;
+        $this->minor = (int) $minor;
+        $this->revision = (int) $revision;
+    }
+
     /**
      * Set major
      *
@@ -117,5 +124,36 @@ abstract class AbstractVersion
     public function getRevision()
     {
         return $this->revision;
+    }
+
+    public function __toString()
+    {
+        $string = $this->major.'.'.$this->minor;
+        if ($this->revision) {
+            $string = $string.'.'.$this->revision;
+        }
+
+        return $string;
+    }
+
+    /**
+     * Creates a instance of a version form a string representation
+     *
+     * @param string $string The version
+     *
+     * @throws \InvalidArgumentException If the version is not x.y.z
+     */
+    static public function create($string)
+    {
+        $elements = explode('.', $string, 3);
+        if (count($elements) < 2) {
+            throw new \InvalidArgumentException(sprintf('The version "%s" is not correct.', $string));
+        }
+
+        $major = $elements[0];
+        $minor = $elements[1];
+        $revision = isset($elements[2]) ? $elements[2] : 0;
+
+        return new static($major, $minor, $revision);
     }
 }

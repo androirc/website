@@ -31,4 +31,8 @@ class Contact
      * @Assert\MinLength(20)
      */
     public $content;
+
+    public $androidVersion;
+
+    public $androircVersion;
 }
