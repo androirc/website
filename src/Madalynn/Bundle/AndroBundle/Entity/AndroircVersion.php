@@ -31,7 +31,7 @@ class AndroircVersion extends AbstractVersion
     /**
      * The state of the version (ALPHA, BETA, RC, ..)
      *
-     * @ORM\Column(length=30)
+     * @ORM\Column(length=30, nullable=true)
      */
     protected $state;
 
@@ -98,5 +98,15 @@ class AndroircVersion extends AbstractVersion
     public function getCode()
     {
         return $this->code;
+    }
+
+    public function __toString()
+    {
+        $string = parent::__toString();
+        if ($this->state) {
+            $string = $string.' ('.$this->state.')';
+        }
+
+        return $string;
     }
 }

@@ -42,8 +42,10 @@ class ContactController extends AbstractController
                 $message->setReplyTo($contact->email);
 
                 $message->setBody($this->renderView('AndroBundle:Mail:contact.html.twig', array(
-                    'name'    => $contact->name,
-                    'content' => $contact->content
+                    'name'             => $contact->name,
+                    'content'          => $contact->content,
+                    'androirc_version' => $contact->androircVersion,
+                    'android_version'  => $contact->androidVersion
                 )));
 
                 $this->get('mailer')->send($message);

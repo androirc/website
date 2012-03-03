@@ -8,7 +8,7 @@ use Doctrine\DBAL\Migrations\AbstractMigration,
 /**
  * Auto-generated Migration: Please modify to your need!
  */
-class Version20120302235737 extends AbstractMigration
+class Version20120303150248 extends AbstractMigration
 {
     public function up(Schema $schema)
     {
@@ -16,7 +16,7 @@ class Version20120302235737 extends AbstractMigration
         $this->abortIf($this->connection->getDatabasePlatform()->getName() != "mysql");
         
         $this->addSql("CREATE TABLE andro_android_version (id INT AUTO_INCREMENT NOT NULL, api_level INT NOT NULL, major INT NOT NULL, minor INT NOT NULL, revision INT NOT NULL, PRIMARY KEY(id)) ENGINE = InnoDB");
-        $this->addSql("CREATE TABLE andro_androirc_version (id INT AUTO_INCREMENT NOT NULL, state VARCHAR(30) NOT NULL, code INT NOT NULL, major INT NOT NULL, minor INT NOT NULL, revision INT NOT NULL, PRIMARY KEY(id)) ENGINE = InnoDB");
+        $this->addSql("CREATE TABLE andro_androirc_version (id INT AUTO_INCREMENT NOT NULL, state VARCHAR(30) DEFAULT NULL, code INT NOT NULL, major INT NOT NULL, minor INT NOT NULL, revision INT NOT NULL, PRIMARY KEY(id)) ENGINE = InnoDB");
     }
 
     public function down(Schema $schema)
