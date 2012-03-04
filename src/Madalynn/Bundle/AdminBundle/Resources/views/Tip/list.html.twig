@@ -8,7 +8,7 @@
             <tr>
                 <th>Language</th>
                 <th>Content</th>
-                <th width="140px;">Actions</th>
+                <th width="160px;">Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -19,10 +19,10 @@
                 <td>
                     <ul>
                         <li>
-                            <img src="{{ asset('bundles/andro/images/icons/page_edit.png') }}" /> <a href="{{ path('admin_tip_edit', { 'id': entity.id }) }}">Edit</a>
+                            <img src="{{ asset('bundles/andro/images/icons/page_edit.png') }}" /> <a href="{{ path('admin_tip_edit', { 'id': entity.id }) }}">{{ 'actions.edit'|trans }}</a>
                         </li>
                         <li>
-                            <img src="{{ asset('bundles/andro/images/icons/cross.png') }}" /> <a onclick="return confirm('Are you sure?')" href="{{ path('admin_tip_delete', { 'id': entity.id }) }}">Delete</a>
+                            <img src="{{ asset('bundles/andro/images/icons/cross.png') }}" /> <a onclick="return confirm('Are you sure?')" href="{{ path('admin_tip_delete', { 'id': entity.id }) }}">{{ 'actions.delete'|trans }}</a>
                         </li>
                     </ul>
                 </td>

@@ -29,13 +29,13 @@
                 <td>
                     <ul>
                         <li>
-                            <img src="{{ asset('bundles/andro/images/icons/accept.png') }}" /> <a href="{{ path('admin_crash_report_resolved', { 'id': entity.id }) }}">Resolved</a>
+                            <img src="{{ asset('bundles/andro/images/icons/accept.png') }}" /> <a href="{{ path('admin_crash_report_resolved', { 'id': entity.id }) }}">{{ 'actions.resolved'|trans }}</a>
                         </li>
                         <li>
-                            <img src="{{ asset('bundles/andro/images/icons/page.png') }}" /> <a href="{{ path('admin_crash_report_show', { 'id': entity.id }) }}">Show</a>
+                            <img src="{{ asset('bundles/andro/images/icons/page.png') }}" /> <a href="{{ path('admin_crash_report_show', { 'id': entity.id }) }}">{{ 'actions.show'|trans }}</a>
                         </li>
                         <li>
-                            <img src="{{ asset('bundles/andro/images/icons/cross.png') }}" /> <a onclick="return confirm('Are you sure?')" href="{{ path('admin_crash_report_delete', { 'id': entity.id }) }}">Delete</a>
+                            <img src="{{ asset('bundles/andro/images/icons/cross.png') }}" /> <a onclick="return confirm('Are you sure?')" href="{{ path('admin_crash_report_delete', { 'id': entity.id }) }}">{{ 'actions.delete'|trans }}</a>
                         </li>
                     </ul>
                 </td>
@@ -47,9 +47,9 @@
 
 {% block entity_actions %}
     <a onclick="return confirm('Are you sure?')" class="btn btn-danger" href="{{ path('admin_crash_report_delete_all') }}">
-        Delete all
+        {{ 'actions.delete_all'|trans }}
     </a>
     <a onclick="return confirm('Are you sure?')" class="btn btn-danger" href="{{ path('admin_crash_report_delete_selected') }}">
-        Delete selected
+        {{ 'actions.delete_selected'|trans }}
     </a>
 {% endblock %}

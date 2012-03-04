@@ -6,8 +6,8 @@
     <form action="{{ path('admin_' ~ entity_name ~ '_create') }}" class="form-horizontal" method="post" {{ form_enctype(form) }}>
         {{ form_widget(form) }}
         <div class="actions">
-            <button type="submit" class="btn btn-primary">Create</button>
-            <a class="btn" href="{{ path('admin_' ~ entity_name ~ '_list') }}">Back to the list</a>
+            <button type="submit" class="btn btn-primary">{{ 'actions.create'|trans }}</button>
+            <a class="btn" href="{{ path('admin_' ~ entity_name ~ '_list') }}">{{ 'actions.back_list'|trans }}</a>
         </div>
     </form>
 {% endblock %}

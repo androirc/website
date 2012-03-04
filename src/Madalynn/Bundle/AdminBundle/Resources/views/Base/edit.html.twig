@@ -6,9 +6,9 @@
     <form action="{{ path('admin_' ~ entity_name ~ '_update', { 'id' : entity.id }) }}" class="form-horizontal" method="post" {{ form_enctype(edit_form) }}>
         {{ form_widget(edit_form) }}
         <div class="actions">
-            <button class="btn btn-primary" type="submit">Edit</button>
-            <a class="btn btn-danger" href="{{ path('admin_' ~ entity_name ~ '_delete', { 'id' : entity.id }) }}">Delete</a>
-            <a class="btn" href="{{ path('admin_' ~ entity_name ~ '_list') }}">Back to the list</a>
+            <button class="btn btn-primary" type="submit">{{ 'actions.edit'|trans }}</button>
+            <a class="btn btn-danger" href="{{ path('admin_' ~ entity_name ~ '_delete', { 'id' : entity.id }) }}">{{ 'actions.delete'|trans }}</a>
+            <a class="btn" href="{{ path('admin_' ~ entity_name ~ '_list') }}">{{ 'actions.back_list'|trans }}</a>
         </div>
     </form>
 {% endblock %}

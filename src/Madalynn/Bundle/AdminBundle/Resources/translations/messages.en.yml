@@ -17,3 +17,18 @@ menu:
     holiday: Holiday
     changelog: Change Log
     logout: Logout
+
+actions:
+    show: Show
+    edit: Edit
+    delete: Delete
+    delete_all: Delete all
+    delete_selected: Delete selected
+    back_list: Back to the list
+    create: Create
+    create_entry: Create a new entry
+    clear_filters: Clear all filters
+    filter: Filter results
+    filter_button: Let's go
+    resolved: Resolved
+    unresolved: Unresolved

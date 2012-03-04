@@ -3,8 +3,8 @@
 {% block page %}
     {% if filter_form.count > 1 %}
         <div id="filter-a">
-            <a href="{{ path('admin_' ~ entity_name ~ '_clear') }}" class="btn btn-danger">Clear all filters</a>
-            <a id="filter-results" href="javascript:;" class="btn btn-info">Filter results</a>
+            <a href="{{ path('admin_' ~ entity_name ~ '_clear') }}" class="btn btn-danger">{{ 'actions.clear_filters'|trans }}</a>
+            <a id="filter-results" href="javascript:;" class="btn btn-info">{{ 'actions.filter'|trans }}</a>
         </div>
     {% endif %}
 
@@ -12,11 +12,11 @@
 
     {% if filter_form.count > 1 %}
         <div id="filter">
-            <form action="{{ path('admin_' ~ entity_name ~ '_filter') }}" method="post" {{ form_enctype(filter_form) }}>
+            <form class="form-horizontal" action="{{ path('admin_' ~ entity_name ~ '_filter') }}" method="post" {{ form_enctype(filter_form) }}>
                 {{ form_widget(filter_form) }}
-                <p>
-                    <button type="submit" class="btn btn-success">Let's go !</button>
-                </p>
+                <div class="actions">
+                    <button type="submit" class="btn btn-primary">{{ 'actions.filter_button'|trans }}</button>
+                </div>
             </form>
         </div>
     {% endif %}
@@ -26,7 +26,7 @@
     <div id="entity_actions">
         {% block entity_actions %}
             <a class="btn btn-success" href="{{ path('admin_' ~ entity_name ~ '_new') }}">
-                Create a new entry
+                {{ 'actions.create_entry'|trans }}
             </a>
         {% endblock %}
     </div>
@@ -34,8 +34,6 @@
     <div class="clear"></div>
 
     <div class="paginator">
-        {% if pager.haveToPaginate %}
-            {{ pagerfanta(pager) }}
-        {% endif %}
+        {{ pagerfanta(pager) }}
     </div>
 {% endblock %}

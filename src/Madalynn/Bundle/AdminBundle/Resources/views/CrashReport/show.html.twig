@@ -51,16 +51,16 @@
 
 {% block entity_actions %}
     <a class="btn btn-danger" onclick="return confirm('Are you sure?')" href="{{ path('admin_crash_report_delete', { 'id': entity.id }) }}">
-        Delete
+        {{ 'actions.delete'|trans }}
     </a>
     <a class="btn btn-danger" href="{{ path('admin_crash_report_resolved', { 'id': entity.id }) }}">
         {% if (entity.isResolved) %}
-            Unresolved
+            {{ 'actions.unresolved'|trans }}
         {% else %}
-            Resolved
+            {{ 'actions.resolved'|trans }}
         {% endif %}
     </a>
     <a class="btn" href="{{ path('admin_crash_report_list') }}">
-        Back to the list
+        {{ 'actions.back_list'|trans }}
     </a>
 {% endblock %}
