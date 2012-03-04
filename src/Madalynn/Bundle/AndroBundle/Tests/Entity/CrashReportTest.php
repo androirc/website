@@ -10,7 +10,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Madalynn\Bundle\AndroBundle\Controller;
+namespace Madalynn\Bundle\AndroBundle\Tests\Entity;
 
 use Madalynn\Bundle\AndroBundle\Entity\CrashReport;
 
