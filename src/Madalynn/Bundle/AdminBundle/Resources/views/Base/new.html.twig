@@ -3,14 +3,11 @@
 {% block page %}
     <h1>{{ block('title') }}</h1>
 
-    <form action="{{ path('admin_' ~ entity_name ~ '_create') }}" method="post" {{ form_enctype(form) }}>
+    <form action="{{ path('admin_' ~ entity_name ~ '_create') }}" class="form-horizontal" method="post" {{ form_enctype(form) }}>
         {{ form_widget(form) }}
-        <p>
-            <button type="submit">Create</button>
-        </p>
+        <div class="actions">
+            <button type="submit" class="btn btn-primary">Create</button>
+            <a class="btn" href="{{ path('admin_' ~ entity_name ~ '_list') }}">Back to the list</a>
+        </div>
     </form>
-
-    <a class="awesome" href="{{ path('admin_' ~ entity_name ~ '_list') }}">
-        Back to the list
-    </a>
 {% endblock %}

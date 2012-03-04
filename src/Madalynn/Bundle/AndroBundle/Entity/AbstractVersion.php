@@ -47,10 +47,10 @@ abstract class AbstractVersion
      */
     protected $revision;
 
-    public function __construct($major, $minor, $revision = 0)
+    public function __construct($major, $minor = 0, $revision = 0)
     {
-        $this->major = (int) $major;
-        $this->minor = (int) $minor;
+        $this->major    = (int) $major;
+        $this->minor    = (int) $minor;
         $this->revision = (int) $revision;
     }
 
@@ -146,13 +146,13 @@ abstract class AbstractVersion
     static public function create($string)
     {
         $elements = explode('.', $string, 3);
-        if (count($elements) < 2) {
-            throw new \InvalidArgumentException(sprintf('The version "%s" is not correct.', $string));
+        if (count($elements) < 1 || count($elements) > 3) {
+            throw new static(0);
         }
 
-        $major = $elements[0];
-        $minor = $elements[1];
-        $revision = isset($elements[2]) ? $elements[2] : 0;
+        $major    = (int) $elements[0];
+        $minor    = isset($elements[1]) ? (int) $elements[1] : 0;
+        $revision = isset($elements[2]) ? (int) $elements[2] : 0;
 
         return new static($major, $minor, $revision);
     }

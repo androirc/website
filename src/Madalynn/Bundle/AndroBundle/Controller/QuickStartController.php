@@ -14,6 +14,8 @@ namespace Madalynn\Bundle\AndroBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
 
+use Madalynn\Bundle\AndroBundle\Entity\AndroircVersion;
+
 /**
  * QuickStart Controller
  *
@@ -23,11 +25,28 @@ class QuickStartController extends AbstractController
 {
     public function showAction($version, $lang)
     {
-        $em = $this->getDoctrine()->getEntityManager();
+        $em   = $this->getDoctrine()->getEntityManager();
         $repo = $em->getRepository('AndroBundle:QuickStart');
 
+        $version = $em->getRepository('AndroBundle:AndroircVersion')
+                      ->populate(AndroircVersion::create($version));
+
+        if (null === $version) {
+            throw $this->createNotFoundException('The version does not exist.');
+        }
+
+        $quickstart = $repo->findByVersion($version, $lang);
+        if (count($quickstart) > 1) {
+            $this->get('logger')->warn(sprintf('More than one quickstart found for the version "%s"', $version));
+        }
+
+        // Just get the first item
+        if ($quickstart) {
+            $quickstart = $quickstart[0];
+        }
+
         return $this->render('AndroBundle:QuickStart:show.html.twig', array(
-            'quickstart' => $repo->findByVersion($version, $lang)
+            'quickstart' => $quickstart
         ));
     }
 }

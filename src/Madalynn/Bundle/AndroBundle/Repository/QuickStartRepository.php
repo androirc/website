@@ -14,31 +14,32 @@ namespace Madalynn\Bundle\AndroBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
 
-use Madalynn\Bundle\AdminBundle\DataTransformer\VersionTransformer;
+use Madalynn\Bundle\AndroBundle\Entity\AndroircVersion;
 
 class QuickStartRepository extends EntityRepository
 {
-    public function findByVersion($version, $lang)
+    public function findByVersion(AndroircVersion $version, $lang)
     {
-        $version = VersionTransformer::reverseTransform($version);
+        $qb = $this->createQueryBuilder('q');
 
-        $query = $this->createQueryBuilder('q')
-                       ->where('q.language = :lang')
-                       ->andWhere('q.versionMin <= :version and :version <= q.versionMax')
-                       ->setParameters(array(
-                            'lang'    => $lang,
-                            'version' => $version
-                        ))
-                        ->getQuery();
+        $query = $qb->leftJoin('q.versionMin', 'vMin')
+                    ->leftJoin('q.versionMax', 'vMax')
+                    ->where(
+                    $qb->expr()->andx(
+                        'q.language = :lang',
+                        'vMin.code <= :version',
+                        $qb->expr()->orx(
+                            'q.versionMax IS NULL',
+                            $qb->expr()->andx('q.versionMax IS NOT NULL', 'vMax.code >= :version')
+                        )
+                    )
+                )
+                ->setParameters(array(
+                    'lang'    => $lang,
+                    'version' => $version->getCode()
+                ))
+                ->getQuery();
 
-        try {
-            $quickstart = $query->getSingleResult();
-        } catch (\Exception $e) {
-            // We have an exception if the getSingleResult return
-            // 0 or more than one result ...
-            return null;
-        }
-
-        return $quickstart;
+        return $query->execute();
     }
 }

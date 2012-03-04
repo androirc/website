@@ -15,8 +15,6 @@ namespace Madalynn\Bundle\AndroBundle\Entity;
 use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
 
-use Madalynn\Bundle\AdminBundle\DataTransformer\VersionTransformer;
-
 /**
  * @ORM\Entity(repositoryClass="Madalynn\Bundle\AndroBundle\Repository\QuickStartRepository")
  * @ORM\Table(name="andro_quick_start")
@@ -36,12 +34,16 @@ class QuickStart
     protected $language;
 
     /**
-     * @ORM\Column(type="integer", name="version_min")
+     * @ORM\ManyToOne(targetEntity="Madalynn\Bundle\AndroBundle\Entity\AndroircVersion")
+     * @ORM\JoinColumn(name="version_min_id")
+     *
+     * @Assert\NotNull
      */
     protected $versionMin;
 
     /**
-     * @ORM\Column(type="integer", name="version_max")
+     * @ORM\ManyToOne(targetEntity="Madalynn\Bundle\AndroBundle\Entity\AndroircVersion")
+     * @ORM\JoinColumn(name="version_max_id")
      */
     protected $versionMax;
 
@@ -51,13 +53,6 @@ class QuickStart
      * @Assert\NotBlank
      */
     protected $content;
-
-    public function __construct()
-    {
-        $this->versionMin = 0;
-        $this->versionMax = 0;
-    }
-
 
     /**
      * Get id
@@ -96,7 +91,7 @@ class QuickStart
      */
     public function setVersionMin($versionMin)
     {
-        $this->versionMin = VersionTransformer::reverseTransform($versionMin);
+        $this->versionMin = $versionMin;
     }
 
     /**
@@ -106,7 +101,7 @@ class QuickStart
      */
     public function getVersionMin()
     {
-        return VersionTransformer::transform($this->versionMin);
+        return $this->versionMin;
     }
 
     /**
@@ -116,7 +111,7 @@ class QuickStart
      */
     public function setVersionMax($versionMax)
     {
-        $this->versionMax = VersionTransformer::reverseTransform($versionMax);
+        $this->versionMax = $versionMax;
     }
 
     /**
@@ -126,7 +121,7 @@ class QuickStart
      */
     public function getVersionMax()
     {
-        return VersionTransformer::transform($this->versionMax);
+        return $this->versionMax;
     }
 
     /**

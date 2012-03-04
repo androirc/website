@@ -17,7 +17,7 @@
             <tr>
                 <td style="text-align: center">{{ entity.language }}</td>
                 <td style="text-align: center">{{ entity.versionMin }}</td>
-                <td style="text-align: center">{{ entity.versionMax }}</td>
+                <td style="text-align: center">{{ entity.versionMax|default('None') }}</td>
                 <td>
                     <ul>
                         <li>

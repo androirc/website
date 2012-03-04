@@ -32,9 +32,9 @@ class BetaRelease
     protected $id;
 
     /**
-     * @ORM\Column(length=100)
+     * @ORM\ManyToOne(targetEntity="Madalynn\Bundle\AndroBundle\Entity\AndroircVersion")
      *
-     * @Assert\NotBlank
+     * @Assert\NotNull
      */
     protected $version;
 

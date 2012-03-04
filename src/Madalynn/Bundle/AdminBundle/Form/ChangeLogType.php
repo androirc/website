@@ -15,11 +15,19 @@ namespace Madalynn\Bundle\AdminBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilder;
 
+use Doctrine\ORM\EntityRepository;
+
 class ChangeLogType extends AbstractType
 {
     public function buildForm(FormBuilder $builder, array $options)
     {
-        $builder->add('version', 'text')
+        $builder->add('version', 'entity', array(
+                    'class' => 'Madalynn\\Bundle\\AndroBundle\\Entity\\AndroircVersion',
+                    'query_builder' => function(EntityRepository $er) {
+                        return $er->createQueryBuilder('v')
+                                  ->orderBy('v.code', 'desc');
+                    }
+                ))
                 ->add('file');
 
         $builder->addValidator(new Validator\FileValidator());

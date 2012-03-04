@@ -15,8 +15,6 @@ namespace Madalynn\Bundle\AndroBundle\Entity;
 use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
 
-use Madalynn\Bundle\AdminBundle\DataTransformer\VersionTransformer;
-
 /**
  * @ORM\Entity(repositoryClass="Madalynn\Bundle\AndroBundle\Repository\ChangeLogRepository")
  * @ORM\Table(name="andro_changelog")
@@ -32,7 +30,9 @@ class ChangeLog
     protected $id;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\ManyToOne(targetEntity="Madalynn\Bundle\AndroBundle\Entity\AndroircVersion")
+     *
+     * @Assert\NotNull
      */
     protected $version;
 
@@ -48,11 +48,6 @@ class ChangeLog
 
     protected $changes;
 
-    public function __construct()
-    {
-        $this->version = 0;
-    }
-
     /**
      * Get id
      *
@@ -66,21 +61,21 @@ class ChangeLog
     /**
      * Set version
      *
-     * @param integer $version
+     * @param AndroircVersion $version
      */
     public function setVersion($version)
     {
-        $this->version = VersionTransformer::reverseTransform($version);
+        $this->version = $version;
     }
 
     /**
      * Get version
      *
-     * @return integer
+     * @return AndroircVersion
      */
     public function getVersion()
     {
-        return VersionTransformer::transform($this->version);
+        return $this->version;
     }
 
     /**
@@ -155,6 +150,11 @@ class ChangeLog
         $this->file = null;
     }
 
+    /**
+     * Returns changes of the changelog
+     *
+     * @return null if the changelog can't be loaded or the changelog
+     */
     public function getChanges()
     {
         if ($this->changes) {

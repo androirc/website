@@ -15,11 +15,19 @@ namespace Madalynn\Bundle\AdminBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilder;
 
+use Doctrine\ORM\EntityRepository;
+
 class BetaReleaseType extends AbstractType
 {
     public function buildForm(FormBuilder $builder, array $options)
     {
-        $builder->add('version')
+        $builder->add('version', 'entity', array(
+                    'class'    => 'Madalynn\\Bundle\\AndroBundle\\Entity\\AndroircVersion',
+                    'query_builder' => function(EntityRepository $er) {
+                        return $er->createQueryBuilder('e')
+                                  ->orderBy('e.code', 'desc');
+                    }
+                ))
                 ->add('revision')
                 ->add('file')
                 ->add('downloadable', null, array('required' => false));

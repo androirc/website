@@ -12,6 +12,8 @@
 
 namespace Madalynn\Bundle\AndroBundle\Controller;
 
+use Madalynn\Bundle\AndroBundle\Entity\AndroircVersion;
+
 /**
  * ChangeLog Controller
  *
@@ -24,8 +26,17 @@ class ChangeLogController extends AbstractController
         $em   = $this->getDoctrine()->getEntityManager();
         $repo = $em->getRepository('AndroBundle:ChangeLog');
 
+        $version = $em->getRepository('AndroBundle:AndroircVersion')
+                      ->populate(AndroircVersion::create($version));
+
+        if (null === $version) {
+            throw $this->createNotFoundException('The version does not exist in the database.');
+        }
+
+        $changelog = $repo->findByVersion($version);
+
         return $this->render('AndroBundle:ChangeLog:show.html.twig', array(
-            'changelog' => $repo->findByVersion($version)
+            'changelog' => $changelog
         ));
     }
 }

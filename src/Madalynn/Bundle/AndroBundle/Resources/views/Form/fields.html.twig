@@ -1,10 +1,20 @@
 {% block field_row %}
+{% set valid = 0 == form.get('errors')|length %}
+{% set checkbox = 'checkbox' in form.get('types') %}
 {% spaceless %}
-    <div class="control-group">
-        {{ form_label(form, label|default(null)) }}
-
+    <div class="control-group{%- if not valid %} error{% endif %}">
+        {% if not checkbox %}
+            {{ form_label(form, label|default(null)) }}
+        {% endif %}
         <div class="controls">
-            {{ form_widget(form) }}
+            {% if checkbox %}
+                <label class="checkbox">
+                    {{ form_widget(form) }}
+                    {{ label|default(null) }}
+                </label>
+            {% else %}
+                {{ form_widget(form) }}
+            {% endif %}
             {{ form_errors(form) }}
         </div>
     </div>
@@ -17,6 +27,16 @@
         {% set attr = attr|merge({'class': attr.class|default('') ~ ' required'}) %}
     {% endif %}
     {% set attr = attr|merge({'class': attr.class|default('') ~ ' control-label'}) %}
-    <label{% for attrname,attrvalue in attr %} {{attrname}}="{{attrvalue}}"{% endfor %}>{{ label|trans({}, translation_domain) }}</label>
+    <label{% for attrname,attrvalue in attr %} {{ attrname }}="{{ attrvalue }}"{% endfor %}>{{ label|trans({}, translation_domain) }}</label>
 {% endspaceless %}
 {% endblock %}
+
+{% block field_errors %}
+{% spaceless %}
+    {% if errors|length > 0 %}
+        {% for error in errors %}
+            <span class="help-inline">{{ error.messageTemplate|trans(error.messageParameters, 'validators') }}</span>
+        {% endfor %}
+    {% endif %}
+{% endspaceless %}
+{% endblock field_errors %}

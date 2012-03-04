@@ -12,8 +12,6 @@
 
 namespace Madalynn\Bundle\AndroBundle\Repository;
 
-use Doctrine\ORM\EntityRepository;
-
-class AndroidVersionRepository extends EntityRepository
+class AndroidVersionRepository extends AbstractVersionRepository
 {
 }

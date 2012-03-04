@@ -20,8 +20,15 @@ class QuickStartType extends AbstractType
     public function buildForm(FormBuilder $builder, array $options)
     {
         $builder->add('language', 'language', array('preferred_choices' => array('en', 'fr')))
-                ->add('versionMin', 'text', array('label' => 'Version min'))
-                ->add('versionMax', 'text', array('label' => 'Version max'))
+                ->add('versionMin', 'entity', array(
+                    'class' => 'Madalynn\\Bundle\\AndroBundle\\Entity\\AndroircVersion',
+                    'label' => 'Version min'
+                ))
+                ->add('versionMax', 'entity', array(
+                    'class'    => 'Madalynn\\Bundle\\AndroBundle\\Entity\\AndroircVersion',
+                    'label'    => 'Version max',
+                    'required' => false
+                ))
                 ->add('content', 'editor');
     }
 

@@ -296,7 +296,7 @@ class CrashReport
     }
 
     /**
-     * Check if the crashreport is equals at this object
+     * Check if the crashreport is equals to this object
      *
      * @param CrashReport $crashReport
      * @return boolean

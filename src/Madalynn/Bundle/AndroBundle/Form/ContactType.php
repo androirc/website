@@ -22,25 +22,26 @@ class ContactType extends AbstractType
     public function buildForm(FormBuilder $builder, array $options)
     {
         $builder->add('name', null, array('label' => 'contact.name'))
-                ->add('email', 'email', array('label' => 'contact.email'));
-
-        $this->addVersionSection($builder, 'androidVersion', 'android_version', 'apiLevel');
-        $this->addVersionSection($builder, 'androircVersion', 'androirc_version', 'code');
-
-        $builder->add('content', 'textarea', array('label' => 'contact.content'));
-    }
-
-    protected function addVersionSection(FormBuilder $builder, $name, $slug, $sort)
-    {
-        $builder->add($name, 'entity', array(
-            'class'    => 'Madalynn\\Bundle\\AndroBundle\\Entity\\'.ucfirst($name),
-            'label'    => 'contact.'.$slug,
-            'required' => false,
-            'query_builder' => function(EntityRepository $er) use ($sort) {
-                return $er->createQueryBuilder('e')
-                           ->orderBy('e.'.$sort, 'desc');
-            },
-        ));
+                ->add('email', 'email', array('label' => 'contact.email'))
+                ->add('androidVersion', 'entity', array(
+                    'class'    => 'Madalynn\\Bundle\\AndroBundle\\Entity\\AndroidVersion',
+                    'label'    => 'contact.android_version',
+                    'required' => false,
+                    'query_builder' => function(EntityRepository $er) {
+                        return $er->createQueryBuilder('e')
+                                  ->orderBy('e.apiLevel', 'desc');
+                    }
+                ))
+                ->add('androircVersion', 'entity', array(
+                    'class'    => 'Madalynn\\Bundle\\AndroBundle\\Entity\\AndroircVersion',
+                    'label'    => 'contact.androirc_version',
+                    'required' => false,
+                    'query_builder' => function(EntityRepository $er) {
+                        return $er->createQueryBuilder('e')
+                                  ->orderBy('e.code', 'desc');
+                    }
+                ))
+                ->add('content', 'textarea', array('label' => 'contact.content'));
     }
 
     public function getDefaultOptions(array $options)

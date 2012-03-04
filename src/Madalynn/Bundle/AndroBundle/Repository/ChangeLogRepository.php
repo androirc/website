@@ -14,26 +14,20 @@ namespace Madalynn\Bundle\AndroBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
 
-use Madalynn\Bundle\AdminBundle\DataTransformer\VersionTransformer;
+use Madalynn\Bundle\AndroBundle\Entity\AndroircVersion;
 
 class ChangeLogRepository extends EntityRepository
 {
-    public function findByVersion($version)
+    public function findByVersion(AndroircVersion $version)
     {
-        $version = VersionTransformer::reverseTransform($version);
+        $changelog = $this->createQueryBuilder('c')
+                          ->leftJoin('c.version', 'v')
+                          ->where('v.code <= :version')
+                          ->orderBy('v.code', 'desc')
+                          ->setParameter('version', $version->getCode())
+                          ->getQuery()
+                          ->getOneOrNullResult();
 
-        $changelogs = $this->createQueryBuilder('c')
-                           ->where('c.version <= :version')
-                           ->orderBy('c.version', 'desc')
-                           ->setParameter('version', $version)
-                           ->getQuery()
-                           ->getResult();
-
-        if (!$changelogs) {
-            return null;
-        }
-
-        // We just need the first changelog
-        return $changelogs[0];
+        return $changelog;
     }
 }

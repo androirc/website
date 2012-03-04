@@ -140,7 +140,7 @@ class AndroExtension extends \Twig_Extension
         $request = $this->container->get('request');
         $uri     = $request->getUri();
         $text    = '';
-        $html    = '<a href="{{ link }}" class="awesome">{{ text }}</a>';
+        $html    = '<a href="{{ link }}" class="btn">{{ text }}</a>';
 
         if (true === $request->headers->has('X-AndroIRC-Mobile')) {
             $uri = str_replace('m.', 'www.', $uri);
