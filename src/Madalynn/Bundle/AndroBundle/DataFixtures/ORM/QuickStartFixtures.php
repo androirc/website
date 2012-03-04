@@ -13,9 +13,10 @@
 namespace Madalynn\Bundle\AndroBundle\DataFixtures\ORM;
 
 use Doctrine\Common\Persistence\ObjectManager;
+use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\FixtureInterface;
+use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 
-use Madalynn\Bundle\AdminBundle\DataTransformer\VersionTransformer;
 use Madalynn\Bundle\AndroBundle\Entity\QuickStart;
 
 /**
@@ -23,7 +24,7 @@ use Madalynn\Bundle\AndroBundle\Entity\QuickStart;
  *
  * @author Julien Brochet <mewt@androirc.com>
  */
-class QuickStartFixtures implements FixtureInterface
+class QuickStartFixtures extends AbstractFixture implements FixtureInterface, OrderedFixtureInterface
 {
     /**
      * Load data fixtures with the passed EntityManager
@@ -32,12 +33,9 @@ class QuickStartFixtures implements FixtureInterface
      */
     public function load(ObjectManager $em)
     {
-        $transformer = new VersionTransformer();
-
         $french = new QuickStart();
 
-        $french->setVersionMin($transformer->transform('0'));
-        $french->setVersionMax($transformer->transform('3.9.9'));
+        $french->setVersionMin($this->getReference('androirc_version_1.0'));
         $french->setLanguage('fr');
 
         $french->setContent(<<<EOF
@@ -92,8 +90,7 @@ EOF
         $english = new QuickStart();
 
         $english->setLanguage('en');
-        $english->setVersionMin($transformer->transform('0'));
-        $english->setVersionMax($transformer->transform('3.9.9'));
+        $english->setVersionMin($this->getReference('androirc_version_1.0'));
 
         $english->setContent(<<<EOF
 <h1>Welcome!</h1>
@@ -143,7 +140,16 @@ EOF
 );
 
         $em->persist($english);
-
         $em->flush();
+    }
+
+    /**
+     * Get the order of this fixture
+     *
+     * @return integer
+     */
+    public function getOrder()
+    {
+        return 5;
     }
 }

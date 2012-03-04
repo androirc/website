@@ -13,7 +13,9 @@
 namespace Madalynn\Bundle\AndroBundle\DataFixtures\ORM;
 
 use Doctrine\Common\Persistence\ObjectManager;
+use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\FixtureInterface;
+use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 
 use Madalynn\Bundle\AndroBundle\Entity\AndroidVersion;
 use Madalynn\Bundle\AndroBundle\Entity\AndroircVersion;
@@ -23,7 +25,7 @@ use Madalynn\Bundle\AndroBundle\Entity\AndroircVersion;
  *
  * @author Julien Brochet <mewt@androirc.com>
  */
-class VersionFixtures implements FixtureInterface
+class VersionFixtures extends AbstractFixture implements FixtureInterface, OrderedFixtureInterface
 {
     /**
      * Load data fixtures with the passed EntityManager
@@ -99,6 +101,7 @@ class VersionFixtures implements FixtureInterface
             $version->setApiLevel($key);
 
             $em->persist($version);
+            $this->addReference('android_version_'.$version, $version);
         }
 
         foreach ($androirc as $key => $value) {
@@ -106,8 +109,19 @@ class VersionFixtures implements FixtureInterface
             $version->setCode($key);
 
             $em->persist($version);
+            $this->addReference('androirc_version_'.$version, $version);
         }
 
         $em->flush();
+    }
+
+    /**
+     * Get the order of this fixture
+     *
+     * @return integer
+     */
+    public function getOrder()
+    {
+        return 4;
     }
 }
