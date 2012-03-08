@@ -16,6 +16,7 @@ menu:
     quickstart: Quick Start
     holiday: Holiday
     changelog: Change Log
+    version: Version
     logout: Logout
 
 actions:
@@ -32,3 +33,9 @@ actions:
     filter_button: Let's go
     resolved: Resolved
     unresolved: Unresolved
+
+version:
+    base:
+        title: Versions managment
+        android: Android
+        androirc: AndroIRC

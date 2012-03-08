@@ -47,3 +47,8 @@ admin_base_quick_start:
 admin_base_change_log:
     resource: 'routing/change_log.yml'
     prefix:   /changelog
+
+# Version
+admin_version:
+    pattern: /version
+    defaults: { _controller: AdminBundle:Version:index }
