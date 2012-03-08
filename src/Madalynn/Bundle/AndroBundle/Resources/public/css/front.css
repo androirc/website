@@ -4,10 +4,6 @@ nav#menu ul {
     width: 800px;
 }
 
-nav#menu li:hover {
-    background: url("/bundles/andro/images/menu-hover.png") repeat-x;
-}
-
 /* Posts */
 
 #introduction {

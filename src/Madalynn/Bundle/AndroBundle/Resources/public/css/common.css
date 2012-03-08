@@ -74,6 +74,10 @@ nav#menu li {
     width: 100px;
 }
 
+nav#menu li:hover {
+    background: url("/bundles/andro/images/menu-hover.png") repeat-x;
+}
+
 nav#menu a {
     display: block;
     height: 30px;
