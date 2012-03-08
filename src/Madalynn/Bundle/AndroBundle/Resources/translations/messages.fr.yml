@@ -49,7 +49,6 @@ sidebar:
 
 homepage:
     title: Accueil
-    support_it: Vous aimez AndroIRC ? Supportez le !
     introduction: |
         AndroIRC est un client IRC pour Android permettant la connexion à
         plusieurs serveurs (de manière sécurisée ou non) en même temps. Support
@@ -76,6 +75,7 @@ beta:
     no_beta: Aucune beta pour le moment ...
 
 donate:
+    support_it: Vous aimez AndroIRC ? Supportez le !
     desc: |
         AndroIRC est <stong>gratuit</strong> et vous pouvez le télécharger
         gratuitement sur l'Android Market. Cependant, nous nous des <strong>

@@ -49,7 +49,6 @@ sidebar:
 
 homepage:
     title: Home
-    support_it: You like AndroIRC? Support it!
     introduction: |
         AndroIRC is an Android IRC client which can connect to several server
         (secured or not) at the same time. Features: supports mIRC colors,
@@ -73,6 +72,7 @@ beta:
     no_beta: No beta right now... come back later!
 
 donate:
+    support_it: You like AndroIRC? Support it!
     desc: |
         AndroIRC is <strong>free</strong> and you can download it <strong>
         FOR FREE</strong> in the Market. But we have <strong>charges</strong>

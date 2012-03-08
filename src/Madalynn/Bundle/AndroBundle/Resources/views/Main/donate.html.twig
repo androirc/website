@@ -1,11 +1,11 @@
 {% extends "AndroBundle::frontend.html.twig" %}
 
-{% block title %}Donate{% endblock %}
+{% block title %}{{ 'donate.support_it'|trans }}{% endblock %}
 
 {% block content %}
-    <div class="center">
-        <a id="support_link" href="{{ path('donate') }}"><span></span>{{ 'homepage.support_it'|trans }}</a>
+    <h1>{{ 'donate.support_it'|trans }}</h1>
 
+    <div class="center">
         <p id="donate">
             {{ 'donate.desc'|trans|raw }}
         </p>
