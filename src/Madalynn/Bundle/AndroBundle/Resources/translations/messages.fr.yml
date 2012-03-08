@@ -38,7 +38,7 @@ sidebar:
         to_mobile: Passer sur la version mobile
         to_web: Passer sur la version web
     market:
-        name: Android Market
+        name: Google Play
         desc: |
             Vous pouvez télécharger AndroIRC directement depuis l'Android Market
             ou alors en scannant l'un des codes barres suivants

@@ -40,7 +40,7 @@
         <li><a href="{{ path('screenshots') }}">{{ 'menu.screens'|trans }}</a></li>
         <li><a href="{{ path('contact') }}">{{ 'menu.contact'|trans }}</a></li>
         <li><a href="{{ path('beta') }}">{{ 'menu.beta'|trans }}</a></li>
-        <li><a href="http://market.android.com/details?id=com.androirc">{{ 'menu.download'|trans }}</a></li>
+        <li><a href="https://play.google.com/store/apps/details?id=com.androirc">{{ 'menu.download'|trans }}</a></li>
         <li><a href="{{ path('eula') }}">{{ 'menu.eula'|trans }}</a></li>
         <li class="last"><a href="{{ path('donate') }}">{{ 'menu.donate'|trans }}</a></li>
     </ul>
@@ -76,6 +76,12 @@
 
         <div class="sidebar_box">
             <h2>{{ 'sidebar.market.name'|trans }}</h2>
+
+            <div class="center google-play">
+                <a href="https://play.google.com/store/apps/details?id=com.androirc">
+                    <img src="{{ asset('bundles/andro/images/google-play.png') }}" />
+                </a>
+            </div>
 
             <p>{{ 'sidebar.market.desc'|trans }}</p>
 
