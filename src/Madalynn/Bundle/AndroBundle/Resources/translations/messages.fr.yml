@@ -13,7 +13,7 @@ meta:
         ident, nick, nickname, chan, channel, kick, ban, op, halfop, voice
 
 header:
-    subtitle: Client IRC pour Android
+    subtitle: Client IRC pour Android™
     untranslated: Certains éléments de cette page ne sont pas disponibles dans cette langue
 
 global:
@@ -133,4 +133,4 @@ footer:
         contact: Contactez nous
     copyright:
         name: Copyright
-        desc: %year% Madalynn, tous droits réservés. Android est une marque de Google Inc.
+        desc: %year% Madalynn, tous droits réservés. Android™ est une marque de Google Inc.
