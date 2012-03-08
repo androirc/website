@@ -47,7 +47,8 @@ class VersionFixtures extends AbstractFixture implements FixtureInterface, Order
             11 => '3.0',
             12 => '3.1',
             13 => '3.2',
-            14 => '4.0'
+            14 => '4.0',
+            15 => '4.0.3'
         );
 
         $androirc = array(
