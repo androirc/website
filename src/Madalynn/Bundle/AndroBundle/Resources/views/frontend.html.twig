@@ -54,7 +54,7 @@
     <aside>
     {# Administration section #}
     {% if app.user and app.user.admin %}
-        <div class="sidebar_box">
+        <div class="sidebar-box">
             <h2>{{ 'sidebar.admin.name'|trans }}</h2>
 
             <div class="center">
@@ -65,7 +65,7 @@
 
     {# Mobile version section #}
     {% if from_mobile() %}
-        <div class="sidebar_box">
+        <div class="sidebar-box">
             <h2>{{ 'sidebar.mobile.name'|trans }}</h2>
 
             <div class="center">
@@ -74,7 +74,7 @@
         </div>
     {% endif %}
 
-        <div class="sidebar_box">
+        <div class="sidebar-box">
             <h2>{{ 'sidebar.market.name'|trans }}</h2>
 
             <div class="center google-play">
@@ -105,7 +105,7 @@
             </div>
         </div>
 
-        <div class="sidebar_box">
+        <div class="sidebar-box">
             <h2>{{ 'sidebar.team'|trans }}</h2>
 
             <div id="team_box">
@@ -128,7 +128,7 @@
             </div>
         </div>
 
-        <div class="sidebar_box">
+        <div class="sidebar-box">
             <h2>{{ 'sidebar.facebook'|trans }}</h2>
 
             <div id="facebook">
