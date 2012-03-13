@@ -52,3 +52,8 @@ admin_base_change_log:
 admin_version:
     pattern: /version
     defaults: { _controller: AdminBundle:Version:index }
+
+# AndroIRC version
+admin_base_androirc_version:
+    resource: 'routing/androirc_version.yml'
+    prefix:   /version/androirc

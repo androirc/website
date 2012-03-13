@@ -104,7 +104,7 @@ class AndroircVersion extends AbstractVersion
     {
         $string = parent::__toString();
         if ($this->state) {
-            $string = $string.' ('.$this->state.')';
+            $string = $string.' ('.strtoupper($this->state).')';
         }
 
         return $string;

@@ -1,0 +1,39 @@
+admin_androirc_version_list:
+    pattern:  /{page}
+    defaults: { _controller: "AdminBundle:AndroircVersion:list", page: 1 }
+    requirements:
+        page:  \d+
+
+admin_androirc_version_filter:
+    pattern:  /filter
+    defaults: { _controller: "AdminBundle:AndroircVersion:filter" }
+
+admin_androirc_version_clear:
+    pattern:  /clear
+    defaults: { _controller: "AdminBundle:AndroircVersion:clear" }
+
+admin_androirc_version_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "AdminBundle:AndroircVersion:show" }
+
+admin_androirc_version_new:
+    pattern:  /new
+    defaults: { _controller: "AdminBundle:AndroircVersion:new" }
+
+admin_androirc_version_create:
+    pattern:  /create
+    defaults: { _controller: "AdminBundle:AndroircVersion:create" }
+    requirements: { _method: post }
+
+admin_androirc_version_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "AdminBundle:AndroircVersion:edit" }
+
+admin_androirc_version_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "AdminBundle:AndroircVersion:update" }
+    requirements: { _method: post }
+
+admin_androirc_version_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "AdminBundle:AndroircVersion:delete" }

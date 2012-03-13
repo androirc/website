@@ -47,7 +47,7 @@ abstract class AbstractVersion
      */
     protected $revision;
 
-    public function __construct($major, $minor = 0, $revision = 0)
+    public function __construct($major = 1, $minor = 0, $revision = 0)
     {
         $this->major    = (int) $major;
         $this->minor    = (int) $minor;
