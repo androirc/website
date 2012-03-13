@@ -108,3 +108,25 @@ ul.record_actions {
     display: none;
     padding: 15px;
 }
+
+#androirc-version, #android-version {
+    display: block;
+    width: 200px;
+    height: 200px;
+    float: left;
+    border-radius: 10px;
+}
+
+#android-version:hover, #androirc-version:hover {
+    background-position: bottom;
+}
+
+#android-version {
+    margin-left: 175px;
+    background-image: url('/bundles/admin/images/android-version.png');
+}
+
+#androirc-version {
+    margin-left: 50px;
+    background-image: url('/bundles/admin/images/androirc-version.png');
+}
