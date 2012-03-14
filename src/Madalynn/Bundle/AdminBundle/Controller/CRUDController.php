@@ -83,6 +83,7 @@ abstract class CRUDController extends Controller
         $en = $this->getEntityName();
 
         $this->get('session')->remove($this->getSessionFilterName());
+        $this->get('session')->getFlashBag()->set('success', 'item.clear');
 
         return $this->redirect($this->generateUrl('admin_' . $this->underscore($en) . '_list'));
     }

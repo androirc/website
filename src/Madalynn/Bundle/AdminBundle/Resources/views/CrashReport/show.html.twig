@@ -1,6 +1,6 @@
 {% extends "AdminBundle:Base:show.html.twig" %}
 
-{% block title %}Crash Report #{{entity.getId }}{% endblock %}
+{% block title %}{{ 'crash_report.show_title'|trans({'%id%': entity.id}) }}{% endblock %}
 
 {% block content %}
     <table class="records_list">
@@ -12,25 +12,25 @@
         </thead>
         <thead>
             <tr>
-                <td>Android version</td>
-                <td>{{ entity.getAndroidVersion }}</td>
+                <td>{{ 'crash_report.field.android'|trans }}</td>
+                <td>{{ entity.androidVersion }}</td>
             </tr>
             <tr>
-                <td>AndroIRC version</td>
-                <td>{{ entity.getAndroircVersion }}</td>
+                <td>{{ 'crash_report.field.androirc'|trans }}</td>
+                <td>{{ entity.androircVersion }}</td>
             </tr>
             <tr>
-                <td>Thread name</td>
-                <td>{{ entity.getThreadName }}</td>
+                <td>{{ 'crash_report.field.thread_name'|trans }}</td>
+                <td>{{ entity.threadName }}</td>
             </tr>
             <tr>
-                <td>Error message</td>
-                <td>{{ entity.getErrorMessage }}</td>
+                <td>{{ 'crash_report.field.error_message'|trans }}</td>
+                <td>{{ entity.errorMessage }}</td>
             </tr>
             <tr>
-                <td>Resolved</td>
+                <td>{{ 'crash_report.field.resolved'|trans }}</td>
                 <td>
-                    {% if (entity.isResolved) %}
+                    {% if (entity.resolved) %}
                         <img src="{{ asset('bundles/andro/images/icons/tick.png') }}" />
                     {% else %}
                         <img src="{{ asset('bundles/andro/images/icons/cross.png') }}" />
@@ -38,29 +38,24 @@
                 </td>
             </tr>
             <tr>
-                <td>Count</td>
-                <td>{{ entity.getCount }}</td>
+                <td>{{ 'crash_report.field.count'|trans }}</td>
+                <td>{{ entity.count }}</td>
             </tr>
             <tr>
-                <td>Callstack</td>
-                <td class="callstack">{{ entity.getCallstack }}</td>
+                <td>{{ 'crash_report.field.callstack'|trans }}</td>
+                <td class="callstack">{{ entity.callstack }}</td>
             </tr>
         </thead>
     </table>
 {% endblock %}
 
 {% block entity_actions %}
-    <a class="btn btn-danger" onclick="return confirm('Are you sure?')" href="{{ path('admin_crash_report_delete', { 'id': entity.id }) }}">
-        {{ 'actions.delete'|trans }}
-    </a>
-    <a class="btn btn-danger" href="{{ path('admin_crash_report_resolved', { 'id': entity.id }) }}">
+    <a class="btn btn-info" href="{{ path('admin_crash_report_resolved', { 'id': entity.id }) }}">
         {% if (entity.isResolved) %}
             {{ 'actions.unresolved'|trans }}
         {% else %}
             {{ 'actions.resolved'|trans }}
         {% endif %}
     </a>
-    <a class="btn" href="{{ path('admin_crash_report_list') }}">
-        {{ 'actions.back_list'|trans }}
-    </a>
+    {{ parent() }}
 {% endblock %}

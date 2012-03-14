@@ -45,6 +45,7 @@ item:
     create: The item was created successfully.
     update: The item was updated successfully.
     delete: The item was deleted successfully.
+    clear: Fiters has been removed successfully.
 
 article:
     edit_title: %title%
@@ -98,3 +99,15 @@ tip:
     field:
         language: Language
         content: Content
+
+crash_report:
+    list_title: Crash Report list
+    show_title: Crash Report %id%
+    field:
+        error_message: Error message
+        androirc: AndroIRC
+        android: Android
+        count: Count
+        resolved: Resolved
+        thread_name: Thread name
+        callstack: Callstack

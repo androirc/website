@@ -31,8 +31,8 @@ actions:
     clear_filters: Vider les filtres
     filter: Filtrer
     filter_button: Filtrer les résultats
-    resolved: Résolu
-    unresolved: Non résolu
+    resolved: Résoudre
+    unresolved: Réouvrir le rapport
     actions: Actions
 
 version:
@@ -45,6 +45,7 @@ item:
     create: L'objet a été créé avec succès.
     update: L'objet a été mis à jour avec succès.
     delete: L'objet a été supprimé avec succès.
+    clear: Les filtres ont étés supprimés avec succès.
 
 article:
     edit_title: %title%
@@ -98,3 +99,15 @@ tip:
     field:
         language: Langue
         content: Contenu
+
+crash_report:
+    list_title: Liste des rapports de crash
+    show_title: Rapport de crash %id%
+    field:
+        error_message: Message d'erreur
+        androirc: AndroIRC
+        android: Android
+        count: Nombre
+        resolved: Résolu
+        thread_name: Nom du thread
+        callstack: Callstack

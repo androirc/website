@@ -1,22 +1,20 @@
 {% extends "AdminBundle:Base:list.html.twig" %}
 
-{% block title %}Crash Report list{% endblock %}
-
 {% block content %}
   <table class="records_list">
         <thead>
             <tr>
-                <th>Error message</th>
-                <th>AndroIRC</th>
-                <th>Count</th>
-                <th>Resolved</th>
-                <th width="220px;">Actions</th>
+                <th>{{ 'crash_report.field.error_message'|trans }}</th>
+                <th>{{ 'crash_report.field.androirc'|trans }}</th>
+                <th>{{ 'crash_report.field.count'|trans }}</th>
+                <th>{{ 'crash_report.field.resolved'|trans }}</th>
+                <th width="220px;">{{ 'actions.actions'|trans }}</th>
             </tr>
         </thead>
         <tbody>
         {% for entity in pager %}
             <tr>
-                <td><a href="{{ path('admin_crash_report_show', { 'id': entity.id }) }}">{{ entity.errorMessage|truncate(60) }}</a></td>
+                <td><a href="{{ path('admin_crash_report_show', {'id': entity.id}) }}">{{ entity.errorMessage|truncate(60) }}</a></td>
                 <td style="text-align: center">{{ entity.majorAndroircVersion }}</td>
                 <td style="text-align: center">{{ entity.count }}</td>
                 <td style="text-align: center">
@@ -29,13 +27,13 @@
                 <td>
                     <ul>
                         <li>
-                            <img src="{{ asset('bundles/andro/images/icons/accept.png') }}" /> <a href="{{ path('admin_crash_report_resolved', { 'id': entity.id }) }}">{{ 'actions.resolved'|trans }}</a>
+                            <img src="{{ asset('bundles/andro/images/icons/accept.png') }}" /> <a href="{{ path('admin_crash_report_resolved', {'id': entity.id}) }}">{{ 'actions.resolved'|trans }}</a>
                         </li>
                         <li>
-                            <img src="{{ asset('bundles/andro/images/icons/page.png') }}" /> <a href="{{ path('admin_crash_report_show', { 'id': entity.id }) }}">{{ 'actions.show'|trans }}</a>
+                            <img src="{{ asset('bundles/andro/images/icons/page.png') }}" /> <a href="{{ path('admin_crash_report_show', {'id': entity.id}) }}">{{ 'actions.show'|trans }}</a>
                         </li>
                         <li>
-                            <img src="{{ asset('bundles/andro/images/icons/cross.png') }}" /> <a onclick="return confirm('Are you sure?')" href="{{ path('admin_crash_report_delete', { 'id': entity.id }) }}">{{ 'actions.delete'|trans }}</a>
+                            <img src="{{ asset('bundles/andro/images/icons/cross.png') }}" /> <a onclick="return confirm('Are you sure?')" href="{{ path('admin_crash_report_delete', {'id': entity.id}) }}">{{ 'actions.delete'|trans }}</a>
                         </li>
                     </ul>
                 </td>

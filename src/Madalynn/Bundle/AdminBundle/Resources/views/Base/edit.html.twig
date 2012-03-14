@@ -1,6 +1,6 @@
 {% extends "AdminBundle::backend.html.twig" %}
 
-{% block title %}{{ entity_name ~ '.edit_title'|trans }}{% endblock %}
+{% block title %}{{ (entity_name ~ '.edit_title')|trans }}{% endblock %}
 
 {% block page %}
     <h1>{{ block('title') }}</h1>
