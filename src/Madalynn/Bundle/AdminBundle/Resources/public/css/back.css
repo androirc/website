@@ -127,6 +127,15 @@ ul.record_actions {
 }
 
 #androirc-version {
-    margin-left: 50px;
+    margin-left: 24px;
     background-image: url('/bundles/admin/images/androirc-version.png');
+}
+
+#line-version {
+    margin-top: -20px;
+    float: left;
+    margin-left: 24px;
+    width: 3px;
+    height: 240px;
+    background-color: #ccc;
 }
