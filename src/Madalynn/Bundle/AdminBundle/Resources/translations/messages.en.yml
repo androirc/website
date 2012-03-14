@@ -134,3 +134,11 @@ tip_holiday:
         content: Content
         day: Day
         month: Month
+
+change_log:
+    edit_title: Changelog v%version% edit
+    new_title: New Changelog
+    list_title: Changelog list
+    field:
+        version: Version
+        file: File

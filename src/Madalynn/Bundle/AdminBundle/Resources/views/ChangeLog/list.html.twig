@@ -1,13 +1,11 @@
 {% extends "AdminBundle:Base:list.html.twig" %}
 
-{% block title %}ChangeLog list{% endblock %}
-
 {% block content %}
   <table class="records_list">
         <thead>
             <tr>
-                <th>Version</th>
-                <th width="160px;">Actions</th>
+                <th>{{ 'change_log.field.version'|trans }}</th>
+                <th width="160px;">{{ 'actions.actions'|trans }}</th>
             </tr>
         </thead>
         <tbody>

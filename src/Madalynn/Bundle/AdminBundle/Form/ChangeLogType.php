@@ -22,13 +22,14 @@ class ChangeLogType extends AbstractType
     public function buildForm(FormBuilder $builder, array $options)
     {
         $builder->add('version', 'entity', array(
+                    'label' => 'change_log.field.version',
                     'class' => 'Madalynn\\Bundle\\AndroBundle\\Entity\\AndroircVersion',
                     'query_builder' => function(EntityRepository $er) {
                         return $er->createQueryBuilder('v')
                                   ->orderBy('v.code', 'desc');
                     }
                 ))
-                ->add('file');
+                ->add('file', null, array('label' => 'change_log.field.file'));
 
         $builder->addValidator(new Validator\FileValidator());
     }
