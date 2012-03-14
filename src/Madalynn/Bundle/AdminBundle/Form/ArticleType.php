@@ -19,11 +19,11 @@ class ArticleType extends AbstractType
 {
     public function buildForm(FormBuilder $builder, array $options)
     {
-        $builder->add('title', null, array('label' => 'article.form.title'))
-                ->add('content', 'editor', array('label' => 'article.form.content'))
+        $builder->add('title', null, array('label' => 'article.field.title'))
+                ->add('content', 'editor', array('label' => 'article.field.content'))
                 ->add('visible', null, array(
                     'required' => false,
-                    'label'    => 'article.form.visible'
+                    'label'    => 'article.field.visible'
                 ));
     }
 

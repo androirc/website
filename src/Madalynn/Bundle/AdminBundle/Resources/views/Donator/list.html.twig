@@ -1,14 +1,12 @@
 {% extends "AdminBundle:Base:list.html.twig" %}
 
-{% block title %}Donator list{% endblock %}
-
 {% block content %}
   <table class="records_list">
         <thead>
             <tr>
-                <th>Name</th>
-                <th>Amount</th>
-                <th width="160px;">Actions</th>
+                <th>{{ 'donator.field.name'|trans }}</th>
+                <th>{{ 'donator.field.amount'|trans }}</th>
+                <th width="160px;">{{ 'actions.actions'|trans }}</th>
             </tr>
         </thead>
         <tbody>

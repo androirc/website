@@ -50,12 +50,17 @@ article:
     edit_title: %title%
     list_title: Article list
     new_title: New article
-    list:
+    field:
         author: Author
         title: Title
         visible: Visible
         created: Created
-    form:
-        visible: Visible
         content: Content
-        title: Title
+
+donator:
+    edit_title: %name% donator
+    list_title: Donator list
+    new_title: New donator
+    field:
+        name: Name
+        amount: Amount
