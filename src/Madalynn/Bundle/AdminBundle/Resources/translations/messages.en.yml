@@ -64,3 +64,16 @@ donator:
     field:
         name: Name
         amount: Amount
+
+user:
+    edit_title: %username% user
+    list_title: User list
+    new_title: New user
+    field:
+        username: Username
+        admin: Administrator
+        last_login: Last login
+        last_login_format: Y-m-d
+        email: Email
+        password: Password
+        roles: Roles
