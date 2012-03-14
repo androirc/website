@@ -111,3 +111,14 @@ crash_report:
         resolved: Resolved
         thread_name: Thread name
         callstack: Callstack
+
+quick_start:
+    list_title: QuickStart list
+    new_title: New QuickStart
+    edit_title: QuickStart edit
+    field:
+        language: Language
+        version_min: Min version
+        version_max: Max version
+        version_none: None
+        content: Content

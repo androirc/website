@@ -19,17 +19,20 @@ class QuickStartType extends AbstractType
 {
     public function buildForm(FormBuilder $builder, array $options)
     {
-        $builder->add('language', 'language', array('preferred_choices' => array('en', 'fr')))
+        $builder->add('language', 'language', array(
+                    'preferred_choices' => array('en', 'fr'),
+                    'label'             => 'quick_start.field.language'
+                ))
                 ->add('versionMin', 'entity', array(
                     'class' => 'Madalynn\\Bundle\\AndroBundle\\Entity\\AndroircVersion',
-                    'label' => 'Version min'
+                    'label' => 'quick_start.field.version_min'
                 ))
                 ->add('versionMax', 'entity', array(
                     'class'    => 'Madalynn\\Bundle\\AndroBundle\\Entity\\AndroircVersion',
-                    'label'    => 'Version max',
+                    'label'    => 'quick_start.field.version_max',
                     'required' => false
                 ))
-                ->add('content', 'editor');
+                ->add('content', 'editor', array('label' => 'quick_start.field.content'));
     }
 
     public function getName()
