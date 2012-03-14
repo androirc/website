@@ -150,3 +150,15 @@ android_version:
         major: Major
         minor: Minor
         revision: Revision
+
+androirc_version:
+    edit_title: AndroIRC version edit
+    new_title: New AndroIRC version
+    list_title: AndroIRC versions list
+    field:
+        code: Code
+        version: Version
+        major: Major
+        minor: Minor
+        revision: Revision
+        state: State

@@ -19,11 +19,14 @@ class AndroircVersionType extends AbstractType
 {
     public function buildForm(FormBuilder $builder, array $options)
     {
-        $builder->add('code')
-                ->add('major')
-                ->add('minor')
-                ->add('revision')
-                ->add('state', null, array('required' => false));
+        $builder->add('code', null, array('label' => 'androirc_version.field.code'))
+                ->add('major', null, array('label' => 'androirc_version.field.major'))
+                ->add('minor', null, array('label' => 'androirc_version.field.minor'))
+                ->add('revision', null, array('label' => 'androirc_version.field.revision'))
+                ->add('state', null, array(
+                    'required' => false,
+                    'label'    => 'androirc_version.field.state'
+                ));
     }
 
     public function getName()

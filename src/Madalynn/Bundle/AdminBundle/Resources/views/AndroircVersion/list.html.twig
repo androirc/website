@@ -1,14 +1,12 @@
 {% extends "AdminBundle:Base:list.html.twig" %}
 
-{% block title %}AndroIRC versions{% endblock %}
-
 {% block content %}
   <table class="records_list">
         <thead>
             <tr>
-                <th>Code</th>
-                <th>Version</th>
-                <th width="160px;">Actions</th>
+                <th>{{ 'androirc_version.field.code'|trans }}</th>
+                <th>{{ 'androirc_version.field.version'|trans }}</th>
+                <th width="160px;">{{ 'actions.actions'|trans }}</th>
             </tr>
         </thead>
         <tbody>
