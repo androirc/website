@@ -28,7 +28,6 @@ class BetaReleaseType extends AbstractType
                                   ->orderBy('e.code', 'desc');
                     }
                 ))
-                ->add('revision')
                 ->add('file')
                 ->add('downloadable', null, array('required' => false));
 

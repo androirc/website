@@ -86,6 +86,5 @@ beta_release:
     field:
         version: Version
         downloadable: Downloadable
-        revision: Revision
         downloads: Downloads
         repartition: Repartition

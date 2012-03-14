@@ -59,13 +59,6 @@ class BetaRelease
     public $file;
 
     /**
-     * @ORM\Column(type="integer")
-     *
-     * @Assert\Min(limit=1)
-     */
-    protected $revision;
-
-    /**
      * @ORM\Column(type="datetime")
      */
     protected $created;
@@ -145,26 +138,6 @@ class BetaRelease
     public function isDownloadable()
     {
         return $this->downloadable;
-    }
-
-    /**
-     * Set revision
-     *
-     * @param integer $revision
-     */
-    public function setRevision($revision)
-    {
-        $this->revision = $revision;
-    }
-
-    /**
-     * Get revision
-     *
-     * @return integer
-     */
-    public function getRevision()
-    {
-        return $this->revision;
     }
 
     /**

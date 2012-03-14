@@ -30,7 +30,8 @@ class BetaReleaseController extends CRUDController
 
     protected function sortQuery(QueryBuilder $qb)
     {
-        $qb->orderBy('e.revision', 'desc');
+        $qb->leftjoin('e.version', 'v')
+           ->orderBy('v.code', 'desc');
     }
 
     public function showAction($id)

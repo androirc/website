@@ -6,7 +6,6 @@
             <tr>
                 <th>{{ 'beta_release.field.version'|trans }}</th>
                 <th>{{ 'beta_release.field.downloadable'|trans }}</th>
-                <th>{{ 'beta_release.field.revision'|trans }}</th>
                 <th>{{ 'beta_release.field.downloads'|trans }}</th>
                 <th width="220px;">{{ 'actions.actions'|trans }}</th>
             </tr>
@@ -22,7 +21,6 @@
                         <img src="{{ asset('bundles/andro/images/icons/cross.png') }}" />
                     {% endif %}
                 </td>
-                <td style="text-align: center">{{ entity.revision }}</td>
                 <td style="text-align: center">{{ entity.downloads|length }}</td>
                 <td>
                     <ul>
