@@ -33,9 +33,29 @@ actions:
     filter_button: Filtrer les résultats
     resolved: Résolu
     unresolved: Non résolu
+    actions: Actions
 
 version:
     base:
         title: Gestion des versions
         android: Android
         androirc: AndroIRC
+
+item:
+    create: L'objet a été créé avec succès.
+    update: L'objet a été mis à jour avec succès.
+    delete: L'objet a été supprimé avec succès.
+
+article:
+    edit_title: %title%
+    list_title: Liste des articles
+    new_title: Nouvel article
+    list:
+        author: Auteur
+        title: Titre
+        visible: Visible
+        created: Création
+    form:
+        visible: Visible
+        content: Contenu
+        title: Titre

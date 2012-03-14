@@ -10,7 +10,7 @@
             {% if checkbox %}
                 <label class="checkbox">
                     {{ form_widget(form) }}
-                    {{ label|default(null) }}
+                    {{ label|default(null)|trans({}, translation_domain) }}
                 </label>
             {% else %}
                 {{ form_widget(form) }}

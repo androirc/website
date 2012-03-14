@@ -1,5 +1,7 @@
 {% extends "AdminBundle::backend.html.twig" %}
 
+{% block title %}{{ (entity_name ~ '.list_title')|trans }}{% endblock %}
+
 {% block page %}
     {% if filter_form.count > 1 %}
         <div id="filter-a">

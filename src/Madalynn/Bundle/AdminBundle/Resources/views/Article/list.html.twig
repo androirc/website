@@ -1,16 +1,14 @@
 {% extends "AdminBundle:Base:list.html.twig" %}
 
-{% block title %}Article list{% endblock %}
-
 {% block content %}
     <table class="records_list">
         <thead>
             <tr>
-                <th>Title</th>
-                <th>Visible</th>
-                <th>Author</th>
-                <th>Created</th>
-                <th width="160px;">Actions</th>
+                <th>{{ 'article.list.title'|trans }}</th>
+                <th>{{ 'article.list.visible'|trans }}</th>
+                <th>{{ 'article.list.author'|trans }}</th>
+                <th>{{ 'article.list.created'|trans }}</th>
+                <th width="160px;">{{ 'actions.actions'|trans }}</th>
             </tr>
         </thead>
         <tbody>

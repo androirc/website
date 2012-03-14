@@ -58,7 +58,7 @@
         <div id="page">
             {% for key,message in app.session.flashbag.all %}
                 <div class="alert alert-{{ key }}">
-                    {{ message }}
+                    {{ message|trans }}
                 </div>
             {% endfor %}
             {% block page %}{% endblock %}
