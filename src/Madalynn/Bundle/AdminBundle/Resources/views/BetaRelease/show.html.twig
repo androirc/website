@@ -1,6 +1,6 @@
 {% extends "AdminBundle:Base:show.html.twig" %}
 
-{% block title %}AndroIRC beta - {{ entity.getVersion }}{% endblock %}
+{% block title %}{{ 'beta_release.show_title'|trans({'%version%': entity.version}) }}{% endblock %}
 
 {% block javascripts %}
     {{ parent() }}
@@ -13,7 +13,7 @@
             data.addColumn('string', 'Location');
             data.addColumn('number', 'Downloads');
 
-            data.addRows({{ repartition | length }});
+            data.addRows({{ repartition|length }});
             {% for row in repartition -%}
             data.setValue({{ loop.index0 }}, 0, '{{ row.location }}');
             data.setValue({{ loop.index0 }}, 1, {{ row.downloadsCount }});
@@ -41,13 +41,13 @@
         </thead>
         <thead>
             <tr>
-                <td>Version</td>
-                <td>{{ entity.getVersion }}</td>
+                <td>{{ 'beta_release.field.version'|trans }}</td>
+                <td>{{ entity.version }}</td>
             </tr>
             <tr>
-                <td>Downloadable</td>
+                <td>{{ 'beta_release.field.downloadable'|trans }}</td>
                 <td>
-                    {% if (entity.isDownloadable) %}
+                    {% if (entity.downloadable) %}
                         <img src="{{ asset('bundles/andro/images/icons/tick.png') }}" />
                     {% else %}
                         <img src="{{ asset('bundles/andro/images/icons/cross.png') }}" />
@@ -55,15 +55,15 @@
                 </td>
             </tr>
             <tr>
-                <td>Revision</td>
-                <td>{{ entity.getRevision }}</td>
+                <td>{{ 'beta_release.field.revision'|trans }}</td>
+                <td>{{ entity.revision }}</td>
             </tr>
             <tr>
-                <td>Downloads</td>
-                <td>{{ entity.getDownloads | length }}</td>
+                <td>{{ 'beta_release.field.downloads'|trans }}</td>
+                <td>{{ entity.downloads|length }}</td>
             </tr>
             <tr>
-                <td>Repartition</td>
+                <td>{{ 'beta_release.field.repartition'|trans }}</td>
                 <td><div id="chart"></div></td>
             </tr>
         </thead>

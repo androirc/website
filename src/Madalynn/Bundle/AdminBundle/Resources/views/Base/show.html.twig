@@ -1,18 +1,16 @@
 {% extends "AdminBundle::backend.html.twig" %}
 
+{% block title %}{{ (entity_name ~ '.show_title')|trans }}{% endblock %}
+
 {% block page %}
     <h1>{{ block('title') }}</h1>
 
     {% block content %}{% endblock %}
 
-    <div id="entity_actions">
+    <div class="actions">
         {% block entity_actions %}
-            <a class="awesome red" onclick="return confirm('Are you sure?')" href="{{ path('admin_' ~ entity_name ~ '_delete', { 'id': entity.id }) }}">
-                Delete
-            </a>
-            <a class="awesome" href="{{ path('admin_' ~ entity_name ~ '_list') }}">
-                Back to the list
-            </a>
+            <a class="btn btn-danger" onclick="return confirm('Are you sure?')" href="{{ path('admin_' ~ entity_name ~ '_delete', {'id': entity.id}) }}">{{ 'actions.delete'|trans }}</a>
+            <a class="btn" href="{{ path('admin_' ~ entity_name ~ '_list') }}">{{ 'actions.back_list'|trans }}</a>
         {% endblock %}
     </div>
 {% endblock %}

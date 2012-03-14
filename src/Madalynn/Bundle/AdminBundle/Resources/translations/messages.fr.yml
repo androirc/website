@@ -77,3 +77,15 @@ user:
         email: Adresse e-mail
         password: Mot de passe
         roles: Roles
+
+beta_release:
+    edit_title: %version% beta
+    list_title: Liste des betas
+    new_title: Nouvelle beta
+    show_title: %version% beta
+    field:
+        version: Version
+        downloadable: Téléchargeable
+        revision: Révision
+        downloads: Téléchargements
+        repartition: Répartition

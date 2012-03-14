@@ -1,16 +1,14 @@
 {% extends "AdminBundle:Base:list.html.twig" %}
 
-{% block title %}Beta list{% endblock %}
-
 {% block content %}
   <table class="records_list">
         <thead>
             <tr>
-                <th>Version</th>
-                <th>Downloadable</th>
-                <th>Revision</th>
-                <th>Downloads</th>
-                <th width="200px;">Actions</th>
+                <th>{{ 'beta_release.field.version'|trans }}</th>
+                <th>{{ 'beta_release.field.downloadable'|trans }}</th>
+                <th>{{ 'beta_release.field.revision'|trans }}</th>
+                <th>{{ 'beta_release.field.downloads'|trans }}</th>
+                <th width="220px;">{{ 'actions.actions'|trans }}</th>
             </tr>
         </thead>
         <tbody>
