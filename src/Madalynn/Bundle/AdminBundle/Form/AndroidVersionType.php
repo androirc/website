@@ -19,10 +19,10 @@ class AndroidVersionType extends AbstractType
 {
     public function buildForm(FormBuilder $builder, array $options)
     {
-        $builder->add('apiLevel')
-                ->add('major')
-                ->add('minor')
-                ->add('revision');
+        $builder->add('apiLevel', null, array('label' => 'android_version.field.api_level'))
+                ->add('major', null, array('label' => 'android_version.field.major'))
+                ->add('minor', null, array('label' => 'android_version.field.minor'))
+                ->add('revision', null, array('label' => 'android_version.field.revision'));
     }
 
     public function getName()

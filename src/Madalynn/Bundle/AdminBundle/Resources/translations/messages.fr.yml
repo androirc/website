@@ -36,10 +36,7 @@ actions:
     actions: Actions
 
 version:
-    base:
-        title: Gestion des versions
-        android: Android
-        androirc: AndroIRC
+    base_title: Gestion des versions
 
 item:
     create: L'objet a été créé avec succès.
@@ -142,3 +139,14 @@ change_log:
     field:
         version: Version
         file: Fichier
+
+android_version:
+    edit_title: Edition d'une version d'Android
+    new_title: Nouvelle version d'Android
+    list_title: Liste des versions d'Android
+    field:
+        api_level: Niveau API
+        version: Version
+        major: Majeur
+        minor: Mineur
+        revision: Révision

@@ -1,14 +1,12 @@
 {% extends "AdminBundle:Base:list.html.twig" %}
 
-{% block title %}Android versions{% endblock %}
-
 {% block content %}
   <table class="records_list">
         <thead>
             <tr>
-                <th>API Level</th>
-                <th>Version</th>
-                <th width="160px;">Actions</th>
+                <th>{{ 'android_version.field.api_level'|trans }}</th>
+                <th>{{ 'android_version.field.version'|trans }}</th>
+                <th width="160px;">{{ 'actions.actions'|trans }}</th>
             </tr>
         </thead>
         <tbody>
