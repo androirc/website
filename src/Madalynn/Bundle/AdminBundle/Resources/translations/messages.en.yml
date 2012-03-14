@@ -88,3 +88,4 @@ beta_release:
         downloadable: Downloadable
         downloads: Downloads
         repartition: Repartition
+        file: File
