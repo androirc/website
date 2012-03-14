@@ -89,3 +89,12 @@ beta_release:
         downloads: Downloads
         repartition: Repartition
         file: File
+
+tip:
+    edit_title: Tip edit
+    list_title: Tip list
+    new_title: New tip
+    show_title: Tip %id%
+    field:
+        language: Language
+        content: Content

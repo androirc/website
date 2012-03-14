@@ -1,14 +1,12 @@
 {% extends "AdminBundle:Base:list.html.twig" %}
 
-{% block title %}Tip list{% endblock %}
-
 {% block content %}
   <table class="records_list">
         <thead>
             <tr>
-                <th>Language</th>
-                <th>Content</th>
-                <th width="160px;">Actions</th>
+                <th>{{ 'tip.field.language'|trans }}</th>
+                <th>{{ 'tip.field.content'|trans }}</th>
+                <th width="160px;">{{ 'actions.actions'|trans }}</th>
             </tr>
         </thead>
         <tbody>
