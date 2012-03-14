@@ -1,6 +1,6 @@
 {% extends "AdminBundle:Base:show.html.twig" %}
 
-{% block title %}Tip Holiday #{{entity.getId }}{% endblock %}
+{% block title %}{{ 'tip_holiday.show_title'|trans({'%id%': entity.id}) }}{% endblock %}
 
 {% block content %}
     <table class="records_list">

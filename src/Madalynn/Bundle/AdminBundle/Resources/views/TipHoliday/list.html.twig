@@ -1,15 +1,13 @@
 {% extends "AdminBundle:Base:list.html.twig" %}
 
-{% block title %}Tip Holiday list{% endblock %}
-
 {% block content %}
   <table class="records_list">
         <thead>
             <tr>
-                <th>Language</th>
-                <th>Date</th>
-                <th>Content</th>
-                <th width="160px;">Actions</th>
+                <th>{{ 'tip_holiday.field.language'|trans }}</th>
+                <th>{{ 'tip_holiday.field.date'|trans }}</th>
+                <th>{{ 'tip_holiday.field.content'|trans }}</th>
+                <th width="160px;">{{ 'actions.actions'|trans }}</th>
             </tr>
         </thead>
         <tbody>

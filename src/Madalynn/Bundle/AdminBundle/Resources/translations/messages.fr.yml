@@ -122,3 +122,15 @@ quick_start:
         version_max: Version max
         version_none: Aucune
         content: Contenu
+
+tip_holiday:
+    list_title: Liste des Tips Holiday
+    new_title: Nouveau Tip Holiday
+    edit_title: Edition d'un Tip Holiday
+    show_title: Tip Holiday %id%
+    field:
+        language: Langue
+        date: Date
+        content: Contenu
+        day: Jour
+        month: Mois

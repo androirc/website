@@ -23,10 +23,19 @@ class TipHolidayType extends AbstractType
         $days = range(1, 31);
         $months = range(1, 12);
 
-        $builder->add('language', 'language', array('preferred_choices' => array('en', 'fr')))
-                ->add('day', 'choice', array('choices' => array_combine($days, $days)))
-                ->add('month', 'choice', array('choices' => array_combine($months, $months)))
-                ->add('content', 'textarea');
+        $builder->add('language', 'language', array(
+                    'preferred_choices' => array('en', 'fr'),
+                    'label'             => 'tip_holiday.field.language'
+                ))
+                ->add('day', 'choice', array(
+                    'choices' => array_combine($days, $days),
+                    'label'   => 'tip_holiday.field.day'
+                ))
+                ->add('month', 'choice', array(
+                    'choices' => array_combine($months, $months),
+                    'label'   => 'tip_holiday.field.month'
+                ))
+                ->add('content', 'textarea', array('label' => 'tip_holiday.field.content'));
     }
 
     public function getName()
