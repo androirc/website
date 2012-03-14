@@ -1,0 +1,39 @@
+admin_android_version_list:
+    pattern:  /{page}
+    defaults: { _controller: "AdminBundle:AndroidVersion:list", page: 1 }
+    requirements:
+        page:  \d+
+
+admin_android_version_filter:
+    pattern:  /filter
+    defaults: { _controller: "AdminBundle:AndroidVersion:filter" }
+
+admin_android_version_clear:
+    pattern:  /clear
+    defaults: { _controller: "AdminBundle:AndroidVersion:clear" }
+
+admin_android_version_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "AdminBundle:AndroidVersion:show" }
+
+admin_android_version_new:
+    pattern:  /new
+    defaults: { _controller: "AdminBundle:AndroidVersion:new" }
+
+admin_android_version_create:
+    pattern:  /create
+    defaults: { _controller: "AdminBundle:AndroidVersion:create" }
+    requirements: { _method: post }
+
+admin_android_version_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "AdminBundle:AndroidVersion:edit" }
+
+admin_android_version_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "AdminBundle:AndroidVersion:update" }
+    requirements: { _method: post }
+
+admin_android_version_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "AdminBundle:AndroidVersion:delete" }

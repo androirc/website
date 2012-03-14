@@ -57,3 +57,8 @@ admin_version:
 admin_base_androirc_version:
     resource: 'routing/androirc_version.yml'
     prefix:   /version/androirc
+
+# Android version
+admin_base_android_version:
+    resource: 'routing/android_version.yml'
+    prefix:   /version/android
