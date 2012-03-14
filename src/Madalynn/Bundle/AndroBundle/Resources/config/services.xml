@@ -17,7 +17,7 @@
         </service>
 
         <service id="androirc.location" class="%androirc.location.class%">
-            <argument type="service" id="buzz" />
+            <argument type="service" id="bazinga_geocoder.geocoder" />
         </service>
 
         <!-- Listeners -->

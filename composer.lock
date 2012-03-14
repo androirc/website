@@ -1,5 +1,5 @@
 {
-    "hash": "ccf992d1bba07d53467b0f454d9b735e",
+    "hash": "337ab41b4e8958ea7692e6b882c5980d",
     "packages": [
         {
             "package": "doctrine/common",
@@ -118,7 +118,8 @@
         {
             "package": "symfony/symfony",
             "version": "dev-master",
-            "source-reference": "e01106f2b3d2fa3d333f24298a05db1381e181eb"
+            "source-reference": "e01106f2b3d2fa3d333f24298a05db1381e181eb",
+            "alias": "2.1.9999999.9999999-dev"
         },
         {
             "package": "twig/extensions",
@@ -133,6 +134,16 @@
             "package": "white-october/pagerfanta-bundle",
             "version": "dev-master",
             "source-reference": "60d98f508010b0fab6a93bf079be39f4c9537f7c"
+        },
+        {
+            "package": "willdurand/geocoder",
+            "version": "dev-master",
+            "source-reference": "0e0b90ce2c101e7829240c66e26fb042d32c0233"
+        },
+        {
+            "package": "willdurand/geocoder-bundle",
+            "version": "dev-master",
+            "source-reference": "b8ec6115f9969b616c52ce838fb3a1a151bb456f"
         }
     ],
     "aliases": []

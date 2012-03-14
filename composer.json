@@ -15,7 +15,8 @@
         "madalynn/plum-bundle": "dev-master",
         "sensio/buzz-bundle": "dev-master",
         "nercury-jms/i18n-routing-bundle": "dev-master",
-        "sensio/distribution-bundle": "dev-master"
+        "sensio/distribution-bundle": "dev-master",
+        "willdurand/geocoder-bundle": "dev-master"
     },
     "scripts": {
         "post-install-cmd": [

@@ -12,20 +12,21 @@
 
 namespace Madalynn\Bundle\AndroBundle;
 
-use Buzz\Browser;
+use Geocoder\Geocoder;
 
 class Location
 {
-    private $buzz;
+    private $geocoder;
 
-    public function __construct(Browser $buzz)
+    public function __construct(Geocoder $geocoder)
     {
-        $this->buzz = $buzz;
+        $this->geocoder = $geocoder;
     }
 
     public function searchLocation($ip)
     {
-        return $this->buzz->get('http://geoip.wtanaka.com/cc/'.$ip)
-                          ->getContent();
+        $informations = $this->geocoder->geocode($ip);
+
+        return $informations['country'];
     }
 }

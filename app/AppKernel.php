@@ -30,6 +30,7 @@ class AppKernel extends Kernel
             new Sensio\Bundle\BuzzBundle\SensioBuzzBundle(),
             new JMS\I18nRoutingBundle\JMSI18nRoutingBundle(),
             new Symfony\Bundle\MonologBundle\MonologBundle(),
+            new Bazinga\Bundle\GeocoderBundle\BazingaGeocoderBundle(),
 
             new Madalynn\Bundle\AdmobBundle\MadalynnAdmobBundle(),
             new Madalynn\Bundle\AndroBundle\AndroBundle(),
