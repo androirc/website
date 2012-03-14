@@ -3,12 +3,12 @@
     "packages": [
         {
             "package": "doctrine/common",
-            "version": "2.2.0"
+            "version": "2.2.1"
         },
         {
             "package": "doctrine/data-fixtures",
             "version": "dev-master",
-            "source-reference": "ffee818a6e3af526b774de11b690a36512fa6235"
+            "source-reference": "aea0b95a554188892f10d8f09ce3ae8150f28f8b"
         },
         {
             "package": "doctrine/dbal",
@@ -17,7 +17,7 @@
         {
             "package": "doctrine/doctrine-bundle",
             "version": "dev-master",
-            "source-reference": "ff676b6147a83b695b0033b228e160d920612365"
+            "source-reference": "90e39fb7ff5b4c13577602dab7e08c90067160b4"
         },
         {
             "package": "doctrine/doctrine-fixtures-bundle",
@@ -46,7 +46,7 @@
         {
             "package": "kriswallsmith/assetic",
             "version": "dev-master",
-            "source-reference": "ba88ad4e2c7122b270a2e06a2b79f6dba6413050"
+            "source-reference": "2634d29cc193981761e3daf28e1afc6358bb43b1"
         },
         {
             "package": "kriswallsmith/buzz",
@@ -98,7 +98,7 @@
         {
             "package": "symfony/assetic-bundle",
             "version": "dev-master",
-            "source-reference": "52cf0eaa7160cbe33bcf1ed7224c7619ceeebbdc"
+            "source-reference": "b9cff021abc3d9433a892fa9908d9856393c0d09"
         },
         {
             "package": "symfony/monolog-bundle",
@@ -118,8 +118,7 @@
         {
             "package": "symfony/symfony",
             "version": "dev-master",
-            "source-reference": "42923f30448e4aa5897139c3bec727fc9797cde0",
-            "alias": "2.1.9999999.9999999-dev"
+            "source-reference": "e01106f2b3d2fa3d333f24298a05db1381e181eb"
         },
         {
             "package": "twig/extensions",
