@@ -19,5 +19,7 @@ $files = array(
 );
 
 foreach ($files as $file) {
-    file_put_contents($file, preg_replace($replace[0], $replace[1], file_get_contents($file)));
+    if (true === file_exists($file)) {
+        file_put_contents($file, preg_replace($replace[0], $replace[1], file_get_contents($file)));
+    }
 }
