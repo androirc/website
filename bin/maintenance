@@ -1,0 +1,23 @@
+#!/usr/bin/env php
+<?php
+
+$mode = isset($_SERVER['argv'][1]) ? $_SERVER['argv'][1] : 'off';
+$maintenance = $mode == 'on';
+
+echo sprintf("Setting the site in maintenance: %s\n", $mode);
+
+if (true === $maintenance) {
+    $replace = array('#^/{2,}(include "maintenance.php";)#m', '$1');
+} else {
+    $replace = array('#^(include "maintenance.php";)#m', '//$1');
+}
+
+// List of files
+$files = array(
+    __DIR__.'/../web/app.php',
+    __DIR__.'/../web/app_dev.php'
+);
+
+foreach ($files as $file) {
+    file_put_contents($file, preg_replace($replace[0], $replace[1], file_get_contents($file)));
+}
