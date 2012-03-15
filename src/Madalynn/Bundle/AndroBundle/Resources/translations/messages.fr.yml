@@ -40,8 +40,8 @@ sidebar:
     market:
         name: Google Play
         desc: |
-            Vous pouvez télécharger AndroIRC directement depuis l'Android Market
-            ou alors en scannant l'un des codes barres suivants
+            Vous pouvez télécharger AndroIRC directement depuis Google Play
+            (Android Market) ou alors en scannant l'un des codes barres suivants
         free: Gratuit
         premium: Premium
     team: L'équipe AndroIRC

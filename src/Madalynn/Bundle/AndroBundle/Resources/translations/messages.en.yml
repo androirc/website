@@ -62,7 +62,7 @@ beta:
     name: Latest AndroIRC beta version
     desc: |
         You can now download the latest beta of AndroIRC! This file is not
-        available in the Android Market because <strong>it still contains
+        available in Google Play (Android Market) because <strong>it still contains
         bugs</strong>. Keep in mind that it's just a beta release ;). If you
         find a bug, you can contact us or just post a new ticket in the bug
         tracker. Thanks!
