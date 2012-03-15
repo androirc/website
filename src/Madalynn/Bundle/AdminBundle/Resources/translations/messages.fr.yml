@@ -155,6 +155,7 @@ androirc_version:
     edit_title: Edition d'une version d'AndroIRC
     new_title: Nouvelle version d'AndroIRC
     list_title: Liste des versions d'AndroIRC
+    add_new: Ajouter une nouvelle version d'AndroIRC
     field:
         code: Code
         version: Version
