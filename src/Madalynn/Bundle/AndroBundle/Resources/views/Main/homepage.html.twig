@@ -11,5 +11,5 @@
         {% include 'AndroBundle:Article:article.html.twig' with { 'article': article, 'sumup': true } %}
     {% endfor %}
 
-    <a style="float: right; "class="awesome" href="{{ path('archives') }}">» {{ 'article.archives'|trans }}</a>
+    <a style="float: right;" class="btn" href="{{ path('archives') }}">» {{ 'article.archives'|trans }}</a>
 {% endblock %}

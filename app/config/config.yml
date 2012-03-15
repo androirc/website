@@ -12,7 +12,7 @@ framework:
     validation:      { enable_annotations: true }
     templating:
         engines:               ['twig']
-        assets_version:        2012030101
+        assets_version:        2012031501
         assets_version_format: %%s?v=%%s
     session:
         auto_start:      true

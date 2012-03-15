@@ -24,6 +24,10 @@ header {
     background: url("/bundles/andro/images/header_bottom.png");
 }
 
+nav#menu li:hover {
+    background: url("/bundles/andro/images/menu-hover.png") repeat-x;
+}
+
 #logo {
     width: 284px;
     height: 75px;
