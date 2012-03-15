@@ -94,6 +94,7 @@ contact:
     android_version: Android version
     content: Content
     submit: Send your message
+    flash: Your message has been sent.
 
 article:
     date_format: m/d/Y

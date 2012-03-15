@@ -101,6 +101,7 @@ contact:
     android_version: Version d'Android
     content: Contenu
     submit: Envoyer votre message
+    flash: Votre message a été correctement envoyé.
 
 article:
     date_format: d/m/Y
