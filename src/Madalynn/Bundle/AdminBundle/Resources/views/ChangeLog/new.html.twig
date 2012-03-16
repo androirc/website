@@ -2,7 +2,7 @@
 
 {% block page %}
     <div class="title-right">
-        <a class="btn btn-success" href="#">{{ 'androirc_version.add_new'|trans }}</a>
+        <a class="btn btn-success" href="{{ path('admin_androirc_version_new') }}">{{ 'androirc_version.add_new'|trans }}</a>
     </div>
     {{ parent() }}
 {% endblock %}
