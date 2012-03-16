@@ -50,14 +50,6 @@
                 <source>menu.donate</source>
                 <target>Donate</target>
             </trans-unit>
-            <trans-unit id="sidebar.admin.name">
-                <source>sidebar.admin.name</source>
-                <target>Administration</target>
-            </trans-unit>
-            <trans-unit id="sidebar.admin.button">
-                <source>sidebar.admin.button</source>
-                <target>Go to the administration center</target>
-            </trans-unit>
             <trans-unit id="sidebar.mobile.name">
                 <source>sidebar.mobile.name</source>
                 <target>Mobile version</target>
@@ -189,34 +181,6 @@
             <trans-unit id="article.posted_by">
                 <source>article.posted_by</source>
                 <target>News posted by %name%</target>
-            </trans-unit>
-            <trans-unit id="article.edit">
-                <source>article.edit</source>
-                <target>edit</target>
-            </trans-unit>
-            <trans-unit id="article.not_visible">
-                <source>article.not_visible</source>
-                <target>not visible</target>
-            </trans-unit>
-            <trans-unit id="login.title">
-                <source>login.title</source>
-                <target>You need to signin to see this page</target>
-            </trans-unit>
-            <trans-unit id="login.username">
-                <source>login.username</source>
-                <target>Username</target>
-            </trans-unit>
-            <trans-unit id="login.password">
-                <source>login.password</source>
-                <target>Password</target>
-            </trans-unit>
-            <trans-unit id="login.remember_me">
-                <source>login.remember_me</source>
-                <target>Remember me</target>
-            </trans-unit>
-            <trans-unit id="login.submit">
-                <source>login.submit</source>
-                <target>Sign in</target>
             </trans-unit>
             <trans-unit id="footer.community.name">
                 <source>footer.community.name</source>

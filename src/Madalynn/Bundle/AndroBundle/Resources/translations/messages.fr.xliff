@@ -50,14 +50,6 @@
                 <source>menu.donate</source>
                 <target>Donation</target>
             </trans-unit>
-            <trans-unit id="sidebar.admin.name">
-                <source>sidebar.admin.name</source>
-                <target>Administration</target>
-            </trans-unit>
-            <trans-unit id="sidebar.admin.button">
-                <source>sidebar.admin.button</source>
-                <target>Aller au centre d'administration</target>
-            </trans-unit>
             <trans-unit id="sidebar.mobile.name">
                 <source>sidebar.mobile.name</source>
                 <target>Version mobile</target>
@@ -189,34 +181,6 @@
             <trans-unit id="article.posted_by">
                 <source>article.posted_by</source>
                 <target>Actualité postée par %name%</target>
-            </trans-unit>
-            <trans-unit id="article.edit">
-                <source>article.edit</source>
-                <target>editer</target>
-            </trans-unit>
-            <trans-unit id="article.not_visible">
-                <source>article.not_visible</source>
-                <target>non visible</target>
-            </trans-unit>
-            <trans-unit id="login.title">
-                <source>login.title</source>
-                <target>Vous devez être identifié pour visualiser cette page</target>
-            </trans-unit>
-            <trans-unit id="login.username">
-                <source>login.username</source>
-                <target>Nom d'utilisateur</target>
-            </trans-unit>
-            <trans-unit id="login.password">
-                <source>login.password</source>
-                <target>Mot de passe</target>
-            </trans-unit>
-            <trans-unit id="login.remember_me">
-                <source>login.remember_me</source>
-                <target>Se souvenir de moi</target>
-            </trans-unit>
-            <trans-unit id="login.submit">
-                <source>login.submit</source>
-                <target>Se connecter</target>
             </trans-unit>
             <trans-unit id="footer.community.name">
                 <source>footer.community.name</source>

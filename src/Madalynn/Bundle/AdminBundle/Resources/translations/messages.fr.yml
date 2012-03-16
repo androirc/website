@@ -5,6 +5,10 @@ dashboard:
     welcome: Bienvenue %username% !
     subtitle: Bienvenue dans le centre d'administration
 
+sidebar.admin:
+    name: Administration
+    button: Aller au centre d'administration
+
 menu:
     frontend: Retour
     article: Article
@@ -18,6 +22,13 @@ menu:
     changelog: Change Log
     version: Version
     logout: Déconnexion
+
+login:
+    title: Vous devez être identifié pour visualiser cette page
+    username: Nom d'utilisateur
+    password: Mot de passe
+    remember_me: Se souvenir de moi
+    submit: Se connecter
 
 actions:
     show: Voir
@@ -46,6 +57,8 @@ item:
 
 article:
     edit_title: %title%
+    edit: editer
+    not_visible: non visible
     list_title: Liste des articles
     new_title: Nouvel article
     field:
