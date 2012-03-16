@@ -38,6 +38,7 @@ class ContactType extends AbstractType
                     'required' => false,
                     'query_builder' => function(EntityRepository $er) {
                         return $er->createQueryBuilder('e')
+                                  ->setMaxResults(5)
                                   ->orderBy('e.code', 'desc');
                     }
                 ))
