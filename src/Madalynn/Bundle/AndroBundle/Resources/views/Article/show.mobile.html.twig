@@ -4,7 +4,7 @@
 
 {% block content %}
     {# Article layout #}
-    {% include 'AndroBundle:Article:article-mobile.html.twig' with {'article': article, 'sumup': false} %}
+    {% include 'AndroBundle:Article:article.mobile.html.twig' with {'article': article, 'sumup': false} %}
 
     {# Disqus layout #}
     {% include 'AndroBundle:Article:disqus.html.twig' with {'article': article} %}
