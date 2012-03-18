@@ -4,7 +4,7 @@
 
 {% block content %}
     {% if changelog %}
-        <h1>Changelog v{{ changelog.getVersion }}</h1>
+        <h1>Changelog v{{ changelog.version }}</h1>
 
         <ul>
             {% for change in changelog.changes %}

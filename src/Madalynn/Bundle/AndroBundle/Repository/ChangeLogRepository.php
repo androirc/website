@@ -25,6 +25,8 @@ class ChangeLogRepository extends EntityRepository
                           ->where('v.code <= :version')
                           ->orderBy('v.code', 'desc')
                           ->setParameter('version', $version->getCode())
+                          ->orderBy('v.code', 'desc')
+                          ->setMaxResults(1)
                           ->getQuery()
                           ->getOneOrNullResult();
 
