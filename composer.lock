@@ -118,8 +118,7 @@
         {
             "package": "symfony/symfony",
             "version": "dev-master",
-            "source-reference": "e01106f2b3d2fa3d333f24298a05db1381e181eb",
-            "alias": "2.1.9999999.9999999-dev"
+            "source-reference": "3d84153d687c285b1356683298531421ec108359"
         },
         {
             "package": "twig/extensions",
@@ -128,7 +127,7 @@
         },
         {
             "package": "twig/twig",
-            "version": "1.6.1"
+            "version": "1.6.2"
         },
         {
             "package": "white-october/pagerfanta-bundle",
