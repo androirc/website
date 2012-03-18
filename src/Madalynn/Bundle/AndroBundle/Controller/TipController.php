@@ -29,12 +29,12 @@ class TipController extends AbstractController
         if (null !== $date) {
             try {
                 $date = new \DateTime($date);
-            } catch (\Exception $e) {
-                throw $this->createNotFoundException('Unable to parse the datetime');
-            }
 
-            $repo = $em->getRepository('AndroBundle:TipHoliday');
-            $tip = $repo->findByDate($lang, $date);
+                $repo = $em->getRepository('AndroBundle:TipHoliday');
+                $tip = $repo->findByDate($lang, $date);
+            } catch (\Exception $e) {
+                // Fallback to the tip without date
+            }
         }
 
         if (null === $tip) {
