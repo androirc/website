@@ -7,7 +7,7 @@ php:
 before_script:
     - cp app/config/parameters.ini.test app/config/parameters.ini
     - wget -nc http://getcomposer.org/composer.phar
-    - php composer.phar update
+    - php composer.phar install
     - ./bin/travis
 
 script: phpunit -c app/
