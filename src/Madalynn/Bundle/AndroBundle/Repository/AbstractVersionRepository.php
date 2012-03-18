@@ -26,18 +26,19 @@ abstract class AbstractVersionRepository extends EntityRepository
      */
     public function populate(AbstractVersion $version)
     {
-        $versions = $this->createQueryBuilder('v')
-                         ->where('v.major = :major')
-                         ->andWhere('v.minor = :minor')
-                         ->andWhere('v.revision = :revision')
-                         ->setParameters(array(
-                             'major'    => $version->getMajor(),
-                             'minor'    => $version->getMinor(),
-                             'revision' => $version->getRevision()
-                         ))
-                         ->getQuery()
-                         ->execute();
+        $version = $this->createQueryBuilder('v')
+                        ->where('v.major = :major')
+                        ->andWhere('v.minor = :minor')
+                        ->andWhere('v.revision = :revision')
+                        ->setParameters(array(
+                            'major'    => $version->getMajor(),
+                            'minor'    => $version->getMinor(),
+                            'revision' => $version->getRevision()
+                        ))
+                        ->orderBy('v.code', 'desc')
+                        ->getQuery()
+                        ->getOneOrNullResult();
 
-        return $versions ? $versions[0] : null;
+        return $version;
     }
 }
