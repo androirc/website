@@ -36,6 +36,7 @@ abstract class AbstractVersionRepository extends EntityRepository
                             'revision' => $version->getRevision()
                         ))
                         ->orderBy('v.code', 'desc')
+                        ->setMaxResults(1)
                         ->getQuery()
                         ->getOneOrNullResult();
 
