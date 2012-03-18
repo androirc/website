@@ -43,7 +43,7 @@ class BetaController extends AbstractController
 
         $beta = $repo->getLastBeta();
 
-        return (null === $beta) ? new Response('-1') : new Response($beta->getRevision());
+        return (null === $beta) ? new Response('-1') : new Response($beta->getVersion()->getCode());
     }
 
     public function downloadAction(Request $request)
