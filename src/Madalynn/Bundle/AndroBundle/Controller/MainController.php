@@ -57,7 +57,7 @@ class MainController extends AbstractController
         $em   = $this->getDoctrine()->getEntityManager();
         $repo = $em->getRepository('AndroBundle:Donator');
 
-        return $this->renderWithMobile('AndroBundle:Main:donate.html.twig', array(
+        return $this->render('AndroBundle:Main:donate.html.twig', array(
             'donators' => $repo->getDonators()
         ));
     }
