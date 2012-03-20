@@ -1,18 +1,18 @@
 <?xml version="1.0"?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-    <file source-language="en" datatype="plaintext" original="messages.en.xliff">
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+    <file datatype="plaintext" original="messages.en.xliff" source-language="en">
         <body>
             <trans-unit id="meta.keywords">
                 <source>meta.keywords</source>
-                <target>android, irc, client, gratuit, app, mirc, androirc, market, play, logging, sasl, authentication, blowfish, plain, identification, nickserv, themes, smartphone, application, téléphone, apps, ircd, communication, internet, relay, chat, server, freenode, epiknet, quakenet, efnet, undernet, ident, nick, nickname, chan, channel, kick, ban, op, halfop, voice</target>
+                <target>android, irc, client, gratuit, app, mirc, androirc, market, play, logging, sasl, authentication, blowfish, plain, identification, nickserv, themes, smartphone, application, t&#xE9;l&#xE9;phone, apps, ircd, communication, internet, relay, chat, server, freenode, epiknet, quakenet, efnet, undernet, ident, nick, nickname, chan, channel, kick, ban, op, halfop, voice</target>
             </trans-unit>
             <trans-unit id="header.subtitle">
                 <source>header.subtitle</source>
-                <target>Client IRC pour Android™</target>
+                <target>Client IRC pour Android&#x2122;</target>
             </trans-unit>
             <trans-unit id="header.untranslated">
                 <source>header.untranslated</source>
-                <target>Certains éléments de cette page ne sont pas disponibles dans cette langue</target>
+                <target>Certains &#xE9;l&#xE9;ments de cette page ne sont pas disponibles dans cette langue</target>
             </trans-unit>
             <trans-unit id="global.cancel">
                 <source>global.cancel</source>
@@ -20,7 +20,7 @@
             </trans-unit>
             <trans-unit id="menu.news">
                 <source>menu.news</source>
-                <target>Actualités</target>
+                <target>Actualit&#xE9;s</target>
             </trans-unit>
             <trans-unit id="menu.wiki">
                 <source>menu.wiki</source>
@@ -40,7 +40,7 @@
             </trans-unit>
             <trans-unit id="menu.download">
                 <source>menu.download</source>
-                <target>Télécharger</target>
+                <target>T&#xE9;l&#xE9;charger</target>
             </trans-unit>
             <trans-unit id="menu.eula">
                 <source>menu.eula</source>
@@ -68,7 +68,7 @@
             </trans-unit>
             <trans-unit id="sidebar.market.desc">
                 <source>sidebar.market.desc</source>
-                <target>Vous pouvez télécharger AndroIRC directement depuis Google Play (Android Market) ou alors en scannant l'un des codes barres suivants</target>
+                <target>Vous pouvez t&#xE9;l&#xE9;charger AndroIRC directement depuis Google Play (Android Market) ou alors en scannant l'un des codes barres suivants</target>
             </trans-unit>
             <trans-unit id="sidebar.market.free">
                 <source>sidebar.market.free</source>
@@ -80,7 +80,7 @@
             </trans-unit>
             <trans-unit id="sidebar.team">
                 <source>sidebar.team</source>
-                <target>L'équipe AndroIRC</target>
+                <target>L'&#xE9;quipe AndroIRC</target>
             </trans-unit>
             <trans-unit id="sidebar.facebook">
                 <source>sidebar.facebook</source>
@@ -92,7 +92,7 @@
             </trans-unit>
             <trans-unit id="homepage.introduction">
                 <source>homepage.introduction</source>
-                <target>AndroIRC est un client IRC pour Android permettant la connexion à plusieurs serveurs (de manière sécurisée ou non) en même temps. Support des couleurs mIRC, rejoindre ses salons automatiquement à la connexion, identification via NickServ/SASL, logging, plusieurs thèmes et bien plus !</target>
+                <target>AndroIRC est un client IRC pour Android permettant la connexion &#xE0; plusieurs serveurs (de mani&#xE8;re s&#xE9;curis&#xE9;e ou non) en m&#xEA;me temps. Support des couleurs mIRC, rejoindre ses salons automatiquement &#xE0; la connexion, identification via NickServ/SASL, logging, plusieurs th&#xE8;mes et bien plus !</target>
             </trans-unit>
             <trans-unit id="screenshots.name">
                 <source>screenshots.name</source>
@@ -100,15 +100,15 @@
             </trans-unit>
             <trans-unit id="beta.name">
                 <source>beta.name</source>
-                <target>Dernière version beta de AndroIRC</target>
+                <target>Derni&#xE8;re version beta de AndroIRC</target>
             </trans-unit>
             <trans-unit id="beta.desc">
                 <source>beta.desc</source>
-                <target>Vous pouvez maintenant télécharger la dernière version beta de AndroIRC ! Cette version n'est pas (et ne sera jamais) disponible sur Google Play parcequ'elle &lt;strong&gt;contient toujours des bugs&lt;/strong&gt;. Il est nécesaire de garder en tête que celà reste une version beta ;) Si vous trouvez un nouveau bug, vous pouvez nous contacter via le formulaire en ligne ou alors en postant une nouvelle entrée dans le bug tracker (le lien est disponible en bas de page). Merci !</target>
+                <target>Vous pouvez maintenant t&#xE9;l&#xE9;charger la derni&#xE8;re version beta de AndroIRC ! Cette version n'est pas (et ne sera jamais) disponible sur Google Play parcequ'elle &lt;strong&gt;contient toujours des bugs&lt;/strong&gt;. Il est n&#xE9;cesaire de garder en t&#xEA;te que cel&#xE0; reste une version beta ;) Si vous trouvez un nouveau bug, vous pouvez nous contacter via le formulaire en ligne ou alors en postant une nouvelle entr&#xE9;e dans le bug tracker (le lien est disponible en bas de page). Merci !</target>
             </trans-unit>
             <trans-unit id="beta.button">
                 <source>beta.button</source>
-                <target>Télécharger la dernière beta de AndroIRC</target>
+                <target>T&#xE9;l&#xE9;charger la derni&#xE8;re beta de AndroIRC</target>
             </trans-unit>
             <trans-unit id="beta.subtitle">
                 <source>beta.subtitle</source>
@@ -128,19 +128,19 @@
             </trans-unit>
             <trans-unit id="donate.desc">
                 <source>donate.desc</source>
-                <target>AndroIRC est &lt;strong&gt;gratuit&lt;/strong&gt; et vous pouvez le télécharger gratuitement sur l'Android Market. Cependant, nous nous des &lt;strong&gt;charges&lt;/strong&gt; notamment au niveau de l'administration de nos serveurs. Si vous souhaitez supporter AndroIRC, il existe deux solutions :</target>
+                <target>AndroIRC est &lt;strong&gt;gratuit&lt;/strong&gt; et vous pouvez le t&#xE9;l&#xE9;charger gratuitement sur l'Android Market. Cependant, nous nous des &lt;strong&gt;charges&lt;/strong&gt; notamment au niveau de l'administration de nos serveurs. Si vous souhaitez supporter AndroIRC, il existe deux solutions :</target>
             </trans-unit>
             <trans-unit id="donate.thanks">
                 <source>donate.thanks</source>
-                <target>Merci à</target>
+                <target>Merci &#xE0;</target>
             </trans-unit>
             <trans-unit id="donate.also">
                 <source>donate.also</source>
-                <target>Vous pouvez aussi télécharger l'application premium "AndroIRC premium" disponible sur l'Android Market. Cette application s'occupe de supprimer l'ensemble des publicités présentes sur l'application originel.</target>
+                <target>Vous pouvez aussi t&#xE9;l&#xE9;charger l'application premium "AndroIRC premium" disponible sur l'Android Market. Cette application s'occupe de supprimer l'ensemble des publicit&#xE9;s pr&#xE9;sentes sur l'application originel.</target>
             </trans-unit>
             <trans-unit id="contact.desc">
                 <source>contact.desc</source>
-                <target>Vous pouvez utiliser ce formulaire pour contacter l'équipe, soumettre un bug ou juste pour poser une question. Si vous utilisez ce formulaire pour soumettre un bug, merci de remplir les champs concernant les versions de Android et AndroIRC pour simplifier l'identification du problème.</target>
+                <target>Vous pouvez utiliser ce formulaire pour contacter l'&#xE9;quipe, soumettre un bug ou juste pour poser une question. Si vous utilisez ce formulaire pour soumettre un bug, merci de remplir les champs concernant les versions de Android et AndroIRC pour simplifier l'identification du probl&#xE8;me.</target>
             </trans-unit>
             <trans-unit id="contact.name">
                 <source>contact.name</source>
@@ -168,7 +168,7 @@
             </trans-unit>
             <trans-unit id="contact.flash">
                 <source>contact.flash</source>
-                <target>Votre message a été correctement envoyé.</target>
+                <target>Votre message a &#xE9;t&#xE9; correctement envoy&#xE9;.</target>
             </trans-unit>
             <trans-unit id="article.date_format">
                 <source>article.date_format</source>
@@ -180,11 +180,11 @@
             </trans-unit>
             <trans-unit id="article.posted_by">
                 <source>article.posted_by</source>
-                <target>Actualité postée par %name%</target>
+                <target>Actualit&#xE9; post&#xE9;e par %name%</target>
             </trans-unit>
             <trans-unit id="footer.community.name">
                 <source>footer.community.name</source>
-                <target>Communauté</target>
+                <target>Communaut&#xE9;</target>
             </trans-unit>
             <trans-unit id="footer.community.desc">
                 <source>footer.community.desc</source>
@@ -208,7 +208,7 @@
             </trans-unit>
             <trans-unit id="footer.otherpages.beta">
                 <source>footer.otherpages.beta</source>
-                <target>Télécharger la dernière beta</target>
+                <target>T&#xE9;l&#xE9;charger la derni&#xE8;re beta</target>
             </trans-unit>
             <trans-unit id="footer.otherpages.bug">
                 <source>footer.otherpages.bug</source>
@@ -220,11 +220,11 @@
             </trans-unit>
             <trans-unit id="footer.otherpages.premium">
                 <source>footer.otherpages.premium</source>
-                <target>Télécharger AndroIRC premium</target>
+                <target>T&#xE9;l&#xE9;charger AndroIRC premium</target>
             </trans-unit>
             <trans-unit id="footer.otherpages.translation">
                 <source>footer.otherpages.translation</source>
-                <target>Aidez nous à traduire AndroIRC</target>
+                <target>Aidez nous &#xE0; traduire AndroIRC</target>
             </trans-unit>
             <trans-unit id="footer.otherpages.contact">
                 <source>footer.otherpages.contact</source>
@@ -236,7 +236,7 @@
             </trans-unit>
             <trans-unit id="footer.copyright.desc">
                 <source>footer.copyright.desc</source>
-                <target>%year% Madalynn, tous droits réservés. Android™ est une marque de Google Inc.</target>
+                <target>%year% Madalynn, tous droits r&#xE9;serv&#xE9;s. Android&#x2122; est une marque de Google Inc.</target>
             </trans-unit>
         </body>
     </file>

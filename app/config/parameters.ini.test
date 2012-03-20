@@ -1,16 +1,19 @@
 [parameters]
-    database_driver   = pdo_mysql
-    database_host     =
-    database_port     =
-    database_name     = androirc
-    database_user     = root
-    database_password =
+    database_driver    = pdo_mysql
+    database_host      =
+    database_port      =
+    database_name      = androirc
+    database_user      = root
+    database_password  =
 
-    java_path         = /usr/bin/java
-    locale            = en
+    java_path          = /usr/bin/java
+    locale             = en
 
-    secret            = 3e6a2b79284b767d6e2163424d464776
+    secret             = 3e6a2b79284b767d6e2163424d464776
 
-    akismet_api_key   = 274d586b2d68255d71794b4a2d283552
+    akismet_api_key    = 274d586b2d68255d71794b4a2d283552
 
-    deploy_password   = 2d68255d9284b76
+    deploy_password    = 2d68255d9284b76
+
+    transifex_username = androirc
+    transifex_password = secretpassword
