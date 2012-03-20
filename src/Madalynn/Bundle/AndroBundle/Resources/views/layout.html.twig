@@ -90,9 +90,8 @@
                 </section>
                 <section class="column">
                     <h2>{{ 'footer.copyright.name'|trans }}</h2>
-                    <p>
-                        &copy; {{ 'footer.copyright.desc'|trans({'%year%': 'now'|date('Y')})|replace({'Madalynn': '<a href="http://www.madalynn.eu/">Madalynn</a>'})|raw }}
-                    </p>
+                    <p>&copy; {{ 'footer.copyright.desc'|trans({'%year%': 'now'|date('Y')})|replace({'Madalynn': '<a href="http://www.madalynn.eu/">Madalynn</a>'})|raw }}</p>
+                    <p>{{ 'footer.translation_by'|trans }}</p>
                     <p id="about">
                         <img src="{{ asset('bundles/andro/images/html5.png') }}" />
                         <img src="{{ asset('bundles/andro/images/symfony2.png') }}" />

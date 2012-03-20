@@ -238,6 +238,10 @@
                 <source>footer.copyright.desc</source>
                 <target>%year% Madalynn, tous droits r&#xE9;serv&#xE9;s. Android&#x2122; est une marque de Google Inc.</target>
             </trans-unit>
+            <trans-unit id="footer.translation_by">
+                <source>footer.translation_by</source>
+                <target>Traduction par Madalynn</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
