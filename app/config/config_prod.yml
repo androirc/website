@@ -18,6 +18,6 @@ monolog:
         swift:
             type: swift_mailer
             from_email: noreply@androirc.com
-            to_email: contact@androirc.com
+            to_email: crash-website@androirc.com
             subject: An Error Occurred!
             level: debug
