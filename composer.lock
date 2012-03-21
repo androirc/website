@@ -69,7 +69,7 @@
         {
             "package": "nercury-jms/i18n-routing-bundle",
             "version": "dev-master",
-            "source-reference": "c7428bee7b95ddc0e759ac5281ff832f5987cefd"
+            "source-reference": "e1ca0276a6cade31bfb2eb9863638c216676ae5c"
         },
         {
             "package": "ornicar/gravatar-bundle",
@@ -118,7 +118,7 @@
         {
             "package": "symfony/symfony",
             "version": "dev-master",
-            "source-reference": "3d84153d687c285b1356683298531421ec108359",
+            "source-reference": "69fc07a21cb5f6830fe7b201bd7fa99a940b6cae",
             "alias": "2.1.9999999.9999999-dev"
         },
         {
