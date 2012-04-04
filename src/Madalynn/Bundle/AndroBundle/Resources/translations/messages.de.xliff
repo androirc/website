@@ -1,0 +1,247 @@
+<?xml version="1.0"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+    <file datatype="plaintext" original="messages.en.xliff" source-language="en">
+        <body>
+            <trans-unit id="meta.keywords">
+                <source>meta.keywords</source>
+                <target>android, irc, client, kostenlos, app, mirc, androirc, market, play, protokollierung, sasl, authentifizierung, blowfish, plain, identifizierung, nickserv, designs, smartphone, applikation, apps, ircd, kommunikation, internet, relay, chat, server, freenode, epiknet, quakenet, efnet, undernet, ident, nick, nickname, chan, channel, kick, ban, op, halfop, voice</target>
+            </trans-unit>
+            <trans-unit id="header.subtitle">
+                <source>header.subtitle</source>
+                <target>Android&#x2122; IRC Client</target>
+            </trans-unit>
+            <trans-unit id="header.untranslated">
+                <source>header.untranslated</source>
+                <target>Einige Elemente auf dieser Seite sind in dieser Sprache nicht verf&#xFC;gbar.</target>
+            </trans-unit>
+            <trans-unit id="global.cancel">
+                <source>global.cancel</source>
+                <target>Abbrechen</target>
+            </trans-unit>
+            <trans-unit id="menu.news">
+                <source>menu.news</source>
+                <target>Neuigkeiten</target>
+            </trans-unit>
+            <trans-unit id="menu.wiki">
+                <source>menu.wiki</source>
+                <target>Wiki</target>
+            </trans-unit>
+            <trans-unit id="menu.screens">
+                <source>menu.screens</source>
+                <target>Screenshots</target>
+            </trans-unit>
+            <trans-unit id="menu.contact">
+                <source>menu.contact</source>
+                <target>Kontakt</target>
+            </trans-unit>
+            <trans-unit id="menu.beta">
+                <source>menu.beta</source>
+                <target>Beta</target>
+            </trans-unit>
+            <trans-unit id="menu.download">
+                <source>menu.download</source>
+                <target>Download</target>
+            </trans-unit>
+            <trans-unit id="menu.eula">
+                <source>menu.eula</source>
+                <target>Lizenzbestimmungen</target>
+            </trans-unit>
+            <trans-unit id="menu.donate">
+                <source>menu.donate</source>
+                <target>Spenden</target>
+            </trans-unit>
+            <trans-unit id="sidebar.mobile.name">
+                <source>sidebar.mobile.name</source>
+                <target>mobile Version</target>
+            </trans-unit>
+            <trans-unit id="sidebar.mobile.to_mobile">
+                <source>sidebar.mobile.to_mobile</source>
+                <target>Wechsel zur mobilen Version</target>
+            </trans-unit>
+            <trans-unit id="sidebar.mobile.to_web">
+                <source>sidebar.mobile.to_web</source>
+                <target>Wechsel zur Web-Version</target>
+            </trans-unit>
+            <trans-unit id="sidebar.market.name">
+                <source>sidebar.market.name</source>
+                <target>Google Play</target>
+            </trans-unit>
+            <trans-unit id="sidebar.market.desc">
+                <source>sidebar.market.desc</source>
+                <target>Du kannst AndroIRC direkt im Adroid Markt herunterladen oder einen der folgenden Barcodes scannen.</target>
+            </trans-unit>
+            <trans-unit id="sidebar.market.free">
+                <source>sidebar.market.free</source>
+                <target>Kostenlos</target>
+            </trans-unit>
+            <trans-unit id="sidebar.market.premium">
+                <source>sidebar.market.premium</source>
+                <target>Premium</target>
+            </trans-unit>
+            <trans-unit id="sidebar.team">
+                <source>sidebar.team</source>
+                <target>AndroIRC Team</target>
+            </trans-unit>
+            <trans-unit id="sidebar.facebook">
+                <source>sidebar.facebook</source>
+                <target>Facebook</target>
+            </trans-unit>
+            <trans-unit id="homepage.title">
+                <source>homepage.title</source>
+                <target>Start</target>
+            </trans-unit>
+            <trans-unit id="homepage.introduction">
+                <source>homepage.introduction</source>
+                <target>AndroIRC ist ein IRC-Client f&#xFC;r Android, der gleichzeitig zu mehreren Servern (gesichert und ungesichert) verbinden kann. Funktionen: unterst&#xFC;tzt mIRC-Farben, automatisches beitreten von Kan&#xE4;len beim Start, nickserv-/sasl Authentifizierung, Protokollierung, Designs... Gern kannst du uns via Online-Forum kontaktieren.</target>
+            </trans-unit>
+            <trans-unit id="screenshots.name">
+                <source>screenshots.name</source>
+                <target>Screenshots</target>
+            </trans-unit>
+            <trans-unit id="beta.name">
+                <source>beta.name</source>
+                <target>Aktuellste AndroIRC Beta-Version</target>
+            </trans-unit>
+            <trans-unit id="beta.desc">
+                <source>beta.desc</source>
+                <target>Du kannst nun die aktuellste Beta-Version von AndroIRC herunterladen! Die Datei ist nicht bei Google Play (Android Markt) verf&#xFC;gbar, weil dieses noch immer &lt;strong&gt;Bugs enth&#xE4;lt&lt;/strong&gt;. Bedenke, dass es nur eine Beta-Version ist ;). Wenn du einen Bug findest, kannst du uns kontaktieren oder ein neues Ticket im Bug Tracker erstellen. Danke!</target>
+            </trans-unit>
+            <trans-unit id="beta.button">
+                <source>beta.button</source>
+                <target>Lade die aktuellste Beta-Version von AndroIRC herunter.</target>
+            </trans-unit>
+            <trans-unit id="beta.subtitle">
+                <source>beta.subtitle</source>
+                <target>Version %version% - %date%</target>
+            </trans-unit>
+            <trans-unit id="beta.date_format">
+                <source>beta.date_format</source>
+                <target>d/m/Y</target>
+            </trans-unit>
+            <trans-unit id="beta.no_beta">
+                <source>beta.no_beta</source>
+                <target>Es gibt derzeit keine Beta-Version... komm sp&#xE4;ter wieder!</target>
+            </trans-unit>
+            <trans-unit id="donate.support_it">
+                <source>donate.support_it</source>
+                <target>Du magst AndroIRC? Dann unterst&#xFC;tze es!</target>
+            </trans-unit>
+            <trans-unit id="donate.desc">
+                <source>donate.desc</source>
+                <target>AndroIRC ist &lt;strong&gt;kostenlos&lt;/strong&gt; und du kannst es &lt;strong&gt;kostenlos&lt;/strong&gt; im Market herunterladen. Allerdings haben wir &lt;strong&gt;Kosten&lt;/strong&gt; bei der Serveradministration. Wenn du AndroIRC unterst&#xFC;tzen m&#xF6;chtest, hast du momentan zwei M&#xF6;glichkeiten.</target>
+            </trans-unit>
+            <trans-unit id="donate.thanks">
+                <source>donate.thanks</source>
+                <target>Vielen Dank an</target>
+            </trans-unit>
+            <trans-unit id="donate.also">
+                <source>donate.also</source>
+                <target>Du kannst auch die Premium Applikation "AndroIRC Premium" herunterladen. Diese Applikation kommt ohne Werbung in AndroIRC.</target>
+            </trans-unit>
+            <trans-unit id="contact.desc">
+                <source>contact.desc</source>
+                <target>Du kannst dieses Formular nutzen, um das Team zu kontaktieren, entweder um einen Bug zu melden oder nur um etwas zu fragen. Wenn du einen Bug melden m&#xF6;chtest, kannst du au&#xDF;erdem die AndroIRC Version und die Android Version ausw&#xE4;hlen.</target>
+            </trans-unit>
+            <trans-unit id="contact.name">
+                <source>contact.name</source>
+                <target>Name</target>
+            </trans-unit>
+            <trans-unit id="contact.email">
+                <source>contact.email</source>
+                <target>E-Mail</target>
+            </trans-unit>
+            <trans-unit id="contact.androirc_version">
+                <source>contact.androirc_version</source>
+                <target>AndroIRC Version</target>
+            </trans-unit>
+            <trans-unit id="contact.android_version">
+                <source>contact.android_version</source>
+                <target>Android Version</target>
+            </trans-unit>
+            <trans-unit id="contact.content">
+                <source>contact.content</source>
+                <target>Inhalt</target>
+            </trans-unit>
+            <trans-unit id="contact.submit">
+                <source>contact.submit</source>
+                <target>Sende deine Nachricht</target>
+            </trans-unit>
+            <trans-unit id="contact.flash">
+                <source>contact.flash</source>
+                <target>Deine Nachricht wurde gesendet.</target>
+            </trans-unit>
+            <trans-unit id="article.date_format">
+                <source>article.date_format</source>
+                <target>m/d/Y</target>
+            </trans-unit>
+            <trans-unit id="article.archives">
+                <source>article.archives</source>
+                <target>Archiv</target>
+            </trans-unit>
+            <trans-unit id="article.posted_by">
+                <source>article.posted_by</source>
+                <target>Neuigkeit geschrieben von %name%</target>
+            </trans-unit>
+            <trans-unit id="footer.community.name">
+                <source>footer.community.name</source>
+                <target>Community</target>
+            </trans-unit>
+            <trans-unit id="footer.community.desc">
+                <source>footer.community.desc</source>
+                <target>Du kannst uns im IRC besuchen. Wir sind auf Freenode.</target>
+            </trans-unit>
+            <trans-unit id="footer.community.facebook">
+                <source>footer.community.facebook</source>
+                <target>Facebook-Seite</target>
+            </trans-unit>
+            <trans-unit id="footer.community.twitter">
+                <source>footer.community.twitter</source>
+                <target>Folge uns auf Twitter</target>
+            </trans-unit>
+            <trans-unit id="footer.community.googleplus">
+                <source>footer.community.googleplus</source>
+                <target>Google+ Seite</target>
+            </trans-unit>
+            <trans-unit id="footer.otherpages.name">
+                <source>footer.otherpages.name</source>
+                <target>Andere Seiten</target>
+            </trans-unit>
+            <trans-unit id="footer.otherpages.beta">
+                <source>footer.otherpages.beta</source>
+                <target>Lade die aktuellste Beta-Version herunter</target>
+            </trans-unit>
+            <trans-unit id="footer.otherpages.bug">
+                <source>footer.otherpages.bug</source>
+                <target>Bug Tracker Webseite</target>
+            </trans-unit>
+            <trans-unit id="footer.otherpages.rss">
+                <source>footer.otherpages.rss</source>
+                <target>RSS Feed</target>
+            </trans-unit>
+            <trans-unit id="footer.otherpages.premium">
+                <source>footer.otherpages.premium</source>
+                <target>Lade AndroIRC Premium herunter</target>
+            </trans-unit>
+            <trans-unit id="footer.otherpages.translation">
+                <source>footer.otherpages.translation</source>
+                <target>Hilf uns beim &#xDC;bersetzen von AndroIRC</target>
+            </trans-unit>
+            <trans-unit id="footer.otherpages.contact">
+                <source>footer.otherpages.contact</source>
+                <target>Kontaktiere uns</target>
+            </trans-unit>
+            <trans-unit id="footer.copyright.name">
+                <source>footer.copyright.name</source>
+                <target>Copyright</target>
+            </trans-unit>
+            <trans-unit id="footer.copyright.desc">
+                <source>footer.copyright.desc</source>
+                <target>%year% Madalynn, alle Rechte vorbehalten. Android&#x2122; ist eine Marke von Google Inc.</target>
+            </trans-unit>
+            <trans-unit id="footer.translation_by">
+                <source>footer.translation_by</source>
+                <target>&#xDC;bersetzung durch Madalynn</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
