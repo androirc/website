@@ -17,17 +17,17 @@
         {
             "package": "doctrine/doctrine-bundle",
             "version": "dev-master",
-            "source-reference": "90e39fb7ff5b4c13577602dab7e08c90067160b4"
+            "source-reference": "dd3d35dd28e864fb908a70f8b206d1209aa2c333"
         },
         {
             "package": "doctrine/doctrine-fixtures-bundle",
             "version": "dev-master",
-            "source-reference": "0e4e56b1da7981bcc7729e0f301a75195d34df18"
+            "source-reference": "33b267d3068d6c2f8daa0b417285cf76e7f82fc4"
         },
         {
             "package": "doctrine/doctrine-migrations-bundle",
             "version": "dev-master",
-            "source-reference": "9690dfba714fa82f3979fb5fa18750a37ab16e1c"
+            "source-reference": "e670643b1011fb997a209d8564a1c493fda1f4c3"
         },
         {
             "package": "doctrine/migrations",
@@ -44,9 +44,14 @@
             "source-reference": "ab426e0253a1fe41fd6077df86f34fb0a2ca65a8"
         },
         {
+            "package": "jms/translation-bundle",
+            "version": "dev-master",
+            "source-reference": "3f65e8681d8544738ad3c9da82b29ed33221dd10"
+        },
+        {
             "package": "kriswallsmith/assetic",
             "version": "dev-master",
-            "source-reference": "2634d29cc193981761e3daf28e1afc6358bb43b1"
+            "source-reference": "e43f26fb2c5dddc4c4c4cf783bce68eac6326f20"
         },
         {
             "package": "kriswallsmith/buzz",
@@ -69,12 +74,12 @@
         {
             "package": "nercury-jms/i18n-routing-bundle",
             "version": "dev-master",
-            "source-reference": "e1ca0276a6cade31bfb2eb9863638c216676ae5c"
+            "source-reference": "9f4514b683a3486bf878dd0c8099db49443ebd00"
         },
         {
-            "package": "ornicar/gravatar-bundle",
+            "package": "nikic/php-parser",
             "version": "dev-master",
-            "source-reference": "e5aedca3bd066081e16912ca8be96ba4ca570d0a"
+            "source-reference": "77d58a415147f1505d586eeec21ac2addded7593"
         },
         {
             "package": "pagerfanta/pagerfanta",
@@ -89,11 +94,11 @@
         {
             "package": "sensio/distribution-bundle",
             "version": "dev-master",
-            "source-reference": "12882a093af81f89ac13078904e81c308784e883"
+            "source-reference": "e78f65f36b27ba07b1e44241b4cf5443e80d7bd5"
         },
         {
             "package": "swiftmailer/swiftmailer",
-            "version": "4.1.5"
+            "version": "4.1.6"
         },
         {
             "package": "symfony/assetic-bundle",
@@ -118,7 +123,7 @@
         {
             "package": "symfony/symfony",
             "version": "dev-master",
-            "source-reference": "69fc07a21cb5f6830fe7b201bd7fa99a940b6cae",
+            "source-reference": "71c9dc31f4ba9c93950503e4a92586a2811e8bf9",
             "alias": "2.1.9999999.9999999-dev"
         },
         {
@@ -128,7 +133,7 @@
         },
         {
             "package": "twig/twig",
-            "version": "1.6.2"
+            "version": "1.6.4"
         },
         {
             "package": "white-october/pagerfanta-bundle",
@@ -143,7 +148,7 @@
         {
             "package": "willdurand/geocoder-bundle",
             "version": "dev-master",
-            "source-reference": "b8ec6115f9969b616c52ce838fb3a1a151bb456f"
+            "source-reference": "843f316a11b5af4847c70ef79527d30407403a6e"
         }
     ],
     "aliases": []
