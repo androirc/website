@@ -35,6 +35,7 @@ class TranslationUpdateCommand extends ContainerAwareCommand
         $siteLocales = $this->getContainer()->getParameter('jms_i18n_routing.locales');
         $locales     = $input->getArgument('locales');
         $force       = (Boolean) $input->getOption('force');
+        $transifex   = $this->getContainer()->getParameter('androirc.translations');
 
         if (empty($locales)) {
             $locales = $siteLocales;
@@ -52,8 +53,13 @@ class TranslationUpdateCommand extends ContainerAwareCommand
 
             $output->writeln(sprintf('<comment>  > Download translation file for "%s" locale</comment>', $locale));
 
+            $transifexLocale = $locale;
+            if (isset($transifex[$locale])) {
+                $transifexLocale = $transifex[$locale];
+            }
+
             // Downloads the translation
-            $json = $this->downloadTranslation($locale);
+            $json = $this->downloadTranslation($transifexLocale);
 
             // Just get the content
             $content = $json['content'];
