@@ -29,7 +29,5 @@ curl_setopt($c, CURLOPT_URL, 'http://www.androirc.com/crashreport');
 curl_setopt($c, CURLOPT_POST, true);
 curl_setopt($c, CURLOPT_POSTFIELDS, $posts);
 
-// Let's go!
-curl_exec ($c);
-
-curl_close ($c);
+curl_exec($c);
+curl_close($c);

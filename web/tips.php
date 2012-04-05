@@ -13,16 +13,15 @@
 $lang = get('lang', 'en');
 $date = get('date');
 
-$url = 'http://www.androirc.com/tip/' . $lang;
+$url = 'http://www.androirc.com/tip/'.$lang;
 
 if ($date) {
-    $url .= '/' . $date;
+    $url .= '/'.$date;
 }
 
 header('Status: 301 Moved Permanently', false, 301);
-header('Location: ' . $url);
+header('Location: '.$url);
 
-function get($name, $default = null)
-{
+function get($name, $default = null) {
     return isset($_GET[$name]) ? $_GET[$name] : $default;
 }
