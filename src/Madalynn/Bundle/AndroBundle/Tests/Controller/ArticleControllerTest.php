@@ -16,20 +16,24 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class ArticleControllerTest extends WebTestCase
 {
-    public function testArchiveCountPages()
-    {
-        $client = self::createClient();
-        $crawler = $client->request('GET', '/archives');
+    protected $client;
 
-        $this->assertTrue($client->getResponse()->isSuccessful());
-        $this->assertEquals(4, $crawler->filter('.paginator a')->count());
+    public function setUp()
+    {
+        $this->client = self::createClient();
     }
 
-    public function testArchiveNumberOfArticle()
+    public function testNumberOfPages()
     {
-        $client = self::createClient();
-        $crawler = $client->request('GET', '/archives');
+        $crawler = $this->client->request('GET', '/archives');
 
-        $this->assertEquals(10, $crawler->filter('article')->count());
+        $this->assertTrue($this->client->getResponse()->isSuccessful());
+        $this->assertCount(4, $crawler->filter('.paginator a'));
+    }
+
+    public function testNumberOfArticlesPerPage()
+    {
+        $crawler = $this->client->request('GET', '/archives');
+        $this->assertCount(10, $crawler->filter('article'));
     }
 }
