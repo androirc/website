@@ -23,7 +23,6 @@ class VersionTest extends \PHPUnit_Framework_TestCase
     {
         $version = AndroircVersion::create($version);
         $this->assertEquals($version->__toString(), $string);
-
     }
 
     public function dataToStringRepresenation()
@@ -35,6 +34,30 @@ class VersionTest extends \PHPUnit_Framework_TestCase
             array('foo', '0.0'),
             array('1.4', '1.4'),
             array('foo.bar.3', '0.0.3')
+        );
+    }
+
+    /**
+     * @dataProvider dataAccessors
+     */
+    public function testAccessors($version, $major, $minor, $revision)
+    {
+        $version = AndroircVersion::create($version);
+
+        $this->assertEquals($major, $version->getMajor());
+        $this->assertEquals($minor, $version->getMinor());
+        $this->assertEquals($revision, $version->getRevision());
+    }
+
+    public function dataAccessors()
+    {
+        return array(
+            array('3.2.1', 3, 2, 1),
+            array('1.0', 1, 0, 0),
+            array('3', 3, 0, 0),
+            array('', 0, 0, 0),
+            array('foobar', 0, 0, 0),
+            array('4.2.2.2', 4, 2, 2),
         );
     }
 }

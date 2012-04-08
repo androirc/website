@@ -16,15 +16,34 @@ use Madalynn\Bundle\AndroBundle\Entity\Article;
 
 class ArticleTest extends \PHPUnit_Framework_TestCase
 {
-    public function testArticleSlug()
+    /**
+     * @dataProvider dataSlug
+     */
+    public function testSlug($title, $slug)
     {
         $article = new Article();
-        $article->setTitle('Quaerat fuga quaerat vel et.');
+        $article->setTitle($title);
 
-        $this->assertEquals('quaerat-fuga-quaerat-vel-et', $article->getSlug());
+        $this->assertEquals($slug, $article->getSlug());
+    }
 
-        $article->setTitle('Another title');
+    public function testUpdateSlug()
+    {
+        $article = new Article();
 
-        $this->assertEquals('quaerat-fuga-quaerat-vel-et', $article->getSlug());
+        $article->setTitle('AndroIRC 3.3');
+        $this->assertEquals('androirc-3-3', $article->getSlug());
+
+        $article->setTitle('Hello world');
+        $this->assertEquals('hello-world', $article->getSlug());
+    }
+
+    public function dataSlug()
+    {
+        return array(
+            array('AndroIRC 3.3 now available on the Market!', 'androirc-3-3-now-available-on-the-market'),
+            array('Simple title', 'simple-title'),
+            array('FOOBAR', 'foobar'),
+        );
     }
 }

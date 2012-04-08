@@ -105,10 +105,7 @@ class Article
      */
     public function setTitle($title)
     {
-        if (null === $this->slug) {
-            $this->slug = StringHelper::slugize($title);
-        }
-
+        $this->slug  = StringHelper::slugize($title);
         $this->title = $title;
     }
 
