@@ -17,16 +17,16 @@ use Madalynn\Bundle\AndroBundle\Entity\AndroircVersion;
 class VersionTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @dataProvider dataVersions
+     * @dataProvider dataToStringRepresenation
      */
     public function testToStringRepresentation($version, $string)
     {
         $version = AndroircVersion::create($version);
-        $this->assertSame($version->__toString(), $string);
+        $this->assertEquals($version->__toString(), $string);
 
     }
 
-    public function dataVersions()
+    public function dataToStringRepresenation()
     {
         return array(
             array('0', '0.0'),
