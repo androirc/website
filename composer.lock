@@ -41,7 +41,7 @@
         {
             "package": "fzaninotto/faker",
             "version": "dev-master",
-            "source-reference": "ab426e0253a1fe41fd6077df86f34fb0a2ca65a8"
+            "source-reference": "9a60f901d678557f79235b09eff8ebd1ea5fa076"
         },
         {
             "package": "jms/translation-bundle",
@@ -51,7 +51,7 @@
         {
             "package": "kriswallsmith/assetic",
             "version": "dev-master",
-            "source-reference": "e43f26fb2c5dddc4c4c4cf783bce68eac6326f20"
+            "source-reference": "b25d1fdd07a70585d15c84735e82664acec88eab"
         },
         {
             "package": "kriswallsmith/buzz",
@@ -74,12 +74,12 @@
         {
             "package": "nercury-jms/i18n-routing-bundle",
             "version": "dev-master",
-            "source-reference": "9f4514b683a3486bf878dd0c8099db49443ebd00"
+            "source-reference": "c6a9cfa6c813df82df19714ba7e56d456399e416"
         },
         {
             "package": "nikic/php-parser",
             "version": "dev-master",
-            "source-reference": "77d58a415147f1505d586eeec21ac2addded7593"
+            "source-reference": "510599d8b8c349357aea33a52f42a7f2b3eb05e7"
         },
         {
             "package": "pagerfanta/pagerfanta",
@@ -94,7 +94,7 @@
         {
             "package": "sensio/distribution-bundle",
             "version": "dev-master",
-            "source-reference": "e78f65f36b27ba07b1e44241b4cf5443e80d7bd5"
+            "source-reference": "38be63ebb45cc1fbeaff3f2bdf6d0ed216305a24"
         },
         {
             "package": "swiftmailer/swiftmailer",
@@ -103,7 +103,7 @@
         {
             "package": "symfony/assetic-bundle",
             "version": "dev-master",
-            "source-reference": "b9cff021abc3d9433a892fa9908d9856393c0d09"
+            "source-reference": "a771e48366d80002b0046ba43e658d067170634d"
         },
         {
             "package": "symfony/monolog-bundle",
@@ -123,17 +123,19 @@
         {
             "package": "symfony/symfony",
             "version": "dev-master",
-            "source-reference": "71c9dc31f4ba9c93950503e4a92586a2811e8bf9",
+            "source-reference": "d6948581ac4d5d349584b6246684ae656126d481",
             "alias": "2.1.9999999.9999999-dev"
         },
         {
             "package": "twig/extensions",
             "version": "dev-master",
-            "source-reference": "1dfff8e793f50f651c4f74f796c2c68a4aee3147"
+            "source-reference": "4c831657215e51568fcb31bb9142e827f9a69bd5"
         },
         {
             "package": "twig/twig",
-            "version": "1.6.4"
+            "version": "dev-master",
+            "source-reference": "46ae99fa4c11f76248b12da647fe64399f860e82",
+            "alias": "1.7.9999999.9999999-dev"
         },
         {
             "package": "white-october/pagerfanta-bundle",
