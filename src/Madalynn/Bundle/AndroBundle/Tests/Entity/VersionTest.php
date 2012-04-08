@@ -16,20 +16,25 @@ use Madalynn\Bundle\AndroBundle\Entity\AndroircVersion;
 
 class VersionTest extends \PHPUnit_Framework_TestCase
 {
-    public function testCreationVersion()
+    /**
+     * @dataProvider dataVersions
+     */
+    public function testToStringRepresentation($version, $string)
     {
-        $versions = array(
-            '0'         => '0.0',
-            '1'         => '1.0',
-            '1.2.3'     => '1.2.3',
-            'foo'       => '0.0',
-            '1.4'       => '1.4',
-            'foo.bar.3' => '0.0.3'
-        );
+        $version = AndroircVersion::create($version);
+        $this->assertSame($version->__toString(), $string);
 
-        foreach ($versions as $key => $value) {
-            $version = AndroircVersion::create($key);
-            $this->assertSame($version->__toString(), $value);
-        }
+    }
+
+    public function dataVersions()
+    {
+        return array(
+            array('0', '0.0'),
+            array('1', '1.0'),
+            array('1.2.3', '1.2.3'),
+            array('foo', '0.0'),
+            array('1.4', '1.4'),
+            array('foo.bar.3', '0.0.3')
+        );
     }
 }
