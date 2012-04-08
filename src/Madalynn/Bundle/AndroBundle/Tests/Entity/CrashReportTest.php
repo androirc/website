@@ -16,28 +16,99 @@ use Madalynn\Bundle\AndroBundle\Entity\CrashReport;
 
 class CrashReportTest extends \PHPUnit_Framework_TestCase
 {
-    public function testCrashLocation()
+    /**
+     * @dataProvider dataCrashReport
+     *
+     * @covers CrashReport::getCrashLocation
+     */
+    public function testCrashLocation(CrashReport $cr)
     {
-        $cr = $this->createCrashReport();
-
         $this->assertEquals('at com.androirc.AndroIRC$4.run(AndroIRC.java:472)', $cr->getCrashLocation());
     }
 
-    public function testCrashMessage()
+    /**
+     * @dataProvider dataCrashReport
+     *
+     * @covers CrashReport::getCrashMessage
+     */
+    public function testCrashMessage(CrashReport $cr)
     {
-        $cr = $this->createCrashReport();
-
         $this->assertEquals('java.lang.NullPointerException', $cr->getCrashMessage());
     }
 
-    public function testMajorAndroircVersion()
+    /**
+     * @dataProvider dataCrashReport
+     *
+     * @covers CrashReport::getThreadName
+     */
+    public function testThreadName(CrashReport $cr)
     {
-        $cr = $this->createCrashReport();
+        $this->assertEquals('main', $cr->getThreadName());
+    }
 
+    /**
+     * @dataProvider dataCrashReport
+     *
+     * @covers CrashReport::getCount
+     * @covers CrashReport::incCount
+     */
+    public function testCount(CrashReport $cr)
+    {
+        $this->assertEquals(1, $cr->getCount());
+
+        $cr->incCount();
+        $this->assertEquals(2, $cr->getCount());
+
+        $cr->incCount(10);
+        $this->assertEquals(12, $cr->getCount());
+    }
+
+    /**
+     * @dataProvider dataCrashReport
+     *
+     * @covers CrashReport::setResolved
+     * @covers CrashReport::isResolved
+     */
+    public function testResolved(CrashReport $cr)
+    {
+        $cr->setResolved(false);
+        $this->assertFalse($cr->isResolved());
+
+        $cr->setResolved(true);
+        $this->assertTrue($cr->isResolved());
+    }
+
+    /**
+     * @dataProvider dataCrashReport
+     *
+     * @covers CrashReport::getMajorAndroircVersion
+     */
+    public function testMajorAndroircVersion(CrashReport $cr)
+    {
         $this->assertEquals('3.1', $cr->getMajorAndroircVersion());
     }
 
-    protected function createCrashReport()
+    /**
+     * @dataProvider dataCrashReport
+     *
+     * @covers CrashReport::getAndroidVersion
+     */
+    public function testAndroidVersion(CrashReport $cr)
+    {
+        $this->assertEquals('2.2.1', $cr->getAndroidVersion());
+    }
+
+    /**
+     * @dataProvider dataCrashReport
+     *
+     * @covers CrashReport::getAndroircVersion
+     */
+    public function testAndroircVersion(CrashReport $cr)
+    {
+        $this->assertEquals('3.1 e825cc1- build on 2011/11/26 17:31', $cr->getAndroircVersion());
+    }
+
+    public function dataCrashReport()
     {
         $cr = new CrashReport();
 
