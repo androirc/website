@@ -60,12 +60,12 @@
         {
             "package": "madalynn/plum",
             "version": "dev-master",
-            "source-reference": "v1.0"
+            "source-reference": "d2d10a9769942ba3cf66bd29457f1ed38fa5e72f"
         },
         {
             "package": "madalynn/plum-bundle",
             "version": "dev-master",
-            "source-reference": "1d1a82c3762624307ff1357df7e41e231fc9ba0b"
+            "source-reference": "4d33e68392aaccfe49f2c8a6b65be3cb1e307aac"
         },
         {
             "package": "monolog/monolog",
@@ -123,7 +123,7 @@
         {
             "package": "symfony/symfony",
             "version": "dev-master",
-            "source-reference": "d6948581ac4d5d349584b6246684ae656126d481",
+            "source-reference": "127cff0aa8b2a6f7e388f180e471f748e6a1dec3",
             "alias": "2.1.9999999.9999999-dev"
         },
         {
