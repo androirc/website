@@ -41,13 +41,11 @@ class EditorType extends AbstractType
      *
      * @return array
      */
-    public function getDefaultOptions(array $options)
+    public function getDefaultOptions()
     {
         return array(
             'required' => false,
-            'attr'     => array(
-                'class' => 'editor'
-            )
+            'attr'     => array('class' => 'editor')
         );
     }
 }

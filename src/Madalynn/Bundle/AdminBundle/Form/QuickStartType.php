@@ -40,7 +40,7 @@ class QuickStartType extends AbstractType
         return 'admin_quick_start';
     }
 
-    public function getDefaultOptions(array $options)
+    public function getDefaultOptions()
     {
         return array(
             'data_class' => 'Madalynn\\Bundle\\AndroBundle\\Entity\\QuickStart',

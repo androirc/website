@@ -60,12 +60,12 @@
         {
             "package": "madalynn/plum",
             "version": "dev-master",
-            "source-reference": "d2d10a9769942ba3cf66bd29457f1ed38fa5e72f"
+            "source-reference": "v1.1"
         },
         {
             "package": "madalynn/plum-bundle",
             "version": "dev-master",
-            "source-reference": "4d33e68392aaccfe49f2c8a6b65be3cb1e307aac"
+            "source-reference": "6f7032db7c31d8fcbf378c266cd82f032a2ee963"
         },
         {
             "package": "monolog/monolog",
@@ -89,7 +89,7 @@
         {
             "package": "sensio/buzz-bundle",
             "version": "dev-master",
-            "source-reference": "45e0d283c08bd2ffdb98ead985aa0bdaeeb3a431"
+            "source-reference": "e4d895f85ae770c8b29f29d5ac49e9c2d898f935"
         },
         {
             "package": "sensio/distribution-bundle",
@@ -123,7 +123,7 @@
         {
             "package": "symfony/symfony",
             "version": "dev-master",
-            "source-reference": "127cff0aa8b2a6f7e388f180e471f748e6a1dec3",
+            "source-reference": "570bb6ab6794fb9115229e108b40a347ea165a09",
             "alias": "2.1.9999999.9999999-dev"
         },
         {
@@ -134,7 +134,7 @@
         {
             "package": "twig/twig",
             "version": "dev-master",
-            "source-reference": "46ae99fa4c11f76248b12da647fe64399f860e82",
+            "source-reference": "58fbe0da4146608e085d7e67ebf2eae7aa8da19e",
             "alias": "1.7.9999999.9999999-dev"
         },
         {

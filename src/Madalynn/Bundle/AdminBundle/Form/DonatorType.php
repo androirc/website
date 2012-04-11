@@ -31,7 +31,7 @@ class DonatorType extends AbstractType
         return 'admin_donator';
     }
 
-    public function getDefaultOptions(array $options)
+    public function getDefaultOptions()
     {
         return array(
             'data_class' => 'Madalynn\\Bundle\\AndroBundle\\Entity\\Donator',
