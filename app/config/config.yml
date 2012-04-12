@@ -98,7 +98,7 @@ madalynn_admob:
 # i18n Routing Configuration
 jms_i18n_routing:
     default_locale: en
-    locales: [en, fr, cs, zh, de]
+    locales: [en, fr, cs, zh, de, ko]
     strategy: prefix_except_default
 
 andro:
