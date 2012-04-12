@@ -1,0 +1,247 @@
+<?xml version="1.0"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+    <file datatype="plaintext" original="messages.en.xliff" source-language="en">
+        <body>
+            <trans-unit id="meta.keywords">
+                <source>meta.keywords</source>
+                <target>&#xC548;&#xB4DC;&#xB85C;&#xC774;&#xB4DC;, IRC, &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;, &#xBB34;&#xB8CC;, &#xC571;, mIRC, &#xC548;&#xB4DC;&#xB85C;IRC, &#xB9C8;&#xCF13;, &#xD50C;&#xB808;&#xC774;, &#xAE30;&#xB85D;, SASL, &#xC778;&#xC99D;, Blowfish, &#xBD84;&#xBA85;&#xD55C;, &#xC2E0;&#xC6D0;, Nickserv, &#xD14C;&#xB9C8;, &#xC2A4;&#xB9C8;&#xD2B8;&#xD3F0;, &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;, &#xC571;&#xB4E4;, IRCd, &#xC758;&#xC0AC;&#xC18C;&#xD1B5;, &#xC778;&#xD130;&#xB137;, &#xC804;&#xB2EC;, &#xB300;&#xD654;, &#xC11C;&#xBC84;, Freenode, Epiknet, Quakenet, EFNet, Undernet, Ident, &#xB2C9;, &#xBCC4;&#xBA85;, &#xCC44;&#xB110;, &#xB0B4;&#xCAD3;&#xAE30;, &#xC785;&#xC7A5;&#xAE08;&#xC9C0;, &#xCD5C;&#xACE0;&#xAD00;&#xB9AC;&#xAD8C;, &#xAD00;&#xB9AC;&#xAD8C;, &#xBC1C;&#xC5B8;&#xAD8C;</target>
+            </trans-unit>
+            <trans-unit id="header.subtitle">
+                <source>header.subtitle</source>
+                <target>&#xC548;&#xB4DC;&#xB85C;&#xC774;&#xB4DC;&#x2122; IRC &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;</target>
+            </trans-unit>
+            <trans-unit id="header.untranslated">
+                <source>header.untranslated</source>
+                <target>&#xC774; &#xD398;&#xC774;&#xC9C0;&#xC758; &#xBA87; &#xC694;&#xC18C;&#xB294; &#xC774; &#xC5B8;&#xC5B4;&#xB85C; &#xC774;&#xC6A9; &#xBD88;&#xAC00;&#xB2A5;&#xD569;&#xB2C8;&#xB2E4;</target>
+            </trans-unit>
+            <trans-unit id="global.cancel">
+                <source>global.cancel</source>
+                <target>&#xCDE8;&#xC18C;</target>
+            </trans-unit>
+            <trans-unit id="menu.news">
+                <source>menu.news</source>
+                <target>&#xB274;&#xC2A4;</target>
+            </trans-unit>
+            <trans-unit id="menu.wiki">
+                <source>menu.wiki</source>
+                <target>&#xC704;&#xD0A4;</target>
+            </trans-unit>
+            <trans-unit id="menu.screens">
+                <source>menu.screens</source>
+                <target>&#xC2A4;&#xD06C;&#xB9B0;&#xC0F7;</target>
+            </trans-unit>
+            <trans-unit id="menu.contact">
+                <source>menu.contact</source>
+                <target>&#xC5F0;&#xB77D;&#xCC98;</target>
+            </trans-unit>
+            <trans-unit id="menu.beta">
+                <source>menu.beta</source>
+                <target>&#xBCA0;&#xD0C0;</target>
+            </trans-unit>
+            <trans-unit id="menu.download">
+                <source>menu.download</source>
+                <target>&#xB0B4;&#xB824;&#xBC1B;&#xAE30;</target>
+            </trans-unit>
+            <trans-unit id="menu.eula">
+                <source>menu.eula</source>
+                <target>EULA</target>
+            </trans-unit>
+            <trans-unit id="menu.donate">
+                <source>menu.donate</source>
+                <target>&#xAE30;&#xBD80;&#xD558;&#xAE30;</target>
+            </trans-unit>
+            <trans-unit id="sidebar.mobile.name">
+                <source>sidebar.mobile.name</source>
+                <target>&#xD734;&#xB300;&#xAE30;&#xAE30; &#xBC84;&#xC804;</target>
+            </trans-unit>
+            <trans-unit id="sidebar.mobile.to_mobile">
+                <source>sidebar.mobile.to_mobile</source>
+                <target>&#xBAA8;&#xBC14;&#xC77C; &#xBC84;&#xC804;&#xC73C;&#xB85C; &#xBC14;&#xAFB8;&#xAE30;</target>
+            </trans-unit>
+            <trans-unit id="sidebar.mobile.to_web">
+                <source>sidebar.mobile.to_web</source>
+                <target>&#xC6F9; &#xBC84;&#xC804;&#xC73C;&#xB85C; &#xBC14;&#xAFB8;&#xAE30;</target>
+            </trans-unit>
+            <trans-unit id="sidebar.market.name">
+                <source>sidebar.market.name</source>
+                <target>&#xAD6C;&#xAE00; &#xD50C;&#xB808;&#xC774;</target>
+            </trans-unit>
+            <trans-unit id="sidebar.market.desc">
+                <source>sidebar.market.desc</source>
+                <target>&#xC548;&#xB4DC;&#xB85C;IRC&#xB97C; &#xC548;&#xB4DC;&#xB85C;&#xC774;&#xB4DC; &#xB9C8;&#xCF13;&#xC5D0;&#xC11C; &#xC9C1;&#xC811; &#xBC1B;&#xAC70;&#xB098; &#xC544;&#xB798;&#xC758; &#xBC14;&#xCF54;&#xB4DC; &#xC911; &#xD558;&#xB098;&#xB97C; &#xC2A4;&#xCE94;&#xD558;&#xC5EC; &#xB0B4;&#xB824;&#xBC1B;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;</target>
+            </trans-unit>
+            <trans-unit id="sidebar.market.free">
+                <source>sidebar.market.free</source>
+                <target>&#xBB34;&#xB8CC;</target>
+            </trans-unit>
+            <trans-unit id="sidebar.market.premium">
+                <source>sidebar.market.premium</source>
+                <target>&#xD504;&#xB9AC;&#xBBF8;&#xC5C4;</target>
+            </trans-unit>
+            <trans-unit id="sidebar.team">
+                <source>sidebar.team</source>
+                <target>&#xC548;&#xB4DC;&#xB85C;IRC &#xD300;</target>
+            </trans-unit>
+            <trans-unit id="sidebar.facebook">
+                <source>sidebar.facebook</source>
+                <target>&#xD398;&#xC774;&#xC2A4;&#xBD81;</target>
+            </trans-unit>
+            <trans-unit id="homepage.title">
+                <source>homepage.title</source>
+                <target>&#xD648;</target>
+            </trans-unit>
+            <trans-unit id="homepage.introduction">
+                <source>homepage.introduction</source>
+                <target>&#xC548;&#xB4DC;&#xB85C;IRC&#xB294; &#xD55C; &#xBC88;&#xC5D0; &#xC5EC;&#xB7EC; &#xC11C;&#xBC84;&#xC5D0; (&#xBCF4;&#xC548;&#xC774; &#xB418;&#xC5C8;&#xB358; &#xC548; &#xB418;&#xC5C8;&#xB358;) &#xC5F0;&#xACB0;&#xD560; &#xC218; &#xC788;&#xB294; &#xC548;&#xB4DC;&#xB85C;&#xC774;&#xB4DC; IRC &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;. &#xAE30;&#xB2A5;: mIRC &#xC0C9;&#xAE54; &#xC9C0;&#xC6D0;, &#xC2DC;&#xC791;&#xC2DC; &#xCC44;&#xB110; &#xC790;&#xB3D9; &#xC785;&#xC7A5;, Nickserv/SASL &#xC778;&#xC99D;, &#xAE30;&#xB85D;, &#xD14C;&#xB9C8;... &#xC628;&#xB77C;&#xC778; &#xC11C;&#xC2DD;&#xC73C;&#xB85C; &#xC6B0;&#xB9AC;&#xC5D0;&#xAC8C; &#xC5F0;&#xB77D;&#xD558;&#xB294; &#xAC83;&#xC744; &#xAEBC;&#xB9AC;&#xC9C0; &#xB9C8;&#xC138;&#xC694;.</target>
+            </trans-unit>
+            <trans-unit id="screenshots.name">
+                <source>screenshots.name</source>
+                <target>&#xC2A4;&#xD06C;&#xB9B0;&#xC0F7;</target>
+            </trans-unit>
+            <trans-unit id="beta.name">
+                <source>beta.name</source>
+                <target>&#xCD5C;&#xC2E0; &#xC548;&#xB4DC;&#xB85C;IRC &#xBCA0;&#xD0C0; &#xBC84;&#xC804;</target>
+            </trans-unit>
+            <trans-unit id="beta.desc">
+                <source>beta.desc</source>
+                <target>&#xC548;&#xB4DC;&#xB85C;IRC&#xC758; &#xCD5C;&#xC2E0; &#xBCA0;&#xD0C0;&#xB97C; &#xB0B4;&#xB824;&#xBC1B;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;! &#xC774; &#xD30C;&#xC77C;&#xC740; &lt;strong&gt;&#xC544;&#xC9C1; &#xBC84;&#xADF8;&#xAC00; &#xC788;&#xAE30; &#xB54C;&#xBB38;&#xC5D0;&lt;/strong&gt; &#xAD6C;&#xAE00; &#xD50C;&#xB808;&#xC774;(&#xC548;&#xB4DC;&#xB85C;&#xC774;&#xB4DC; &#xB9C8;&#xCF13;)&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774;&#xAC83;&#xC740; &#xC544;&#xC9C1; &#xBCA0;&#xD0C0; &#xBC30;&#xD3EC;&#xB77C;&#xB294; &#xAC83;&#xC744; &#xAE30;&#xC5B5;&#xD574;&#xB450;&#xC138;&#xC694; ;). &#xB9CC;&#xC57D; &#xBC84;&#xADF8;&#xB97C; &#xBC1C;&#xACAC;&#xD558;&#xC2DC;&#xBA74; &#xC800;&#xD76C;&#xC5D0;&#xAC8C; &#xC5F0;&#xB77D;&#xD558;&#xC2DC;&#xAC70;&#xB098; &#xBC84;&#xADF8; &#xCD94;&#xC801;&#xAE30;&#xC5D0; &#xC0C8;&#xB85C;&#xC6B4; &#xD45C;&#xB97C; &#xBD99;&#xC5EC;&#xC8FC;&#xC138;&#xC694;. &#xACE0;&#xB9D9;&#xC2B5;&#xB2C8;&#xB2E4;!</target>
+            </trans-unit>
+            <trans-unit id="beta.button">
+                <source>beta.button</source>
+                <target>&#xC548;&#xB4DC;&#xB85C;IRC&#xC758; &#xCD5C;&#xC2E0; &#xBCA0;&#xD0C0; &#xB0B4;&#xB824;&#xBC1B;&#xAE30;</target>
+            </trans-unit>
+            <trans-unit id="beta.subtitle">
+                <source>beta.subtitle</source>
+                <target>&#xBC84;&#xC804; %version% - %date%</target>
+            </trans-unit>
+            <trans-unit id="beta.date_format">
+                <source>beta.date_format</source>
+                <target>YYYY&#xB144;/mm&#xC6D4;/dd&#xC77C;</target>
+            </trans-unit>
+            <trans-unit id="beta.no_beta">
+                <source>beta.no_beta</source>
+                <target>&#xC9C0;&#xAE08;&#xC740; &#xBCA0;&#xD0C0;&#xAC00; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;... &#xB098;&#xC911;&#xC5D0; &#xB2E4;&#xC2DC; &#xC624;&#xC138;&#xC694;!</target>
+            </trans-unit>
+            <trans-unit id="donate.support_it">
+                <source>donate.support_it</source>
+                <target>&#xC548;&#xB4DC;&#xB85C;IRC&#xAC00; &#xC88B;&#xC740;&#xAC00;&#xC694;? &#xB3C4;&#xC640;&#xC8FC;&#xC138;&#xC694;!</target>
+            </trans-unit>
+            <trans-unit id="donate.desc">
+                <source>donate.desc</source>
+                <target>&#xC548;&#xB4DC;&#xB85C;IRC&#xB294; &lt;strong&gt;&#xBB34;&#xB8CC;&lt;/strong&gt;&#xC774;&#xACE0; &#xB9C8;&#xCF13;&#xC5D0;&#xC11C; &#xC774;&#xAC83;&#xC744; &lt;strong&gt;&#xBB34;&#xB8CC;&#xB85C;&lt;/strong&gt; &#xB0B4;&#xB824;&#xBC1B;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xD558;&#xC9C0;&#xB9CC; &#xC6B0;&#xB9AC;&#xB294; &#xC11C;&#xBC84; &#xAD00;&#xB9AC;&#xC5D0; &#xB300;&#xD558;&#xC5EC; &#xB3C8;&#xC744; &#xB0B4;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB9CC;&#xC57D; &#xB2F9;&#xC2E0;&#xC774; &#xC548;&#xB4DC;&#xB85C;IRC&#xB97C; &#xB3C4;&#xC640;&#xC8FC;&#xACE0; &#xC2F6;&#xB2E4;&#xBA74;, &#xB450; &#xAC00;&#xC9C0; &#xBC29;&#xBC95;&#xC774; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;</target>
+            </trans-unit>
+            <trans-unit id="donate.thanks">
+                <source>donate.thanks</source>
+                <target>&#xB9CE;&#xC740; &#xAC10;&#xC0AC;&#xB97C; &#xB4DC;&#xB9BD;&#xB2C8;&#xB2E4;</target>
+            </trans-unit>
+            <trans-unit id="donate.also">
+                <source>donate.also</source>
+                <target>&#xB2F9;&#xC2E0;&#xC740; &#xD504;&#xB9AC;&#xBBF8;&#xC5C4; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC778; "&#xC548;&#xB4DC;&#xB85C;IRC &#xD504;&#xB9AC;&#xBBF8;&#xC5C4;"&#xC744; &#xB0B4;&#xB824;&#xBC1B;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC740; &#xB2E8;&#xC9C0; &#xC548;&#xB4DC;&#xB85C;IRC&#xC758; &#xAD11;&#xACE0;&#xB97C; &#xD574;&#xC81C;&#xD574;&#xC90D;&#xB2C8;&#xB2E4;.</target>
+            </trans-unit>
+            <trans-unit id="contact.desc">
+                <source>contact.desc</source>
+                <target>&#xB2F9;&#xC2E0;&#xC740; &#xBC84;&#xADF8;&#xB97C; &#xC811;&#xC218;&#xD558;&#xAC70;&#xB098; &#xB2E8;&#xC9C0; &#xBB3C;&#xC5B4;&#xBCFC; &#xAC83;&#xC774; &#xC788;&#xC744; &#xB54C; &#xC774; &#xC591;&#xC2DD;&#xC73C;&#xB85C; &#xD300;&#xC5D0;&#xAC8C; &#xC5F0;&#xB77D;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB9CC;&#xC57D; &#xBC84;&#xADF8;&#xB97C; &#xC2E0;&#xACE0;&#xD558;&#xACE0; &#xC2F6;&#xB2E4;&#xBA74;, &#xB2F9;&#xC2E0;&#xC740; &#xC548;&#xB4DC;&#xB85C;IRC &#xBC84;&#xC804;&#xACFC; &#xC548;&#xB4DC;&#xB85C;&#xC774;&#xB4DC; &#xBC84;&#xC804;&#xC744; &#xC120;&#xD0DD;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</target>
+            </trans-unit>
+            <trans-unit id="contact.name">
+                <source>contact.name</source>
+                <target>&#xC774;&#xB984;</target>
+            </trans-unit>
+            <trans-unit id="contact.email">
+                <source>contact.email</source>
+                <target>&#xC804;&#xC790; &#xC6B0;&#xD3B8;</target>
+            </trans-unit>
+            <trans-unit id="contact.androirc_version">
+                <source>contact.androirc_version</source>
+                <target>&#xC548;&#xB4DC;&#xB85C;IRC &#xBC84;&#xC804;</target>
+            </trans-unit>
+            <trans-unit id="contact.android_version">
+                <source>contact.android_version</source>
+                <target>&#xC548;&#xB4DC;&#xB85C;&#xC774;&#xB4DC; &#xBC84;&#xC804;</target>
+            </trans-unit>
+            <trans-unit id="contact.content">
+                <source>contact.content</source>
+                <target>&#xB0B4;&#xC6A9;</target>
+            </trans-unit>
+            <trans-unit id="contact.submit">
+                <source>contact.submit</source>
+                <target>&#xBCF4;&#xB0B4;&#xAE30;</target>
+            </trans-unit>
+            <trans-unit id="contact.flash">
+                <source>contact.flash</source>
+                <target>&#xB2F9;&#xC2E0;&#xC758; &#xBA54;&#xC2DC;&#xC9C0;&#xAC00; &#xC804;&#xC1A1;&#xB418;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;</target>
+            </trans-unit>
+            <trans-unit id="article.date_format">
+                <source>article.date_format</source>
+                <target>YYYY&#xB144;/mm&#xC6D4;/dd&#xC77C;</target>
+            </trans-unit>
+            <trans-unit id="article.archives">
+                <source>article.archives</source>
+                <target>&#xBCF4;&#xAD00;&#xC18C;</target>
+            </trans-unit>
+            <trans-unit id="article.posted_by">
+                <source>article.posted_by</source>
+                <target>%name%&#xC5D0; &#xC758;&#xD574; &#xC62C;&#xB824;&#xC9D0;</target>
+            </trans-unit>
+            <trans-unit id="footer.community.name">
+                <source>footer.community.name</source>
+                <target>&#xCEE4;&#xBBA4;&#xB2C8;&#xD2F0;</target>
+            </trans-unit>
+            <trans-unit id="footer.community.desc">
+                <source>footer.community.desc</source>
+                <target>IRC&#xC5D0;&#xC11C; &#xC800;&#xD76C;&#xC640; &#xD568;&#xAED8;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC800;&#xD76C;&#xB294; Freenode&#xC5D0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</target>
+            </trans-unit>
+            <trans-unit id="footer.community.facebook">
+                <source>footer.community.facebook</source>
+                <target>&#xD398;&#xC774;&#xC2A4;&#xBD81; &#xD398;&#xC774;&#xC9C0;</target>
+            </trans-unit>
+            <trans-unit id="footer.community.twitter">
+                <source>footer.community.twitter</source>
+                <target>&#xD2B8;&#xC704;&#xD130;&#xC5D0;&#xC11C; &#xC800;&#xD76C;&#xB97C; &#xD314;&#xB85C;&#xC6B0;&#xD558;&#xC138;&#xC694;</target>
+            </trans-unit>
+            <trans-unit id="footer.community.googleplus">
+                <source>footer.community.googleplus</source>
+                <target>&#xAD6C;&#xAE00;+ &#xD398;&#xC774;&#xC9C0;</target>
+            </trans-unit>
+            <trans-unit id="footer.otherpages.name">
+                <source>footer.otherpages.name</source>
+                <target>&#xB2E4;&#xB978; &#xD398;&#xC774;&#xC9C0;</target>
+            </trans-unit>
+            <trans-unit id="footer.otherpages.beta">
+                <source>footer.otherpages.beta</source>
+                <target>&#xCD5C;&#xC2E0; &#xBCA0;&#xD0C0; &#xB0B4;&#xB824;&#xBC1B;&#xAE30;</target>
+            </trans-unit>
+            <trans-unit id="footer.otherpages.bug">
+                <source>footer.otherpages.bug</source>
+                <target>&#xBC84;&#xADF8; &#xCD94;&#xC801;&#xAE30; &#xC6F9;&#xC0AC;&#xC774;&#xD2B8;</target>
+            </trans-unit>
+            <trans-unit id="footer.otherpages.rss">
+                <source>footer.otherpages.rss</source>
+                <target>RSS &#xD53C;&#xB4DC;</target>
+            </trans-unit>
+            <trans-unit id="footer.otherpages.premium">
+                <source>footer.otherpages.premium</source>
+                <target>&#xC548;&#xB4DC;&#xB85C;IRC &#xD504;&#xB9AC;&#xBBF8;&#xC5C4; &#xB0B4;&#xB824;&#xBC1B;&#xAE30;</target>
+            </trans-unit>
+            <trans-unit id="footer.otherpages.translation">
+                <source>footer.otherpages.translation</source>
+                <target>&#xC548;&#xB4DC;&#xB85C;IRC &#xBC88;&#xC5ED;&#xC744; &#xB3C4;&#xC640;&#xC8FC;&#xC138;&#xC694;</target>
+            </trans-unit>
+            <trans-unit id="footer.otherpages.contact">
+                <source>footer.otherpages.contact</source>
+                <target>&#xC6B0;&#xB9AC;&#xC5D0;&#xAC8C; &#xC5F0;&#xB77D;&#xD558;&#xC138;&#xC694;</target>
+            </trans-unit>
+            <trans-unit id="footer.copyright.name">
+                <source>footer.copyright.name</source>
+                <target>&#xC800;&#xC791;&#xAD8C;</target>
+            </trans-unit>
+            <trans-unit id="footer.copyright.desc">
+                <source>footer.copyright.desc</source>
+                <target>%year% Madalynn&#xC774; &#xBAA8;&#xB4E0; &#xAD8C;&#xB9AC;&#xB97C; &#xBCF4;&#xC720;&#xD569;&#xB2C8;&#xB2E4;. &#xC548;&#xB4DC;&#xB85C;&#xC774;&#xB4DC;&#x2122;&#xB294; &#xAD6C;&#xAE00; Inc.&#xC758; &#xC0C1;&#xD45C;&#xC785;&#xB2C8;&#xB2E4;.</target>
+            </trans-unit>
+            <trans-unit id="footer.translation_by">
+                <source>footer.translation_by</source>
+                <target>Pandaren Sweetbarrow&#xC5D0; &#xC758;&#xD574; &#xBC88;&#xC5ED;&#xB428;</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
