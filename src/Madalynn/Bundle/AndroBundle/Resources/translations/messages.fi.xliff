@@ -1,0 +1,247 @@
+<?xml version="1.0"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+    <file datatype="plaintext" original="messages.en.xliff" source-language="en">
+        <body>
+            <trans-unit id="meta.keywords">
+                <source>meta.keywords</source>
+                <target>android, irc, asiakasohjelma, ilmainen, app, mirc, androirc, market, play, loggaus, sasl, todentaminen, blowfish, plain, tunnistautuminne, nickserv, teemat, &#xE4;lypuhelin, sovellus, appit, ircd, kommunikointi, internet, relay, chat, server, freenode, epiknet, quakenet, efnet, undernet, ident, nick, nimimerkki, chan, kanava, potku, esto, op, halfop, voice</target>
+            </trans-unit>
+            <trans-unit id="header.subtitle">
+                <source>header.subtitle</source>
+                <target>Android&#x2122; IRC-asiakasohjelma</target>
+            </trans-unit>
+            <trans-unit id="header.untranslated">
+                <source>header.untranslated</source>
+                <target>Osa t&#xE4;m&#xE4;n sivun elementeist&#xE4; ei ole saatavilla t&#xE4;ll&#xE4; kielell&#xE4;</target>
+            </trans-unit>
+            <trans-unit id="global.cancel">
+                <source>global.cancel</source>
+                <target>Peruuta</target>
+            </trans-unit>
+            <trans-unit id="menu.news">
+                <source>menu.news</source>
+                <target>Uutiset</target>
+            </trans-unit>
+            <trans-unit id="menu.wiki">
+                <source>menu.wiki</source>
+                <target>Wiki</target>
+            </trans-unit>
+            <trans-unit id="menu.screens">
+                <source>menu.screens</source>
+                <target>Ruutukaappaukset</target>
+            </trans-unit>
+            <trans-unit id="menu.contact">
+                <source>menu.contact</source>
+                <target>Ota yhteytt&#xE4;</target>
+            </trans-unit>
+            <trans-unit id="menu.beta">
+                <source>menu.beta</source>
+                <target>Beeta</target>
+            </trans-unit>
+            <trans-unit id="menu.download">
+                <source>menu.download</source>
+                <target>Lataa</target>
+            </trans-unit>
+            <trans-unit id="menu.eula">
+                <source>menu.eula</source>
+                <target>EULA</target>
+            </trans-unit>
+            <trans-unit id="menu.donate">
+                <source>menu.donate</source>
+                <target>Lahjoita</target>
+            </trans-unit>
+            <trans-unit id="sidebar.mobile.name">
+                <source>sidebar.mobile.name</source>
+                <target>Mobiiliversio</target>
+            </trans-unit>
+            <trans-unit id="sidebar.mobile.to_mobile">
+                <source>sidebar.mobile.to_mobile</source>
+                <target>Vaihda mobiiliversioon</target>
+            </trans-unit>
+            <trans-unit id="sidebar.mobile.to_web">
+                <source>sidebar.mobile.to_web</source>
+                <target>Vaihda web-versioon</target>
+            </trans-unit>
+            <trans-unit id="sidebar.market.name">
+                <source>sidebar.market.name</source>
+                <target>Google Play</target>
+            </trans-unit>
+            <trans-unit id="sidebar.market.desc">
+                <source>sidebar.market.desc</source>
+                <target>Voit ladata AndroIRC:n suoraan Google Playsta tai skannata toisen alla olevista viivakoodeista</target>
+            </trans-unit>
+            <trans-unit id="sidebar.market.free">
+                <source>sidebar.market.free</source>
+                <target>Ilmainen</target>
+            </trans-unit>
+            <trans-unit id="sidebar.market.premium">
+                <source>sidebar.market.premium</source>
+                <target>Premium</target>
+            </trans-unit>
+            <trans-unit id="sidebar.team">
+                <source>sidebar.team</source>
+                <target>AndoIRC-tiimi</target>
+            </trans-unit>
+            <trans-unit id="sidebar.facebook">
+                <source>sidebar.facebook</source>
+                <target>Facebook</target>
+            </trans-unit>
+            <trans-unit id="homepage.title">
+                <source>homepage.title</source>
+                <target>Koti</target>
+            </trans-unit>
+            <trans-unit id="homepage.introduction">
+                <source>homepage.introduction</source>
+                <target>AndroIRC on Android IRC-asiakasohjelma, joka pystyy yhdist&#xE4;m&#xE4;&#xE4;n usealle palvelimella (suojattu tai ei) samanaikaisesti. Ominaisuut: tukee mIRC-v&#xE4;rej&#xE4;, automaattisesti yhdist&#xE4;mist&#xE4; kanaville k&#xE4;ynnistyksess&#xE4;, nickserv/sasl auth, loggausta, teemoja... Ota meihin vapaasti yhteytta verkkolomakkeella.</target>
+            </trans-unit>
+            <trans-unit id="screenshots.name">
+                <source>screenshots.name</source>
+                <target>Ruutukaappaukset</target>
+            </trans-unit>
+            <trans-unit id="beta.name">
+                <source>beta.name</source>
+                <target>Viimeisin AndroIRC:n beetaversio</target>
+            </trans-unit>
+            <trans-unit id="beta.desc">
+                <source>beta.desc</source>
+                <target>Voit nyt ladata AndroIRC:n viimeisimm&#xE4;n beetan! T&#xE4;m&#xE4; tiedosto ei ole saatavilla Google Playssa (Android Market), koska &lt;strong&gt;se sis&#xE4;lt&#xE4;&#xE4; bugeja&lt;/strong&gt;. Huomaathan, ett&#xE4; kyseess&#xE4; on vain beetajulkaisu ;). Jos l&#xF6;yd&#xE4;t bugin, ota meihin yhteytt&#xE4; tai l&#xE4;het&#xE4; uusi viesti bugiseurantaan. Kiitos!</target>
+            </trans-unit>
+            <trans-unit id="beta.button">
+                <source>beta.button</source>
+                <target>Lataa AndroIRC:n viimeisin beeta</target>
+            </trans-unit>
+            <trans-unit id="beta.subtitle">
+                <source>beta.subtitle</source>
+                <target>Versio %version% - %date%</target>
+            </trans-unit>
+            <trans-unit id="beta.date_format">
+                <source>beta.date_format</source>
+                <target>d/m/Y</target>
+            </trans-unit>
+            <trans-unit id="beta.no_beta">
+                <source>beta.no_beta</source>
+                <target>Ei beetaa t&#xE4;ll&#xE4; hetkell&#xE4;... Tule my&#xF6;hemmin takaisin!</target>
+            </trans-unit>
+            <trans-unit id="donate.support_it">
+                <source>donate.support_it</source>
+                <target>Pid&#xE4;tk&#xF6; AndroIRC:st&#xE4;? Tue sit&#xE4;!</target>
+            </trans-unit>
+            <trans-unit id="donate.desc">
+                <source>donate.desc</source>
+                <target>AndroIRC on &lt;strong&gt;ilmainen&lt;/strong&gt; ja voit ladata sen &lt;strong&gt;ILMAISEKSI&lt;/strong&gt; Playsta. Mutta meill&#xE4; on &lt;strong&gt;kustannuksia&lt;/strong&gt; palvelimen hallinnoinnista. Jos haluat tukea AndroIRC:&#xE4;, sinulla on kaksi tapaa</target>
+            </trans-unit>
+            <trans-unit id="donate.thanks">
+                <source>donate.thanks</source>
+                <target>Paljon kiitoksia seuraaville</target>
+            </trans-unit>
+            <trans-unit id="donate.also">
+                <source>donate.also</source>
+                <target>Voit my&#xF6;s ladata premium-sovelluksen "AndroIRC premiumin". T&#xE4;m&#xE4; sovellus vain poistaa mainokset AndroIRC:st&#xE4;.</target>
+            </trans-unit>
+            <trans-unit id="contact.desc">
+                <source>contact.desc</source>
+                <target>Voit k&#xE4;ytt&#xE4;&#xE4; t&#xE4;t&#xE4; lomaketta ottaaksesi yhteytt&#xE4; tiimiin ilmoittaaksesi bugista tai kysy&#xE4;ksesi jotakin. Jos haluat ilmoittaa bugin, voit my&#xF6;s valikoida AndroIRC:n ja Androidin version.</target>
+            </trans-unit>
+            <trans-unit id="contact.name">
+                <source>contact.name</source>
+                <target>Nimi</target>
+            </trans-unit>
+            <trans-unit id="contact.email">
+                <source>contact.email</source>
+                <target>S&#xE4;hk&#xF6;posti</target>
+            </trans-unit>
+            <trans-unit id="contact.androirc_version">
+                <source>contact.androirc_version</source>
+                <target>AndroIRC:n versio</target>
+            </trans-unit>
+            <trans-unit id="contact.android_version">
+                <source>contact.android_version</source>
+                <target>Androidin versio</target>
+            </trans-unit>
+            <trans-unit id="contact.content">
+                <source>contact.content</source>
+                <target>Sis&#xE4;lt&#xF6;</target>
+            </trans-unit>
+            <trans-unit id="contact.submit">
+                <source>contact.submit</source>
+                <target>L&#xE4;het&#xE4; viestisi</target>
+            </trans-unit>
+            <trans-unit id="contact.flash">
+                <source>contact.flash</source>
+                <target>Viestisi on l&#xE4;hetetty.</target>
+            </trans-unit>
+            <trans-unit id="article.date_format">
+                <source>article.date_format</source>
+                <target>d/m/Y</target>
+            </trans-unit>
+            <trans-unit id="article.archives">
+                <source>article.archives</source>
+                <target>Arkistot</target>
+            </trans-unit>
+            <trans-unit id="article.posted_by">
+                <source>article.posted_by</source>
+                <target>Uutisen kirjoitti %name%</target>
+            </trans-unit>
+            <trans-unit id="footer.community.name">
+                <source>footer.community.name</source>
+                <target>Yhteis&#xF6;</target>
+            </trans-unit>
+            <trans-unit id="footer.community.desc">
+                <source>footer.community.desc</source>
+                <target>Voit liitty&#xE4; meihin IRC:ss&#xE4;. L&#xF6;yd&#xE4;t meid&#xE4;t freenodesta.</target>
+            </trans-unit>
+            <trans-unit id="footer.community.facebook">
+                <source>footer.community.facebook</source>
+                <target>Facebook-sivu</target>
+            </trans-unit>
+            <trans-unit id="footer.community.twitter">
+                <source>footer.community.twitter</source>
+                <target>Seuraa meit&#xE4; Twitteriss&#xE4;</target>
+            </trans-unit>
+            <trans-unit id="footer.community.googleplus">
+                <source>footer.community.googleplus</source>
+                <target>Google+ -sivu</target>
+            </trans-unit>
+            <trans-unit id="footer.otherpages.name">
+                <source>footer.otherpages.name</source>
+                <target>Muut sivut</target>
+            </trans-unit>
+            <trans-unit id="footer.otherpages.beta">
+                <source>footer.otherpages.beta</source>
+                <target>Lataa viimeisn beeta</target>
+            </trans-unit>
+            <trans-unit id="footer.otherpages.bug">
+                <source>footer.otherpages.bug</source>
+                <target>Bugiseurantasivusto</target>
+            </trans-unit>
+            <trans-unit id="footer.otherpages.rss">
+                <source>footer.otherpages.rss</source>
+                <target>RSS-sy&#xF6;te</target>
+            </trans-unit>
+            <trans-unit id="footer.otherpages.premium">
+                <source>footer.otherpages.premium</source>
+                <target>Lataa AndroIRC premium</target>
+            </trans-unit>
+            <trans-unit id="footer.otherpages.translation">
+                <source>footer.otherpages.translation</source>
+                <target>Auta k&#xE4;&#xE4;nt&#xE4;m&#xE4;&#xE4;n AndroIRC</target>
+            </trans-unit>
+            <trans-unit id="footer.otherpages.contact">
+                <source>footer.otherpages.contact</source>
+                <target>Ota yhteytt&#xE4;</target>
+            </trans-unit>
+            <trans-unit id="footer.copyright.name">
+                <source>footer.copyright.name</source>
+                <target>Tekij&#xE4;noikeudet</target>
+            </trans-unit>
+            <trans-unit id="footer.copyright.desc">
+                <source>footer.copyright.desc</source>
+                <target>%year% Madalynn, kaikki oikeudet pid&#xE4;tet&#xE4;&#xE4;n. Android&#x2122; on Google Inc.:n tuotemerkki</target>
+            </trans-unit>
+            <trans-unit id="footer.translation_by">
+                <source>footer.translation_by</source>
+                <target>Suomentanut Rami Selin</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

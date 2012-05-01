@@ -116,7 +116,7 @@
             </trans-unit>
             <trans-unit id="beta.date_format">
                 <source>beta.date_format</source>
-                <target>YYYY&#xB144;/mm&#xC6D4;/dd&#xC77C;</target>
+                <target>Y&#xB144;/m&#xC6D4;/d&#xC77C;</target>
             </trans-unit>
             <trans-unit id="beta.no_beta">
                 <source>beta.no_beta</source>
@@ -172,7 +172,7 @@
             </trans-unit>
             <trans-unit id="article.date_format">
                 <source>article.date_format</source>
-                <target>YYYY&#xB144;/mm&#xC6D4;/dd&#xC77C;</target>
+                <target>Y&#xB144;/m&#xC6D4;/d&#xC77C;</target>
             </trans-unit>
             <trans-unit id="article.archives">
                 <source>article.archives</source>
