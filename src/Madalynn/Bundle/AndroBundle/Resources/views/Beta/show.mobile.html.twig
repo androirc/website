@@ -13,7 +13,7 @@
         {% if not beta %}
             {{ 'beta.no_beta'|trans }}
         {% else %}
-            <a class="awesome large" style="margin-bottom: 5px;" href="{{ path('beta_download') }}">{{ 'beta.button'|trans }}</a><br />
+            <a class="awesome large" style="margin-bottom: 5px;" href="{{ path('_beta_download') }}">{{ 'beta.button'|trans }}</a><br />
             <span>({{ 'beta.subtitle'|trans({'%version%': beta.version, '%date%': beta.created|date('beta.date_format'|trans)}) }})</span>
         {% endif %}
     </div>

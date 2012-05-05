@@ -34,7 +34,7 @@ class ChangeLogController extends CRUDController
             throw $this->createNotFoundException('Unable to find ChangeLog entity.');
         }
 
-        return $this->redirect($this->generateUrl('changelog', array(
+        return $this->redirect($this->generateUrl('_changelog', array(
             'version'=> $entity->getVersion()
         )));
     }

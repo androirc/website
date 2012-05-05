@@ -26,7 +26,7 @@ article_show:
     pattern: /article/{id}/{slug}
     defaults: { _controller: AndroBundle:Article:show }
 
-article_atom:
+_article_atom:
     pattern: /articles/atom
     defaults: { _controller: AndroBundle:Article:atom, _format: atom }
 
@@ -34,28 +34,28 @@ beta:
     pattern: /beta
     defaults: { _controller: AndroBundle:Beta:show }
 
-beta_download:
+_beta_download:
     pattern: /beta/download
     defaults: { _controller: AndroBundle:Beta:download }
 
-beta_latest:
+_beta_latest:
     pattern: /beta/latest
     defaults: { _controller: AndroBundle:Beta:latest }
 
-tip:
+_tip:
     pattern: /tip/{lang}/{date}
     defaults: { _controller: AndroBundle:Tip:show, date: null }
 
-quickstart:
+_quickstart:
     pattern: /quickstart/{version}/{lang}
     defaults: { _controller: AndroBundle:QuickStart:show }
 
-crash_report:
+_crash_report:
     pattern: /crashreport
     defaults: { _controller: AndroBundle:CrashReport:add }
     requirements: { _method: post }
 
-changelog:
+_changelog:
     pattern: /changelog/{version}
     defaults: { _controller: AndroBundle:ChangeLog:show }
 

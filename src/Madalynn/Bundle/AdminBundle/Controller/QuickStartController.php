@@ -34,7 +34,7 @@ class QuickStartController extends CRUDController
             throw $this->createNotFoundException('Unable to find QuickStart entity.');
         }
 
-        return $this->redirect($this->generateUrl('quickstart', array(
+        return $this->redirect($this->generateUrl('_quickstart', array(
             'version' => $entity->getVersionMin(),
             'lang'    => $entity->getLanguage()
         )));
