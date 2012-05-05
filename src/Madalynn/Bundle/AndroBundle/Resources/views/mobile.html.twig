@@ -13,6 +13,10 @@
         <meta name="language" content="{{ locales()|join(',') }}" />
         <meta name="robots" content="index, follow" />
 
+        {% for locale in locales() -%}
+            <link rel="alternate" hreflang="{{ locale }}" href="{{ path_locale(app.request, locale, true) }}" />
+        {% endfor %}
+
         <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-precomposed.png" />
         <link href="http://feeds.feedburner.com/AndroIRC" type="application/atom+xml" rel="alternate" title="Last articles" />
         <link rel="shortcut icon" href="/favicon.ico" />
