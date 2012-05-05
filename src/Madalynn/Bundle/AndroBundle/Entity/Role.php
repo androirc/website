@@ -23,7 +23,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="andro_role")
  * @ORM\HasLifecycleCallbacks
  */
-class Role implements RoleInterface
+class Role implements RoleInterface, \Serializable
 {
     /**
      * @ORM\Id
@@ -162,5 +162,32 @@ class Role implements RoleInterface
     public function __toString()
     {
         return $this->role;
+    }
+
+    /**
+     * Bug in PHP P5.4 with the intern serialization
+     *
+     * @see https://github.com/symfony/symfony/issues/3691
+     */
+    public function serialize()
+    {
+        return json_encode(array(
+            $this->id,
+            $this->role,
+            $this->description,
+            $this->created,
+            $this->updated,
+        ));
+    }
+
+    public function unserialize($serialized)
+    {
+        list(
+            $this->id,
+            $this->role,
+            $this->description,
+            $this->created,
+            $this->updated,
+        ) = json_decode($serialized, true);
     }
 }
