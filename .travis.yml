@@ -1,6 +1,7 @@
 language: php
 
 php:
+    - 5.3.2
     - 5.3
     - 5.4
 
@@ -12,12 +13,6 @@ before_script:
 
 script: phpunit -c app/
 
-branches:
-    only:
-        - master
-
 notifications:
     email:
         - mewt@madalynn.eu
-    irc:
-        - "irc.epiknet.org#androirc"
