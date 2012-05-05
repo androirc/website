@@ -23,7 +23,7 @@ use Doctrine\Common\Collections\ArrayCollection;
  * @ORM\Table(name="andro_user")
  * @ORM\HasLifecycleCallbacks
  */
-class User implements UserInterface
+class User implements UserInterface, \Serializable
 {
     /**
      * @ORM\Id
@@ -85,6 +85,9 @@ class User implements UserInterface
      */
     protected $lastLogin;
 
+    /**
+     * Constructor
+     */
     public function __construct()
     {
         $this->salt = base_convert(sha1(uniqid(mt_rand(), true)), 16, 36);
@@ -377,22 +380,57 @@ class User implements UserInterface
     }
 
     /**
-     * The equality comparison should neither be done by referential equality
-     * nor by comparing identities (i.e. getId() === getId()).
-     *
-     * However, you do not need to compare every attribute, but only those that
-     * are relevant for assessing whether re-authentication is required.
-     *
-     * @param UserInterface $user
-     * @return Boolean
+     * {@inheritdoc}
      */
-    function equals(UserInterface $user)
+    public function equals(UserInterface $user)
     {
         return md5($user->getUsername()) == md5($this->getUsername());
     }
 
-    function __toString()
+    /**
+     * String representation
+     *
+     * @return string
+     */
+    public function __toString()
     {
         return $this->getUsername();
+    }
+
+    /**
+     * Bug in PHP P5.4 with the intern serialization
+     *
+     * @see https://github.com/symfony/symfony/issues/3691
+     */
+    public function serialize()
+    {
+        return json_encode(array(
+            $this->id,
+            $this->username,
+            $this->email,
+            $this->password,
+            $this->salt,
+            $this->userRoles,
+            $this->enabled,
+            $this->created,
+            $this->updated,
+            $this->lastLogin,
+        ));
+    }
+
+    public function unserialize($serialized)
+    {
+        list(
+            $this->id,
+            $this->username,
+            $this->email,
+            $this->password,
+            $this->salt,
+            $this->userRoles,
+            $this->enabled,
+            $this->created,
+            $this->updated,
+            $this->lastLogin,
+        ) = json_decode($serialized, true);
     }
 }
