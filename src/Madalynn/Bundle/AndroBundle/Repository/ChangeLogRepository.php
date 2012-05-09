@@ -20,16 +20,14 @@ class ChangeLogRepository extends EntityRepository
 {
     public function findByVersion(AndroircVersion $version)
     {
-        $changelog = $this->createQueryBuilder('c')
-                          ->leftJoin('c.version', 'v')
-                          ->where('v.code <= :version')
-                          ->orderBy('v.code', 'desc')
-                          ->setParameter('version', $version->getCode())
-                          ->orderBy('v.code', 'desc')
-                          ->setMaxResults(1)
-                          ->getQuery()
-                          ->getOneOrNullResult();
-
-        return $changelog;
+        return $this->createQueryBuilder('c')
+                    ->leftJoin('c.version', 'v')
+                    ->where('v.code <= :version')
+                    ->orderBy('v.code', 'desc')
+                    ->setParameter('version', $version->getCode())
+                    ->orderBy('v.code', 'desc')
+                    ->setMaxResults(1)
+                    ->getQuery()
+                    ->getOneOrNullResult();
     }
 }
