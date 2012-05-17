@@ -14,7 +14,6 @@ namespace Madalynn\Bundle\AdminBundle\Controller;
 
 use Doctrine\ORM\QueryBuilder;
 
-use Madalynn\Bundle\AdminBundle\Form\BetaReleaseType;
 
 class CrashReportController extends CRUDController
 {

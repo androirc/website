@@ -13,7 +13,6 @@
 namespace Madalynn\Bundle\AndroBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
-use Doctrine\ORM\NoResultException;
 
 class BetaReleaseRepository extends EntityRepository
 {

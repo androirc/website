@@ -12,8 +12,6 @@
 
 namespace Madalynn\Bundle\AndroBundle\Controller;
 
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Finder\Finder;
 
 /**

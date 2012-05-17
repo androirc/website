@@ -87,9 +87,9 @@ class AndroExtension extends \Twig_Extension
     /**
      * Regenerate a URI based on the current request URI, but containing the locale provided
      *
-     * @param Request $request   The old request
-     * @param string  $locale    The locale applied in the returned url
-     * @param bool    $absolute  Whether the returned url should be absolute
+     * @param Request $request  The old request
+     * @param string  $locale   The locale applied in the returned url
+     * @param bool    $absolute Whether the returned url should be absolute
      *
      * @return string $url The current url transformed with the locale provided
      *
@@ -115,7 +115,7 @@ class AndroExtension extends \Twig_Extension
     /**
      * Generate an article url
      *
-     * @param Article $article An article object
+     * @param Article $article  An article object
      * @param boolean $absolute Absolute url or not
      *
      * @return string The article url

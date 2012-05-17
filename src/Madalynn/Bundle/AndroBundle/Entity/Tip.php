@@ -40,7 +40,7 @@ class Tip
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -60,7 +60,7 @@ class Tip
     /**
      * Get language
      *
-     * @return string 
+     * @return string
      */
     public function getLanguage()
     {
@@ -80,7 +80,7 @@ class Tip
     /**
      * Get content
      *
-     * @return text 
+     * @return text
      */
     public function getContent()
     {
