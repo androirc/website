@@ -3,21 +3,21 @@
     "packages": [
         {
             "package": "doctrine/common",
-            "version": "2.2.1"
+            "version": "2.2.2"
         },
         {
             "package": "doctrine/data-fixtures",
             "version": "dev-master",
-            "source-reference": "aea0b95a554188892f10d8f09ce3ae8150f28f8b"
+            "source-reference": "f201391349f3dc6bd9c9c698927ea7c78104c461"
         },
         {
             "package": "doctrine/dbal",
-            "version": "2.2.1"
+            "version": "2.2.2"
         },
         {
             "package": "doctrine/doctrine-bundle",
             "version": "dev-master",
-            "source-reference": "dd3d35dd28e864fb908a70f8b206d1209aa2c333"
+            "source-reference": "eb1f6599fa11feda724f0319cb177b17e876588a"
         },
         {
             "package": "doctrine/doctrine-fixtures-bundle",
@@ -32,7 +32,7 @@
         {
             "package": "doctrine/migrations",
             "version": "dev-master",
-            "source-reference": "9e81984b0f126b0830d9ac6acc2d1da81aba2b94"
+            "source-reference": "fe98141b1e460baf5ab52f9139e1ae238101b28b"
         },
         {
             "package": "doctrine/orm",
@@ -41,21 +41,29 @@
         {
             "package": "fzaninotto/faker",
             "version": "dev-master",
-            "source-reference": "9a60f901d678557f79235b09eff8ebd1ea5fa076"
+            "source-reference": "a6589c64c33a9a4f16cac52c3f1ada710e1e6448"
         },
         {
             "package": "jms/translation-bundle",
             "version": "dev-master",
-            "source-reference": "3f65e8681d8544738ad3c9da82b29ed33221dd10"
+            "source-reference": "a08ff9d59917363d8efc39ba2a21f5bf458b18b3"
         },
         {
             "package": "kriswallsmith/assetic",
             "version": "dev-master",
-            "source-reference": "b25d1fdd07a70585d15c84735e82664acec88eab"
+            "source-reference": "1a1b5f963db158a1065343fab617d25ce351a2dc"
+        },
+        {
+            "package": "kriswallsmith/assetic",
+            "version": "dev-master",
+            "source-reference": "1a1b5f963db158a1065343fab617d25ce351a2dc",
+            "alias-pretty-version": "1.1.x-dev",
+            "alias-version": "1.1.9999999.9999999-dev"
         },
         {
             "package": "kriswallsmith/buzz",
-            "version": "v0.5"
+            "version": "dev-master",
+            "source-reference": "1bab480dfdb3e4687dcb60a76eaed5b1e59a20cb"
         },
         {
             "package": "madalynn/plum",
@@ -69,17 +77,16 @@
         },
         {
             "package": "monolog/monolog",
-            "version": "1.0.2"
+            "version": "1.1.0"
         },
         {
             "package": "nercury-jms/i18n-routing-bundle",
             "version": "dev-master",
-            "source-reference": "c6a9cfa6c813df82df19714ba7e56d456399e416"
+            "source-reference": "29abce891fc0330e4e57bfb240e0db367f98486f"
         },
         {
             "package": "nikic/php-parser",
-            "version": "dev-master",
-            "source-reference": "510599d8b8c349357aea33a52f42a7f2b3eb05e7"
+            "version": "v0.9.1"
         },
         {
             "package": "pagerfanta/pagerfanta",
@@ -89,63 +96,90 @@
         {
             "package": "sensio/buzz-bundle",
             "version": "dev-master",
-            "source-reference": "e4d895f85ae770c8b29f29d5ac49e9c2d898f935"
+            "source-reference": "c8c0ef65768fddfa28e41cb513b0b9b4dec04ee6"
         },
         {
             "package": "sensio/distribution-bundle",
             "version": "dev-master",
-            "source-reference": "38be63ebb45cc1fbeaff3f2bdf6d0ed216305a24"
+            "source-reference": "eb60726639fa65f42dbd08557b727114631a37d0"
         },
         {
             "package": "swiftmailer/swiftmailer",
-            "version": "4.1.6"
+            "version": "dev-master",
+            "source-reference": "57789082d1d53529dcf8cd3ca132d9787a59afee"
+        },
+        {
+            "package": "swiftmailer/swiftmailer",
+            "version": "dev-master",
+            "source-reference": "57789082d1d53529dcf8cd3ca132d9787a59afee",
+            "alias-pretty-version": "4.1.x-dev",
+            "alias-version": "4.1.9999999.9999999-dev"
         },
         {
             "package": "symfony/assetic-bundle",
             "version": "dev-master",
-            "source-reference": "a771e48366d80002b0046ba43e658d067170634d"
+            "source-reference": "61c9f363e73b4ecbb72f81eb62675260a1132048"
         },
         {
             "package": "symfony/monolog-bundle",
             "version": "dev-master",
-            "source-reference": "289442e385e7c0fe4aa2e8884d11e774a8f9ad99"
+            "source-reference": "4d5a969dc5b34c8b0cea3521ce7fbb43b965af3f"
         },
         {
             "package": "symfony/swiftmailer-bridge",
             "version": "dev-master",
-            "source-reference": "23b8d5c049bb3dfb67ec04bbea09464da27c4ec7"
+            "source-reference": "509901cb13f43a6319a55804f787d206aa649ab4"
+        },
+        {
+            "package": "symfony/swiftmailer-bridge",
+            "version": "dev-master",
+            "source-reference": "509901cb13f43a6319a55804f787d206aa649ab4",
+            "alias-pretty-version": "2.1.x-dev",
+            "alias-version": "2.1.9999999.9999999-dev"
         },
         {
             "package": "symfony/swiftmailer-bundle",
             "version": "dev-master",
-            "source-reference": "75f8f95c201922a966274547131b33291d15d51b"
+            "source-reference": "1c6b57fe57210e9dcb5b4586d6572f47d17a25d7"
         },
         {
             "package": "symfony/symfony",
             "version": "dev-master",
-            "source-reference": "570bb6ab6794fb9115229e108b40a347ea165a09",
-            "alias": "2.1.9999999.9999999-dev"
+            "source-reference": "e351c9f0a88c1ffbee3235ee8c132ee043e42984",
+            "alias-pretty-version": "2.1.x-dev",
+            "alias-version": "2.1.9999999.9999999-dev"
+        },
+        {
+            "package": "symfony/symfony",
+            "version": "dev-master",
+            "source-reference": "e351c9f0a88c1ffbee3235ee8c132ee043e42984"
         },
         {
             "package": "twig/extensions",
             "version": "dev-master",
-            "source-reference": "4c831657215e51568fcb31bb9142e827f9a69bd5"
+            "source-reference": "446d870272cd87a720e95242eade38a2acf56eaa"
         },
         {
             "package": "twig/twig",
             "version": "dev-master",
-            "source-reference": "58fbe0da4146608e085d7e67ebf2eae7aa8da19e",
-            "alias": "1.7.9999999.9999999-dev"
+            "source-reference": "875fa010ce597edf97c04ce6490be950068e9372",
+            "alias-pretty-version": "1.8.x-dev",
+            "alias-version": "1.8.9999999.9999999-dev"
+        },
+        {
+            "package": "twig/twig",
+            "version": "dev-master",
+            "source-reference": "875fa010ce597edf97c04ce6490be950068e9372"
         },
         {
             "package": "white-october/pagerfanta-bundle",
             "version": "dev-master",
-            "source-reference": "60d98f508010b0fab6a93bf079be39f4c9537f7c"
+            "source-reference": "752653b8c3a8e0c1034eec23485a5d9126b8ca51"
         },
         {
             "package": "willdurand/geocoder",
             "version": "dev-master",
-            "source-reference": "0e0b90ce2c101e7829240c66e26fb042d32c0233"
+            "source-reference": "1.0.4"
         },
         {
             "package": "willdurand/geocoder-bundle",
@@ -153,5 +187,25 @@
             "source-reference": "843f316a11b5af4847c70ef79527d30407403a6e"
         }
     ],
-    "aliases": []
+    "packages-dev": null,
+    "aliases": [
+
+    ],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "twig/extensions": 20,
+        "fzaninotto/faker": 20,
+        "symfony/swiftmailer-bundle": 20,
+        "symfony/monolog-bundle": 20,
+        "symfony/assetic-bundle": 20,
+        "doctrine/doctrine-bundle": 20,
+        "doctrine/doctrine-fixtures-bundle": 20,
+        "doctrine/doctrine-migrations-bundle": 20,
+        "white-october/pagerfanta-bundle": 20,
+        "madalynn/plum-bundle": 20,
+        "sensio/buzz-bundle": 20,
+        "nercury-jms/i18n-routing-bundle": 20,
+        "sensio/distribution-bundle": 20,
+        "willdurand/geocoder-bundle": 20
+    }
 }
