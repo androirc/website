@@ -14,7 +14,6 @@ namespace Madalynn\Bundle\AndroBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-use Madalynn\Bundle\AndroBundle\Entity\User;
 
 /**
  * Abstract Controller
@@ -38,9 +37,9 @@ abstract class AbstractController extends Controller
     /**
      * Renders a different view if the user is coming from the mobile version
      *
-     * @param string   $view The view name
+     * @param string   $view       The view name
      * @param array    $parameters An array of parameters to pass to the view
-     * @param Response $response A response instance
+     * @param Response $response   A response instance
      *
      * @return Response A Response instance
      */

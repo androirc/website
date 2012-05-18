@@ -68,7 +68,7 @@ class UserFixtures extends AbstractFixture implements FixtureInterface, Containe
     /**
      * Encrypt the password for the current user
      *
-     * @param User $user The user
+     * @param User $user     The user
      * @param type $password The plain password to encrypt
      *
      * @return User The same instance with the encrypted password

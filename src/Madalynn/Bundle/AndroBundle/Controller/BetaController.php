@@ -17,7 +17,6 @@ use Symfony\Component\HttpFoundation\StreamedResponse;
 use Symfony\Component\HttpFoundation\Request;
 
 use Madalynn\Bundle\AndroBundle\Entity\BetaDownload;
-use Madalynn\Bundle\AndroBundle\Location;
 
 /**
  * Beta Controller

@@ -62,6 +62,7 @@ class Admob
     _admob.fetchAd(document.getElementById('{{ id }}'));
 </script>
 EOF;
+
           return strtr($content, array(
               '{{ id }}'        => $id,
               '{{ bgcolor }}'   => $this->bgcolor,

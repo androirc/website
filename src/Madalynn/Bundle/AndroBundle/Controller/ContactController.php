@@ -12,7 +12,6 @@
 
 namespace Madalynn\Bundle\AndroBundle\Controller;
 
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 
 use Madalynn\Bundle\AndroBundle\Entity\Contact;

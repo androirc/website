@@ -13,7 +13,6 @@
 namespace Madalynn\Bundle\AdminBundle\EventListener;
 
 use Symfony\Component\HttpKernel\Event\FilterControllerEvent;
-use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
 
 use Madalynn\Bundle\AdminBundle\Controller\Action\PreActionInterface;
 

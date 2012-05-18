@@ -14,7 +14,6 @@ namespace Madalynn\Bundle\AdminBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilder;
-use Symfony\Component\Form\Extension\Core\ChoiceList\PaddedChoiceList;
 
 class TipHolidayType extends AbstractType
 {
