@@ -17,7 +17,7 @@
         {
             "package": "doctrine/doctrine-bundle",
             "version": "dev-master",
-            "source-reference": "eb1f6599fa11feda724f0319cb177b17e876588a"
+            "source-reference": "5dad4a6ae187c6d345ec2b02be20ccc33779f53e"
         },
         {
             "package": "doctrine/doctrine-fixtures-bundle",
@@ -101,7 +101,7 @@
         {
             "package": "sensio/distribution-bundle",
             "version": "dev-master",
-            "source-reference": "eb60726639fa65f42dbd08557b727114631a37d0"
+            "source-reference": "6517345b6b28021efad311123413000792e892ee"
         },
         {
             "package": "swiftmailer/swiftmailer",
@@ -128,14 +128,14 @@
         {
             "package": "symfony/swiftmailer-bridge",
             "version": "dev-master",
-            "source-reference": "509901cb13f43a6319a55804f787d206aa649ab4"
+            "source-reference": "509901cb13f43a6319a55804f787d206aa649ab4",
+            "alias-pretty-version": "2.1.x-dev",
+            "alias-version": "2.1.9999999.9999999-dev"
         },
         {
             "package": "symfony/swiftmailer-bridge",
             "version": "dev-master",
-            "source-reference": "509901cb13f43a6319a55804f787d206aa649ab4",
-            "alias-pretty-version": "2.1.x-dev",
-            "alias-version": "2.1.9999999.9999999-dev"
+            "source-reference": "509901cb13f43a6319a55804f787d206aa649ab4"
         },
         {
             "package": "symfony/swiftmailer-bundle",
@@ -145,14 +145,14 @@
         {
             "package": "symfony/symfony",
             "version": "dev-master",
-            "source-reference": "e351c9f0a88c1ffbee3235ee8c132ee043e42984",
+            "source-reference": "1e15f2109633723b710e87184643cad88004b1b9",
             "alias-pretty-version": "2.1.x-dev",
             "alias-version": "2.1.9999999.9999999-dev"
         },
         {
             "package": "symfony/symfony",
             "version": "dev-master",
-            "source-reference": "e351c9f0a88c1ffbee3235ee8c132ee043e42984"
+            "source-reference": "1e15f2109633723b710e87184643cad88004b1b9"
         },
         {
             "package": "twig/extensions",
