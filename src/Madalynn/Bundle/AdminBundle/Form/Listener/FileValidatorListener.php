@@ -12,7 +12,6 @@
 
 namespace Madalynn\Bundle\AdminBundle\Form\Listener;
 
-use Symfony\Component\Form\FormInterface;
 use Symfony\Component\Form\FormError;
 use Symfony\Component\Form\Event\DataEvent;
 
