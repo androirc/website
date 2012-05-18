@@ -14,8 +14,9 @@ namespace Madalynn\Bundle\AdminBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilder;
-
+use Symfony\Component\Form\FormEvents;
 use Doctrine\ORM\EntityRepository;
+use Madalynn\Bundle\AdminBundle\Form\Listener\FileValidatorListener;
 
 class BetaReleaseType extends AbstractType
 {
@@ -35,7 +36,7 @@ class BetaReleaseType extends AbstractType
                     'label'    => 'beta_release.field.downloadable'
                 ));
 
-        $builder->addValidator(new Validator\FileValidator());
+        $builder->addEventListener(FormEvents::POST_BIND, array(new FileValidatorListener(), 'onPostBind'));
     }
 
     public function getName()

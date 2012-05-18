@@ -14,8 +14,9 @@ namespace Madalynn\Bundle\AdminBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilder;
-
+use Symfony\Component\Form\FormEvents;
 use Doctrine\ORM\EntityRepository;
+use Madalynn\Bundle\AdminBundle\Form\Listener\FileValidatorListener;
 
 class ChangeLogType extends AbstractType
 {
@@ -31,7 +32,7 @@ class ChangeLogType extends AbstractType
                 ))
                 ->add('file', null, array('label' => 'change_log.field.file'));
 
-        $builder->addValidator(new Validator\FileValidator());
+        $builder->addEventListener(FormEvents::POST_BIND, array(new FileValidatorListener(), 'onPostBind'));
     }
 
     public function getName()

@@ -10,27 +10,26 @@
  * file that was distributed with this source code.
  */
 
-namespace Madalynn\Bundle\AdminBundle\Form\Validator;
+namespace Madalynn\Bundle\AdminBundle\Form\Listener;
 
-use Symfony\Component\Form\FormValidatorInterface;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\Form\FormError;
+use Symfony\Component\Form\Event\DataEvent;
 
 /**
- * File Validator
+ * File Listener
  *
  * @author Julien Brochet <mewt@androirc.com>
  */
-class FileValidator implements FormValidatorInterface
+class FileValidatorListener
 {
     /**
      * Validate the form with a file
-     *
-     * @param FormInterface $form
      */
-    function validate(FormInterface $form)
+    function onPostBind(DataEvent $event)
     {
-        $data = $form->getData();
+        $data = $event->getData();
+        $form = $event->getForm();
 
         if (null === $data->getPath() && null === $form['file']->getData()) {
             $form['file']->addError(new FormError('You need to enter a file'));

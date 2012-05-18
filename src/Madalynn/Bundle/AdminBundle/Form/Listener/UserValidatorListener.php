@@ -10,29 +10,30 @@
  * file that was distributed with this source code.
  */
 
-namespace Madalynn\Bundle\AdminBundle\Form\Validator;
+namespace Madalynn\Bundle\AdminBundle\Form\Listener;
 
-use Symfony\Component\Form\FormValidatorInterface;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\Form\FormError;
+use Symfony\Component\Form\Event\DataEvent;
 
 /**
- * User Validator
+ * User Validator Listener
  *
  * @author Julien Brochet <mewt@androirc.com>
  */
-class UserValidator implements FormValidatorInterface
+class UserValidatorListener
 {
     /**
      * Validate the User form
      *
      * @param FormInterface $form
      */
-    function validate(FormInterface $form)
+    function onPostBind(DataEvent $event)
     {
-        $user = $form->getData();
+        $user = $event->getData();
+        $form = $event->getForm();
 
-        if (null === $user->getPassword() && null === $form['plainPassword']->getData()) {
+        if (null === $user->getPassword() && '' === trim($form['plainPassword']->getData())) {
             $form['plainPassword']->addError(new FormError('You need to enter a password'));
         }
     }

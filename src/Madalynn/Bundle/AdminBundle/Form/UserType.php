@@ -14,6 +14,8 @@ namespace Madalynn\Bundle\AdminBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilder;
+use Symfony\Component\Form\FormEvents;
+use Madalynn\Bundle\AdminBundle\Form\Listener\UserValidatorListener;
 
 class UserType extends AbstractType
 {
@@ -33,7 +35,7 @@ class UserType extends AbstractType
                     'label'    => 'user.field.roles'
                 ));
 
-        $builder->addValidator(new Validator\UserValidator());
+        $builder->addEventListener(FormEvents::POST_BIND, array(new UserValidatorListener(), 'onPostBind'));
     }
 
     public function getName()
