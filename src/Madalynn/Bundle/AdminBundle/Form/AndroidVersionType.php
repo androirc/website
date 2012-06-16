@@ -13,11 +13,12 @@
 namespace Madalynn\Bundle\AdminBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\FormBuilder;
+use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class AndroidVersionType extends AbstractType
 {
-    public function buildForm(FormBuilder $builder, array $options)
+    public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('apiLevel', null, array('label' => 'android_version.field.api_level'))
                 ->add('major', null, array('label' => 'android_version.field.major'))
@@ -25,15 +26,15 @@ class AndroidVersionType extends AbstractType
                 ->add('revision', null, array('label' => 'android_version.field.revision'));
     }
 
+    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    {
+        $resolver->setDefaults(array(
+            'data_class' => 'Madalynn\\Bundle\\AndroBundle\\Entity\\AndroidVersion',
+        ));
+    }
+
     public function getName()
     {
         return 'admin_android_version';
-    }
-
-    public function getDefaultOptions()
-    {
-        return array(
-            'data_class' => 'Madalynn\\Bundle\\AndroBundle\\Entity\\AndroidVersion',
-        );
     }
 }

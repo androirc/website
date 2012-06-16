@@ -13,6 +13,7 @@
 namespace Madalynn\Bundle\AdminBundle\Type;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 /**
  * Editor Type
@@ -26,26 +27,16 @@ class EditorType extends AbstractType
         return 'editor';
     }
 
-    /**
-     * @param array $options
-     *
-     * @return string
-     */
-    public function getParent(array $options)
+    public function getParent()
     {
         return 'textarea';
     }
 
-    /**
-     * @param array $options
-     *
-     * @return array
-     */
-    public function getDefaultOptions()
+    public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
-        return array(
+        $resolver->setDefaults(array(
             'required' => false,
             'attr'     => array('class' => 'editor')
-        );
+        ));
     }
 }

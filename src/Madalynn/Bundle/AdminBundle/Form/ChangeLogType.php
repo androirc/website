@@ -13,14 +13,15 @@
 namespace Madalynn\Bundle\AdminBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\FormBuilder;
+use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormEvents;
 use Doctrine\ORM\EntityRepository;
 use Madalynn\Bundle\AdminBundle\Form\Listener\FileValidatorListener;
+use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class ChangeLogType extends AbstractType
 {
-    public function buildForm(FormBuilder $builder, array $options)
+    public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('version', 'entity', array(
                     'label' => 'change_log.field.version',
@@ -35,15 +36,15 @@ class ChangeLogType extends AbstractType
         $builder->addEventListener(FormEvents::POST_BIND, array(new FileValidatorListener(), 'onPostBind'));
     }
 
+    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    {
+        $resolver->setDefaults(array(
+            'data_class' => 'Madalynn\\Bundle\\AndroBundle\\Entity\\ChangeLog',
+        ));
+    }
+
     public function getName()
     {
         return 'admin_change_log';
-    }
-
-    public function getDefaultOptions()
-    {
-        return array(
-            'data_class' => 'Madalynn\\Bundle\\AndroBundle\\Entity\\ChangeLog',
-        );
     }
 }

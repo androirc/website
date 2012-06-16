@@ -1,53 +1,18 @@
 {% block form_row %}
 {% spaceless %}
-    {% set checkbox = 'checkbox' in form.get('types') %}
     <div class="control-group {% if errors|length > 0 %}error{% endif %}">
-        {% if not checkbox %}
-            {{ form_label(form, label|default(null)) }}
-        {% endif %}
-        <div class="controls">
-            {% if checkbox %}
-                <label class="checkbox">
-                    {{ form_widget(form) }}
-                    {{ label|default(null)|trans({}, translation_domain) }}
-                </label>
-            {% else %}
-                {{ form_widget(form) }}
+        {{ form_label(form, label|default(null)) }}
+         <div class="controls">
+            {{ form_widget(form) }}
+
+            {#
+            If the child is a compound form, the errors are rendered inside
+            the container. See also block form_rows.
+            #}
+            {% if not compound %}
+                {{ form_errors(form) }}
             {% endif %}
-            {{ form_errors(form)}}
         </div>
     </div>
 {% endspaceless %}
 {% endblock form_row %}
-
-{% block form_errors %}
-{% spaceless %}
-    {% if errors|length > 0 %}
-
-    {% for error in errors %}
-    <div class="help-inline">
-      {{
-            error.messagePluralization is null
-                ? error.messageTemplate|trans(error.messageParameters, 'validators')
-                : error.messageTemplate|transchoice(error.messagePluralization, error.messageParameters, 'validators')
-        }}
-    </div>
-    {% endfor %}
-
-    {% endif %}
-{% endspaceless %}
-{% endblock form_errors %}
-
-{% block form_label %}
-{% spaceless %}
-    {% set label_attr = label_attr|merge({'class': (label_attr.class|default('') ~ ' control-label')|trim}) %}
-    {% if single_control %}
-        {% set label_attr = label_attr|merge({'for': id}) %}
-    {% endif %}
-    {% if required %}
-        {% set label_attr = label_attr|merge({'class': (label_attr.class|default('') ~ ' required')|trim}) %}
-    {% endif %}
-    <label{% for attrname,attrvalue in label_attr %} {{attrname}}="{{attrvalue}}"{% endfor %}>{{ label|trans({}, translation_domain) }}</label>
-{% endspaceless %}
-{% endblock form_label %}
-

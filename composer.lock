@@ -1,5 +1,5 @@
 {
-    "hash": "337ab41b4e8958ea7692e6b882c5980d",
+    "hash": "f5da4374e233da0f1408becc767d6b11",
     "packages": [
         {
             "package": "doctrine/common",
@@ -8,7 +8,7 @@
         {
             "package": "doctrine/data-fixtures",
             "version": "dev-master",
-            "source-reference": "f201391349f3dc6bd9c9c698927ea7c78104c461"
+            "source-reference": "d233d05437c1a10034867f22069b4bb0f7dc96b6"
         },
         {
             "package": "doctrine/dbal",
@@ -17,7 +17,14 @@
         {
             "package": "doctrine/doctrine-bundle",
             "version": "dev-master",
-            "source-reference": "5dad4a6ae187c6d345ec2b02be20ccc33779f53e"
+            "source-reference": "8bbb70369af57a9ba994530f713bcbc29c457830",
+            "alias-pretty-version": "1.0.x-dev",
+            "alias-version": "1.0.9999999.9999999-dev"
+        },
+        {
+            "package": "doctrine/doctrine-bundle",
+            "version": "dev-master",
+            "source-reference": "8bbb70369af57a9ba994530f713bcbc29c457830"
         },
         {
             "package": "doctrine/doctrine-fixtures-bundle",
@@ -27,7 +34,7 @@
         {
             "package": "doctrine/doctrine-migrations-bundle",
             "version": "dev-master",
-            "source-reference": "e670643b1011fb997a209d8564a1c493fda1f4c3"
+            "source-reference": "fd6c13e2a918b887dd880479a2dd6dcd3293c611"
         },
         {
             "package": "doctrine/migrations",
@@ -41,29 +48,34 @@
         {
             "package": "fzaninotto/faker",
             "version": "dev-master",
-            "source-reference": "a6589c64c33a9a4f16cac52c3f1ada710e1e6448"
+            "source-reference": "f6162c88c92b29268d30ff4c000b8b69bd4e372e"
+        },
+        {
+            "package": "jms/i18n-routing-bundle",
+            "version": "dev-master",
+            "source-reference": "cbdff505ecf7e492def127a87e1d7a85b4916557"
         },
         {
             "package": "jms/translation-bundle",
             "version": "dev-master",
-            "source-reference": "a08ff9d59917363d8efc39ba2a21f5bf458b18b3"
+            "source-reference": "3b96a2560ab26ba30c7ffcc88342c4ef20a597b6"
         },
         {
             "package": "kriswallsmith/assetic",
             "version": "dev-master",
-            "source-reference": "1a1b5f963db158a1065343fab617d25ce351a2dc"
+            "source-reference": "d6f89a3170c5280ad554347dc113eb25fdf00ad7"
         },
         {
             "package": "kriswallsmith/assetic",
             "version": "dev-master",
-            "source-reference": "1a1b5f963db158a1065343fab617d25ce351a2dc",
+            "source-reference": "d6f89a3170c5280ad554347dc113eb25fdf00ad7",
             "alias-pretty-version": "1.1.x-dev",
             "alias-version": "1.1.9999999.9999999-dev"
         },
         {
             "package": "kriswallsmith/buzz",
             "version": "dev-master",
-            "source-reference": "1bab480dfdb3e4687dcb60a76eaed5b1e59a20cb"
+            "source-reference": "5c7d0523501f02c766166b08ac98613bde0254b5"
         },
         {
             "package": "madalynn/plum",
@@ -80,11 +92,6 @@
             "version": "1.1.0"
         },
         {
-            "package": "nercury-jms/i18n-routing-bundle",
-            "version": "dev-master",
-            "source-reference": "29abce891fc0330e4e57bfb240e0db367f98486f"
-        },
-        {
             "package": "nikic/php-parser",
             "version": "v0.9.1"
         },
@@ -96,90 +103,118 @@
         {
             "package": "sensio/buzz-bundle",
             "version": "dev-master",
-            "source-reference": "c8c0ef65768fddfa28e41cb513b0b9b4dec04ee6"
+            "source-reference": "0754d7dd155efc4f85de60993571b0b6a5aaccb9"
         },
         {
             "package": "sensio/distribution-bundle",
             "version": "dev-master",
-            "source-reference": "6517345b6b28021efad311123413000792e892ee"
+            "source-reference": "7d75b222c8e4ead64ff82e5c9b2fa3ba71c70cf0"
         },
         {
             "package": "swiftmailer/swiftmailer",
             "version": "dev-master",
-            "source-reference": "57789082d1d53529dcf8cd3ca132d9787a59afee"
-        },
-        {
-            "package": "swiftmailer/swiftmailer",
-            "version": "dev-master",
-            "source-reference": "57789082d1d53529dcf8cd3ca132d9787a59afee",
+            "source-reference": "c013c12c925f9cacd1834b49f2c4bd6cfb2a52d3",
             "alias-pretty-version": "4.1.x-dev",
             "alias-version": "4.1.9999999.9999999-dev"
         },
         {
+            "package": "swiftmailer/swiftmailer",
+            "version": "dev-master",
+            "source-reference": "c013c12c925f9cacd1834b49f2c4bd6cfb2a52d3"
+        },
+        {
             "package": "symfony/assetic-bundle",
             "version": "dev-master",
-            "source-reference": "61c9f363e73b4ecbb72f81eb62675260a1132048"
+            "source-reference": "ca447e29f8ee2d38643f2f3a9faae1164aa708fb"
+        },
+        {
+            "package": "symfony/assetic-bundle",
+            "version": "dev-master",
+            "source-reference": "ca447e29f8ee2d38643f2f3a9faae1164aa708fb",
+            "alias-pretty-version": "2.1.x-dev",
+            "alias-version": "2.1.9999999.9999999-dev"
         },
         {
             "package": "symfony/monolog-bundle",
             "version": "dev-master",
-            "source-reference": "4d5a969dc5b34c8b0cea3521ce7fbb43b965af3f"
-        },
-        {
-            "package": "symfony/swiftmailer-bridge",
-            "version": "dev-master",
-            "source-reference": "509901cb13f43a6319a55804f787d206aa649ab4",
+            "source-reference": "0b5046d3d1ef93cd59ceabfa37de2665f5118c7f",
             "alias-pretty-version": "2.1.x-dev",
             "alias-version": "2.1.9999999.9999999-dev"
         },
         {
+            "package": "symfony/monolog-bundle",
+            "version": "dev-master",
+            "source-reference": "0b5046d3d1ef93cd59ceabfa37de2665f5118c7f"
+        },
+        {
             "package": "symfony/swiftmailer-bridge",
             "version": "dev-master",
-            "source-reference": "509901cb13f43a6319a55804f787d206aa649ab4"
+            "source-reference": "408eb09f5799d393ddc3d916ec3667857fb3a20d"
+        },
+        {
+            "package": "symfony/swiftmailer-bridge",
+            "version": "dev-master",
+            "source-reference": "408eb09f5799d393ddc3d916ec3667857fb3a20d",
+            "alias-pretty-version": "2.1.x-dev",
+            "alias-version": "2.1.9999999.9999999-dev"
         },
         {
             "package": "symfony/swiftmailer-bundle",
             "version": "dev-master",
-            "source-reference": "1c6b57fe57210e9dcb5b4586d6572f47d17a25d7"
+            "source-reference": "71e1789868665cf94dc7831f645625fd0f70aac6"
         },
         {
             "package": "symfony/symfony",
             "version": "dev-master",
-            "source-reference": "1e15f2109633723b710e87184643cad88004b1b9",
+            "source-reference": "f65ade24b25d839e007ecade31eea51ed83140d5"
+        },
+        {
+            "package": "symfony/symfony",
+            "version": "dev-master",
+            "source-reference": "f65ade24b25d839e007ecade31eea51ed83140d5",
             "alias-pretty-version": "2.1.x-dev",
             "alias-version": "2.1.9999999.9999999-dev"
         },
         {
             "package": "symfony/symfony",
             "version": "dev-master",
-            "source-reference": "1e15f2109633723b710e87184643cad88004b1b9"
+            "source-reference": "76b2ed46d641c06929284d2286a5db450f3ab849",
+            "alias-pretty-version": "2.1.x-dev",
+            "alias-version": "2.1.9999999.9999999-dev"
         },
         {
             "package": "twig/extensions",
             "version": "dev-master",
-            "source-reference": "446d870272cd87a720e95242eade38a2acf56eaa"
+            "source-reference": "feb6d3f10c411e2631997c0a905aa581c80305c1"
         },
         {
             "package": "twig/twig",
             "version": "dev-master",
-            "source-reference": "875fa010ce597edf97c04ce6490be950068e9372",
+            "source-reference": "120c44d68f07ced5b1e08f582f94016f4f2685d6"
+        },
+        {
+            "package": "twig/twig",
+            "version": "dev-master",
+            "source-reference": "120c44d68f07ced5b1e08f582f94016f4f2685d6",
             "alias-pretty-version": "1.8.x-dev",
             "alias-version": "1.8.9999999.9999999-dev"
         },
         {
-            "package": "twig/twig",
-            "version": "dev-master",
-            "source-reference": "875fa010ce597edf97c04ce6490be950068e9372"
-        },
-        {
             "package": "white-october/pagerfanta-bundle",
             "version": "dev-master",
-            "source-reference": "752653b8c3a8e0c1034eec23485a5d9126b8ca51"
+            "source-reference": "6d7c84759ca85a4c3a993a844922dc4629d42adf"
         },
         {
             "package": "willdurand/geocoder",
             "version": "dev-master",
-            "source-reference": "1.0.4"
+            "source-reference": "5418bf02e595944613b4228b632961a3c8b09d0b",
+            "alias-pretty-version": "1.0.x-dev",
+            "alias-version": "1.0.9999999.9999999-dev"
+        },
+        {
+            "package": "willdurand/geocoder",
+            "version": "dev-master",
+            "source-reference": "5418bf02e595944613b4228b632961a3c8b09d0b"
         },
         {
             "package": "willdurand/geocoder-bundle",
@@ -204,7 +239,7 @@
         "white-october/pagerfanta-bundle": 20,
         "madalynn/plum-bundle": 20,
         "sensio/buzz-bundle": 20,
-        "nercury-jms/i18n-routing-bundle": 20,
+        "jms/i18n-routing-bundle": 20,
         "sensio/distribution-bundle": 20,
         "willdurand/geocoder-bundle": 20
     }

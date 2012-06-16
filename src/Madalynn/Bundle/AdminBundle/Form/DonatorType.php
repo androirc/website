@@ -13,11 +13,12 @@
 namespace Madalynn\Bundle\AdminBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\FormBuilder;
+use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class DonatorType extends AbstractType
 {
-    public function buildForm(FormBuilder $builder, array $options)
+    public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('name', null, array('label' => 'donator.field.name'))
                 ->add('amount', 'money', array(
@@ -26,15 +27,15 @@ class DonatorType extends AbstractType
                 ));
     }
 
+    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    {
+        $resolver->setDefaults(array(
+            'data_class' => 'Madalynn\\Bundle\\AndroBundle\\Entity\\Donator',
+        ));
+    }
+
     public function getName()
     {
         return 'admin_donator';
-    }
-
-    public function getDefaultOptions()
-    {
-        return array(
-            'data_class' => 'Madalynn\\Bundle\\AndroBundle\\Entity\\Donator',
-        );
     }
 }

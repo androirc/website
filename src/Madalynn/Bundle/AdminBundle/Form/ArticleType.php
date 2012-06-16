@@ -13,11 +13,12 @@
 namespace Madalynn\Bundle\AdminBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\FormBuilder;
+use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class ArticleType extends AbstractType
 {
-    public function buildForm(FormBuilder $builder, array $options)
+    public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('title', null, array('label' => 'article.field.title'))
                 ->add('content', 'editor', array('label' => 'article.field.content'))
@@ -27,15 +28,15 @@ class ArticleType extends AbstractType
                 ));
     }
 
+    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    {
+        $resolver->setDefaults(array(
+            'data_class' => 'Madalynn\\Bundle\\AndroBundle\\Entity\\Article',
+        ));
+    }
+
     public function getName()
     {
         return 'admin_article';
-    }
-
-    public function getDefaultOptions()
-    {
-        return array(
-            'data_class' => 'Madalynn\\Bundle\\AndroBundle\\Entity\\Article',
-        );
     }
 }

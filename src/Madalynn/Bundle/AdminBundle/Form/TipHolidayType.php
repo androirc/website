@@ -13,11 +13,12 @@
 namespace Madalynn\Bundle\AdminBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\FormBuilder;
+use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class TipHolidayType extends AbstractType
 {
-    public function buildForm(FormBuilder $builder, array $options)
+    public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $days = range(1, 31);
         $months = range(1, 12);
@@ -37,15 +38,15 @@ class TipHolidayType extends AbstractType
                 ->add('content', 'textarea', array('label' => 'tip_holiday.field.content'));
     }
 
+    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    {
+        $resolver->setDefaults(array(
+            'data_class' => 'Madalynn\\Bundle\\AndroBundle\\Entity\\TipHoliday',
+        ));
+    }
+
     public function getName()
     {
         return 'admin_tip_holiday';
-    }
-
-    public function getDefaultOptions()
-    {
-        return array(
-            'data_class' => 'Madalynn\\Bundle\\AndroBundle\\Entity\\TipHoliday',
-        );
     }
 }
