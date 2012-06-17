@@ -13,14 +13,16 @@
 namespace Madalynn\Bundle\AndroBundle\Entity;
 
 use Symfony\Component\Security\Core\User\UserInterface;
-
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
+use Madalynn\Bundle\AndroBundle\Validator\Constraints as AndroAssert;
 
 /**
  * @ORM\Entity(repositoryClass="Madalynn\Bundle\AndroBundle\Repository\UserRepository")
  * @ORM\Table(name="andro_user")
  * @ORM\HasLifecycleCallbacks
+ *
+ * @AndroAssert\Password(passwordProperty="password", plainPasswordProperty="plainPassword")
  */
 class User implements UserInterface, \Serializable
 {

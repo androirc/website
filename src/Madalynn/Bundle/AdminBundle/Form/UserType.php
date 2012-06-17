@@ -14,8 +14,6 @@ namespace Madalynn\Bundle\AdminBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\Form\FormEvents;
-use Madalynn\Bundle\AdminBundle\Form\Listener\UserValidatorListener;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class UserType extends AbstractType
@@ -35,8 +33,6 @@ class UserType extends AbstractType
                     'required' => false,
                     'label'    => 'user.field.roles'
                 ));
-
-        $builder->addEventListener(FormEvents::POST_BIND, array(new UserValidatorListener(), 'onPostBind'));
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)

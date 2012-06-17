@@ -15,15 +15,15 @@ namespace Madalynn\Bundle\AndroBundle\Validator\Constraints;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 
-class FileValidator extends ConstraintValidator
+class PasswordValidator extends ConstraintValidator
 {
     public function validate($object, Constraint $constraint)
     {
-        $file = $object->{'get'.ucfirst($constraint->fileProperty)}();
-        $path = $object->{'get'.ucfirst($constraint->pathProperty)}();
+        $password      = $object->{'get'.ucfirst($constraint->passwordProperty)}();
+        $plainPassword = $object->{'get'.ucfirst($constraint->plainPasswordProperty)}();
 
-        if (null === $file && null === $path) {
-            $this->context->addViolationAtSubPath($constraint->fileProperty, $constraint->message);
+        if (null === $password && '' === trim($plainPassword)) {
+            $this->context->addViolationAtSubPath($constraint->plainPasswordProperty, $constraint->message);
 
             return false;
         }

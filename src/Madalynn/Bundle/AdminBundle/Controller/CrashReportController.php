@@ -67,7 +67,8 @@ class CrashReportController extends CRUDController
     /**
      * Execute the resolved action
      *
-     * @param  integer  $id The id of the entity
+     * @param integer $id The id of the entity
+     *
      * @return Response
      */
     public function resolvedAction($id)

@@ -24,15 +24,7 @@ use Doctrine\ORM\EntityRepository;
 class UserRepository extends EntityRepository implements UserProviderInterface
 {
     /**
-     * Loads the user for the given username.
-     *
-     * This method must throw UsernameNotFoundException if the user is not
-     * found.
-     *
-     * @throws UsernameNotFoundException if the user is not found
-     * @param  string                    $username The username
-     *
-     * @return UserInterface
+     * {@inheritdoc}
      */
     public function loadUserByUsername($username)
     {
@@ -46,16 +38,7 @@ class UserRepository extends EntityRepository implements UserProviderInterface
     }
 
     /**
-     * Refreshes the user for the account interface.
-     *
-     * It is up to the implementation if it decides to reload the user data
-     * from the database, or if it simply merges the passed User into the
-     * identity map of an entity manager.
-     *
-     * @throws UnsupportedUserException if the account is not supported
-     * @param  UserInterface            $user
-     *
-     * @return UserInterface
+     * {@inheritdoc}
      */
     public function refreshUser(UserInterface $user)
     {
@@ -67,14 +50,10 @@ class UserRepository extends EntityRepository implements UserProviderInterface
     }
 
     /**
-     * Whether this provider supports the given user class
-     *
-     * @param string $class
-     *
-     * @return Boolean
+     * {@inheritdoc}
      */
     public function supportsClass($class)
     {
-        return $class === 'Madalynn\Bundle\AndroBundle\Entity\User';
+        return 'Madalynn\Bundle\AndroBundle\Entity\User' === $class;
     }
 }
