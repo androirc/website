@@ -14,13 +14,16 @@ namespace Madalynn\Bundle\AndroBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
-
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\Validator\Constraints as Assert;
+use Madalynn\Bundle\AndroBundle\Validator\Constraints as AndroAssert;
 
 /**
  * @ORM\Entity(repositoryClass="Madalynn\Bundle\AndroBundle\Repository\BetaReleaseRepository")
  * @ORM\Table(name="andro_beta_release")
  * @ORM\HasLifecycleCallbacks
+ *
+ * @AndroAssert\File(fileProperty="file", pathProperty="path")
  */
 class BetaRelease
 {
@@ -56,7 +59,7 @@ class BetaRelease
     /**
      * @Assert\File(maxSize="6000000")
      */
-    public $file;
+    protected $file;
 
     /**
      * @ORM\Column(type="datetime")
@@ -158,6 +161,26 @@ class BetaRelease
     public function getPath()
     {
         return $this->path;
+    }
+
+    /**
+     * Set file
+     *
+     * @param UploadedFile $file
+     */
+    public function setFile(UploadedFile $file)
+    {
+        $this->file = $file;
+    }
+
+    /**
+     * Get file
+     *
+     * @return UploadedFile
+     */
+    public function getFile()
+    {
+        return $this->file;
     }
 
     /**

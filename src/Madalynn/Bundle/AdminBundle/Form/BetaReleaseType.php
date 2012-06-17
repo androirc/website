@@ -14,9 +14,7 @@ namespace Madalynn\Bundle\AdminBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\Form\FormEvents;
 use Doctrine\ORM\EntityRepository;
-use Madalynn\Bundle\AdminBundle\Form\Listener\FileValidatorListener;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class BetaReleaseType extends AbstractType
@@ -24,8 +22,8 @@ class BetaReleaseType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('version', 'entity', array(
-                        'label'    => 'beta_release.field.version',
-                        'class'    => 'Madalynn\\Bundle\\AndroBundle\\Entity\\AndroircVersion',
+                        'label'         => 'beta_release.field.version',
+                        'class'         => 'Madalynn\\Bundle\\AndroBundle\\Entity\\AndroircVersion',
                         'query_builder' => function(EntityRepository $er) {
                             return $er->createQueryBuilder('e')
                                        ->orderBy('e.code', 'desc');
@@ -36,8 +34,6 @@ class BetaReleaseType extends AbstractType
                     'required' => false,
                     'label'    => 'beta_release.field.downloadable'
                 ));
-
-        $builder->addEventListener(FormEvents::POST_BIND, array(new FileValidatorListener(), 'onPostBind'));
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)

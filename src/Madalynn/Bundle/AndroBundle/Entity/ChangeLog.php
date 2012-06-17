@@ -12,13 +12,17 @@
 
 namespace Madalynn\Bundle\AndroBundle\Entity;
 
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
+use Madalynn\Bundle\AndroBundle\Validator\Constraints as AndroAssert;
 
 /**
  * @ORM\Entity(repositoryClass="Madalynn\Bundle\AndroBundle\Repository\ChangeLogRepository")
  * @ORM\Table(name="andro_changelog")
  * @ORM\HasLifecycleCallbacks
+ *
+ * @AndroAssert\File(fileProperty="file", pathProperty="path")
  */
 class ChangeLog
 {
@@ -44,7 +48,7 @@ class ChangeLog
     /**
      * @Assert\File(maxSize="6000000", mimeTypes="text/plain")
      */
-    public $file;
+    protected $file;
 
     protected $changes;
 
@@ -76,6 +80,26 @@ class ChangeLog
     public function getVersion()
     {
         return $this->version;
+    }
+
+    /**
+     * Set file
+     *
+     * @param UploadedFile $file
+     */
+    public function setFile(UploadedFile $file)
+    {
+        $this->file = $file;
+    }
+
+    /**
+     * Get file
+     *
+     * @return UploadedFile
+     */
+    public function getFile()
+    {
+        return $this->file;
     }
 
     /**
