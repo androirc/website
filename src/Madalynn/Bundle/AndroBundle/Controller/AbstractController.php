@@ -14,7 +14,6 @@ namespace Madalynn\Bundle\AndroBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-
 /**
  * Abstract Controller
  *

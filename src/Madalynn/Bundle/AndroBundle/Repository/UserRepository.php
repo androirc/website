@@ -30,11 +30,11 @@ class UserRepository extends EntityRepository implements UserProviderInterface
      * found.
      *
      * @throws UsernameNotFoundException if the user is not found
-     * @param string $username The username
+     * @param  string                    $username The username
      *
      * @return UserInterface
      */
-    function loadUserByUsername($username)
+    public function loadUserByUsername($username)
     {
         $user = $this->findOneBy(array('username' => $username));
 
@@ -53,11 +53,11 @@ class UserRepository extends EntityRepository implements UserProviderInterface
      * identity map of an entity manager.
      *
      * @throws UnsupportedUserException if the account is not supported
-     * @param UserInterface $user
+     * @param  UserInterface            $user
      *
      * @return UserInterface
      */
-    function refreshUser(UserInterface $user)
+    public function refreshUser(UserInterface $user)
     {
         if (!$user instanceof User) {
              throw new UnsupportedUserException('The account is not supported.');
@@ -73,7 +73,7 @@ class UserRepository extends EntityRepository implements UserProviderInterface
      *
      * @return Boolean
      */
-    function supportsClass($class)
+    public function supportsClass($class)
     {
         return $class === 'Madalynn\Bundle\AndroBundle\Entity\User';
     }

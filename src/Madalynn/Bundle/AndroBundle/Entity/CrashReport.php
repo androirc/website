@@ -12,8 +12,6 @@
 
 namespace Madalynn\Bundle\AndroBundle\Entity;
 
-
-use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -297,7 +295,7 @@ class CrashReport
     /**
      * Check if the crashreport is equals to this object
      *
-     * @param CrashReport $crashReport
+     * @param  CrashReport $crashReport
      * @return boolean
      */
     public function equals(CrashReport $crashReport)

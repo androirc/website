@@ -143,7 +143,7 @@ abstract class AbstractVersion
      *
      * @throws \InvalidArgumentException If the version is not x.y.z
      */
-    static public function create($string)
+    public static function create($string)
     {
         $elements = explode('.', $string, 3);
         if (count($elements) < 1 || count($elements) > 3) {

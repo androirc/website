@@ -19,7 +19,7 @@ namespace Madalynn\Bundle\AndroBundle\Helper;
  */
 class StringHelper
 {
-    static public function slugize($text)
+    public static function slugize($text)
     {
         $text = preg_replace('/\W+/', '-', $text);
         $text = strtolower(trim($text, '-'));

@@ -14,8 +14,6 @@ namespace Madalynn\Bundle\AndroBundle\Entity;
 
 use Symfony\Component\Security\Core\Role\RoleInterface;
 
-
-use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
 
 /**

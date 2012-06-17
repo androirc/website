@@ -14,7 +14,6 @@ namespace Madalynn\Bundle\AdminBundle\Controller;
 
 use Doctrine\ORM\QueryBuilder;
 
-
 class CrashReportController extends CRUDController
 {
     protected $filters = array(
@@ -68,7 +67,7 @@ class CrashReportController extends CRUDController
     /**
      * Execute the resolved action
      *
-     * @param integer $id The id of the entity
+     * @param  integer  $id The id of the entity
      * @return Response
      */
     public function resolvedAction($id)

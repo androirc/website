@@ -369,7 +369,7 @@ abstract class CRUDController extends Controller
     {
         $form = $this->createFormBuilder();
 
-        foreach($this->filters as $filter) {
+        foreach ($this->filters as $filter) {
             $form->add($filter['name'], $filter['type'], array(
                 'label'    => $filter['label'],
                 'required' => false

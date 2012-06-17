@@ -193,7 +193,7 @@ class ChangeLog
 
         $changes = array();
 
-        foreach($file as $change) {
+        foreach ($file as $change) {
             if ('#' === substr($change, 0, 1)) {
                 continue;
             }
@@ -227,8 +227,7 @@ class ChangeLog
 
     public function typeToInteger($type)
     {
-        switch($type)
-        {
+        switch ($type) {
             case 'added':
                 return 3;
             case 'changed':

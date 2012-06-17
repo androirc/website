@@ -28,7 +28,7 @@ class UserValidatorListener
      *
      * @param FormInterface $form
      */
-    function onPostBind(DataEvent $event)
+    public function onPostBind(DataEvent $event)
     {
         $user = $event->getData();
         $form = $event->getForm();
