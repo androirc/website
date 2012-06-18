@@ -24,10 +24,6 @@ class PasswordValidator extends ConstraintValidator
 
         if (null === $password && '' === trim($plainPassword)) {
             $this->context->addViolationAtSubPath($constraint->plainPasswordProperty, $constraint->message);
-
-            return false;
         }
-
-        return true;
     }
 }

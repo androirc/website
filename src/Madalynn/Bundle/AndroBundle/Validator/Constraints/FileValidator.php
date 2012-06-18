@@ -24,10 +24,6 @@ class FileValidator extends ConstraintValidator
 
         if (null === $file && null === $path) {
             $this->context->addViolationAtSubPath($constraint->fileProperty, $constraint->message);
-
-            return false;
         }
-
-        return true;
     }
 }
