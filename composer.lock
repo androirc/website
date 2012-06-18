@@ -17,13 +17,6 @@
         {
             "package": "doctrine/doctrine-bundle",
             "version": "dev-master",
-            "source-reference": "8bbb70369af57a9ba994530f713bcbc29c457830",
-            "alias-pretty-version": "1.0.x-dev",
-            "alias-version": "1.0.9999999.9999999-dev"
-        },
-        {
-            "package": "doctrine/doctrine-bundle",
-            "version": "dev-master",
             "source-reference": "8bbb70369af57a9ba994530f713bcbc29c457830"
         },
         {
@@ -48,7 +41,7 @@
         {
             "package": "fzaninotto/faker",
             "version": "dev-master",
-            "source-reference": "f6162c88c92b29268d30ff4c000b8b69bd4e372e"
+            "source-reference": "05afe8c4f26097f0beebdc3a164162c81ee2a0b9"
         },
         {
             "package": "jms/i18n-routing-bundle",
@@ -63,14 +56,13 @@
         {
             "package": "kriswallsmith/assetic",
             "version": "dev-master",
-            "source-reference": "d6f89a3170c5280ad554347dc113eb25fdf00ad7"
+            "alias-pretty-version": "1.1.x-dev",
+            "alias-version": "1.1.9999999.9999999-dev"
         },
         {
             "package": "kriswallsmith/assetic",
             "version": "dev-master",
-            "source-reference": "d6f89a3170c5280ad554347dc113eb25fdf00ad7",
-            "alias-pretty-version": "1.1.x-dev",
-            "alias-version": "1.1.9999999.9999999-dev"
+            "source-reference": "d6f89a3170c5280ad554347dc113eb25fdf00ad7"
         },
         {
             "package": "kriswallsmith/buzz",
@@ -113,33 +105,24 @@
         {
             "package": "swiftmailer/swiftmailer",
             "version": "dev-master",
-            "source-reference": "c013c12c925f9cacd1834b49f2c4bd6cfb2a52d3",
             "alias-pretty-version": "4.1.x-dev",
             "alias-version": "4.1.9999999.9999999-dev"
         },
         {
             "package": "swiftmailer/swiftmailer",
             "version": "dev-master",
-            "source-reference": "c013c12c925f9cacd1834b49f2c4bd6cfb2a52d3"
+            "alias-pretty-version": "4.1.x-dev",
+            "alias-version": "4.1.9999999.9999999-dev"
+        },
+        {
+            "package": "swiftmailer/swiftmailer",
+            "version": "dev-master",
+            "source-reference": "0509c682d482940949ea7f7128c582d9d8b628e2"
         },
         {
             "package": "symfony/assetic-bundle",
             "version": "dev-master",
             "source-reference": "ca447e29f8ee2d38643f2f3a9faae1164aa708fb"
-        },
-        {
-            "package": "symfony/assetic-bundle",
-            "version": "dev-master",
-            "source-reference": "ca447e29f8ee2d38643f2f3a9faae1164aa708fb",
-            "alias-pretty-version": "2.1.x-dev",
-            "alias-version": "2.1.9999999.9999999-dev"
-        },
-        {
-            "package": "symfony/monolog-bundle",
-            "version": "dev-master",
-            "source-reference": "0b5046d3d1ef93cd59ceabfa37de2665f5118c7f",
-            "alias-pretty-version": "2.1.x-dev",
-            "alias-version": "2.1.9999999.9999999-dev"
         },
         {
             "package": "symfony/monolog-bundle",
@@ -152,13 +135,6 @@
             "source-reference": "408eb09f5799d393ddc3d916ec3667857fb3a20d"
         },
         {
-            "package": "symfony/swiftmailer-bridge",
-            "version": "dev-master",
-            "source-reference": "408eb09f5799d393ddc3d916ec3667857fb3a20d",
-            "alias-pretty-version": "2.1.x-dev",
-            "alias-version": "2.1.9999999.9999999-dev"
-        },
-        {
             "package": "symfony/swiftmailer-bundle",
             "version": "dev-master",
             "source-reference": "71e1789868665cf94dc7831f645625fd0f70aac6"
@@ -166,21 +142,19 @@
         {
             "package": "symfony/symfony",
             "version": "dev-master",
-            "source-reference": "f65ade24b25d839e007ecade31eea51ed83140d5"
-        },
-        {
-            "package": "symfony/symfony",
-            "version": "dev-master",
-            "source-reference": "f65ade24b25d839e007ecade31eea51ed83140d5",
             "alias-pretty-version": "2.1.x-dev",
             "alias-version": "2.1.9999999.9999999-dev"
         },
         {
             "package": "symfony/symfony",
             "version": "dev-master",
-            "source-reference": "76b2ed46d641c06929284d2286a5db450f3ab849",
             "alias-pretty-version": "2.1.x-dev",
             "alias-version": "2.1.9999999.9999999-dev"
+        },
+        {
+            "package": "symfony/symfony",
+            "version": "dev-master",
+            "source-reference": "d2b612256b1f28202c4fddc1e44691d3b32fc771"
         },
         {
             "package": "twig/extensions",
@@ -190,14 +164,19 @@
         {
             "package": "twig/twig",
             "version": "dev-master",
-            "source-reference": "120c44d68f07ced5b1e08f582f94016f4f2685d6"
+            "alias-pretty-version": "1.8.x-dev",
+            "alias-version": "1.8.9999999.9999999-dev"
         },
         {
             "package": "twig/twig",
             "version": "dev-master",
-            "source-reference": "120c44d68f07ced5b1e08f582f94016f4f2685d6",
             "alias-pretty-version": "1.8.x-dev",
             "alias-version": "1.8.9999999.9999999-dev"
+        },
+        {
+            "package": "twig/twig",
+            "version": "dev-master",
+            "source-reference": "4679ad51c5390648b7ea4c8f0ecd2c0c344145ba"
         },
         {
             "package": "white-october/pagerfanta-bundle",
@@ -207,14 +186,13 @@
         {
             "package": "willdurand/geocoder",
             "version": "dev-master",
-            "source-reference": "5418bf02e595944613b4228b632961a3c8b09d0b",
             "alias-pretty-version": "1.0.x-dev",
             "alias-version": "1.0.9999999.9999999-dev"
         },
         {
             "package": "willdurand/geocoder",
             "version": "dev-master",
-            "source-reference": "5418bf02e595944613b4228b632961a3c8b09d0b"
+            "source-reference": "f23c876c02a86efa4416e0698b2f03b39547ade8"
         },
         {
             "package": "willdurand/geocoder-bundle",
