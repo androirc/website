@@ -30,6 +30,7 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets"
         ]
     },
+    "minimum-stability": "dev",
     "autoload": {
         "psr-0": {
             "Madalynn": "src/"
