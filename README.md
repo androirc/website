@@ -1,6 +1,6 @@
 # AndroIRC (Android IRC Client)
 
-[![Build Status](https://secure.travis-ci.org/androirc/AndroBundle.png)](http://travis-ci.org/androirc/AndroBundle)
+[![Build Status](https://secure.travis-ci.org/androirc/AndroBundle.png?branch=master)](http://travis-ci.org/androirc/AndroBundle)
 
 Team :
 
