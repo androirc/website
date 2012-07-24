@@ -10,6 +10,11 @@ before_script:
     - php composer.phar install
     - ./bin/travis
 
+branches:
+    only:
+        - master
+        - develop
+
 script: phpunit -c app/
 
 notifications:
