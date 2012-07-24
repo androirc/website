@@ -5,7 +5,6 @@ framework:
     secret:          %secret%
     translator:      { enabled: true, fallback: en }
     default_locale:  %locale%
-    charset:         UTF-8
     router:          { resource: "%kernel.root_dir%/config/routing.yml" }
     form:            true
     csrf_protection: true
@@ -15,7 +14,6 @@ framework:
         assets_version:        2012040501
         assets_version_format: %%s?v=%%s
     session:
-        auto_start:      true
         cookie_lifetime: 72000
 
 # Security Configuration
@@ -98,9 +96,11 @@ madalynn_admob:
 # i18n Routing Configuration
 jms_i18n_routing:
     default_locale: en
-    locales: [en, fr, cs, zh, de, ko, fi, es]
+    locales: [en, fr, cs, zh, de, ko, fi, es, pl]
     strategy: prefix_except_default
 
+# Custom translation download script
 andro:
     translations:
         zh: zh_CN
+        pl: pl_PL
