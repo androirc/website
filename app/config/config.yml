@@ -99,6 +99,10 @@ jms_i18n_routing:
     locales: [en, fr, cs, zh, de, ko, fi, es, pl]
     strategy: prefix_except_default
 
+# WhiteOctoberPagerFanta Configuration
+white_october_pagerfanta:
+    default_view: default_translated
+
 # Custom translation download script
 andro:
     translations:
