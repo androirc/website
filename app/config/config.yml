@@ -1,5 +1,5 @@
 imports:
-    - { resource: parameters.ini }
+    - { resource: parameters.yml }
 
 framework:
     secret:          %secret%
@@ -62,11 +62,12 @@ twig:
 # Assetic Configuration
 assetic:
     debug:          %kernel.debug%
-    java:           %java_path%
     use_controller: false
     filters:
         cssrewrite: ~
         yui_css:
+            jar: %kernel.root_dir%/java/yuicompressor-2.4.6.jar
+        yui_js:
             jar: %kernel.root_dir%/java/yuicompressor-2.4.6.jar
 
 # Doctrine Configuration

@@ -1,0 +1,14 @@
+parameters:
+    database_driver    : pdo_mysql
+    database_host      : localhost
+    database_port      : ~
+    database_name      : androbundle
+    database_user      : root
+    database_password  : ~
+
+    locale             : en
+
+    secret             : 562dd385e2b2bb79051b7b7bd29393c0
+
+    transifex_username : androirc
+    transifex_password : bb0bfacb1d52acebd9fd2df087b5ba9c
