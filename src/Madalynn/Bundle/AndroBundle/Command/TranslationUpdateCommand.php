@@ -90,10 +90,15 @@ class TranslationUpdateCommand extends ContainerAwareCommand
         $buzz     = $this->getContainer()->get('buzz');
         $username = $this->getContainer()->getParameter('transifex_username');
         $password = $this->getContainer()->getParameter('transifex_password');
+        $url      = sprintf($this->urlTemplate, $locale);
 
-        $response = $buzz->get(sprintf($this->urlTemplate, $locale), array(
+        $response = $buzz->get($url, array(
             'Authorization: Basic '.base64_encode($username.':'.$password)
         ));
+
+        if (401 === $response->getStatusCode()) {
+            throw new \InvalidArgumentException(sprintf('Unable to connect to "%s". Are you sure about the password?', $url));
+        }
 
         return json_decode($response->getContent(), true);
     }
