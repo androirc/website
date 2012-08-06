@@ -6,7 +6,7 @@ app/bootstrap.php.cache
 app/cache/*
 app/logs/*
 build/
-app/config/parameters.ini
+app/config/parameters.yml
 app/config/deployment.yml
 vendor/
 .DS_Store

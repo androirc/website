@@ -1,11 +1,10 @@
 imports:
-    - { resource: parameters.ini }
+    - { resource: parameters.yml }
 
 framework:
     secret:          %secret%
     translator:      { enabled: true, fallback: en }
     default_locale:  %locale%
-    charset:         UTF-8
     router:          { resource: "%kernel.root_dir%/config/routing.yml" }
     form:            true
     csrf_protection: true
@@ -15,7 +14,6 @@ framework:
         assets_version:        2012040501
         assets_version_format: %%s?v=%%s
     session:
-        auto_start:      true
         cookie_lifetime: 72000
 
 # Security Configuration
@@ -47,7 +45,7 @@ security:
                 path:     /
                 domain:   ~
     access_control:
-        - { path: ^(/.*)?/admin/, role: ROLE_ADMIN }
+        - { path: '^(/[a-zA-Z]{2})?/admin/', role: ROLE_ADMIN }
     role_hierarchy:
         ROLE_ADMIN:       ROLE_USER
         ROLE_SUPER_ADMIN: ROLE_ADMIN
@@ -64,11 +62,12 @@ twig:
 # Assetic Configuration
 assetic:
     debug:          %kernel.debug%
-    java:           %java_path%
     use_controller: false
     filters:
         cssrewrite: ~
         yui_css:
+            jar: %kernel.root_dir%/java/yuicompressor-2.4.6.jar
+        yui_js:
             jar: %kernel.root_dir%/java/yuicompressor-2.4.6.jar
 
 # Doctrine Configuration
@@ -98,9 +97,15 @@ madalynn_admob:
 # i18n Routing Configuration
 jms_i18n_routing:
     default_locale: en
-    locales: [en, fr, cs, zh, de, ko, fi, es]
+    locales: [en, fr, cs, zh, de, ko, fi, es, pl, it]
     strategy: prefix_except_default
 
+# WhiteOctoberPagerFanta Configuration
+white_october_pagerfanta:
+    default_view: default_translated
+
+# Custom translation download script
 andro:
     translations:
         zh: zh_CN
+        pl: pl_PL
