@@ -21,7 +21,7 @@ use Madalynn\Bundle\AndroBundle\Entity\AndroircVersion;
  */
 class QuickStartController extends AbstractController
 {
-    public function showAction($version, $lang)
+    public function showAction($version, $lang, $theme)
     {
         $em   = $this->getDoctrine()->getEntityManager();
         $repo = $em->getRepository('AndroBundle:QuickStart');
@@ -44,7 +44,8 @@ class QuickStartController extends AbstractController
         }
 
         return $this->render('AndroBundle:QuickStart:show.html.twig', array(
-            'quickstart' => $quickstart
+            'quickstart' => $quickstart,
+            'theme'      => $theme,
         ));
     }
 }
