@@ -24,8 +24,8 @@
         {
             "package": "doctrine/doctrine-bundle",
             "version": "dev-master",
-            "source-reference": "c9ea46d1f0c48bb88bb87b44214fe44e03c0c692",
-            "commit-date": "1341405737"
+            "source-reference": "ed8d02b491512f947fdb2f8b665dc8fd72b5879c",
+            "commit-date": "1343657020"
         },
         {
             "package": "doctrine/doctrine-fixtures-bundle",
@@ -42,8 +42,8 @@
         {
             "package": "doctrine/migrations",
             "version": "dev-master",
-            "source-reference": "fe98141b1e460baf5ab52f9139e1ae238101b28b",
-            "commit-date": "1336330359"
+            "source-reference": "b86b4cc0a39714f0aa53b908d495beacfa0e4011",
+            "commit-date": "1343202693"
         },
         {
             "package": "doctrine/orm",
@@ -52,14 +52,8 @@
         {
             "package": "fzaninotto/faker",
             "version": "dev-master",
-            "source-reference": "6ea2a60df3405211dfc5719df991b82fb6dd0d1f",
-            "commit-date": "1342708304"
-        },
-        {
-            "package": "jms/i18n-routing-bundle",
-            "version": "dev-master",
-            "alias-pretty-version": "1.0.x-dev",
-            "alias-version": "1.0.9999999.9999999-dev"
+            "source-reference": "a7b85d8a3dbec21b2d36ea05c633be827555d221",
+            "commit-date": "1343912123"
         },
         {
             "package": "jms/i18n-routing-bundle",
@@ -70,8 +64,14 @@
         {
             "package": "jms/translation-bundle",
             "version": "dev-master",
-            "source-reference": "cbe95c467ed5e5c26944a4eb23d7fcc90e799b35",
-            "commit-date": "1340675531"
+            "alias-pretty-version": "1.0.x-dev",
+            "alias-version": "1.0.9999999.9999999-dev"
+        },
+        {
+            "package": "jms/translation-bundle",
+            "version": "dev-master",
+            "source-reference": "1f9ae6d3a6a4785e3b4e8f0de19e4f69a71667da",
+            "commit-date": "1343809385"
         },
         {
             "package": "kriswallsmith/assetic",
@@ -82,8 +82,8 @@
         {
             "package": "kriswallsmith/assetic",
             "version": "dev-master",
-            "source-reference": "c518a48ddc26af898191410cc35f7f30aaed448e",
-            "commit-date": "1343084248"
+            "source-reference": "11324294acf2dcf6b7f7cb0c4f35fd77e6f01cb7",
+            "commit-date": "1343684910"
         },
         {
             "package": "kriswallsmith/buzz",
@@ -126,8 +126,8 @@
         {
             "package": "sensio/distribution-bundle",
             "version": "dev-master",
-            "source-reference": "5886adae1613c0a72fbb95259a83ae798e86c0d3",
-            "commit-date": "1342347850"
+            "source-reference": "57190e5baa0cc1d8ef6095ce57e6719a5eae2b79",
+            "commit-date": "1344240835"
         },
         {
             "package": "swiftmailer/swiftmailer",
@@ -138,8 +138,8 @@
         {
             "package": "swiftmailer/swiftmailer",
             "version": "dev-master",
-            "source-reference": "8b2aa953f87da228ba413e8fb1372e49c1374050",
-            "commit-date": "1342198037"
+            "source-reference": "19045c3692f6f6ddb4abc5ebfaf3f86f1c57d265",
+            "commit-date": "1343980916"
         },
         {
             "package": "symfony/assetic-bundle",
@@ -150,14 +150,8 @@
         {
             "package": "symfony/assetic-bundle",
             "version": "dev-master",
-            "source-reference": "e5e9a56a872d9e1f305d14cd8296bf77888388af",
-            "commit-date": "1342820047"
-        },
-        {
-            "package": "symfony/monolog-bundle",
-            "version": "dev-master",
-            "alias-pretty-version": "2.1.x-dev",
-            "alias-version": "2.1.9999999.9999999-dev"
+            "source-reference": "0c09207be07b044e06d28a4111f554f071e5b658",
+            "commit-date": "1343812720"
         },
         {
             "package": "symfony/monolog-bundle",
@@ -174,7 +168,7 @@
         {
             "package": "symfony/swiftmailer-bundle",
             "version": "dev-master",
-            "source-reference": "v2.1.0-BETA4",
+            "source-reference": "v2.1.0-RC1",
             "commit-date": "1342684512"
         },
         {
@@ -186,8 +180,8 @@
         {
             "package": "symfony/symfony",
             "version": "dev-master",
-            "source-reference": "2aaa4ed84e56ad8e3420e696f6a42231d30bc1d2",
-            "commit-date": "1343064472"
+            "source-reference": "0ccda3877538367c5aa73f7c0a557e643cfb2c70",
+            "commit-date": "1344241030"
         },
         {
             "package": "twig/extensions",
@@ -204,14 +198,14 @@
         {
             "package": "twig/twig",
             "version": "dev-master",
-            "source-reference": "657de7bdeb680815e0df95f63da9f81e1533d2ea",
-            "commit-date": "1342953178"
+            "source-reference": "51c866f415bbee670cd9ba13591307bce8dabdca",
+            "commit-date": "1343464333"
         },
         {
             "package": "white-october/pagerfanta-bundle",
             "version": "dev-master",
-            "source-reference": "6d7c84759ca85a4c3a993a844922dc4629d42adf",
-            "commit-date": "1339403763"
+            "source-reference": "38e317a3ecd5a68e2322024ea8fe57632d4ddd68",
+            "commit-date": "1343134121"
         },
         {
             "package": "willdurand/geocoder",
@@ -222,8 +216,8 @@
         {
             "package": "willdurand/geocoder",
             "version": "dev-master",
-            "source-reference": "1f464a96af266006870750ac3a23cfaef0de3186",
-            "commit-date": "1340185614"
+            "source-reference": "4d045561ca04ff6d1f2a218644c708727437afdf",
+            "commit-date": "1343287010"
         },
         {
             "package": "willdurand/geocoder-bundle",
