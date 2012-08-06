@@ -5,21 +5,36 @@
         <title>{% block title %}{% endblock %} - AndroIRC (Android IRC Client)</title>
         <style type="text/css">
             body {
-                font-family: Arial, Helvetica, sans-serif;
-                font-size: 12px;
-                color: #8A8A8A;
-                line-height: 1.5;
+              font-family: Arial, Helvetica, sans-serif;
+              font-size: 12px;
+              line-height: 1.5;
             }
 
             h1 {
-                color: #026995;
-                font-size: 18px;
+              font-size: 18px;
+              color: #026995;
             }
 
             p {
-                text-align: justify;
-                padding: 0 5px;
+              text-align: justify;
+              padding: 0 5px;
             }
+
+            a, a:hover {
+              text-decoration: underline;
+              color: #026995;
+            }
+
+            {% if theme == 'light' %}
+                body {
+                  color: #8A8A8A;
+                }
+            {% else %}
+                body {
+                  background-color: #282828;
+                  color: #f3f3f3;
+                }
+            {% endif %}
         </style>
     </head>
     <body>

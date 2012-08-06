@@ -47,8 +47,10 @@ _tip:
     defaults: { _controller: AndroBundle:Tip:show, date: null }
 
 _quickstart:
-    pattern: /quickstart/{version}/{lang}
-    defaults: { _controller: AndroBundle:QuickStart:show }
+    pattern: /quickstart/{version}/{lang}/{theme}
+    defaults: { _controller: AndroBundle:QuickStart:show, theme: light }
+    requirements:
+        theme: light|dark
 
 _crash_report:
     pattern: /crashreport
@@ -56,8 +58,10 @@ _crash_report:
     requirements: { _method: post }
 
 _changelog:
-    pattern: /changelog/{version}
-    defaults: { _controller: AndroBundle:ChangeLog:show }
+    pattern: /changelog/{version}/{theme}
+    defaults: { _controller: AndroBundle:ChangeLog:show, theme: light }
+    requirements:
+        theme: light|dark
 
 # Security
 

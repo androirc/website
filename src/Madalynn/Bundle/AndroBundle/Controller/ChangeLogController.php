@@ -21,7 +21,7 @@ use Madalynn\Bundle\AndroBundle\Entity\AndroircVersion;
  */
 class ChangeLogController extends AbstractController
 {
-    public function showAction($version)
+    public function showAction($version, $theme)
     {
         $em   = $this->getDoctrine()->getEntityManager();
         $repo = $em->getRepository('AndroBundle:ChangeLog');
@@ -36,7 +36,8 @@ class ChangeLogController extends AbstractController
         $changelog = $repo->findByVersion($version);
 
         return $this->render('AndroBundle:ChangeLog:show.html.twig', array(
-            'changelog' => $changelog
+            'changelog' => $changelog,
+            'theme'     => $theme,
         ));
     }
 }
