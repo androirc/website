@@ -1,7 +1,9 @@
 {% block form_row %}
 {% spaceless %}
     <div class="control-group {% if errors|length > 0 %}error{% endif %}">
-        {{ form_label(form, label|default(null)) }}
+        {% if 'checkbox' not in form.vars.block_prefixes %}
+            {{ form_label(form, label|default(null)) }}
+        {% endif %}
          <div class="controls">
             {{ form_widget(form) }}
 
@@ -16,3 +18,34 @@
     </div>
 {% endspaceless %}
 {% endblock form_row %}
+
+{% block form_label %}
+{% spaceless %}
+    {% if not compound %}
+        {% set label_attr = label_attr|merge({'for': id}) %}
+    {% endif %}
+    {% if required %}
+        {% set label_attr = label_attr|merge({'class': (label_attr.class|default('') ~ ' required')|trim}) %}
+    {% endif %}
+    {% if label is empty %}
+        {% set label = name|humanize %}
+    {% endif %}
+
+    {# Twitter bootstrap class #}
+    {% set label_attr = label_attr|merge({'class': (label_attr.class|default('') ~ ' control-label')|trim}) %}
+
+    <label{% for attrname, attrvalue in label_attr %} {{ attrname }}="{{ attrvalue }}"{% endfor %}>{{ label|trans({}, translation_domain) }}</label>
+{% endspaceless %}
+{% endblock form_label %}
+
+{% block checkbox_widget %}
+{% spaceless %}
+    {% if label is empty %}
+        {% set label = name|humanize %}
+    {% endif %}
+    <label class="checkbox">
+        <input type="checkbox" {{ block('widget_attributes') }}{% if value is defined %} value="{{ value }}"{% endif %}{% if checked %} checked="checked"{% endif %} />
+        {{ label|trans({}, translation_domain) }}
+    </label>
+{% endspaceless %}
+{% endblock checkbox_widget %}
