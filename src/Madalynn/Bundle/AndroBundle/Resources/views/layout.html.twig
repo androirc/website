@@ -1,121 +1,29 @@
 <!DOCTYPE html>
-<html xml:lang="{{ app.request.locale }}" lang="{{ app.request.locale }}">
+<html>
     <head>
-        <title>{% block title %}{{ 'homepage.title'|trans }}{% endblock %} - AndroIRC ({{ 'header.subtitle'|trans }})</title>
-        <meta name="google-site-verification" content="NxLzVTaSpM7YMWZ_DqGdF19nVKrNl4IcQxcT3jtACqw" />
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta name="author" content="Julien Brochet, Sébastien Brochet" />
-        <meta name="title" content="{{ block('title') }} - AndroIRC ({{ 'header.subtitle'|trans }})" />
-        <meta name="description" content="{{ 'homepage.introduction'|trans }}" />
-        <meta name="keywords" content="{{ 'meta.keywords'|trans }}" />
-        <meta name="language" content="{{ locales()|join(',') }}" />
-        <meta name="robots" content="index, follow" />
-
-        {% for locale in locales() -%}
-            <link rel="alternate" hreflang="{{ locale }}" href="{{ path_locale(app.request, locale, true) }}" />
-        {% endfor %}
-
-        <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-precomposed.png" />
-        <link href="https://plus.google.com/105275534595142567234/" rel="publisher" />
-        <link href="http://feeds.feedburner.com/AndroIRC" type="application/atom+xml" rel="alternate" title="Articles - AndroIRC" />
-        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
-        <!--[if lt IE 9]>
-            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-        {% block stylesheets %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+    {% stylesheets filter="?yui_css" output="css/frontend.css"
+        '@AndroBundle/Resources/public/css/bootstrap.css'
+        '@AndroBundle/Resources/public/css/layout.css'
+    %}
+        <link rel="stylesheet" type="text/css" href="{{ asset_url }}" />
+    {% endstylesheets %}
     </head>
     <body>
-        <div id="up">
+        <div class="container">
             <header>
-                {% block header %}{% endblock %}
-                <div id="social">
-                    <a href="http://feeds.feedburner.com/AndroIRC">
-                        <img src="{{ asset('bundles/andro/images/rss_16.png') }}" />
-                    </a>
-                    <a href="http://www.facebook.com/androirc">
-                        <img src="{{ asset('bundles/andro/images/facebook_16.png') }}" />
-                    </a>
-                    <a href="https://twitter.com/androirc">
-                        <img src="{{ asset('bundles/andro/images/twitter_16.png') }}" />
-                    </a>
-                    <a href="https://plus.google.com/105275534595142567234/">
-                        <img src="{{ asset('bundles/andro/images/gplus_16.png') }}" />
-                    </a>
-                </div>
-
-                {% render 'AndroBundle:Main:locales' with {'request': app.request} %}
-
                 <div id="logo">
-                    <img src="{{ asset('bundles/andro/images/logo.png') }}" />
-                    <span><em>{{ 'header.subtitle'|trans }}</em></span>
+                    <img src="{{ asset('bundles/andro/images/logo.png') }}" alt="AndroIRC" />
                 </div>
+
+                <nav>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Dowload</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
             </header>
         </div>
-
-        <nav id="menu">
-            {% block menu %}{% endblock %}
-        </nav>
-
-        <div id="space">
-        </div>
-
-        <div id="page">
-            {% for key,messages in app.session.flashbag.all %}
-                {% for message in messages %}
-                    <div class="alert alert-{{ key }}">
-                        {{ message|trans }}
-                    </div>
-                {% endfor %}
-            {% endfor %}
-            {% block page %}{% endblock %}
-            <div class="clear"></div>
-        </div>
-        <footer>
-            <div>
-                <section class="column">
-                    <h2>{{ 'footer.community.name'|trans }}</h2>
-                    <p>{{ 'footer.community.desc'|trans|replace({'freenode': '<a href="irc://irc.freenode.org/androirc">freenode</a>'})|raw }}</p>
-                    <ul>
-                        <li><img class="famfamfam" src="{{ asset('bundles/andro/images/facebook_16.png') }}" /> <a href="http://facebook.com/androirc">{{ 'footer.community.facebook'|trans }}</a></li>
-                        <li><img class="famfamfam" src="{{ asset('bundles/andro/images/twitter_16.png') }}" /> <a href="http://twitter.com/androirc">{{ 'footer.community.twitter'|trans }}</a></li>
-                        <li><img class="famfamfam" src="{{ asset('bundles/andro/images/gplus_16.png') }}" /> <a href="https://plus.google.com/105275534595142567234/">{{ 'footer.community.googleplus'|trans }}</a></li>
-                    </ul>
-
-                </section>
-                <section class="column">
-                    <h2>{{ 'footer.otherpages.name'|trans }}</h2>
-                    <ul>
-                        <li><img class="famfamfam" src="{{ asset('bundles/andro/images/marker.png') }}" /> <a href="{{ path('beta') }}">{{ 'footer.otherpages.beta'|trans }}</a></li>
-                        <li><img class="famfamfam" src="{{ asset('bundles/andro/images/bug.png') }}" /> <a href="http://bugs.androirc.com/">{{ 'footer.otherpages.bug'|trans }}</a></li>
-                        <li><img class="famfamfam" src="{{ asset('bundles/andro/images/feed.png') }}" /> <a href="http://feeds.feedburner.com/AndroIRC">{{ 'footer.otherpages.rss'|trans }}</a></li>
-                        <li><img class="famfamfam" src="{{ asset('bundles/andro/images/coins.png') }}" /> <a href="https://market.android.com/details?id=com.androirc.premium">{{ 'footer.otherpages.premium'|trans }}</a></li>
-                        <li><img class="famfamfam" src="{{ asset('bundles/andro/images/book_open.png') }}" /> <a href="http://translation.androirc.com/">{{ 'footer.otherpages.translation'|trans }}</a></li>
-                        <li><img class="famfamfam" src="{{ asset('bundles/andro/images/mail-open.png') }}" /> <a href="{{ path('contact') }}">{{ 'footer.otherpages.contact'|trans }}</a></li>
-                    </ul>
-                </section>
-                <section class="column">
-                    <h2>{{ 'footer.copyright.name'|trans }}</h2>
-                    <p>&copy; {{ 'footer.copyright.desc'|trans({'%year%': 'now'|date('Y')})|replace({'Madalynn': '<a href="http://www.madalynn.eu/">Madalynn</a>'})|raw }}</p>
-                    <p>{{ 'footer.translation_by'|trans }}</p>
-                    <p id="about">
-                        <img src="{{ asset('bundles/andro/images/html5.png') }}" />
-                        <img src="{{ asset('bundles/andro/images/symfony2.png') }}" />
-                    </p>
-                </section>
-            </div>
-            <div class="clear"></div>
-        </footer>
-        <script type="text/javascript">
-            var _gaq = _gaq || [];
-            _gaq.push(['_setAccount', 'UA-133630-2']);
-            _gaq.push(['_trackPageview']);
-
-            (function() {
-                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-            })();
-        </script>
     </body>
 </html>

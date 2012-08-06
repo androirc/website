@@ -1,0 +1,33 @@
+body {
+  background: #fff url('/bundles/andro/images/background.png') repeat-x;
+}
+
+.container {
+  margin-top: 20px;
+}
+
+#logo {
+  float: left;
+}
+
+nav {
+  float: right;
+  margin-top: 10px;
+}
+
+nav ul li {
+  display: inline;
+  list-style-type: none;
+  margin: 0 10px;
+}
+
+nav ul li a {
+  color: #2C2C2C;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+nav ul li a:hover {
+  text-decoration: none;
+}
