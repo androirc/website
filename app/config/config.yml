@@ -45,7 +45,7 @@ security:
                 path:     /
                 domain:   ~
     access_control:
-        - { path: ^(/.*)?/admin/, role: ROLE_ADMIN }
+        - { path: '^(/[a-zA-Z]{2})?/admin/', role: ROLE_ADMIN }
     role_hierarchy:
         ROLE_ADMIN:       ROLE_USER
         ROLE_SUPER_ADMIN: ROLE_ADMIN
