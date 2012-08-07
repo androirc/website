@@ -2,12 +2,12 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <title>AndroIRC</title>
     <subtitle>Latest articles</subtitle>
-    <link href="{{ url('article_atom') }}" rel="self" />
+    <link href="{{ url('_article_atom') }}" rel="self" />
     <link href="{{ url('homepage') }}" />
     <author>
         <name>AndroIRC Team</name>
     </author>
-    <id>{{ url('article_atom')|sha1 }}</id>
+    <id>{{ url('_article_atom')|sha1 }}</id>
 
     {% for article in articles %}
         <entry>
