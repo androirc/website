@@ -11,3 +11,4 @@ app/config/deployment.yml
 vendor/
 .DS_Store
 composer.phar
+Capfile

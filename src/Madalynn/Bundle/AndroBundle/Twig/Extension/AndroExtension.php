@@ -100,6 +100,12 @@ class AndroExtension extends \Twig_Extension
         $id = $request->attributes->get('_route');
         $parameters = $request->attributes->all();
 
+        if (!$id) {
+            // Bug when the page does not exist (404 Not found)
+            $id = 'homepage';
+            unset($parameters['format']);
+        }
+
         foreach ($parameters as $key => $val) {
             if (substr($key, 0, 1) == '_') {
                 unset($parameters[$key]);
