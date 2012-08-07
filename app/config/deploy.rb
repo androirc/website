@@ -10,7 +10,8 @@ set :branch,          "master"
 set :deploy_via,      :remote_cache
 
 set :shared_files,    ["app/config/parameters.yml"]
-set :shared_children, [app_path + "/logs", web_path + "/uploads"]
+set :shared_children, [log_path, web_path + "/uploads"]
+set :writable_dirs,   [log_path, cache_path, web_path + "/uploads"]
 
 set :model_manager,   "doctrine"
 
@@ -28,3 +29,5 @@ set :use_sudo,              false
 set :dump_assetic_assets,   true
 set :update_assets_version, true
 set :permission_method,     :acl
+
+before "symfony:bootstrap:build", "deploy:set_permissions"
