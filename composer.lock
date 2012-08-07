@@ -1,9 +1,11 @@
 {
-    "hash": "8ae6e8a106b150ac19c79e2a216b1b46",
+    "hash": "f72142d6ad652ebb4f7b6990a47c6a86",
     "packages": [
         {
             "package": "doctrine/common",
-            "version": "2.2.2"
+            "version": "2.3.x-dev",
+            "source-reference": "2ec4bc6db13db6a0976a16b71058083c55cbcdbd",
+            "commit-date": "1343847076"
         },
         {
             "package": "doctrine/data-fixtures",
@@ -13,7 +15,9 @@
         },
         {
             "package": "doctrine/dbal",
-            "version": "2.2.2"
+            "version": "2.3.x-dev",
+            "source-reference": "86b10e7eda2eed1d9a07a580a40e14cea8e1733a",
+            "commit-date": "1343559046"
         },
         {
             "package": "doctrine/doctrine-bundle",
@@ -47,7 +51,9 @@
         },
         {
             "package": "doctrine/orm",
-            "version": "2.2.0"
+            "version": "2.3.x-dev",
+            "source-reference": "17862d9a2a38bf801e564d09a26eea8503621ae0",
+            "commit-date": "1343850025"
         },
         {
             "package": "fzaninotto/faker",
@@ -64,12 +70,6 @@
         {
             "package": "jms/translation-bundle",
             "version": "dev-master",
-            "alias-pretty-version": "1.0.x-dev",
-            "alias-version": "1.0.9999999.9999999-dev"
-        },
-        {
-            "package": "jms/translation-bundle",
-            "version": "dev-master",
             "source-reference": "1f9ae6d3a6a4785e3b4e8f0de19e4f69a71667da",
             "commit-date": "1343809385"
         },
@@ -82,8 +82,8 @@
         {
             "package": "kriswallsmith/assetic",
             "version": "dev-master",
-            "source-reference": "11324294acf2dcf6b7f7cb0c4f35fd77e6f01cb7",
-            "commit-date": "1343684910"
+            "source-reference": "ce9c557989f95abffe792c63f84f404a2f019ef8",
+            "commit-date": "1344261272"
         },
         {
             "package": "kriswallsmith/buzz",
@@ -144,12 +144,6 @@
         {
             "package": "symfony/assetic-bundle",
             "version": "dev-master",
-            "alias-pretty-version": "2.1.x-dev",
-            "alias-version": "2.1.9999999.9999999-dev"
-        },
-        {
-            "package": "symfony/assetic-bundle",
-            "version": "dev-master",
             "source-reference": "0c09207be07b044e06d28a4111f554f071e5b658",
             "commit-date": "1343812720"
         },
@@ -158,12 +152,6 @@
             "version": "dev-master",
             "source-reference": "v2.1.0-BETA4",
             "commit-date": "1341078487"
-        },
-        {
-            "package": "symfony/swiftmailer-bundle",
-            "version": "dev-master",
-            "alias-pretty-version": "2.1.x-dev",
-            "alias-version": "2.1.9999999.9999999-dev"
         },
         {
             "package": "symfony/swiftmailer-bundle",
@@ -180,8 +168,8 @@
         {
             "package": "symfony/symfony",
             "version": "dev-master",
-            "source-reference": "0ccda3877538367c5aa73f7c0a557e643cfb2c70",
-            "commit-date": "1344241030"
+            "source-reference": "b91a4a8368abdca7b9728f3cf170175c3aa3befc",
+            "commit-date": "1344326985"
         },
         {
             "package": "twig/extensions",
@@ -198,20 +186,14 @@
         {
             "package": "twig/twig",
             "version": "dev-master",
-            "source-reference": "51c866f415bbee670cd9ba13591307bce8dabdca",
-            "commit-date": "1343464333"
+            "source-reference": "f2f698c820d4396f519ef4175ad6fe79fcfb9ecf",
+            "commit-date": "1344328685"
         },
         {
             "package": "white-october/pagerfanta-bundle",
             "version": "dev-master",
             "source-reference": "38e317a3ecd5a68e2322024ea8fe57632d4ddd68",
             "commit-date": "1343134121"
-        },
-        {
-            "package": "willdurand/geocoder",
-            "version": "dev-master",
-            "alias-pretty-version": "1.0.x-dev",
-            "alias-version": "1.0.9999999.9999999-dev"
         },
         {
             "package": "willdurand/geocoder",
