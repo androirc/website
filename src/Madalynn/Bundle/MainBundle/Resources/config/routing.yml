@@ -1,0 +1,76 @@
+homepage:
+    pattern: /
+    defaults: { _controller: MainBundle:Main:homepage }
+
+contact:
+    pattern: /contact
+    defaults: { _controller: MainBundle:Contact:show }
+
+archives:
+    pattern: /archives/{page}
+    defaults: { _controller: MainBundle:Article:archives, page: 1 }
+
+eula:
+    pattern: /eula
+    defaults: { _controller: MainBundle:Main:eula }
+
+screenshots:
+    pattern: /screenshots
+    defaults: { _controller: MainBundle:Main:screenshots }
+
+donate:
+    pattern: /donate
+    defaults: { _controller: MainBundle:Main:donate }
+
+article_show:
+    pattern: /article/{id}/{slug}
+    defaults: { _controller: MainBundle:Article:show }
+
+_article_atom:
+    pattern: /articles/atom
+    defaults: { _controller: MainBundle:Article:atom, _format: atom }
+
+beta:
+    pattern: /beta
+    defaults: { _controller: MainBundle:Beta:show }
+
+_beta_download:
+    pattern: /beta/download
+    defaults: { _controller: MainBundle:Beta:download }
+
+_beta_latest:
+    pattern: /beta/latest
+    defaults: { _controller: MainBundle:Beta:latest }
+
+_tip:
+    pattern: /tip/{lang}/{date}
+    defaults: { _controller: MainBundle:Tip:show, date: null }
+
+_quickstart:
+    pattern: /quickstart/{version}/{lang}/{theme}
+    defaults: { _controller: MainBundle:QuickStart:show, theme: light }
+    requirements:
+        theme: light|dark
+
+_crash_report:
+    pattern: /crashreport
+    defaults: { _controller: MainBundle:CrashReport:add }
+    requirements: { _method: post }
+
+_changelog:
+    pattern: /changelog/{version}/{theme}
+    defaults: { _controller: MainBundle:ChangeLog:show, theme: light }
+    requirements:
+        theme: light|dark
+
+# Security
+
+login:
+    pattern: /login
+    defaults: { _controller: MainBundle:Security:login }
+
+_login_check:
+    pattern: /login_check
+
+_logout:
+    pattern: /logout

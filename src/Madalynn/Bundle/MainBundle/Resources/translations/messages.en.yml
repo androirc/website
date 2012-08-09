@@ -1,0 +1,13 @@
+frontend:
+    subtitle: "Android IRC Client"
+    menu:
+        blog: "Blog"
+        download: "Download"
+        support: "Support"
+        beta: "Beta"
+        contact: "Contact"
+        terms: "Terms"
+        facebook: "Facebook"
+        twitter: "Twitter"
+        googleplus: "Google+"
+    copyright: "Copyright %year% Madalynn, all rights reserved. Android is a trademark of Google Inc."

@@ -4,7 +4,6 @@
         "doctrine/orm": ">=2.2.3,<2.4-dev",
         "twig/extensions": "dev-master",
         "fzaninotto/faker": "dev-master",
-
         "symfony/swiftmailer-bundle": "dev-master",
         "symfony/monolog-bundle": "dev-master",
         "symfony/assetic-bundle": "dev-master",
@@ -12,7 +11,6 @@
         "doctrine/doctrine-fixtures-bundle": "dev-master",
         "doctrine/doctrine-migrations-bundle": "dev-master",
         "white-october/pagerfanta-bundle": "dev-master",
-        "madalynn/plum-bundle": "dev-master",
         "sensio/buzz-bundle": "dev-master",
         "jms/i18n-routing-bundle": "dev-master",
         "sensio/distribution-bundle": "dev-master",

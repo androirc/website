@@ -20,7 +20,7 @@ framework:
 security:
     providers:
         main:
-            entity: { class: Madalynn\Bundle\AndroBundle\Entity\User, property: username }
+            entity: { class: Madalynn\Bundle\MainBundle\Entity\User, property: username }
     encoders:
         Madalynn\Bundle\AndroBundle\Entity\User:
             algorithm: sha512
@@ -89,11 +89,6 @@ doctrine:
 swiftmailer:
     transport:  mail
 
-# AdmobBundle Configuration
-madalynn_admob:
-    publisher_id: a14eb7d2147c5a9
-    textcolor: '026995'
-
 # i18n Routing Configuration
 jms_i18n_routing:
     default_locale: en
@@ -105,7 +100,7 @@ white_october_pagerfanta:
     default_view: default_translated
 
 # Custom translation download script
-andro:
-    translations:
-        zh: zh_CN
-        pl: pl_PL
+#andro:
+#    translations:
+#        zh: zh_CN
+#        pl: pl_PL

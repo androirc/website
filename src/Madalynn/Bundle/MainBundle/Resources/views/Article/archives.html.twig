@@ -1,0 +1,25 @@
+{% extends "MainBundle:Article:layout.html.twig" %}
+
+{% block title %}Archives{% endblock %}
+
+{% block content %}
+    {% include 'MainBundle:Main:translation_not_available.html.twig' %}
+
+    {% if pager.haveToPaginate %}
+        <div class="paginator">
+            {{ pagerfanta(pager) }}
+        </div>
+    {% endif %}
+
+    {% for article in pager %}
+        {% include 'MainBundle:Article:article.html.twig' with { 'article': article, 'sumup': true } %}
+    {% else %}
+        No articles at this time
+    {% endfor %}
+
+    {% if pager.haveToPaginate %}
+        <div class="paginator">
+            {{ pagerfanta(pager) }}
+        </div>
+    {% endif %}
+{% endblock %}

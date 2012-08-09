@@ -1,0 +1,13 @@
+{% extends "MainBundle:Article:layout.html.twig" %}
+
+{% block title %}{{ article.getTitle }}{% endblock %}
+
+{% block content %}
+    {{ parent() }}
+
+    {# Article layout #}
+    {% include 'MainBundle:Article:article.html.twig' with {'article': article, 'sumup': false} %}
+
+    {# Disqus layout #}
+    {% include 'MainBundle:Article:disqus.html.twig' with {'article': article} %}
+{% endblock %}

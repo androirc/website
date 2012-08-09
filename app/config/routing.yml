@@ -1,5 +1,5 @@
 androirc:
-    resource: '@AndroBundle/Resources/config/routing.yml'
+    resource: '@MainBundle/Resources/config/routing.yml'
 
 androirc_admin:
     resource: '@AdminBundle/Resources/config/routing.yml'

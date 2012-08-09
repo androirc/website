@@ -1,0 +1,10 @@
+{% extends "MainBundle::frontend.html.twig" %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {% include 'MainBundle:Article:javascript.html.twig' %}
+{% endblock %}
+
+{% block content %}
+    {% include 'MainBundle:Main:translation_not_available.html.twig' %}
+{% endblock %}

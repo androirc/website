@@ -64,8 +64,20 @@
         {
             "package": "jms/i18n-routing-bundle",
             "version": "dev-master",
+            "alias-pretty-version": "1.0.x-dev",
+            "alias-version": "1.0.9999999.9999999-dev"
+        },
+        {
+            "package": "jms/i18n-routing-bundle",
+            "version": "dev-master",
             "source-reference": "ff29b3dddeb802790ffce506a35e7423bd45a1b2",
             "commit-date": "1342777687"
+        },
+        {
+            "package": "jms/translation-bundle",
+            "version": "dev-master",
+            "alias-pretty-version": "1.0.x-dev",
+            "alias-version": "1.0.9999999.9999999-dev"
         },
         {
             "package": "jms/translation-bundle",
@@ -88,26 +100,14 @@
         {
             "package": "kriswallsmith/assetic",
             "version": "dev-master",
-            "source-reference": "ce9c557989f95abffe792c63f84f404a2f019ef8",
-            "commit-date": "1344261272"
+            "source-reference": "d1d5066d9071a76d771993081ee23137e96216b7",
+            "commit-date": "1344507381"
         },
         {
             "package": "kriswallsmith/buzz",
             "version": "dev-master",
             "source-reference": "2ba5da13b1b03590f0164b3fb61578078d671fcc",
             "commit-date": "1341070218"
-        },
-        {
-            "package": "madalynn/plum",
-            "version": "dev-master",
-            "source-reference": "v1.1",
-            "commit-date": "1333928341"
-        },
-        {
-            "package": "madalynn/plum-bundle",
-            "version": "dev-master",
-            "source-reference": "6f7032db7c31d8fcbf378c266cd82f032a2ee963",
-            "commit-date": "1334067958"
         },
         {
             "package": "monolog/monolog",
@@ -150,14 +150,32 @@
         {
             "package": "symfony/assetic-bundle",
             "version": "dev-master",
-            "source-reference": "0c09207be07b044e06d28a4111f554f071e5b658",
-            "commit-date": "1343812720"
+            "alias-pretty-version": "2.1.x-dev",
+            "alias-version": "2.1.9999999.9999999-dev"
+        },
+        {
+            "package": "symfony/assetic-bundle",
+            "version": "dev-master",
+            "source-reference": "ec3a65d3eab342af9e93a3c21af0ac7b78e01c17",
+            "commit-date": "1344507386"
+        },
+        {
+            "package": "symfony/monolog-bundle",
+            "version": "dev-master",
+            "alias-pretty-version": "2.1.x-dev",
+            "alias-version": "2.1.9999999.9999999-dev"
         },
         {
             "package": "symfony/monolog-bundle",
             "version": "dev-master",
             "source-reference": "v2.1.0-BETA4",
             "commit-date": "1341078487"
+        },
+        {
+            "package": "symfony/swiftmailer-bundle",
+            "version": "dev-master",
+            "alias-pretty-version": "2.1.x-dev",
+            "alias-version": "2.1.9999999.9999999-dev"
         },
         {
             "package": "symfony/swiftmailer-bundle",
@@ -174,8 +192,8 @@
         {
             "package": "symfony/symfony",
             "version": "dev-master",
-            "source-reference": "b91a4a8368abdca7b9728f3cf170175c3aa3befc",
-            "commit-date": "1344326985"
+            "source-reference": "dd9afddfd9a9f169832c4634d1094f50f34d5df4",
+            "commit-date": "1344494996"
         },
         {
             "package": "twig/extensions",
@@ -200,6 +218,12 @@
             "version": "dev-master",
             "source-reference": "38e317a3ecd5a68e2322024ea8fe57632d4ddd68",
             "commit-date": "1343134121"
+        },
+        {
+            "package": "willdurand/geocoder",
+            "version": "dev-master",
+            "alias-pretty-version": "1.0.x-dev",
+            "alias-version": "1.0.9999999.9999999-dev"
         },
         {
             "package": "willdurand/geocoder",
@@ -229,7 +253,6 @@
         "doctrine/doctrine-fixtures-bundle": 20,
         "doctrine/doctrine-migrations-bundle": 20,
         "white-october/pagerfanta-bundle": 20,
-        "madalynn/plum-bundle": 20,
         "sensio/buzz-bundle": 20,
         "jms/i18n-routing-bundle": 20,
         "sensio/distribution-bundle": 20,

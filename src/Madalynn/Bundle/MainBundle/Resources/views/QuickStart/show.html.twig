@@ -1,0 +1,11 @@
+{% extends "MainBundle::basic.html.twig" %}
+
+{% block title %}Quick start{% endblock %}
+
+{% block content %}
+    {% if not quickstart %}
+        No help...yet!
+    {% else %}
+        {{ quickstart.content|raw }}
+    {% endif %}
+{% endblock %}

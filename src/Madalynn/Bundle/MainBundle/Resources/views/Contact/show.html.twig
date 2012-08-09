@@ -1,0 +1,16 @@
+{% extends "MainBundle::frontend.html.twig" %}
+
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+    <p>{{ 'contact.desc'|trans }}</p>
+
+    <form class="form-horizontal" action="{{ path('contact') }}" method="post" {{ form_enctype(form) }}>
+        {{ form_widget(form) }}
+
+        <div class="actions">
+            <input type="submit" class="btn btn-primary" value="{{ 'contact.submit'|trans }}"/>
+            <button type="reset" class="btn">{{ 'global.cancel'|trans }}</button>
+        </div>
+    </form>
+{% endblock %}

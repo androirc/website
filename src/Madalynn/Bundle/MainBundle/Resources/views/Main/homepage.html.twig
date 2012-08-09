@@ -1,0 +1,15 @@
+{% extends "MainBundle:Article:layout.html.twig" %}
+
+{% block content %}
+    {{ parent() }}
+
+    <p id="introduction">
+       {{ 'homepage.introduction'|trans }}
+    </p>
+
+    {% for article in articles %}
+        {% include 'MainBundle:Article:article.html.twig' with { 'article': article, 'sumup': true } %}
+    {% endfor %}
+
+    <a style="float: right;" class="btn" href="{{ path('archives') }}">» {{ 'article.archives'|trans }}</a>
+{% endblock %}
