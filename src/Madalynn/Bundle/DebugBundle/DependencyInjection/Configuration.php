@@ -10,7 +10,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Madalynn\Bundle\MainBundle\DependencyInjection;
+namespace Madalynn\Bundle\DebugBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
@@ -29,10 +29,8 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder()
     {
-        // @todo move this configuration to the debug bundle
-
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('main', 'array');
+        $rootNode = $treeBuilder->root('debug', 'array');
 
         $rootNode
             ->children()

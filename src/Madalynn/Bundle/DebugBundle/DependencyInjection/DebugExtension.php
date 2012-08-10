@@ -10,27 +10,29 @@
  * file that was distributed with this source code.
  */
 
-namespace Madalynn\Bundle\MainBundle\DependencyInjection;
+namespace Madalynn\Bundle\DebugBundle\DependencyInjection;
 
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
-use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\Config\FileLocator;
+use Symfony\Component\Config\Definition\Processor;
 
 /**
- * AndroIRC main extension
+ * AndroIRC debug extension
  *
  * @author Julien Brochet <mewt@androirc.com>
  */
-class MainExtension extends Extension
+class DebugExtension extends Extension
 {
     /**
      * {@inheritDoc}
      */
     public function load(array $configs, ContainerBuilder $container)
     {
-        $loader = new XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
-        $loader->load('services.xml');
+        $configuration = new Configuration();
+        $processor = new Processor();
+
+        $config = $processor->processConfiguration($configuration, $configs);
+        $container->setParameter('androirc.translations', $config['translations']);
     }
 
     /**
@@ -38,7 +40,7 @@ class MainExtension extends Extension
      */
     public function getNamespace()
     {
-        return 'http://www.androirc.com/schema/dic/main';
+        return 'http://www.androirc.com/schema/dic/debug';
     }
 
     /**
@@ -46,6 +48,6 @@ class MainExtension extends Extension
      */
     public function getAlias()
     {
-        return 'main';
+        return 'debug';
     }
 }
