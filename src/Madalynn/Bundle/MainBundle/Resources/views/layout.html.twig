@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ app.request.locale }}" prefix="og: http://ogp.me/ns#">
     <head>
-        <title>{% block title %}ds{% endblock %} - AndroIRC ({{ 'frontend.subtitle'|trans }})</title>
+        <title>{% block title %}Home{% endblock %} - AndroIRC ({{ 'frontend.subtitle'|trans }})</title>
 
         <!--[if lt IE 9]>
             <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -73,7 +73,7 @@
             </header>
 
             <section id="content" class="clearfix">
-                Homepage
+                {% block content %}{% endblock %}
             </section>
 
             <footer class="clearfix">
@@ -83,7 +83,7 @@
                     <a href="{{ url('homepage') }}">{{ 'frontend.menu.support'|trans }}</a>
                     <a href="{{ url('beta') }}">{{ 'frontend.menu.beta'|trans }}</a>
                     <a href="{{ url('contact') }}">{{ 'frontend.menu.contact'|trans }}</a>
-                    <a href="{{ url('homepage') }}">{{ 'frontend.menu.terms'|trans }}</a>
+                    <a href="{{ url('terms') }}">{{ 'frontend.menu.terms'|trans }}</a>
                     <a href="https://www.facebook.com/androirc">{{ 'frontend.menu.facebook'|trans }}</a>
                     <a href="https://twitter.com/androirc">{{ 'frontend.menu.twitter'|trans }}</a>
                     <a href="https://plus.google.com/105275534595142567234/">{{ 'frontend.menu.googleplus'|trans }}</a>

@@ -12,8 +12,6 @@
 
 namespace Madalynn\Bundle\MainBundle\Controller;
 
-use Symfony\Component\Finder\Finder;
-
 /**
  * Main Controller
  *
@@ -22,6 +20,11 @@ use Symfony\Component\Finder\Finder;
 class MainController extends AbstractController
 {
     public function homepageAction()
+    {
+        return $this->render('MainBundle:Main:homepage.html.twig');
+    }
+
+    public function oldhomepageAction()
     {
         $em   = $this->getDoctrine()->getEntityManager();
         $repo = $em->getRepository('MainBundle:Article');
@@ -33,31 +36,9 @@ class MainController extends AbstractController
         ));
     }
 
-    public function eulaAction()
+    public function termsAction()
     {
-        return $this->renderWithMobile('MainBundle:Main:eula.html.twig');
-    }
-
-    public function screenshotsAction()
-    {
-        $screenshots = Finder::create()->name("device-*.png")
-                                       ->in(__DIR__.'/../Resources/public/images/device')
-                                       ->depth('== 0')
-                                       ->sortByName();
-
-        return $this->render('MainBundle:Main:screenshots.html.twig', array(
-            'screenshots' => $screenshots
-        ));
-    }
-
-    public function donateAction()
-    {
-        $em   = $this->getDoctrine()->getEntityManager();
-        $repo = $em->getRepository('MainBundle:Donator');
-
-        return $this->render('MainBundle:Main:donate.html.twig', array(
-            'donators' => $repo->getDonators()
-        ));
+        return $this->render('MainBundle:Main:terms.html.twig');
     }
 
     public function localesAction($request)

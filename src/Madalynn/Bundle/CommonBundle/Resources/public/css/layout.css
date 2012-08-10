@@ -1,8 +1,27 @@
+
+/* Google font */
+@import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro");
+
 body {
   background-image: url("/bundles/common/images/background.png");
   background-position: top;
   background-repeat: repeat-x;
   background-color: #fcfcfc;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #03638b;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 7px;
+}
+
+h2 {
+  font-size: 20px;
+  margin-bottom: 7px;
 }
 
 .container {
@@ -101,4 +120,41 @@ footer p {
 
 #sub-menu a {
   margin: 0px 10px;
+}
+
+/* Homepage */
+
+.homepage {
+  margin-bottom: 21px;
+}
+
+.homepage .image {
+  width: 350px;
+  height: 250px;
+}
+
+.homepage-left .image {
+  float: right;
+}
+
+.homepage-right .image {
+  float: left;
+}
+
+.homepage-left .content {
+  text-align: right;
+}
+
+.homepage .content {
+  padding-top: 11px;
+}
+
+.homepage .content h1 {
+  margin-bottom: 15px;
+}
+
+.homepage .content p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.9;
 }

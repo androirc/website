@@ -10,9 +10,9 @@ archives:
     pattern: /archives/{page}
     defaults: { _controller: MainBundle:Article:archives, page: 1 }
 
-eula:
-    pattern: /eula
-    defaults: { _controller: MainBundle:Main:eula }
+terms:
+    pattern: /terms
+    defaults: { _controller: MainBundle:Main:terms }
 
 screenshots:
     pattern: /screenshots
