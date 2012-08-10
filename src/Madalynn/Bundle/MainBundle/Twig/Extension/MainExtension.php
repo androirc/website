@@ -14,10 +14,11 @@ namespace Madalynn\Bundle\MainBundle\Twig\Extension;
 
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Locale\Locale;
 use Madalynn\Bundle\MainBundle\Entity\Article;
 use Madalynn\Bundle\MainBundle\Entity\ChangeLog;
 
-class AndroExtension extends \Twig_Extension
+class MainExtension extends \Twig_Extension
 {
     protected $container;
 
@@ -42,13 +43,14 @@ class AndroExtension extends \Twig_Extension
     public function getFunctions()
     {
         return array(
-            'article_url'    => new \Twig_Function_Method($this, 'generateArticleUrl', array('is_safe' => array('html'))),
-            'switch_version' => new \Twig_Function_Method($this, 'switchVersion', array('is_safe' => array('html'))),
-            'from_mobile'    => new \Twig_Function_Method($this, 'fromMobile', array('is_safe' => array('html'))),
-            'path_locale'    => new \Twig_Function_Method($this, 'getPathLocale', array('is_safe' => array('html'))),
-            'locales'        => new \Twig_Function_Method($this, 'getLocales'),
-            'gravatar'       => new \Twig_Function_Method($this, 'gravatar'),
-            'changelog'      => new \Twig_Function_Method($this, 'displayChangelog', array('is_safe' => array('html'))),
+            'article_url'      => new \Twig_Function_Method($this, 'generateArticleUrl', array('is_safe' => array('html'))),
+            'switch_version'   => new \Twig_Function_Method($this, 'switchVersion', array('is_safe' => array('html'))),
+            'from_mobile'      => new \Twig_Function_Method($this, 'fromMobile', array('is_safe' => array('html'))),
+            'path_locale'      => new \Twig_Function_Method($this, 'getPathLocale', array('is_safe' => array('html'))),
+            'locales'          => new \Twig_Function_Method($this, 'getLocales'),
+            'gravatar'         => new \Twig_Function_Method($this, 'gravatar'),
+            'display_language' => new \Twig_Function_Method($this, 'getDisplayLanguages'),
+            'changelog'        => new \Twig_Function_Method($this, 'displayChangelog', array('is_safe' => array('html'))),
         );
     }
 
@@ -66,6 +68,18 @@ class AndroExtension extends \Twig_Extension
     public function md5($text)
     {
         return md5($text);
+    }
+
+    /**
+     * Returns the language name for a locale
+     *
+     * @param string $locale The locale to use for the language names
+     */
+    public function getDisplayLanguages($locale)
+    {
+        $lang = Locale::getDisplayLanguages($locale);
+
+        return $lang[$locale];
     }
 
     public function gravatar($email, $size = 50, $default = 'mm')
@@ -183,6 +197,6 @@ class AndroExtension extends \Twig_Extension
 
     public function getName()
     {
-        return 'androirc';
+        return 'main';
     }
 }

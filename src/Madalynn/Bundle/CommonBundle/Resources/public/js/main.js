@@ -1,5 +1,5 @@
 $(document).ready(function() {
     $('#locales select').change(function() {
-        // later
+        window.location = $(this).val();
     });
 });

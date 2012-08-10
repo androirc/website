@@ -54,12 +54,7 @@
                     <span>{{ 'frontend.subtitle'|trans }}</span>
                 </div>
 
-                <div id="locales">
-                    <select>
-                        <option value="te">English</option>
-                        <option value="fr">Français</option>
-                    </select>
-                </div>
+                {% render 'MainBundle:Main:locales' with {'request': app.request} %}
 
                 <nav>
                     <ul>

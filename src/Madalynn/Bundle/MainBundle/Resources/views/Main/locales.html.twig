@@ -1,9 +1,7 @@
 <div id="locales">
+    <select>
     {% for locale in locales %}
-        <div class="locale">
-            <a href="{{ path_locale(request, locale) }}">
-                <img src="{{ asset('bundles/andro/images/flags/' ~ locale ~ '.png') }}" />
-            </a>
-        </div>
+        <option{{ locale == request.locale ? ' selected="selected"' : ''}} value="{{ path_locale(request, locale) }}">{{ display_language(locale) }}</option>
     {% endfor %}
+    </select>
 </div>

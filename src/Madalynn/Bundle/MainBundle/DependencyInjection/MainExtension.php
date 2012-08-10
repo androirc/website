@@ -19,11 +19,11 @@ use Symfony\Component\Config\Definition\Processor;
 use Symfony\Component\Config\FileLocator;
 
 /**
- * AndroIRC Extension
+ * AndroIRC main extension
  *
  * @author Julien Brochet <mewt@androirc.com>
  */
-class AndroExtension extends Extension
+class MainExtension extends Extension
 {
     /**
      * Responds to the app.config configuration parameter.
@@ -60,6 +60,6 @@ class AndroExtension extends Extension
      */
     public function getAlias()
     {
-        return 'andro';
+        return 'main';
     }
 }

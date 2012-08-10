@@ -29,8 +29,10 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder()
     {
+        // @todo move this configuration to the debug bundle
+
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('andro', 'array');
+        $rootNode = $treeBuilder->root('main', 'array');
 
         $rootNode
             ->children()
