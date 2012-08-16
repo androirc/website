@@ -64,9 +64,9 @@ class MainExtension extends \Twig_Extension
             'path_locale'      => new \Twig_Function_Method($this, 'getPathLocale', array('is_safe' => array('html'))),
             'locales'          => new \Twig_Function_Method($this, 'getLocales'),
             'gravatar'         => new \Twig_Function_Method($this, 'gravatar'),
-            'display_language' => new \Twig_Function_Method($this, 'getDisplayLanguages'),
-            'changelog'        => new \Twig_Function_Method($this, 'displayChangelog', array('is_safe' => array('html'))),
+            'display_language' => new \Twig_Function_Method($this, 'getDisplayLanguage'),
             'archive_name'     => new \Twig_Function_Method($this, 'getArchiveName'),
+            'changelog'        => new \Twig_Function_Method($this, 'displayChangelog', array('is_safe' => array('html'))),
         );
     }
 
@@ -107,11 +107,9 @@ class MainExtension extends \Twig_Extension
      *
      * @param string $locale The locale to use for the language names
      */
-    public function getDisplayLanguages($locale)
+    public function getDisplayLanguage($locale)
     {
-        $lang = Locale::getDisplayLanguages($locale);
-
-        return $lang[$locale];
+        return Locale::getDisplayLanguage($locale, $locale);
     }
 
     public function gravatar($email, $size = 50, $default = 'mm')
