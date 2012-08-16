@@ -22,7 +22,7 @@ security:
         main:
             entity: { class: Madalynn\Bundle\MainBundle\Entity\User, property: username }
     encoders:
-        Madalynn\Bundle\AndroBundle\Entity\User:
+        Madalynn\Bundle\MainBundle\Entity\User:
             algorithm: sha512
             encode-as-base64: true
             iterations: 10
@@ -83,7 +83,13 @@ doctrine:
 
     orm:
         auto_generate_proxy_classes: %kernel.debug%
-        auto_mapping: true
+        entity_managers:
+            default:
+                auto_mapping: true
+                dql:
+                    string_functions:
+                        year: DoctrineExtensions\Query\Mysql\Year
+                        month: DoctrineExtensions\Query\Mysql\Month
 
 # Swiftmailer Configuration
 swiftmailer:

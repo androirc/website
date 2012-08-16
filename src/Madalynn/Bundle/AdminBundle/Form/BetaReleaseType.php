@@ -23,7 +23,7 @@ class BetaReleaseType extends AbstractType
     {
         $builder->add('version', 'entity', array(
                         'label'         => 'beta_release.field.version',
-                        'class'         => 'Madalynn\\Bundle\\AndroBundle\\Entity\\AndroircVersion',
+                        'class'         => 'Madalynn\\Bundle\\MainBundle\\Entity\\AndroircVersion',
                         'query_builder' => function(EntityRepository $er) {
                             return $er->createQueryBuilder('e')
                                        ->orderBy('e.code', 'desc');
@@ -39,7 +39,7 @@ class BetaReleaseType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Madalynn\\Bundle\\AndroBundle\\Entity\\BetaRelease',
+            'data_class' => 'Madalynn\\Bundle\\MainBundle\\Entity\\BetaRelease',
         ));
     }
 

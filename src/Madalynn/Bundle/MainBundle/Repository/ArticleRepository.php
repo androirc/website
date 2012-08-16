@@ -35,4 +35,20 @@ class ArticleRepository extends EntityRepository
 
         return $query;
     }
+
+    /**
+     * Gets the months for the archive layout
+     *
+     * @return array
+     */
+    public function getArchivesMonths()
+    {
+        $dql = 'SELECT DISTINCT MONTH(a.created) AS date_month, YEAR(a.created) AS date_year '
+             . 'FROM MainBundle:Article a GROUP BY date_year, date_month '
+             . 'ORDER BY date_year DESC, date_month DESC';
+
+        return $this->getEntityManager()
+                    ->createQuery($dql)
+                    ->getArrayResult();
+    }
 }

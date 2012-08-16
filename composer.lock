@@ -1,6 +1,12 @@
 {
-    "hash": "388a0a222e24f502b7f74c8571db2309",
+    "hash": "b3d778f928d7b026573b66b36e66655b",
     "packages": [
+        {
+            "package": "beberlei/DoctrineExtensions",
+            "version": "dev-master",
+            "source-reference": "v0.1",
+            "commit-date": "1337151874"
+        },
         {
             "package": "doctrine/common",
             "version": "2.3.x-dev",
@@ -28,8 +34,8 @@
         {
             "package": "doctrine/doctrine-bundle",
             "version": "dev-master",
-            "source-reference": "ed8d02b491512f947fdb2f8b665dc8fd72b5879c",
-            "commit-date": "1343657020"
+            "source-reference": "4d9bb0f3af470556983eb41a7d19ede23401ef0b",
+            "commit-date": "1344549563"
         },
         {
             "package": "doctrine/doctrine-fixtures-bundle",
@@ -64,20 +70,8 @@
         {
             "package": "jms/i18n-routing-bundle",
             "version": "dev-master",
-            "alias-pretty-version": "1.0.x-dev",
-            "alias-version": "1.0.9999999.9999999-dev"
-        },
-        {
-            "package": "jms/i18n-routing-bundle",
-            "version": "dev-master",
             "source-reference": "ff29b3dddeb802790ffce506a35e7423bd45a1b2",
             "commit-date": "1342777687"
-        },
-        {
-            "package": "jms/translation-bundle",
-            "version": "dev-master",
-            "alias-pretty-version": "1.0.x-dev",
-            "alias-version": "1.0.9999999.9999999-dev"
         },
         {
             "package": "jms/translation-bundle",
@@ -132,8 +126,8 @@
         {
             "package": "sensio/distribution-bundle",
             "version": "dev-master",
-            "source-reference": "57190e5baa0cc1d8ef6095ce57e6719a5eae2b79",
-            "commit-date": "1344240835"
+            "source-reference": "e5e3e4758bfe4dd5fab74bccf9418888d1492691",
+            "commit-date": "1344928161"
         },
         {
             "package": "swiftmailer/swiftmailer",
@@ -150,32 +144,14 @@
         {
             "package": "symfony/assetic-bundle",
             "version": "dev-master",
-            "alias-pretty-version": "2.1.x-dev",
-            "alias-version": "2.1.9999999.9999999-dev"
-        },
-        {
-            "package": "symfony/assetic-bundle",
-            "version": "dev-master",
             "source-reference": "ec3a65d3eab342af9e93a3c21af0ac7b78e01c17",
             "commit-date": "1344507386"
         },
         {
             "package": "symfony/monolog-bundle",
             "version": "dev-master",
-            "alias-pretty-version": "2.1.x-dev",
-            "alias-version": "2.1.9999999.9999999-dev"
-        },
-        {
-            "package": "symfony/monolog-bundle",
-            "version": "dev-master",
             "source-reference": "v2.1.0-BETA4",
             "commit-date": "1341078487"
-        },
-        {
-            "package": "symfony/swiftmailer-bundle",
-            "version": "dev-master",
-            "alias-pretty-version": "2.1.x-dev",
-            "alias-version": "2.1.9999999.9999999-dev"
         },
         {
             "package": "symfony/swiftmailer-bundle",
@@ -192,8 +168,8 @@
         {
             "package": "symfony/symfony",
             "version": "dev-master",
-            "source-reference": "dd9afddfd9a9f169832c4634d1094f50f34d5df4",
-            "commit-date": "1344494996"
+            "source-reference": "fa4f9f58ff19b98cf91a60c356a7cc51e4383f9d",
+            "commit-date": "1344888947"
         },
         {
             "package": "twig/extensions",
@@ -218,12 +194,6 @@
             "version": "dev-master",
             "source-reference": "38e317a3ecd5a68e2322024ea8fe57632d4ddd68",
             "commit-date": "1343134121"
-        },
-        {
-            "package": "willdurand/geocoder",
-            "version": "dev-master",
-            "alias-pretty-version": "1.0.x-dev",
-            "alias-version": "1.0.9999999.9999999-dev"
         },
         {
             "package": "willdurand/geocoder",
@@ -257,6 +227,7 @@
         "jms/i18n-routing-bundle": 20,
         "sensio/distribution-bundle": 20,
         "willdurand/geocoder-bundle": 20,
-        "knplabs/knp-markdown-bundle": 20
+        "knplabs/knp-markdown-bundle": 20,
+        "beberlei/doctrineextensions": 20
     }
 }

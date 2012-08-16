@@ -41,10 +41,11 @@ class ArticleFixtures extends AbstractFixture implements FixtureInterface, Order
         for ($i = 0 ; $i < 30 ; $i++) {
             $article = new Article();
 
-            $article->setTitle($faker->sentence(5));
+            $article->setTitle($faker->sentence(4));
             $article->setAuthor($admin);
-            $article->setContent($faker->text(500));
+            $article->setContent('<p>'.$faker->text(500).'</p>');
             $article->setVisible(0 == $i % 2);
+            $article->setCreated(new \DateTime('-'.($i * 4).' day'));
 
             $em->persist($article);
         }

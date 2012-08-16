@@ -20,7 +20,15 @@ use Madalynn\Bundle\MainBundle\Entity\ChangeLog;
 
 class MainExtension extends \Twig_Extension
 {
+    /**
+     * @var ContainerInterface
+     */
     protected $container;
+
+    /**
+     * @var \IntlDateFormatter
+     */
+    protected $formatter;
 
     /**
      * Contructor
@@ -30,8 +38,12 @@ class MainExtension extends \Twig_Extension
     public function __construct(ContainerInterface $container)
     {
         $this->container = $container;
+        $this->formatter = null;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function getFilters()
     {
         return array(
@@ -40,6 +52,9 @@ class MainExtension extends \Twig_Extension
         );
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function getFunctions()
     {
         return array(
@@ -51,6 +66,7 @@ class MainExtension extends \Twig_Extension
             'gravatar'         => new \Twig_Function_Method($this, 'gravatar'),
             'display_language' => new \Twig_Function_Method($this, 'getDisplayLanguages'),
             'changelog'        => new \Twig_Function_Method($this, 'displayChangelog', array('is_safe' => array('html'))),
+            'archive_name'     => new \Twig_Function_Method($this, 'getArchiveName'),
         );
     }
 
@@ -68,6 +84,22 @@ class MainExtension extends \Twig_Extension
     public function md5($text)
     {
         return md5($text);
+    }
+
+    public function getArchiveName($month, $year)
+    {
+        if (null === $this->formatter) {
+            $this->formatter = new \IntlDateFormatter(
+                $this->container->get('request')->getLocale(),
+                \IntlDateFormatter::NONE,
+                \IntlDateFormatter::NONE,
+                date_default_timezone_get(),
+                \IntlDateFormatter::GREGORIAN,
+                'MMMM YYYY'
+            );
+        }
+
+        return $this->formatter->format(new \DateTime(sprintf('%d-%d-01', $year, $month)));
     }
 
     /**
@@ -116,7 +148,7 @@ class MainExtension extends \Twig_Extension
      * @param string  $locale   The locale applied in the returned url
      * @param bool    $absolute Whether the returned url should be absolute
      *
-     * @return string $url The current url transformed with the locale provided
+     * @return string The current url transformed with the locale provided
      *
      * @see http://it.works-for-me.net/symfony2/2011/08/10/symfony2-generate-the-current-url-with-another-locale/
      */
@@ -158,7 +190,7 @@ class MainExtension extends \Twig_Extension
             'slug' => $article->getSlug()
         );
 
-        return $this->container->get('router')->generate('article_show', $params, $absolute);
+        return $this->container->get('router')->generate('blog_show', $params, $absolute);
     }
 
     /**
@@ -195,6 +227,9 @@ class MainExtension extends \Twig_Extension
         return $this->container->get('session')->get('from_mobile', false);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function getName()
     {
         return 'main';

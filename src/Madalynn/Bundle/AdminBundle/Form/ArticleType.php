@@ -31,7 +31,7 @@ class ArticleType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Madalynn\\Bundle\\AndroBundle\\Entity\\Article',
+            'data_class' => 'Madalynn\\Bundle\\MainBundle\\Entity\\Article',
         ));
     }
 

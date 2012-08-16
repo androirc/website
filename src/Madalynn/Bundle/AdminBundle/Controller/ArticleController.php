@@ -44,7 +44,7 @@ class ArticleController extends CRUDController
 
     protected function getClass()
     {
-        return 'Madalynn\\Bundle\\AndroBundle\\Entity\\Article';
+        return 'Madalynn\\Bundle\\MainBundle\\Entity\\Article';
     }
 
     protected function getForm()

@@ -16,16 +16,14 @@ use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
 /**
- * Tree Configuration
+ * Tree configuration
  *
  * @author Julien Brochet <mewt@madalynn.eu>
  */
 class Configuration implements ConfigurationInterface
 {
     /**
-     * Generates the configuration tree builder.
-     *
-     * @return TreeBuilder The tree builder
+     * {@inheritDoc}
      */
     public function getConfigTreeBuilder()
     {

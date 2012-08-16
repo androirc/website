@@ -27,7 +27,7 @@ class UserType extends AbstractType
                     'required' => false,
                 ))
                 ->add('userRoles', 'entity', array(
-                    'class'    => 'Madalynn\Bundle\AndroBundle\Entity\Role',
+                    'class'    => 'Madalynn\Bundle\MainBundle\Entity\Role',
                     'multiple' => true,
                     'label'    => 'Roles',
                     'required' => false,
@@ -38,7 +38,7 @@ class UserType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Madalynn\\Bundle\\AndroBundle\\Entity\\User',
+            'data_class' => 'Madalynn\\Bundle\\MainBundle\\Entity\\User',
         ));
     }
 

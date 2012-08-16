@@ -158,3 +158,53 @@ footer p {
   color: #666;
   line-height: 1.9;
 }
+
+/* Blog */
+
+.blog-container {
+  width: 560px;
+}
+
+.archives-container {
+  width: 190px;
+}
+
+.archives-container li {
+  padding: 7px 0 7px 26px;
+  border-top: 1px solid #eaeaea;
+  background-image: url("/bundles/common/images/calendar-month.png");
+  background-repeat: no-repeat;
+  background-position: 3px 8px;
+  list-style: none;
+}
+
+.archives-container li:last-child {
+  border-bottom: 1px solid #eaeaea;
+}
+
+article {
+  margin-bottom: 16px;
+}
+
+article h1 {
+  margin-bottom: 0px;
+}
+
+.article-header {
+  margin-bottom: 9px;
+}
+
+.article-header .subtitle {
+  font-size: 11px;
+  color: #666;
+  margin-top: -5px;
+}
+
+.article-content p {
+  text-align: justify;
+}
+
+.article-content {
+  padding-bottom: 4px;
+  border-bottom: 1px solid #eaeaea;
+}

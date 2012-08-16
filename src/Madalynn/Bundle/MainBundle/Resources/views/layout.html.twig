@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ app.request.locale }}" prefix="og: http://ogp.me/ns#">
     <head>
-        <title>{% block title %}Home{% endblock %} - AndroIRC ({{ 'frontend.subtitle'|trans }})</title>
+        <title>{% block title %}{{ 'frontend.home'|trans }}{% endblock %} - AndroIRC ({{ 'frontend.subtitle'|trans }})</title>
 
         <!--[if lt IE 9]>
             <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -50,7 +50,9 @@
         <div class="container">
             <header class="clearfix">
                 <div id="logo">
-                    <img src="{{ asset('bundles/common/images/logo.png') }}" alt="AndroIRC" />
+                    <a href="{{ url('homepage') }}">
+                        <img src="{{ asset('bundles/common/images/logo.png') }}" alt="AndroIRC" />
+                    </a>
                     <span>{{ 'frontend.subtitle'|trans }}</span>
                 </div>
 
@@ -58,7 +60,7 @@
 
                 <nav>
                     <ul>
-                        <li><a href="{{ url('homepage') }}">{{ 'frontend.menu.blog'|trans }}</a></li>
+                        <li><a href="{{ url('blog') }}">{{ 'frontend.menu.blog'|trans }}</a></li>
                         <li><a href="https://play.google.com/store/apps/details?id=com.androirc">{{ 'frontend.menu.download'|trans }}</a></li>
                         <li><a href="{{ url('homepage') }}">{{ 'frontend.menu.support'|trans }}</a></li>
                         <li><a href="{{ url('beta') }}">{{ 'frontend.menu.beta'|trans }}</a></li>

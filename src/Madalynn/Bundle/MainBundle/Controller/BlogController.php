@@ -12,16 +12,25 @@
 
 namespace Madalynn\Bundle\MainBundle\Controller;
 
-use Pagerfanta\Pagerfanta;
-use Pagerfanta\Adapter\DoctrineORMAdapter;
-
 /**
- * Article Controller
+ * Blog controller
  *
  * @author Julien Brochet <mewt@androirc.com>
  */
-class ArticleController extends AbstractController
+class BlogController extends AbstractController
 {
+    public function listAction()
+    {
+        $em   = $this->getDoctrine()->getEntityManager();
+        $repo = $em->getRepository('MainBundle:Article');
+
+        $articles = $repo->getLastArticles($this->isAdmin(), 5);
+
+        return $this->render('MainBundle:Blog:list.html.twig', array(
+            'articles' => $articles
+        ));
+    }
+
     public function showAction($id)
     {
         $em   = $this->getDoctrine()->getEntityManager();
@@ -38,7 +47,7 @@ class ArticleController extends AbstractController
         ));
     }
 
-    public function atomAction()
+    public function rssAction()
     {
         $em   = $this->getDoctrine()->getEntityManager();
         $repo = $em->getRepository('MainBundle:Article');
@@ -50,19 +59,13 @@ class ArticleController extends AbstractController
         ));
     }
 
-    public function archivesAction($page)
+    public function menuAction()
     {
         $em   = $this->getDoctrine()->getEntityManager();
         $repo = $em->getRepository('MainBundle:Article');
 
-        $adapter = new DoctrineORMAdapter($repo->getQueryBuilder($this->isAdmin())->getQuery(), true);
-        $pager   = new Pagerfanta($adapter);
-
-        $pager->setMaxPerPage(10);
-        $pager->setCurrentPage($page, true, true);
-
-        return $this->render('MainBundle:Article:archives.html.twig', array(
-            'pager' => $pager
+        return $this->render('MainBundle:Blog:menu.html.twig', array(
+            'months' => $repo->getArchivesMonths()
         ));
     }
 }

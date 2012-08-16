@@ -24,7 +24,7 @@ abstract class AbstractController extends Controller
     /**
      * Check if the current user has the 'ROLE_ADMIN' role
      *
-     * @return boolean True if he is, false otherwise
+     * @return boolean true if he is, false otherwise
      */
     public function isAdmin()
     {

@@ -71,13 +71,24 @@ class Article
      */
     protected $updated;
 
+    public function __construct()
+    {
+        $this->created = null;
+        $this->updated = null;
+    }
+
     /**
      * @ORM\PrePersist
      */
     public function prePersist()
     {
-        $this->created = new \DateTime();
-        $this->updated = new \DateTime();
+        if (null === $this->created) {
+            $this->created = new \DateTime();
+        }
+
+        if (null === $this->updated) {
+            $this->updated = new \DateTime();
+        }
     }
 
     /**

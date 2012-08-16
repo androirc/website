@@ -1,5 +1,6 @@
 frontend:
     subtitle: "Android IRC Client"
+    home: "Home"
     menu:
         blog: "Blog"
         download: "Download"
@@ -11,3 +12,7 @@ frontend:
         twitter: "Twitter"
         googleplus: "Google+"
     copyright: "Copyright %year% Madalynn, all rights reserved. Android is a trademark of Google Inc."
+    blog:
+        description: "The latest news about AndroIRC"
+        article_subtitle: "News by %author% on %date%"
+        date_format: "m/d/Y"

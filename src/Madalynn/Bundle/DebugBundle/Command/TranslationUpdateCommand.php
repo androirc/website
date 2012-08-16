@@ -23,6 +23,9 @@ class TranslationUpdateCommand extends ContainerAwareCommand
     protected $urlTemplate  = 'https://www.transifex.net/api/2/project/androirc/resource/website/translation/%s';
     protected $fileTemplate = 'messages.%s.xliff';
 
+    /**
+     * {@inheritDoc}
+     */
     protected function configure()
     {
         $this->setName('androirc:translation-update')
@@ -30,6 +33,9 @@ class TranslationUpdateCommand extends ContainerAwareCommand
              ->addOption('force', null, InputOption::VALUE_NONE, 'Force the download');
     }
 
+    /**
+     * {@inheritDoc}
+     */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $siteLocales = $this->getContainer()->getParameter('jms_i18n_routing.locales');

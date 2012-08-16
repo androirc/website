@@ -35,6 +35,6 @@ class AndroircVersionController extends CRUDController
 
     protected function getClass()
     {
-        return 'Madalynn\\Bundle\\AndroBundle\\Entity\\AndroircVersion';
+        return 'Madalynn\\Bundle\\MainBundle\\Entity\\AndroircVersion';
     }
 }

@@ -6,10 +6,6 @@ contact:
     pattern: /contact
     defaults: { _controller: MainBundle:Contact:show }
 
-archives:
-    pattern: /archives/{page}
-    defaults: { _controller: MainBundle:Article:archives, page: 1 }
-
 terms:
     pattern: /terms
     defaults: { _controller: MainBundle:Main:terms }
@@ -22,13 +18,21 @@ donate:
     pattern: /donate
     defaults: { _controller: MainBundle:Main:donate }
 
-article_show:
-    pattern: /article/{id}/{slug}
-    defaults: { _controller: MainBundle:Article:show }
+blog:
+    pattern: /blog
+    defaults: { _controller: MainBundle:Blog:list }
 
-_article_atom:
-    pattern: /articles/atom
-    defaults: { _controller: MainBundle:Article:atom, _format: atom }
+blog_show:
+    pattern: /blog/{id}/{slug}
+    defaults: { _controller: MainBundle:Blog:show }
+
+_blog_rss:
+    pattern: /blog/rss
+    defaults: { _controller: MainBundle:Blog:rss, _format: atom }
+
+blog_archives:
+    pattern: /blog/archives/{year}/{month}
+    defaults: { _controller: MainBundle:Blog:archives }
 
 beta:
     pattern: /beta

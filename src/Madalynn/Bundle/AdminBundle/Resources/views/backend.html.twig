@@ -1,13 +1,13 @@
-{% extends "AndroBundle::layout.html.twig" %}
+{% extends "MainBundle::layout.html.twig" %}
 
 {% block title %}Administration center{% endblock %}
 
 {% block stylesheets %}
     {% stylesheets filter="?yui_css" output="css/backend.css"
-        '@AndroBundle/Resources/public/css/reset.css'
-        '@AndroBundle/Resources/public/css/common.css'
-        '@AndroBundle/Resources/public/css/design.css'
-        '@AndroBundle/Resources/public/css/form.css'
+        '@MainBundle/Resources/public/css/reset.css'
+        '@MainBundle/Resources/public/css/common.css'
+        '@MainBundle/Resources/public/css/design.css'
+        '@MainBundle/Resources/public/css/form.css'
         '@AdminBundle/Resources/public/css/back.css'
     %}
         <link rel="stylesheet" type="text/css" href="{{ asset_url }}" />

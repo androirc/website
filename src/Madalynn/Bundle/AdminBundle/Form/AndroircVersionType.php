@@ -33,7 +33,7 @@ class AndroircVersionType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Madalynn\\Bundle\\AndroBundle\\Entity\\AndroircVersion',
+            'data_class' => 'Madalynn\\Bundle\\MainBundle\\Entity\\AndroircVersion',
         ));
     }
 

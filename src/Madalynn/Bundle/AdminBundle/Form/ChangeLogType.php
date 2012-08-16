@@ -23,7 +23,7 @@ class ChangeLogType extends AbstractType
     {
         $builder->add('version', 'entity', array(
                     'label'         => 'change_log.field.version',
-                    'class'         => 'Madalynn\\Bundle\\AndroBundle\\Entity\\AndroircVersion',
+                    'class'         => 'Madalynn\\Bundle\\MainBundle\\Entity\\AndroircVersion',
                     'query_builder' => function(EntityRepository $er) {
                         return $er->createQueryBuilder('v')
                                   ->orderBy('v.code', 'desc');
@@ -35,7 +35,7 @@ class ChangeLogType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Madalynn\\Bundle\\AndroBundle\\Entity\\ChangeLog',
+            'data_class' => 'Madalynn\\Bundle\\MainBundle\\Entity\\ChangeLog',
         ));
     }
 
