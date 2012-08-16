@@ -190,6 +190,10 @@ article h1 {
   margin-bottom: 0px;
 }
 
+article h1 a:hover {
+  text-decoration: none;
+}
+
 .article-header {
   margin-bottom: 9px;
 }

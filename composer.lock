@@ -22,8 +22,8 @@
         {
             "package": "doctrine/dbal",
             "version": "2.3.x-dev",
-            "source-reference": "86b10e7eda2eed1d9a07a580a40e14cea8e1733a",
-            "commit-date": "1343559046"
+            "source-reference": "6470e2089e9ab4a2d24e6927ebe073b7935d7ed5",
+            "commit-date": "1344980709"
         },
         {
             "package": "doctrine/doctrine-bundle",
@@ -58,8 +58,8 @@
         {
             "package": "doctrine/orm",
             "version": "2.3.x-dev",
-            "source-reference": "17862d9a2a38bf801e564d09a26eea8503621ae0",
-            "commit-date": "1343850025"
+            "source-reference": "971865f271771a3b06c474dfea9e91f023837cce",
+            "commit-date": "1344977483"
         },
         {
             "package": "fzaninotto/faker",
@@ -150,8 +150,8 @@
         {
             "package": "symfony/monolog-bundle",
             "version": "dev-master",
-            "source-reference": "v2.1.0-BETA4",
-            "commit-date": "1341078487"
+            "source-reference": "aed4d742838d2a7350633fed7afe18dbfd3415de",
+            "commit-date": "1344949802"
         },
         {
             "package": "symfony/swiftmailer-bundle",
@@ -168,8 +168,8 @@
         {
             "package": "symfony/symfony",
             "version": "dev-master",
-            "source-reference": "fa4f9f58ff19b98cf91a60c356a7cc51e4383f9d",
-            "commit-date": "1344888947"
+            "source-reference": "50df1a72aab92a93b532bf66bc4e2639f0730eb9",
+            "commit-date": "1345051403"
         },
         {
             "package": "twig/extensions",

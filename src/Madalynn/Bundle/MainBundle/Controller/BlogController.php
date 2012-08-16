@@ -12,11 +12,6 @@
 
 namespace Madalynn\Bundle\MainBundle\Controller;
 
-/**
- * Blog controller
- *
- * @author Julien Brochet <mewt@androirc.com>
- */
 class BlogController extends AbstractController
 {
     public function listAction()
@@ -66,6 +61,22 @@ class BlogController extends AbstractController
 
         return $this->render('MainBundle:Blog:menu.html.twig', array(
             'months' => $repo->getArchivesMonths()
+        ));
+    }
+
+    public function archivesAction($month, $year)
+    {
+        $em   = $this->getDoctrine()->getEntityManager();
+        $repo = $em->getRepository('MainBundle:Article');
+
+        $articles = $repo->findByDate($month, $year);
+
+        if (0 === count($articles)) {
+            throw $this->createNotFoundException(sprintf('Unable to find any articles for date %d-%d', $year, $month));
+        }
+
+        return $this->render('MainBundle:Blog:archives.html.twig', array(
+            'articles' => $articles
         ));
     }
 }

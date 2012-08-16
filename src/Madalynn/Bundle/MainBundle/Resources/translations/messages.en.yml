@@ -16,3 +16,6 @@ frontend:
         description: "The latest news about AndroIRC"
         article_subtitle: "News by %author% on %date%"
         date_format: "m/d/Y"
+        archives:
+            title: "Archives"
+            description: "Archives sorted by date"
