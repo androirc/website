@@ -14,22 +14,63 @@ namespace Madalynn\Bundle\MainBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
 
+/**
+ * Article repository
+ */
 class ArticleRepository extends EntityRepository
 {
-    public function getLastArticles($isAdmin = false, $limit = 10)
+    /**
+     * Gets the latest articles from the database
+     *
+     * @param boolean $admin If the user is admin or not to also retrieve
+     *                       invisible news
+     * @param int     $limit The number of articles to retrieve
+     *
+     * @return array
+     */
+    public function getLatestArticles($admin = false, $limit = 10)
     {
-        return $this->getQueryBuilder($isAdmin)
+        return $this->getQueryBuilder($admin)
                     ->setMaxResults($limit)
                     ->getQuery()
                     ->getResult();
     }
 
-    public function getQueryBuilder($isAdmin = false)
+    /**
+     * Finds articles by date (year and month)
+     *
+     * @param int $month The int value for the month (1-12)
+     * @param int $year  The int value for the year (eg 2012)
+     *
+     * @return array
+     */
+    public function findByDate($month, $year)
+    {
+        return $this->createQueryBuilder('a')
+                    ->where('MONTH(a.created) = :month')
+                    ->andWhere('YEAR(a.created) = :year')
+                    ->orderBy('a.created', 'ASC')
+                    ->getQuery()
+                    ->setParameters(array(
+                        'month' => $month,
+                        'year'  => $year,
+                    ))
+                    ->execute();
+    }
+
+    /**
+     * Gets a new QueryBuilder with already some fields initialized
+     *
+     * @param boolean $admin If the user is an administrator or not
+     *
+     * @return QueryBuilder
+     */
+    public function getQueryBuilder($admin = false)
     {
         $query = $this->createQueryBuilder('a')
                       ->orderBy('a.created', 'desc');
 
-        if (false === $isAdmin) {
+        if (false === $admin) {
             $query->where('a.visible = true');
         }
 

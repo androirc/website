@@ -24,7 +24,7 @@ class BlogController extends AbstractController
         $em   = $this->getDoctrine()->getEntityManager();
         $repo = $em->getRepository('MainBundle:Article');
 
-        $articles = $repo->getLastArticles($this->isAdmin(), 5);
+        $articles = $repo->getLatestArticles($this->isAdmin(), 5);
 
         return $this->render('MainBundle:Blog:list.html.twig', array(
             'articles' => $articles
@@ -38,11 +38,11 @@ class BlogController extends AbstractController
 
         $article = $repo->find($id);
 
-        if (null === $article || (false === $this->isAdmin() && false === $article->isVisible())) {
+        if (null === $article) {
             throw $this->createNotFoundException('This article does not exist');
         }
 
-        return $this->renderWithMobile('MainBundle:Article:show.html.twig', array(
+        return $this->render('MainBundle:Blog:show.html.twig', array(
             'article' => $article
         ));
     }
@@ -52,9 +52,9 @@ class BlogController extends AbstractController
         $em   = $this->getDoctrine()->getEntityManager();
         $repo = $em->getRepository('MainBundle:Article');
 
-        $articles = $repo->getLastArticles(false, 20);
+        $articles = $repo->getLatestArticles(false, 20);
 
-        return $this->render('MainBundle:Article:atom.html.twig', array(
+        return $this->render('MainBundle:Blog:rss.xml.twig', array(
             'articles' => $articles
         ));
     }

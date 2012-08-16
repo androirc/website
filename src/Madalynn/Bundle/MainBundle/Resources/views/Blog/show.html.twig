@@ -1,0 +1,36 @@
+{% extends "MainBundle:Article:layout.html.twig" %}
+
+{% block title %}{{ article.title }}{% endblock %}
+{% block description %}{{ article.content|striptags|replace({'\n': ' '})|truncate(100) }}{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="span blog-container">
+            {% include 'MainBundle:Blog:article_skeleton.html.twig' with {'article': article} %}
+
+            <div id="disqus_thread"></div>
+
+            <script type="text/javascript">
+                var disqus_shortname = 'androirc';
+                var disqus_identifier = {{ article.id }};
+                var disqus_url = '{{ article_url(article, true) }}';
+                var disqus_config = function () {
+                    this.language = '{{ app.request.locale }}';
+                };
+                {% if app.debug -%}
+                    var disqus_developer = 1;
+                {%- endif %}
+
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        </div>
+        <div class="span archives-container">
+            {% render 'MainBundle:Blog:menu' %}
+        </div>
+    </div>
+{% endblock %}
