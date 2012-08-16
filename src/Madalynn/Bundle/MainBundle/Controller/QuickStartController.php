@@ -13,14 +13,17 @@
 namespace Madalynn\Bundle\MainBundle\Controller;
 
 use Madalynn\Bundle\MainBundle\Entity\AndroircVersion;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
-/**
- * QuickStart Controller
- *
- * @author Julien Brochet <mewt@androirc.com>
- */
 class QuickStartController extends AbstractController
 {
+    /**
+     * @Route("/quickstart/{version}/{lang}/{theme}",
+     *     name="_quickstart",
+     *     defaults={"theme" = "light"},
+     *     requirements={"theme" = "light|dark"}
+     * )
+     */
     public function showAction($version, $lang, $theme)
     {
         $em   = $this->getDoctrine()->getEntityManager();

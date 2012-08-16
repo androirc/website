@@ -12,6 +12,8 @@
 
 namespace Madalynn\Bundle\MainBundle\Controller;
 
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+
 /**
  * Main Controller
  *
@@ -19,28 +21,27 @@ namespace Madalynn\Bundle\MainBundle\Controller;
  */
 class MainController extends AbstractController
 {
+    /**
+     * @Route("/", name="homepage")
+     */
     public function homepageAction()
     {
         return $this->render('MainBundle:Main:homepage.html.twig');
     }
 
-    public function oldhomepageAction()
-    {
-        $em   = $this->getDoctrine()->getEntityManager();
-        $repo = $em->getRepository('MainBundle:Article');
-
-        $articles = $repo->getLastArticles($this->isAdmin(), 5);
-
-        return $this->renderWithMobile('MainBundle:Main:homepage.html.twig', array(
-            'articles' => $articles
-        ));
-    }
-
+    /**
+     * @Route("/terms", name="terms")
+     */
     public function termsAction()
     {
         return $this->render('MainBundle:Main:terms.html.twig');
     }
 
+    /**
+     * Generates the locales section
+     *
+     * @param Request $request A request instance
+     */
     public function localesAction($request)
     {
         $locales = $this->container->getParameter('jms_i18n_routing.locales');

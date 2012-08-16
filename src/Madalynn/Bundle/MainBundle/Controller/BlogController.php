@@ -12,8 +12,16 @@
 
 namespace Madalynn\Bundle\MainBundle\Controller;
 
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+
+/**
+ * @Route("/blog")
+ */
 class BlogController extends AbstractController
 {
+    /**
+     * @Route("/", name="blog")
+     */
     public function listAction()
     {
         $em   = $this->getDoctrine()->getEntityManager();
@@ -26,6 +34,9 @@ class BlogController extends AbstractController
         ));
     }
 
+    /**
+     * @Route("/{id}/{slug}", name="blog_show")
+     */
     public function showAction($id)
     {
         $em   = $this->getDoctrine()->getEntityManager();
@@ -42,6 +53,9 @@ class BlogController extends AbstractController
         ));
     }
 
+    /**
+     * @Route("/rss", name="_blog_rss")
+     */
     public function rssAction()
     {
         $em   = $this->getDoctrine()->getEntityManager();
@@ -54,6 +68,9 @@ class BlogController extends AbstractController
         ));
     }
 
+    /**
+     * Generates the menu section (for archives)
+     */
     public function menuAction()
     {
         $em   = $this->getDoctrine()->getEntityManager();
@@ -64,7 +81,10 @@ class BlogController extends AbstractController
         ));
     }
 
-    public function archivesAction($month, $year)
+    /**
+     * @Route("/archives/{year}/{month}", name="blog_archives")
+     */
+    public function archivesAction($year, $month)
     {
         $em   = $this->getDoctrine()->getEntityManager();
         $repo = $em->getRepository('MainBundle:Article');

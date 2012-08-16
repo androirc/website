@@ -14,7 +14,8 @@ namespace Madalynn\Bundle\MainBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
-
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Madalynn\Bundle\MainBundle\Entity\CrashReport;
 
 /**
@@ -24,6 +25,10 @@ use Madalynn\Bundle\MainBundle\Entity\CrashReport;
  */
 class CrashReportController extends AbstractController
 {
+    /**
+     * @Route("/crashreport", name="_crash_report")
+     * @Method({"POST"})
+     */
     public function addAction(Request $request)
     {
         $phoneModel      = $request->request->get('phone_model');

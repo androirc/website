@@ -15,16 +15,14 @@ namespace Madalynn\Bundle\MainBundle\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 use Symfony\Component\HttpFoundation\Request;
-
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Madalynn\Bundle\MainBundle\Entity\BetaDownload;
 
-/**
- * Beta Controller
- *
- * @author Julien Brochet <mewt@androirc.com>
- */
 class BetaController extends AbstractController
 {
+    /**
+     * @Route("/beta", name="beta")
+     */
     public function showAction()
     {
         $em   = $this->getDoctrine()->getEntityManager();
@@ -35,6 +33,9 @@ class BetaController extends AbstractController
         ));
     }
 
+    /**
+     * @Route("/beta/latest", name="_beta_latest")
+     */
     public function latestAction()
     {
         $em   = $this->getDoctrine()->getEntityManager();
@@ -45,6 +46,9 @@ class BetaController extends AbstractController
         return (null === $beta) ? new Response('-1') : new Response($beta->getVersion()->getCode());
     }
 
+    /**
+     * @Route("/beta/download", name="_beta_download")
+     */
     public function downloadAction(Request $request)
     {
         $em   = $this->getDoctrine()->getEntityManager();

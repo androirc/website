@@ -1,6 +1,7 @@
 androirc:
-    resource: '@MainBundle/Resources/config/routing.yml'
+    resource: "@MainBundle/Controller"
+    type: annotation
 
 androirc_admin:
-    resource: '@AdminBundle/Resources/config/routing.yml'
-    prefix:   /admin
+    resource: "@AdminBundle/Resources/config/routing.yml"
+    prefix: /admin

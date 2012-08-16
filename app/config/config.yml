@@ -110,3 +110,13 @@ white_october_pagerfanta:
 #    translations:
 #        zh: zh_CN
 #        pl: pl_PL
+
+sensio_framework_extra:
+    router:
+        annotations: true
+    request:
+        converters: false
+    view:
+        annotations: false
+    cache:
+        annotations: false

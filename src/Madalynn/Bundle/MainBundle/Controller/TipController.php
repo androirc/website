@@ -13,14 +13,13 @@
 namespace Madalynn\Bundle\MainBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
-/**
- * Tip Controller
- *
- * @author Julien Brochet <mewt@androirc.com>
- */
 class TipController extends AbstractController
 {
+    /**
+     * @Route("/tip/{lang}/{date}", name="_tip", defaults={"date" = null})
+     */
     public function showAction($lang, $date = null)
     {
         $em = $this->getDoctrine()->getEntityManager();

@@ -13,6 +13,7 @@
 namespace Madalynn\Bundle\MainBundle\Controller;
 
 use Madalynn\Bundle\MainBundle\Entity\AndroircVersion;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
 /**
  * ChangeLog Controller
@@ -21,6 +22,13 @@ use Madalynn\Bundle\MainBundle\Entity\AndroircVersion;
  */
 class ChangeLogController extends AbstractController
 {
+    /**
+     * @Route("/changelog/{version}/{theme}",
+     *     name="_changelog",
+     *     defaults={"theme" = "light"},
+     *     requirements={"theme" = "light|dark"}
+     * )
+     */
     public function showAction($version, $theme)
     {
         $em   = $this->getDoctrine()->getEntityManager();

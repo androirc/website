@@ -31,6 +31,7 @@ class AppKernel extends Kernel
 
             new WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle(),
             new Sensio\Bundle\BuzzBundle\SensioBuzzBundle(),
+            new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new JMS\I18nRoutingBundle\JMSI18nRoutingBundle(),
             new Bazinga\Bundle\GeocoderBundle\BazingaGeocoderBundle(),
 

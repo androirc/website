@@ -1,5 +1,5 @@
 {
-    "hash": "b3d778f928d7b026573b66b36e66655b",
+    "hash": "528468807d1f2b046323f53b5a6636e9",
     "packages": [
         {
             "package": "beberlei/DoctrineExtensions",
@@ -130,6 +130,18 @@
             "commit-date": "1344928161"
         },
         {
+            "package": "sensio/framework-extra-bundle",
+            "version": "dev-master",
+            "alias-pretty-version": "2.1.x-dev",
+            "alias-version": "2.1.9999999.9999999-dev"
+        },
+        {
+            "package": "sensio/framework-extra-bundle",
+            "version": "dev-master",
+            "source-reference": "ade2d53b20a9fc3428f04c863b3fd4fca0b62181",
+            "commit-date": "1344072374"
+        },
+        {
             "package": "swiftmailer/swiftmailer",
             "version": "dev-master",
             "alias-pretty-version": "4.2.x-dev",
@@ -214,18 +226,19 @@
     ],
     "minimum-stability": "dev",
     "stability-flags": {
-        "twig/extensions": 20,
-        "fzaninotto/faker": 20,
         "symfony/swiftmailer-bundle": 20,
         "symfony/monolog-bundle": 20,
         "symfony/assetic-bundle": 20,
         "doctrine/doctrine-bundle": 20,
         "doctrine/doctrine-fixtures-bundle": 20,
         "doctrine/doctrine-migrations-bundle": 20,
-        "white-october/pagerfanta-bundle": 20,
         "sensio/buzz-bundle": 20,
-        "jms/i18n-routing-bundle": 20,
         "sensio/distribution-bundle": 20,
+        "sensio/framework-extra-bundle": 20,
+        "twig/extensions": 20,
+        "fzaninotto/faker": 20,
+        "white-october/pagerfanta-bundle": 20,
+        "jms/i18n-routing-bundle": 20,
         "willdurand/geocoder-bundle": 20,
         "knplabs/knp-markdown-bundle": 20,
         "beberlei/doctrineextensions": 20

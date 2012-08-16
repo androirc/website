@@ -1,4 +1,4 @@
-{% extends "MainBundle:Article:layout.html.twig" %}
+{% extends "MainBundle::frontend.html.twig" %}
 
 {% block title %}{{ article.title }}{% endblock %}
 {% block description %}{{ article.content|striptags|replace({'\n': ' '})|truncate(100) }}{% endblock %}
@@ -33,4 +33,5 @@
             {% render 'MainBundle:Blog:menu' %}
         </div>
     </div>
+    {% include 'MainBundle:Blog:javascript.html.twig' %}
 {% endblock %}

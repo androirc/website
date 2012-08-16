@@ -13,7 +13,7 @@
 namespace Madalynn\Bundle\MainBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
-
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Madalynn\Bundle\MainBundle\Entity\Contact;
 use Madalynn\Bundle\MainBundle\Form\ContactType;
 
@@ -24,6 +24,9 @@ use Madalynn\Bundle\MainBundle\Form\ContactType;
  */
 class ContactController extends AbstractController
 {
+    /**
+     * @Route("/contact", name="contact")
+     */
     public function showAction(Request $request)
     {
         $contact = new Contact();

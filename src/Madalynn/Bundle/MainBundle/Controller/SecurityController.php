@@ -14,14 +14,13 @@ namespace Madalynn\Bundle\MainBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Security\Core\SecurityContext;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
-/**
- * Security Controller
- *
- * @author Julien Brochet <mewt@androirc.com>
- */
 class SecurityController extends Controller
 {
+    /**
+     * @Route("/login", name="login")
+     */
     public function loginAction()
     {
         $request = $this->getRequest();
@@ -37,5 +36,21 @@ class SecurityController extends Controller
             'last_username' => $session->get(SecurityContext::LAST_USERNAME),
             'error'         => $error,
         ));
+    }
+
+    /**
+     * @Route("/login_check", name="_login_check")
+     */
+    public function logoutAction()
+    {
+        throw new \RuntimeException('Humm... It seems that the firewall is not configured correctly...');
+    }
+
+    /**
+     * @Route("/logout", name="_logout")
+     */
+    public function checkAction()
+    {
+        throw new \RuntimeException('Humm... It seems that the firewall is not configured correctly...');
     }
 }
