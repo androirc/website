@@ -18,10 +18,13 @@ use Symfony\Component\HttpFoundation\Request;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Madalynn\Bundle\MainBundle\Entity\BetaDownload;
 
+/**
+ * @Route("/beta")
+ */
 class BetaController extends AbstractController
 {
     /**
-     * @Route("/beta", name="beta")
+     * @Route("/", name="beta")
      */
     public function showAction()
     {
@@ -34,7 +37,7 @@ class BetaController extends AbstractController
     }
 
     /**
-     * @Route("/beta/latest", name="_beta_latest")
+     * @Route("/latest", name="_beta_latest")
      */
     public function latestAction()
     {
@@ -47,7 +50,7 @@ class BetaController extends AbstractController
     }
 
     /**
-     * @Route("/beta/download", name="_beta_download")
+     * @Route("/download", name="_beta_download")
      */
     public function downloadAction(Request $request)
     {

@@ -14,11 +14,6 @@ namespace Madalynn\Bundle\MainBundle\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
-/**
- * Main Controller
- *
- * @author Julien Brochet <mewt@madalynn.eu>
- */
 class MainController extends AbstractController
 {
     /**
