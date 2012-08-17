@@ -59,11 +59,8 @@ class MainExtension extends \Twig_Extension
     {
         return array(
             'article_url'      => new \Twig_Function_Method($this, 'generateArticleUrl', array('is_safe' => array('html'))),
-            'switch_version'   => new \Twig_Function_Method($this, 'switchVersion', array('is_safe' => array('html'))),
-            'from_mobile'      => new \Twig_Function_Method($this, 'fromMobile', array('is_safe' => array('html'))),
             'path_locale'      => new \Twig_Function_Method($this, 'getPathLocale', array('is_safe' => array('html'))),
             'locales'          => new \Twig_Function_Method($this, 'getLocales'),
-            'gravatar'         => new \Twig_Function_Method($this, 'gravatar'),
             'display_language' => new \Twig_Function_Method($this, 'getDisplayLanguage'),
             'archive_name'     => new \Twig_Function_Method($this, 'getArchiveName'),
             'changelog'        => new \Twig_Function_Method($this, 'displayChangelog', array('is_safe' => array('html'))),
@@ -110,13 +107,6 @@ class MainExtension extends \Twig_Extension
     public function getDisplayLanguage($locale)
     {
         return Locale::getDisplayLanguage($locale, $locale);
-    }
-
-    public function gravatar($email, $size = 50, $default = 'mm')
-    {
-        $hash = md5(strtolower($email));
-
-        return sprintf('http://www.gravatar.com/avatar/'.$hash.'?s='.$size.'&d='.$default);
     }
 
     /**
@@ -174,7 +164,7 @@ class MainExtension extends \Twig_Extension
     }
 
     /**
-     * Generate an article url
+     * Generates an article url
      *
      * @param Article $article  An article object
      * @param boolean $absolute Absolute url or not
@@ -189,40 +179,6 @@ class MainExtension extends \Twig_Extension
         );
 
         return $this->container->get('router')->generate('blog_show', $params, $absolute);
-    }
-
-    /**
-     * Generate the HTML link for switch web/mobile version
-     *
-     * @return string The HTML content
-     */
-    public function switchVersion()
-    {
-        $request = $this->container->get('request');
-        $uri     = $request->getUri();
-        $text    = '';
-        $html    = '<a href="{{ link }}" class="btn">{{ text }}</a>';
-
-        if (true === $request->headers->has('X-AndroIRC-Mobile')) {
-            $uri = str_replace('m.', 'www.', $uri);
-            $text = $this->container->get('translator')->trans('sidebar.mobile.to_web');
-        } else {
-            $uri = str_replace('www.', 'm.', $uri);
-            $text = $this->container->get('translator')->trans('sidebar.mobile.to_mobile');
-        }
-
-        return strtr($html, array(
-            '{{ link }}' => $uri,
-            '{{ text }}' => $text
-        ));
-    }
-
-    /**
-     * Returns true if the user is comming from a mobile or not
-     */
-    public function fromMobile()
-    {
-        return $this->container->get('session')->get('from_mobile', false);
     }
 
     /**
