@@ -13,37 +13,40 @@
 namespace Madalynn\Bundle\MainBundle\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
-class MainController extends AbstractController
+class MainController extends Controller
 {
     /**
      * @Route("/", name="homepage")
+     * @Template
      */
     public function homepageAction()
     {
-        return $this->render('MainBundle:Main:homepage.html.twig');
+        return array();
     }
 
     /**
      * @Route("/terms", name="terms")
+     * @Template
      */
     public function termsAction()
     {
-        return $this->render('MainBundle:Main:terms.html.twig');
+        return array();
     }
 
     /**
      * Generates the locales section
      *
      * @param Request $request A request instance
+     *
+     * @Template
      */
     public function localesAction($request)
     {
-        $locales = $this->container->getParameter('jms_i18n_routing.locales');
-
-        return $this->render('MainBundle:Main:locales.html.twig', array(
-            'locales' => $locales,
+        return array(
+            'locales' => $this->container->getParameter('jms_i18n_routing.locales'),
             'request' => $request
-        ));
+        );
     }
 }

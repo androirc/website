@@ -16,24 +16,24 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Madalynn\Bundle\MainBundle\Entity\BetaDownload;
 
 /**
  * @Route("/beta")
  */
-class BetaController extends AbstractController
+class BetaController extends Controller
 {
     /**
      * @Route("/", name="beta")
+     * @Template
      */
     public function showAction()
     {
         $em   = $this->getDoctrine()->getEntityManager();
         $repo = $em->getRepository('MainBundle:BetaRelease');
 
-        return $this->renderWithMobile('MainBundle:Beta:show.html.twig', array(
-            'beta' => $repo->getLastBeta()
-        ));
+        return array('beta' => $repo->getLastBeta());
     }
 
     /**

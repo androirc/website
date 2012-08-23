@@ -12,11 +12,12 @@
 
 namespace Madalynn\Bundle\MainBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
 /**
  * Controller for backward compatibility
+ *
+ * @author Julien Brochet <mewt@androirc.com>
  */
 class BackwardController extends Controller
 {

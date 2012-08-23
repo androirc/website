@@ -15,7 +15,7 @@ namespace Madalynn\Bundle\MainBundle\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
-class TipController extends AbstractController
+class TipController extends Controller
 {
     /**
      * @Route("/tip/{lang}/{date}", name="_tip", defaults={"date" = null})

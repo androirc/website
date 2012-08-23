@@ -13,14 +13,18 @@
 namespace Madalynn\Bundle\MainBundle\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
 /**
+ * Blog controller
+ *
  * @Route("/blog")
  */
-class BlogController extends AbstractController
+class BlogController extends Controller
 {
     /**
      * @Route("/", name="blog")
+     * @Template
      */
     public function listAction()
     {
@@ -29,13 +33,12 @@ class BlogController extends AbstractController
 
         $articles = $repo->getLatestArticles($this->isAdmin(), 5);
 
-        return $this->render('MainBundle:Blog:list.html.twig', array(
-            'articles' => $articles
-        ));
+        return array('articles' => $articles);
     }
 
     /**
      * @Route("/{id}/{slug}", name="blog_show")
+     * @Template
      */
     public function showAction($id)
     {
@@ -48,13 +51,12 @@ class BlogController extends AbstractController
             throw $this->createNotFoundException('This article does not exist');
         }
 
-        return $this->render('MainBundle:Blog:show.html.twig', array(
-            'article' => $article
-        ));
+        return array('article' => $article);
     }
 
     /**
      * @Route("/rss", name="_blog_rss")
+     * @Template("MainBundle:Blog:rss.xml.twig")
      */
     public function rssAction()
     {
@@ -63,26 +65,25 @@ class BlogController extends AbstractController
 
         $articles = $repo->getLatestArticles(false, 20);
 
-        return $this->render('MainBundle:Blog:rss.xml.twig', array(
-            'articles' => $articles
-        ));
+        return array('articles' => $articles);
     }
 
     /**
      * Generates the menu section (for archives)
+     *
+     * @Template
      */
     public function menuAction()
     {
         $em   = $this->getDoctrine()->getEntityManager();
         $repo = $em->getRepository('MainBundle:Article');
 
-        return $this->render('MainBundle:Blog:menu.html.twig', array(
-            'months' => $repo->getArchivesMonths()
-        ));
+        return array('months' => $repo->getArchivesMonths());
     }
 
     /**
      * @Route("/archives/{year}/{month}", name="blog_archives")
+     * @Template
      */
     public function archivesAction($year, $month)
     {
@@ -95,8 +96,6 @@ class BlogController extends AbstractController
             throw $this->createNotFoundException(sprintf('Unable to find any articles for date %d-%d', $year, $month));
         }
 
-        return $this->render('MainBundle:Blog:archives.html.twig', array(
-            'articles' => $articles
-        ));
+        return array('articles' => $articles);
     }
 }

@@ -15,7 +15,7 @@ namespace Madalynn\Bundle\MainBundle\Controller;
 use Madalynn\Bundle\MainBundle\Entity\AndroircVersion;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
-class ChangeLogController extends AbstractController
+class ChangeLogController extends Controller
 {
     /**
      * @Route("/changelog/{version}/{theme}",

@@ -112,11 +112,5 @@ white_october_pagerfanta:
 #        pl: pl_PL
 
 sensio_framework_extra:
-    router:
-        annotations: true
-    request:
-        converters: false
-    view:
-        annotations: false
-    cache:
-        annotations: false
+    request: { converters:  false }
+    cache:   { annotations: false }

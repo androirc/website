@@ -15,7 +15,7 @@ namespace Madalynn\Bundle\MainBundle\Controller;
 use Madalynn\Bundle\MainBundle\Entity\AndroircVersion;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
-class QuickStartController extends AbstractController
+class QuickStartController extends Controller
 {
     /**
      * @Route("/quickstart/{version}/{lang}/{theme}",

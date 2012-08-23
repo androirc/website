@@ -17,7 +17,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Madalynn\Bundle\MainBundle\Entity\Contact;
 use Madalynn\Bundle\MainBundle\Form\ContactType;
 
-class ContactController extends AbstractController
+class ContactController extends Controller
 {
     /**
      * @Route("/contact", name="contact")
