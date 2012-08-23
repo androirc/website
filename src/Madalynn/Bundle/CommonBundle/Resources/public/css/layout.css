@@ -212,3 +212,36 @@ article h1 a:hover {
   padding-bottom: 4px;
   border-bottom: 1px solid #eaeaea;
 }
+
+/* Beta */
+
+.black-box {
+  width: 285px;
+  background: -moz-linear-gradient(top,  rgba(48,48,48,1) 0%, rgba(48,48,48,0.95) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(48,48,48,1)), color-stop(100%,rgba(48,48,48,0.95)));
+  background: -webkit-linear-gradient(top,  rgba(48,48,48,1) 0%,rgba(48,48,48,0.95) 100%);
+  background: -o-linear-gradient(top,  rgba(48,48,48,1) 0%,rgba(48,48,48,0.95) 100%);
+  background: -ms-linear-gradient(top,  rgba(48,48,48,1) 0%,rgba(48,48,48,0.95) 100%);
+  background: linear-gradient(to bottom,  rgba(48,48,48,1) 0%,rgba(48,48,48,0.95) 100%);
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -o-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -khtml-border-radius: 6px;
+  border-radius: 6px;
+}
+
+.beta-text {
+    padding: 0 7px;
+}
+
+.beta-picture {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.black-box p {
+  color: #cfcfcf;
+  font-size: 14px;
+  text-align: justify;
+}
