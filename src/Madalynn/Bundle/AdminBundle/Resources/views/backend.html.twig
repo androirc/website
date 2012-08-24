@@ -4,10 +4,6 @@
 
 {% block stylesheets %}
     {% stylesheets filter="?yui_css" output="css/backend.css"
-        '@MainBundle/Resources/public/css/reset.css'
-        '@MainBundle/Resources/public/css/common.css'
-        '@MainBundle/Resources/public/css/design.css'
-        '@MainBundle/Resources/public/css/form.css'
         '@AdminBundle/Resources/public/css/back.css'
     %}
         <link rel="stylesheet" type="text/css" href="{{ asset_url }}" />
@@ -63,4 +59,8 @@
             <li class="last"><a href="{{ path('_logout') }}">{{ 'menu.logout'|trans }}</a></li>
         </ul>
     {% endif %}
+{% endblock %}
+
+{% block content %}
+    {{ block('page') }}
 {% endblock %}
