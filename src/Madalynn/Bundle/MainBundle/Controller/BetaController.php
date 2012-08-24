@@ -33,7 +33,18 @@ class BetaController extends Controller
         $em   = $this->getDoctrine()->getEntityManager();
         $repo = $em->getRepository('MainBundle:BetaRelease');
 
-        return array('beta' => $repo->getLatestBeta());
+        $beta = $repo->getLatestBeta();
+        $changelog = null;
+
+        if (null !== $beta) {
+            $rep = $em->getRepository('MainBundle:ChangeLog');
+            $changelog = $rep->findByVersion($beta->getVersion());
+        }
+
+        return array(
+            'beta'      => $beta,
+            'changelog' => $changelog,
+        );
     }
 
     /**
@@ -57,7 +68,7 @@ class BetaController extends Controller
         $em   = $this->getDoctrine()->getEntityManager();
         $repo = $em->getRepository('MainBundle:BetaRelease');
 
-        $beta = $repo->getLastBeta();
+        $beta = $repo->getLatestBeta();
 
         if (null === $beta) {
             throw $this->createNotFoundException('There is no beta to download at the moment');

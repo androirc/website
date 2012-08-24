@@ -1,20 +1,28 @@
 {% extends "MainBundle::frontend.html.twig" %}
 
-{% block title %}{{ 'beta.name'|trans }}{% endblock %}
+{% block title %}{{ 'frontend.menu.beta'|trans }}{% endblock %}
+{% block description %}{{ 'frontend.beta.description'|trans }}{% endblock %}
 
 {% block content %}
     <div class="row">
-        <div class="span6" style="border:1px solid black;">
-        fdfs
-        </div>
-        <div class="span black-box">
-            <div class="beta-picture">
-                <img src="{{ asset('/bundles/common/images/beta.png') }}" />
+        {% if beta %}
+            <div class="span6">
+                <p>{{ 'frontend.beta.new_beta'|trans({'%version%': beta.version}) }}</p>
+
+                {% if changelog %}
+                    <p>ChangeLog</p>
+                    {% include 'MainBundle:ChangeLog:changelog.html.twig' with {'changelog': changelog}%}
+                {% endif %}
             </div>
-             <div class="beta-text">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper</p>
+            <div class="span aside-download">
+                    <div class="download">
+                        <a href="{{ path('_beta_download') }}" class="btn btn-large btn-primary">{{ 'frontend.beta.download_button'|trans }}</a>
+                    </div>
+
+                 <div class="text">
+                    <p>{{ 'frontend.beta.warning'|trans }}</p>
+                </div>
             </div>
-        </div>
+        {% endif %}
     </div>
 {% endblock %}

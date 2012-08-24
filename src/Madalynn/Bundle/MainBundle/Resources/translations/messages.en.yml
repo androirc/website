@@ -19,3 +19,14 @@ frontend:
         archives:
             title: "Archives"
             description: "Archives sorted by date"
+    beta:
+        description: "Download the latest beta of AndroIRC"
+        download_button: "Download the latest beta version"
+        warning: |
+            This version is not available in Google Play (Android Market).
+            Be warned. This version is for testing purpose and may contains
+            bugs. Keep in mind that it's just a beta release. If something went
+            wrong, you can contact us by means of the "Support" section.
+        new_beta: |
+            A new beta is available to download (%version%). Please read the
+            following changelog
