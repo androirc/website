@@ -23,17 +23,17 @@ class ArticleControllerTest extends WebTestCase
         $this->client = self::createClient();
     }
 
-    public function testNumberOfPages()
+    public function testNumberOfMonths()
     {
-        $crawler = $this->client->request('GET', '/archives');
+        $crawler = $this->client->request('GET', '/blog/');
 
         $this->assertTrue($this->client->getResponse()->isSuccessful());
-        $this->assertCount(4, $crawler->filter('.paginator a'));
+        $this->assertCount(5, $crawler->filter('.archives-container li'));
     }
 
     public function testNumberOfArticlesPerPage()
     {
-        $crawler = $this->client->request('GET', '/archives');
-        $this->assertCount(10, $crawler->filter('article'));
+        $crawler = $this->client->request('GET', '/blog/');
+        $this->assertCount(5, $crawler->filter('article'));
     }
 }
