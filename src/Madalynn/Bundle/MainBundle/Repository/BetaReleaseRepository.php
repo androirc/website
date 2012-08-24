@@ -16,7 +16,12 @@ use Doctrine\ORM\EntityRepository;
 
 class BetaReleaseRepository extends EntityRepository
 {
-    public function getLastBeta()
+    /**
+     * Returns the latest beta that can be downloaded
+     *
+     * @return BetaRelease|null The beta or null otherwise
+     */
+    public function getLatestBeta()
     {
         return $this->createQueryBuilder('b')
                     ->where('b.downloadable = true')

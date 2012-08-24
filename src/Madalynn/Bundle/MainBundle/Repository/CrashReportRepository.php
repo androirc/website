@@ -18,6 +18,13 @@ use Madalynn\Bundle\MainBundle\Entity\CrashReport;
 
 class CrashReportRepository extends EntityRepository
 {
+    /**
+     * Checks if a CrashReport is already registered into the database
+     *
+     * @param CrashReport $crashReport A CrashReport instance
+     *
+     * @return boolean True is the report exists, false otherwise
+     */
     public function alreadyExist(CrashReport $crashReport)
     {
         $crashReports = $this->createQueryBuilder('c')
@@ -34,10 +41,13 @@ class CrashReportRepository extends EntityRepository
         return false;
     }
 
+    /**
+     * Deletes all the crash reports
+     */
     public function deleteAll()
     {
-        $query = $this->_em->createQuery('DELETE FROM MainBundle:CrashReport');
-
-        return $query->execute();
+        $this->getEntityManager()
+             ->createQuery('DELETE FROM MainBundle:CrashReport')
+             ->execute();
     }
 }

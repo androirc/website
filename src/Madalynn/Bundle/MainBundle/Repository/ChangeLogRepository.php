@@ -13,11 +13,19 @@
 namespace Madalynn\Bundle\MainBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
-
 use Madalynn\Bundle\MainBundle\Entity\AndroircVersion;
 
 class ChangeLogRepository extends EntityRepository
 {
+    /**
+     * Finds the first changelog according to the version
+     * If the version has not a changelog, the first previous
+     * changelog is returned
+     *
+     * @param AndroircVersion $version The AndroIRC version
+     *
+     * @return ChangeLog|null The right changelog or null otherwise
+     */
     public function findByVersion(AndroircVersion $version)
     {
         return $this->createQueryBuilder('c')

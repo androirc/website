@@ -33,7 +33,7 @@ class BetaController extends Controller
         $em   = $this->getDoctrine()->getEntityManager();
         $repo = $em->getRepository('MainBundle:BetaRelease');
 
-        return array('beta' => $repo->getLastBeta());
+        return array('beta' => $repo->getLatestBeta());
     }
 
     /**
