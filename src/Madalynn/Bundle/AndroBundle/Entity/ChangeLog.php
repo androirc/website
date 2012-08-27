@@ -16,6 +16,7 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
 use Madalynn\Bundle\AndroBundle\Validator\Constraints as AndroAssert;
+use Knp\Bundle\MarkdownBundle\Parser\Preset\Max as MarkdownParser;
 
 /**
  * @ORM\Entity(repositoryClass="Madalynn\Bundle\AndroBundle\Repository\ChangeLogRepository")
@@ -124,7 +125,7 @@ class ChangeLog
 
     public function getAbsolutePath()
     {
-        return null === $this->path ? null : $this->getUploadRootDir().'/' . $this->path;
+        return null === $this->path ? null : $this->getUploadRootDir().'/'.$this->path;
     }
 
     protected function getUploadRootDir()
@@ -168,9 +169,16 @@ class ChangeLog
             return;
         }
 
-        $this->file->move($this->getUploadRootDir(), $this->getPath());
+        $this->moveUploadedFile();
+        $this->transform();
+    }
 
-        $this->path = $this->file->getClientOriginalName();
+    /**
+     * Moves the uploaded file to the right location
+     */
+    protected function moveUploadedFile()
+    {
+        $this->file->move($this->getUploadRootDir(), $this->getPath());
         $this->file = null;
     }
 
@@ -186,5 +194,18 @@ class ChangeLog
         }
 
         return $this->changes = @file_get_contents($this->getAbsolutePath());
+    }
+
+    /**
+     * Transforms the Markdown file to an html one
+     */
+    protected function transform()
+    {
+        $parser = new MarkdownParser();
+
+        $markdown = file_get_contents($this->getAbsolutePath());
+        $html = $parser->transform($markdown);
+
+        file_put_contents($this->getAbsolutePath(), $html);
     }
 }
