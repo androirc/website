@@ -185,57 +185,6 @@ class ChangeLog
             return $this->changes;
         }
 
-        $file = @file($this->getAbsolutePath(), FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-
-        if (false === $file) {
-            return null;
-        }
-
-        $changes = array();
-
-        foreach ($file as $change) {
-            if ('#' === substr($change, 0, 1)) {
-                continue;
-            }
-
-            $pos = strpos($change, ':');
-
-            if (false === $pos) {
-                $changes[] = array(
-                    'key' => '',
-                    'content' => trim($change)
-                );
-            } else {
-                list($key, $value) = explode(':', $change, 2);
-
-                $changes[] = array(
-                    'key' => $key,
-                    'content' => trim($value)
-                );
-            }
-        }
-
-        usort($changes, array($this, 'sortChanges'));
-
-        return $this->changes = $changes;
-    }
-
-    protected function sortChanges($a, $b)
-    {
-        return $this->typeToInteger($b['key']) - $this->typeToInteger($a['key']);
-    }
-
-    public function typeToInteger($type)
-    {
-        switch ($type) {
-            case 'added':
-                return 3;
-            case 'changed':
-                return 2;
-            case 'fixed':
-                return 1;
-            default:
-                return 0;
-        }
+        return $this->changes = @file_get_contents($this->getAbsolutePath());
     }
 }
