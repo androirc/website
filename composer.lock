@@ -1,5 +1,5 @@
 {
-    "hash": "f72142d6ad652ebb4f7b6990a47c6a86",
+    "hash": "388a0a222e24f502b7f74c8571db2309",
     "packages": [
         {
             "package": "doctrine/common",
@@ -72,6 +72,12 @@
             "version": "dev-master",
             "source-reference": "1f9ae6d3a6a4785e3b4e8f0de19e4f69a71667da",
             "commit-date": "1343809385"
+        },
+        {
+            "package": "knplabs/knp-markdown-bundle",
+            "version": "dev-master",
+            "source-reference": "d0fac3f6d2ac502386ee73def9cf900029e1d353",
+            "commit-date": "1339679093"
         },
         {
             "package": "kriswallsmith/assetic",
@@ -227,6 +233,7 @@
         "sensio/buzz-bundle": 20,
         "jms/i18n-routing-bundle": 20,
         "sensio/distribution-bundle": 20,
-        "willdurand/geocoder-bundle": 20
+        "willdurand/geocoder-bundle": 20,
+        "knplabs/knp-markdown-bundle": 20
     }
 }

@@ -16,6 +16,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Request;
 
 use Madalynn\Bundle\AndroBundle\Entity\Article;
+use Madalynn\Bundle\AndroBundle\Entity\ChangeLog;
 
 class AndroExtension extends \Twig_Extension
 {
@@ -47,7 +48,8 @@ class AndroExtension extends \Twig_Extension
             'from_mobile'    => new \Twig_Function_Method($this, 'fromMobile', array('is_safe' => array('html'))),
             'path_locale'    => new \Twig_Function_Method($this, 'getPathLocale', array('is_safe' => array('html'))),
             'locales'        => new \Twig_Function_Method($this, 'getLocales'),
-            'gravatar'       => new \Twig_Function_Method($this, 'gravatar')
+            'gravatar'       => new \Twig_Function_Method($this, 'gravatar'),
+            'changelog'      => new \Twig_Function_Method($this, 'displayChangelog', array('is_safe' => array('html'))),
         );
     }
 
@@ -72,6 +74,16 @@ class AndroExtension extends \Twig_Extension
         $hash = md5(strtolower($email));
 
         return sprintf('http://www.gravatar.com/avatar/'.$hash.'?s='.$size.'&d='.$default);
+    }
+
+    /**
+     * Displays a changelog
+     *
+     * @param ChangeLog $changelog
+     */
+    public function displayChangelog(ChangeLog $changelog)
+    {
+        return @file_get_contents($changelog->getAbsolutePath());
     }
 
     /**

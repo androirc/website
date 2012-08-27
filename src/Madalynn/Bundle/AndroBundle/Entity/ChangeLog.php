@@ -16,6 +16,7 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
 use Madalynn\Bundle\AndroBundle\Validator\Constraints as AndroAssert;
+use Knp\Bundle\MarkdownBundle\Parser\Preset\Max as MarkdownParser;
 
 /**
  * @ORM\Entity(repositoryClass="Madalynn\Bundle\AndroBundle\Repository\ChangeLogRepository")
@@ -124,7 +125,7 @@ class ChangeLog
 
     public function getAbsolutePath()
     {
-        return null === $this->path ? null : $this->getUploadRootDir().'/' . $this->path;
+        return null === $this->path ? null : $this->getUploadRootDir().'/'.$this->path;
     }
 
     protected function getUploadRootDir()
@@ -144,7 +145,7 @@ class ChangeLog
     public function preUpload()
     {
         if (null !== $this->file) {
-            $this->setPath('v'.$this->getVersion());
+            $this->setPath('v'.$this->getVersion().'.html');
         }
     }
 
@@ -168,9 +169,16 @@ class ChangeLog
             return;
         }
 
-        $this->file->move($this->getUploadRootDir(), $this->getPath());
+        $this->moveUploadedFile();
+        $this->transform();
+    }
 
-        $this->path = $this->file->getClientOriginalName();
+    /**
+     * Moves the uploaded file to the right location
+     */
+    protected function moveUploadedFile()
+    {
+        $this->file->move($this->getUploadRootDir(), $this->getPath());
         $this->file = null;
     }
 
@@ -185,57 +193,19 @@ class ChangeLog
             return $this->changes;
         }
 
-        $file = @file($this->getAbsolutePath(), FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-
-        if (false === $file) {
-            return null;
-        }
-
-        $changes = array();
-
-        foreach ($file as $change) {
-            if ('#' === substr($change, 0, 1)) {
-                continue;
-            }
-
-            $pos = strpos($change, ':');
-
-            if (false === $pos) {
-                $changes[] = array(
-                    'key' => '',
-                    'content' => trim($change)
-                );
-            } else {
-                list($key, $value) = explode(':', $change, 2);
-
-                $changes[] = array(
-                    'key' => $key,
-                    'content' => trim($value)
-                );
-            }
-        }
-
-        usort($changes, array($this, 'sortChanges'));
-
-        return $this->changes = $changes;
+        return $this->changes = @file_get_contents($this->getAbsolutePath());
     }
 
-    protected function sortChanges($a, $b)
+    /**
+     * Transforms the Markdown file to an html one
+     */
+    protected function transform()
     {
-        return $this->typeToInteger($b['key']) - $this->typeToInteger($a['key']);
-    }
+        $parser = new MarkdownParser();
 
-    public function typeToInteger($type)
-    {
-        switch ($type) {
-            case 'added':
-                return 3;
-            case 'changed':
-                return 2;
-            case 'fixed':
-                return 1;
-            default:
-                return 0;
-        }
+        $markdown = file_get_contents($this->getAbsolutePath());
+        $html = $parser->transform($markdown);
+
+        file_put_contents($this->getAbsolutePath(), $html);
     }
 }
