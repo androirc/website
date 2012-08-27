@@ -145,7 +145,7 @@ class ChangeLog
     public function preUpload()
     {
         if (null !== $this->file) {
-            $this->setPath('v'.$this->getVersion());
+            $this->setPath('v'.$this->getVersion().'.html');
         }
     }
 
