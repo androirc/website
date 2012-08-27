@@ -10,7 +10,7 @@
                 <p>{{ 'frontend.beta.new_beta'|trans({'%version%': beta.version}) }}</p>
 
                 {% if changelog %}
-                    {% include 'MainBundle:ChangeLog:changelog.html.twig' with {'changelog': changelog}%}
+                    {{ changelog(changelog) }}
                 {% endif %}
             </div>
             <div class="span aside-download">
