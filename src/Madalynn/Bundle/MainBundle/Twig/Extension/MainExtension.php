@@ -116,7 +116,7 @@ class MainExtension extends \Twig_Extension
      */
     public function displayChangelog(ChangeLog $changelog)
     {
-        return @file_get_contents($changelog->getAbsolutePath());
+        return $changelog->getChanges();
     }
 
     /**
