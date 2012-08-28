@@ -20,12 +20,14 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Madalynn\Bundle\MainBundle\Entity\BetaDownload;
 
 /**
- * @Route("/beta")
+ * Beta controller
+ *
+ * @author Julien Brochet <mewt@androirc.com>
  */
 class BetaController extends Controller
 {
     /**
-     * @Route("/", name="beta")
+     * @Route("/beta", name="beta")
      * @Template
      */
     public function showAction()
@@ -48,7 +50,7 @@ class BetaController extends Controller
     }
 
     /**
-     * @Route("/latest", name="_beta_latest")
+     * @Route("/beta/latest", name="_beta_latest")
      */
     public function latestAction()
     {
@@ -61,7 +63,7 @@ class BetaController extends Controller
     }
 
     /**
-     * @Route("/download", name="_beta_download")
+     * @Route("/beta/download", name="_beta_download")
      */
     public function downloadAction(Request $request)
     {

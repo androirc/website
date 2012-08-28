@@ -15,6 +15,11 @@ namespace Madalynn\Bundle\MainBundle\Controller;
 use Madalynn\Bundle\MainBundle\Entity\AndroircVersion;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
+/**
+ * Changelog controller
+ *
+ * @author Julien Brochet <mewt@androirc.com>
+ */
 class ChangeLogController extends Controller
 {
     /**

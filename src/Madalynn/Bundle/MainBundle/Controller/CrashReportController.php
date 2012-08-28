@@ -18,6 +18,11 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Madalynn\Bundle\MainBundle\Entity\CrashReport;
 
+/**
+ * Crash report controller
+ *
+ * @author Julien Brochet <mewt@androirc.com>
+ */
 class CrashReportController extends Controller
 {
     /**

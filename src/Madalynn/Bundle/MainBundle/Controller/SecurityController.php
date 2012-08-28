@@ -15,6 +15,11 @@ namespace Madalynn\Bundle\MainBundle\Controller;
 use Symfony\Component\Security\Core\SecurityContext;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
+/**
+ * Security controller
+ *
+ * @author Julien Brochet <mewt@androirc.com>
+ */
 class SecurityController extends Controller
 {
     /**

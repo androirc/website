@@ -15,6 +15,11 @@ namespace Madalynn\Bundle\MainBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
+/**
+ * Main controller
+ *
+ * @author Julien Brochet <mewt@androirc.com>
+ */
 class MainController extends Controller
 {
     /**

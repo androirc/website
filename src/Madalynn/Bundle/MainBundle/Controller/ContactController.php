@@ -17,6 +17,11 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Madalynn\Bundle\MainBundle\Entity\Contact;
 use Madalynn\Bundle\MainBundle\Form\ContactType;
 
+/**
+ * Contact controller
+ *
+ * @author Julien Brochet <mewt@androirc.com>
+ */
 class ContactController extends Controller
 {
     /**

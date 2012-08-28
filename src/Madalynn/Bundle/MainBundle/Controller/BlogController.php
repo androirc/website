@@ -18,12 +18,12 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 /**
  * Blog controller
  *
- * @Route("/blog")
+ * @author Julien Brochet <mewt@androirc.com>
  */
 class BlogController extends Controller
 {
     /**
-     * @Route("/", name="blog")
+     * @Route("/blog", name="blog")
      * @Template
      */
     public function listAction()
@@ -37,7 +37,7 @@ class BlogController extends Controller
     }
 
     /**
-     * @Route("/{id}/{slug}", name="blog_show")
+     * @Route("/blog/{id}/{slug}", name="blog_show")
      * @Template
      */
     public function showAction($id)
@@ -55,7 +55,7 @@ class BlogController extends Controller
     }
 
     /**
-     * @Route("/rss", name="_blog_rss")
+     * @Route("/blog/rss", name="_blog_rss")
      * @Template("MainBundle:Blog:rss.xml.twig")
      */
     public function rssAction()
@@ -82,7 +82,7 @@ class BlogController extends Controller
     }
 
     /**
-     * @Route("/archives/{year}/{month}", name="blog_archives")
+     * @Route("/blog/archives/{year}/{month}", name="blog_archives")
      * @Template
      */
     public function archivesAction($year, $month)

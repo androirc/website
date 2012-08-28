@@ -15,6 +15,11 @@ namespace Madalynn\Bundle\MainBundle\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
+/**
+ * Tip controller
+ *
+ * @author Julien Brochet <mewt@androirc.com>
+ */
 class TipController extends Controller
 {
     /**
