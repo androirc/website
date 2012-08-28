@@ -28,6 +28,7 @@ set :use_composer,          true
 set :use_sudo,              false
 set :dump_assetic_assets,   true
 set :update_assets_version, true
+set :clear_controllers,     true
 set :permission_method,     :acl
 
 before "symfony:bootstrap:build", "deploy:set_permissions"

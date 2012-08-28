@@ -51,6 +51,16 @@ class ChangeLog
      */
     protected $file;
 
+    /**
+     * @ORM\Column(type="string", length=32, nullable=true)
+     */
+    protected $md5;
+
+    /**
+     * The content of the HTML file
+     *
+     * @var string
+     */
     protected $changes;
 
     /**
@@ -91,10 +101,16 @@ class ChangeLog
     public function setFile(UploadedFile $file)
     {
         $this->file = $file;
+
+        if (null !== $this->file) {
+            // Updating the MD5 hash to be sur that the
+            // (Post|Pre)Update events are called
+            $this->md5 = md5_file($this->file->getRealPath());
+        }
     }
 
     /**
-     * Get file
+     * Gets the uploaded file
      *
      * @return UploadedFile
      */
@@ -104,17 +120,17 @@ class ChangeLog
     }
 
     /**
-     * Set path
+     * Gets the MD5 hash for the uploaded file
      *
-     * @param string $path
+     * @return string
      */
-    public function setPath($path)
+    public function getMd5()
     {
-        $this->path = $path;
+        return $this->md5;
     }
 
     /**
-     * Get path
+     * Gets the filename (the path)
      *
      * @return string
      */
@@ -123,43 +139,64 @@ class ChangeLog
         return $this->path;
     }
 
+    /**
+     * Gets the absolute path where is stored the uploaded file
+     *
+     * @return string
+     */
     public function getAbsolutePath()
     {
         return null === $this->path ? null : $this->getUploadRootDir().'/'.$this->path;
     }
 
+    /**
+     * Gets the uploaded root dir where is stored the uploaded file
+     *
+     * @return string
+     */
     protected function getUploadRootDir()
     {
-        return __DIR__ . '/../../../../../web/' . $this->getUploadDir();
+        return __DIR__ . '/../../../../../web/'.$this->getUploadDir();
     }
 
+    /**
+     * Gets the uploaded dir
+     *
+     * @return string
+     */
     protected function getUploadDir()
     {
         return 'uploads/changelogs';
     }
 
     /**
+     * Updates the filename before uploaded the file
+     *
      * @ORM\PrePersist()
      * @ORM\PreUpdate()
      */
     public function preUpload()
     {
         if (null !== $this->file) {
-            $this->setPath('v'.$this->getVersion().'.html');
+            $this->path = 'v'.$this->getVersion().'.html';
         }
     }
 
     /**
+     * Removes the uploaded file
+     *
      * @ORM\PostRemove()
      */
     public function removeUpload()
     {
         if ($file = $this->getAbsolutePath()) {
-            @unlink($file);
+            unlink($file);
         }
     }
 
     /**
+     * Uploads the file
+     *
      * @ORM\PostPersist()
      * @ORM\PostUpdate()
      */
@@ -179,7 +216,7 @@ class ChangeLog
     protected function moveUploadedFile()
     {
         $this->file->move($this->getUploadRootDir(), $this->getPath());
-        $this->file = null;
+        unset($this->file);
     }
 
     /**
@@ -193,7 +230,7 @@ class ChangeLog
             return $this->changes;
         }
 
-        return $this->changes = @file_get_contents($this->getAbsolutePath());
+        return $this->changes = file_get_contents($this->getAbsolutePath());
     }
 
     /**

@@ -57,6 +57,11 @@ class BetaRelease
     protected $path;
 
     /**
+     * @ORM\Column(type="string", length=32, nullable=true)
+     */
+    protected $md5;
+
+    /**
      * @Assert\File(maxSize="6000000")
      */
     protected $file;
@@ -71,6 +76,9 @@ class BetaRelease
      */
     protected $updated;
 
+    /**
+     * Constructor
+     */
     public function __construct()
     {
         $this->downloads = new ArrayCollection();
@@ -171,6 +179,12 @@ class BetaRelease
     public function setFile(UploadedFile $file)
     {
         $this->file = $file;
+
+        if (null !== $this->file) {
+            // Updating the MD5 hash to be sur that the
+            // (Post|Pre)Update events are called
+            $this->md5 = md5_file($this->file->getRealPath());
+        }
     }
 
     /**
@@ -204,9 +218,9 @@ class BetaRelease
     }
 
     /**
-     * Set updated
+     * Sets updated time
      *
-     * @param datetime $updated
+     * @param \DateTime $updated
      */
     public function setUpdated($updated)
     {
@@ -214,7 +228,7 @@ class BetaRelease
     }
 
     /**
-     * Get updated
+     * Gets updated time
      *
      * @return datetime
      */
@@ -224,62 +238,83 @@ class BetaRelease
     }
 
     /**
-     * Add downloads
+     * Adds a new download
      *
-     * @param Madalynn\Bundle\AndroBundle\Entity\BetaDownload $downloads
+     * @param BetaDownload $download
      */
-    public function addDownloads(BetaDownload $downloads)
+    public function addDownloads(BetaDownload $download)
     {
-        $this->downloads[] = $downloads;
+        $this->downloads[] = $download;
     }
 
     /**
-     * Get downloads
+     * Gets downloads
      *
-     * @return Doctrine\Common\Collections\Collection
+     * @return ArrayCollection
      */
     public function getDownloads()
     {
         return $this->downloads;
     }
 
+    /**
+     * Gets the absolute path where is stored the uploaded file
+     *
+     * @return string
+     */
     public function getAbsolutePath()
     {
-        return null === $this->path ? null : $this->getUploadRootDir().'/' . $this->path;
+        return null === $this->path ? null : $this->getUploadRootDir().'/'.$this->path;
     }
 
+    /**
+     * Gets the uploaded root dir where is stored the uploaded file
+     *
+     * @return string
+     */
     protected function getUploadRootDir()
     {
-        return __DIR__ . '/../../../../../web/' . $this->getUploadDir();
+        return __DIR__ . '/../../../../../web/'.$this->getUploadDir();
     }
 
+    /**
+     * Gets the uploaded dir
+     *
+     * @return string
+     */
     protected function getUploadDir()
     {
         return 'uploads/betas';
     }
 
     /**
+     * Updates the filename before uploaded the file
+     *
      * @ORM\PrePersist()
      * @ORM\PreUpdate()
      */
     public function preUpload()
     {
         if (null !== $this->file) {
-            $this->setPath($this->file->getClientOriginalName());
+            $this->path = 'AndroIRC-'.$this->getVersion().'.apk';
         }
     }
 
     /**
+     * Removes the uploaded file
+     *
      * @ORM\PostRemove()
      */
     public function removeUpload()
     {
         if ($file = $this->getAbsolutePath()) {
-            @unlink($file);
+            unlink($file);
         }
     }
 
     /**
+     * Uploads the file
+     *
      * @ORM\PostPersist()
      * @ORM\PostUpdate()
      */
@@ -290,8 +325,6 @@ class BetaRelease
         }
 
         $this->file->move($this->getUploadRootDir(), $this->getPath());
-
-        $this->path = $this->file->getClientOriginalName();
-        $this->file = null;
+        unset($this->file);
     }
 }
