@@ -41,6 +41,15 @@ class MainController extends Controller
     }
 
     /**
+     * @Route("/support", name="support")
+     * @Template
+     */
+    public function supportAction()
+    {
+        return array();
+    }
+
+    /**
      * Generates the locales section
      *
      * @param Request $request A request instance

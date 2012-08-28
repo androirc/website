@@ -23,7 +23,6 @@ class MainControllerTest extends WebTestCase
         $this->client = self::createClient();
     }
 
-
     /**
      * @dataProvider dataCustomAndroircHeader
      */

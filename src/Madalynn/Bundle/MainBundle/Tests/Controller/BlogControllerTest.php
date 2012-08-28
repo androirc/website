@@ -14,7 +14,7 @@ namespace Madalynn\Bundle\MainBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class ArticleControllerTest extends WebTestCase
+class BlogControllerTest extends WebTestCase
 {
     protected $client;
 
@@ -25,7 +25,7 @@ class ArticleControllerTest extends WebTestCase
 
     public function testNumberOfMonths()
     {
-        $crawler = $this->client->request('GET', '/blog/');
+        $crawler = $this->client->request('GET', '/blog');
 
         $this->assertTrue($this->client->getResponse()->isSuccessful());
         $this->assertCount(5, $crawler->filter('.archives-container li'));
@@ -33,7 +33,7 @@ class ArticleControllerTest extends WebTestCase
 
     public function testNumberOfArticlesPerPage()
     {
-        $crawler = $this->client->request('GET', '/blog/');
+        $crawler = $this->client->request('GET', '/blog');
         $this->assertCount(5, $crawler->filter('article'));
     }
 }
