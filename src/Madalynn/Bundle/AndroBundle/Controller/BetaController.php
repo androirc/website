@@ -56,7 +56,7 @@ class BetaController extends AbstractController
             throw $this->createNotFoundException('There is no beta to download at the moment');
         }
 
-        $ip       = $request->getClientIp();
+        $ip = $request->getClientIp();
         $download = new BetaDownload();
 
         $download->setBetaRelease($beta);
@@ -70,7 +70,7 @@ class BetaController extends AbstractController
         });
 
         $response->headers->set('Content-Type', 'application/vnd.android.package-archive');
-        $response->headers->set('Content-Disposition', 'attachment; filename="' . basename($beta->getAbsolutePath()).'"');
+        $response->headers->set('Content-Disposition', 'attachment; filename="'.$beta->getPath().'"');
         $response->headers->set('Content-Transfer-Encoding', 'binary');
         $response->headers->set('Content-Length', filesize($beta->getAbsolutePath()));
 
