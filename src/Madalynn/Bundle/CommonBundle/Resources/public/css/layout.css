@@ -253,3 +253,35 @@ article h1 a:hover {
   margin-top: 3px;
   font-weight: bold;
 }
+
+/* Support */
+
+.support-container {
+}
+
+.support-action {
+  float: left;
+  width: 365px;
+  margin-left: 14px;
+  padding: 4px;
+}
+
+.support-action .title {
+  margin-bottom: 4px;
+}
+
+.support-action .title h1 {
+  font-size: 27px;
+  padding-top: 13px;
+  padding-left: 8px;
+}
+
+.support-action .title img {
+  float: left;
+}
+
+.support-action .description {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+}
