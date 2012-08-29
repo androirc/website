@@ -1,7 +1,7 @@
 {% extends "MainBundle::frontend.html.twig" %}
 
-{% block title %}Support{% endblock %}
-{% block description %}TODO{% endblock %}
+{% block title %}{{ 'frontend.menu.support'|trans }}{% endblock %}
+{% block description %}{{ 'frontend.support.description'|trans }}{% endblock %}
 
 {% block content %}
     <div class="support-container clearfix">
@@ -9,20 +9,22 @@
             <div class="support-action">
                 <div class="title clearfix">
                     <img src="{{ asset('/bundles/common/images/support/ic_menu_info_details.png') }}" />
-                    <h1>Wiki</h1>
+                    <h1><a href="http://wiki.androirc.com/">{{ 'frontend.support.wiki.name'|trans }}</a></h1>
                 </div>
                 <div class="description">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam.</p>
+                    <p>{{ 'frontend.support.wiki.description'|trans }}</p>
+                    <p class="link"><a href="http://wiki.androirc.com/">{{ 'frontend.support.wiki.link'|trans }}</a></p>
                 </div>
             </div>
 
             <div class="support-action">
                 <div class="title clearfix">
                     <img src="{{ asset('/bundles/common/images/support/ic_menu_notifications.png') }}" />
-                    <h1>Bug tracker</h1>
+                    <h1><a href="http://bugs.androirc.com/">{{ 'frontend.support.bug_tracker.name'|trans }}</a></h1>
                 </div>
                 <div class="description">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam.</p>
+                    <p>{{ 'frontend.support.bug_tracker.description'|trans }}</p>
+                    <p class="link"><a href="http://bugs.androirc.com/">{{ 'frontend.support.bug_tracker.link'|trans }}</a></p>
                 </div>
             </div>
         </div>
@@ -31,10 +33,11 @@
             <div class="support-action">
                 <div class="title clearfix">
                     <img src="{{ asset('/bundles/common/images/support/ic_menu_allfriends.png') }}" />
-                    <h1>Translation</h1>
+                    <h1><a href="http://translation.androirc.com/">{{ 'frontend.support.translation.name'|trans }}</a></h1>
                 </div>
                 <div class="description">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam.</p>
+                    <p>{{ 'frontend.support.translation.description'|trans }}</p>
+                    <p class="link"><a href="http://translation.androirc.com/">{{ 'frontend.support.translation.link'|trans }}</a></p>
                 </div>
             </div>
 

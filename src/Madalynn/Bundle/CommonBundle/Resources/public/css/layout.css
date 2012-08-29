@@ -24,6 +24,10 @@ h2 {
   margin-bottom: 7px;
 }
 
+h1 a:hover {
+  text-decoration: none;
+}
+
 .container {
   margin-top: 10px;
   width: 820px;
@@ -88,7 +92,7 @@ nav ul li a:hover {
 #content {
   background-color: #fff;
   border: 1px solid #f1f1f1;
-  padding: 48px 20px;
+  padding: 30px 20px;
   margin-bottom: 15px;
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
@@ -190,10 +194,6 @@ article h1 {
   margin-bottom: 0px;
 }
 
-article h1 a:hover {
-  text-decoration: none;
-}
-
 .article-header {
   margin-bottom: 9px;
 }
@@ -284,4 +284,8 @@ article h1 a:hover {
   font-size: 14px;
   color: #666;
   line-height: 1.6;
+}
+
+.support-action .description .link:before {
+    content: '+ ';
 }

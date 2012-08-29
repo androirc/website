@@ -30,3 +30,25 @@ frontend:
         new_beta: |
             A new beta is available to download (%version%). Please read the
             following changelog to know what is new.
+    support:
+        description: "You need help? This section is for you!"
+        wiki:
+            name: "Wiki"
+            description: |
+                A question? The answer is probably in this wiki. Written by the
+                team, it includes all the guides and informations to configure
+                and use all possibilities of AndroIRC.
+            link: "Go to the wiki"
+        bug_tracker:
+            name: "Bug tracker"
+            description: |
+                You found a bug? It's the place for describe it. We'll be glad
+                to help you resolving this issue and of course to make AndroIRC
+                even better and stable.
+            link: "Go to the bug tracker"
+        translation:
+            name: "Translation"
+            description: |
+                AndroIRC is not available in your language? It's not an issue!
+                You can help us translating AndroIRC
+            link: "Help us translating AndroIRC"
