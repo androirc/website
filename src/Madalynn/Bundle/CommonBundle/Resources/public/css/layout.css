@@ -12,6 +12,7 @@ body {
 h1, h2, h3, h4, h5 {
   font-family: 'Source Sans Pro', sans-serif;
   color: #03638b;
+  font-weight:normal;
 }
 
 h1 {
@@ -235,6 +236,7 @@ article h1 {
   -ms-border-radius: 6px;
   -khtml-border-radius: 6px;
   border-radius: 6px;
+  padding-bottom: 50px;
 }
 
 .aside-download .text {
@@ -247,7 +249,7 @@ article h1 {
 }
 
 .aside-download .text p {
-  color: #7e7e7e;
+  color: #666;
   font-size: 14px;
   text-align: justify;
 }
