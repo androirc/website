@@ -182,6 +182,12 @@ footer p {
   list-style: none;
 }
 
+.archives-container li a {
+  color: #666;
+  font-size: 11px;
+  text-transform: lowercase;
+}
+
 .archives-container li:last-child {
   border-bottom: 1px solid #eaeaea;
 }
