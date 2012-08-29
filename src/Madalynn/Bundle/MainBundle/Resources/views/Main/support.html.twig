@@ -44,10 +44,18 @@
             <div class="support-action">
                 <div class="title clearfix">
                     <img src="{{ asset('/bundles/common/images/support/ic_menu_share.png') }}" />
-                    <h1>Social networks</h1>
+                    <h1>{{ 'frontend.support.social.name'|trans }}</h1>
                 </div>
                 <div class="description">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam.</p>
+                    <p>{{
+                           'frontend.support.social.description'|trans({
+                               '%facebook%': '<a href="http://www.facebook.com/androirc">Facebook</a>',
+                               '%twitter%': '<a href="http://twitter.com/androirc">Twitter</a>',
+                               '%googleplus%': '<a href="https://plus.google.com/105275534595142567234/">Google+</a>',
+                               '%irc%': '<a href="irc://irc.epiknet.org/androirc">IRC</a>'
+                           })|raw
+                        }}
+                    </p>
                 </div>
             </div>
         </div>
