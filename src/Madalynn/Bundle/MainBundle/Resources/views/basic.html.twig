@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html lang="en" prefix="og: http://ogp.me/ns#">
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta charset="utf-8" />
         <title>{% block title %}{% endblock %} - AndroIRC (Android IRC Client)</title>
         <style type="text/css">
             body {
@@ -10,14 +10,27 @@
               line-height: 1.5;
             }
 
+            {% if theme == 'light' %}
+                body {
+                    color: #8A8A8A;
+                }
+            {% else %}
+                body {
+                    background-color: #282828;
+                    color: #f3f3f3;
+                }
+            {% endif %}
+
+            h1, h2 {
+                color: #026995;
+            }
+
             h1 {
               font-size: 18px;
-              color: #026995;
             }
 
             h2 {
               font-size: 15px;
-              color: #026995;
             }
 
             p {
@@ -29,17 +42,6 @@
               text-decoration: underline;
               color: #026995;
             }
-
-            {% if theme == 'light' %}
-                body {
-                  color: #8A8A8A;
-                }
-            {% else %}
-                body {
-                  background-color: #282828;
-                  color: #f3f3f3;
-                }
-            {% endif %}
         </style>
     </head>
     <body>
