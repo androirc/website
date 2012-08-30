@@ -4,8 +4,8 @@
 {% block description %}{{ 'frontend.beta.description'|trans }}{% endblock %}
 
 {% block content %}
-    <div class="row">
-        {% if beta %}
+    {% if beta %}
+        <div class="row">
             <div class="span6">
                 <p>{{ 'frontend.beta.new_beta'|trans({'%version%': beta.version}) }}</p>
 
@@ -22,6 +22,8 @@
                     <p>{{ 'frontend.beta.warning'|trans }}</p>
                 </div>
             </div>
-        {% endif %}
-    </div>
+        </div>
+    {% else %}
+        <p>{{ 'frontend.beta.no_beta'|trans }}</p>
+    {% endif %}
 {% endblock %}
