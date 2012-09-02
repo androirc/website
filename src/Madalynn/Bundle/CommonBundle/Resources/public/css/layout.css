@@ -7,6 +7,9 @@ body {
   background-position: top;
   background-repeat: repeat-x;
   background-color: #fcfcfc;
+  font-size: 13px;
+  color: #2c2c2c;
+  font-family: "Helvetica Neue", Helvetica, Arial, Geneva, sans-serif;
 }
 
 h1, h2, h3, h4, h5 {
@@ -29,9 +32,17 @@ h1 a:hover {
   text-decoration: none;
 }
 
+a {
+  color: #03638B;
+}
+
+a:hover {
+  color: #03638B;
+}
+
 .container {
   margin-top: 10px;
-  width: 820px;
+  width: 982px;
 }
 
 /* Header */
@@ -223,7 +234,6 @@ article h1 {
 /* Beta */
 
 .aside-download {
-  width: 285px;
   background: -moz-linear-gradient(top,  rgba(239,239,239,1) 0%, rgba(239,239,239,0) 100%);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(239,239,239,1)), color-stop(100%,rgba(239,239,239,0)));
   background: -webkit-linear-gradient(top,  rgba(239,239,239,1) 0%,rgba(239,239,239,0) 100%);
@@ -236,12 +246,9 @@ article h1 {
   -ms-border-radius: 6px;
   -khtml-border-radius: 6px;
   border-radius: 6px;
-  padding-bottom: 50px;
+  padding: 2px 11px 50px 11px;
 }
 
-.aside-download .text {
-  padding: 0 11px;
-}
 
 .aside-download .download {
   text-align: center;
