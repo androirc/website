@@ -5,12 +5,12 @@
 
 {% block content %}
     <div class="row">
-        <div class="span blog-container">
+        <div class="span9 blog-container">
             {% for article in articles %}
                 {% include 'MainBundle:Blog:article_skeleton.html.twig' with {article: article}%}
             {% endfor %}
         </div>
-        <div class="span archives-container">
+        <div class="span3 archives-container">
             {% render 'MainBundle:Blog:menu' %}
         </div>
     </div>

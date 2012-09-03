@@ -1,11 +1,36 @@
 @media (min-width: 768px) and (max-width: 979px) {
   .container {
-    width: 766px;
+    width: 746px;
   }
 }
 
 @media (max-width: 767px) {
   .container {
     width: auto;
+  }
+
+  #logo {
+    float: none;
+    margin: 0 auto;
+  }
+
+  #locales {
+    float: none;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  nav {
+    float: none;
+    text-align: center;
+    margin-top: 17px;
+  }
+
+  nav ul {
+    margin: 0px;
+  }
+
+  header {
+    margin-bottom: 15px;
   }
 }

@@ -42,7 +42,7 @@ a:hover {
 
 .container {
   margin-top: 10px;
-  width: 982px;
+  width: 962px;
 }
 
 /* Header */
@@ -88,6 +88,10 @@ nav ul li a:hover {
   text-decoration: none;
 }
 
+nav ul li:first-child {
+  margin-left: 0px;
+}
+
 #locales {
   float: right;
 }
@@ -104,7 +108,7 @@ nav ul li a:hover {
 #content {
   background-color: #fff;
   border: 1px solid #f1f1f1;
-  padding: 30px 20px;
+  padding: 30px 10px;
   margin-bottom: 15px;
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
@@ -144,20 +148,7 @@ footer p {
   margin-bottom: 21px;
 }
 
-.homepage .image {
-  width: 350px;
-  height: 250px;
-}
-
-.homepage-left .image {
-  float: right;
-}
-
-.homepage-right .image {
-  float: left;
-}
-
-.homepage-left .content {
+.content-left {
   text-align: right;
 }
 
@@ -177,14 +168,6 @@ footer p {
 
 /* Blog */
 
-.blog-container {
-  width: 560px;
-}
-
-.archives-container {
-  width: 190px;
-}
-
 .archives-container li {
   padding: 7px 0 7px 26px;
   border-top: 1px solid #eaeaea;
@@ -192,6 +175,10 @@ footer p {
   background-repeat: no-repeat;
   background-position: 3px 8px;
   list-style: none;
+}
+
+.archives-container ul {
+  margin: 0px;
 }
 
 .archives-container li a {
@@ -219,7 +206,7 @@ article h1 {
 .article-header .subtitle {
   font-size: 11px;
   color: #666;
-  margin-top: -5px;
+  margin-top: -9px;
 }
 
 .article-content p {
@@ -271,24 +258,13 @@ article h1 {
 
 /* Support */
 
-.support-container {
-}
-
-.support-action {
-  float: left;
-  width: 365px;
-  margin-left: 14px;
-  padding: 4px;
-  margin-bottom: 6px;
-}
-
 .support-action .title {
   margin-bottom: 4px;
 }
 
 .support-action .title h1 {
   font-size: 27px;
-  padding-top: 13px;
+  padding-top: 3px;
   padding-left: 8px;
 }
 

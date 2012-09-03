@@ -5,7 +5,7 @@
 
 {% block content %}
     <div class="row">
-        <div class="span blog-container">
+        <div class="span9 blog-container">
             {% include 'MainBundle:Blog:article_skeleton.html.twig' with {'article': article} %}
 
             <div id="disqus_thread"></div>
@@ -29,7 +29,7 @@
             </script>
             <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
         </div>
-        <div class="span archives-container">
+        <div class="span3 archives-container hidden-phone">
             {% render 'MainBundle:Blog:menu' %}
         </div>
     </div>

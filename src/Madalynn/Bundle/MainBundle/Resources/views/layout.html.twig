@@ -50,14 +50,14 @@
     <body>
         <div class="container">
             <header class="clearfix">
+                {% render 'MainBundle:Main:locales' with {'request': app.request} %}
+
                 <div id="logo">
                     <a href="{{ url('homepage') }}">
                         <img src="{{ asset('bundles/common/images/logo.png') }}" alt="AndroIRC" />
                     </a>
                     <span>{{ 'frontend.subtitle'|trans }}</span>
                 </div>
-
-                {% render 'MainBundle:Main:locales' with {'request': app.request} %}
 
                 <nav>
                     <ul>
