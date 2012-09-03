@@ -10,7 +10,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Madalynn\Bundle\AndroBundle\Command;
+namespace Madalynn\Bundle\DebugBundle\Command;
 
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputInterface;
