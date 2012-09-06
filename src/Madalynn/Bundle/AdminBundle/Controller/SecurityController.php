@@ -10,9 +10,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Madalynn\Bundle\MainBundle\Controller;
+namespace Madalynn\Bundle\AdminBundle\Controller;
 
 use Symfony\Component\Security\Core\SecurityContext;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
 /**
@@ -36,7 +37,7 @@ class SecurityController extends Controller
             $error = $session->get(SecurityContext::AUTHENTICATION_ERROR);
         }
 
-        return $this->render('MainBundle:Security:login.html.twig', array(
+        return $this->render('AdminBundle:Security:login.html.twig', array(
             'last_username' => $session->get(SecurityContext::LAST_USERNAME),
             'error'         => $error,
         ));

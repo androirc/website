@@ -5,8 +5,8 @@
 {% block page %}
     {% if filter_form.count > 1 %}
         <div id="filter-a">
-            <a href="{{ path('admin_' ~ entity_name ~ '_clear') }}" class="btn btn-danger">{{ 'actions.clear_filters'|trans }}</a>
-            <a id="filter-results" href="javascript:;" class="btn btn-info">{{ 'actions.filter'|trans }}</a>
+            <a href="{{ path('admin_' ~ entity_name ~ '_clear') }}" class="btn btn-danger">{{ 'backend.actions.clear_filters'|trans }}</a>
+            <a id="filter-results" href="javascript:;" class="btn btn-info">{{ 'backend.actions.filter'|trans }}</a>
         </div>
     {% endif %}
 
@@ -17,18 +17,18 @@
             <form class="form-horizontal" action="{{ path('admin_' ~ entity_name ~ '_filter') }}" method="post" {{ form_enctype(filter_form) }}>
                 {{ form_widget(filter_form) }}
                 <div class="actions">
-                    <button type="submit" class="btn btn-primary">{{ 'actions.filter_button'|trans }}</button>
+                    <button type="submit" class="btn btn-primary">{{ 'backend.actions.filter_button'|trans }}</button>
                 </div>
             </form>
         </div>
     {% endif %}
 
-    {% block content %}{% endblock %}
+    {% block subcontent %}{% endblock %}
 
     <div id="entity_actions">
         {% block entity_actions %}
             <a class="btn btn-success" href="{{ path('admin_' ~ entity_name ~ '_new') }}">
-                {{ 'actions.create_entry'|trans }}
+                {{ 'backend.actions.create_entry'|trans }}
             </a>
         {% endblock %}
     </div>

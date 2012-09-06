@@ -1,4 +1,4 @@
-{% extends "MainBundle::frontend.html.twig" %}
+{% extends 'MainBundle::layout.html.twig' %}
 
 {% block title %}{{ 'frontend.menu.support'|trans }}{% endblock %}
 {% block description %}{{ 'frontend.support.description'|trans }}{% endblock %}
@@ -37,7 +37,7 @@
                 <p>{{ 'frontend.support.translation.description'|trans }}</p>
                 <p class="link"><a href="http://translation.androirc.com/">{{ 'frontend.support.translation.link'|trans }}</a></p>
             </div>
-    </div>
+        </div>
         <div class="span6 support-action">
             <div class="title clearfix">
                 <img src="{{ asset('/bundles/common/images/support/ic_menu_share.png') }}" />

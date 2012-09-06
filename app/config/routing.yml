@@ -2,6 +2,10 @@ androirc:
     resource: "@MainBundle/Controller"
     type: annotation
 
+androirc_security:
+    resource: "@AdminBundle/Controller/SecurityController.php"
+    type: annotation
+
 androirc_admin:
     resource: "@AdminBundle/Resources/config/routing.yml"
     prefix: /admin

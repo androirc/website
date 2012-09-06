@@ -1,6 +1,6 @@
-{% extends 'MainBundle::layout.html.twig' %}
+{% extends 'AdminBundle::backend.html.twig' %}
 
-{% block title %}{{ 'login.title'|trans }}{% endblock %}
+{% block title %}{{ 'backend.login.title'|trans }}{% endblock %}
 
 {% block content %}
     {% if error %}
@@ -20,7 +20,7 @@
             </div>
         </div>
         <div class="control-group">
-            <label class="required control-label" for="password">{{ 'login.password'|trans }}</label>
+            <label class="required control-label" for="password">{{ 'backend.login.password'|trans }}</label>
 
             <div class="controls">
                 <input type="password" required="required" id="password" name="_password" />
@@ -30,14 +30,14 @@
             <div class="controls">
                 <label for="remember_me" class="checkbox">
                     <input type="checkbox" id="remember_me" name="_remember_me" />
-                    {{ 'login.remember_me'|trans }}
+                    {{ 'backend.login.remember_me'|trans }}
                 </label>
             </div>
         </div>
 
-<div class="form-actions">
-  <button type="submit" class="btn btn-primary">{{ 'login.submit'|trans }}</button>
-  <button type="button" class="btn">Cancel</button>
-</div>
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">{{ 'backend.login.submit'|trans }}</button>
+            <button type="button" class="btn">Cancel</button>
+        </div>
     </form>
 {% endblock %}

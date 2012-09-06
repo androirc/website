@@ -20,7 +20,7 @@ h1, h2, h3, h4, h5 {
 
 h1 {
   font-size: 24px;
-  margin-bottom: 7px;
+  margin-bottom: 17px;
 }
 
 h2 {
@@ -43,6 +43,20 @@ a:hover {
 .container {
   margin-top: 10px;
   width: 962px;
+}
+
+
+.nav-pills a, .nav-pills a:hover {
+  color: #616161;
+}
+
+.nav-pills > .active > a, .nav-pills > .active > a:hover {
+  background-color: #616161;
+}
+
+.nav .dropdown-toggle .caret, .nav .dropdown-toggle:hover .caret {
+  border-top-color: #616161;
+  border-bottom-color: #616161;
 }
 
 /* Header */
@@ -266,6 +280,7 @@ article h1 {
   font-size: 27px;
   padding-top: 3px;
   padding-left: 8px;
+  margin-bottom: 6px;
 }
 
 .support-action .title img {
@@ -280,4 +295,21 @@ article h1 {
 
 .support-action .description .link:before {
     content: '+ ';
+}
+
+/* Admin */
+
+#admin-menu {
+  margin-top: -30px;
+  margin-left: -10px;
+  margin-right: -10px;
+  padding: 15px;
+  margin-bottom: 11px;
+  background-image: url("/bundles/common/images/background.png");
+  background-position: top;
+  background-repeat: repeat-x;
+}
+
+#dashboard {
+  text-align: center;
 }
