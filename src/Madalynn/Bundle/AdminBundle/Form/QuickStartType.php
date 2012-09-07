@@ -22,18 +22,18 @@ class QuickStartType extends AbstractType
     {
         $builder->add('language', 'language', array(
                     'preferred_choices' => array('en', 'fr'),
-                    'label'             => 'quick_start.field.language'
+                    'label'             => 'backend.quick_start.field.language'
                 ))
                 ->add('versionMin', 'entity', array(
                     'class' => 'Madalynn\\Bundle\\MainBundle\\Entity\\AndroircVersion',
-                    'label' => 'quick_start.field.version_min'
+                    'label' => 'backend.quick_start.field.version_min'
                 ))
                 ->add('versionMax', 'entity', array(
                     'class'    => 'Madalynn\\Bundle\\MainBundle\\Entity\\AndroircVersion',
-                    'label'    => 'quick_start.field.version_max',
+                    'label'    => 'backend.quick_start.field.version_max',
                     'required' => false
                 ))
-                ->add('content', 'editor', array('label' => 'quick_start.field.content'));
+                ->add('content', 'editor', array('label' => 'backend.quick_start.field.content'));
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)
