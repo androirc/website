@@ -25,17 +25,17 @@ class TipHolidayType extends AbstractType
 
         $builder->add('language', 'language', array(
                     'preferred_choices' => array('en', 'fr'),
-                    'label'             => 'tip_holiday.field.language'
+                    'label'             => 'backend.tip_holiday.field.language'
                 ))
                 ->add('day', 'choice', array(
                     'choices' => array_combine($days, $days),
-                    'label'   => 'tip_holiday.field.day'
+                    'label'   => 'backend.tip_holiday.field.day'
                 ))
                 ->add('month', 'choice', array(
                     'choices' => array_combine($months, $months),
-                    'label'   => 'tip_holiday.field.month'
+                    'label'   => 'backend.tip_holiday.field.month'
                 ))
-                ->add('content', 'textarea', array('label' => 'tip_holiday.field.content'));
+                ->add('content', 'textarea', array('label' => 'backend.tip_holiday.field.content'));
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)
