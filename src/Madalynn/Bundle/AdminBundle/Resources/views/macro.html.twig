@@ -1,0 +1,17 @@
+{% macro active_item(item, current_item) %}
+{% spaceless %}
+    {% if item == current_item %}
+        class="active"
+    {% endif %}
+{% endspaceless %}
+{% endmacro %}
+
+{% macro display_bool(bool) %}
+{% spaceless %}
+    {% if bool %}
+        <img src="{{ asset('bundles/admin/images/badge-square-check-16.png') }}" />
+    {% else %}
+        <img src="{{ asset('bundles/admin/images/badge-square-cross-16.png') }}" />
+    {% endif %}
+{% endspaceless %}
+{% endmacro %}

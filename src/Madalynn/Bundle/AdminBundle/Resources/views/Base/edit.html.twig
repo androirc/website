@@ -1,16 +1,16 @@
 {% extends "AdminBundle::backend.html.twig" %}
 
-{% block title %}{{ (entity_name ~ '.edit_title')|trans }}{% endblock %}
+{% block title %}{{ ('backend.' ~ entity_name ~ '.edit_title')|trans }}{% endblock %}
 
 {% block page %}
     <h1>{{ block('title') }}</h1>
 
     <form action="{{ path('admin_' ~ entity_name ~ '_update', { 'id' : entity.id }) }}" class="form-horizontal" method="post" {{ form_enctype(edit_form) }}>
         {{ form_widget(edit_form) }}
-        <div class="actions">
-            <button class="btn btn-primary" type="submit">{{ 'actions.edit'|trans }}</button>
-            <a class="btn btn-danger" href="{{ path('admin_' ~ entity_name ~ '_delete', { 'id' : entity.id }) }}">{{ 'actions.delete'|trans }}</a>
-            <a class="btn" href="{{ path('admin_' ~ entity_name ~ '_list') }}">{{ 'actions.back_list'|trans }}</a>
+        <div class="form-actions">
+            <button class="btn btn-primary" type="submit">{{ 'backend.actions.edit'|trans }}</button>
+            <a class="btn btn-danger" href="{{ path('admin_' ~ entity_name ~ '_delete', { 'id' : entity.id }) }}">{{ 'backend.actions.delete'|trans }}</a>
+            <a class="btn" href="{{ path('admin_' ~ entity_name ~ '_list') }}">{{ 'backend.actions.back_list'|trans }}</a>
         </div>
     </form>
 {% endblock %}

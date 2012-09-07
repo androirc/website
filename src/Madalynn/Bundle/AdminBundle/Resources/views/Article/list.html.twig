@@ -1,38 +1,26 @@
 {% extends "AdminBundle:Base:list.html.twig" %}
 
 {% block subcontent %}
-    <table class="records_list">
+    <table class="table table-striped table-hover">
         <thead>
             <tr>
-                <th>{{ 'article.field.title'|trans }}</th>
-                <th>{{ 'article.field.visible'|trans }}</th>
-                <th>{{ 'article.field.author'|trans }}</th>
-                <th>{{ 'article.field.created'|trans }}</th>
-                <th width="160px;">{{ 'actions.actions'|trans }}</th>
+                <th>{{ 'backend.article.field.title'|trans }}</th>
+                <th>{{ 'backend.article.field.visible'|trans }}</th>
+                <th>{{ 'backend.article.field.author'|trans }}</th>
+                <th>{{ 'backend.article.field.created'|trans }}</th>
+                <th>{{ 'backend.actions.actions'|trans }}</th>
             </tr>
         </thead>
         <tbody>
             {% for entity in pager %}
             <tr>
                 <td><a href="{{ path('admin_article_show', {'id' : entity.id}) }}">{{ entity.title }}</a></td>
-                <td style="text-align: center">
-                    {% if (entity.visible) %}
-                        <img src="{{ asset('bundles/andro/images/icons/tick.png') }}" />
-                    {% else %}
-                        <img src="{{ asset('bundles/andro/images/icons/cross.png') }}" />
-                    {% endif %}
-                </td>
-                <td style="text-align: center">{{ entity.author }}</td>
-                <td style="text-align: center">{{ entity.created|date('m/d/Y') }}</td>
+                <td>{{ macro.display_bool(entity.visible) }}</td>
+                <td>{{ entity.author }}</td>
+                <td>{{ entity.created|date('m/d/Y') }}</td>
                 <td>
-                    <ul>
-                        <li>
-                            <img src="{{ asset('bundles/andro/images/icons/page_edit.png') }}" /> <a href="{{ path('admin_article_edit', {'id': entity.id}) }}">{{ 'actions.edit'|trans }}</a>
-                        </li>
-                        <li>
-                            <img src="{{ asset('bundles/andro/images/icons/cross.png') }}" /> <a onclick="return confirm('Are you sure?')" href="{{ path('admin_article_delete', { 'id': entity.id }) }}">{{ 'actions.delete'|trans }}</a>
-                        </li>
-                    </ul>
+                    <a href="{{ path('admin_article_edit', {'id': entity.id}) }}"><img src="{{ asset('bundles/admin/images/page-pencil-16.png') }}" /></a>
+                    <a onclick="return confirm('Are you sure?')" href="{{ path('admin_article_delete', { 'id': entity.id }) }}"><img src="{{ asset('bundles/admin/images/cross-16.png') }}" /></a>
                 </td>
             </tr>
             {% endfor %}

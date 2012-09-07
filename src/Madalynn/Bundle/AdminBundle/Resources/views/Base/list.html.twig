@@ -1,6 +1,6 @@
 {% extends "AdminBundle::backend.html.twig" %}
 
-{% block title %}{{ (entity_name ~ '.list_title')|trans }}{% endblock %}
+{% block title %}{{ ('backend.' ~ entity_name ~ '.list_title')|trans }}{% endblock %}
 
 {% block page %}
     {% if filter_form.count > 1 %}
@@ -25,17 +25,13 @@
 
     {% block subcontent %}{% endblock %}
 
-    <div id="entity_actions">
+    <div class="form-actions">
         {% block entity_actions %}
-            <a class="btn btn-success" href="{{ path('admin_' ~ entity_name ~ '_new') }}">
-                {{ 'backend.actions.create_entry'|trans }}
-            </a>
+            <a class="btn btn-success" href="{{ path('admin_' ~ entity_name ~ '_new') }}">{{ 'backend.actions.create_entry'|trans }}</a>
         {% endblock %}
     </div>
 
-    <div class="clear"></div>
-
-    <div class="paginator">
+    <div class="paginator-container">
         {{ pagerfanta(pager) }}
     </div>
 {% endblock %}

@@ -96,7 +96,7 @@ jms_i18n_routing:
     strategy: prefix_except_default
 
 white_october_pagerfanta:
-    default_view: default_translated
+    default_view: twitter_bootstrap_translated
 
 # Custom translation download script
 #andro:

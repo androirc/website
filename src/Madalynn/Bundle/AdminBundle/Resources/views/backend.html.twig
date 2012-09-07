@@ -1,4 +1,5 @@
 {% extends "MainBundle::layout.html.twig" %}
+{% import "AdminBundle::macro.html.twig" as macro %}
 
 {# Variable to select the menu item #}
 {% set menu_item = 'home' %}
@@ -34,16 +35,16 @@
     {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
         <div id="admin-menu">
             <ul class="nav nav-pills">
-                <li {{ _self.active_item('home', menu_item) }}><a href="#">Home</a></li>
-                <li {{ _self.active_item('article', menu_item) }}><a href="{{ path('admin_article_list') }}">{{ 'backend.menu.article'|trans }}</a></li>
-                <li {{ _self.active_item('donator', menu_item) }}><a href="{{ path('admin_donator_list') }}">{{ 'backend.menu.donator'|trans }}</a></li>
-                <li {{ _self.active_item('user', menu_item) }}><a href="{{ path('admin_user_list') }}">{{ 'backend.menu.user'|trans }}</a></li>
-                <li {{ _self.active_item('beta', menu_item) }}><a href="{{ path('admin_beta_release_list') }}">{{ 'backend.menu.beta'|trans }}</a></li>
-                <li {{ _self.active_item('tip', menu_item) }}><a href="{{ path('admin_tip_list') }}">{{ 'backend.menu.tip'|trans }}</a></li>
-                <li {{ _self.active_item('crash', menu_item) }}><a href="{{ path('admin_crash_report_list') }}">{{ 'backend.menu.crash'|trans }}</a></li>
-                <li {{ _self.active_item('quick_start', menu_item) }}><a href="{{ path('admin_quick_start_list') }}">{{ 'backend.menu.quickstart'|trans }}</a></li>
-                <li {{ _self.active_item('tip_holiday', menu_item) }}><a href="{{ path('admin_tip_holiday_list') }}">{{ 'backend.menu.holiday'|trans }}</a></li>
-                <li {{ _self.active_item('change_log', menu_item) }}><a href="{{ path('admin_change_log_list') }}">{{ 'backend.menu.changelog'|trans }}</a></li>
+                <li {{ macro.active_item('home', menu_item) }}><a href="#">Home</a></li>
+                <li {{ macro.active_item('article', menu_item) }}><a href="{{ path('admin_article_list') }}">{{ 'backend.menu.article'|trans }}</a></li>
+                <li {{ macro.active_item('donator', menu_item) }}><a href="{{ path('admin_donator_list') }}">{{ 'backend.menu.donator'|trans }}</a></li>
+                <li {{ macro.active_item('user', menu_item) }}><a href="{{ path('admin_user_list') }}">{{ 'backend.menu.user'|trans }}</a></li>
+                <li {{ macro.active_item('beta', menu_item) }}><a href="{{ path('admin_beta_release_list') }}">{{ 'backend.menu.beta'|trans }}</a></li>
+                <li {{ macro.active_item('tip', menu_item) }}><a href="{{ path('admin_tip_list') }}">{{ 'backend.menu.tip'|trans }}</a></li>
+                <li {{ macro.active_item('crash', menu_item) }}><a href="{{ path('admin_crash_report_list') }}">{{ 'backend.menu.crash'|trans }}</a></li>
+                <li {{ macro.active_item('quick_start', menu_item) }}><a href="{{ path('admin_quick_start_list') }}">{{ 'backend.menu.quickstart'|trans }}</a></li>
+                <li {{ macro.active_item('tip_holiday', menu_item) }}><a href="{{ path('admin_tip_holiday_list') }}">{{ 'backend.menu.holiday'|trans }}</a></li>
+                <li {{ macro.active_item('change_log', menu_item) }}><a href="{{ path('admin_change_log_list') }}">{{ 'backend.menu.changelog'|trans }}</a></li>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{ 'backend.menu.version'|trans }} <b class="caret"></b></a>
                     <ul class="dropdown-menu">
@@ -58,11 +59,3 @@
 
     {% block page %}{% endblock %}
 {% endblock %}
-
-{% macro active_item(item, current_item) %}
-{% spaceless %}
-    {% if item == current_item %}
-        class="active"
-    {% endif %}
-{% endspaceless %}
-{% endmacro %}
