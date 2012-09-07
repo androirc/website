@@ -22,9 +22,9 @@ class TipType extends AbstractType
     {
         $builder->add('language', 'language', array(
                     'preferred_choices' => array('en', 'fr'),
-                    'label'             => 'tip.field.language'
+                    'label'             => 'backend.tip.field.language'
                 ))
-                ->add('content', 'textarea', array('label' => 'tip.field.content'));
+                ->add('content', 'textarea', array('label' => 'backend.tip.field.content'));
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)
