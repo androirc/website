@@ -22,17 +22,17 @@ class BetaReleaseType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('version', 'entity', array(
-                        'label'         => 'beta_release.field.version',
+                        'label'         => 'backend.beta_release.field.version',
                         'class'         => 'Madalynn\\Bundle\\MainBundle\\Entity\\AndroircVersion',
                         'query_builder' => function(EntityRepository $er) {
                             return $er->createQueryBuilder('e')
                                        ->orderBy('e.code', 'desc');
                         }
                 ))
-                ->add('file', null, array('label' => 'beta_release.field.file'))
+                ->add('file', null, array('label' => 'backend.beta_release.field.file'))
                 ->add('downloadable', null, array(
                     'required' => false,
-                    'label'    => 'beta_release.field.downloadable'
+                    'label'    => 'backend.beta_release.field.downloadable'
                 ));
     }
 
