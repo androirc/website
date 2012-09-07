@@ -20,18 +20,17 @@ class UserType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('username', null, array('label' => 'user.field.username'))
-                ->add('email', 'email', array('label' => 'user.field.email'))
+        $builder->add('username', null, array('label' => 'backend.user.field.username'))
+                ->add('email', 'email', array('label' => 'backend.user.field.email'))
                 ->add('plainPassword', 'password', array(
-                    'label'    => 'user.field.password',
+                    'label'    => 'backend.user.field.password',
                     'required' => false,
                 ))
                 ->add('userRoles', 'entity', array(
                     'class'    => 'Madalynn\Bundle\MainBundle\Entity\Role',
                     'multiple' => true,
-                    'label'    => 'Roles',
                     'required' => false,
-                    'label'    => 'user.field.roles'
+                    'label'    => 'backend.user.field.roles'
                 ));
     }
 
