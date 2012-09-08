@@ -96,7 +96,7 @@ class MainExtension extends \Twig_Extension
             );
         }
 
-        return $this->formatter->format(new \DateTime(sprintf('%d-%d-01', $year, $month)));
+        return $this->formatter->format(strtotime(sprintf('%d-%d-01', $year, $month)));
     }
 
     /**
