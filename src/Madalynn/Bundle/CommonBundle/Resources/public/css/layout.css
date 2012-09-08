@@ -59,6 +59,14 @@ a:hover {
   border-bottom-color: #616161;
 }
 
+.dropdown-menu li > a:hover,
+.dropdown-menu li > a:focus,
+.dropdown-submenu:hover > a {
+  color: #ffffff;
+  background-color: #616161;
+  background-image:none;
+}
+
 /* Header */
 
 header {

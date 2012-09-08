@@ -35,7 +35,6 @@
     {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
         <div id="admin-menu">
             <ul class="nav nav-pills">
-                <li><a href="#">Home</a></li>
                 <li><a href="{{ path('admin_article_list') }}">{{ 'backend.menu.article'|trans }}</a></li>
                 <li><a href="{{ path('admin_donator_list') }}">{{ 'backend.menu.donator'|trans }}</a></li>
                 <li><a href="{{ path('admin_user_list') }}">{{ 'backend.menu.user'|trans }}</a></li>
@@ -48,8 +47,8 @@
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{ 'backend.menu.version'|trans }} <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">{{ 'backend.menu.version_android'|trans }}</a></li>
-                        <li><a href="#">{{ 'backend.menu.version_androirc'|trans }}</a></li>
+                        <li><a href="{{ path('admin_android_version_list') }}">{{ 'backend.menu.version_android'|trans }}</a></li>
+                        <li><a href="{{ path('admin_androirc_version_list') }}">{{ 'backend.menu.version_androirc'|trans }}</a></li>
                     </ul>
                 </li>
                 <li><a href="{{ path('_logout') }}">{{ 'backend.menu.logout'|trans }}</a></li>
