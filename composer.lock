@@ -1,5 +1,5 @@
 {
-    "hash": "3671db1abdad3e3b1838f3684db12276",
+    "hash": "318f0048b8216fe18fa07f3a1ba24345",
     "packages": [
         {
             "package": "beberlei/DoctrineExtensions",
@@ -78,6 +78,12 @@
             "version": "dev-master",
             "source-reference": "62ef63cc7b5d74a57aafcf9d274af52c15abe4a8",
             "commit-date": "1344983172"
+        },
+        {
+            "package": "jms/translation-bundle",
+            "version": "dev-master",
+            "alias-pretty-version": "1.0.x-dev",
+            "alias-version": "1.0.9999999.9999999-dev"
         },
         {
             "package": "jms/translation-bundle",
@@ -211,21 +217,9 @@
         },
         {
             "package": "symfony/symfony",
-            "version": "dev-master",
-            "alias-pretty-version": "2.1.x-dev",
-            "alias-version": "2.1.9999999.9999999-dev"
-        },
-        {
-            "package": "symfony/symfony",
-            "version": "dev-master",
-            "alias-pretty-version": "2.2.x-dev",
-            "alias-version": "2.2.9999999.9999999-dev"
-        },
-        {
-            "package": "symfony/symfony",
-            "version": "dev-master",
-            "source-reference": "4dc197c3e1ea227e36cab7ea93877fa44ecc569b",
-            "commit-date": "1346957130"
+            "version": "2.1.x-dev",
+            "source-reference": "e7059b44c78ca8e1e892adb4d93b5a482f4eb9b3",
+            "commit-date": "1346926323"
         },
         {
             "package": "twig/extensions",
@@ -260,6 +254,12 @@
         {
             "package": "willdurand/geocoder",
             "version": "dev-master",
+            "alias-pretty-version": "1.0.x-dev",
+            "alias-version": "1.0.9999999.9999999-dev"
+        },
+        {
+            "package": "willdurand/geocoder",
+            "version": "dev-master",
             "source-reference": "4d045561ca04ff6d1f2a218644c708727437afdf",
             "commit-date": "1343287010"
         },
@@ -276,15 +276,9 @@
     ],
     "minimum-stability": "dev",
     "stability-flags": {
-        "symfony/swiftmailer-bundle": 20,
-        "symfony/monolog-bundle": 20,
-        "symfony/assetic-bundle": 20,
-        "doctrine/doctrine-bundle": 20,
         "doctrine/doctrine-fixtures-bundle": 20,
         "doctrine/doctrine-migrations-bundle": 20,
         "sensio/buzz-bundle": 20,
-        "sensio/distribution-bundle": 20,
-        "sensio/framework-extra-bundle": 20,
         "twig/extensions": 20,
         "fzaninotto/faker": 20,
         "white-october/pagerfanta-bundle": 20,
