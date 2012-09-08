@@ -40,13 +40,13 @@ frontend:
                 team, it includes all the guides and informations to configure
                 and use all possibilities of AndroIRC.
             link: "Go to the wiki"
-        bug_tracker:
-            name: "Bug tracker"
+        support:
+            name: "Support center"
             description: |
-                You found a bug? It's the place for describe it. We'll be glad
-                to help you resolving this issue and of course to make AndroIRC
-                even better and stable.
-            link: "Go to the bug tracker"
+                You found a bug? A suggestion? Or just a question? It's the
+                place for describe it. We'll be glad to help you and of course
+                to make AndroIRC even better and stable.
+            link: "Go to the support center"
         translation:
             name: "Translation"
             description: |
@@ -56,6 +56,5 @@ frontend:
         social:
             name: "Social networks"
             description: |
-              You cant to talk with us? We're on %facebook%, %twitter% and even
-              %googleplus%. And of course we're also on %irc%. You can use the
-              contact form online if you want to contact us direcly.
+              You want to talk with us? We're on %facebook%, %twitter% and even
+              %googleplus%. And of course we're also on %irc%.
