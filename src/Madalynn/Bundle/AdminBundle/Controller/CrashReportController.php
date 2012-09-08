@@ -20,7 +20,7 @@ class CrashReportController extends CRUDController
         array(
             'name'  => 'androircVersion',
             'type'  => 'text',
-            'label' => 'crash_report.field.androirc'
+            'label' => 'backend.crash_report.field.androirc'
         )
     );
 

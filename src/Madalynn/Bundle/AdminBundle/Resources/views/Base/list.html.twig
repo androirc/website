@@ -3,32 +3,31 @@
 {% block title %}{{ ('backend.' ~ entity_name ~ '.list_title')|trans }}{% endblock %}
 
 {% block page %}
-    {% if filter_form.count > 1 %}
-        <div id="filter-a">
-            <a href="{{ path('admin_' ~ entity_name ~ '_clear') }}" class="btn btn-danger">{{ 'backend.actions.clear_filters'|trans }}</a>
-            <a id="filter-results" href="javascript:;" class="btn btn-info">{{ 'backend.actions.filter'|trans }}</a>
+    {% set has_filter = filter_form.count > 1 %}
+
+    <div class="row">
+        <div class="span{{ has_filter ? '9' : '12' }}">
+            <h1>{{ block('title') }}</h1>
+
+            {% block subcontent %}{% endblock %}
+
+            <div class="form-actions">
+                {% block entity_actions %}
+                    <a class="btn btn-success" href="{{ path('admin_' ~ entity_name ~ '_new') }}">{{ 'backend.actions.create_entry'|trans }}</a>
+                {% endblock %}
+            </div>
         </div>
-    {% endif %}
-
-    <h1>{{ block('title') }}</h1>
-
-    {% if filter_form.count > 1 %}
-        <div id="filter">
-            <form class="form-horizontal" action="{{ path('admin_' ~ entity_name ~ '_filter') }}" method="post" {{ form_enctype(filter_form) }}>
-                {{ form_widget(filter_form) }}
-                <div class="actions">
-                    <button type="submit" class="btn btn-primary">{{ 'backend.actions.filter_button'|trans }}</button>
-                </div>
-            </form>
-        </div>
-    {% endif %}
-
-    {% block subcontent %}{% endblock %}
-
-    <div class="form-actions">
-        {% block entity_actions %}
-            <a class="btn btn-success" href="{{ path('admin_' ~ entity_name ~ '_new') }}">{{ 'backend.actions.create_entry'|trans }}</a>
-        {% endblock %}
+        {% if has_filter %}
+            <div class="span3">
+                <h1>{{ 'backend.actions.filter'|trans }}</h1>
+                <form class="form" action="{{ path('admin_' ~ entity_name ~ '_filter') }}" method="post" {{ form_enctype(filter_form) }}>
+                    {{ form_widget(filter_form) }}
+                    <div>
+                        <button type="submit" class="btn btn-primary">{{ 'backend.actions.filter_button'|trans }}</button>
+                    </div>
+                </form>
+            </div>
+        {% endif %}
     </div>
 
     <div class="paginator-container">

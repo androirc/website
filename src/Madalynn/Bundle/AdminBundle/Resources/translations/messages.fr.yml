@@ -43,8 +43,8 @@ backend:
         create: Créer
         create_entry: Créer une nouvelle entrée
         clear_filters: Vider les filtres
-        filter: Filtrer
-        filter_button: Filtrer les résultats
+        filter: Filtrer les résultats
+        filter_button: Filtrer
         resolved: Résoudre
         unresolved: Réouvrir le rapport
         actions: Actions
@@ -115,7 +115,7 @@ backend:
 
     crash_report:
         list_title: Liste des rapports de crash
-        show_title: Rapport de crash %id%
+        show_title: "Rapport de crash #%id%"
         field:
             error_message: Message d'erreur
             androirc: AndroIRC
@@ -140,7 +140,7 @@ backend:
         list_title: Liste des Tips Holiday
         new_title: Nouveau Tip Holiday
         edit_title: Edition d'un Tip Holiday
-        show_title: Tip Holiday %id%
+        show_title: "Tip Holiday #%id%"
         field:
             language: Langue
             date: Date

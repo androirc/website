@@ -44,7 +44,7 @@ backend:
         create_entry: Create a new entry
         clear_filters: Clear all filters
         filter: Filter results
-        filter_button: Let's go
+        filter_button: Filter
         resolved: Resolved
         unresolved: Unresolved
         actions: Actions
@@ -115,7 +115,7 @@ backend:
 
     crash_report:
         list_title: Crash Report list
-        show_title: Crash Report %id%
+        show_title: "Crash Report #%id%"
         field:
             error_message: Error message
             androirc: AndroIRC
