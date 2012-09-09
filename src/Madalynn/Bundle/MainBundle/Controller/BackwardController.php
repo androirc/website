@@ -63,4 +63,12 @@ class BackwardController extends Controller
     {
         return $this->redirect($this->generateUrl('homepage'));
     }
+
+    /**
+     * @Route("/contact")
+     */
+    public function contactAction()
+    {
+        return $this->redirect('https://androirc.zendesk.com/anonymous_requests/new');
+    }
 }
