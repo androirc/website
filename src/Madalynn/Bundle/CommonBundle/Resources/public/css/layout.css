@@ -119,10 +119,11 @@ nav ul li:first-child {
 }
 
 #locales select {
-  font-size: 10px;
-  height: 18px;
-  width: 120px;
-  text-align: right;
+  width: 130px;
+}
+
+#locales .chzn-container {
+  margin-bottom: 6px;
 }
 
 /* Content */
