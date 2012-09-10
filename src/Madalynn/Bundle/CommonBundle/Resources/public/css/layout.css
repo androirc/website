@@ -182,12 +182,24 @@ footer p {
 
 .homepage .content h1 {
   margin-bottom: 15px;
+  font-size: 29px;
 }
 
 .homepage .content p {
   font-size: 14px;
   color: #666;
   line-height: 1.9;
+}
+
+.homescreen {
+  text-align: center;
+  margin-top: -20px;
+}
+
+.homescreen-motto {
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 24px;
 }
 
 /* Blog */

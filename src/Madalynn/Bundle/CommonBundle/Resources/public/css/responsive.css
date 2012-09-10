@@ -1,9 +1,19 @@
+/* Tablettes */
 @media (min-width: 768px) and (max-width: 979px) {
   .container {
     width: 746px;
   }
+
+  .homepage .content {
+    padding-top: 3px;
+  }
+
+  .homepage .content h1 {
+    margin-bottom: 6px;
+  }
 }
 
+/* Smartphones */
 @media (max-width: 767px) {
   .container {
     width: auto;
@@ -32,5 +42,19 @@
 
   header {
     margin-bottom: 15px;
+  }
+
+  .homepage .content h1 {
+    text-align: center;
+    margin-bottom: 6px;
+  }
+
+  .homepage .content {
+    text-align: justify;
+    padding-top: 3px;
+  }
+
+  .homepage .image {
+    text-align: center;
   }
 }
