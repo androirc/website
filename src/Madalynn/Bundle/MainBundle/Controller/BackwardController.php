@@ -61,7 +61,7 @@ class BackwardController extends Controller
      */
     public function donateAction()
     {
-        return $this->redirect($this->generateUrl('homepage'));
+        return $this->redirect('https://play.google.com/store/apps/details?id=com.androirc.premium');
     }
 
     /**
