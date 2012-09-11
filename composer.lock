@@ -34,8 +34,8 @@
         {
             "package": "doctrine/doctrine-bundle",
             "version": "dev-master",
-            "source-reference": "v1.0.0",
-            "commit-date": "1347052701"
+            "source-reference": "d3c930599723c8343472a5791b0f5909a4111a73",
+            "commit-date": "1347289964"
         },
         {
             "package": "doctrine/doctrine-fixtures-bundle",
@@ -64,8 +64,8 @@
         {
             "package": "fzaninotto/faker",
             "version": "dev-master",
-            "source-reference": "e288d3ca6c163bfb1c9202e0985ea81257150ee8",
-            "commit-date": "1346694314"
+            "source-reference": "5a88a2ecd0d61c0f8690f5a2c6552e2569284b81",
+            "commit-date": "1347357809"
         },
         {
             "package": "jms/i18n-routing-bundle",
@@ -124,8 +124,8 @@
         {
             "package": "monolog/monolog",
             "version": "dev-master",
-            "source-reference": "a929570bb7688b39fefe4106f0ecf0ac35f37647",
-            "commit-date": "1346873566"
+            "source-reference": "0f3dc95c4a0ed7d17bec237d07af3da6c0c1071a",
+            "commit-date": "1347363321"
         },
         {
             "package": "nikic/php-parser",
@@ -145,25 +145,13 @@
         },
         {
             "package": "sensio/distribution-bundle",
-            "version": "dev-master",
-            "alias-pretty-version": "2.1.x-dev",
-            "alias-version": "2.1.9999999.9999999-dev"
-        },
-        {
-            "package": "sensio/distribution-bundle",
-            "version": "dev-master",
-            "source-reference": "98921298951598e8707258cba2b6180b96faa91c",
-            "commit-date": "1347023757"
+            "version": "2.1.x-dev",
+            "source-reference": "2eee3cb4cd761c851f0d766649fb9ff6f4c97002",
+            "commit-date": "1347340208"
         },
         {
             "package": "sensio/framework-extra-bundle",
-            "version": "dev-master",
-            "alias-pretty-version": "2.1.x-dev",
-            "alias-version": "2.1.9999999.9999999-dev"
-        },
-        {
-            "package": "sensio/framework-extra-bundle",
-            "version": "dev-master",
+            "version": "2.1.x-dev",
             "source-reference": "v2.1.0",
             "commit-date": "1346234539"
         },
@@ -176,8 +164,8 @@
         {
             "package": "swiftmailer/swiftmailer",
             "version": "dev-master",
-            "source-reference": "e12e4ef3a9d6dd60fb734a01984a6e6627aea764",
-            "commit-date": "1345630910"
+            "source-reference": "c97353b1ebffe25a224146f69d17efe24c093def",
+            "commit-date": "1347083952"
         },
         {
             "package": "symfony/assetic-bundle",
@@ -200,8 +188,8 @@
         {
             "package": "symfony/monolog-bundle",
             "version": "dev-master",
-            "source-reference": "v2.1.0-RC2",
-            "commit-date": "1345557954"
+            "source-reference": "b7318480e6f8bf5579d6b3cd856850302e7ba8d8",
+            "commit-date": "1347283885"
         },
         {
             "package": "symfony/swiftmailer-bundle",
@@ -218,8 +206,8 @@
         {
             "package": "symfony/symfony",
             "version": "2.1.x-dev",
-            "source-reference": "e7059b44c78ca8e1e892adb4d93b5a482f4eb9b3",
-            "commit-date": "1346926323"
+            "source-reference": "f23fd03732e115fd15ec675c0ada4cba20a035d1",
+            "commit-date": "1347354770"
         },
         {
             "package": "twig/extensions",
@@ -260,14 +248,14 @@
         {
             "package": "willdurand/geocoder",
             "version": "dev-master",
-            "source-reference": "4d045561ca04ff6d1f2a218644c708727437afdf",
-            "commit-date": "1343287010"
+            "source-reference": "0524e1e5f9f4df1a739e25c70ebe323a538c2778",
+            "commit-date": "1347396011"
         },
         {
             "package": "willdurand/geocoder-bundle",
             "version": "dev-master",
-            "source-reference": "ec36e5a1e2071d5ebc71cae350570ac33326348d",
-            "commit-date": "1346415692"
+            "source-reference": "408574bb800315284552871315e08bf7d15ef101",
+            "commit-date": "1347353083"
         }
     ],
     "packages-dev": null,
