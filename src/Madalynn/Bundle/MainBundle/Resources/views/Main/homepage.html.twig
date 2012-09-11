@@ -10,25 +10,25 @@
         </div>
     </div>
 
-    {# Notifications #}
-    <div class="row homepage">
-        <div class="span7 content content-left">
-            <h1>{{ 'frontend.homepage.notifications.name'|trans }}</h1>
-            <p>{{ 'frontend.homepage.notifications.description'|trans }}</p>
-        </div>
-        <div class="span5 image">
-            <img src="{{ asset('bundles/common/images/homepage/notifications.png') }}" />
-        </div>
-    </div>
-
     {# Themes #}
     <div class="row homepage">
+        <div class="span7 content content-left">
+            <h1>{{ 'frontend.homepage.themes.name'|trans }}</h1>
+            <p>{{ 'frontend.homepage.themes.description'|trans }}</p>
+        </div>
         <div class="span5 image">
             <img src="{{ asset('bundles/common/images/homepage/themes.png') }}" />
         </div>
+    </div>
+
+    {# Notifications #}
+    <div class="row homepage">
+        <div class="span5 image">
+            <img src="{{ asset('bundles/common/images/homepage/notifications.png') }}" />
+        </div>
         <div class="span7 content content-right">
-            <h1>{{ 'frontend.homepage.themes.name'|trans }}</h1>
-            <p>{{ 'frontend.homepage.themes.description'|trans }}</p>
+            <h1>{{ 'frontend.homepage.notifications.name'|trans }}</h1>
+            <p>{{ 'frontend.homepage.notifications.description'|trans }}</p>
         </div>
     </div>
 
@@ -46,7 +46,7 @@
     {# FiSH, SASL, Nickserv #}
     <div class="row homepage">
         <div class="span5 image">
-            <img src="{{ asset('bundles/common/images/homepage/tablet.png') }}" />
+            <img src="{{ asset('bundles/common/images/homepage/blowfish.png') }}" />
         </div>
         <div class="span7 content content-right">
             <h1>{{ 'frontend.homepage.fish.name'|trans }}</h1>
@@ -83,7 +83,7 @@
             <p>{{ 'frontend.homepage.free.description'|trans }}</p>
         </div>
         <div class="span5 image">
-            <img src="{{ asset('bundles/common/images/homepage/tablet.png') }}" />
+            <img src="{{ asset('bundles/common/images/homepage/free.png') }}" />
         </div>
     </div>
 {% endblock %}
