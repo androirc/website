@@ -33,7 +33,9 @@ class VersionTest extends \PHPUnit_Framework_TestCase
             array('1.2.3', '1.2.3'),
             array('foo', '0.0'),
             array('1.4', '1.4'),
-            array('foo.bar.3', '0.0.3')
+            array('foo.bar.3', '0.0.3'),
+            array('4.0.0-BETA-1', '4.0-BETA-1'),
+            array('4.0.0-beta-2', '4.0-BETA-2'),
         );
     }
 
