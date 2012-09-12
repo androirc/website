@@ -17,11 +17,17 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
+use Symfony\Component\Yaml\Yaml;
 
+/**
+ * Updates all translation from Transifex
+ *
+ * @author Julien Brochet <mewt@androirc.com>
+ */
 class TranslationUpdateCommand extends ContainerAwareCommand
 {
     protected $urlTemplate  = 'https://www.transifex.net/api/2/project/androirc/resource/website/translation/%s';
-    protected $fileTemplate = 'messages.%s.xliff';
+    protected $fileTemplate = 'messages.%s.yml';
 
     /**
      * {@inheritDoc}
@@ -69,17 +75,11 @@ class TranslationUpdateCommand extends ContainerAwareCommand
 
             // Just get the content
             $content = $json['content'];
+            $yaml = Yaml::parse($content);
 
-            // Tweaks
-            $content = str_replace("\r\n", "\n", $content);
-            $content = preg_replace('/[ \t]*$/m', '', $content);
-            $content = str_replace("\n\n", "\n", $content);
-
-            $xml  = new \SimpleXMLElement($content);
-
-            if (true === $force) {
-                $path = __DIR__.'/../Resources/translations/'.sprintf($this->fileTemplate, $locale);
-                $xml->saveXML($path);
+            if (true === $force && false === empty($yaml)) {
+                $path = __DIR__.'/../../MainBundle/Resources/translations/'.sprintf($this->fileTemplate, $locale);
+                file_put_contents($path, Yaml::dump($yaml, 50));
             }
         }
     }
