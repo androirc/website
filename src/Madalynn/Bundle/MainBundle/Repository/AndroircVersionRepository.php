@@ -14,4 +14,15 @@ namespace Madalynn\Bundle\MainBundle\Repository;
 
 class AndroircVersionRepository extends AbstractVersionRepository
 {
+    /**
+     * {@inheritdoc}
+     */
+    public function populate($version)
+    {
+        return $this->getPopulateQueryBuilder($version)
+                     ->andWhere('v.state = :state')
+                     ->setParameter('state', $version->getState())
+                     ->getQuery()
+                     ->getOneOrNullResult();
+    }
 }

@@ -100,6 +100,27 @@ class AndroircVersion extends AbstractVersion
         return $this->code;
     }
 
+    /**
+     * {@inheritdoc}
+     */
+    public static function create($string)
+    {
+        $parts = explode('-', $string, 2);
+
+        $parent = parent::create($parts[0]);
+        $version = new self();
+
+        $version->setMajor($parent->getMajor());
+        $version->setMinor($parent->getMinor());
+        $version->setRevision($parent->getRevision());
+
+        if (isset($parts[1])) {
+            $version->setState($parts[1]);
+        }
+
+        return $version;
+    }
+
     public function __toString()
     {
         $string = parent::__toString();
