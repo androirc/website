@@ -18,6 +18,9 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class QuickStartType extends AbstractType
 {
+    /**
+     * {@inheritdoc}
+     */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('language', 'language', array(
@@ -36,6 +39,9 @@ class QuickStartType extends AbstractType
                 ->add('content', 'editor', array('label' => 'backend.quick_start.field.content'));
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
@@ -43,6 +49,9 @@ class QuickStartType extends AbstractType
         ));
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function getName()
     {
         return 'admin_quick_start';

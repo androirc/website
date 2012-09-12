@@ -18,6 +18,9 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class TipType extends AbstractType
 {
+    /**
+     * {@inheritdoc}
+     */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('language', 'language', array(
@@ -27,6 +30,9 @@ class TipType extends AbstractType
                 ->add('content', 'textarea', array('label' => 'backend.tip.field.content'));
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
@@ -34,6 +40,9 @@ class TipType extends AbstractType
         ));
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function getName()
     {
         return 'admin_tip';

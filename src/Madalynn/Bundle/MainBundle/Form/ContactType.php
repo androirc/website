@@ -19,6 +19,9 @@ use Doctrine\ORM\EntityRepository;
 
 class ContactType extends AbstractType
 {
+    /**
+     * {@inheritdoc}
+     */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('name', null, array('label' => 'contact.name'))
@@ -45,6 +48,9 @@ class ContactType extends AbstractType
                 ->add('content', 'textarea', array('label' => 'contact.content'));
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
@@ -52,6 +58,9 @@ class ContactType extends AbstractType
         ));
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function getName()
     {
         return 'contact';

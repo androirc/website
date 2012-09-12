@@ -19,6 +19,9 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class ChangeLogType extends AbstractType
 {
+    /**
+     * {@inheritdoc}
+     */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('version', 'entity', array(
@@ -32,6 +35,9 @@ class ChangeLogType extends AbstractType
                 ->add('file', null, array('label' => 'backend.change_log.field.file'));
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
@@ -39,6 +45,9 @@ class ChangeLogType extends AbstractType
         ));
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function getName()
     {
         return 'admin_change_log';

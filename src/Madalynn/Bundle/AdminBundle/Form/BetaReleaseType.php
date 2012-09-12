@@ -19,6 +19,9 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class BetaReleaseType extends AbstractType
 {
+    /**
+     * {@inheritdoc}
+     */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('version', 'entity', array(
@@ -36,6 +39,9 @@ class BetaReleaseType extends AbstractType
                 ));
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
@@ -43,6 +49,9 @@ class BetaReleaseType extends AbstractType
         ));
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function getName()
     {
         return 'admin_beta_release';

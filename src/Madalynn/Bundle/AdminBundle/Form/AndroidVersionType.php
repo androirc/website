@@ -18,6 +18,9 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class AndroidVersionType extends AbstractType
 {
+    /**
+     * {@inheritdoc}
+     */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('apiLevel', null, array('label' => 'backend.android_version.field.api_level'))
@@ -26,6 +29,9 @@ class AndroidVersionType extends AbstractType
                 ->add('revision', null, array('label' => 'backend.android_version.field.revision'));
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
@@ -33,6 +39,9 @@ class AndroidVersionType extends AbstractType
         ));
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function getName()
     {
         return 'admin_android_version';
