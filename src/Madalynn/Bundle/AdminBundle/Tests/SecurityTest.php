@@ -74,6 +74,6 @@ class SecurityTest extends WebTestCase
         $response = $this->client->getResponse();
 
         $this->assertTrue($response->isSuccessful());
-        $this->assertRegExp('/Welcome admin!/', $response->getContent());
+        $this->assertRegExp('/Welcome to the administration center/', $response->getContent());
     }
 }
