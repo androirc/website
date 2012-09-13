@@ -18,30 +18,38 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class UserType extends AbstractType
 {
+    /**
+     * {@inheritdoc}
+     */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('username', null, array('label' => 'user.field.username'))
-                ->add('email', 'email', array('label' => 'user.field.email'))
+        $builder->add('username', null, array('label' => 'backend.user.field.username'))
+                ->add('email', 'email', array('label' => 'backend.user.field.email'))
                 ->add('plainPassword', 'password', array(
-                    'label'    => 'user.field.password',
+                    'label'    => 'backend.user.field.password',
                     'required' => false,
                 ))
                 ->add('userRoles', 'entity', array(
-                    'class'    => 'Madalynn\Bundle\AndroBundle\Entity\Role',
+                    'class'    => 'Madalynn\Bundle\MainBundle\Entity\Role',
                     'multiple' => true,
-                    'label'    => 'Roles',
                     'required' => false,
-                    'label'    => 'user.field.roles'
+                    'label'    => 'backend.user.field.roles'
                 ));
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Madalynn\\Bundle\\AndroBundle\\Entity\\User',
+            'data_class' => 'Madalynn\\Bundle\\MainBundle\\Entity\\User',
         ));
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function getName()
     {
         return 'admin_user';

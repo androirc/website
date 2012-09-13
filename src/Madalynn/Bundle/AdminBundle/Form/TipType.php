@@ -18,22 +18,31 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class TipType extends AbstractType
 {
+    /**
+     * {@inheritdoc}
+     */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('language', 'language', array(
                     'preferred_choices' => array('en', 'fr'),
-                    'label'             => 'tip.field.language'
+                    'label'             => 'backend.tip.field.language'
                 ))
-                ->add('content', 'textarea', array('label' => 'tip.field.content'));
+                ->add('content', 'textarea', array('label' => 'backend.tip.field.content'));
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Madalynn\\Bundle\\AndroBundle\\Entity\\Tip',
+            'data_class' => 'Madalynn\\Bundle\\MainBundle\\Entity\\Tip',
         ));
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function getName()
     {
         return 'admin_tip';

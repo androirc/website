@@ -20,7 +20,7 @@ class CrashReportController extends CRUDController
         array(
             'name'  => 'androircVersion',
             'type'  => 'text',
-            'label' => 'crash_report.field.androirc'
+            'label' => 'backend.crash_report.field.androirc'
         )
     );
 
@@ -31,7 +31,7 @@ class CrashReportController extends CRUDController
 
     protected function getClass()
     {
-        return 'Madalynn\\Bundle\\AndroBundle\\Entity\\CrashReport';
+        return 'Madalynn\\Bundle\\MainBundle\\Entity\\CrashReport';
     }
 
     protected function sortQuery(QueryBuilder $qb)
@@ -42,7 +42,7 @@ class CrashReportController extends CRUDController
     public function deleteAllAction()
     {
         $em = $this->getDoctrine()->getEntityManager();
-        $repo = $em->getRepository('AndroBundle:CrashReport');
+        $repo = $em->getRepository('MainBundle:CrashReport');
 
         $repo->deleteAll();
 
@@ -74,7 +74,7 @@ class CrashReportController extends CRUDController
     public function resolvedAction($id)
     {
         $em = $this->getDoctrine()->getEntityManager();
-        $repo = $em->getRepository('AndroBundle:CrashReport');
+        $repo = $em->getRepository('MainBundle:CrashReport');
 
         $crashReport = $repo->find($id);
 

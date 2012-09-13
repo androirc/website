@@ -23,7 +23,7 @@ class QuickStartController extends CRUDController
 
     protected function getClass()
     {
-        return 'Madalynn\\Bundle\\AndroBundle\\Entity\\QuickStart';
+        return 'Madalynn\\Bundle\\MainBundle\\Entity\\QuickStart';
     }
 
     public function showAction($id)

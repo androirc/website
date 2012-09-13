@@ -12,15 +12,6 @@ web_profiler:
 assetic:
     use_controller: true
 
-# PlumBundle Configuration
-madalynn_plum:
-    options:
-        dry_run: true
-        rsync_exclude: "%kernel.root_dir%/config/rsync_exclude.txt"
-    deployers:
-        - Plum\Deployer\RsyncDeployer
-        - Plum\Deployer\SshDeployer
-
 monolog:
     handlers:
         main:

@@ -1,9 +1,0 @@
-<div id="locales">
-    {% for locale in locales %}
-        <div class="locale">
-            <a href="{{ path_locale(request, locale) }}">
-                <img src="{{ asset('bundles/andro/images/flags/' ~ locale ~ '.png') }}" />
-            </a>
-        </div>
-    {% endfor %}
-</div>

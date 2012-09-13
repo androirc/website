@@ -25,7 +25,7 @@ class BetaReleaseController extends CRUDController
 
     protected function getClass()
     {
-        return 'Madalynn\\Bundle\\AndroBundle\\Entity\\BetaRelease';
+        return 'Madalynn\\Bundle\\MainBundle\\Entity\\BetaRelease';
     }
 
     protected function sortQuery(QueryBuilder $qb)
@@ -44,7 +44,7 @@ class BetaReleaseController extends CRUDController
 
         return $this->render('AdminBundle:BetaRelease:show.html.twig', array(
             'entity'      => $entity,
-            'repartition' => $this->getDoctrine()->getRepository('AndroBundle:BetaDownload')->getDownloadsRepartition($entity)
+            'repartition' => $this->getDoctrine()->getRepository('MainBundle:BetaDownload')->getDownloadsRepartition($entity)
         ));
     }
 }

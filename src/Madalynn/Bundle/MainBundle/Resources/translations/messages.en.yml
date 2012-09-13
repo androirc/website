@@ -1,0 +1,118 @@
+frontend:
+    subtitle: "Android IRC Client"
+    home: "Home"
+    menu:
+        blog: "Blog"
+        download: "Download"
+        support: "Support"
+        beta: "Beta"
+        contact: "Contact"
+        terms: "Terms"
+        facebook: "Facebook"
+        twitter: "Twitter"
+        googleplus: "Google+"
+    copyright: "Copyright %year% Madalynn, all rights reserved. Android is a trademark of Google Inc."
+    blog:
+        description: "The latest news about AndroIRC"
+        article_subtitle: "News by %author% on %date%"
+        date_format: "m/d/Y"
+        archives:
+            title: "Archives"
+            description: "Archives sorted by date"
+    beta:
+        description: "Download the latest beta of AndroIRC"
+        download_button: "Download the latest beta version"
+        no_beta: "Sorry... No beta is currently available. Please, come back later and stay tuned on Facebook or Twitter"
+        warning: |
+            This version is not available in Google Play (Android Market).
+            Be warned. This version is for testing purpose and may contains
+            bugs. Keep in mind that it's just a beta release. If something went
+            wrong, you can contact us by means of the "Support" section.
+        new_beta: |
+            A new beta is available to download (%version%). Please read the
+            following changelog to know what is new.
+    support:
+        description: "You need help? This section is for you!"
+        wiki:
+            name: "Wiki"
+            description: |
+                A question? The answer is probably in this wiki. Written by the
+                team, it includes all the guides and informations to configure
+                and use all possibilities of AndroIRC.
+            link: "Go to the wiki"
+        support:
+            name: "Support center"
+            description: |
+                You found a bug? A suggestion? Or just a question? It's the
+                place for describe it. We'll be glad to help you and of course
+                to make AndroIRC even better and stable.
+            link: "Go to the support center"
+        translation:
+            name: "Translation"
+            description: |
+                AndroIRC is not available in your language? It's not an issue!
+                You can help us translating AndroIRC
+            link: "Help us translating AndroIRC"
+        social:
+            name: "Social networks"
+            description: |
+              You want to talk with us? We're on %facebook%, %twitter% and even
+              %googleplus%. And of course we're also on %irc%.
+    homepage:
+        motto: "Fast, powerful, only for Android"
+        notifications:
+            name: "Powerful notifications"
+            description: |
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                non risus. Suspendisse lectus tortor, dignissim sit amet,
+                adipiscing nec, ultricies sed, dolor. Cras elementum ultrices
+                diam. Maecenas ligula massa, varius a, semper congue, euismod
+                non, mi.
+        themes:
+            name: "Dark, light, and customizable theme"
+            description: |
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                non risus. Suspendisse lectus tortor, dignissim sit amet,
+                adipiscing nec, ultricies sed, dolor. Cras elementum ultrices
+                diam. Maecenas ligula massa, varius a, semper congue, euismod
+                non, mi.
+        tablet:
+            name: "Tablet ready"
+            description: |
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                non risus. Suspendisse lectus tortor, dignissim sit amet,
+                adipiscing nec, ultricies sed, dolor. Cras elementum ultrices
+                diam. Maecenas ligula massa, varius a, semper congue, euismod
+                non, mi.
+        fish:
+            name: "FiSH, SASL, Nickserv"
+            description: |
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                non risus. Suspendisse lectus tortor, dignissim sit amet,
+                adipiscing nec, ultricies sed, dolor. Cras elementum ultrices
+                diam. Maecenas ligula massa, varius a, semper congue, euismod
+                non, mi.
+        ui:
+            name: "Beautiful interface, fully integrated"
+            description: |
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                non risus. Suspendisse lectus tortor, dignissim sit amet,
+                adipiscing nec, ultricies sed, dolor. Cras elementum ultrices
+                diam. Maecenas ligula massa, varius a, semper congue, euismod
+                non, mi.
+        others:
+            name: "And much more!"
+            description: |
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                non risus. Suspendisse lectus tortor, dignissim sit amet,
+                adipiscing nec, ultricies sed, dolor. Cras elementum ultrices
+                diam. Maecenas ligula massa, varius a, semper congue, euismod
+                non, mi.
+        free:
+            name: "All of that for... free"
+            description: |
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                non risus. Suspendisse lectus tortor, dignissim sit amet,
+                adipiscing nec, ultricies sed, dolor. Cras elementum ultrices
+                diam. Maecenas ligula massa, varius a, semper congue, euismod
+                non, mi.

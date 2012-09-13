@@ -18,23 +18,32 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class ArticleType extends AbstractType
 {
+    /**
+     * {@inheritdoc}
+     */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('title', null, array('label' => 'article.field.title'))
-                ->add('content', 'editor', array('label' => 'article.field.content'))
+        $builder->add('title', null, array('label' => 'backend.article.field.title'))
+                ->add('content', 'editor', array('label' => 'backend.article.field.content'))
                 ->add('visible', null, array(
                     'required' => false,
-                    'label'    => 'article.field.visible'
+                    'label'    => 'backend.article.field.visible'
                 ));
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Madalynn\\Bundle\\AndroBundle\\Entity\\Article',
+            'data_class' => 'Madalynn\\Bundle\\MainBundle\\Entity\\Article',
         ));
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function getName()
     {
         return 'admin_article';

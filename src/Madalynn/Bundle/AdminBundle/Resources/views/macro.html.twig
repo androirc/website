@@ -1,0 +1,9 @@
+{% macro display_bool(bool) %}
+{% spaceless %}
+    {% if bool %}
+        <img src="{{ asset('bundles/admin/images/badge-square-check-16.png') }}" />
+    {% else %}
+        <img src="{{ asset('bundles/admin/images/badge-square-cross-16.png') }}" />
+    {% endif %}
+{% endspaceless %}
+{% endmacro %}

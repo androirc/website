@@ -1,0 +1,5 @@
+<ul>
+    {% for month in months %}
+        <li><a href="{{ path('blog_archives', {month: month.date_month, year: month.date_year}) }}">{{ archive_name(month.date_month, month.date_year) }}</a></li>
+    {% endfor %}
+</ul>

@@ -35,6 +35,6 @@ class AndroidVersionController extends CRUDController
 
     protected function getClass()
     {
-        return 'Madalynn\\Bundle\\AndroBundle\\Entity\\AndroidVersion';
+        return 'Madalynn\\Bundle\\MainBundle\\Entity\\AndroidVersion';
     }
 }

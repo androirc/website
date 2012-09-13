@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="{{ app.request.locale }}" prefix="og: http://ogp.me/ns#">
+    <head>
+        <title>{% block title %}{{ 'frontend.home'|trans }}{% endblock %} - AndroIRC ({{ 'frontend.subtitle'|trans }})</title>
+
+        <!--[if lt IE 9]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+        <meta charset="utf-8" />
+        <meta name="title" content="{{ block('title') }} - AndroIRC ({{ 'frontend.subtitle'|trans }})" />
+        <meta name="description" content="{% block description %}{% endblock %}" />
+
+        <meta name="author" content="Julien Brochet, Sébastien Brochet" />
+        <meta name="google-site-verification" content="NxLzVTaSpM7YMWZ_DqGdF19nVKrNl4IcQxcT3jtACqw"/>
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+        <meta property="og:type" content="website"/>
+        <meta property="og:site_name" content="AndroIRC"/>
+        <meta property="og:url" content="http://www.androirc.com/"/>
+        <meta property="og:image" content="/apple-touch-icon-precomposed.png" />
+        <meta property="og:title" content="{{ block('title') }}"/>
+        <meta property="og:description" content="{{ block('description') }}"/>
+
+        <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-precomposed.png" />
+        <link rel="publisher" href="https://plus.google.com/105275534595142567234/" />
+        <link rel="alternate" type="application/rss+xml" title="{{ 'frontend.menu.blog'|trans }} - AndroIRC" href="http://feeds.feedburner.com/androirc" />
+        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
+
+        {% block stylesheets %}
+            {% stylesheets filter="?yui_css" output="css/main.css"
+                '@CommonBundle/Resources/public/css/bootstrap.css'
+                '@CommonBundle/Resources/public/css/layout.css'
+                '@CommonBundle/Resources/public/css/chosen.css'
+                '@CommonBundle/Resources/public/css/responsive.css'
+            %}
+                <link rel="stylesheet" type="text/css" media="all" href="{{ asset_url }}" />
+            {% endstylesheets %}
+        {% endblock %}
+
+        {% block javascripts %}
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+            {% javascripts filter="?yui_js" output="js/main.js"
+                '@CommonBundle/Resources/public/js/main.js'
+                '@CommonBundle/Resources/public/js/dropdown.jquery.js'
+                '@CommonBundle/Resources/public/js/chosen.jquery.js'
+            %}
+                <script src="{{ asset_url }}"></script>
+            {% endjavascripts %}
+        {% endblock %}
+    </head>
+    <body>
+        <div class="container">
+            <header class="clearfix">
+                {% render 'MainBundle:Main:locales' with {'request': app.request} %}
+
+                <div id="logo">
+                    <a href="{{ url('homepage') }}">
+                        <img src="{{ asset('bundles/common/images/logo.png') }}" alt="AndroIRC" />
+                    </a>
+                    <span>{{ 'frontend.subtitle'|trans }}</span>
+                </div>
+
+                <nav>
+                    <ul>
+                        <li><a href="{{ url('blog') }}">{{ 'frontend.menu.blog'|trans }}</a></li>
+                        <li><a href="https://play.google.com/store/apps/details?id=com.androirc">{{ 'frontend.menu.download'|trans }}</a></li>
+                        <li><a href="{{ url('support') }}">{{ 'frontend.menu.support'|trans }}</a></li>
+                        <li><a href="{{ url('beta') }}">{{ 'frontend.menu.beta'|trans }}</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <section id="content" class="clearfix">
+                {% block content %}{% endblock %}
+            </section>
+
+            <footer class="clearfix">
+                <p id="sub-menu">
+                    <a href="{{ url('homepage') }}">{{ 'frontend.menu.blog'|trans }}</a>
+                    <a href="https://play.google.com/store/apps/details?id=com.androirc">{{ 'frontend.menu.download'|trans }}</a>
+                    <a href="{{ url('homepage') }}">{{ 'frontend.menu.support'|trans }}</a>
+                    <a href="{{ url('beta') }}">{{ 'frontend.menu.beta'|trans }}</a>
+                    <a href="{{ url('terms') }}">{{ 'frontend.menu.terms'|trans }}</a>
+                    <a href="https://www.facebook.com/androirc">{{ 'frontend.menu.facebook'|trans }}</a>
+                    <a href="https://twitter.com/androirc">{{ 'frontend.menu.twitter'|trans }}</a>
+                    <a href="https://plus.google.com/105275534595142567234/">{{ 'frontend.menu.googleplus'|trans }}</a>
+                </p>
+                <p>{{ 'frontend.copyright'|trans({'%year%': 'now'|date('Y')}) }}</p>
+            </footer>
+        </div>
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-133630-2']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+    </body>
+</html>

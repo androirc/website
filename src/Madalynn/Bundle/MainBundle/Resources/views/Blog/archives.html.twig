@@ -1,0 +1,18 @@
+{% extends 'MainBundle::layout.html.twig' %}
+
+{% block title %}{{ 'frontend.blog.archives.title'|trans }}{% endblock %}
+{% block description %}{{ 'frontend.blog.archives.description'|trans }}{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="span9 blog-container">
+            {% for article in articles %}
+                {% include 'MainBundle:Blog:article_skeleton.html.twig' with {article: article}%}
+            {% endfor %}
+        </div>
+        <div class="span3 archives-container">
+            {% render 'MainBundle:Blog:menu' %}
+        </div>
+    </div>
+    {% include 'MainBundle:Blog:javascript.html.twig' %}
+{% endblock %}

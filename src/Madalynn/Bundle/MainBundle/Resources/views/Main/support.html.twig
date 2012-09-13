@@ -1,0 +1,59 @@
+{% extends 'MainBundle::layout.html.twig' %}
+
+{% block title %}{{ 'frontend.menu.support'|trans }}{% endblock %}
+{% block description %}{{ 'frontend.support.description'|trans }}{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="span6 support-action">
+            <div class="title clearfix">
+                <img src="{{ asset('/bundles/common/images/support/ic_menu_info_details.png') }}" />
+                <h1><a href="http://wiki.androirc.com/">{{ 'frontend.support.wiki.name'|trans }}</a></h1>
+            </div>
+            <div class="description">
+                <p>{{ 'frontend.support.wiki.description'|trans }}</p>
+                <p class="link"><a href="http://wiki.androirc.com/">{{ 'frontend.support.wiki.link'|trans }}</a></p>
+            </div>
+        </div>
+        <div class="span6 support-action">
+            <div class="title clearfix">
+                <img src="{{ asset('/bundles/common/images/support/ic_menu_notifications.png') }}" />
+                <h1><a href="http://support.androirc.com/">{{ 'frontend.support.support.name'|trans }}</a></h1>
+            </div>
+            <div class="description">
+                <p>{{ 'frontend.support.support.description'|trans }}</p>
+                <p class="link"><a href="http://support.androirc.com/">{{ 'frontend.support.support.link'|trans }}</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="span6 support-action">
+            <div class="title clearfix">
+                <img src="{{ asset('/bundles/common/images/support/ic_menu_allfriends.png') }}" />
+                <h1><a href="http://translation.androirc.com/">{{ 'frontend.support.translation.name'|trans }}</a></h1>
+            </div>
+            <div class="description">
+                <p>{{ 'frontend.support.translation.description'|trans }}</p>
+                <p class="link"><a href="http://translation.androirc.com/">{{ 'frontend.support.translation.link'|trans }}</a></p>
+            </div>
+        </div>
+        <div class="span6 support-action">
+            <div class="title clearfix">
+                <img src="{{ asset('/bundles/common/images/support/ic_menu_share.png') }}" />
+                <h1>{{ 'frontend.support.social.name'|trans }}</h1>
+            </div>
+            <div class="description">
+                <p>{{
+                       'frontend.support.social.description'|trans({
+                           '%facebook%': '<a href="http://www.facebook.com/androirc">Facebook</a>',
+                           '%twitter%': '<a href="http://twitter.com/androirc">Twitter</a>',
+                           '%googleplus%': '<a href="https://plus.google.com/105275534595142567234/">Google+</a>',
+                           '%irc%': '<a href="irc://irc.epiknet.org/androirc">IRC</a>'
+                       })|raw
+                    }}
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

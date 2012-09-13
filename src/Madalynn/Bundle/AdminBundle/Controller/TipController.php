@@ -23,6 +23,6 @@ class TipController extends CRUDController
 
     protected function getClass()
     {
-        return 'Madalynn\\Bundle\\AndroBundle\\Entity\\Tip';
+        return 'Madalynn\\Bundle\\MainBundle\\Entity\\Tip';
     }
 }

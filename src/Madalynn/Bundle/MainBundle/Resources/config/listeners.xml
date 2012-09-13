@@ -1,0 +1,21 @@
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="androirc.kernel.listener.interactive.login.class">Madalynn\Bundle\MainBundle\EventListener\InteractiveLoginListener</parameter>
+        <parameter key="androirc.kernel.listener.custom.header.class">Madalynn\Bundle\MainBundle\EventListener\CustomHeaderListener</parameter>
+    </parameters>
+
+    <services>
+
+        <service id="androirc.kernel.listener.interactive.login" class="%androirc.kernel.listener.interactive.login.class%">
+            <argument type="service" id="doctrine" />
+            <tag name="kernel.event_listener" event="security.interactive_login" method="onSecurityInteractiveLogin" />
+        </service>
+
+        <service id="androirc.kernel.listener.custom.header" class="%androirc.kernel.listener.custom.header.class%">
+            <tag name="kernel.event_listener" event="kernel.response" method="onKernelResponse" />
+        </service>
+    </services>
+</container>

@@ -23,7 +23,7 @@ class DonatorController extends CRUDController
 
     protected function getClass()
     {
-        return 'Madalynn\\Bundle\\AndroBundle\\Entity\\Donator';
+        return 'Madalynn\\Bundle\\MainBundle\\Entity\\Donator';
     }
 
     public function showAction($id)

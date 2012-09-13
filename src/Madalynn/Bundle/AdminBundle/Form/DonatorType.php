@@ -18,22 +18,31 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class DonatorType extends AbstractType
 {
+    /**
+     * {@inheritdoc}
+     */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('name', null, array('label' => 'donator.field.name'))
+        $builder->add('name', null, array('label' => 'backend.donator.field.name'))
                 ->add('amount', 'money', array(
                     'currency' => 'USD',
-                    'label'    => 'donator.field.amount'
+                    'label'    => 'backend.donator.field.amount'
                 ));
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Madalynn\\Bundle\\AndroBundle\\Entity\\Donator',
+            'data_class' => 'Madalynn\\Bundle\\MainBundle\\Entity\\Donator',
         ));
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function getName()
     {
         return 'admin_donator';

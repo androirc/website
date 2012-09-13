@@ -36,7 +36,7 @@ class ArticleController extends CRUDController
             throw $this->createNotFoundException('Unable to find Article entity.');
         }
 
-        return $this->redirect($this->generateUrl('article_show', array(
+        return $this->redirect($this->generateUrl('blog_show', array(
             'id'   => $entity->getId(),
             'slug' => $entity->getSlug(),
         )));
@@ -44,7 +44,7 @@ class ArticleController extends CRUDController
 
     protected function getClass()
     {
-        return 'Madalynn\\Bundle\\AndroBundle\\Entity\\Article';
+        return 'Madalynn\\Bundle\\MainBundle\\Entity\\Article';
     }
 
     protected function getForm()
