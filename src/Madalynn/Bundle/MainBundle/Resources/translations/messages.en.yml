@@ -71,11 +71,9 @@ frontend:
         themes:
             name: "Dark, light, and customizable theme"
             description: |
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                non risus. Suspendisse lectus tortor, dignissim sit amet,
-                adipiscing nec, ultricies sed, dolor. Cras elementum ultrices
-                diam. Maecenas ligula massa, varius a, semper congue, euismod
-                non, mi.
+                Available by default in black or white, AndroIRC allows you to
+                create your custom theme with your own colors. It is 100%
+                customizable.
         tablet:
             name: "Tablet ready"
             description: |
@@ -103,11 +101,11 @@ frontend:
         others:
             name: "And much more!"
             description: |
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                non risus. Suspendisse lectus tortor, dignissim sit amet,
-                adipiscing nec, ultricies sed, dolor. Cras elementum ultrices
-                diam. Maecenas ligula massa, varius a, semper congue, euismod
-                non, mi.
+                English, French, Korean, Chinese, Dutch, ... AndroIRC is
+                accessible in more than 10 languages and fully configurable as
+                your wish. Logging, Multi servers, auto connection at launch,
+                SSL support, NickServ auth, nicks and channels completion and
+                much more inside the best IRC client for Android.
         free:
             name: "All of that for... free"
             description: |
