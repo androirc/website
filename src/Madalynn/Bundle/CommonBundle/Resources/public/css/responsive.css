@@ -57,4 +57,12 @@
   .homepage .image {
     text-align: center;
   }
+
+  .bugdroid {
+    text-align: center;
+  }
+
+  .error-message {
+    text-align: center;
+  }
 }
