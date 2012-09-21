@@ -19,10 +19,14 @@ class AndroircVersionRepository extends AbstractVersionRepository
      */
     public function populate($version)
     {
-        return $this->getPopulateQueryBuilder($version)
-                     ->andWhere('v.state = :state')
-                     ->setParameter('state', $version->getState())
-                     ->getQuery()
-                     ->getOneOrNullResult();
+        $qb = $this->getPopulateQueryBuilder($version);
+
+        if ($version->getState()) {
+            $qb->andWhere('v.state = :state');
+            $qb->setParameter('state', $version->getState());
+        }
+
+        return $qb->getQuery()
+                  ->getOneOrNullResult();
     }
 }
