@@ -1,5 +1,5 @@
 frontend:
-    subtitle: "Android IRC Client"
+    subtitle: "Android™ IRC Client"
     home: "Home"
     menu:
         blog: "Blog"
@@ -13,53 +13,49 @@ frontend:
         googleplus: "Google+"
     copyright: "Copyright %year% Madalynn, all rights reserved. Android is a trademark of Google Inc."
     blog:
-        description: "The latest news about AndroIRC"
+        description: "Latest news about AndroIRC"
         article_subtitle: "News by %author% on %date%"
         date_format: "m/d/Y"
         archives:
             title: "Archives"
             description: "Archives sorted by date"
     beta:
-        description: "Download the latest beta of AndroIRC"
-        download_button: "Download the latest beta version"
-        no_beta: "Sorry... No beta is currently available. Please, come back later and stay tuned on Facebook or Twitter"
+        description: "Download the new beta of AndroIRC"
+        download_button: "Download the new beta version"
+        no_beta: "Sorry... No beta is currently available. Please, come back later and stay tuned on Facebook, Twitter and Google+"
         warning: |
             This version is not available in Google Play (Android Market).
-            Be warned. This version is for testing purpose and may contains
-            bugs. Keep in mind that it's just a beta release. If something went
-            wrong, you can contact us by means of the "Support" section.
+            Be warned: this version is for testing purpose and may (will) contain
+            bugs. If you find any bugs, please contact us.
         new_beta: |
-            A new beta is available to download (%version%). Please read the
-            following changelog to know what is new.
+            A new beta is available to download (%version%). You'll find a list of changes below.
     support:
-        description: "You need help? This section is for you!"
+        description: "You are looking for help? This section is for you!"
         wiki:
             name: "Wiki"
             description: |
                 A question? The answer is probably in this wiki. Written by the
                 team, it includes all the guides and informations to configure
-                and use all possibilities of AndroIRC.
+                and use AndroIRC.
             link: "Go to the wiki"
         support:
             name: "Support center"
             description: |
-                You found a bug? A suggestion? Or just a question? It's the
-                place for describe it. We'll be glad to help you and of course
-                to make AndroIRC even better and stable.
+                You have found a bug? Got a suggestion? Or just a question? It's the
+                place to go. We'll be glad to help you and make AndroIRC even better and stable.
             link: "Go to the support center"
         translation:
             name: "Translation"
             description: |
-                AndroIRC is not available in your language? It's not an issue!
-                You can help us translating AndroIRC
-            link: "Help us translating AndroIRC"
+                AndroIRC is not available in your language? Help us translating AndroIRC!
+            link: "Start translating AndroIRC in your language"
         social:
             name: "Social networks"
             description: |
-              You want to talk with us? We're on %facebook%, %twitter% and even
-              %googleplus%. And of course we're also on %irc%.
+              You want to get in touch with us? We're on %facebook%, %twitter% and even
+              %googleplus%. Of course we're also on %irc%.
     homepage:
-        motto: "Fast, powerful, only for Android"
+        motto: "Fast, powerful, only for Android™"
         notifications:
             name: "Powerful notifications"
             description: |
@@ -71,9 +67,8 @@ frontend:
         themes:
             name: "Dark, light, and customizable theme"
             description: |
-                Available by default in black or white, AndroIRC allows you to
-                create your custom theme with your own colors. It is 100%
-                customizable.
+                Available by default in a dark or light theme, AndroIRC allows you to
+                create your custom theme with your own colors. It's fully customizable.
         tablet:
             name: "Tablet ready"
             description: |
@@ -102,15 +97,13 @@ frontend:
             name: "And much more!"
             description: |
                 English, French, Korean, Chinese, Dutch, ... AndroIRC is
-                accessible in more than 10 languages and fully configurable as
-                your wish. Logging, Multi servers, auto connection at launch,
+                available in more than 10 languages and fully configurable as
+                you wish. Logging, Multi servers, auto connection at launch,
                 SSL support, NickServ auth, nicks and channels completion and
-                much more inside the best IRC client for Android.
+                much more, inside the best IRC client for Android™.
         free:
             name: "All of that for... free"
             description: |
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                non risus. Suspendisse lectus tortor, dignissim sit amet,
-                adipiscing nec, ultricies sed, dolor. Cras elementum ultrices
-                diam. Maecenas ligula massa, varius a, semper congue, euismod
-                non, mi.
+                AndroIRC is available for free on Google Play! A premium
+                version is also available if you want to help in AndroIRC
+                developement.
