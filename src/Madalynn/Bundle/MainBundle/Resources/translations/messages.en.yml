@@ -26,7 +26,8 @@ frontend:
         warning: |
             This version is not available in Google Play (Android Market).
             Be warned: this version is for testing purpose and may (will) contain
-            bugs. If you find any bugs, please contact us.
+            bugs.
+        contact_us: "If you find any bugs, please contact us."
         new_beta: |
             A new beta is available to download (%version%). You'll find a list of changes below.
     support:

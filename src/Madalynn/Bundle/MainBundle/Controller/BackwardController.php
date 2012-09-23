@@ -65,7 +65,7 @@ class BackwardController extends Controller
     }
 
     /**
-     * @Route("/contact")
+     * @Route("/contact", name="contact")
      */
     public function contactAction()
     {
