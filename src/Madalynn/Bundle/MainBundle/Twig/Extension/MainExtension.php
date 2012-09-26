@@ -13,11 +13,14 @@
 namespace Madalynn\Bundle\MainBundle\Twig\Extension;
 
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Locale\Locale;
 use Madalynn\Bundle\MainBundle\Entity\Article;
 use Madalynn\Bundle\MainBundle\Entity\ChangeLog;
 
+/**
+ * The main extension
+ *
+ * @author Julien Brochet <mewt@androirc.com>
+ */
 class MainExtension extends \Twig_Extension
 {
     /**
@@ -58,17 +61,16 @@ class MainExtension extends \Twig_Extension
     public function getFunctions()
     {
         return array(
-            'article_url'      => new \Twig_Function_Method($this, 'generateArticleUrl', array('is_safe' => array('html'))),
-            'path_locale'      => new \Twig_Function_Method($this, 'getPathLocale', array('is_safe' => array('html'))),
-            'locales'          => new \Twig_Function_Method($this, 'getLocales'),
-            'display_language' => new \Twig_Function_Method($this, 'getDisplayLanguage'),
-            'archive_name'     => new \Twig_Function_Method($this, 'getArchiveName'),
-            'changelog'        => new \Twig_Function_Method($this, 'displayChangelog', array('is_safe' => array('html'))),
+            'article_url'  => new \Twig_Function_Method($this, 'getArticlePath', array('is_safe' => array('html'))),
+            'archive_name' => new \Twig_Function_Method($this, 'getArchiveName'),
+            'changelog'    => new \Twig_Function_Method($this, 'displayChangelog', array('is_safe' => array('html'))),
         );
     }
 
     /**
-     * Filter sha1
+     * SHA1 filter
+     *
+     * @param string $text The input text
      */
     public function sha1($text)
     {
@@ -76,13 +78,23 @@ class MainExtension extends \Twig_Extension
     }
 
     /**
-     * Filter md5
+     * MD5 filter
+     *
+     * @param string $text The input text
      */
     public function md5($text)
     {
         return md5($text);
     }
 
+    /**
+     * Gets a month name based on the current locale
+     *
+     * @param int $month The month
+     * @param int $year  The year
+     *
+     * @return string The month text representation
+     */
     public function getArchiveName($month, $year)
     {
         if (null === $this->formatter) {
@@ -100,16 +112,6 @@ class MainExtension extends \Twig_Extension
     }
 
     /**
-     * Returns the language name for a locale
-     *
-     * @param string $locale The locale to use for the language names
-     */
-    public function getDisplayLanguage($locale)
-    {
-        return Locale::getDisplayLanguage($locale, $locale);
-    }
-
-    /**
      * Displays a changelog
      *
      * @param ChangeLog $changelog
@@ -120,58 +122,14 @@ class MainExtension extends \Twig_Extension
     }
 
     /**
-     * Returns locales supported by the application
-     *
-     * @return array Locales
-     */
-    public function getLocales()
-    {
-        return $this->container->getParameter('jms_i18n_routing.locales');
-    }
-
-    /**
-     * Regenerate a URI based on the current request URI, but containing the locale provided
-     *
-     * @param Request $request  The old request
-     * @param string  $locale   The locale applied in the returned url
-     * @param bool    $absolute Whether the returned url should be absolute
-     *
-     * @return string The current url transformed with the locale provided
-     *
-     * @see http://it.works-for-me.net/symfony2/2011/08/10/symfony2-generate-the-current-url-with-another-locale/
-     */
-    public function getPathLocale(Request $request, $locale = 'en', $absolute = false)
-    {
-        $id = $request->attributes->get('_route');
-        $parameters = $request->attributes->all();
-
-        if (!$id) {
-            // Bug when the page does not exist (404 Not found)
-            $id = 'homepage';
-            unset($parameters['format']);
-        }
-
-        foreach ($parameters as $key => $val) {
-            if (substr($key, 0, 1) == '_') {
-                unset($parameters[$key]);
-            }
-        }
-
-        $query = $request->getQueryString() ? '?' . $request->getQueryString() : '';
-        $router = $this->container->get('router');
-
-        return $router->generate($id, array_merge($parameters, array('_locale' => $locale)), $absolute) . $query;;
-    }
-
-    /**
-     * Generates an article url
+     * Gets an article path
      *
      * @param Article $article  An article object
      * @param boolean $absolute Absolute url or not
      *
      * @return string The article url
      */
-    public function generateArticleUrl(Article $article, $absolute = false)
+    public function getArticlePath(Article $article, $absolute = false)
     {
         $params = array(
             'id'   => $article->getId(),
