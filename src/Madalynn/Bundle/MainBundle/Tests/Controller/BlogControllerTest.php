@@ -28,7 +28,7 @@ class BlogControllerTest extends WebTestCase
         $crawler = $this->client->request('GET', '/blog');
 
         $this->assertTrue($this->client->getResponse()->isSuccessful());
-        $this->assertLessThanOrEqual(5, $crawler->filter('.archives-container li'));
+        $this->assertLessThanOrEqual(5, count($crawler->filter('.archives-container li')));
     }
 
     public function testNumberOfArticlesPerPage()
