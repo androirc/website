@@ -12,3 +12,9 @@ parameters:
 
     transifex_username : androirc
     transifex_password : bb0bfacb1d52acebd9fd2df087b5ba9c
+
+    twitter:
+        consumer_key: 041e752329f253ea9a119aacbc7b401e
+        consumer_secret: f40265588e3dca5164e6b17da0270470
+        oauth_token: d0aefb71aa040a1a19faddcbe0a67e8f
+        oauth_token_secret: 7ab37a3c50876bf4659b4a3e3275da89

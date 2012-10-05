@@ -18,7 +18,8 @@
         "jms/i18n-routing-bundle": "dev-master",
         "willdurand/geocoder-bundle": "dev-master",
         "knplabs/knp-markdown-bundle": "dev-master",
-        "beberlei/DoctrineExtensions": "dev-master"
+        "beberlei/DoctrineExtensions": "dev-master",
+        "madalynn/twitteroauth": "dev-master"
     },
     "scripts": {
         "post-install-cmd": [

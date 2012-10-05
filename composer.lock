@@ -1,5 +1,5 @@
 {
-    "hash": "318f0048b8216fe18fa07f3a1ba24345",
+    "hash": "8d0c3f9d2b299f65b384baa82f7125a8",
     "packages": [
         {
             "name": "beberlei/DoctrineExtensions",
@@ -833,6 +833,44 @@
                 "curl",
                 "http client"
             ]
+        },
+        {
+            "name": "madalynn/twitteroauth",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/androirc/twitteroauth",
+                "reference": "a3cd64e73d3f5d28a4fc308d25a788a6a9aec6d1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/androirc/twitteroauth/zipball/a3cd64e73d3f5d28a4fc308d25a788a6a9aec6d1",
+                "reference": "a3cd64e73d3f5d28a4fc308d25a788a6a9aec6d1",
+                "shasum": ""
+            },
+            "time": "1349457511",
+            "type": "library",
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "OAuth": "twitteroauth/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Julien Brochet",
+                    "email": "mewt@madalynn.eu",
+                    "homepage": "http://julien.brochet.me"
+                },
+                {
+                    "name": "Abraham Williams",
+                    "email": "abraham@abrah.am"
+                }
+            ],
+            "description": "The first PHP Library to support OAuth for Twitter's REST API."
         },
         {
             "name": "monolog/monolog",
@@ -1684,6 +1722,7 @@
         "jms/i18n-routing-bundle": 20,
         "willdurand/geocoder-bundle": 20,
         "knplabs/knp-markdown-bundle": 20,
-        "beberlei/doctrineextensions": 20
+        "beberlei/doctrineextensions": 20,
+        "madalynn/twitteroauth": 20
     }
 }
