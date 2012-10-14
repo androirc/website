@@ -1,10 +1,10 @@
 set :application,     "androirc.com"
-set :domain,          "bender.madalynn.eu"
+set :domain,          "homer.madalynn.eu"
 set :deploy_to,       "/home/web/#{application}/www"
 set :user,            "web"
 set :port,            2222
 
-set :repository,      "https://github.com/androirc/AndroBundle.git"
+set :repository,      "https://github.com/androirc/website.git"
 set :scm,             :git
 set :branch,          "master"
 set :deploy_via,      :remote_cache
