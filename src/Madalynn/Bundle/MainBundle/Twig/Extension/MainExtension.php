@@ -50,8 +50,9 @@ class MainExtension extends \Twig_Extension
     public function getFilters()
     {
         return array(
-            'sha1' => new \Twig_Filter_Method($this, 'sha1'),
-            'md5'  => new \Twig_Filter_Method($this, 'md5')
+            'sha1'  => new \Twig_Filter_Method($this, 'sha1'),
+            'md5'   => new \Twig_Filter_Method($this, 'md5'),
+            'parse' => new \Twig_Filter_Method($this, 'parseTwig', array('is_safe' => array('html'))),
         );
     }
 
@@ -85,6 +86,20 @@ class MainExtension extends \Twig_Extension
     public function md5($text)
     {
         return md5($text);
+    }
+
+    /**
+     * Parses text for Twig instructions
+     *
+     * @param strign $text The input text
+     */
+    public function parseTwig($text)
+    {
+        // Converts &#039; and &quot; for Twig parameters
+        $text = htmlspecialchars_decode($text, ENT_QUOTES);
+        $text = $this->container->get('androirc.sandbox_parser')->parse($text);
+
+        return $text;
     }
 
     /**
