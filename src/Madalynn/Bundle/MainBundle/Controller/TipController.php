@@ -25,7 +25,7 @@ class TipController extends Controller
 {
     /**
      * @Route("/tip/{lang}/{date}", name="_tip", defaults={"date" = null})
-     * @Cache(public=true, smaxage="+30min", maxage="+30min")
+     * @Cache(public=true, smaxage="30", maxage="30")
      */
     public function showAction($lang, $date = null)
     {

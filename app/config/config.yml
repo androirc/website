@@ -106,7 +106,6 @@ white_october_pagerfanta:
 
 sensio_framework_extra:
     request: { converters: false }
-    cache: { annotations: false }
 
 bazinga_geocoder:
     providers:
