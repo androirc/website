@@ -14,6 +14,7 @@ namespace Madalynn\Bundle\MainBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
 
 /**
  * Tip controller
@@ -24,6 +25,7 @@ class TipController extends Controller
 {
     /**
      * @Route("/tip/{lang}/{date}", name="_tip", defaults={"date" = null})
+     * @Cache(public=true, smaxage="+30min", maxage="+30min")
      */
     public function showAction($lang, $date = null)
     {
