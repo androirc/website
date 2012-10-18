@@ -3,6 +3,7 @@ imports:
 
 framework:
     secret: %secret%
+    esi: true
     translator: { enabled: true, fallback: en }
     default_locale: %locale%
     router: { resource: "%kernel.root_dir%/config/routing.yml" }
