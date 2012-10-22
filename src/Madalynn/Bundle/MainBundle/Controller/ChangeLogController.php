@@ -23,6 +23,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 class ChangeLogController extends Controller
 {
     /**
+     * @Cache(public=true, smaxage="604800", maxage="604800")
      * @Route("/changelog/{version}/{theme}",
      *     name="_changelog",
      *     defaults={"theme" = "light"},

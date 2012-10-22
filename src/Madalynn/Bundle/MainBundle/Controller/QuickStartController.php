@@ -23,6 +23,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 class QuickStartController extends Controller
 {
     /**
+     * @Cache(public=true, smaxage="604800", maxage="604800")
      * @Route("/quickstart/{version}/{lang}/{theme}",
      *     name="_quickstart",
      *     defaults={"theme" = "light"},
