@@ -14,6 +14,7 @@ namespace Madalynn\Bundle\MainBundle\Controller;
 
 use Madalynn\Bundle\MainBundle\Entity\AndroircVersion;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
 
 /**
  * Changelog controller
