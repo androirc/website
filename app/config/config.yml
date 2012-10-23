@@ -6,10 +6,13 @@ framework:
     esi: true
     translator: { enabled: true, fallback: en }
     default_locale: %locale%
-    router: { resource: "%kernel.root_dir%/config/routing.yml" }
+    router:
+        resource: "%kernel.root_dir%/config/routing.yml"
+        strict_requirements: %kernel.debug%
     form: true
     csrf_protection: true
     validation: { enable_annotations: true }
+    trust_proxy_headers: true
     templating:
         engines: ['twig']
         assets_version: 0efc94639b65f71c2652dcf394ba52145b52aa7c
@@ -95,6 +98,8 @@ jms_i18n_routing:
     default_locale: en
     locales: [en, fr, cs, zh, de, ko, fi, es, pl, it]
     strategy: prefix_except_default
+    cookie:
+      enabled: false
 
 white_october_pagerfanta:
     default_view: twitter_bootstrap_translated
