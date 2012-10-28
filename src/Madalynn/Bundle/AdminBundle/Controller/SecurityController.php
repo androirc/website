@@ -20,6 +20,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
  * Security controller
  *
  * @author Julien Brochet <mewt@androirc.com>
+ *
+ * @Route("/admin")
  */
 class SecurityController extends Controller
 {
@@ -44,17 +46,17 @@ class SecurityController extends Controller
     }
 
     /**
-     * @Route("/login_check", name="_login_check")
+     * @Route("/login_check", name="login_check")
      */
-    public function logoutAction()
+    public function checkAction()
     {
         throw new \RuntimeException('Humm... It seems that the firewall is not configured correctly...');
     }
 
     /**
-     * @Route("/logout", name="_logout")
+     * @Route("/logout", name="logout")
      */
-    public function checkAction()
+    public function logoutAction()
     {
         throw new \RuntimeException('Humm... It seems that the firewall is not configured correctly...');
     }
