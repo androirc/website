@@ -37,7 +37,7 @@ class BlogController extends Controller
     }
 
     /**
-     * @Route("/blog/{id}/{slug}", name="blog_show")
+     * @Route("/blog/{id}-{slug}", name="blog_show", requirements={"slug" = "[a-zA-Z1-9\-_\/]+", "id" = "^\d+$" })
      * @Template
      */
     public function showAction($id)
