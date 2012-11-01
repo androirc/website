@@ -1,0 +1,16 @@
+{% extends "MainBundle::layout.html.twig" %}
+
+{% block title %}Oops! This page is not longer available{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="span3 bugdroid">
+            <img src="{{ asset('/bundles/common/images/gandalf.png') }}">
+        </div>
+        <div class="span9 error-message">
+            <h2>Mhh.. Forbidden</h2>
+
+            <p>You don't have permission to access this page.</p>
+        </div>
+    </div>
+{% endblock %}
