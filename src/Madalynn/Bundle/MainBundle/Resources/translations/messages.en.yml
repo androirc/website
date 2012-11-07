@@ -68,7 +68,7 @@ frontend:
         themes:
             name: "Dark, light, and customizable theme"
             description: |
-                Available by default in a dark or light theme, AndroIRC allows you to
+                Accessible by default in a dark or light theme, AndroIRC allows you to
                 create your custom theme with your own colors. It's fully customizable.
         tablet:
             name: "Tablet ready"
@@ -89,11 +89,10 @@ frontend:
         ui:
             name: "Beautiful interface, fully integrated"
             description: |
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                non risus. Suspendisse lectus tortor, dignissim sit amet,
-                adipiscing nec, ultricies sed, dolor. Cras elementum ultrices
-                diam. Maecenas ligula massa, varius a, semper congue, euismod
-                non, mi.
+                Available for Android 1.6 and above, AndroIRC always follows
+                the latest Android guideline regarding user interface even for
+                the new Jelly Bean release. With it thoughtful interface,
+                everything is at hand!
         others:
             name: "And much more!"
             description: |
