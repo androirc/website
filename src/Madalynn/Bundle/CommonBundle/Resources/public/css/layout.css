@@ -204,6 +204,10 @@ footer p {
 
 /* Blog */
 
+.blog-container {
+  margin-top: -10px;
+}
+
 .archives-container li {
   padding: 7px 0 7px 26px;
   border-top: 1px solid #eaeaea;
@@ -233,6 +237,7 @@ article {
 
 article h1 {
   margin-bottom: 0px;
+  margin-top: 0px;
 }
 
 .article-header {
