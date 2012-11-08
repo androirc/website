@@ -1,6 +1,6 @@
 frontend:
     subtitle: "Android™ IRC Client"
-    description: "AndroIRC is an Android IRC client which can connect to several server (secured or not) at the same time. Features: supports mIRC colors, auto join channels on startup, nickserv/sasl auth, logging, themes..."
+    description: "Discover AndroIRC, the greatest IRC client for your Android device. AndroIRC supports multiple servers connection (secured or not), mIRC colors, auto join channels on startup, nickserv / sasl auth, logging, themes, FiSH, and much more. All of that, for free!"
     keywords: "android, irc, client, free, app, mirc, androirc, market, play, logging, sasl, authentication, blowfish, plain, identification, nickserv, themes, smartphone, application, apps, ircd, communication, internet, relay, chat, server, freenode, epiknet, quakenet, efnet, undernet, ident, nick, nickname, chan, channel, kick, ban, op, halfop, voice"
     home_title: "AndroIRC - The best IRC client for Android your device need"
     menu:
@@ -45,27 +45,27 @@ frontend:
             link: "Start translating AndroIRC in your language"
         social:
             name: "Social networks"
-            description: "You want to get in touch with us? We're on %facebook%, %twitter% and even %googleplus%. Of course we're also on %irc%."
+            description: "Do you want to get in touch with us? We're on %facebook%, %twitter% and even %googleplus%. Of course, we're also on %irc%."
     homepage:
         motto: "Fast, powerful, only for Android™"
         notifications:
             name: "Powerful notifications"
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi."
+            description: "AndroIRC will notify you as soon as you have a new private message or a new highlight. Of course, you can configure notifications as you want. You can even change the list of words triggering a highlight!"
         themes:
             name: "Dark, light, and customizable theme"
             description: "Accessible by default in a dark or light theme, AndroIRC allows you to create your custom theme with your own colors. It's fully customizable."
         tablet:
             name: "Tablet ready"
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi."
+            description: "We have been working hard to bring you AndroIRC on tablet. The UI adapts itself to the screen size, and you'll be able to fully enjoy your IRC session on a larger screen."
         fish:
             name: "FiSH, SASL, Nickserv"
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi."
+            description: "AndroIRC supports standard authentication system like NickServ. It also has advanced features, like SASL authentication, required by freenode. You'll also have to ability to encrypt your conversation with a full support of the FiSH protocol."
         ui:
             name: "Beautiful interface, fully integrated"
             description: "Available for Android 1.6 and above, AndroIRC always follows the latest Android guideline regarding user interface even for the new Jelly Bean release. With it thoughtful interface, everything is at hand!"
         others:
             name: "And much more!"
-            description: "English, French, Korean, Chinese, Dutch, ... AndroIRC is available in more than 10 languages and fully configurable as you wish. Logging, Multi servers, auto connection at launch, SSL support, NickServ auth, nicks and channels completion and much more, inside the best IRC client for Android™."
+            description: "English, French, Korean, Chinese, Dutch, ... AndroIRC is available in more than 10 languages and fully configurable to fit your needs. Logging, multiple servers, auto-connection at launch, secured connection (SSL), NickServ authentication, nicks and channels completion and much more, inside the best IRC client for Android™."
         free:
             name: "All of that for... free"
             description: "AndroIRC is available for free on Google Play! A premium version is also available if you want to help in AndroIRC developement."
