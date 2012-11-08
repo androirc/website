@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="{{ app.request.locale }}" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
     <head>
-        <title>{% block title %}{{ 'frontend.home'|trans }}{% endblock %} - AndroIRC ({{ 'frontend.subtitle'|trans }})</title>
+        <title>{% block name %}{% block title %}{{ 'frontend.homepage.motto'|trans }}{% endblock %} - AndroIRC ({{ 'frontend.subtitle'|trans }}){% endblock %}</title>
 
         <!--[if lt IE 9]>
             <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
 
         <meta charset="utf-8" />
-        <meta name="title" content="{{ block('title') }} - AndroIRC ({{ 'frontend.subtitle'|trans }})" />
+        <meta name="title" content="{{ block('name') }}" />
         <meta name="description" content="{% block description %}{{ 'frontend.description'|trans }}{% endblock %}" />
         <meta name="keywords" content="{{ 'frontend.keywords'|trans }}" />
 
@@ -26,7 +26,7 @@
         <meta property="og:locale" content="{{ app.request.locale }}" />
         <meta property="og:url" content="{{ app.request.host }}" />
         <meta property="og:image" content="{{ asset('bundles/common/images/icon.png') }}" />
-        <meta property="og:title" content="{{ block('title') }}" />
+        <meta property="og:title" content="{{ block('name') }}" />
         <meta property="og:description" content="{{ block('description') }}" />
 
         <link rel="image_src" href="{{ asset('bundles/common/images/icon.png') }}" />

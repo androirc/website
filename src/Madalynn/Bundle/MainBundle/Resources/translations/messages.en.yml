@@ -2,7 +2,7 @@ frontend:
     subtitle: "Android™ IRC Client"
     description: "AndroIRC is an Android IRC client which can connect to several server (secured or not) at the same time. Features: supports mIRC colors, auto join channels on startup, nickserv/sasl auth, logging, themes..."
     keywords: "android, irc, client, free, app, mirc, androirc, market, play, logging, sasl, authentication, blowfish, plain, identification, nickserv, themes, smartphone, application, apps, ircd, communication, internet, relay, chat, server, freenode, epiknet, quakenet, efnet, undernet, ident, nick, nickname, chan, channel, kick, ban, op, halfop, voice"
-    home: "Home"
+    home_title: "AndroIRC - The best IRC client for Android your device need"
     menu:
         blog: "Blog"
         download: "Download"
