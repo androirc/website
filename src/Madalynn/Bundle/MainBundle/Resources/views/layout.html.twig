@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ app.request.locale }}" prefix="og: http://ogp.me/ns#">
+<html lang="{{ app.request.locale }}" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
     <head>
         <title>{% block title %}{{ 'frontend.home'|trans }}{% endblock %} - AndroIRC ({{ 'frontend.subtitle'|trans }})</title>
 
@@ -9,21 +9,27 @@
 
         <meta charset="utf-8" />
         <meta name="title" content="{{ block('title') }} - AndroIRC ({{ 'frontend.subtitle'|trans }})" />
-        <meta name="description" content="{% block description %}{% endblock %}" />
+        <meta name="description" content="{% block description %}{{ 'frontend.description'|trans }}{% endblock %}" />
+        <meta name="keywords" content="{{ 'frontend.keywords'|trans }}" />
 
         <meta name="author" content="Julien Brochet, Sébastien Brochet" />
-        <meta name="google-site-verification" content="NxLzVTaSpM7YMWZ_DqGdF19nVKrNl4IcQxcT3jtACqw"/>
+        <meta name="google-site-verification" content="NxLzVTaSpM7YMWZ_DqGdF19nVKrNl4IcQxcT3jtACqw" />
         <meta name="robots" content="index, follow" />
+        <meta name="revisit-after" content="2 days" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-        <meta property="og:type" content="website"/>
+        <meta property="twitter:account_id" content="169278008" />
+        <meta property="fb:page_id" content="120342511371853" />
+        <meta property="fb:admins" content="549681600,100001785742159" />
+        <meta property="og:type" content="website" />
         <meta property="og:site_name" content="AndroIRC"/>
-        <meta property="og:url" content="http://www.androirc.com/"/>
-        <meta property="og:image" content="/apple-touch-icon-precomposed.png" />
-        <meta property="og:title" content="{{ block('title') }}"/>
-        <meta property="og:description" content="{{ block('description') }}"/>
+        <meta property="og:locale" content="{{ app.request.locale }}" />
+        <meta property="og:url" content="{{ app.request.host }}" />
+        <meta property="og:image" content="{{ asset('bundles/common/images/icon.png') }}" />
+        <meta property="og:title" content="{{ block('title') }}" />
+        <meta property="og:description" content="{{ block('description') }}" />
 
-        <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-precomposed.png" />
+        <link rel="image_src" href="{{ asset('bundles/common/images/icon.png') }}" />
         <link rel="publisher" href="https://plus.google.com/105275534595142567234/" />
         <link rel="alternate" type="application/rss+xml" title="{{ 'frontend.menu.blog'|trans }} - AndroIRC" href="http://feeds.feedburner.com/androirc" />
         <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
