@@ -8,7 +8,7 @@
                     '%date%': article.created|date('frontend.blog.date_format'|trans)
                 })
             }} -
-            <a href="{{ article_url(article) }}#disqus_thread" data-disqus-identifier="{{ article.id }}">0 comment</a>
+            <a href="{{ article_url(article) }}#disqus_thread" data-disqus-identifier="{{ article.id }}">{{ 'frontend.blog.show_comments'|trans }}</a>
         </div>
     </div>
     <div class="article-content">
