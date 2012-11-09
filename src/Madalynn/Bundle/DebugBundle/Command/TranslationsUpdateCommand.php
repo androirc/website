@@ -55,7 +55,7 @@ class TranslationsUpdateCommand extends ContainerAwareCommand
             $locales = array_intersect($locales, $siteLocales);
         }
 
-        $output->writeln('<info>Starting update translation'.($force ? '' : ' (dry run)').'</info>');
+        $output->writeln('<info>Starting updating translations...'.($force ? '' : ' (dry run)').'</info>');
 
         foreach ($locales as $locale) {
             if ('en' === $locale) {
