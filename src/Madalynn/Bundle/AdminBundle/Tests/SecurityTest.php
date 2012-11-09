@@ -38,7 +38,7 @@ class SecurityTest extends WebTestCase
         $response = $this->client->getResponse();
 
         $this->assertTrue($response->isSuccessful());
-        $this->assertRegExp('/You need to signin to see this page/', $response->getContent());
+        $this->assertRegExp('/remember_me/', $response->getContent());
     }
 
     public function dataAdminHomepageNeedLogin()
@@ -46,8 +46,6 @@ class SecurityTest extends WebTestCase
         return array(
             array('/admin/'),
             array('/fr/admin/'),
-            array('/fi/admin/'),
-            array('/es/admin/'),
             array('/admin/beta'),
             array('/fr/admin/beta'),
             array('/fr/admin/beta/new'),
