@@ -1,0 +1,59 @@
+frontend:
+  subtitle: "Client IRC pour Android™"
+  home_title: "AndroIRC - Le meilleur client IRC pour votre smartphone Android"
+  author: "Traduction par Madalynn"
+  menu:
+    blog: "Blog"
+    download: "Télécharger"
+    support: "Support"
+    beta: "Beta"
+    contact: "Contact"
+    terms: "Conditions d'utilisation"
+    facebook: "Facebook"
+    twitter: "Twitter"
+    googleplus: "Google+"
+  copyright: "Copyright %year% Madalynn, Tous droits réservés. Android est une marque de Google Inc."
+  blog:
+    description: "Dernières actualités concernant AndroIRC"
+    article_subtitle: "Actualité par %author% le %date%"
+    show_comments: "Afficher les commentaires"
+    date_format: "d/m/Y"
+    archives:
+      title: "Archives"
+      description: "Archives triées par date"
+  beta:
+    description: "Télécharger la dernière beta d'AndroIRC"
+    download_button: "Télécharger la dernière version beta"
+    no_beta: "Désolé ... Aucune beta n'est disponible actuellement. Merci de revenir plus tard ! Vous pouvez vous tenir informé sur Facebook, Twitter et Google+"
+    contact_us: "Si vous trouvez un bug, merci de nous contacter."
+    new_beta: "Une nouvelle beta est disponible au téléchargement (%version%). Vous trouverez la liste des changements ci-dessous."
+  support:
+    description: "Vous cherchez de l'aide ? Cette section est pour vous !"
+    wiki:
+      name: "Wiki"
+      link: "Visiter le wiki"
+    support:
+      name: "Centre de support"
+      link: "Visiter le centre de support"
+    translation:
+      name: "Traduction"
+      description: "AndroIRC n'est pas disponible dans votre langue ? Aidez nous à traduire l'application !"
+      link: "Commencez à traduire AndroIRC dans votre langue"
+    social:
+      name: "Réseaux sociaux"
+  homepage:
+    motto: "Rapide, complet, seulement pour Android™"
+    notifications:
+      name: "Notifications avancées"
+    themes:
+      name: "Sombre, classique et thèmes customisables"
+    fish:
+      name: "FiSH, SASL, NickServ"
+    ui:
+      name: "Formidable interface, entièrement intégrée"
+      description: "Disponible pour AndroIRC 2.1 et supérieur, AndroIRC suit toujours les dernières tendance au niveau de l'interface utilisateur même pour la dernière version disponible, Jelly Bean. Avec cette interface bien pensée, tout est à porté de main !"
+    others:
+      name: "Et bien d'autre !"
+    free:
+      name: "Et tout ça ... gratuitement"
+      description: "AndroIRC est disponible gratuitement sur Google Play ! Une version \"premium\" est aussi disponible si vous souhaitez soutenir financièrement le développement d'AndroIRC."
