@@ -63,7 +63,7 @@ frontend:
       description: "AndroIRC supports standard authentication system like NickServ. It also has advanced features, like SASL authentication, required by freenode. You'll also have to ability to encrypt your conversation with a full support of the FiSH protocol."
     ui:
       name: "Beautiful interface, fully integrated"
-      description: "Available for Android 1.6 and above, AndroIRC always follows the latest Android guideline regarding user interface even for the new Jelly Bean release. With it thoughtful interface, everything is at hand!"
+      description: "Available for Android 2.1 and above, AndroIRC always follows the latest Android guideline regarding user interface even for the new Jelly Bean release. With it thoughtful interface, everything is at hand!"
     others:
       name: "And much more!"
       description: "English, French, Korean, Chinese, Dutch, ... AndroIRC is available in more than 10 languages and fully configurable to fit your needs. Logging, multiple servers, auto-connection at launch, secured connection (SSL), NickServ authentication, nicks and channels completion and much more, inside the best IRC client for Android™."
