@@ -24,7 +24,7 @@ use Symfony\Component\Yaml\Yaml;
  *
  * @author Julien Brochet <mewt@androirc.com>
  */
-class TranslationUpdateCommand extends ContainerAwareCommand
+class TranslationsUpdateCommand extends ContainerAwareCommand
 {
     protected $urlTemplate  = 'https://www.transifex.net/api/2/project/androirc/resource/website/translation/%s';
     protected $fileTemplate = 'messages.%s.yml';
@@ -34,7 +34,7 @@ class TranslationUpdateCommand extends ContainerAwareCommand
      */
     protected function configure()
     {
-        $this->setName('androirc:translation-update')
+        $this->setName('androirc:translations:update')
              ->addArgument('locales', InputArgument::IS_ARRAY, 'The list of locales to update')
              ->addOption('force', null, InputOption::VALUE_NONE, 'Force the download');
     }
@@ -75,11 +75,10 @@ class TranslationUpdateCommand extends ContainerAwareCommand
 
             // Just get the content
             $content = $json['content'];
-            $yaml = Yaml::parse($content);
 
-            if (true === $force && false === empty($yaml)) {
+            if (true === $force && "{}\n" !== $content) {
                 $path = __DIR__.'/../../MainBundle/Resources/translations/'.sprintf($this->fileTemplate, $locale);
-                file_put_contents($path, Yaml::dump($yaml, 50));
+                file_put_contents($path, $content);
             }
         }
     }

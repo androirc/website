@@ -104,7 +104,7 @@ swiftmailer:
 
 jms_i18n_routing:
     default_locale: en
-    locales: [en, fr, cs, zh, de, ko, fi, es, pl, it]
+    locales: [en]
     strategy: prefix_except_default
     cookie:
       enabled: false
@@ -113,10 +113,10 @@ white_october_pagerfanta:
     default_view: twitter_bootstrap_translated
 
 # Custom translation download script
-#andro:
-#    translations:
-#        zh: zh_CN
-#        pl: pl_PL
+debug:
+    translations:
+        zh: zh_CN
+        pl: pl_PL
 
 sensio_framework_extra:
     request: { converters: false }

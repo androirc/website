@@ -18,14 +18,14 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Finder\Finder;
 
-class ChangeLogUpdateCommand extends ContainerAwareCommand
+class ChangelogsUpdateCommand extends ContainerAwareCommand
 {
     /**
      * {@inheritDoc}
      */
     protected function configure()
     {
-        $this->setName('changelog:update')
+        $this->setName('androirc:changelogs:update')
              ->addArgument('path', InputArgument::REQUIRED, 'The path to the changelogs folder');
     }
 
