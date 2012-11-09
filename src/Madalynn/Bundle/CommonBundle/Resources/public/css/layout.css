@@ -132,7 +132,7 @@ nav ul li:first-child {
 #content {
   background-color: #fff;
   border: 1px solid #f1f1f1;
-  padding: 30px 10px;
+  padding: 20px 10px;
   margin-bottom: 15px;
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
@@ -207,10 +207,6 @@ footer p {
 }
 
 /* Blog */
-
-.blog-container {
-  margin-top: -10px;
-}
 
 .archives-container li {
   padding: 7px 0 7px 26px;
