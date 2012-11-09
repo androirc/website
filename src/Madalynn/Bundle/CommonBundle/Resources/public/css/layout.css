@@ -172,8 +172,12 @@ footer p {
   margin-bottom: 21px;
 }
 
-.content-left {
+.item-left .content {
   text-align: right;
+}
+
+.item-left .image {
+  float: right;
 }
 
 .homepage .content {
