@@ -112,12 +112,6 @@ jms_i18n_routing:
 white_october_pagerfanta:
     default_view: twitter_bootstrap_translated
 
-# Custom translation download script
-debug:
-    translations:
-        zh: zh_CN
-        pl: pl_PL
-
 sensio_framework_extra:
     request: { converters: false }
 

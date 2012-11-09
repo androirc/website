@@ -21,3 +21,9 @@ monolog:
         firephp:
             type:  firephp
             level: info
+
+# Custom translation download script
+debug:
+    translations:
+        zh: zh_CN
+        pl: pl_PL
