@@ -16,6 +16,7 @@
         <meta name="google-site-verification" content="NxLzVTaSpM7YMWZ_DqGdF19nVKrNl4IcQxcT3jtACqw" />
         <meta name="robots" content="index, follow" />
         <meta name="revisit-after" content="2 days" />
+        <meta name="language" content="{{ locales()|join(',') }}" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
 
         <meta property="twitter:account_id" content="169278008" />
@@ -28,6 +29,10 @@
         <meta property="og:image" content="{{ asset('bundles/common/images/icon.png') }}" />
         <meta property="og:title" content="{{ block('name') }}" />
         <meta property="og:description" content="{{ block('description') }}" />
+
+        {% for locale in locales() -%}
+            <link rel="alternate" hreflang="{{ locale }}" href="{{ path_locale(app.request, locale, true) }}" />
+        {% endfor %}
 
         <link rel="image_src" href="{{ asset('bundles/common/images/icon.png') }}" />
         <link rel="publisher" href="https://plus.google.com/105275534595142567234/" />
