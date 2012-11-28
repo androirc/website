@@ -6,14 +6,7 @@
 {% block content %}
     {% if beta %}
         <div class="row">
-            <div class="span8">
-                <p>{{ 'frontend.beta.new_beta'|trans({'%version%': beta.version}) }}</p>
-
-                {% if changelog %}
-                    {{ changelog(changelog) }}
-                {% endif %}
-            </div>
-            <div class="span4">
+            <div class="span4 span-right">
                 <div class="aside-download">
                     <div class="download">
                         <a href="{{ path('_beta_download') }}" class="btn btn-large btn-primary">{{ 'frontend.beta.download_button'|trans }}</a>
@@ -26,6 +19,13 @@
                         </p>
                     </div>
                 </div>
+            </div>
+            <div class="span8">
+                <p>{{ 'frontend.beta.new_beta'|trans({'%version%': beta.version}) }}</p>
+
+                {% if changelog %}
+                    {{ changelog(changelog) }}
+                {% endif %}
             </div>
         </div>
     {% else %}
