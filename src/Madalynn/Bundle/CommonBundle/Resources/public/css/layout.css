@@ -1,6 +1,6 @@
 
 /* Google font */
-@import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro");
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
 body {
   background-image: url("/bundles/common/images/background.png");
@@ -13,7 +13,7 @@ body {
 }
 
 h1, h2, h3, h4, h5 {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   color: #03638b;
   font-weight:normal;
 }
