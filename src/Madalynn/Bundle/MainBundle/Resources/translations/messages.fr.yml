@@ -53,7 +53,7 @@ frontend:
       name: "Notifications avancées"
       description: "AndroIRC vous avertit dès que vous avez un nouveau message privé ou une information importante. Bien sûr, vous pouvez configurer ces notifications comme vous le souhaitez. Vous pouvez même changer la liste des mots important à signaler !"
     themes:
-      name: "Sombre, classique et thèmes personnalisables"
+      name: "Thèmes personnalisables"
       description: "Accessible par défaut via le thème sombre ou classique, AndroIRC vous permet de créer votre thème avec vos propres couleurs. C'est entièrement configurable."
     tablet:
       name: "Disponible sur tablettes"
@@ -62,7 +62,7 @@ frontend:
       name: "FiSH, SASL, NickServ"
       description: "AndroIRC supporte l'authentification standard via NickServ. Vous trouverez de plus des options avancées comme l'authentification SASL (demandée sur freenode). Nous avez aussi la possibilité de crypter vos conversations avec un support complet du protocole FiSH."
     ui:
-      name: "Étonnante interface, entièrement intégrée"
+      name: "Interface entièrement intégrée"
       description: "Disponible pour AndroIRC 2.1 et supérieur, AndroIRC suit toujours les dernières tendance au niveau de l'interface utilisateur même pour la dernière version disponible, Jelly Bean. Avec cette interface bien pensée, tout est à porté de main !"
     others:
       name: "Et bien d'autre !"
