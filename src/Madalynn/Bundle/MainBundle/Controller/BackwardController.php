@@ -26,10 +26,16 @@ class BackwardController extends Controller
      */
     public function articleShowAction($id, $slug)
     {
-        return $this->redirect($this->generateUrl('blog_show', array(
+        $route = $this->generateUrl('blog_show', array(
             'id'   => $id,
             'slug' => $slug,
-        )));
+        ));
+
+        if ($route) {
+            return $this->redirect($route);
+        }
+
+        return $this->redirect($this->generateUrl('blog'));
     }
 
     /**
