@@ -1,18 +1,18 @@
 {% extends "AdminBundle:Base:show.html.twig" %}
 
-{% block title %}{{ 'tip_holiday.show_title'|trans({'%id%': entity.id}) }}{% endblock %}
+{% block title %}{{ 'backend.tip_holiday.show_title'|trans({'%id%': entity.id}) }}{% endblock %}
 
-{% block content %}
-    <table class="records_list">
+{% block subcontent %}
+    <table class="table table-striped table-hover">
         <thead>
             <tr>
                 <th></th>
             </tr>
         </thead>
-        <thead>
+        <tbody>
             <tr>
                 <td>{{ entity.content|raw }}</td>
             </tr>
-        </thead>
+        </tbody>
     </table>
 {% endblock %}

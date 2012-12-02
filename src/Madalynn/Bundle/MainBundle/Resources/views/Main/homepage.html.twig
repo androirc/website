@@ -1,0 +1,91 @@
+{% extends 'MainBundle::layout.html.twig' %}
+
+{% block name %}{{ 'frontend.home_title'|trans }}{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="span12 homescreen">
+            <img src="{{ asset('/bundles/common/images/homepage/homescreen.png') }}" />
+        </div>
+        <div class="span12 homescreen-motto">
+            <h1>{{ 'frontend.homepage.motto'|trans }}</h1>
+        </div>
+    </div>
+
+    {# Themes #}
+    <div class="row homepage item-left">
+        <div class="span5 image">
+            <img src="{{ asset('bundles/common/images/homepage/themes.png') }}" />
+        </div>
+        <div class="span7 content">
+            <h1>{{ 'frontend.homepage.themes.name'|trans }}</h1>
+            <p>{{ 'frontend.homepage.themes.description'|trans }}</p>
+        </div>
+    </div>
+
+    {# Notifications #}
+    <div class="row homepage item-right">
+        <div class="span5 image">
+            <img src="{{ asset('bundles/common/images/homepage/notifications.png') }}" />
+        </div>
+        <div class="span7 content">
+            <h1>{{ 'frontend.homepage.notifications.name'|trans }}</h1>
+            <p>{{ 'frontend.homepage.notifications.description'|trans }}</p>
+        </div>
+    </div>
+
+    {# User interface #}
+    <div class="row homepage item-left">
+        <div class="span5 image">
+            <img src="{{ asset('bundles/common/images/homepage/ui.png') }}" />
+        </div>
+        <div class="span7 content">
+            <h1>{{ 'frontend.homepage.ui.name'|trans }}</h1>
+            <p>{{ 'frontend.homepage.ui.description'|trans }}</p>
+        </div>
+    </div>
+
+    {# Tablet #}
+    <div class="row homepage item-right">
+        <div class="span5 image">
+            <img src="{{ asset('bundles/common/images/homepage/tablet.png') }}" />
+        </div>
+        <div class="span7 content">
+            <h1>{{ 'frontend.homepage.tablet.name'|trans }}</h1>
+            <p>{{ 'frontend.homepage.tablet.description'|trans }}</p>
+        </div>
+    </div>
+
+    {# FiSH, SASL, Nickserv #}
+    <div class="row homepage item-left">
+        <div class="span5 image">
+            <img src="{{ asset('bundles/common/images/homepage/blowfish.png') }}" />
+        </div>
+        <div class="span7 content">
+            <h1>{{ 'frontend.homepage.fish.name'|trans }}</h1>
+            <p>{{ 'frontend.homepage.fish.description'|trans }}</p>
+        </div>
+    </div>
+
+    {# Others #}
+    <div class="row homepage item-right">
+        <div class="span5 image">
+            <img src="{{ asset('bundles/common/images/homepage/others.png') }}" />
+        </div>
+        <div class="span7 content">
+            <h1>{{ 'frontend.homepage.others.name'|trans }}</h1>
+            <p>{{ 'frontend.homepage.others.description'|trans }}</p>
+        </div>
+    </div>
+
+    {# Free #}
+    <div class="row homepage item-left">
+        <div class="span5 image">
+            <img src="{{ asset('bundles/common/images/homepage/free.png') }}" />
+        </div>
+        <div class="span7 content">
+            <h1>{{ 'frontend.homepage.free.name'|trans }}</h1>
+            <p>{{ 'frontend.homepage.free.description'|trans }}</p>
+        </div>
+    </div>
+{% endblock %}

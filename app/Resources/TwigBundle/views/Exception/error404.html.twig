@@ -1,9 +1,16 @@
-{% extends "AndroBundle::frontend.html.twig" %}
+{% extends "MainBundle::layout.html.twig" %}
 
-{% block title %}Oops! This page is not longer available{% endblock %}
+{% block title %}This page may have moved or is no longer available{% endblock %}
 
 {% block content %}
-    <h2>Oops! This page is not longer available</h2>
+    <div class="row">
+        <div class="span3 error-picture">
+            <img src="{{ asset('/bundles/common/images/android-bug.png') }}">
+        </div>
+        <div class="span9 error-message">
+            <h2>Mhh.. This page is not longer available</h2>
 
-    <p>This page may have moved or is no longer available.</p>
+            <p>This page may have moved or is no longer available.</p>
+        </div>
+    </div>
 {% endblock %}

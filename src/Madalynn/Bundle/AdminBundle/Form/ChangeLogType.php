@@ -19,26 +19,35 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class ChangeLogType extends AbstractType
 {
+    /**
+     * {@inheritdoc}
+     */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('version', 'entity', array(
-                    'label'         => 'change_log.field.version',
-                    'class'         => 'Madalynn\\Bundle\\AndroBundle\\Entity\\AndroircVersion',
+                    'label'         => 'backend.change_log.field.version',
+                    'class'         => 'Madalynn\\Bundle\\MainBundle\\Entity\\AndroircVersion',
                     'query_builder' => function(EntityRepository $er) {
                         return $er->createQueryBuilder('v')
                                   ->orderBy('v.code', 'desc');
                     }
                 ))
-                ->add('file', null, array('label' => 'change_log.field.file'));
+                ->add('file', null, array('label' => 'backend.change_log.field.file'));
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Madalynn\\Bundle\\AndroBundle\\Entity\\ChangeLog',
+            'data_class' => 'Madalynn\\Bundle\\MainBundle\\Entity\\ChangeLog',
         ));
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function getName()
     {
         return 'admin_change_log';

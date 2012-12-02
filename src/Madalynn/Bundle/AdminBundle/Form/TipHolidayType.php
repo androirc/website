@@ -18,6 +18,9 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class TipHolidayType extends AbstractType
 {
+    /**
+     * {@inheritdoc}
+     */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $days = range(1, 31);
@@ -25,26 +28,32 @@ class TipHolidayType extends AbstractType
 
         $builder->add('language', 'language', array(
                     'preferred_choices' => array('en', 'fr'),
-                    'label'             => 'tip_holiday.field.language'
+                    'label'             => 'backend.tip_holiday.field.language'
                 ))
                 ->add('day', 'choice', array(
                     'choices' => array_combine($days, $days),
-                    'label'   => 'tip_holiday.field.day'
+                    'label'   => 'backend.tip_holiday.field.day'
                 ))
                 ->add('month', 'choice', array(
                     'choices' => array_combine($months, $months),
-                    'label'   => 'tip_holiday.field.month'
+                    'label'   => 'backend.tip_holiday.field.month'
                 ))
-                ->add('content', 'textarea', array('label' => 'tip_holiday.field.content'));
+                ->add('content', 'textarea', array('label' => 'backend.tip_holiday.field.content'));
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Madalynn\\Bundle\\AndroBundle\\Entity\\TipHoliday',
+            'data_class' => 'Madalynn\\Bundle\\MainBundle\\Entity\\TipHoliday',
         ));
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function getName()
     {
         return 'admin_tip_holiday';

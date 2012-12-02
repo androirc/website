@@ -1,178 +1,181 @@
-layout:
-    header: Administration center
+backend:
+    layout:
+        header: Administration center
 
-dashboard:
-    welcome: Welcome %username%!
-    subtitle: Welcome to the administration center
+    dashboard:
+        welcome: Welcome %username%!
+        subtitle: Welcome to the administration center
 
-sidebar.admin:
-    name: Administration
-    button: Go to the administration center
+    sidebar.admin:
+        name: Administration
+        button: Go to the administration center
 
-menu:
-    frontend: Frontend
-    article: Article
-    donator: Donator
-    user: User
-    beta: Beta
-    tip: Tip
-    crash: Crash
-    quickstart: Quick Start
-    holiday: Holiday
-    changelog: Change Log
-    version: Version
-    logout: Logout
+    menu:
+        frontend: Frontend
+        article: Article
+        donator: Donator
+        user: User
+        beta: Beta
+        tip: Tip
+        crash: Crash
+        quickstart: Quick Start
+        holiday: Holiday
+        changelog: Change Log
+        version: Version
+        version_androirc: AndroIRC version
+        version_android: Android version
+        logout: Logout
 
-login:
-    title: You need to signin to see this page
-    username: Username
-    password: Password
-    remember_me: Remember me
-    submit: Sign in
-
-actions:
-    show: Show
-    edit: Edit
-    delete: Delete
-    delete_all: Delete all
-    delete_selected: Delete selected
-    back_list: Back to the list
-    create: Create
-    create_entry: Create a new entry
-    clear_filters: Clear all filters
-    filter: Filter results
-    filter_button: Let's go
-    resolved: Resolved
-    unresolved: Unresolved
-    actions: Actions
-
-version:
-    base_title: Version management
-
-item:
-    create: The item was created successfully.
-    update: The item was updated successfully.
-    delete: The item was deleted successfully.
-    clear: Fiters has been removed successfully.
-
-article:
-    edit_title: %title%
-    edit: edit
-    not_visible: not visible
-    list_title: Article list
-    new_title: New article
-    field:
-        author: Author
-        title: Title
-        visible: Visible
-        created: Created
-        content: Content
-
-donator:
-    edit_title: %name% donator
-    list_title: Donator list
-    new_title: New donator
-    field:
-        name: Name
-        amount: Amount
-
-user:
-    edit_title: %username% user
-    list_title: User list
-    new_title: New user
-    field:
+    login:
+        title: You need to signin to see this page
         username: Username
-        admin: Administrator
-        last_login: Last login
-        last_login_format: Y-m-d
-        email: Email
         password: Password
-        roles: Roles
+        remember_me: Remember me
+        submit: Sign in
 
-beta_release:
-    edit_title: %version% beta release
-    list_title: Beta list
-    new_title: New beta
-    show_title: %version% beta release
-    field:
-        version: Version
-        downloadable: Downloadable
-        downloads: Downloads
-        repartition: Repartition
-        file: File
-
-tip:
-    edit_title: Tip edit
-    list_title: Tip list
-    new_title: New tip
-    show_title: Tip %id%
-    field:
-        language: Language
-        content: Content
-
-crash_report:
-    list_title: Crash Report list
-    show_title: Crash Report %id%
-    field:
-        error_message: Error message
-        androirc: AndroIRC
-        android: Android
-        count: Count
+    actions:
+        show: Show
+        edit: Edit
+        delete: Delete
+        delete_all: Delete all
+        delete_selected: Delete selected
+        back_list: Back to the list
+        create: Create
+        create_entry: Create a new entry
+        clear_filters: Clear all filters
+        filter: Filter results
+        filter_button: Filter
         resolved: Resolved
-        thread_name: Thread name
-        callstack: Callstack
+        unresolved: Unresolved
+        actions: Actions
 
-quick_start:
-    list_title: QuickStart list
-    new_title: New QuickStart
-    edit_title: QuickStart edit
-    field:
-        language: Language
-        version_min: Min version
-        version_max: Max version
-        version_none: None
-        content: Content
+    version:
+        base_title: Version management
 
-tip_holiday:
-    list_title: Tip Holiday list
-    new_title: New Tip Holiday
-    edit_title: Edit Tip Holiday
-    show_title: Tip Holiday %id%
-    field:
-        language: Language
-        date: Date
-        content: Content
-        day: Day
-        month: Month
+    item:
+        create: The item was created successfully.
+        update: The item was updated successfully.
+        delete: The item was deleted successfully.
+        clear: Fiters has been removed successfully.
 
-change_log:
-    edit_title: Changelog v%version% edit
-    new_title: New Changelog
-    list_title: Changelog list
-    field:
-        version: Version
-        file: File
+    article:
+        edit_title: %title%
+        edit: edit
+        not_visible: not visible
+        list_title: Article list
+        new_title: New article
+        field:
+            author: Author
+            title: Title
+            visible: Visible
+            created: Created
+            content: Content
 
-android_version:
-    edit_title: Android version edit
-    new_title: New Android version
-    list_title: Android versions list
-    field:
-        api_level: API Level
-        version: Version
-        major: Major
-        minor: Minor
-        revision: Revision
+    donator:
+        edit_title: %name% donator
+        list_title: Donator list
+        new_title: New donator
+        field:
+            name: Name
+            amount: Amount
 
-androirc_version:
-    edit_title: AndroIRC version edit
-    new_title: New AndroIRC version
-    list_title: AndroIRC versions list
-    add_new: Add a new AndroIRC version
-    field:
-        code: Code
-        version: Version
-        major: Major
-        minor: Minor
-        revision: Revision
-        state: State
+    user:
+        edit_title: %username% user
+        list_title: User list
+        new_title: New user
+        field:
+            username: Username
+            admin: Administrator
+            last_login: Last login
+            last_login_format: Y-m-d
+            email: Email
+            password: Password
+            roles: Roles
+
+    beta_release:
+        edit_title: %version% beta release
+        list_title: Beta list
+        new_title: New beta
+        show_title: %version% beta release
+        field:
+            version: Version
+            downloadable: Downloadable
+            downloads: Downloads
+            repartition: Repartition
+            file: File
+
+    tip:
+        edit_title: Tip edit
+        list_title: Tip list
+        new_title: New tip
+        show_title: Tip %id%
+        field:
+            language: Language
+            content: Content
+
+    crash_report:
+        list_title: Crash Report list
+        show_title: "Crash Report #%id%"
+        field:
+            error_message: Error message
+            androirc: AndroIRC
+            android: Android
+            count: Count
+            resolved: Resolved
+            thread_name: Thread name
+            callstack: Callstack
+
+    quick_start:
+        list_title: QuickStart list
+        new_title: New QuickStart
+        edit_title: QuickStart edit
+        field:
+            language: Language
+            version_min: Min version
+            version_max: Max version
+            version_none: None
+            content: Content
+
+    tip_holiday:
+        list_title: Tip Holiday list
+        new_title: New Tip Holiday
+        edit_title: Edit Tip Holiday
+        show_title: Tip Holiday %id%
+        field:
+            language: Language
+            date: Date
+            content: Content
+            day: Day
+            month: Month
+
+    change_log:
+        edit_title: Changelog v%version% edit
+        new_title: New Changelog
+        list_title: Changelog list
+        field:
+            version: Version
+            file: File
+
+    android_version:
+        edit_title: Android version edit
+        new_title: New Android version
+        list_title: Android versions list
+        field:
+            api_level: API Level
+            version: Version
+            major: Major
+            minor: Minor
+            revision: Revision
+
+    androirc_version:
+        edit_title: AndroIRC version edit
+        new_title: New AndroIRC version
+        list_title: AndroIRC versions list
+        add_new: Add a new AndroIRC version
+        field:
+            code: Code
+            version: Version
+            major: Major
+            minor: Minor
+            revision: Revision
+            state: State

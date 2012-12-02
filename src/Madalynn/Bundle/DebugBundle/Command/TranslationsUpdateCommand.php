@@ -1,0 +1,110 @@
+<?php
+
+/*
+ * This file is part of the AndroIRC website.
+ *
+ * (c) 2010-2012 Julien Brochet <mewt@androirc.com>
+ * (c) 2010-2012 Sébastien Brochet <blinkseb@androirc.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Madalynn\Bundle\DebugBundle\Command;
+
+use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\Input\InputArgument;
+use Symfony\Component\Console\Input\InputOption;
+use Symfony\Component\Yaml\Yaml;
+
+/**
+ * Updates all translation from Transifex
+ *
+ * @author Julien Brochet <mewt@androirc.com>
+ */
+class TranslationsUpdateCommand extends ContainerAwareCommand
+{
+    protected $urlTemplate  = 'https://www.transifex.net/api/2/project/androirc/resource/website/translation/%s';
+    protected $fileTemplate = 'messages.%s.yml';
+
+    /**
+     * {@inheritDoc}
+     */
+    protected function configure()
+    {
+        $this->setName('androirc:translations:update')
+             ->addArgument('locales', InputArgument::IS_ARRAY, 'The list of locales to update')
+             ->addOption('force', null, InputOption::VALUE_NONE, 'Force the download');
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    protected function execute(InputInterface $input, OutputInterface $output)
+    {
+        $siteLocales = $this->getContainer()->getParameter('jms_i18n_routing.locales');
+        $locales     = $input->getArgument('locales');
+        $force       = (Boolean) $input->getOption('force');
+        $transifex   = $this->getContainer()->getParameter('androirc.translations');
+
+        if (empty($locales)) {
+            $locales = $siteLocales;
+        } else {
+            $locales = array_intersect($locales, $siteLocales);
+        }
+
+        $output->writeln('<info>Starting updating translations...'.($force ? '' : ' (dry run)').'</info>');
+
+        foreach ($locales as $locale) {
+            if ('en' === $locale) {
+                // Don't download the translation for English
+                continue;
+            }
+
+            $output->writeln(sprintf('<comment>  > Download translation file for "%s" locale</comment>', $locale));
+
+            $transifexLocale = $locale;
+            if (isset($transifex[$locale])) {
+                $transifexLocale = $transifex[$locale];
+            }
+
+            // Downloads the translation
+            $json = $this->downloadTranslation($transifexLocale);
+
+            // Just get the content
+            $content = $json['content'];
+
+            if (true === $force && "{}\n" !== $content) {
+                $path = __DIR__.'/../../MainBundle/Resources/translations/'.sprintf($this->fileTemplate, $locale);
+                file_put_contents($path, $content);
+            }
+        }
+    }
+
+    /**
+     * Downloads a translation from Transifex for a specified locale
+     *
+     * @param string $locale The locale to download
+     *
+     * @return string The response
+     */
+    protected function downloadTranslation($locale)
+    {
+        $buzz     = $this->getContainer()->get('buzz');
+        $username = $this->getContainer()->getParameter('transifex_username');
+        $password = $this->getContainer()->getParameter('transifex_password');
+        $url      = sprintf($this->urlTemplate, $locale);
+
+        $response = $buzz->get($url, array(
+            'Authorization: Basic '.base64_encode($username.':'.$password)
+        ));
+
+        if (401 === $response->getStatusCode()) {
+            throw new \InvalidArgumentException(sprintf('Unable to connect to "%s". Are you sure about the password?', $url));
+        }
+
+        return json_decode($response->getContent(), true);
+    }
+}

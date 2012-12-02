@@ -18,31 +18,40 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class QuickStartType extends AbstractType
 {
+    /**
+     * {@inheritdoc}
+     */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('language', 'language', array(
                     'preferred_choices' => array('en', 'fr'),
-                    'label'             => 'quick_start.field.language'
+                    'label'             => 'backend.quick_start.field.language'
                 ))
                 ->add('versionMin', 'entity', array(
-                    'class' => 'Madalynn\\Bundle\\AndroBundle\\Entity\\AndroircVersion',
-                    'label' => 'quick_start.field.version_min'
+                    'class' => 'Madalynn\\Bundle\\MainBundle\\Entity\\AndroircVersion',
+                    'label' => 'backend.quick_start.field.version_min'
                 ))
                 ->add('versionMax', 'entity', array(
-                    'class'    => 'Madalynn\\Bundle\\AndroBundle\\Entity\\AndroircVersion',
-                    'label'    => 'quick_start.field.version_max',
+                    'class'    => 'Madalynn\\Bundle\\MainBundle\\Entity\\AndroircVersion',
+                    'label'    => 'backend.quick_start.field.version_max',
                     'required' => false
                 ))
-                ->add('content', 'editor', array('label' => 'quick_start.field.content'));
+                ->add('content', 'editor', array('label' => 'backend.quick_start.field.content'));
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Madalynn\\Bundle\\AndroBundle\\Entity\\QuickStart',
+            'data_class' => 'Madalynn\\Bundle\\MainBundle\\Entity\\QuickStart',
         ));
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function getName()
     {
         return 'admin_quick_start';

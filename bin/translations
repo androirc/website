@@ -1,8 +1,8 @@
 #!/usr/bin/env php
 <?php
 
-system('php app/console androirc:translation-update --force');
+system('php app/console androirc:translations:update --force');
 
 // Git commit
-system('git add src/Madalynn/Bundle/AndroBundle/Resources/translations/*');
+system('git add src/Madalynn/Bundle/MainBundle/Resources/translations/*');
 system('git commit -m "updated translations"');

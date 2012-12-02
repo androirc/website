@@ -1,0 +1,72 @@
+frontend:
+  subtitle: "안드로이드™  "
+  description: "당신의 안드로이드 장치를 위한 최고의 IRC 클라이언트, 안드로IRC를 발견하세요. 안드로IRC는 다중 서버 연결 (보안되었든 아니든), mIRC 색깔, 시작시 채널 자동 입장, Nickserv / SASL 보안, 기록하기, 테마, FiSH, 그리고 그 이상을 지원합니다. 이 모든 것이, 무료입니다!"
+  keywords: "안드로이드, IRC, 클라이언트, 무료, 앱, mIRC, 안드로IRC, 마켓, 플레이, 기록하기, SASL, 인증, Blowfish, 플레인, 신분, Nickserv, 테마, 스마트폰, 어플리케이션, 앱, IRCd, 커뮤니케이션, 인터넷, 중계, 대화, 서버, Freenode, Epiknet, Quakenet, EFNet, Undetnet, 닉, 닉네임, 챈, 채널, 킥, 밴, 옵, 하프옵, 보이스"
+  home_title: "안드로IRC - 당신의 장치에 필요한 최고의 IRC 클라이언트"
+  author: "Pandaren Sweetbarrow에 의해 번역됨"
+  menu:
+    blog: "블로그"
+    download: "다운로드"
+    support: "지원"
+    beta: "베타"
+    contact: "연락처"
+    terms: "약관"
+    facebook: "페이스북"
+    twitter: "트위터"
+    googleplus: "구글+"
+  copyright: "%year% Madalynn이 모든 권리를 보유함. 안드로이드는 구글의 상표입니다."
+  blog:
+    description: "안드로IRC의 최신 뉴스"
+    article_subtitle: "%author%이 %date%에 작성한 뉴스"
+    show_comments: "새 댓글"
+    date_format: "Y/m/d"
+    archives:
+      title: "보관소"
+      description: "날짜순으로 정렬된 문서"
+  beta:
+    description: "안드로IRC의 새 베타를 다운로드"
+    download_button: "새 베타 버전 다운로드"
+    no_beta: "죄송합니다... 지금 쓸 수 있는 베타가 없습니다. 나중에 다시 방문해주시고 페이스북, 트위터, 구글+에 집중해주세요."
+    warning: "이 버전은 구글 플레이 (안드로이드 마켓)에서 쓸 수 없습니다. 경고: 이 버전은 시험을 목적으로 하고 있으며, 버그가 있을 수 있습니다."
+    contact_us: "만약 버그를 발견하셨다면, 우리에게 연락해주세요"
+    new_beta: "새 베타가 다운로드 가능합니다 (%version%). 아래에서 변경 사항을 볼 수 있습니다."
+  support:
+    description: "도움이 필요하십니까? 이 부분을 보세요!"
+    wiki:
+      name: "위키"
+      description: "질문이 있으십니까? 아마 이 위키에 답이 있을 것입니다. 팀에 의해 작성되었으며, 안드로IRC를 설정하고 사용하는 모든 안내와 정보가 포함되어있습니다."
+      link: "위키로 가기"
+    support:
+      name: "지원 센터"
+      description: "버그를 발견하셨습니까? 제안이 있으십니까? 아니면 단지 질문이 있으신가요? 이곳이 바로 가야할 곳입니다. 우리는 당신을 기꺼이 도울 것이고, 안드로IRC를 더욱 좋고 안정적이게 만들 것입니다."
+      link: "지원 센터로 가기"
+    translation:
+      name: "번역"
+      description: "안드로IRC가 당신의 언어로 쓸 수 없나요? 저희가 안드로IRC를 번역하는 것을 도와주세요!"
+      link: "당신의 언어로 안드로IRC 번역을 시작하기"
+    social:
+      name: "소셜 네트워크"
+      description: "우리와 연락하기를 원하나요? 우리는 %facebook%, %twitter% 와 심지어 %googleplus%도 있습니다. 당연히, %irc%에도 있습니다."
+  homepage:
+    motto: "오직 안드로이드™를 위한 빠르고, 강력함."
+    notifications:
+      name: "강력한 알림"
+      description: "안드로IRC는 당신이 새 하이라이트나 개인 메시지를 받는 즉시 알려줍니다. 당연히, 당신은 알림을 원하는 대로 설정할 수 있습니다. 심지어 하이라이트를 발생하는 단어의 목록도 바꿀 수 있습니다!"
+    themes:
+      name: "어두움, 밝음, 그리고 수정 가능한 테마"
+      description: "기본적으로 어두움 또는 밝음 테마에 접근 가능하고, 안드로IRC는 당신이 원하는 색으로 직접 테마를 만들 수 있게 해줍니다. 모두 만들 수 있습니다."
+    tablet:
+      name: "타블렛 호환"
+      description: "우리는 안드로IRC를 타블렛에서 가능하게 하기 위해 열심히 일하고 있습니다. UI는 스스로 화면 크기에 적응하고, 당신이 더 큰 화면에서 IRC 세션을 즐길 수 있게 해줍니다."
+    fish:
+      name: "FiSH, SASL, Nickserv"
+      description: "안드로IRC는 Nickserv 같은 표준 인증 시스템을 지원합니다. 물론 Freenode에서 요구하는 SASL 인증 같은 추가적인 기능도 있습니다. 게다가 당신의 대화를 암호화해줄 수 있는 FiSH 프로토콜도 완벽하게 지원합니다."
+    ui:
+      name: "완벽하게 통합된, 아름다운 인터페이스"
+      description: "안드로IRC는 새로운 젤리 빈을 포함하여 사용자 인터페이스에 대한 최신 안드로이드 가이드라인을 따릅니다. 안드로이드 2.1 이상에서 가능합니다."
+    others:
+      name: "그리고 더 있습니다!"
+      description: "영어, 프랑스어, 한국어, 중국어, 네덜란드어, ... 안드로IRC는 10개 이상의 언어로 가능하며 모든 것이 당신이 원하는 대로 설정 가능합니다. 기록하기, 다중 서버, 실행시 자동 연결, 보안 연결 (SSL), NickServ 인증, 닉과 채널 자동 완성과 그 이상이 안드로이드™를 위한 최고의 IRC 클라이언트 안에 있습니다."
+    free:
+      name: "이 모든 것이... 무료입니다"
+      description: "안드로IRC는 구글 플레이에서 무료로 얻을 수 있습니다! 당신이 안드로IRC의 개발을 도울 수 있는 프리미엄 버전도 있습니다."

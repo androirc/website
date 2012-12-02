@@ -1,41 +1,27 @@
 {% extends "AdminBundle:Base:list.html.twig" %}
 
-{% block content %}
-  <table class="records_list">
+{% block subcontent %}
+    <table class="table table-striped table-hover">
         <thead>
             <tr>
-                <th>{{ 'crash_report.field.error_message'|trans }}</th>
-                <th>{{ 'crash_report.field.androirc'|trans }}</th>
-                <th>{{ 'crash_report.field.count'|trans }}</th>
-                <th>{{ 'crash_report.field.resolved'|trans }}</th>
-                <th width="220px;">{{ 'actions.actions'|trans }}</th>
+                <th>{{ 'backend.crash_report.field.error_message'|trans }}</th>
+                <th>{{ 'backend.crash_report.field.androirc'|trans }}</th>
+                <th>{{ 'backend.crash_report.field.count'|trans }}</th>
+                <th>{{ 'backend.crash_report.field.resolved'|trans }}</th>
+                <th>{{ 'backend.actions.actions'|trans }}</th>
             </tr>
         </thead>
         <tbody>
         {% for entity in pager %}
             <tr>
                 <td><a href="{{ path('admin_crash_report_show', {'id': entity.id}) }}">{{ entity.errorMessage|truncate(60) }}</a></td>
-                <td style="text-align: center">{{ entity.majorAndroircVersion }}</td>
-                <td style="text-align: center">{{ entity.count }}</td>
-                <td style="text-align: center">
-                    {% if (entity.resolved) %}
-                        <img src="{{ asset('bundles/andro/images/icons/tick.png') }}" />
-                    {% else %}
-                        <img src="{{ asset('bundles/andro/images/icons/cross.png') }}" />
-                    {% endif %}
-                </td>
+                <td>{{ entity.majorAndroircVersion }}</td>
+                <td>{{ entity.count }}</td>
+                <td>{{ macro.display_bool(entity.resolved) }}</td>
                 <td>
-                    <ul>
-                        <li>
-                            <img src="{{ asset('bundles/andro/images/icons/accept.png') }}" /> <a href="{{ path('admin_crash_report_resolved', {'id': entity.id}) }}">{{ 'actions.resolved'|trans }}</a>
-                        </li>
-                        <li>
-                            <img src="{{ asset('bundles/andro/images/icons/page.png') }}" /> <a href="{{ path('admin_crash_report_show', {'id': entity.id}) }}">{{ 'actions.show'|trans }}</a>
-                        </li>
-                        <li>
-                            <img src="{{ asset('bundles/andro/images/icons/cross.png') }}" /> <a onclick="return confirm('Are you sure?')" href="{{ path('admin_crash_report_delete', {'id': entity.id}) }}">{{ 'actions.delete'|trans }}</a>
-                        </li>
-                    </ul>
+                    <a href="{{ path('admin_crash_report_resolved', {'id': entity.id}) }}"><img src="{{ asset('bundles/admin/images/paper-gavel-16.png') }}" /></a>
+                    <a href="{{ path('admin_crash_report_show', {'id': entity.id}) }}"><img src="{{ asset('bundles/admin/images/badge-circle-direction-right-16.png') }}" /></a>
+                    <a onclick="return confirm('Are you sure?')" href="{{ path('admin_crash_report_delete', {'id': entity.id}) }}"><img src="{{ asset('bundles/admin/images/cross-16.png') }}" /></a>
                 </td>
             </tr>
         {% endfor %}
@@ -44,10 +30,6 @@
 {% endblock %}
 
 {% block entity_actions %}
-    <a onclick="return confirm('Are you sure?')" class="btn btn-danger" href="{{ path('admin_crash_report_delete_all') }}">
-        {{ 'actions.delete_all'|trans }}
-    </a>
-    <a onclick="return confirm('Are you sure?')" class="btn btn-danger" href="{{ path('admin_crash_report_delete_selected') }}">
-        {{ 'actions.delete_selected'|trans }}
-    </a>
+    <a onclick="return confirm('Are you sure?')" class="btn btn-danger" href="{{ path('admin_crash_report_delete_all') }}">{{ 'backend.actions.delete_all'|trans }}</a>
+    <a onclick="return confirm('Are you sure?')" class="btn btn-danger" href="{{ path('admin_crash_report_delete_selected') }}">{{ 'backend.actions.delete_selected'|trans }}</a>
 {% endblock %}

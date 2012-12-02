@@ -1,8 +1,12 @@
 {% extends "AdminBundle:Base:new.html.twig" %}
 
 {% block page %}
-    <div class="title-right">
-        <a class="btn btn-success" href="{{ path('admin_androirc_version_new') }}">{{ 'androirc_version.add_new'|trans }}</a>
+    <div class="row">
+        <div class="span9">
+            {{ parent() }}
+        </div>
+        <suv class="span3">
+            <a class="btn btn-success" href="{{ path('admin_androirc_version_new') }}">{{ 'backend.androirc_version.add_new'|trans }}</a>
+        </div>
     </div>
-    {{ parent() }}
 {% endblock %}

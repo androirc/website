@@ -1,10 +1,10 @@
 set :application,     "androirc.com"
-set :domain,          "bender.madalynn.eu"
+set :domain,          "homer.madalynn.eu"
 set :deploy_to,       "/home/web/#{application}/www"
 set :user,            "web"
 set :port,            2222
 
-set :repository,      "https://github.com/androirc/AndroBundle.git"
+set :repository,      "https://github.com/androirc/website.git"
 set :scm,             :git
 set :branch,          "master"
 set :deploy_via,      :remote_cache
@@ -29,6 +29,6 @@ set :use_sudo,              false
 set :dump_assetic_assets,   true
 set :update_assets_version, true
 set :clear_controllers,     true
-set :permission_method,     :acl
+set :permission_method,     false
 
 before "symfony:bootstrap:build", "deploy:set_permissions"
