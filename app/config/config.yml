@@ -104,7 +104,7 @@ swiftmailer:
 
 jms_i18n_routing:
     default_locale: en
-    locales: [en, fr, ko, pt, cs, zh, de, fi, es, it]
+    locales: [en, fr, ko, pt, cs, zh, de, pl, fi, es, it]
     strategy: prefix_except_default
     cookie:
       enabled: false
