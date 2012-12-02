@@ -39,9 +39,9 @@ class BackwardController extends Controller
     }
 
     /**
-     * @Route("/archives/{page}")
+     * @Route("/archives/{page}", defaults={"page" = 1})
      */
-    public function archivesAction($page)
+    public function archivesPageAction($page = null)
     {
         return $this->redirect($this->generateUrl('blog'));
     }
