@@ -57,7 +57,7 @@ class BetaController extends Controller
         $em   = $this->getDoctrine()->getEntityManager();
         $repo = $em->getRepository('MainBundle:BetaRelease');
 
-        $beta = $repo->getLastBeta();
+        $beta = $repo->getLatestBeta();
 
         return (null === $beta) ? new Response('-1') : new Response($beta->getVersion()->getCode());
     }
