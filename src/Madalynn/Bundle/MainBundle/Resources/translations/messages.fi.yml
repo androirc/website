@@ -1,0 +1,18 @@
+frontend:
+  menu:
+    blog: "Blogi"
+    download: "Lataa"
+    support: "Tuki"
+    beta: "Beeta"
+    facebook: "Facebook"
+    twitter: "Twitter"
+    googleplus: "Google+\n"
+  support:
+    wiki:
+      name: "Wiki"
+      link: "Siirry wikiin"
+    support:
+      name: "Tukikeskus"
+      link: "Siirry tukikeskukseen"
+    translation:
+      description: "AndroIRC ei ole saatavilla omalla kielelläsi? Auta meitä kääntäminen AndroIRC!"
