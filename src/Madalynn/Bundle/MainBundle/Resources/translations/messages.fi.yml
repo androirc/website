@@ -1,18 +1,72 @@
 frontend:
+  subtitle: "IRC-asiakasohjelma Androidille™"
+  description: "Löydä AndroIRC, mahtavin IRC-asiakasohjelma Android-laitteellesi. AndroIRC tukee yhteyksiä useisiin palvelimiin (salattuna tai ei), mIRC-värejä, automaattista yhdistämistä kanaville käynnistyessä, nickserv- / sash-varmennusta, logausta, teemoja, FiSH:iä ja paljon muuta. Kaikki tämä ilmaiseksi."
+  keywords: "android, irc, asiakasohjelma, ilmainen, applikaatio, mirc, androirc, market, play, logaaminen, sasl, varmennus, blowfish, plain, tunnistus, nickserv, teemat, älypuhelin, sovellus, sovellukset, ircd, kommukaatio, internet, relay, chat, palvelin, freenode, epiknet, quakenet, efnet, undernet, ident, nick, nimimerkki, chan, kanava, kick, ban, op, halfop, voice"
+  home_title: "AndroIRC - Paras IRC-asiakasohjelma androidille, jonka laitteesi tarvitsee"
+  author: "Kääntänyt Rami Selin"
   menu:
     blog: "Blogi"
     download: "Lataa"
     support: "Tuki"
     beta: "Beeta"
+    contact: "Ota yhteyttä"
+    terms: "Ehdot"
     facebook: "Facebook"
     twitter: "Twitter"
-    googleplus: "Google+\n"
+    googleplus: "Google+"
+  copyright: "Tekijänoikeus %year% Madalynn, kaikki oikeudet pidätetään. Android on Google Inc.:n tavaramerkki."
+  blog:
+    description: "Viimeisimmät uutiset AndroIRC:stä"
+    article_subtitle: "Uutisen kirjoitti %author% %date%"
+    show_comments: "Näytä kommentit"
+    date_format: "d/m/Y"
+    archives:
+      title: "Arkistot"
+      description: "Arkistot päivämäärän mukaan"
+  beta:
+    description: "Lataa uusi AndroIRC:n beeta"
+    download_button: "Lataa uusi beeta-bersio"
+    no_beta: "Pahoittelut... Beeta ei ole tällä hetkellä saatavilla. Tule takaisin myöhemmin ja pysy ajan tasalla seuraamalla Facebookia, Twitteriä ja Google+:aa"
+    warning: "Tämä versio ei ole saatavilla Google Playssa (Android Market). Varoitus: tämä versio on tarkoitettu vain testaukseen ja saattaa sisältää bugeja."
+    contact_us: "Jos löydät bugeja, ota yhteyttä."
+    new_beta: "Uusi beeta on saatavana ladattavaksi (%version%). Löydät muutoslistan alta."
   support:
+    description: "Etsitkö apua? Tämä alue on sinulle!"
     wiki:
       name: "Wiki"
+      description: "Kysymys? Vastaus on luultavasti wikissä. Tiimin kirjoittamana se sisältää kaikki ohjeet ja tiedot säätääksesi ja käyttääksesi AndroIRC:iä."
       link: "Siirry wikiin"
     support:
       name: "Tukikeskus"
+      description: "Löysitkö bugin? Onko kysymyksiä? Tai vain yksi kysymys? Tämä on oikea paikka. Autamme mielellämme sinua ja teemme AndroIRC:stä vieläkin paremman ja vakaamman."
       link: "Siirry tukikeskukseen"
     translation:
+      name: "Käännös"
       description: "AndroIRC ei ole saatavilla omalla kielelläsi? Auta meitä kääntäminen AndroIRC!"
+      link: "Aloita kääntämään AndroIRC:iä omalle kielellesi"
+    social:
+      name: "Sosiaaliset verkostot"
+      description: "Haluatko olla meihin yhteydessä? Olemme palveluissa %facebook%:ssa, %twitter%:ssä ja jopa %googleplus%:ssa. Totta kai olemme myös %irc%:ssä."
+  homepage:
+    motto: "Nopea, tehokas, vain Androidille™"
+    notifications:
+      name: "Tehokkaat ilmoitukset"
+      description: "AndroIRC ilmoittaa sinulle heti, kun sinulla on uusi yksityisviesti tai uusi kohokohta. Luonnollisesti voit säätää ilmoitukset halumiksesi. Voit jopa muuttaa listaa sanoista, jotka laukaisevat kohokohdan!"
+    themes:
+      name: "Tumma, vaalea ja muokattava teema"
+      description: "Käytettävissä oletuksena tummalla ja vaalealla teemalla, AndroIRC mahdollistaa sinun luoda oman mukautetun teeman omilla väreilläsi. Se on täysin muokattavissa."
+    tablet:
+      name: "Valmis tableteille"
+      description: "Olemme tehneet kovasti töitä tuodaksemme sinulle AndroIRC:n tabletille. Käyttöliittymä mukauttaa itsensä näytön koolle, ja sinä voit täysin nauttia IRC-sessiostasi suuremmalla näytöllä."
+    fish:
+      name: "FiSH, SASL, Nickserv"
+      description: "AndroIRC tukeaa standardeja varmennusjärjestelmiä kuten NickServ:iä. Siinä on myös kehittyneitä ominaisuuksia kuten SASL-varmennus, jonka freenode vaati. Sinulla on myös mahdollisuus salata keskustelusi täydellä FiSH-protokollan tuella."
+    ui:
+      name: "Kaunis käyttöliittymä, täysin intergroitu."
+      description: "Saatavilla Android 2.1:lle ja uudemmille, AndroIRC seuraa aina viimeisimpiä Androidin ohjeistuksia käyttöliittymän suhteen jopa uusimmalla Jelly Bean-versiolla. Harkitusti luodulla käyttöliittymällä kaikki on käsillä."
+    others:
+      name: "Ja paljon muuta!"
+      description: "Englanti, ranska, korea, kiina, hollanti, ... AndroIRC on saatavilla yli kymmenellä kielellä ja täysin säädettävissä tarpeisiisi. Logaaminen, useat palvelimet, automaattiset yhdistämiset käynnistyessä, salatut yhteydet (SSL), NickServ-varmennus, nimimerkkien ja kanavien täydentäminen ja paljon muuta parhaassa IRC-asiakasohjelmassa Androidille™."
+    free:
+      name: "Kaikki tämä... ilmaiseksi"
+      description: "AndroIRC on saatavilla ilmaiseksi Google Playssa! Premium-versio on myös saatavilla, jos haluat auttaa AndroIRC:n kehityksessä"
