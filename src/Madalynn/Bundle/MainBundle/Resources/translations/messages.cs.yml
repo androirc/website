@@ -1,0 +1,72 @@
+frontend:
+  subtitle: "Klient IRC pro Androd™"
+  description: "Discover AndroIRC, the greatest IRC client for your Android device. AndroIRC supports multiple servers connection (secured or not), mIRC colors, auto join channels on startup, nickserv / sasl auth, logging, themes, FiSH, and much more. All of that, for free!"
+  keywords: "android, irc, client, free, app, mirc, androirc, market, play, logging, sasl, authentication, blowfish, plain, identification, nickserv, themes, smartphone, application, apps, ircd, communication, internet, relay, chat, server, freenode, epiknet, quakenet, efnet, undernet, ident, nick, nickname, chan, channel, kick, ban, op, halfop, voice"
+  home_title: "AndroIRC - nejlepší klient IRC pro vaše zařízení s OS Android"
+  author: "Překlad Tomáš Chvátal"
+  menu:
+    blog: "Blog"
+    download: "Ke stažení"
+    support: "Podpora"
+    beta: "Beta"
+    contact: "Kontakt"
+    terms: "Podmínky"
+    facebook: "Facebook"
+    twitter: "Twitter"
+    googleplus: "Google+"
+  copyright: "Copyright %year% Madalynn, všechna práva vyhrazena. Android je ochrannou známkou Google Inc."
+  blog:
+    description: "Poslední novinky o AndroIRC"
+    article_subtitle: "Novinka od %author%, dne %date%"
+    show_comments: "Zobrazit komentáře"
+    date_format: "d/m/Y"
+    archives:
+      title: "Archívy"
+      description: "Archívy seřazené dle data"
+  beta:
+    description: "Stáhněte novou beta verzi AndroIRC"
+    download_button: "Stáhnout novou beta verzi"
+    no_beta: "Lituji, v současné době není dostupné žádné beta vydání. Přijďte, prosím, později a sledujte náš Facebook, Twitter a Google+"
+    warning: "Tato verze není dostupná na Google Play (Android Marked). Vemte na vědomí, že tato verze je určena pouze pro testovací účely a může (určite bude) obsahovat chyby."
+    contact_us: "Pokud narazíte na chyby, tak nás prosím kontaktujte."
+    new_beta: "Je k dispozici nová beta (%version%) ke stažení. Níže naleznete seznam změn."
+  support:
+    description: "Hledáte pomoc? Tato sekce je pro vás."
+    wiki:
+      name: "Wiki"
+      description: "Mate dotaz? Odpověď na něj se pravděpodobně nachází v této wiki. Jsou v ní všechny návody a informace jak nastavit a používat AndroIRC a je spravována týmem AndroIRC."
+      link: "Přejít na wiki"
+    support:
+      name: "Centrum podpory"
+      description: "Objevili jste chybu? Máte návrhy na zlepšení? Nebo si jen přejete se na něco zeptat? Toto je místo kam se vydat. Rádi vám pomůžeme a upravíme AndroIRC aby bylo lepší a stabilnější."
+      link: "Přejít do centra podpory"
+    translation:
+      name: "Překlady"
+      description: "AndroIRC není dostupné ve vašem jazyce? Pomozte nám s jeho překlady."
+      link: "Začít překládat AndroIRC do vašeho jazyka"
+    social:
+      name: "Sociální sítě"
+      description: "Přejete si kontaktovat nás? Jsme na %facebook%, %twitter% a dokonce %googleplus%. Samozřejmě jsme také na %irc%."
+  homepage:
+    motto: "Rychlý, výkonný, only for Android™"
+    notifications:
+      name: "Účinná oznámení"
+      description: "AndroIRC vás upozorní jakmile vám někdo napíše soukromou zprávu, nebo vás zvýrazní. Samozřejmě můžete nastavit oznamování podle vašich potřeb. Dokonce můžete nastavit seznam slov, která budou považována za zvýraznění."
+    themes:
+      name: "Tmavý, světlý a upravitelný vzhled"
+      description: "Ve výchozím stavu obsahuje světlé a tmavé téma. AndroIRC vám umožňuje vytvořit vaše vlastní téma s vlastními barvami. Je plně upravitelné."
+    tablet:
+      name: "Připraveno pro tablety"
+      description: "Tvrdě jsme pracovali abychom vám přinesli AndroIRC na tabletech. UI se samo přizpůsobí velikosti obrazovky a vy si tak budete moci plně vychutnat IRC komunikaci na větších obrazovkách."
+    fish:
+      name: "FiSH, SASL, Nickserv"
+      description: "AndroIRC podporuje standardní systémy ověření jako NickServ. Také má pokročilé vlastnosti jako ověření SASL, vyžadované sítí Freenode. Můžete také šifrovat své rozhovory pomocí plně podporovaného protokolu FiSH."
+    ui:
+      name: "Krásné a plně integrované rozhraní"
+      description: "Dostupný pro Android 2.1 a novější. AndroIRC vždy dodržuje nejnovější doporučení pro uživatelská rozhraní, dokonce i pro novou verzi Jelly Bean. Se svým promyšleným rozhraním je vše snadné."
+    others:
+      name: "A mnoho dalšího!"
+      description: "Angličtina, Francouzština, Korejština, Čínština, Dánština, ... AndroIRC je dostupné ve více než 10 jazycích a nastavitelné dle vašich potřeb. Záznam, více serverů, automatické připojení při spuštění, zabezpečené spojeni (SSL), ověření NickServ, doplňovaní přezdívek a kanálů a mnoho dalšího. Toto vše naleznete v nejlepším klientu pro Android™."
+    free:
+      name: "A to vše... zdarma"
+      description: "AndroIRC je dostupné zdarma na Google Play! Je také dostupná verze premium, pokud si přejete přispět na vývoj AndroIRC."

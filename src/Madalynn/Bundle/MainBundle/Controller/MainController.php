@@ -25,6 +25,7 @@ class MainController extends Controller
     /**
      * @Route("/", name="homepage")
      * @Template
+     * @Cache(public=true, smaxage="1800", maxage="1800")
      */
     public function homepageAction()
     {
