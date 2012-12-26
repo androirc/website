@@ -14,6 +14,7 @@ namespace Madalynn\Bundle\MainBundle\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 /**
  * Blog controller
@@ -31,7 +32,7 @@ class BlogController extends Controller
         $em   = $this->getDoctrine()->getEntityManager();
         $repo = $em->getRepository('MainBundle:Article');
 
-        $articles = $repo->getLatestArticles($this->isAdmin(), 5);
+        $articles = $repo->getLatestArticles(5);
 
         return array('articles' => $articles);
     }
@@ -48,7 +49,11 @@ class BlogController extends Controller
         $article = $repo->find($id);
 
         if (null === $article) {
-            throw $this->createNotFoundException('This article does not exist');
+            throw $this->createNotFoundException('This article does not exist.');
+        }
+
+        if (false === $article->isVisible()) {
+            throw $this->createNotFoundException('This article is not visible at the moment.');
         }
 
         return array('article' => $article);
@@ -63,7 +68,7 @@ class BlogController extends Controller
         $em   = $this->getDoctrine()->getEntityManager();
         $repo = $em->getRepository('MainBundle:Article');
 
-        $articles = $repo->getLatestArticles(false, 20);
+        $articles = $repo->getLatestArticles(20);
 
         return array('articles' => $articles);
     }

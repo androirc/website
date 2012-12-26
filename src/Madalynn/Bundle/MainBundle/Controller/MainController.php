@@ -15,6 +15,7 @@ namespace Madalynn\Bundle\MainBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 /**
  * Main controller

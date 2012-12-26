@@ -22,15 +22,13 @@ class ArticleRepository extends EntityRepository
     /**
      * Gets the latest articles from the database
      *
-     * @param boolean $admin If the user is admin or not to also retrieve
-     *                       invisible news
-     * @param int     $limit The number of articles to retrieve
+     * @param int $limit The number of articles to retrieve
      *
-     * @return array
+     * @return Article[]
      */
-    public function getLatestArticles($admin = false, $limit = 10)
+    public function getLatestArticles($limit = 10)
     {
-        return $this->getQueryBuilder($admin)
+        return $this->getQueryBuilder()
                     ->setMaxResults($limit)
                     ->getQuery()
                     ->getResult();
@@ -46,7 +44,7 @@ class ArticleRepository extends EntityRepository
      */
     public function findByDate($month, $year)
     {
-        return $this->createQueryBuilder('a')
+        return $this->getQueryBuilder()
                     ->where('MONTH(a.created) = :month')
                     ->andWhere('YEAR(a.created) = :year')
                     ->orderBy('a.created', 'ASC')
@@ -61,26 +59,19 @@ class ArticleRepository extends EntityRepository
     /**
      * Gets a new QueryBuilder with already some fields initialized
      *
-     * @param boolean $admin If the user is an administrator or not
-     *
      * @return QueryBuilder
      */
-    public function getQueryBuilder($admin = false)
+    public function getQueryBuilder()
     {
-        $query = $this->createQueryBuilder('a')
-                      ->orderBy('a.created', 'desc');
-
-        if (false === $admin) {
-            $query->where('a.visible = true');
-        }
-
-        return $query;
+        return $this->createQueryBuilder('a')
+                    ->where('a.visible = true')
+                    ->orderBy('a.created', 'desc');
     }
 
     /**
      * Gets the months for the archive layout
      *
-     * @return array
+     * @return Article[]
      */
     public function getArchivesMonths()
     {
