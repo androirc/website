@@ -40,9 +40,9 @@ class BackwardController extends Controller
     }
 
     /**
-     * @Route("/tips.html")
+     * @Route("/tips.{_format}", defaults={"_format" = "html"})
      */
-    public function tipsAction()
+    public function tipAction()
     {
         return $this->redirect($this->generateUrl('_tip', array('lang' => 'en')));
     }
