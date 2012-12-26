@@ -36,4 +36,22 @@ class BlogControllerTest extends WebTestCase
         $crawler = $this->client->request('GET', '/blog');
         $this->assertCount(5, $crawler->filter('article'));
     }
+
+    public function testArticleIsVisible()
+    {
+        $this->client->request('GET', '/blog');
+        $this->assertRegExp('/blog\/1-/', $this->client->getResponse()->getContent());
+
+        $this->client->request('GET', '/blog/1-vel-est-blanditiis-quas');
+        $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
+    }
+
+    public function testArticleIsNotVisible()
+    {
+        $this->client->request('GET', '/blog');
+        $this->assertNotRegExp('/blog\/2-/', $this->client->getResponse()->getContent());
+
+        $this->client->request('GET', '/blog/2-sint-delectus-magnam-aliquam-culpa');
+        $this->assertEquals(404, $this->client->getResponse()->getStatusCode());
+    }
 }

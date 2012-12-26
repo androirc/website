@@ -60,4 +60,12 @@ class TipControllerTest extends WebTestCase
         $this->client->request('GET', '/tip/en/2011-12-25');
         $this->assertEquals('We wish you a merry christmas... *sings*', $this->client->getResponse()->getContent());
     }
+
+    public function testCacheControlHeader()
+    {
+        $this->client->request('GET', '/tip/fr');
+        $headers = $this->client->getResponse()->headers;
+
+        $this->assertEquals('max-age=1800, public, s-maxage=1800', $headers->get('Cache-Control'));
+    }
 }

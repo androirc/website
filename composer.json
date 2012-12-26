@@ -7,18 +7,23 @@
         "symfony/assetic-bundle": "2.1.*",
         "doctrine/orm": ">=2.2.3,<2.4-dev",
         "doctrine/doctrine-bundle": "1.0.*",
-        "doctrine/doctrine-fixtures-bundle": "dev-master",
-        "doctrine/doctrine-migrations-bundle": "dev-master",
-        "sensio/buzz-bundle": "dev-master",
+        "doctrine/doctrine-fixtures-bundle": "dev-master@dev",
+        "doctrine/doctrine-migrations-bundle": "dev-master@dev",
+        "sensio/buzz-bundle": "0.*",
         "sensio/distribution-bundle": "2.1.*",
         "sensio/framework-extra-bundle": "2.1.*",
-        "twig/extensions": "dev-master",
-        "fzaninotto/faker": "dev-master",
-        "white-october/pagerfanta-bundle": "dev-master",
-        "jms/i18n-routing-bundle": "dev-master",
-        "willdurand/geocoder-bundle": "dev-master",
-        "knplabs/knp-markdown-bundle": "dev-master",
-        "beberlei/DoctrineExtensions": "dev-master"
+        "twig/extensions": "1.0.*@dev",
+        "fzaninotto/faker": "1.1.*",
+        "white-october/pagerfanta-bundle": "dev-master@dev",
+        "jms/i18n-routing-bundle": "dev-master@dev",
+        "willdurand/geocoder-bundle": "1.1.*",
+        "knplabs/knp-markdown-bundle": "1.1.*",
+        "beberlei/DoctrineExtensions": "0.*",
+
+        "kriswallsmith/assetic": "1.1.*@dev",
+        "doctrine/data-fixtures": "dev-master@dev",
+        "doctrine/migrations": "dev-master@dev",
+        "pagerfanta/pagerfanta": "dev-master@dev"
     },
     "scripts": {
         "post-install-cmd": [
@@ -34,7 +39,6 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile"
         ]
     },
-    "minimum-stability": "dev",
     "autoload": {
         "psr-0": {
             "Madalynn": "src/"
