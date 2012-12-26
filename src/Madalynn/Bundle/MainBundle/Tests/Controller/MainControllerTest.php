@@ -43,4 +43,12 @@ class MainControllerTest extends WebTestCase
             array('m.androirc.com/fr'),
         );
     }
+
+    public function testCacheControlHeader()
+    {
+        $this->client->request('GET', '/');
+        $headers = $this->client->getResponse()->headers;
+
+        $this->assertEquals('max-age=1800, public, s-maxage=1800', $headers->get('Cache-Control'));
+    }
 }
