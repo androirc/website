@@ -14,7 +14,7 @@ frontend:
     facebook: "Facebook"
     twitter: "Twitter"
     googleplus: "Google+"
-  copyright: "Copyright %year% Madalynn, alle Rechte vorbehalten. Android iist eine Marke der Google Inc."
+  copyright: "Copyright %year% Madalynn, alle Rechte vorbehalten. Android ist eine Marke der Google Inc."
   blog:
     description: "Letzte Nachrichten über AndroIRC"
     article_subtitle: "Neuigkeit von %author% am %date%"
@@ -60,7 +60,7 @@ frontend:
       description: "Wir haben mühevoll gearbeitet um AndroIRC auf dein Tablet zu bringen, die Benutzerüberfläche passt sich selbst an die Bildschirmgröße an und du wirst fähig sein deine IRC Sitzung auf einem größeren Bildschirm zu genießen."
     fish:
       name: "FiSH, SASL, NickServ"
-      description: "AndroIRC unterstützt Standard Authentifizierungen wie NickServ, es hat ebenfalls weitere Besonderheiten wie SASL Authentifizierung, welche von freenode verlangt wird. Du hast ebenfalls die Möglichkeit deine Konservation mit FiSH zu verschlüsseln."
+      description: "AndroIRC unterstützt Standard Authentifizierungen wie NickServ, es hat ebenfalls weitere Besonderheiten wie die SASL Authentifizierung, welche von freenode verlangt wird. Du hast ebenfalls die Möglichkeit deine Konservation mit FiSH zu verschlüsseln."
     ui:
       name: "Wunderschöne Oberflläche"
       description: "Verfügbar für Android 2.1 und höher, AndroIRC verfolgt immer die letzten Vorgaben von Android zur Benutzerfläche, sogar das neue Jelly Bean wird unterstützt. Mit der wohlüberlegten Oberfläche ist alles griffbereit!"
