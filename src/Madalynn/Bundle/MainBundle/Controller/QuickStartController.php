@@ -28,7 +28,7 @@ class QuickStartController extends Controller
      * @Cache(public=true, smaxage="604800", maxage="604800")
      * @Route("/quickstart/{version}/{lang}/{theme}",
      *     name="_quickstart",
-     *     defaults={"theme" = "light"},
+     *     defaults={"theme" = "light", "lang" = "en"},
      *     requirements={"theme" = "light|dark"}
      * )
      */
