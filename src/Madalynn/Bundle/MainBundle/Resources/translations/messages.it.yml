@@ -1,0 +1,72 @@
+frontend:
+  subtitle: "Client IRC Android™"
+  description: "Scopri AndroIRC, il miglior client IRC per il tuo dispositivo Android. AndroIRC supporta connessioni a server multipli (sicuri o meno), colori di mIRC, connessione automatica ai canali all'avvio, autorizzazioni nickserv / sasl, log automatici, temi, FiSH, e molto altro. Tutto questo, gratis!"
+  keywords: "android, irc, client, free, app, mirc, androirc, market, play, logging, sasl, authentication, blowfish, plain, identification, nickserv, themes, smartphone, application, apps, ircd, communication, internet, relay, chat, server, freenode, epiknet, quakenet, efnet, undernet, ident, nick, nickname, chan, channel, kick, ban, op, halfop, voice"
+  home_title: "AndroIRC - Il miglior client IRC disponibile per il tuo dispositivo Android"
+  author: "Traduzione di Alixey"
+  menu:
+    blog: "Blog"
+    download: "Scarica"
+    support: "Supporto"
+    beta: "Beta"
+    contact: "Contatti"
+    terms: "Termini di utilizzo"
+    facebook: "Facebook"
+    twitter: "Twitter"
+    googleplus: "Google+"
+  copyright: "Copyright %year% Madalynn, tutti i diritti riservati. Android è un marchio registrato di Google Inc."
+  blog:
+    description: "Ultime notizie di AndroIRC"
+    article_subtitle: "Notizie di %author% il %date%"
+    show_comments: "Mostra commenti"
+    date_format: "m/d/Y"
+    archives:
+      title: "Archivi"
+      description: "Archivi ordinati per data"
+  beta:
+    description: "Scarica la nuova beta di AndroIRC"
+    download_button: "Scarica la nuova versione beta"
+    no_beta: "Mi spiace... Nessuna versione beta è disponibile. Torna tra un po' e rimani sintonizzato su Facebook, Twitter e Google+"
+    warning: "Questa versione non è disponibile su Google Play (Android Market). Attenzione: questa versione è solamente per scopi di test e (potrebbe) contenere bug."
+    contact_us: "Se trovi qualsiasi bug, contattaci."
+    new_beta: "Una nuova versione beta è disponibile (%version%). Troverai una lista dei cambiamenti in basso."
+  support:
+    description: "Sei in cerca di supporto? Questa sezione fa al caso tuo!"
+    wiki:
+      name: "Wiki"
+      description: "Domanda? La risposta è probabilmente in questa wiki. Scritta dagli sviluppatori, include tutte le guide e le informazioni per configurare ed utilizzare AndroIRC."
+      link: "Vai alla wiki"
+    support:
+      name: "Centro di supporto"
+      description: "Hai trovato un bug? Hai un suggerimento? O una domanda? È il posto giusto. Saremo lieti di aiutarti e rendere AndroIRC migliore e più stabile."
+      link: "Vai al centro di supporto"
+    translation:
+      name: "Traduzione"
+      description: "AndroIRC non è disponibile nella tua lingua? Aiutaci a tradurre AndroIRC!"
+      link: "Inizia a tradurre AndroIRC nella tua lingua"
+    social:
+      name: "Social network"
+      description: "Vuoi metterti in contatto con noi? Siamo su %facebook%, %twitter% e pure %googleplus%. E ovviamente, siamo anche su %irc%."
+  homepage:
+    motto: "Veloce, potente, solo su Android™"
+    notifications:
+      name: "Potenti notifiche"
+      description: "AndroIRC ti notificherà non appena ricevi un messaggio privato o un nuovo highlight. E ovviamente, puoi configurare le notifiche a tuo piacimento. Puoi anche cambiare la lista delle parole che faranno scattare un highlight!"
+    themes:
+      name: "Temi personalizzabili dark e light"
+      description: "Accessibile di default in due temi, dark e light, AndroIRC ti permette di creare il tuo tema personalizzato con i tuoi colori. È completamente personalizzabile."
+    tablet:
+      name: "Pronto per i tablet"
+      description: "Abbiamo lavorato sodo per portarvi AndroIRC sui tablet. L'UI si adatta alla grandezza dello schermo, e sarai in grado di godere una sessione di IRC su uno schermo più grande."
+    fish:
+      name: "FiSH, SASL, Nickserv"
+      description: "AndroIRC supporta i sistemi di identificazione standard come NickServ. Ha anche caratteristiche avanzate, come l'autenticazione SASL, richiesta da freenode. Sarai inoltre in grado di criptare la tua conversazione con il supporto completo al FiSH."
+    ui:
+      name: "Interfaccia piacevole, pienamente integrata"
+      description: "Disponibile su Android 2.1 ed oltre, AndroIRC segue sempre le ultime linee guida per quanto concerne l'interfaccia persino nell'ultima versione Jelly Bean. Con la sua interfaccia ricercata, tutto è a portata di mano!"
+    others:
+      name: "E molto altro!"
+      description: "Italiano, Inglese, Francese, Coreano, Cinese, Olandese, ...AndroIRC è disponibile in più di 10 lingue ed è completamente personalizzabile secondo i tuoi bisogni. Log automatici, server multipli, connessioni automatiche all'avvio, connessioni sicure (SSL), autenticazione NickServ, completamento di nick e canali e molto altro, dentro al miglior client IRC per Android™."
+    free:
+      name: "Tutto questo... gratis"
+      description: "AndroIRC è disponibile gratuitamente su Google Play! Una versione premium è disponibile se desideri aiutare lo sviluppo di AndroIRC."
