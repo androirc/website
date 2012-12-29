@@ -18,7 +18,7 @@
             <author>
                 <name>{{ article.author }}</name>
             </author>
-            <content type="html">{{ article.content }}</content>
+            <content type="html">{{ article.content|parse }}</content>
         </entry>
     {% endfor %}
 </feed>
