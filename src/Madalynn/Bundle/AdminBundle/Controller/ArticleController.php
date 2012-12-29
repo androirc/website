@@ -28,20 +28,6 @@ class ArticleController extends CRUDController
         $qb->orderBy('e.created', 'desc');
     }
 
-    public function showAction($id)
-    {
-        $entity = $this->getRepository()->find($id);
-
-        if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Article entity.');
-        }
-
-        return $this->redirect($this->generateUrl('blog_show', array(
-            'id'   => $entity->getId(),
-            'slug' => $entity->getSlug(),
-        )));
-    }
-
     protected function getClass()
     {
         return 'Madalynn\\Bundle\\MainBundle\\Entity\\Article';

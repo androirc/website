@@ -1,0 +1,5 @@
+{% extends "AdminBundle:Base:show.html.twig" %}
+
+{% block subcontent %}
+    {% include 'MainBundle:Blog:article_skeleton.html.twig' with {article: entity}%}
+{% endblock %}

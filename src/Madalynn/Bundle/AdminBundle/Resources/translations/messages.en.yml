@@ -64,6 +64,7 @@ backend:
         not_visible: not visible
         list_title: Article list
         new_title: New article
+        show_title: Show article
         field:
             author: Author
             title: Title
