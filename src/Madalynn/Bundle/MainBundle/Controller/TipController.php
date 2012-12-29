@@ -46,7 +46,7 @@ class TipController extends Controller
 
         if (null === $tip) {
             $repo = $em->getRepository('MainBundle:Tip');
-            $tip = $repo->getTip($lang);
+            $tip = $repo->getTipOrStaticTip($lang);
         }
 
         if (null === $tip) {

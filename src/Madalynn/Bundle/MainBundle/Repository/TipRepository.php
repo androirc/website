@@ -16,7 +16,14 @@ use Doctrine\ORM\EntityRepository;
 
 class TipRepository extends EntityRepository
 {
-    public function getTip($lang = 'en')
+    /**
+     * Retrieves a tip for a language
+     *
+     * @param string $lang The language
+     *
+     * @return string The tip
+     */
+    public function getTip($lang)
     {
         $dql = 'SELECT COUNT(t) FROM MainBundle:Tip t WHERE t.language = :lang';
 
@@ -37,6 +44,23 @@ class TipRepository extends EntityRepository
                     ->setMaxResults(1)
                     ->setParameter('lang', $lang)
                     ->getQuery()
-                    ->getSingleResult();
+                    ->getOneOrNullResult();
+    }
+
+    public function getTipOrStaticTip($lang = 'en')
+    {
+        $staticTip = $this->createQueryBuilder('t')
+                          ->where('t.static = 1')
+                          ->andWhere('t.language = :lang')
+                          ->setMaxResults(1)
+                          ->setParameter('lang', $lang)
+                          ->getQuery()
+                          ->getOneOrNullResult();
+
+        if (null === $staticTip) {
+            return $this->getTip($lang);
+        }
+
+        return $staticTip;
     }
 }
