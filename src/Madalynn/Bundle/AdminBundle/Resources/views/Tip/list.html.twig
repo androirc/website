@@ -6,6 +6,7 @@
             <tr>
                 <th>{{ 'backend.tip.field.language'|trans }}</th>
                 <th>{{ 'backend.tip.field.content'|trans }}</th>
+                <th>{{ 'backend.tip.field.static'|trans }}</th>
                 <th>{{ 'backend.actions.actions'|trans }}</th>
             </tr>
         </thead>
@@ -14,6 +15,7 @@
             <tr>
                 <td>{{ entity.language }}</td>
                 <td><a href="{{ path('admin_tip_show', {'id': entity.id}) }}">{{ entity.content|truncate(90)|raw }}</a></td>
+                <td>{{ macro.display_bool(entity.static) }}</td>
                 <td>
                     <a href="{{ path('admin_tip_edit', {'id': entity.id}) }}"><img src="{{ asset('bundles/admin/images/pencil-16.png') }}" /></a>
                     <a onclick="return confirm('Are you sure?')" href="{{ path('admin_tip_delete', {'id': entity.id}) }}"><img src="{{ asset('bundles/admin/images/cross-16.png') }}" /></a>

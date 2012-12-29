@@ -38,6 +38,11 @@ class Tip
     protected $content;
 
     /**
+     * @ORM\Column(type="boolean")
+     */
+    protected $static;
+
+    /**
      * Get id
      *
      * @return integer
@@ -85,5 +90,25 @@ class Tip
     public function getContent()
     {
         return $this->content;
+    }
+
+    /**
+     * Set static
+     *
+     * @param boolean $static
+     */
+    public function setStatic($static)
+    {
+        $this->static = $static;
+    }
+
+    /**
+     * Get static
+     *
+     * @return boolean
+     */
+    public function isStatic()
+    {
+        return $this->static;
     }
 }
