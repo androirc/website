@@ -83,7 +83,7 @@ abstract class CRUDController extends Controller
         $en = $this->getEntityName();
 
         $this->get('session')->remove($this->getSessionFilterName());
-        $this->get('session')->getFlashBag()->set('success', 'item.clear');
+        $this->get('session')->getFlashBag()->set('success', 'backend.item.clear');
 
         return $this->redirect($this->generateUrl('admin_' . $this->underscore($en) . '_list'));
     }
@@ -169,7 +169,7 @@ abstract class CRUDController extends Controller
 
             $this->postPersist($entity);
 
-            $this->get('session')->getFlashBag()->set('success', 'item.create');
+            $this->get('session')->getFlashBag()->set('success', 'backend.item.create');
 
             return $this->redirect($this->generateUrl('admin_' . $this->underscore($en) . '_edit', array(
                 'id' => $entity->getId()
@@ -237,7 +237,7 @@ abstract class CRUDController extends Controller
 
             $this->postUpdate($entity);
 
-            $this->get('session')->getFlashBag()->set('success', 'item.update');
+            $this->get('session')->getFlashBag()->set('success', 'backend.item.update');
 
             return $this->redirect($this->generateUrl('admin_' . $this->underscore($en) . '_edit', array(
                 'id' => $id
@@ -275,7 +275,7 @@ abstract class CRUDController extends Controller
 
         $this->postRemove($entity);
 
-        $this->get('session')->getFlashBag()->set('success', 'item.delete');
+        $this->get('session')->getFlashBag()->set('success', 'backend.item.delete');
 
         return $this->redirect($this->generateUrl('admin_' . $this->underscore($en) . '_list'));
     }
