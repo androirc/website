@@ -195,6 +195,7 @@ class TipFixtures implements FixtureInterface
 
             $tmp->setContent($tip['content']);
             $tmp->setLanguage($tip['lang']);
+            $tmp->setStatic(false);
 
             $em->persist($tmp);
         }
