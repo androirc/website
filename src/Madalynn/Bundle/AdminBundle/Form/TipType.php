@@ -27,7 +27,11 @@ class TipType extends AbstractType
                     'preferred_choices' => array('en', 'fr'),
                     'label'             => 'backend.tip.field.language'
                 ))
-                ->add('content', 'textarea', array('label' => 'backend.tip.field.content'));
+                ->add('content', 'textarea', array('label' => 'backend.tip.field.content'))
+                ->add('static', null, array(
+                    'required' => false,
+                    'label'    => 'backend.tip.field.static'
+                ));
     }
 
     /**

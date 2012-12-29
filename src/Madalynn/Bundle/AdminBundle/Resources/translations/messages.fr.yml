@@ -113,6 +113,7 @@ backend:
         field:
             language: Langue
             content: Contenu
+            static: Statique
 
     crash_report:
         list_title: Liste des rapports de crash
