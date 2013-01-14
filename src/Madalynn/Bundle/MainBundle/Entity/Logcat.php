@@ -43,6 +43,12 @@ class Logcat
      * @ORM\JoinColumn(name="crashreport_id", referencedColumnName="id")
      */
     protected $crash_report;
+    
+    private static $regex = '/^(\d{2}-\d{2} \d{2}:\d{2}:\d{2}\.\d{3})(?:\s)*(\d{4})(?:\s)*(\d{4}) (\D) (.*?): (.*)$/i';
+    
+    protected $content = array();
+    
+    private $parsed = false;
 
     /**
      * @ORM\PrePersist
@@ -126,5 +132,48 @@ class Logcat
     public function getLogcat()
     {
         return $this->logcat;
+    }
+    
+    public function getContent()
+    {
+        $this->ensure_parsed();
+        return $this->content;
+    }
+    
+    /**
+     * Ensure we only parse once this logcat
+     */
+    private function ensure_parsed()
+    {
+        if (! $this->parsed)
+        {
+            $this->parse();
+            $this->parsed = true;
+        }
+    }
+    
+    /**
+     * Parse the logcat lines and extract various components
+     */
+    private function parse()
+    {
+        // Logcat format
+        // mm-dd hh:mm:ss.ppp PID TID LEVEL TAG: Message
+        $lines = explode("\n", $this->logcat);
+        foreach ($lines as $line)
+        {
+            $matches = array();
+            if (preg_match(self::$regex, $line, $matches))
+            {
+                $this->content[] = array(
+                    'date' => \DateTime::createFromFormat("m-d H:i:s.u ", $matches[1], new \DateTimeZone("UTC")),
+                    'pid' => $matches[2],
+                    'tid' => $matches[3],
+                    'level' => $matches[4],
+                    'tag' => $matches[5],
+                    'message' => $matches[6]
+                    );
+            }
+        }
     }
 }
