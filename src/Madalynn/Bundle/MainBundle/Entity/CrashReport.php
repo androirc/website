@@ -3,8 +3,8 @@
 /*
  * This file is part of the AndroIRC website.
  *
- * (c) 2010-2012 Julien Brochet <mewt@androirc.com>
- * (c) 2010-2012 Sébastien Brochet <blinkseb@androirc.com>
+ * (c) 2010-2013 Julien Brochet <mewt@androirc.com>
+ * (c) 2010-2013 Sébastien Brochet <blinkseb@androirc.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -13,6 +13,8 @@
 namespace Madalynn\Bundle\MainBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @ORM\Entity(repositoryClass="Madalynn\Bundle\MainBundle\Repository\CrashReportRepository")
@@ -62,6 +64,11 @@ class CrashReport
      * @ORM\Column(type="text")
      */
     protected $callstack;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Logcat", mappedBy="crash_report")
+     */
+    protected $logcats;
 
     protected $explodedCallstack;
 
@@ -79,6 +86,7 @@ class CrashReport
     {
         $this->count = 1;
         $this->resolved = false;
+        $this->logcats = new ArrayCollection();
     }
 
     /**
@@ -349,5 +357,50 @@ class CrashReport
         }
 
         return $this->explodedCallstack = $lines;
+    }
+
+    /**
+     * Get resolved
+     *
+     * @return boolean 
+     */
+    public function getResolved()
+    {
+        return $this->resolved;
+    }
+
+    /**
+     * Add logcat
+     *
+     * @param \Madalynn\Bundle\MainBundle\Entity\Logcat $logcat
+     * @return CrashReport
+     */
+    public function addLogcat(\Madalynn\Bundle\MainBundle\Entity\Logcat $logcat)
+    {
+        $this->logcats[] = $logcat;
+        $logcat->setCrashReport($this);
+    
+        return $this;
+    }
+
+    /**
+     * Remove logcat
+     *
+     * @param \Madalynn\Bundle\MainBundle\Entity\Logcat $logcat
+     */
+    public function removeLogcat(\Madalynn\Bundle\MainBundle\Entity\Logcat $logcat)
+    {
+        $this->logcats->removeElement($logcat);
+        $logcat->setCrashReport();
+    }
+
+    /**
+     * Get logcats
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getLogcats()
+    {
+        return $this->logcats;
     }
 }

@@ -13,6 +13,7 @@
 namespace Madalynn\Bundle\MainBundle\Tests\Entity;
 
 use Madalynn\Bundle\MainBundle\Entity\CrashReport;
+use Madalynn\Bundle\MainBundle\Entity\Logcat;
 
 class CrashReportTest extends \PHPUnit_Framework_TestCase
 {
@@ -106,6 +107,27 @@ class CrashReportTest extends \PHPUnit_Framework_TestCase
     public function testAndroircVersion(CrashReport $cr)
     {
         $this->assertEquals('3.1 e825cc1- build on 2011/11/26 17:31', $cr->getAndroircVersion());
+    }
+    
+    /**
+     * @dataProvider dataCrashReport
+     * 
+     * @covers CrashReport::addLogcat
+     * @covers CrashReport::removeLogcat
+     * @covers CrashReport::getLogcats
+     */
+    public function testLogcats(CrashReport $cr)
+    {
+        $logcat = new Logcat();
+        $logcat->setLogcat("I'm a logcat");
+        
+        $this->assertTrue($cr->getLogcats()->count() === 0);
+        $cr->addLogcat($logcat);
+        $this->assertTrue($cr->getLogcats()->count() === 1);
+        $this->assertTrue($cr->getLogcats()->get(0)->getCrashReport() === $cr);
+        
+        $cr->removeLogcat($logcat);
+        $this->assertTrue($cr->getLogcats()->count() == 0);
     }
 
     public function dataCrashReport()
