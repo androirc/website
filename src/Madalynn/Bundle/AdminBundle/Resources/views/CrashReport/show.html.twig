@@ -39,6 +39,29 @@
                 <td>{{ 'backend.crash_report.field.callstack'|trans }}</td>
                 <td><pre>{{ entity.callstack }}</pre></td>
             </tr>
+            <tr>
+                <td>Logcats</td>
+                <td>
+                    <div class="tabbable tabs-left">
+                        <ul class="nav nav-tabs" id="logcat_tabs">
+                        {% for logcat in entity.logcats %}
+                            {# First, create tabs on the left #}
+                            <li{% if loop.first %} class="active"{% endif %}><a href="#tab{{ loop.index }}" data-toggle="tab">#{{ loop.index }}</a></li>
+                        {% endfor %}
+                        </ul>
+                        <div class="tab-content">
+                        {% for logcat in entity.logcats %}
+                            {# Next, the tab content #}
+                            <div class="tab-pane{% if loop.first %} active{% endif %}" id="tab{{ loop.index }}">
+                                <pre>
+                                    {% for content in logcat.content %}<div><span class="{% if content.level == 'I'%}text-info{% elseif content.level == 'W' %}text-warning{% elseif content.level == 'V' %}muted{% elseif content.level == 'E' %}text-error{% elseif content.level == 'D' %}text-success{% endif %}">[{{ content.date|date("d/m - H:i:s") }}] [{{ content.pid }}] [{{ content.tag }}] {{ content.message }}</span></div>{% endfor %}
+                                </pre>
+                            </div>
+                        {% endfor %}
+                        </div>
+                    </div>
+                </td>
+            </tr>
         </tbody>
     </table>
 {% endblock %}

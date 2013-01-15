@@ -18,6 +18,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Madalynn\Bundle\MainBundle\Entity\CrashReport;
+use Madalynn\Bundle\MainBundle\Entity\Logcat;
 
 /**
  * Crash report controller
@@ -38,6 +39,7 @@ class CrashReportController extends Controller
         $errorMessage    = $request->request->get('error_message');
         $callstack       = $request->request->get('callstack');
         $androircVersion = $request->request->get('version', 'Unknown');
+        $logcatText      = $request->request->get('logcat', null);
 
         if (!$callstack || !$phoneModel || !$androidVersion) {
             throw $this->createNotFoundException('Missing arguments.');
@@ -57,6 +59,14 @@ class CrashReportController extends Controller
         $crashReport->setCallstack($callstack);
         $crashReport->setAndroircVersion($androircVersion);
 
+        $logcat = null;
+        if (null !== $logcatText) {
+            $logcat = new Logcat();
+            $logcat->setLogcat($logcatText);
+
+            $crashReport->addLogcat($logcat);
+        }
+
         $em = $this->getDoctrine()->getEntityManager();
         $repo = $em->getRepository('MainBundle:CrashReport');
 
@@ -65,10 +75,19 @@ class CrashReportController extends Controller
         if (false !== $tmp) {
             $tmp->incCount();
 
+            if (null !== $logcat) {
+                $tmp->addLogcat($logcat);
+                $em->persist($logcat);
+            }
+
             $em->persist($tmp);
             $em->flush();
 
             return new Response('ok');
+        }
+
+        if (null !== $logcat) {
+            $em->persist($logcat);
         }
 
         $em->persist($crashReport);
