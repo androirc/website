@@ -77,16 +77,19 @@ class CrashReportController extends Controller
 
             if (null !== $logcat) {
                 $tmp->addLogcat($logcat);
+                $em->persist($logcat);
             }
 
-            $em->persist($logcat);
             $em->persist($tmp);
             $em->flush();
 
             return new Response('ok');
         }
 
-        $em->persist($logcat);
+        if (null !== $logcat) {
+            $em->persist($logcat);
+        }
+
         $em->persist($crashReport);
         $em->flush();
 
