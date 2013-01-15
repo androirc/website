@@ -53,19 +53,9 @@
                         {% for logcat in entity.logcats %}
                             {# Next, the tab content #}
                             <div class="tab-pane{% if loop.first %} active{% endif %}" id="tab{{ loop.index }}">
-                                {% spaceless %}
-                                    <pre>
-                                        {% for content in logcat.content %}
-                                            <span class="{% if content.level == 'I'%}text-info{%
-                                              elseif content.level == 'W' %}text-warning{%
-                                              elseif content.level == 'V' %}muted{%
-                                              elseif content.level == 'E' %}text-error{%
-                                              elseif content.level == 'D' %}text-success{% endif %}">
-                                                [{{ content.date|date("d/m - H:i:s") }}] [{{ content.pid }}] [{{ content.tag }}] {{ content.message }}
-                                            </span>
-                                        {% endfor %}
-                                    </pre>
-                                {% endspaceless %}
+                                <pre>
+                                    {% for content in logcat.content %}<div><span class="{% if content.level == 'I'%}text-info{% elseif content.level == 'W' %}text-warning{% elseif content.level == 'V' %}muted{% elseif content.level == 'E' %}text-error{% elseif content.level == 'D' %}text-success{% endif %}">[{{ content.date|date("d/m - H:i:s") }}] [{{ content.pid }}] [{{ content.tag }}] {{ content.message }}</span></div>{% endfor %}
+                                </pre>
                             </div>
                         {% endfor %}
                         </div>

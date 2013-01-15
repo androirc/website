@@ -63,7 +63,26 @@ EOF
 
         for ($i = 0 ; $i < 4 ; $i++) {
             $logcat = new Logcat();
-            $logcat->setLogcat($faker->paragraph(5));
+            $logcat->setLogcat(<<<EOF
+01-15 19:50:01.521  1630  1630 I AndroIRC: Chosen theme: Classic
+01-15 19:50:01.521  1630  1630 I AndroIRC: Premium app not found: ads enabled
+01-15 19:50:01.521  1630  1630 I AndroIRC: Starting AndroIRC with action: android.intent.action.MAIN
+01-15 19:50:01.521  1630  1630 I AndroIRC: [onCreate()] Creating user interface ...
+01-15 19:50:01.540  1630  1630 I AndroIRC: [SQLAndroIRC::loadConfiguration] Configuration loaded in 16 ms
+01-15 19:50:01.540  1630  1630 I AndroIRC: Service started? true
+01-15 19:50:01.540  1630  1630 D AndroIRC: Theme name: Light
+01-15 19:50:01.560  1630  1635 D dalvikvm: GC_CONCURRENT freed 296K, 5% free 8254K/8647K, paused 13ms+1ms, total 15ms
+01-15 19:50:01.580  1630  1630 V AndroIRC: This is a message logged in VERBOSE
+01-15 19:50:01.580  1630  1630 D AndroIRC: This is a message logged in DEBUG
+01-15 19:50:01.580  1630  1630 I AndroIRC: This is a message logged in INFORMATION
+01-15 19:50:01.580  1630  1630 W AndroIRC: This is a message logged in WARNING
+01-15 19:50:01.580  1630  1630 E AndroIRC: This is a message logged in ERROR
+01-15 19:50:01.580  1630  1630 D AndroidRuntime: Shutting down VM
+01-15 19:50:01.590  1630  1630 W dalvikvm: threadid=1: thread exiting with uncaught exception (group=0xb3e8d288)
+01-15 19:50:01.851  1630  1673 I AndroIRC: [BetaChecker] no new beta available
+01-15 19:50:03.451  1630  1674 I AndroIRC: Crash report sent!
+EOF
+            );
             $cr->addLogCat($logcat);
 
             $em->persist($logcat);
