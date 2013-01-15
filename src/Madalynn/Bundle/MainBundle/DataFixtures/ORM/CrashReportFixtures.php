@@ -60,9 +60,8 @@ java.lang.NullPointerException
         at dalvik.system.NativeStart.main(Native Method)
 EOF
         );
-        
+
         for ($i = 0 ; $i < 4 ; $i++) {
-            
             $logcat = new Logcat();
             $logcat->setLogcat($faker->paragraph(5));
             $cr->addLogCat($logcat);

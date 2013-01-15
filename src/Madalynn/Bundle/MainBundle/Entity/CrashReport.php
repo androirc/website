@@ -64,9 +64,9 @@ class CrashReport
      * @ORM\Column(type="text")
      */
     protected $callstack;
-    
+
     /**
-     * @ORM\OneToMany(targetEntity="Logcat", mappedBy="crash_report")
+     * @ORM\OneToMany(targetEntity="Logcat", mappedBy="crashReport")
      */
     protected $logcats;
 
@@ -362,7 +362,7 @@ class CrashReport
     /**
      * Get resolved
      *
-     * @return boolean 
+     * @return boolean
      */
     public function getResolved()
     {
@@ -379,7 +379,7 @@ class CrashReport
     {
         $this->logcats[] = $logcat;
         $logcat->setCrashReport($this);
-    
+
         return $this;
     }
 
@@ -397,7 +397,7 @@ class CrashReport
     /**
      * Get logcats
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getLogcats()
     {

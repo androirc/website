@@ -108,10 +108,10 @@ class CrashReportTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertEquals('3.1 e825cc1- build on 2011/11/26 17:31', $cr->getAndroircVersion());
     }
-    
+
     /**
      * @dataProvider dataCrashReport
-     * 
+     *
      * @covers CrashReport::addLogcat
      * @covers CrashReport::removeLogcat
      * @covers CrashReport::getLogcats
@@ -120,14 +120,15 @@ class CrashReportTest extends \PHPUnit_Framework_TestCase
     {
         $logcat = new Logcat();
         $logcat->setLogcat("I'm a logcat");
-        
-        $this->assertTrue($cr->getLogcats()->count() === 0);
+
+        $this->assertCount(0, $cr->getLogcats());
         $cr->addLogcat($logcat);
-        $this->assertTrue($cr->getLogcats()->count() === 1);
-        $this->assertTrue($cr->getLogcats()->get(0)->getCrashReport() === $cr);
-        
+
+        $this->assertCount(0, $cr->getLogcats());
+        $this->assertSame($cr, $cr->getLogcats()->get(0)->getCrashReport());
+
         $cr->removeLogcat($logcat);
-        $this->assertTrue($cr->getLogcats()->count() == 0);
+        $this->assertCount(0, $cr->getLogcats());
     }
 
     public function dataCrashReport()
