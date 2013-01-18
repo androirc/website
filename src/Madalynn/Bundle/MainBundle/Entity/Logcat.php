@@ -44,7 +44,7 @@ class Logcat
      */
     protected $crashReport;
 
-    private static $regex = '/^(\d{2}-\d{2} \d{2}:\d{2}:\d{2}\.\d{3})(?:\s)*(\d{4})(?:\s)*(\d{4}) (\D) (.*?): (.*)$/i';
+    private static $regex = '/^(\d{2}-\d{2} \d{2}:\d{2}:\d{2}\.\d{3})(?:\s)*(\d{1,9})(?:\s)*(\d{1,9})(?:\s)*(\D)(?:\s)*(.*?): (.*)$/i';
 
     protected $content = array();
 
@@ -168,8 +168,8 @@ class Logcat
                     'date' => \DateTime::createFromFormat("m-d H:i:s.u ", $matches[1], new \DateTimeZone('UTC')),
                     'pid' => $matches[2],
                     'tid' => $matches[3],
-                    'level' => $matches[4],
-                    'tag' => $matches[5],
+                    'level' => trim($matches[4]),
+                    'tag' => trim($matches[5]),
                     'message' => $matches[6]
                 );
             }
