@@ -44,7 +44,7 @@ class Logcat
      */
     protected $crashReport;
 
-    private static $regex = '/^(\d{2}-\d{2} \d{2}:\d{2}:\d{2}\.\d{3})(?:\s)*(\d{1,9})(?:\s)*(\d{1,9})(?:\s)*(\D)(?:\s)*(.*?): (.*)$/i';
+    private static $regex = '/^(\d{2}-\d{2}(?:\s)*\d{2}:\d{2}:\d{2}\.\d{3})(?:\s)*(\d{1,9})(?:\s)*(\d{1,9})(?:\s)*(\D)(?:\s)*(.*?):(?:\s)*(.*)$/i';
 
     protected $content = array();
 
