@@ -69,7 +69,7 @@
 {% block entity_actions %}
     <a class="btn btn-info" href="{{ path('admin_crash_report_resolved', {'id': entity.id}) }}">
         {% if (entity.resolved) %}
-            {{ 'backend..actions.unresolved'|trans }}
+            {{ 'backend.actions.unresolved'|trans }}
         {% else %}
             {{ 'backend.actions.resolved'|trans }}
         {% endif %}

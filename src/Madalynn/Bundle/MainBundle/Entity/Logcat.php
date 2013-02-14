@@ -39,12 +39,12 @@ class Logcat
     protected $logcat;
 
     /**
-     * @ORM\ManyToOne(targetEntity="CrashReport", inversedBy="logcats", cascade={"persist", "remove"})
-     * @ORM\JoinColumn(name="crashreport_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="Madalynn\Bundle\MainBundle\Entity\CrashReport")
+     * @ORM\JoinColumn(onDelete="CASCADE", name="crashreport_id")
      */
     protected $crashReport;
 
-    private static $regex = '/^(\d{2}-\d{2} \d{2}:\d{2}:\d{2}\.\d{3})(?:\s)*(\d{4})(?:\s)*(\d{4}) (\D) (.*?): (.*)$/i';
+    private static $regex = '/^(\d{2}-\d{2}(?:\s)*\d{2}:\d{2}:\d{2}\.\d{3})(?:\s)*(\d{1,9})(?:\s)*(\d{1,9})(?:\s)*(\D)(?:\s)*(.*?):(?:\s)*(.*)$/i';
 
     protected $content = array();
 
@@ -168,8 +168,8 @@ class Logcat
                     'date' => \DateTime::createFromFormat("m-d H:i:s.u ", $matches[1], new \DateTimeZone('UTC')),
                     'pid' => $matches[2],
                     'tid' => $matches[3],
-                    'level' => $matches[4],
-                    'tag' => $matches[5],
+                    'level' => trim($matches[4]),
+                    'tag' => trim($matches[5]),
                     'message' => $matches[6]
                 );
             }
