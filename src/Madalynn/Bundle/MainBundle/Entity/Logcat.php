@@ -39,8 +39,8 @@ class Logcat
     protected $logcat;
 
     /**
-     * @ORM\ManyToOne(targetEntity="CrashReport", inversedBy="logcats", cascade={"persist", "remove"})
-     * @ORM\JoinColumn(name="crashreport_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="Madalynn\Bundle\MainBundle\Entity\CrashReport")
+     * @ORM\JoinColumn(onDelete="CASCADE", name="crashreport_id")
      */
     protected $crashReport;
 
