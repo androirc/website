@@ -54,7 +54,7 @@ frontend:
       description: "AndroIRC vás upozorní jakmile vám někdo napíše soukromou zprávu, nebo vás zvýrazní. Samozřejmě můžete nastavit oznamování podle vašich potřeb. Dokonce můžete nastavit seznam slov, která budou považována za zvýraznění."
     themes:
       name: "Tmavý, světlý a upravitelný vzhled"
-      description: "Ve výchozím stavu obsahuje světlé a tmavé téma. AndroIRC vám umožňuje vytvořit vaše vlastní téma s vlastními barvami. Je plně upravitelné."
+      description: "Ve výchozím stavu obsahuje světlý a tmavý vzhled. AndroIRC vám umožňuje vytvořit váš vlastní vzhled s vlastními barvami. Je plně upravitelné."
     tablet:
       name: "Připraveno pro tablety"
       description: "Tvrdě jsme pracovali abychom vám přinesli AndroIRC na tabletech. UI se samo přizpůsobí velikosti obrazovky a vy si tak budete moci plně vychutnat IRC komunikaci na větších obrazovkách."
@@ -63,7 +63,7 @@ frontend:
       description: "AndroIRC podporuje standardní systémy ověření jako NickServ. Také má pokročilé vlastnosti jako ověření SASL, vyžadované sítí Freenode. Můžete také šifrovat své rozhovory pomocí plně podporovaného protokolu FiSH."
     ui:
       name: "Krásné a plně integrované rozhraní"
-      description: "Dostupný pro Android 2.1 a novější. AndroIRC vždy dodržuje nejnovější doporučení pro uživatelská rozhraní, dokonce i pro novou verzi Jelly Bean. Se svým promyšleným rozhraním je vše snadné."
+      description: "Dostupné pro Android 2.1 a novější. AndroIRC vždy dodržuje nejnovější doporučení pro vzhled uživatelského rozhraní, dokonce i pro novou verzi Jelly Bean. Se svým promyšleným rozhraním vám umožní všeho snadno dosáhnout."
     others:
       name: "A mnoho dalšího!"
       description: "Angličtina, Francouzština, Korejština, Čínština, Dánština, ... AndroIRC je dostupné ve více než 10 jazycích a nastavitelné dle vašich potřeb. Záznam, více serverů, automatické připojení při spuštění, zabezpečené spojeni (SSL), ověření NickServ, doplňovaní přezdívek a kanálů a mnoho dalšího. Toto vše naleznete v nejlepším klientu pro Android™."

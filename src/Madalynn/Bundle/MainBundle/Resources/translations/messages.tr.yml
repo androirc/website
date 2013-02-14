@@ -1,0 +1,28 @@
+frontend:
+  subtitle: "Android™ IRC İstemcisi"
+  description: "Android için en mükemmel IRC istemcisi olan AndroIRC'yi keşfet. AndroIRC birden çok sunucu bağlantısını (güvenli veya değil), mIRC renklerini, başlangıçta kanallara otomatik girişi, nickserv / sasl auth, log (kayıt tutma), temalar, FiSH ve daha fazlasını destekler. Bunların hepsi, ücretsiz!"
+  keywords: "android, irc, istemcisi, ücretsiz, app, mirc, androirc, market, play, logging, sasl, authentication, blowfish, plain, identification, nickserv, temalar, akıllı telefon, uygulama, apps, ircd, iletişim, internet, relay, chat, sunucu, freenode, epiknet, quakenet, efnet, undernet, ident, nick, nickname, chan, channel, kick, ban, op, halfop, voice"
+  home_title: "AndroIRC - Android cihazınızda ihtiyacınız olan en iyi IRC İstemcisi"
+  menu:
+    blog: "Blog"
+    download: "İndir"
+    support: "Destek"
+    beta: "Beta"
+    contact: "İletişim"
+    terms: "Şartlar"
+    facebook: "Facebook"
+    twitter: "Twitter"
+    googleplus: "Google+"
+  copyright: "Telif hakkı %yıl% Madalynn, tüm hakları saklıdır. Android, Google Inc. ticari markasıdır."
+  blog:
+    description: "AndroIRC hakkında son haberler"
+    article_subtitle: "News by %author% on %date%"
+    show_comments: "Yorumları göster"
+    date_format: "a/g/Y"
+    archives:
+      title: "Arşivler"
+      description: "Tarihe göre sıralı arşivler"
+  beta:
+    description: "AndroIRC yeni beta sürümünü indir"
+    download_button: "Beta sürümü indir"
+    no_beta: "Üzgünüm... Geçerli beta sürümü yok. Lütfen, daha sonra tekrar deneyin ve bizi Facebook, Twitter and Google+ aracılığıyla takip etmeye devam edin."
