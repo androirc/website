@@ -25,7 +25,7 @@ use Symfony\Component\Console\Input\InputOption;
  */
 class TranslationsUpdateCommand extends ContainerAwareCommand
 {
-    protected $urlTemplate  = 'https://www.transifex.net/api/2/project/androirc/resource/website/translation/%s';
+    protected $urlTemplate  = 'https://www.transifex.com/api/2/project/androirc/resource/website/translation/%s';
     protected $fileTemplate = 'messages.%s.yml';
 
     /**
