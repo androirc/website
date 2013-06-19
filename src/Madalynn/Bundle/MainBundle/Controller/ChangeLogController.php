@@ -34,7 +34,7 @@ class ChangeLogController extends Controller
      */
     public function showAction($version, $theme)
     {
-        $em   = $this->getDoctrine()->getEntityManager();
+        $em   = $this->getDoctrine()->getManager();
         $repo = $em->getRepository('MainBundle:ChangeLog');
 
         $version = $em->getRepository('MainBundle:AndroircVersion')

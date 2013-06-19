@@ -29,7 +29,7 @@ class BlogController extends Controller
      */
     public function listAction()
     {
-        $em   = $this->getDoctrine()->getEntityManager();
+        $em   = $this->getDoctrine()->getManager();
         $repo = $em->getRepository('MainBundle:Article');
 
         $articles = $repo->getLatestArticles(5);
@@ -43,7 +43,7 @@ class BlogController extends Controller
      */
     public function showAction($id)
     {
-        $em   = $this->getDoctrine()->getEntityManager();
+        $em   = $this->getDoctrine()->getManager();
         $repo = $em->getRepository('MainBundle:Article');
 
         $article = $repo->find($id);
@@ -65,7 +65,7 @@ class BlogController extends Controller
      */
     public function rssAction()
     {
-        $em   = $this->getDoctrine()->getEntityManager();
+        $em   = $this->getDoctrine()->getManager();
         $repo = $em->getRepository('MainBundle:Article');
 
         $articles = $repo->getLatestArticles(20);
@@ -80,7 +80,7 @@ class BlogController extends Controller
      */
     public function menuAction()
     {
-        $em   = $this->getDoctrine()->getEntityManager();
+        $em   = $this->getDoctrine()->getManager();
         $repo = $em->getRepository('MainBundle:Article');
 
         return array('months' => $repo->getArchivesMonths());
@@ -92,7 +92,7 @@ class BlogController extends Controller
      */
     public function archivesAction($year, $month)
     {
-        $em   = $this->getDoctrine()->getEntityManager();
+        $em   = $this->getDoctrine()->getManager();
         $repo = $em->getRepository('MainBundle:Article');
 
         $articles = $repo->findByDate($month, $year);

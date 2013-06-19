@@ -56,7 +56,7 @@ class SandboxExtension extends \Twig_Extension
      */
     public function displayChangelog($version)
     {
-        $em = $this->container->get('doctrine')->getEntityManager();
+        $em = $this->container->get('doctrine')->getManager();
         $repo = $em->getRepository('MainBundle:ChangeLog');
 
         $version = $em->getRepository('MainBundle:AndroircVersion')

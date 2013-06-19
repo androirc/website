@@ -51,19 +51,4 @@ class MainController extends Controller
     {
         return array();
     }
-
-    /**
-     * Generates the locales section
-     *
-     * @param Request $request A request instance
-     *
-     * @Template
-     */
-    public function localesAction($request)
-    {
-        return array(
-            'locales' => $this->container->getParameter('jms_i18n_routing.locales'),
-            'request' => $request
-        );
-    }
 }

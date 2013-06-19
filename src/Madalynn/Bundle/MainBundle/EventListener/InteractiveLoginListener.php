@@ -38,7 +38,7 @@ class InteractiveLoginListener
 
         if ($user instanceof User) {
             $user->setLastLogin(new \DateTime());
-            $em = $this->doctrine->getEntityManager();
+            $em = $this->doctrine->getManager();
 
             $em->persist($user);
             $em->flush();

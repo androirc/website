@@ -65,7 +65,13 @@
     <body>
         <div class="container">
             <header class="clearfix">
-                {% render 'MainBundle:Main:locales' with {'request': app.request} %}
+                <div id="locales">
+                    <select>
+                    {% for locale in locales %}
+                        <option{{ locale == app.request.locale ? ' selected="selected"' : ''}} value="{{ path_locale(app.request, locale) }}">{{ display_language(locale) }}</option>
+                    {% endfor %}
+                    </select>
+                </div>
 
                 <div id="logo">
                     <a href="{{ url('homepage') }}">

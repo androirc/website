@@ -160,7 +160,7 @@ abstract class CRUDController extends Controller
         $form->bindRequest($request);
 
         if ($form->isValid()) {
-            $em = $this->getDoctrine()->getEntityManager();
+            $em = $this->getDoctrine()->getManager();
 
             $this->prePersist($entity);
 
@@ -228,7 +228,7 @@ abstract class CRUDController extends Controller
         $editForm->bindRequest($request);
 
         if ($editForm->isValid()) {
-            $em = $this->getDoctrine()->getEntityManager();
+            $em = $this->getDoctrine()->getManager();
 
             $this->preUpdate($entity);
 
@@ -266,7 +266,7 @@ abstract class CRUDController extends Controller
             throw $this->createNotFoundException(sprintf('Unable to find %s entity.', $en));
         }
 
-        $em = $this->getDoctrine()->getEntityManager();
+        $em = $this->getDoctrine()->getManager();
 
         $this->preRemove($entity);
 

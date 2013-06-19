@@ -25,7 +25,7 @@ abstract class AbstractVersion
      *
      * @ORM\Column(type="integer")
      *
-     * @Assert\Min(limit=0)
+     * @Assert\Range(min = 0)
      */
     protected $major;
 
@@ -34,7 +34,7 @@ abstract class AbstractVersion
      *
      * @ORM\Column(type="integer")
      *
-     * @Assert\Min(limit=0)
+     * @Assert\Range(min = 0)
      */
     protected $minor;
 
@@ -43,7 +43,7 @@ abstract class AbstractVersion
      *
      * @ORM\Column(type="integer")
      *
-     * @Assert\Min(limit=0)
+     * @Assert\Range(min = 0)
      */
     protected $revision;
 

@@ -303,7 +303,8 @@ class CrashReport
     /**
      * Check if the crashreport is equals to this object
      *
-     * @param  CrashReport $crashReport
+     * @param CrashReport $crashReport
+     *
      * @return boolean
      */
     public function equals(CrashReport $crashReport)
@@ -372,10 +373,11 @@ class CrashReport
     /**
      * Add logcat
      *
-     * @param \Madalynn\Bundle\MainBundle\Entity\Logcat $logcat
+     * @param Logcat $logcat
+     *
      * @return CrashReport
      */
-    public function addLogcat(\Madalynn\Bundle\MainBundle\Entity\Logcat $logcat)
+    public function addLogcat(Logcat $logcat)
     {
         $this->logcats[] = $logcat;
         $logcat->setCrashReport($this);
@@ -386,9 +388,9 @@ class CrashReport
     /**
      * Remove logcat
      *
-     * @param \Madalynn\Bundle\MainBundle\Entity\Logcat $logcat
+     * @param Logcat $logcat
      */
-    public function removeLogcat(\Madalynn\Bundle\MainBundle\Entity\Logcat $logcat)
+    public function removeLogcat(Logcat $logcat)
     {
         $this->logcats->removeElement($logcat);
         $logcat->setCrashReport();
@@ -397,7 +399,7 @@ class CrashReport
     /**
      * Get logcats
      *
-     * @return \Doctrine\Common\Collections\Collection
+     * @return Collection
      */
     public function getLogcats()
     {

@@ -34,7 +34,7 @@ class QuickStartController extends Controller
      */
     public function showAction($version, $lang, $theme)
     {
-        $em   = $this->getDoctrine()->getEntityManager();
+        $em   = $this->getDoctrine()->getManager();
         $repo = $em->getRepository('MainBundle:QuickStart');
 
         $version = $em->getRepository('MainBundle:AndroircVersion')
