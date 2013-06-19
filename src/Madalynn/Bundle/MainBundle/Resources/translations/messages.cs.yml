@@ -48,7 +48,7 @@ frontend:
       name: "Sociální sítě"
       description: "Přejete si kontaktovat nás? Jsme na %facebook%, %twitter% a dokonce %googleplus%. Samozřejmě jsme také na %irc%."
   homepage:
-    motto: "Rychlý, výkonný, only for Android™"
+    motto: "Rychlý, výkonný, pouze pro Android™"
     notifications:
       name: "Účinná oznámení"
       description: "AndroIRC vás upozorní jakmile vám někdo napíše soukromou zprávu, nebo vás zvýrazní. Samozřejmě můžete nastavit oznamování podle vašich potřeb. Dokonce můžete nastavit seznam slov, která budou považována za zvýraznění."
