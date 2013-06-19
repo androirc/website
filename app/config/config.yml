@@ -2,7 +2,7 @@ imports:
     - { resource: parameters.yml }
 
 parameters:
-    locales: [en, fr, ko, pt, cs, zh, de, pl, fi, es, it, nl, el, tr, nb, sr, hu, tr, hi, ne, ja]
+    locales: [en, fr, ko, pt, cs, zh, de, pl, fi, es, it, nl, el, nb, sr, hu, tr, hi, ne, ja]
 
 framework:
     secret: %secret%
