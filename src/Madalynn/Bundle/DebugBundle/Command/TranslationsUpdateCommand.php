@@ -17,7 +17,6 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
-use Symfony\Component\Yaml\Yaml;
 
 /**
  * Updates all translation from Transifex
@@ -26,7 +25,7 @@ use Symfony\Component\Yaml\Yaml;
  */
 class TranslationsUpdateCommand extends ContainerAwareCommand
 {
-    protected $urlTemplate  = 'https://www.transifex.net/api/2/project/androirc/resource/website/translation/%s';
+    protected $urlTemplate  = 'https://www.transifex.com/api/2/project/androirc/resource/website/translation/%s';
     protected $fileTemplate = 'messages.%s.yml';
 
     /**

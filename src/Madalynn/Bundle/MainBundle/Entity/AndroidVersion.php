@@ -31,7 +31,7 @@ class AndroidVersion extends AbstractVersion
     /**
      * @ORM\Column(type="integer", name="api_level")
      *
-     * @Assert\Min(limit=1)
+     * @Assert\Range(min = 1)
      */
     protected $apiLevel;
 

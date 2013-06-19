@@ -1,0 +1,17 @@
+frontend:
+  menu:
+    blog: "ブログ"
+    download: "ダウンロード"
+    support: "サポート"
+    beta: "ベータ"
+    contact: "コンタクト"
+  blog:
+    show_comments: "コメントを見る"
+  beta:
+    description: "AndroIRCの新しいベータをダウンロード"
+    download_button: "新しいベータバージョンをダウンロード"
+  support:
+    support:
+      name: "サポートセンター"
+    translation:
+      name: "翻訳"

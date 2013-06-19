@@ -67,7 +67,7 @@ class CrashReportController extends Controller
             $crashReport->addLogcat($logcat);
         }
 
-        $em = $this->getDoctrine()->getEntityManager();
+        $em = $this->getDoctrine()->getManager();
         $repo = $em->getRepository('MainBundle:CrashReport');
 
         $tmp = $repo->alreadyExist($crashReport);

@@ -38,7 +38,7 @@ class AndroircVersion extends AbstractVersion
     /**
      * @ORM\Column(type="integer")
      *
-     * @Assert\Min(limit=0)
+     * @Assert\Range(min = 0)
      */
     protected $code;
 

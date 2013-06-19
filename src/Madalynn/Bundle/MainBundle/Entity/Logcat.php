@@ -91,7 +91,7 @@ class Logcat
     /**
      * Set crash report
      *
-     * @param CrashReport $crashReport
+     * @param  CrashReport $crashReport
      * @return Logcat
      */
     public function setCrashReport(CrashReport $crashReport = null)

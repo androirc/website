@@ -41,7 +41,7 @@ class CrashReportController extends CRUDController
 
     public function deleteAllAction()
     {
-        $em = $this->getDoctrine()->getEntityManager();
+        $em = $this->getDoctrine()->getManager();
         $repo = $em->getRepository('MainBundle:CrashReport');
 
         $repo->deleteAll();
@@ -51,7 +51,7 @@ class CrashReportController extends CRUDController
 
     public function deleteSelectedAction()
     {
-        $em   = $this->getDoctrine()->getEntityManager();
+        $em   = $this->getDoctrine()->getManager();
         $list = $this->generateFilterQueryBuilder()->getQuery()->execute();
 
         foreach ($list as $crash) {
@@ -73,7 +73,7 @@ class CrashReportController extends CRUDController
      */
     public function resolvedAction($id)
     {
-        $em = $this->getDoctrine()->getEntityManager();
+        $em = $this->getDoctrine()->getManager();
         $repo = $em->getRepository('MainBundle:CrashReport');
 
         $crashReport = $repo->find($id);

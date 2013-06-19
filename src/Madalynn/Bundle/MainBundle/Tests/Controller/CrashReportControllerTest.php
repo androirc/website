@@ -36,7 +36,7 @@ class CrashReportControllerTest extends WebTestCase
 
         $this->em = static::$kernel->getContainer()
             ->get('doctrine')
-            ->getEntityManager()
+            ->getManager()
         ;
     }
 

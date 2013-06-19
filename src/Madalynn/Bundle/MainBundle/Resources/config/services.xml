@@ -5,6 +5,10 @@
     <parameters>
         <parameter key="androirc.location.class">Madalynn\Bundle\MainBundle\Location</parameter>
         <parameter key="androirc.sandbox_parser.class">Madalynn\Bundle\MainBundle\Twig\SandboxParser</parameter>
+
+        <parameter key="buzz.client.class">Buzz\Client\Curl</parameter>
+        <parameter key="buzz.message_factory.class">Buzz\Message\Factory\Factory</parameter>
+        <parameter key="buzz.browser.class">Buzz\Browser</parameter>
     </parameters>
 
     <services>
@@ -16,6 +20,15 @@
             <call method="setContainer">
                  <argument type="service" id="service_container" />
             </call>
+        </service>
+
+        <!-- Buzz integration -->
+        <service id="buzz.message_factory" class="%buzz.message_factory.class%" public="false" />
+        <service id="buzz.client" class="%buzz.client.class%" public="false" />
+
+        <service id="buzz" class="%buzz.browser.class%">
+          <argument type="service" id="buzz.client" />
+          <argument type="service" id="buzz.message_factory" />
         </service>
     </services>
 </container>

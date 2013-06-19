@@ -1,0 +1,48 @@
+frontend:
+  subtitle: "Android™ IRC Kliens"
+  description: "Fedezd fel az AndroIRCt, a legjobb IRC klienst a te Android készülékedre. Az AndroIRC támogatja a több szerverre való csatlakozást (biztonságos vagy nem), az mIRC színeket, autobelépést a szobákba indításkor, nickserv/ sasl azonosítást, logolást, témákat, a FiSHt, és sok mást. Mindezt ingyen!"
+  keywords: "android, ircm kliens, ingyen, app, mirc, androirc, market, play, logolás, sasl, azonosítás, blowfish, egyszerű, azonosítás, nickserv, témák, okostelefefon, alkalmazás, alkalmazások, ircd, kommunikáció, internet, relay, chat, szerver, freenode, epiknet, quakenet, efnet, undernet, ident, nick, nicknév, szoba, szoba, kirúgás, kitiltás, félop, hang"
+  home_title: "AndroIRC . A legjobb IRC kliens ami a te Android készülékedre kell"
+  menu:
+    blog: "Blog"
+    download: "Letöltés"
+    support: "Támogatás"
+    beta: "Béta"
+    contact: "Kapcsolat"
+    terms: "Szabályok"
+    facebook: "Facebook"
+    twitter: "Twitter"
+    googleplus: "Google+"
+  copyright: "Jogvédelem %year% Madalynn, minden jog fenntartva. Az Android márkanév a Google Inc. tulajdona."
+  blog:
+    description: "Legfrissebb hírek az AndroIRCről"
+    article_subtitle: "Hírek %author% -tól %date% -on"
+    show_comments: "Megjegyzések mutatása"
+    date_format: "h/n/É"
+    archives:
+      title: "Arhívok"
+      description: "Arhívok dátum szerint"
+  beta:
+    description: "A legújjabb AndroIRC béta letöltése"
+    download_button: "A legújjabb bétaverzió letöltése"
+    no_beta: "Sajnáljuk... Jelenleg nincs elérhető bétaverzió. Kérlek gyere vissza később és látogass meg minket Facebookon, Twitteren és Google+-on"
+    warning: "EZ a verzió nem elérhető a Google Playen (Android Market). Vigyázz: ez a verzió tesztelésre van és talán (valószínűleg) tartalmaz bugokat."
+    contact_us: "Ha talász hibát, kérlek vedd fel a kapcsolatot velünk."
+    new_beta: "Egy új béta elérhető letöltésre (%version%). A változtatásokról találsz egy listát lent."
+  support:
+    description: "Segítséget keresel? Ez a rész a tied!"
+    wiki:
+      name: "Wiki"
+      description: "Kérdésed van? A választ itt keresd. A csapattól, ez tartalmaz minden leírást és információt az AndroIRC konfigurálásáról és használatáról."
+      link: "A wikihez"
+    support:
+      name: "Támogatási központ"
+      description: "Találtál egy hibát? Feltevésed van? Vagy csak egy kérdés? Ez az a hely, ahol ezeket megemlítheted. Szeretnénk segíteni és jobbá tenni az AndroIRCt. "
+      link: "A támogatási központba"
+    translation:
+      name: "Fordítás"
+      description: "Az AndroIRC nem elérhető a nyelveden? Segíts lefordítani!"
+      link: "Az AndroIRC fordításának elkezdése"
+    social:
+      name: "Közösségi hálózatok"
+      description: "Érintésben akarsz maradni velünk? Fent vagyunk %facebook% -on, %twitter% -en, %googleplus% -on is. Természetesen %irc% -n  is fent vagyunk."

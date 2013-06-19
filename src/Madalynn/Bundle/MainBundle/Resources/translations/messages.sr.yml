@@ -1,0 +1,69 @@
+frontend:
+  subtitle: "Android™ IRC Klijent"
+  description: "Otkrijte AndroIRC, najbolju IRC aplikaciju za Vaš Android uređaj. AndroIRC podržava više konekcija na servere (sigurne ili ne), mIRC boje, auto join kanala pri pokretanju, nickserv / sasl auth, logovanje, teme, FiSH i jos mnogo toga. Sve to, besplatno!"
+  keywords: "android, irc, klijent, besplano, app, mirc, androirc, market, play, logovanje, sasl, autorizacija, blowfish, plain, identifikacija, nickserv, teme, smartphone, aplikacija, apps, ircd, komunikacija, internet, relay, chat, server, freenode, epiknet, quakenet, efnet, undernet, ident, nick, nickname, chan, channel, kick, ban, op, halfop, voice"
+  home_title: "AndroIRC - Najbolji IRC klijent za Vaš Android uređaj"
+  author: "Translation by munZe"
+  menu:
+    blog: "Blog"
+    download: "Skinite"
+    support: "Podrška"
+    beta: "Beta"
+    contact: "Kontakt"
+    terms: "Pravila"
+    facebook: "Fejsbuk"
+    twitter: "Tviter"
+    googleplus: "Gugl+"
+  copyright: "Copyright  %year% Madalynn, sva prava zadržana. Android je zaštitni znak Google Inc."
+  blog:
+    description: "Poslednje vesti o AndroIRC-u"
+    article_subtitle: "Novosti od %author% %date%"
+    show_comments: "Prikaži komentare"
+    date_format: "m/d/Y"
+    archives:
+      title: "Arhiva"
+      description: "Arhiva sortirana po datumu"
+  beta:
+    description: "Skinite novu beta verziju AndroIRC"
+    download_button: "Skinite novu beta verziju"
+    no_beta: "Izvini... Beta trenutno nije dostupna. Molimo Vas, posetite nas kasnije ili nas pratite na Facebook, Tviteru ili Google+"
+    warning: "Ova verzija nije vise dostupna na Google Play  (Android Market). Budite na oprezu: Ovo je samo test verzija i možda sadrži neke bagove. (Mogući su neki bagovi)"
+    contact_us: "Ako naiđete na neku grešku, molimo Vas da nam prijavite."
+    new_beta: "Nova beta je dostupna za preuzimanje  (%version%). Šta je sve novo? Pogledajte ispod."
+  support:
+    description: "Ako tražite pomoć, na pravom ste mestu!"
+    wiki:
+      name: "Wiki"
+      description: "Imate pitanje? Odgovor je verovatno u ovom vikiju. Napisan od strane tima, i sadrži sve informacije potrebne za podešavanje i korišćenje AndroIRC."
+      link: "Idite na wiki"
+    support:
+      name: "Centar podrške"
+      link: "Posetite centar podrške"
+    translation:
+      name: "Ostali jezici"
+      description: "Ne postoji AndroIRC na vašem jeziku? Pomozite nam da ga prevedemo!"
+      link: "Želite da nam pomognete u prevođenju aplikacije"
+    social:
+      name: "Socijalne mreže"
+      description: "Da li želite da stupite u kontakt sa nama? Mi smo na %facebook%, %twitter% ali i na %googleplus%. Naravno, mi smo takođe i na %irc%."
+  homepage:
+    motto: "Brz, moćan, samo za Android™"
+    notifications:
+      name: "Moćna obaveštenja"
+    themes:
+      name: "Tamna, svetla i promenjiva tema"
+    tablet:
+      name: "Spreman za tablete"
+      description: "Mi smo naporno radili da bismo doneli AndroIRC na tablete. UI se prilagođava veličini veličini ekrana, i možete da potpuno uživate u IRC sesiji na većem ekranu."
+    fish:
+      name: "FiSH, SASL, Nickserv"
+      description: "AndroIRC podržava standardni sistem autentifikacije kao što je NickServ. On takođe ima napredne funckije, kao što je SASL autentifikacija, zahtevana od freenode-a. Vi takođe imate mogućnost da ekriptujete vašu konverzaciju punom podrškom FiSH protokola. "
+    ui:
+      name: "Prelep interfejs, u potpunosti integrisan"
+      description: "Aplikaciju možete pokrenuti na Android verziji iznad 2.1, AndroIRC uvek prati poslednje verzije Androida i korisničkog interfejsa čak i za novi  Jelly Bean. Sa pažljivo odabranim interfejsom, ceo svet je u Vašim rukama!"
+    others:
+      name: "I još mnogo toga!"
+      description: "Engleski, francuski, korejski, kineski, holandski... AndroIRC je dostupan u više od 10 jezika i potpuno podesiv za vaše potrebe. Logovanje, više servera, auto-povezivanje pri pokretanju, sigurna konekcija (SSL), NickServ autentifikacija, završavanje naziva nadimaka i kanala i mnogo više, u okviru najbolje IRC klijenta za Android™."
+    free:
+      name: "I sve to za... besplatno"
+      description: "AndroIRC možete skinuti besplatno na  Google Play! Premium verzija je isto moguća ukoliko nam pomognete u razvoju AndroIRC."

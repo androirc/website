@@ -1,0 +1,47 @@
+frontend:
+  subtitle: "एन्ड्रोइड™ IRC क्लाईन्ट "
+  author: "Madalynn द्वारा अनुबादन "
+  menu:
+    blog: "ब्लग "
+    download: "डाउनलोड "
+    support: "समर्थन "
+    beta: "बेटा "
+    contact: "समपर्क "
+    terms: "सर्तहरु "
+    facebook: "फेसबुक "
+    twitter: "ट्वीटर "
+    googleplus: "गुगल +"
+  blog:
+    description: "एन्ड्रोइड आइआरसि बारे ताजा खबर "
+    article_subtitle: "s %author% द्वरा %date% का खबरहरु "
+    show_comments: "टिप्पणीहरु देखाउनुहोस  "
+    date_format: "m/d/Y"
+    archives:
+      title: "संग्रह"
+      description: "मिति अनुसार संग्रह"
+  beta:
+    description: "एन्ड्रोइड आइआरसि को नया बेटा संस्करण डाउन्लोड गर्नुहोस "
+    download_button: "नया बेटा संस्करण डाउन्लोड गर्नुहोस "
+    no_beta: "माफ गर्नुहोस ... बेटा संस्करण उपलब्ध भएन । कृपया पुन: आउनुहोला र फेसबुक्, ट्वीटर्, गुगल+ मा हेरिरखानुहोला "
+    contact_us: "यदी तपाईंले केही त्रुटी भेटाउनु भयो भने हामीलाई समपर्क गर्नुहोस |"
+  support:
+    description: "तपाईंलाई मदत चहिएकोछ ? यो सेक्सन तपाईंको लागी हो !"
+    wiki:
+      name: "वीकी "
+      link: "वीकी हेर्नुहोस "
+    support:
+      name: "समर्थन केन्द्र "
+    translation:
+      name: "अनुबादन "
+    social:
+      name: "सामाजिक सन्जालहरु "
+  homepage:
+    motto: "द्रुत्गामी ,सक्तिसाली ,एन्ड्रोइड™कालगी मात्र "
+    tablet:
+      name: "ट्याबलेटका लागी तयार "
+    fish:
+      name: "FiSH, SASL, Nickserv"
+    others:
+      name: "र अझै धेरै !"
+    free:
+      name: "ती सबै ... फ्री "

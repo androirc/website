@@ -1,9 +1,9 @@
 frontend:
   subtitle: "Android™ IRC 客户端"
-  description: "探索AndroIRC，为您Android设备而设的最好的IRC客户端。AndroIRC支持多重服务器连接(加密或否)、mIRC颜色代码、启动自动加入频道、NickServ/SASL认证、日志、主题、FiSH加密......所有这一切，免费！"
+  description: "探索 AndroIRC，为您的 Android 设备而设的最好的IRC客户端。AndroIRC支持多重服务器连接(加密或否)、mIRC 颜色代码、启动自动加入频道、NickServ/SASL 认证、日志、主题、FiSH加密......所有这一切，完全免费！"
   keywords: "android, irc, client, free, app, mirc, androirc, market, play, logging, sasl, authentication, blowfish, plain, identification, nickserv, themes, smartphone, application, apps, ircd, communication, internet, relay, chat, server, freenode, epiknet, quakenet, efnet, undernet, ident, nick, nickname, chan, channel, kick, ban, op, halfop, voice"
   home_title: "AndroIRC -您的  Android 设备上最好的 IRC 客户端"
-  author: "由AndroIRC翻译团队翻译"
+  author: "翻译：Christopher Meng/Lizhaofeng1998"
   menu:
     blog: "博客"
     download: "下载"
@@ -34,7 +34,7 @@ frontend:
     description: "您正在寻求帮助？这部分正是为您准备的！"
     wiki:
       name: "维基"
-      description: "有问题？它的答案大概能在这个维基中找到。它有我们的团队编写，囊括了所有指南和信息来配置和使用AndroIRC。"
+      description: "有问题？它的答案大概能在这个维基中找到。它由我们的团队编写，囊括了所有指南和信息来配置和使用 AndroIRC。"
       link: "前往维基"
     support:
       name: "支持中心"
@@ -51,7 +51,7 @@ frontend:
     motto: "快速，强大，只为 Android™"
     notifications:
       name: "强大的通知功能"
-      description: "AndroIRC会在你收到一个新私人消息或高亮语句时即刻提醒你。当然，您可以按您所需配置提醒。您甚至能更改要高亮标记的字词！"
+      description: "AndroIRC 会在您收到一个新私人消息或高亮语句时即刻提醒您。当然，您可以按您所需配置提醒。您甚至能更改要高亮标记的字词！"
     themes:
       name: "暗色主题，亮色主题，还能遂心搭配。"
     tablet:
@@ -59,9 +59,11 @@ frontend:
     fish:
       name: "FiSH, SASL, Nickserv"
     ui:
-      description: "为Android 2.1以上而设，AndroIRC一直跟随着最新的Android用户界面指引，甚至包括最新的Android Jelly Bean版本。有这样一个亲切的界面，一切尽在手中！"
+      name: "完美整合的漂亮界面"
+      description: "为 Android 2.1 以上而设，AndroIRC 一直跟随着最新的 Android 用户界面指引，甚至包括最新的 Android Jelly Bean 版本。有这样一个亲切的界面，一切尽在手中！"
     others:
       name: "还有更多！"
+      description: "英语，法语，韩语，中文，丹麦语... AndroIRC 已经有至少10种不同语言供用户自由选择。登录，多服务器聊天，启动时自动连接，安全连接(SSL)，NickServ 验证，昵称和频道等多种选项或功能，让 AndroIRC 成为最出色的 Android™ IRC 客户端"
     free:
       name: "所有...都是免费的"
       description: "AndroIRC 现已在 Google Play 上架！一个豪华版本也已针对捐助用户准备好。"

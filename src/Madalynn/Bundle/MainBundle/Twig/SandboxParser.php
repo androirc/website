@@ -54,7 +54,7 @@ class SandboxParser implements ContainerAwareInterface
 
         try {
             return $this->twig->render($text);
-        } catch(\Twig_Error_Syntax $e) {
+        } catch (\Twig_Error_Syntax $e) {
             return '<p>Mhh.. Unable to display this article</p>';
         }
     }

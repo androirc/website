@@ -33,7 +33,7 @@ class BetaController extends Controller
      */
     public function showAction()
     {
-        $em   = $this->getDoctrine()->getEntityManager();
+        $em   = $this->getDoctrine()->getManager();
         $repo = $em->getRepository('MainBundle:BetaRelease');
 
         $beta = $repo->getLatestBeta();
@@ -55,7 +55,7 @@ class BetaController extends Controller
      */
     public function latestAction()
     {
-        $em   = $this->getDoctrine()->getEntityManager();
+        $em   = $this->getDoctrine()->getManager();
         $repo = $em->getRepository('MainBundle:BetaRelease');
 
         $beta = $repo->getLatestBeta();
@@ -68,7 +68,7 @@ class BetaController extends Controller
      */
     public function downloadAction(Request $request)
     {
-        $em   = $this->getDoctrine()->getEntityManager();
+        $em   = $this->getDoctrine()->getManager();
         $repo = $em->getRepository('MainBundle:BetaRelease');
 
         $beta = $repo->getLatestBeta();

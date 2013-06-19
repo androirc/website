@@ -30,7 +30,7 @@ class TipController extends Controller
      */
     public function showAction($lang, $date = null)
     {
-        $em = $this->getDoctrine()->getEntityManager();
+        $em = $this->getDoctrine()->getManager();
         $tip = null;
 
         if (null !== $date) {

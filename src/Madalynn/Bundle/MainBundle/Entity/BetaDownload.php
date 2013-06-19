@@ -29,7 +29,7 @@ class BetaDownload
     protected $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Madalynn\Bundle\MainBundle\Entity\BetaRelease")
+     * @ORM\ManyToOne(targetEntity="Madalynn\Bundle\MainBundle\Entity\BetaRelease", inversedBy="downloads")
      * @ORM\JoinColumn(onDelete="CASCADE", name="beta_release_id")
      */
     protected $betaRelease;
