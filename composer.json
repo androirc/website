@@ -1,6 +1,7 @@
 {
     "require": {
         "symfony/symfony": "2.3.*",
+        "symfony/icu": "1.1.*",
         "symfony/assetic-bundle": "2.3.*",
         "symfony/monolog-bundle": "2.3.*",
         "symfony/swiftmailer-bundle": "2.3.*",
