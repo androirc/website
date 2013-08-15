@@ -39,7 +39,7 @@ class Logcat
     protected $logcat;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Madalynn\Bundle\MainBundle\Entity\CrashReport")
+     * @ORM\ManyToOne(targetEntity="Madalynn\Bundle\MainBundle\Entity\CrashReport", inversedBy="logcats")
      * @ORM\JoinColumn(onDelete="CASCADE", name="crashreport_id")
      */
     protected $crashReport;
