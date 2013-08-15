@@ -4,7 +4,7 @@
         "symfony/icu": "1.1.*",
         "symfony/assetic-bundle": "2.3.*",
         "symfony/monolog-bundle": "2.3.*",
-        "symfony/swiftmailer-bundle": "2.3.*",
+        "symfony/swiftmailer-bundle": "2.3.2",
         "doctrine/orm": ">=2.2.3,<2.4-dev",
         "doctrine/doctrine-bundle": "1.2.*",
         "kriswallsmith/buzz": "0.*",
