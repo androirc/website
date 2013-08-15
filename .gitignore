@@ -13,3 +13,7 @@ vendor/
 .DS_Store
 composer.phar
 Capfile
+bin/
+!/bin/maintenance
+!/bin/travis
+!/bin/translations

@@ -27,7 +27,7 @@ frontend:
     description: "Download de nieuwe beta van AndroIRC"
     download_button: "Download de nieuwe betaversie"
     no_beta: "Sorry... Er is op het moment geen beta beschikbaar. Kom later nog eens terug en blijf op de hoogte via Facebook, Twitter en Google+"
-    warning: "Deze versie is niet beschikbaar in Google Play (Android Marked). Wees gewaarschuwd: deze versie is voor testdoeleinden en kan (zal) bugs bevatten."
+    warning: "Deze versie is niet beschikbaar in Google Play (Android Market). Wees gewaarschuwd: deze versie is voor testdoeleinden en kan (zal) bugs bevatten."
     contact_us: "Als je een bug vindt, neem dan contact met ons op."
     new_beta: "Er is een nieuwe beta beschikbaar om te downloaden (%version%). Hieronder vind je een lijst met veranderingen."
   support:

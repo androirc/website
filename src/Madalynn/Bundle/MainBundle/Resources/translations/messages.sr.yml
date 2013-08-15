@@ -38,6 +38,7 @@ frontend:
       link: "Idite na wiki"
     support:
       name: "Centar podrške"
+      description: "Pronašli ste grešku? Imate predlog? Ili samo pitanje? To je mesto za vas. Biće nam drago da vam pomognemo i napravimo AndroIRC boljim i stabilnijim."
       link: "Posetite centar podrške"
     translation:
       name: "Ostali jezici"
@@ -50,8 +51,10 @@ frontend:
     motto: "Brz, moćan, samo za Android™"
     notifications:
       name: "Moćna obaveštenja"
+      description: "AndroIRC će vas obavestiti kada imate novu privatnu poruku ili novo isticanje. Naravno, možete podesiti obaveštenja kako želite. Možete čak i da promenite listu reči za isticanje!"
     themes:
       name: "Tamna, svetla i promenjiva tema"
+      description: "Podrazumevano pristupačan u tamnoj ili svetloj temi, AndroIRC vam dozovljava da napravite prilagođenu temu sa vašim bojama. U potpunosti je prilagodjiv."
     tablet:
       name: "Spreman za tablete"
       description: "Mi smo naporno radili da bismo doneli AndroIRC na tablete. UI se prilagođava veličini veličini ekrana, i možete da potpuno uživate u IRC sesiji na većem ekranu."

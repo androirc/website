@@ -99,7 +99,7 @@ abstract class CRUDController extends Controller
         $form    = $this->getFilterForm();
         $request = $this->getRequest();
 
-        $form->bindRequest($request);
+        $form->handleRequest($request);
 
         if ($form->isValid()) {
             $this->get('session')->set($this->getSessionFilterName(), $form->getData());
@@ -157,7 +157,7 @@ abstract class CRUDController extends Controller
         $request = $this->getRequest();
         $form    = $this->createForm($this->getForm(), $entity);
 
-        $form->bindRequest($request);
+        $form->handleRequest($request);
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
@@ -225,7 +225,7 @@ abstract class CRUDController extends Controller
         $editForm = $this->createForm($this->getForm(), $entity);
         $request  = $this->getRequest();
 
-        $editForm->bindRequest($request);
+        $editForm->handleRequest($request);
 
         if ($editForm->isValid()) {
             $em = $this->getDoctrine()->getManager();
