@@ -124,7 +124,7 @@ class CrashReportTest extends \PHPUnit_Framework_TestCase
         $this->assertCount(0, $cr->getLogcats());
         $cr->addLogcat($logcat);
 
-        $this->assertCount(0, $cr->getLogcats());
+        $this->assertCount(1, $cr->getLogcats());
         $this->assertSame($cr, $cr->getLogcats()->get(0)->getCrashReport());
 
         $cr->removeLogcat($logcat);
@@ -138,7 +138,7 @@ class CrashReportTest extends \PHPUnit_Framework_TestCase
         $cr->setAndroidVersion('2.2.1');
         $cr->setAndroircVersion('3.1 e825cc1- build on 2011/11/26 17:31');
         $cr->setThreadName('main');
-        $cr->setCount(0);
+        $cr->setCount(1);
         $cr->setResolved(false);
         $cr->setCallstack(<<<EOF
 java.lang.NullPointerException
@@ -155,6 +155,6 @@ java.lang.NullPointerException
 EOF
 );
 
-        return $cr;
+        return array(array($cr));
     }
 }
