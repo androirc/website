@@ -3,10 +3,10 @@ frontend:
   description: "Otkrijte AndroIRC, najbolju IRC aplikaciju za Vaš Android uređaj. AndroIRC podržava više konekcija na servere (sigurne ili ne), mIRC boje, auto join kanala pri pokretanju, nickserv / sasl auth, logovanje, teme, FiSH i jos mnogo toga. Sve to, besplatno!"
   keywords: "android, irc, klijent, besplano, app, mirc, androirc, market, play, logovanje, sasl, autorizacija, blowfish, plain, identifikacija, nickserv, teme, smartphone, aplikacija, apps, ircd, komunikacija, internet, relay, chat, server, freenode, epiknet, quakenet, efnet, undernet, ident, nick, nickname, chan, channel, kick, ban, op, halfop, voice"
   home_title: "AndroIRC - Najbolji IRC klijent za Vaš Android uređaj"
-  author: "Translation by munZe"
+  author: "Preveli munZe i ZDroid"
   menu:
     blog: "Blog"
-    download: "Skinite"
+    download: "Preuzimanje"
     support: "Podrška"
     beta: "Beta"
     contact: "Kontakt"
