@@ -13,12 +13,10 @@
 namespace Madalynn\Bundle\MainBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpFoundation\StreamedResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
-use Madalynn\Bundle\MainBundle\Entity\BetaDownload;
 
 /**
  * Beta controller
@@ -33,21 +31,23 @@ class BetaController extends Controller
      */
     public function showAction()
     {
-        $em   = $this->getDoctrine()->getManager();
-        $repo = $em->getRepository('MainBundle:BetaRelease');
+        return $this->redirect('https://play.google.com/apps/testing/com.androirc');
 
-        $beta = $repo->getLatestBeta();
-        $changelog = null;
-
-        if (null !== $beta) {
-            $rep = $em->getRepository('MainBundle:ChangeLog');
-            $changelog = $rep->findByVersion($beta->getVersion());
-        }
-
-        return array(
-            'beta'      => $beta,
-            'changelog' => $changelog,
-        );
+//        $em   = $this->getDoctrine()->getManager();
+//        $repo = $em->getRepository('MainBundle:BetaRelease');
+//
+//        $beta = $repo->getLatestBeta();
+//        $changelog = null;
+//
+//        if (null !== $beta) {
+//            $rep = $em->getRepository('MainBundle:ChangeLog');
+//            $changelog = $rep->findByVersion($beta->getVersion());
+//        }
+//
+//        return array(
+//            'beta'      => $beta,
+//            'changelog' => $changelog,
+//        );
     }
 
     /**
@@ -68,33 +68,35 @@ class BetaController extends Controller
      */
     public function downloadAction(Request $request)
     {
-        $em   = $this->getDoctrine()->getManager();
-        $repo = $em->getRepository('MainBundle:BetaRelease');
+        return $this->redirect('https://play.google.com/apps/testing/com.androirc');
 
-        $beta = $repo->getLatestBeta();
-
-        if (null === $beta) {
-            throw $this->createNotFoundException('There is no beta to download at the moment');
-        }
-
-        $ip = $request->getClientIp();
-        $download = new BetaDownload();
-
-        $download->setBetaRelease($beta);
-        $download->setLocation($this->get('androirc.location')->searchLocation($ip));
-
-        $em->persist($download);
-        $em->flush();
-
-        $response = new StreamedResponse(function () use ($beta) {
-            return @readfile($beta->getAbsolutePath());
-        });
-
-        $response->headers->set('Content-Type', 'application/vnd.android.package-archive');
-        $response->headers->set('Content-Disposition', 'attachment; filename="'.$beta->getPath().'"');
-        $response->headers->set('Content-Transfer-Encoding', 'binary');
-        $response->headers->set('Content-Length', filesize($beta->getAbsolutePath()));
-
-        return $response;
+//        $em   = $this->getDoctrine()->getManager();
+//        $repo = $em->getRepository('MainBundle:BetaRelease');
+//
+//        $beta = $repo->getLatestBeta();
+//
+//        if (null === $beta) {
+//            throw $this->createNotFoundException('There is no beta to download at the moment');
+//        }
+//
+//        $ip = $request->getClientIp();
+//        $download = new BetaDownload();
+//
+//        $download->setBetaRelease($beta);
+//        $download->setLocation($this->get('androirc.location')->searchLocation($ip));
+//
+//        $em->persist($download);
+//        $em->flush();
+//
+//        $response = new StreamedResponse(function () use ($beta) {
+//            return @readfile($beta->getAbsolutePath());
+//        });
+//
+//        $response->headers->set('Content-Type', 'application/vnd.android.package-archive');
+//        $response->headers->set('Content-Disposition', 'attachment; filename="'.$beta->getPath().'"');
+//        $response->headers->set('Content-Transfer-Encoding', 'binary');
+//        $response->headers->set('Content-Length', filesize($beta->getAbsolutePath()));
+//
+//        return $response;
     }
 }
