@@ -22,7 +22,7 @@
         "doctrine/doctrine-fixtures-bundle": "2.2.*",
         "doctrine/doctrine-migrations-bundle": "dev-master",
         "doctrine/migrations": "dev-master",
-        "phpunit/phpunit": "3.7.*"
+        "phpunit/phpunit": "4.1.*"
     },
     "scripts": {
         "post-install-cmd": [
