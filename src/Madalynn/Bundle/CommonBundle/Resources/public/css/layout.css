@@ -71,20 +71,21 @@ a:hover {
 /* Header */
 
 header {
-  margin-bottom: 22px;
+  margin-bottom: 33px;
 }
 
 #logo {
   float: left;
   position: relative;
-  width: 284px;
-  height: 75px;
+  width: 175px;
+  height: 100px;
+  margin-left: 31px;
 }
 
 #logo span {
   position: absolute;
-  top: 59px;
-  right: 17px;
+  top: 103px;
+  right: 0px;
   font-size: 11px;
   color: #616161;
 }
