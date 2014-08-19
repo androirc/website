@@ -51,7 +51,7 @@ frontend:
     motto: "Nopea, tehokas, vain Androidille™"
     notifications:
       name: "Tehokkaat ilmoitukset"
-      description: "AndroIRC ilmoittaa sinulle heti, kun sinulla on uusi yksityisviesti tai uusi kohokohta. Luonnollisesti voit säätää ilmoitukset halumiksesi. Voit jopa muuttaa listaa sanoista, jotka laukaisevat kohokohdan!"
+      description: "AndroIRC ilmoittaa sinulle heti, kun sinulla on uusi yksityisviesti tai uusi kohokohta. Luonnollisesti voit säätää ilmoitukset haluamaksesi. Voit jopa muuttaa listaa sanoista, jotka laukaisevat kohokohdan!"
     themes:
       name: "Tumma, vaalea ja muokattava teema"
       description: "Käytettävissä oletuksena tummalla ja vaalealla teemalla, AndroIRC mahdollistaa sinun luoda oman mukautetun teeman omilla väreilläsi. Se on täysin muokattavissa."

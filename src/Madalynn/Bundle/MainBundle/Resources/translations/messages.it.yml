@@ -3,7 +3,7 @@ frontend:
   description: "Scopri AndroIRC, il miglior client IRC per il tuo dispositivo Android. AndroIRC supporta connessioni a server multipli (sicuri o meno), colori di mIRC, connessione automatica ai canali all'avvio, autorizzazioni nickserv / sasl, log automatici, temi, FiSH, e molto altro. Tutto questo, gratis!"
   keywords: "android, irc, client, free, app, mirc, androirc, market, play, logging, sasl, authentication, blowfish, plain, identification, nickserv, themes, smartphone, application, apps, ircd, communication, internet, relay, chat, server, freenode, epiknet, quakenet, efnet, undernet, ident, nick, nickname, chan, channel, kick, ban, op, halfop, voice"
   home_title: "AndroIRC - Il miglior client IRC disponibile per il tuo dispositivo Android"
-  author: "Traduzione di Alixey"
+  author: "Traduzione a cura di Emilio Bologna."
   menu:
     blog: "Blog"
     download: "Scarica"

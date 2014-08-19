@@ -1,8 +1,8 @@
 frontend:
-  subtitle: "안드로이드™  "
+  subtitle: "안드로이드™  IRC 클라이언트"
   description: "당신의 안드로이드 장치를 위한 최고의 IRC 클라이언트, 안드로IRC를 발견하세요. 안드로IRC는 다중 서버 연결 (보안되었든 아니든), mIRC 색깔, 시작시 채널 자동 입장, Nickserv / SASL 보안, 기록하기, 테마, FiSH, 그리고 그 이상을 지원합니다. 이 모든 것이, 무료입니다!"
   keywords: "안드로이드, IRC, 클라이언트, 무료, 앱, mIRC, 안드로IRC, 마켓, 플레이, 기록하기, SASL, 인증, Blowfish, 플레인, 신분, Nickserv, 테마, 스마트폰, 어플리케이션, 앱, IRCd, 커뮤니케이션, 인터넷, 중계, 대화, 서버, Freenode, Epiknet, Quakenet, EFNet, Undetnet, 닉, 닉네임, 챈, 채널, 킥, 밴, 옵, 하프옵, 보이스"
-  home_title: "안드로IRC - 당신의 장치에 필요한 최고의 IRC 클라이언트"
+  home_title: "안드로IRC - 당신의 장치에 필요한 최고의 안드로이드 IRC 클라이언트"
   author: "Pandaren Sweetbarrow에 의해 번역됨"
   menu:
     blog: "블로그"
@@ -17,12 +17,12 @@ frontend:
   copyright: "%year% Madalynn이 모든 권리를 보유함. 안드로이드는 구글의 상표입니다."
   blog:
     description: "안드로IRC의 최신 뉴스"
-    article_subtitle: "%author%이 %date%에 작성한 뉴스"
-    show_comments: "새 댓글"
+    article_subtitle: "%author%님이 %date%에 작성한 뉴스"
+    show_comments: "댓글 보기"
     date_format: "Y/m/d"
     archives:
       title: "보관소"
-      description: "날짜순으로 정렬된 문서"
+      description: "날짜순으로 정렬"
   beta:
     description: "안드로IRC의 새 베타를 다운로드"
     download_button: "새 베타 버전 다운로드"
