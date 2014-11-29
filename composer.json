@@ -4,8 +4,8 @@
         "symfony/icu": "1.1.*",
         "symfony/assetic-bundle": "2.3.*",
         "symfony/monolog-bundle": "2.3.*",
-        "symfony/swiftmailer-bundle": "2.3.2",
-        "doctrine/orm": ">=2.2.3,<2.4-dev",
+        "symfony/swiftmailer-bundle": "2.3.*",
+        "doctrine/orm": "~2.2,>=2.2.3",
         "doctrine/doctrine-bundle": "1.2.*",
         "kriswallsmith/buzz": "0.*",
         "sensio/distribution-bundle": "2.3.*",
@@ -19,11 +19,10 @@
     },
     "require-dev": {
         "fzaninotto/faker": "1.1.*",
-        "doctrine/doctrine-fixtures-bundle": "2.1.*@dev",
-        "doctrine/data-fixtures": "1.0.*@alpha",
+        "doctrine/doctrine-fixtures-bundle": "2.2.*",
         "doctrine/doctrine-migrations-bundle": "dev-master",
-        "doctrine/migrations": "1.0.*@alpha",
-        "phpunit/phpunit": "3.7.*"
+        "doctrine/migrations": "dev-master",
+        "phpunit/phpunit": "4.1.*"
     },
     "scripts": {
         "post-install-cmd": [

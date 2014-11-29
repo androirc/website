@@ -1,9 +1,9 @@
 frontend:
   subtitle: "Android™ IRC Kliens"
   description: "Fedezd fel az AndroIRCt, a legjobb IRC klienst a te Android készülékedre. Az AndroIRC támogatja a több szerverre való csatlakozást (biztonságos vagy nem), az mIRC színeket, autobelépést a szobákba indításkor, nickserv/ sasl azonosítást, logolást, témákat, a FiSHt, és sok mást. Mindezt ingyen!"
-  keywords: "android, ircm kliens, ingyen, app, mirc, androirc, market, play, logolás, sasl, azonosítás, blowfish, egyszerű, azonosítás, nickserv, témák, okostelefefon, alkalmazás, alkalmazások, ircd, kommunikáció, internet, relay, chat, szerver, freenode, epiknet, quakenet, efnet, undernet, ident, nick, nicknév, szoba, szoba, kirúgás, kitiltás, félop, hang"
+  keywords: "android, irc, kliens, ingyen, app, mirc, androirc, market, play, logolás, sasl, azonosítás, blowfish, egyszerű, azonosítás, nickserv, témák, okostelefefon, alkalmazás, alkalmazások, ircd, kommunikáció, internet, relay, chat, szerver, freenode, epiknet, quakenet, efnet, undernet, ident, nick, nicknév, szoba, szoba, kirúgás, kitiltás, félop, hang"
   home_title: "AndroIRC . A legjobb IRC kliens ami a te Android készülékedre kell"
-  author: "Fordítás Levivig-től"
+  author: "Fordítás Levivig-től és csibesas-tól"
   menu:
     blog: "Blog"
     download: "Letöltés"
@@ -21,15 +21,15 @@ frontend:
     show_comments: "Megjegyzések mutatása"
     date_format: "h/n/É"
     archives:
-      title: "Arhívok"
-      description: "Arhívok dátum szerint"
+      title: "Archívumok"
+      description: "Arhívumok dátum szerint"
   beta:
-    description: "A legújjabb AndroIRC béta letöltése"
-    download_button: "A legújjabb bétaverzió letöltése"
+    description: "A legújabb AndroIRC béta letöltése"
+    download_button: "A legújabb bétaverzió letöltése"
     no_beta: "Sajnáljuk... Jelenleg nincs elérhető bétaverzió. Kérlek gyere vissza később és látogass meg minket Facebookon, Twitteren és Google+-on"
-    warning: "EZ a verzió nem elérhető a Google Playen (Android Market). Vigyázz: ez a verzió tesztelésre van és talán (valószínűleg) tartalmaz bugokat."
+    warning: "Ez a verzió nem elérhető a Google Playen (Android Market). Vigyázz: ez a verzió tesztelésre van és talán (valószínűleg) tartalmaz bugokat."
     contact_us: "Ha talász hibát, kérlek vedd fel a kapcsolatot velünk."
-    new_beta: "Egy új béta elérhető letöltésre (%version%). A változtatásokról találsz egy listát lent."
+    new_beta: "Egy új béta elérhető letöltésre, a (%version%). A változtatásokról találsz egy listát lent."
   support:
     description: "Segítséget keresel? Ez a rész a tied!"
     wiki:
@@ -49,12 +49,24 @@ frontend:
       description: "Érintésben akarsz maradni velünk? Fent vagyunk %facebook% -on, %twitter% -en, %googleplus% -on is. Természetesen %irc% -n  is fent vagyunk."
   homepage:
     motto: "Gyors,erős,csak Androidra™"
+    notifications:
+      name: "Részletes értesítések"
+      description: "Az AndroIRC értesít, amikor érkezik egy új privát üzeneted vagy megszólítanak. Természetesen, be tudod állítani az értesítéseket olyanra, amilyenre akarod."
     themes:
       name: "Sötét,világos és testreszabható téma"
+      description: "Két alap téma van, sötét és világos. Az AndroIRC-vel elkészítheted a saját témádat, saját színekkel. Ez teljesen kezelhető."
     tablet:
       name: "Tablet képes"
+      description: "Sokat dolgoztunk azon, hogy elhozhassuk neked az AndroIRC-t táblagépre. Az UI beállítja magát a képernyőd méretére, és teljesen ki tudod élvezni az IRC beszélgetéseidet egy nagyobb képernyőn."
+    fish:
+      name: "Támogatja a FiSH-et, a SASL-t és a Nickserv-et."
+      description: "Az AndroIRC támogatja az alap beléptetőrendszereket, mint a NickServ. DE támogat bonyolultabb rendszereket, mint a SASL, amit a freenode igényel. És titkosítani is tudod a beszélgetéseidet a FiSH protokollal."
+    ui:
+      name: "Gyönyörű kezelőfelület, teljesen integrált."
+      description: "Elérhető Android 2.1-re és az újabb verziókra. Az AndroIRC mindig követi a legfrissebb újításokat, és a kezelőfelületet is fejleszti, már Jelly Bean-en. A kidolgozott kezelőfelülettel minden kézre áll!"
     others:
       name: "És sok más!"
+      description: "Angol, Francia, Koreai, Kínai, Német,... az AndroIRC több mint 10 nyelven elérhető, és teljesen módosítható az igényeid szerint. Belépés, több szerverre való csatlakozás egyszerre, automatikus csatlakozás indításkor, biztonságos kapcsolódás(SSL), NickServ beléptetés, nicknevek és csatornák, és sok más, benne a legjobb IRC kliensben, ami Android™-ra készült."
     free:
       name: "Mindez ingyen"
       description: "AndroIRC ingyenesen elérhető a Google Play-en!A prémium verzió szintén elérhető,ha támogatni szeretnéd az AndroIRC fejlesztését."
