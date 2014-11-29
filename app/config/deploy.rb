@@ -1,13 +1,20 @@
+set :stages, %w(preprod prod)
+set :default_stage, "preprod"
+set :stage_dir, "app/config"
+require 'capistrano/ext/multistage'
+
 set :application,     "androirc.com"
 set :domain,          "homer.madalynn.eu"
-set :deploy_to,       "/home/web/#{application}/www"
 set :user,            "web"
-set :port,            2222
-
+default_run_options[:pty] = true
 set :repository,      "https://github.com/androirc/website.git"
 set :scm,             :git
-set :branch,          "master"
 set :deploy_via,      :remote_cache
+
+set :ssh_options, {
+    config: false,
+    port: 2222
+}
 
 set :shared_files,    ["app/config/parameters.yml"]
 set :shared_children, [log_path, web_path + "/uploads"]
@@ -22,7 +29,7 @@ role :db,         domain, :primary => true       # This is where Symfony2 migrat
 set :keep_releases,  3
 
 # Be more verbose by uncommenting the following line
-# logger.level = Logger::MAX_LEVEL
+logger.level = Logger::INFO
 
 set :use_composer,          true
 set :use_sudo,              false
