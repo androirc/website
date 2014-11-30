@@ -37,14 +37,49 @@ class ChangeLogController extends Controller
         $em   = $this->getDoctrine()->getManager();
         $repo = $em->getRepository('MainBundle:ChangeLog');
 
+        // Check for dev version
+        $dev = strpos($version, '-dev') !== false;
+        if ($dev)
+        {
+            // Remove '-dev' suffix
+            $version = str_replace('-dev', '', $version);
+        }
+
         $version = $em->getRepository('MainBundle:AndroircVersion')
                       ->populate(AndroircVersion::create($version));
 
         if (null === $version) {
-            throw $this->createNotFoundException('The version does not exist in the database.');
+            if (! $dev)
+            {
+                throw $this->createNotFoundException('The version does not exist.');
+            }
+            else
+            {
+                // Pick a random version
+                $version = $em->getRepository('MainBundle:AndroircVersion')
+                              ->getRandom();
+
+            }
         }
 
         $changelog = $repo->findByVersion($version);
+
+        if ($changelog === null)
+        {
+            if ($dev)
+            {
+                // Get a random changelog
+                $changelog = $repo->getRandom();
+                if ($changelog === null)
+                {
+                    throw $this->createNotFoundException('No changelog available.');
+                }
+            }
+            else
+            {
+                throw $this->createNotFoundException('No changelog found for this version.');
+            }
+        }
 
         return $this->render('MainBundle:ChangeLog:show.html.twig', array(
             'changelog' => $changelog,

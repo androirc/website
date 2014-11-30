@@ -29,4 +29,18 @@ class AndroircVersionRepository extends AbstractVersionRepository
         return $qb->getQuery()
                   ->getOneOrNullResult();
     }
+
+    public function getRandom()
+    {
+        $count = $this->createQueryBuilder('v')
+            ->select('COUNT(v)')
+            ->getQuery()
+            ->getSingleScalarResult();
+
+        return $this->createQueryBuilder('u')
+            ->setFirstResult(mt_rand(0, $count - 1))
+            ->setMaxResults(1)
+            ->getQuery()
+            ->getSingleResult();
+    }
 }

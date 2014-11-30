@@ -42,4 +42,23 @@ class QuickStartRepository extends EntityRepository
 
         return $query->execute();
     }
+
+    public function getRandom()
+    {
+        $count = $this->createQueryBuilder('q')
+            ->select('COUNT(q)')
+            ->getQuery()
+            ->getSingleScalarResult();
+
+        if ($count <= 0)
+        {
+            return null;
+        }
+
+        return $this->createQueryBuilder('q')
+            ->setFirstResult(mt_rand(0, $count - 1))
+            ->setMaxResults(1)
+            ->getQuery()
+            ->getSingleResult();
+    }
 }

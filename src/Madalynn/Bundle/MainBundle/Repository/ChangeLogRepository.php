@@ -38,4 +38,23 @@ class ChangeLogRepository extends EntityRepository
                     ->getQuery()
                     ->getOneOrNullResult();
     }
+
+    public function getRandom()
+    {
+        $count = $this->createQueryBuilder('c')
+            ->select('COUNT(c)')
+            ->getQuery()
+            ->getSingleScalarResult();
+
+        if ($count <= 0)
+        {
+            return null;
+        }
+
+        return $this->createQueryBuilder('c')
+            ->setFirstResult(mt_rand(0, $count - 1))
+            ->setMaxResults(1)
+            ->getQuery()
+            ->getSingleResult();
+    }
 }
