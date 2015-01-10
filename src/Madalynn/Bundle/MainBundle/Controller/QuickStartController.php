@@ -37,14 +37,50 @@ class QuickStartController extends Controller
         $em   = $this->getDoctrine()->getManager();
         $repo = $em->getRepository('MainBundle:QuickStart');
 
+        // Check for dev version
+        $dev = strpos($version, '-dev') !== false;
+        if ($dev)
+        {
+            // Remove '-dev' suffix
+            $version = str_replace('-dev', '', $version);
+        }
+
         $version = $em->getRepository('MainBundle:AndroircVersion')
                       ->populate(AndroircVersion::create($version));
 
         if (null === $version) {
-            throw $this->createNotFoundException('The version does not exist.');
+            if (! $dev)
+            {
+                throw $this->createNotFoundException('The version does not exist.');
+            }
+            else
+            {
+                // Pick a random version
+                $version = $em->getRepository('MainBundle:AndroircVersion')
+                              ->getRandom();
+
+            }
         }
 
         $quickstart = $repo->findByVersion($version, $lang);
+
+        if ($quickstart === null)
+        {
+            if ($dev)
+            {
+                // Get a random quickstart
+                $quickstart = $repo->getRandom();
+                if ($quickstart === null)
+                {
+                    throw $this->createNotFoundException('No quickstart available.');
+                }
+            }
+            else
+            {
+                throw $this->createNotFoundException('No quickstart found for this version.');
+            }
+        }
+
         if (count($quickstart) > 1) {
             $this->get('logger')->warn(sprintf('More than one quickstart found for the version "%s"', $version));
         }

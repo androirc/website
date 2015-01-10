@@ -28,7 +28,7 @@ class QuickStartControllerTest extends WebTestCase
         $this->client->request('GET', '/quickstart/1');
 
         $this->assertRegExp('/Welcome/', $this->client->getResponse()->getContent());
-        $this->assertNotRegExp('/background-color: #282828;/', $this->client->getResponse()->getContent()); // Not black theme
+        $this->assertNotRegExp('/background-color: #424242;/', $this->client->getResponse()->getContent()); // Not black theme
     }
 
     public function testLanguage()
@@ -43,9 +43,9 @@ class QuickStartControllerTest extends WebTestCase
     public function testTheme()
     {
         $this->client->request('GET', '/quickstart/1/en/light');
-        $this->assertNotRegExp('/background-color: #282828;/', $this->client->getResponse()->getContent());
+        $this->assertNotRegExp('/background-color: #424242;/', $this->client->getResponse()->getContent());
 
         $this->client->request('GET', '/quickstart/1/en/dark');
-        $this->assertRegExp('/background-color: #282828;/', $this->client->getResponse()->getContent());
+        $this->assertRegExp('/background-color: #424242;/', $this->client->getResponse()->getContent());
     }
 }
