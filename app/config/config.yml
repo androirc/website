@@ -39,10 +39,10 @@ assetic:
     use_controller: false
     filters:
         cssrewrite: ~
-        yui_css:
-            jar: %kernel.root_dir%/java/yuicompressor-2.4.6.jar
-        yui_js:
-            jar: %kernel.root_dir%/java/yuicompressor-2.4.6.jar
+        uglifycss:
+            bin: %kernel.root_dir%/Resources/node_modules/.bin/uglifycss
+        uglifyjs:
+            bin: %kernel.root_dir%/Resources/node_modules/.bin/uglifyjs
 
 doctrine:
     dbal:
