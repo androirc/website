@@ -40,7 +40,7 @@
         <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
 
         {% block stylesheets %}
-            {% stylesheets filter="?yui_css" output="css/main.css"
+            {% stylesheets filter="?uglifycss" output="css/main.css"
                 '@CommonBundle/Resources/public/css/bootstrap.css'
                 '@CommonBundle/Resources/public/css/layout.css'
                 '@CommonBundle/Resources/public/css/chosen.css'
@@ -52,7 +52,7 @@
 
         {% block javascripts %}
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-            {% javascripts filter="?yui_js" output="js/main.js"
+            {% javascripts filter="?uglifyjs2" output="js/main.js"
                 '@CommonBundle/Resources/public/js/main.js'
                 '@CommonBundle/Resources/public/js/dropdown.jquery.js'
                 '@CommonBundle/Resources/public/js/chosen.jquery.js'
