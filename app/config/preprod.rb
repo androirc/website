@@ -1,2 +1,2 @@
-set :deploy_to,       "/home/web/#{application}/preprod"
+set :deploy_to,       "/var/www/#{application}/preprod"
 set :branch,          "develop"

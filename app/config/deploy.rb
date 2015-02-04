@@ -4,16 +4,18 @@ set :stage_dir, "app/config"
 require 'capistrano/ext/multistage'
 
 set :application,     "androirc.com"
-set :domain,          "homer.madalynn.eu"
-set :user,            "web"
+set :domain,          "marge.madalynn.eu"
+set :user,            "madalynn"
 default_run_options[:pty] = true
 set :repository,      "https://github.com/androirc/website.git"
 set :scm,             :git
 set :deploy_via,      :remote_cache
 
+set :default_shell,   "sudo -u www-data /bin/sh"
+
 set :ssh_options, {
     config: false,
-    port: 2222
+    port: 22
 }
 
 set :shared_files,    ["app/config/parameters.yml"]
@@ -36,6 +38,10 @@ set :use_sudo,              false
 set :dump_assetic_assets,   true
 set :update_assets_version, true
 set :clear_controllers,     true
-set :permission_method,     false
+
+# Permissions
+set :webserver_user,      "www-data"
+set :permission_method,   :acl
+set :use_set_permissions, true
 
 before "symfony:bootstrap:build", "deploy:set_permissions"
