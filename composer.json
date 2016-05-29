@@ -15,7 +15,7 @@
         "white-october/pagerfanta-bundle": "1.0.*",
         "jms/i18n-routing-bundle": "1.1.*",
         "willdurand/geocoder-bundle": "1.2.*",
-        "knplabs/knp-markdown-bundle": "1.2.*",
+        "knplabs/knp-markdown-bundle": "1.5.*",
         "beberlei/DoctrineExtensions": "0.*"
     },
     "require-dev": {
