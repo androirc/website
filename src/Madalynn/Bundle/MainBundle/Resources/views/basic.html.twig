@@ -3,6 +3,9 @@
     <head>
         <meta charset="utf-8" />
         <title>{% block title %}{% endblock %} - AndroIRC (Android IRC Client)</title>
+        {% if version.major >= 5 and version.minor >= 3 %}
+        <link rel="stylesheet" type="text/css" href="http://app.androirc.com/style.css">
+        {% else %}
         <style type="text/css">
             body {
               font-family: Roboto, Arial, Helvetica, sans-serif;
@@ -54,6 +57,7 @@
               padding: 0 5px;
             }
         </style>
+        {% endif %}
     </head>
     <body>
         {% block content %}{% endblock %}
