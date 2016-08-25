@@ -45,8 +45,9 @@ class QuickStartController extends Controller
             $version = str_replace('-dev', '', $version);
         }
 
+        $request_version = AndroircVersion::create($version);
         $version = $em->getRepository('MainBundle:AndroircVersion')
-                      ->populate(AndroircVersion::create($version));
+                      ->populate($request_version);
 
         if (null === $version) {
             if (! $dev)
@@ -93,6 +94,7 @@ class QuickStartController extends Controller
         return $this->render('MainBundle:QuickStart:show.html.twig', array(
             'quickstart' => $quickstart,
             'theme'      => $theme,
+            'version'    => $request_version
         ));
     }
 }
