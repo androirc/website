@@ -17,7 +17,7 @@ frontend:
   copyright: "%year% Madalynn 著作權所有，並保留一切權利。 Android 是 Google Inc. 的註冊商標"
   blog:
     description: "關於 AndroIRC 的最新消息"
-    article_subtitle: "由 %author% 於 %date% 發佈"
+    article_subtitle: "消息由 %author% 於 %date% 張貼"
     show_comments: "顯示註解"
     date_format: "m/d/Y"
     archives:
@@ -27,36 +27,36 @@ frontend:
     description: "下載 AndroIRC 最新搶鮮版"
     download_button: "下載最新搶鮮版"
     no_beta: "很抱歉...目前暫無搶鮮版可用。請稍候回來，並請持續留意我們的 Facebook、Twitter 與 Google+"
-    warning: "此版本在 Google Play 不存在。This version is not available in Google Play (Android Market). Be warned: this version is for testing purpose and may (will) contain bugs."
-    contact_us: "If you find any bugs, please contact us."
-    new_beta: "A new beta is available to download (%version%). You'll find a list of changes below."
+    warning: "此版本在 Google Play 不存在。警告：此版本用於測試目的且可能/會含有 Bug。"
+    contact_us: "若您發現了任何 Bug，請聯絡我們。"
+    new_beta: "可用下載的最新搶鮮版 (%version%)。您會在下方找到變更清單。"
   support:
     description: "您正在尋找協助？本章為您而設"
     wiki:
       name: "Wiki"
-      description: "A question? The answer is probably in this wiki. Written by the team, it includes all the guides and informations to configure and use AndroIRC."
+      description: "一個疑問？答案或許位於此 wiki 中，wiki 由團隊撰寫，包含了設定與使用 AndroIRC 的所有指南與資訊。"
       link: "前往 wiki"
     support:
       name: "支援中心"
-      description: "您發現了一個 Bug？有一個建議？或者僅僅一個問題？歡迎到達這裡，我們將很願意協助您使 AndroIRC 更棒更穩定。"
+      description: "您發現了一個 Bug？有一個建議？或者僅僅一個疑問？歡迎到達這裡，我們將很願意協助您使 AndroIRC 更棒更穩定。"
       link: "前往支援中心"
     translation:
       name: "翻譯"
-      description: "AndroIRC 不存在您所使用的語言？協助我們 AndroIRC！"
+      description: "AndroIRC 不存在您所使用的語言？<a href="https://www.transifex.com/androirc/androirc/" target="_blank" title="AndroIRC localization">協助我們翻譯 AndroIRC！</a>"
       link: "用您的語言開始翻譯 AndroIRC"
     social:
       name: "社交網路"
-      description: "Do you want to get in touch with us? We're on %facebook%, %twitter% and even %googleplus%. Of course, we're also on %irc%."
+      description: "您想與我們取得聯絡嗎？我們在 %facebook%、%twitter% 甚至 %googleplus%。當然，我們也在 %irc%."
   homepage:
-    motto: "Fast, powerful, only for Android™"
+    motto: "快速、強大，只為 Android™"
     notifications:
-      name: "Powerful notifications"
-      description: "AndroIRC will notify you as soon as you have a new private message or a new highlight. Of course, you can configure notifications as you want. You can even change the list of words triggering a highlight!"
+      name: "強大的通知"
+      description: "一旦您有新私人訊息或新醒目提示，AndroIRC 會立即通知您。當然，您可以根據需求設定通知。您甚至可以變更觸發醒目提示的詞彙清單！"
     themes:
-      name: "Dark, light, and customizable theme"
+      name: "夜間主題、日間主題，以及自訂主題"
       description: "Accessible by default in a dark or light theme, AndroIRC allows you to create your custom theme with your own colors. It's fully customizable."
     tablet:
-      name: "Tablet ready"
+      name: "平板電腦版已備好"
       description: "We have been working hard to bring you AndroIRC on tablet. The UI adapts itself to the screen size, and you'll be able to fully enjoy your IRC session on a larger screen."
     fish:
       name: "FiSH, SASL, Nickserv"
@@ -65,8 +65,8 @@ frontend:
       name: "Beautiful interface, fully integrated"
       description: "Available for Android 2.1 and above, AndroIRC always follows the latest Android guideline regarding user interface even for the new Jelly Bean release. With it thoughtful interface, everything is at hand!"
     others:
-      name: "And much more!"
-      description: "English, French, Korean, Chinese, Dutch, ... AndroIRC is available in more than 10 languages and fully configurable to fit your needs. Logging, multiple servers, auto-connection at launch, secured connection (SSL), NickServ authentication, nicks and channels completion and much more, inside the best IRC client for Android™."
+      name: "以及更多"
+      description: "英文、法文、韓文、簡體中文、丹麥文... AndroIRC is available in more than 10 languages and fully configurable to fit your needs. Logging, multiple servers, auto-connection at launch, secured connection (SSL), NickServ authentication, nicks and channels completion and much more, inside the best IRC client for Android™."
     free:
       name: "All of that for... free"
       description: "AndroIRC is available for free on Google Play! A premium version is also available if you want to help in AndroIRC developement."
