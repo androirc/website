@@ -54,13 +54,13 @@ frontend:
       description: "一旦您有新私人訊息或新醒目提示，AndroIRC 會立即通知您。當然，您可以根據需求設定通知。您甚至可以變更觸發醒目提示的詞彙清單！"
     themes:
       name: "夜間主題、日間主題，以及自訂主題"
-      description: "Accessible by default in a dark or light theme, AndroIRC allows you to create your custom theme with your own colors. It's fully customizable."
+      description: "預設提供夜間、日間兩種主題，AndroIRC 允許您使用自己的色彩建立自訂主題，讓您完全掌控。"
     tablet:
       name: "平板電腦版已備好"
-      description: "We have been working hard to bring you AndroIRC on tablet. The UI adapts itself to the screen size, and you'll be able to fully enjoy your IRC session on a larger screen."
+      description: "我們一直努力工作為您帶來平板電腦版 AndroIRC，其使用者介面適應螢幕大小，您將能夠在更大的螢幕上完全享受 IRC 工作階段。"
     fish:
       name: "FiSH, SASL, Nickserv"
-      description: "AndroIRC supports standard authentication system like NickServ. It also has advanced features, like SASL authentication, required by freenode. You'll also have to ability to encrypt your conversation with a full support of the FiSH protocol."
+      description: "AndroIRC 支援如 NickServ 這樣標準的驗證系統，它也具有 freenode 所需的進階功能，如 SASL 身分驗證。It also has advanced features, like SASL authentication, required by freenode. You'll also have to ability to encrypt your conversation with a full support of the FiSH protocol."
     ui:
       name: "Beautiful interface, fully integrated"
       description: "Available for Android 2.1 and above, AndroIRC always follows the latest Android guideline regarding user interface even for the new Jelly Bean release. With it thoughtful interface, everything is at hand!"
