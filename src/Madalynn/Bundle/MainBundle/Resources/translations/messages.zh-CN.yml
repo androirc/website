@@ -60,13 +60,13 @@ frontend:
       description: "我们一直努力把最好的体验带给平板用户。目前 AndroIRC 的界面可以自动跟随屏幕尺寸而调整，您可以在大屏幕设备上尽情使用。"
     fish:
       name: "FiSH, SASL, Nickserv"
-      description: "AndroIRC 支持标准的 NickServ 验证。同时，它也支持一些高级特性，例如 freenode 的 SASL 验证。除了这些，您还可以使用  FiSH 协议加密您的回话内容。"
+      description: "AndroIRC 支持标准的 NickServ 验证。同时，它也支持一些高级特性，例如 freenode 的 SASL 验证。除了这些，您还可以使用  FiSH 协议加密您的会话内容。"
     ui:
       name: "完美整合的漂亮界面"
       description: "为 Android 2.1+ 而生，AndroIRC 一直跟随着最新的 Android 用户界面指引，甚至包括最新的 Android Jelly Bean 版本。有这样一个亲切的界面，一切尽在手中！"
     others:
       name: "还有更多！"
-      description: "英语，法语，韩语，中文，丹麦语... AndroIRC 已经有至少10种不同语言供用户自由选择。登录，多服务器聊天，启动时自动连接，安全连接(SSL)，NickServ 验证，昵称和频道等多种选项或功能，让 AndroIRC 成为最出色的 Android™ IRC 客户端"
+      description: "英语，法语，韩语，简体中文，丹麦语... AndroIRC 已经有至少10种不同语言供用户自由选择。登录，多服务器聊天，启动时自动连接，安全连接(SSL)，NickServ 验证，昵称和频道等多种选项或功能，让 AndroIRC 成为最出色的 Android™ IRC 客户端"
     free:
       name: "所有这一切...都是免费的"
       description: "AndroIRC 现已在 Google Play 上架！高级版本也已针对捐助用户准备好。"
