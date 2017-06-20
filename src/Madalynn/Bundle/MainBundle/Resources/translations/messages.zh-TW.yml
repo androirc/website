@@ -2,8 +2,8 @@ frontend:
   subtitle: "Android™ IRC 用戶端"
   description: "探索 AndroIRC，您的 Android 裝置上最讚的 IRC 用戶端。AndroIRC 支援多重伺服器連線(加密或不加密)、mIRC 色彩、啟動時自動加入頻道、nickserv/sasl 驗證、記錄、主題、FiSH，以及更多。所有的一切皆免費！"
   keywords: "android, irc, client, free, app, mirc, androirc, market, play, logging, sasl, authentication, blowfish, plain, identification, nickserv, themes, smartphone, application, apps, ircd, communication, internet, relay, chat, server, freenode, epiknet, quakenet, efnet, undernet, ident, nick, nickname, chan, channel, kick, ban, op, halfop, voice"
-  home_title: "AndroIRC - 您的 Android 裝置上需要的最讚的 IRC 用戶端"
-  author: "翻譯：LNDDYL 聯絡：https://t.me/LNDDYL"
+  home_title: "AndroIRC - 您的 Android 裝置所需的最讚的 IRC 用戶端"
+  author: "翻譯者：LNDDYL 聯絡方式：https://t.me/LNDDYL"
   menu:
     blog: "部落格"
     download: "下載"
@@ -42,7 +42,7 @@ frontend:
       link: "前往支援中心"
     translation:
       name: "翻譯"
-      description: "AndroIRC 不存在您所使用的語言？<a href="https://www.transifex.com/androirc/androirc/" target="_blank" title="AndroIRC localization">協助我們翻譯 AndroIRC！</a>"
+      description: "AndroIRC 不存在您所使用的語言？協助我們翻譯 AndroIRC！"
       link: "用您的語言開始翻譯 AndroIRC"
     social:
       name: "社交網路"
@@ -60,13 +60,13 @@ frontend:
       description: "我們一直努力工作為您帶來平板電腦版 AndroIRC，其使用者介面適應螢幕大小，您將能夠在更大的螢幕上完全享受 IRC 工作階段。"
     fish:
       name: "FiSH, SASL, Nickserv"
-      description: "AndroIRC 支援如 NickServ 這樣標準的驗證系統，它也具有 freenode 所需的進階功能，如 SASL 身分驗證。It also has advanced features, like SASL authentication, required by freenode. You'll also have to ability to encrypt your conversation with a full support of the FiSH protocol."
+      description: "AndroIRC 支援如 NickServ 這樣標準的驗證系統，它也具有 freenode 所需的進階功能，如「簡單驗證及安全性階層 (SASL)」身分驗證。您亦必須能夠完全支援 FiSH 協定以加密交談。"
     ui:
-      name: "Beautiful interface, fully integrated"
+      name: "完全整合的精美介面"
       description: "Available for Android 2.1 and above, AndroIRC always follows the latest Android guideline regarding user interface even for the new Jelly Bean release. With it thoughtful interface, everything is at hand!"
     others:
       name: "以及更多"
       description: "英文、法文、韓文、簡體中文、丹麥文... AndroIRC is available in more than 10 languages and fully configurable to fit your needs. Logging, multiple servers, auto-connection at launch, secured connection (SSL), NickServ authentication, nicks and channels completion and much more, inside the best IRC client for Android™."
     free:
-      name: "All of that for... free"
-      description: "AndroIRC is available for free on Google Play! A premium version is also available if you want to help in AndroIRC developement."
+      name: "一切的一切...皆免費"
+      description: "AndroIRC 在 Google Play 上免費提供！若您想助 AndroIRC 開發一臂之力，我們亦提供付費版。"
