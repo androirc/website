@@ -1,14 +1,14 @@
 backend:
     layout:
-        header: Centre d'administration
+        header: "Centre d'administration"
 
     dashboard:
-        welcome: Bienvenue %username% !
-        subtitle: Bienvenue dans le centre d'administration
+        welcome: "Bienvenue %username% !"
+        subtitle: "Bienvenue dans le centre d'administration"
 
     sidebar.admin:
         name: Administration
-        button: Aller au centre d'administration
+        button: "Aller au centre d'administration"
 
     menu:
         frontend: Retour
@@ -22,13 +22,13 @@ backend:
         holiday: Holiday
         changelog: Change Log
         version: Versions
-        version_androirc: Versions d'AndroIRC
-        version_android: Versions d'Android
+        version_androirc: "Versions d'AndroIRC"
+        version_android: "Versions d'Android"
         logout: Déconnexion
 
     login:
         title: Vous devez être identifié pour visualiser cette page
-        username: Nom d'utilisateur
+        username: "Nom d'utilisateur"
         password: Mot de passe
         remember_me: Se souvenir de moi
         submit: Se connecter
@@ -37,7 +37,7 @@ backend:
         show: Voir
         edit: Editer
         delete: Supprimer
-        delete_all: Supprimer l'ensemble des résultats
+        delete_all: "Supprimer l'ensemble des résultats"
         delete_selected: Supprimer la selection
         back_list: Retourner à la liste
         create: Créer
@@ -53,18 +53,18 @@ backend:
         base_title: Gestion des versions
 
     item:
-        create: L'objet a été créé avec succès.
-        update: L'objet a été mis à jour avec succès.
-        delete: L'objet a été supprimé avec succès.
+        create: "L'objet a été créé avec succès."
+        update: "L'objet a été mis à jour avec succès."
+        delete: "L'objet a été supprimé avec succès."
         clear: Les filtres ont étés supprimés avec succès.
 
     article:
-        edit_title: %title%
+        edit_title: "%title%"
         edit: editer
         not_visible: non visible
         list_title: Liste des articles
         new_title: Nouvel article
-        show_title: Afficher l'article
+        show_title: "Afficher l'article"
         field:
             author: Auteur
             title: Titre
@@ -73,7 +73,7 @@ backend:
             content: Contenu
 
     donator:
-        edit_title: %name% donateur
+        edit_title: "%name% donateur"
         list_title: Liste des donateurs
         new_title: Nouveau donateur
         field:
@@ -81,11 +81,11 @@ backend:
             amount: Montant
 
     user:
-        edit_title: Utilisateur %username%
+        edit_title: "Utilisateur %username%"
         list_title: Liste des utilisateurs
         new_title: Nouvel utilisateur
         field:
-            username: Nom d'utilisateur
+            username: "Nom d'utilisateur"
             admin: Administrateur
             last_login: Dernière connexion
             last_login_format: d/m/Y
@@ -94,10 +94,10 @@ backend:
             roles: Roles
 
     beta_release:
-        edit_title: %version% beta
+        edit_title: "%version% beta"
         list_title: Liste des betas
         new_title: Nouvelle beta
-        show_title: %version% beta
+        show_title: "%version% beta"
         field:
             version: Version
             downloadable: Téléchargeable
@@ -106,10 +106,10 @@ backend:
             file: Fichier
 
     tip:
-        edit_title: Edition d'un tip
+        edit_title: "Edition d'un tip"
         list_title: Liste des tips
         new_title: Nouveau tip
-        show_title: Tip numéro %id%
+        show_title: "Tip numéro %id%"
         field:
             language: Langue
             content: Contenu
@@ -119,7 +119,7 @@ backend:
         list_title: Liste des rapports de crash
         show_title: "Rapport de crash #%id%"
         field:
-            error_message: Message d'erreur
+            error_message: "Message d'erreur"
             androirc: AndroIRC
             android: Android
             count: Nombre
@@ -130,7 +130,7 @@ backend:
     quick_start:
         list_title: Liste des QuickStarts
         new_title: Nouveau QuickStart
-        edit_title: Edition d'un QuickStart
+        edit_title: "Edition d'un QuickStart"
         field:
             language: Langue
             version_min: Version min
@@ -141,7 +141,7 @@ backend:
     tip_holiday:
         list_title: Liste des Tips Holiday
         new_title: Nouveau Tip Holiday
-        edit_title: Edition d'un Tip Holiday
+        edit_title: "Edition d'un Tip Holiday"
         show_title: "Tip Holiday #%id%"
         field:
             language: Langue
@@ -151,7 +151,7 @@ backend:
             month: Mois
 
     change_log:
-        edit_title: Edition du changelog v%version%
+        edit_title: "Edition du changelog v%version%"
         new_title: Nouveau Changelog
         list_title: Liste des Changelogs
         field:
@@ -159,9 +159,9 @@ backend:
             file: Fichier
 
     android_version:
-        edit_title: Edition d'une version d'Android
-        new_title: Nouvelle version d'Android
-        list_title: Liste des versions d'Android
+        edit_title: "Edition d'une version d'Android"
+        new_title: "Nouvelle version d'Android"
+        list_title: "Liste des versions d'Android"
         field:
             api_level: Niveau API
             version: Version
@@ -170,10 +170,10 @@ backend:
             revision: Révision
 
     androirc_version:
-        edit_title: Edition d'une version d'AndroIRC
-        new_title: Nouvelle version d'AndroIRC
-        list_title: Liste des versions d'AndroIRC
-        add_new: Ajouter une nouvelle version d'AndroIRC
+        edit_title: "Edition d'une version d'AndroIRC"
+        new_title: "Nouvelle version d'AndroIRC"
+        list_title: "Liste des versions d'AndroIRC"
+        add_new: "Ajouter une nouvelle version d'AndroIRC"
         field:
             code: Code
             version: Version
