@@ -12,9 +12,12 @@
 
 namespace Madalynn\Bundle\AdminBundle\Form;
 
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class UserType extends AbstractType
 {
@@ -24,12 +27,12 @@ class UserType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('username', null, array('label' => 'backend.user.field.username'))
-                ->add('email', 'email', array('label' => 'backend.user.field.email'))
-                ->add('plainPassword', 'password', array(
+                ->add('email', EmailType::class, array('label' => 'backend.user.field.email'))
+                ->add('plainPassword', PasswordType::class, array(
                     'label'    => 'backend.user.field.password',
                     'required' => false,
                 ))
-                ->add('userRoles', 'entity', array(
+                ->add('userRoles', EntityType::class, array(
                     'class'    => 'Madalynn\Bundle\MainBundle\Entity\Role',
                     'multiple' => true,
                     'required' => false,
@@ -40,7 +43,7 @@ class UserType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
             'data_class' => 'Madalynn\\Bundle\\MainBundle\\Entity\\User',
@@ -50,7 +53,7 @@ class UserType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function getName()
+    public function getBlockPrefix()
     {
         return 'admin_user';
     }

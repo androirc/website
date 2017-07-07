@@ -12,9 +12,13 @@
 
 namespace Madalynn\Bundle\AdminBundle\Form;
 
+use Madalynn\Bundle\AdminBundle\Type\EditorType;
+
 use Symfony\Component\Form\AbstractType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Form\Extension\Core\Type\LanguageType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class QuickStartType extends AbstractType
 {
@@ -23,26 +27,26 @@ class QuickStartType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('language', 'language', array(
+        $builder->add('language', LanguageType::class, array(
                     'preferred_choices' => array('en', 'fr'),
                     'label'             => 'backend.quick_start.field.language'
                 ))
-                ->add('versionMin', 'entity', array(
+                ->add('versionMin', EntityType::class, array(
                     'class' => 'Madalynn\\Bundle\\MainBundle\\Entity\\AndroircVersion',
                     'label' => 'backend.quick_start.field.version_min'
                 ))
-                ->add('versionMax', 'entity', array(
+                ->add('versionMax', EntityType::class, array(
                     'class'    => 'Madalynn\\Bundle\\MainBundle\\Entity\\AndroircVersion',
                     'label'    => 'backend.quick_start.field.version_max',
                     'required' => false
                 ))
-                ->add('content', 'editor', array('label' => 'backend.quick_start.field.content'));
+                ->add('content', EditorType::class, array('label' => 'backend.quick_start.field.content'));
     }
 
     /**
      * {@inheritdoc}
      */
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
             'data_class' => 'Madalynn\\Bundle\\MainBundle\\Entity\\QuickStart',
@@ -52,7 +56,7 @@ class QuickStartType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function getName()
+    public function getBlockPrefix()
     {
         return 'admin_quick_start';
     }

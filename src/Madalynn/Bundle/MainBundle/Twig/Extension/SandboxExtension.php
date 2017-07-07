@@ -43,7 +43,7 @@ class SandboxExtension extends \Twig_Extension
     public function getFunctions()
     {
         return array(
-            'display_changelog' => new \Twig_Function_Method($this, 'displayChangelog', array('is_safe' => array('html'))),
+            'display_changelog' => new \Twig_SimpleFunction('display_changelog', array($this, 'displayChangelog'), array('is_safe' => array('html'))),
         );
     }
 
