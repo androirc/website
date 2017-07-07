@@ -15,7 +15,7 @@ namespace Madalynn\Bundle\MainBundle\Tests\Entity;
 use Madalynn\Bundle\MainBundle\Entity\CrashReport;
 use Madalynn\Bundle\MainBundle\Entity\Logcat;
 
-class CrashReportTest extends \PHPUnit_Framework_TestCase
+class CrashReportTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @dataProvider dataCrashReport

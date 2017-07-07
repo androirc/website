@@ -14,7 +14,7 @@ namespace Madalynn\Bundle\MainBundle\Tests;
 
 require_once __DIR__.'/../../../../../app/AppKernel.php';
 
-class AndroircVersionTest extends \PHPUnit_Framework_TestCase
+class AndroircVersionTest extends \PHPUnit\Framework\TestCase
 {
     protected $container;
 
