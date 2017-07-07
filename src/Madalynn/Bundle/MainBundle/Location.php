@@ -47,6 +47,6 @@ class Location
     {
         $informations = $this->geocoder->geocode($ip);
 
-        return $informations['country'];
+        return $informations->first()->getCountry()->getName();
     }
 }

@@ -13,6 +13,7 @@
 namespace Madalynn\Bundle\MainBundle\Twig\Extension;
 
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Madalynn\Bundle\MainBundle\Entity\Article;
 use Madalynn\Bundle\MainBundle\Entity\ChangeLog;
@@ -24,6 +25,12 @@ use Madalynn\Bundle\MainBundle\Entity\ChangeLog;
  */
 class MainExtension extends \Twig_Extension
 {
+
+    /**
+     * @var RequestStack
+     */
+    protected $requestStack;
+
     /**
      * @var ContainerInterface
      */
@@ -39,8 +46,9 @@ class MainExtension extends \Twig_Extension
      *
      * @param ContainerInterface $container The container
      */
-    public function __construct(ContainerInterface $container)
+    public function __construct(RequestStack $requestStack, ContainerInterface $container)
     {
+        $this->requestStack = $requestStack;
         $this->container = $container;
         $this->formatter = null;
     }
@@ -115,7 +123,7 @@ class MainExtension extends \Twig_Extension
     {
         if (null === $this->formatter) {
             $this->formatter = new \IntlDateFormatter(
-                $this->container->get('request')->getLocale(),
+                $this->requestStack->getCurrentRequest()->getLocale(),
                 \IntlDateFormatter::NONE,
                 \IntlDateFormatter::NONE,
                 date_default_timezone_get(),

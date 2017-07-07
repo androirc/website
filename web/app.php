@@ -12,9 +12,16 @@ $loader = new ApcClassLoader('androirc', $loader);
 $loader->register(true);
 
 $kernel = new AppKernel('prod', false);
-$kernel->loadClassCache();
 
 $request = Request::createFromGlobals();
+
+Request::setTrustedProxies(
+    // the IP address (or range) of your proxy
+    ['127.0.0.1'],
+
+    // trust *all* "X-Forwarded-*" headers
+    Request::HEADER_X_FORWARDED_ALL
+);
 
 $response = $kernel->handle($request);
 $response->send();
