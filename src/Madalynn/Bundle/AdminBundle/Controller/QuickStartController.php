@@ -18,7 +18,7 @@ class QuickStartController extends CRUDController
 {
     protected function getForm()
     {
-        return new QuickStartType();
+        return QuickStartType::class;
     }
 
     protected function getClass()

@@ -35,6 +35,6 @@ class ArticleController extends CRUDController
 
     protected function getForm()
     {
-        return new ArticleType();
+        return ArticleType::class;
     }
 }

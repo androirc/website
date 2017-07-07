@@ -5,12 +5,12 @@
 {% block page %}
     <h1>{{ block('title') }}</h1>
 
-    <form action="{{ path('admin_' ~ entity_name ~ '_create') }}" class="form-horizontal" method="post" {{ form_enctype(form) }}>
+    {{ form_start(form, {'action': path('admin_' ~ entity_name ~ '_create'), 'method': 'post', 'attr': {'class': 'form-horizontal'}  }) }}
         {{ form_widget(form) }}
 
         <div class="form-actions">
             <button type="submit" class="btn btn-primary">{{ 'backend.actions.create'|trans }}</button>
             <a class="btn" href="{{ path('admin_' ~ entity_name ~ '_list') }}">{{ 'backend.actions.back_list'|trans }}</a>
         </div>
-    </form>
+    {{ form_end(form) }}
 {% endblock %}

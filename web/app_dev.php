@@ -19,13 +19,14 @@ if (isset($_SERVER['HTTP_CLIENT_IP'])
 
 //include "maintenance.php";
 
+require __DIR__.'/../app/autoload.php';
 $loader = require_once __DIR__.'/../app/bootstrap.php.cache';
-Debug::enable();
 
-require_once __DIR__.'/../app/AppKernel.php';
+Debug::enable();
 
 $kernel = new AppKernel('dev', true);
 $kernel->loadClassCache();
+
 $request = Request::createFromGlobals();
 $response = $kernel->handle($request);
 $response->send();

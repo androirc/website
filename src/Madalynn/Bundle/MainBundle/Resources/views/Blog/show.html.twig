@@ -30,7 +30,7 @@
             <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
         </div>
         <div class="span3 archives-container hidden-phone">
-            {% render controller('MainBundle:Blog:menu') %}
+            {{ render(controller('MainBundle:Blog:menu')) }}
         </div>
     </div>
     {% include 'MainBundle:Blog:javascript.html.twig' %}

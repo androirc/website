@@ -30,7 +30,7 @@ class AndroidVersionController extends CRUDController
 
     protected function getForm()
     {
-        return new AndroidVersionType();
+        return AndroidVersionType::class;
     }
 
     protected function getClass()

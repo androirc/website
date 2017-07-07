@@ -53,7 +53,7 @@ class SandboxParser implements ContainerAwareInterface
         }
 
         try {
-            return $this->twig->render($text);
+            return $this->twig->createTemplate($text)->render(array());
         } catch (\Twig_Error_Syntax $e) {
             return '<p>Mhh.. Unable to display this article</p>';
         }
@@ -66,7 +66,7 @@ class SandboxParser implements ContainerAwareInterface
      */
     protected function getTwig()
     {
-        $twig = new \Twig_Environment(new \Twig_Loader_String());
+        $twig = new \Twig_Environment(new \Twig_Loader_Array(array()));
         $twig->addExtension(new SandboxExtension($this->container));
 
         return $twig;

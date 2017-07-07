@@ -20,7 +20,7 @@ class BetaReleaseController extends CRUDController
 {
     protected function getForm()
     {
-        return new BetaReleaseType();
+        return BetaReleaseType::class;
     }
 
     protected function getClass()

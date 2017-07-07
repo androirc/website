@@ -30,7 +30,7 @@ class UserController extends CRUDController
 
     protected function getForm()
     {
-        return new UserType();
+        return UserType::class;
     }
 
     protected function getClass()
