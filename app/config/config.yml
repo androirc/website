@@ -17,20 +17,20 @@ framework:
     csrf_protection: true
     validation: { enable_annotations: true }
     trusted_proxies: 127.0.0.1
+    assets:
+        version: 0efc94639b65f71c2652dcf394ba52145b52aa7c
+        version_format: %%s?v=%%s
     templating:
         engines: ['twig']
-        assets_version: 0efc94639b65f71c2652dcf394ba52145b52aa7c
-        assets_version_format: %%s?v=%%s
     session:
         cookie_lifetime: 72000
 
 twig:
     debug: %kernel.debug%
     strict_variables: %kernel.debug%
-    form:
-        resources:
-            - 'form_div_layout.html.twig'
-            - 'MainBundle:Form:fields.html.twig'
+    form_themes:
+        - 'form_div_layout.html.twig'
+        - 'MainBundle:Form:fields.html.twig'
     globals:
         locales: '%locales%'
 

@@ -1,39 +1,39 @@
 admin_donator_list:
-    pattern:  /{page}
+    path:  /{page}
     defaults: { _controller: "AdminBundle:Donator:list", page: 1 }
     requirements:
         page:  \d+
 
 admin_donator_filter:
-    pattern:  /filter
+    path:  /filter
     defaults: { _controller: "AdminBundle:Donator:filter" }
 
 admin_donator_clear:
-    pattern:  /clear
+    path:  /clear
     defaults: { _controller: "AdminBundle:Donator:clear" }
 
 admin_donator_show:
-    pattern:  /{id}/show
+    path:  /{id}/show
     defaults: { _controller: "AdminBundle:Donator:show" }
 
 admin_donator_new:
-    pattern:  /new
+    path:  /new
     defaults: { _controller: "AdminBundle:Donator:new" }
 
 admin_donator_create:
-    pattern:  /create
+    path:  /create
     defaults: { _controller: "AdminBundle:Donator:create" }
-    requirements: { _method: post }
+    methods: [POST]
 
 admin_donator_edit:
-    pattern:  /{id}/edit
+    path:  /{id}/edit
     defaults: { _controller: "AdminBundle:Donator:edit" }
 
 admin_donator_update:
-    pattern:  /{id}/update
+    path:  /{id}/update
     defaults: { _controller: "AdminBundle:Donator:update" }
-    requirements: { _method: post }
+    methods: [POST]
 
 admin_donator_delete:
-    pattern:  /{id}/delete
+    path:  /{id}/delete
     defaults: { _controller: "AdminBundle:Donator:delete" }

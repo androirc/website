@@ -13,6 +13,7 @@
 namespace Madalynn\Bundle\AdminBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 use Doctrine\ORM\QueryBuilder;
@@ -93,11 +94,10 @@ abstract class CRUDController extends Controller
      *
      * @return Response
      */
-    public function filterAction()
+    public function filterAction(Request $request)
     {
         $en      = $this->getEntityName();
         $form    = $this->getFilterForm();
-        $request = $this->getRequest();
 
         $form->handleRequest($request);
 
@@ -150,11 +150,10 @@ abstract class CRUDController extends Controller
      *
      * @return Response
      */
-    public function createAction()
+    public function createAction(Request $request)
     {
         $entity  = $this->getEntity();
         $en      = $this->getEntityName();
-        $request = $this->getRequest();
         $form    = $this->createForm($this->getForm(), $entity);
 
         $form->handleRequest($request);
@@ -213,7 +212,7 @@ abstract class CRUDController extends Controller
      *
      * @return Response
      */
-    public function updateAction($id)
+    public function updateAction(Request $request, $id)
     {
         $en     = $this->getEntityName();
         $entity = $this->getRepository()->find($id);
@@ -223,7 +222,6 @@ abstract class CRUDController extends Controller
         }
 
         $editForm = $this->createForm($this->getForm(), $entity);
-        $request  = $this->getRequest();
 
         $editForm->handleRequest($request);
 

@@ -13,8 +13,11 @@
 namespace Madalynn\Bundle\AdminBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\LanguageType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class TipHolidayType extends AbstractType
 {
@@ -26,25 +29,27 @@ class TipHolidayType extends AbstractType
         $days = range(1, 31);
         $months = range(1, 12);
 
-        $builder->add('language', 'language', array(
+        $builder->add('language', LanguageType::class, array(
                     'preferred_choices' => array('en', 'fr'),
                     'label'             => 'backend.tip_holiday.field.language'
                 ))
-                ->add('day', 'choice', array(
+                ->add('day', ChoiceType::class, array(
+                    'choices_as_values' => true,
                     'choices' => array_combine($days, $days),
                     'label'   => 'backend.tip_holiday.field.day'
                 ))
-                ->add('month', 'choice', array(
+                ->add('month', ChoiceType::class, array(
+                    'choices_as_values' => true,
                     'choices' => array_combine($months, $months),
                     'label'   => 'backend.tip_holiday.field.month'
                 ))
-                ->add('content', 'textarea', array('label' => 'backend.tip_holiday.field.content'));
+                ->add('content', TextareaType::class, array('label' => 'backend.tip_holiday.field.content'));
     }
 
     /**
      * {@inheritdoc}
      */
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
             'data_class' => 'Madalynn\\Bundle\\MainBundle\\Entity\\TipHoliday',
@@ -54,7 +59,7 @@ class TipHolidayType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function getName()
+    public function getBlockPrefix()
     {
         return 'admin_tip_holiday';
     }
