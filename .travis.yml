@@ -15,4 +15,4 @@ branches:
         - master
         - develop
 
-script: ./bin/phpunit -c app/
+script: ./bin/simple-phpunit -c app --verbose

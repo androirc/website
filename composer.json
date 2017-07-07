@@ -40,8 +40,7 @@
         "fzaninotto/faker": "~1.6",
         "doctrine/doctrine-fixtures-bundle": "~2.3",
         "doctrine/doctrine-migrations-bundle": "dev-master",
-        "doctrine/migrations": "dev-master",
-        "phpunit/phpunit": "~6.2"
+        "doctrine/migrations": "dev-master"
     },
     "scripts": {
         "symfony-scripts": [
