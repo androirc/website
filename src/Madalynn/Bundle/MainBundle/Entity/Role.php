@@ -48,6 +48,11 @@ class Role extends \Symfony\Component\Security\Core\Role\Role implements \Serial
      */
     protected $updated;
 
+    public function __construct(string $role) {
+        $this->setRole($role);
+    }
+
+
     /**
      * Get id
      *
