@@ -30,7 +30,7 @@ class AndroircVersionController extends CRUDController
 
     protected function getForm()
     {
-        return new AndroircVersionType();
+        return AndroircVersionType::class;
     }
 
     protected function getClass()

@@ -61,9 +61,8 @@ class RoleFixtures extends AbstractFixture implements FixtureInterface, OrderedF
      */
     private function createRole($name, $desc)
     {
-        $role = new Role();
+        $role = new Role($name);
 
-        $role->setRole($name);
         $role->setDescription($desc);
 
         return $role;

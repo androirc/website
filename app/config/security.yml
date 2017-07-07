@@ -26,7 +26,7 @@ security:
             logout:
                 path: logout
             remember_me:
-                key: %secret%
+                secret: "%secret%"
                 lifetime: 31536000
                 path: /
                 domain: ~

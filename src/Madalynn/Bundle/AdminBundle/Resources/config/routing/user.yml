@@ -1,39 +1,39 @@
 admin_user_list:
-    pattern:  /{page}
+    path:  /{page}
     defaults: { _controller: "AdminBundle:User:list", page: 1 }
     requirements:
         page:  \d+
 
 admin_user_filter:
-    pattern:  /filter
+    path:  /filter
     defaults: { _controller: "AdminBundle:User:filter" }
 
 admin_user_clear:
-    pattern:  /clear
+    path:  /clear
     defaults: { _controller: "AdminBundle:User:clear" }
 
 admin_user_show:
-    pattern:  /{id}/show
+    path:  /{id}/show
     defaults: { _controller: "AdminBundle:User:show" }
 
 admin_user_new:
-    pattern:  /new
+    path:  /new
     defaults: { _controller: "AdminBundle:User:new" }
 
 admin_user_create:
-    pattern:  /create
+    path:  /create
     defaults: { _controller: "AdminBundle:User:create" }
-    requirements: { _method: post }
+    methods: [POST]
 
 admin_user_edit:
-    pattern:  /{id}/edit
+    path:  /{id}/edit
     defaults: { _controller: "AdminBundle:User:edit" }
 
 admin_user_update:
-    pattern:  /{id}/update
+    path:  /{id}/update
     defaults: { _controller: "AdminBundle:User:update" }
-    requirements: { _method: post }
+    methods: [POST]
 
 admin_user_delete:
-    pattern:  /{id}/delete
+    path:  /{id}/delete
     defaults: { _controller: "AdminBundle:User:delete" }

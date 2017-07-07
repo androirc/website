@@ -1,39 +1,39 @@
 admin_article_list:
-    pattern:  /{page}
+    path:  /{page}
     defaults: { _controller: "AdminBundle:Article:list", page: 1 }
     requirements:
         page:  \d+
 
 admin_article_filter:
-    pattern:  /filter
+    path:  /filter
     defaults: { _controller: "AdminBundle:Article:filter" }
 
 admin_article_clear:
-    pattern:  /clear
+    path:  /clear
     defaults: { _controller: "AdminBundle:Article:clear" }
 
 admin_article_show:
-    pattern:  /{id}/show
+    path:  /{id}/show
     defaults: { _controller: "AdminBundle:Article:show" }
 
 admin_article_new:
-    pattern:  /new
+    path:  /new
     defaults: { _controller: "AdminBundle:Article:new" }
 
 admin_article_create:
-    pattern:  /create
+    path:  /create
     defaults: { _controller: "AdminBundle:Article:create" }
-    requirements: { _method: post }
+    methods: [POST]
 
 admin_article_edit:
-    pattern:  /{id}/edit
+    path:  /{id}/edit
     defaults: { _controller: "AdminBundle:Article:edit" }
 
 admin_article_update:
-    pattern:  /{id}/update
+    path:  /{id}/update
     defaults: { _controller: "AdminBundle:Article:update" }
-    requirements: { _method: post }
+    methods: [POST]
 
 admin_article_delete:
-    pattern:  /{id}/delete
+    path:  /{id}/delete
     defaults: { _controller: "AdminBundle:Article:delete" }

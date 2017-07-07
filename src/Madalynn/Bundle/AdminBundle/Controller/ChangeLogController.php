@@ -18,7 +18,7 @@ class ChangeLogController extends CRUDController
 {
     protected function getForm()
     {
-        return new ChangeLogType();
+        return ChangeLogType::class;
     }
 
     protected function getClass()

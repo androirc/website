@@ -1,39 +1,39 @@
 admin_beta_release_list:
-    pattern:  /{page}
+    path:  /{page}
     defaults: { _controller: "AdminBundle:BetaRelease:list", page: 1 }
     requirements:
         page:  \d+
 
 admin_beta_release_filter:
-    pattern:  /filter
+    path:  /filter
     defaults: { _controller: "AdminBundle:BetaRelease:filter" }
 
 admin_beta_release_clear:
-    pattern:  /clear
+    path:  /clear
     defaults: { _controller: "AdminBundle:BetaRelease:clear" }
 
 admin_beta_release_show:
-    pattern:  /{id}/show
+    path:  /{id}/show
     defaults: { _controller: "AdminBundle:BetaRelease:show" }
 
 admin_beta_release_new:
-    pattern:  /new
+    path:  /new
     defaults: { _controller: "AdminBundle:BetaRelease:new" }
 
 admin_beta_release_create:
-    pattern:  /create
+    path:  /create
     defaults: { _controller: "AdminBundle:BetaRelease:create" }
-    requirements: { _method: post }
+    methods: [POST]
 
 admin_beta_release_edit:
-    pattern:  /{id}/edit
+    path:  /{id}/edit
     defaults: { _controller: "AdminBundle:BetaRelease:edit" }
 
 admin_beta_release_update:
-    pattern:  /{id}/update
+    path:  /{id}/update
     defaults: { _controller: "AdminBundle:BetaRelease:update" }
-    requirements: { _method: post }
+    methods: [POST]
 
 admin_beta_release_delete:
-    pattern:  /{id}/delete
+    path:  /{id}/delete
     defaults: { _controller: "AdminBundle:BetaRelease:delete" }

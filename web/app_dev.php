@@ -19,14 +19,23 @@ if (isset($_SERVER['HTTP_CLIENT_IP'])
 
 //include "maintenance.php";
 
+require __DIR__.'/../app/autoload.php';
 $loader = require_once __DIR__.'/../app/bootstrap.php.cache';
+
 Debug::enable();
 
-require_once __DIR__.'/../app/AppKernel.php';
-
 $kernel = new AppKernel('dev', true);
-$kernel->loadClassCache();
+
 $request = Request::createFromGlobals();
+
+Request::setTrustedProxies(
+    // the IP address (or range) of your proxy
+    ['127.0.0.1'],
+
+    // trust *all* "X-Forwarded-*" headers
+    Request::HEADER_X_FORWARDED_ALL
+);
+
 $response = $kernel->handle($request);
 $response->send();
 $kernel->terminate($request, $response);

@@ -13,8 +13,9 @@
 namespace Madalynn\Bundle\AdminBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\MoneyType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class DonatorType extends AbstractType
 {
@@ -24,7 +25,7 @@ class DonatorType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('name', null, array('label' => 'backend.donator.field.name'))
-                ->add('amount', 'money', array(
+                ->add('amount', MoneyType::class, array(
                     'currency' => 'USD',
                     'label'    => 'backend.donator.field.amount'
                 ));
@@ -33,7 +34,7 @@ class DonatorType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
             'data_class' => 'Madalynn\\Bundle\\MainBundle\\Entity\\Donator',
@@ -43,7 +44,7 @@ class DonatorType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function getName()
+    public function getBlockPrefix()
     {
         return 'admin_donator';
     }

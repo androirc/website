@@ -12,9 +12,11 @@
 
 namespace Madalynn\Bundle\AdminBundle\Form;
 
+use Madalynn\Bundle\AdminBundle\Type\EditorType;
+
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class ArticleType extends AbstractType
 {
@@ -24,7 +26,7 @@ class ArticleType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('title', null, array('label' => 'backend.article.field.title'))
-                ->add('content', 'editor', array('label' => 'backend.article.field.content'))
+                ->add('content', EditorType::class, array('label' => 'backend.article.field.content'))
                 ->add('visible', null, array(
                     'required' => false,
                     'label'    => 'backend.article.field.visible'
@@ -34,7 +36,7 @@ class ArticleType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
             'data_class' => 'Madalynn\\Bundle\\MainBundle\\Entity\\Article',
@@ -44,7 +46,7 @@ class ArticleType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function getName()
+    public function getBlockPrefix()
     {
         return 'admin_article';
     }

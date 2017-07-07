@@ -14,7 +14,7 @@ namespace Madalynn\Bundle\MainBundle\Tests\Entity;
 
 use Madalynn\Bundle\MainBundle\Entity\Article;
 
-class ArticleTest extends \PHPUnit_Framework_TestCase
+class ArticleTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @dataProvider dataSlug

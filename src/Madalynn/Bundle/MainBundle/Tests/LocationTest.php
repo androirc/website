@@ -14,7 +14,7 @@ namespace Madalynn\Bundle\MainBundle\Tests;
 
 require_once __DIR__.'/../../../../../app/AppKernel.php';
 
-class AndroircVersionTest extends \PHPUnit_Framework_TestCase
+class AndroircVersionTest extends \PHPUnit\Framework\TestCase
 {
     protected $container;
 
@@ -30,7 +30,7 @@ class AndroircVersionTest extends \PHPUnit_Framework_TestCase
     {
         $location = $this->container->get('androirc.location');
 
-        $this->assertEquals('Localhost', $location->searchLocation('127.0.0.1'));
+        $this->assertEquals('localhost', $location->searchLocation('127.0.0.1'));
     }
 
     /**

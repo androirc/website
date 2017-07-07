@@ -3,7 +3,7 @@ backend:
         header: Administration center
 
     dashboard:
-        welcome: Welcome %username%!
+        welcome: "Welcome %username%!"
         subtitle: Welcome to the administration center
 
     sidebar.admin:
@@ -59,7 +59,7 @@ backend:
         clear: Fiters has been removed successfully.
 
     article:
-        edit_title: %title%
+        edit_title: "%title%"
         edit: edit
         not_visible: not visible
         list_title: Article list
@@ -73,7 +73,7 @@ backend:
             content: Content
 
     donator:
-        edit_title: %name% donator
+        edit_title: "%name% donator"
         list_title: Donator list
         new_title: New donator
         field:
@@ -81,7 +81,7 @@ backend:
             amount: Amount
 
     user:
-        edit_title: %username% user
+        edit_title: "%username% user"
         list_title: User list
         new_title: New user
         field:
@@ -94,10 +94,10 @@ backend:
             roles: Roles
 
     beta_release:
-        edit_title: %version% beta release
+        edit_title: "%version% beta release"
         list_title: Beta list
         new_title: New beta
-        show_title: %version% beta release
+        show_title: "%version% beta release"
         field:
             version: Version
             downloadable: Downloadable
@@ -109,7 +109,7 @@ backend:
         edit_title: Tip edit
         list_title: Tip list
         new_title: New tip
-        show_title: Tip %id%
+        show_title: "Tip %id%"
         field:
             language: Language
             content: Content
@@ -142,7 +142,7 @@ backend:
         list_title: Tip Holiday list
         new_title: New Tip Holiday
         edit_title: Edit Tip Holiday
-        show_title: Tip Holiday %id%
+        show_title: "Tip Holiday %id%"
         field:
             language: Language
             date: Date
@@ -151,7 +151,7 @@ backend:
             month: Month
 
     change_log:
-        edit_title: Changelog v%version% edit
+        edit_title: "Changelog v%version% edit"
         new_title: New Changelog
         list_title: Changelog list
         field:

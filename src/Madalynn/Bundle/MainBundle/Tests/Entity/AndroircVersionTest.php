@@ -14,7 +14,7 @@ namespace Madalynn\Bundle\MainBundle\Tests\Entity;
 
 use Madalynn\Bundle\MainBundle\Entity\AndroircVersion;
 
-class AndroircVersionTest extends \PHPUnit_Framework_TestCase
+class AndroircVersionTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @dataProvider dataToStringRepresenation

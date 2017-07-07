@@ -14,7 +14,7 @@
 
         <!-- Form types -->
         <service id="form.type.editor" class="%form.type.editor.class%">
-            <tag name="form.type" alias="editor" />
+            <tag name="form.type" />
         </service>
     </services>
 </container>

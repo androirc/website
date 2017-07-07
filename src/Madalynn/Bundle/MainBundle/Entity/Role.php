@@ -12,8 +12,6 @@
 
 namespace Madalynn\Bundle\MainBundle\Entity;
 
-use Symfony\Component\Security\Core\Role\RoleInterface;
-
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -21,7 +19,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="andro_role")
  * @ORM\HasLifecycleCallbacks
  */
-class Role implements RoleInterface, \Serializable
+class Role extends \Symfony\Component\Security\Core\Role\Role implements \Serializable
 {
     /**
      * @ORM\Id
@@ -49,6 +47,11 @@ class Role implements RoleInterface, \Serializable
      * @ORM\Column(type="datetime")
      */
     protected $updated;
+
+    public function __construct(string $role) {
+        $this->setRole($role);
+    }
+
 
     /**
      * Get id

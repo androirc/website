@@ -18,7 +18,7 @@ class TipController extends CRUDController
 {
     protected function getForm()
     {
-        return new TipType();
+        return TipType::class;
     }
 
     protected function getClass()

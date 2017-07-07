@@ -1,39 +1,39 @@
 admin_tip_holiday_list:
-    pattern:  /{page}
+    path:  /{page}
     defaults: { _controller: "AdminBundle:TipHoliday:list", page: 1 }
     requirements:
         page:  \d+
 
 admin_tip_holiday_filter:
-    pattern:  /filter
+    path:  /filter
     defaults: { _controller: "AdminBundle:TipHoliday:filter" }
 
 admin_tip_holiday_clear:
-    pattern:  /clear
+    path:  /clear
     defaults: { _controller: "AdminBundle:TipHoliday:clear" }
 
 admin_tip_holiday_show:
-    pattern:  /{id}/show
+    path:  /{id}/show
     defaults: { _controller: "AdminBundle:TipHoliday:show" }
 
 admin_tip_holiday_new:
-    pattern:  /new
+    path:  /new
     defaults: { _controller: "AdminBundle:TipHoliday:new" }
 
 admin_tip_holiday_create:
-    pattern:  /create
+    path:  /create
     defaults: { _controller: "AdminBundle:TipHoliday:create" }
-    requirements: { _method: post }
+    methods: [POST]
 
 admin_tip_holiday_edit:
-    pattern:  /{id}/edit
+    path:  /{id}/edit
     defaults: { _controller: "AdminBundle:TipHoliday:edit" }
 
 admin_tip_holiday_update:
-    pattern:  /{id}/update
+    path:  /{id}/update
     defaults: { _controller: "AdminBundle:TipHoliday:update" }
-    requirements: { _method: post }
+    methods: [POST]
 
 admin_tip_holiday_delete:
-    pattern:  /{id}/delete
+    path:  /{id}/delete
     defaults: { _controller: "AdminBundle:TipHoliday:delete" }

@@ -6,58 +6,57 @@ parameters:
     locales: [en, fr, ko, pt, cs, zh, de, pl, fi, es, it, nl, el, nb, sr, hu, tr, hi, ne, ja]
 
 framework:
-    secret: %secret%
+    secret: "%secret%"
     esi: false
     translator: { enabled: true, fallback: en }
-    default_locale: %locale%
+    default_locale: "%locale%"
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
-        strict_requirements: %kernel.debug%
+        strict_requirements: "%kernel.debug%"
     form: true
     csrf_protection: true
     validation: { enable_annotations: true }
-    trusted_proxies: 127.0.0.1
+    assets:
+        version: 0efc94639b65f71c2652dcf394ba52145b52aa7c
+        version_format: "%%s?v=%%s"
     templating:
         engines: ['twig']
-        assets_version: 0efc94639b65f71c2652dcf394ba52145b52aa7c
-        assets_version_format: %%s?v=%%s
     session:
         cookie_lifetime: 72000
 
 twig:
-    debug: %kernel.debug%
-    strict_variables: %kernel.debug%
-    form:
-        resources:
-            - 'form_div_layout.html.twig'
-            - 'MainBundle:Form:fields.html.twig'
+    debug: "%kernel.debug%"
+    strict_variables: "%kernel.debug%"
+    form_themes:
+        - 'form_div_layout.html.twig'
+        - 'MainBundle:Form:fields.html.twig'
     globals:
         locales: '%locales%'
 
 assetic:
-    debug: %kernel.debug%
+    debug: "%kernel.debug%"
     use_controller: false
     node: /usr/bin/node
     filters:
         cssrewrite: ~
         uglifycss:
-            bin: %kernel.root_dir%/Resources/node_modules/.bin/uglifycss
+            bin: "%kernel.root_dir%/Resources/node_modules/.bin/uglifycss"
         uglifyjs2:
-            bin: %kernel.root_dir%/Resources/node_modules/.bin/uglifyjs
+            bin: "%kernel.root_dir%/Resources/node_modules/.bin/uglifyjs"
 
 doctrine:
     dbal:
-        driver: %database_driver%
-        host: %database_host%
-        port: %database_port%
-        dbname: %database_name%
-        user: %database_user%
-        password: %database_password%
+        driver: "%database_driver%"
+        host: "%database_host%"
+        port: "%database_port%"
+        dbname: "%database_name%"
+        user: "%database_user%"
+        password: "%database_password%"
         unix_socket: ~
         charset: UTF8
 
     orm:
-        auto_generate_proxy_classes: %kernel.debug%
+        auto_generate_proxy_classes: "%kernel.debug%"
         entity_managers:
             default:
                 auto_mapping: true
@@ -71,7 +70,7 @@ swiftmailer:
 
 jms_i18n_routing:
     default_locale: en
-    locales: %locales%
+    locales: "%locales%"
     strategy: prefix_except_default
     cookie:
       enabled: false
