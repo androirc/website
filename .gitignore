@@ -8,6 +8,7 @@ app/logs/*
 build/
 app/config/parameters.yml
 app/config/deployment.yml
+app/config/deploy.config.rb
 app/SymfonyRequirements.php
 vendor/
 .DS_Store
