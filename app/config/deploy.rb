@@ -1,20 +1,27 @@
+require 'net/ssh/proxy/command'
+
 set :stages, %w(preprod prod)
 set :default_stage, "preprod"
 set :stage_dir, "app/config"
 require 'capistrano/ext/multistage'
 
+load 'app/config/deploy.config.rb'
+
 set :application,     "androirc.com"
-set :domain,          "marge.madalynn.eu"
-set :user,            "madalynn"
 default_run_options[:pty] = true
 set :repository,      "https://github.com/androirc/website.git"
 set :scm,             :git
 set :deploy_via,      :remote_cache
 
-set :default_shell,   "sudo -u www-data /bin/sh"
+set :default_shell,   "sudo -E -H -u #{webserver_user} /bin/bash"
+
+set :default_environment, {
+  'COMPOSER_HOME' => "/var/www/#{application}/composer"
+}
 
 set :ssh_options, {
     config: false,
+    proxy: Net::SSH::Proxy::Command.new("ssh #{ssh_proxy} -W %h:%p"),
     port: 22
 }
 
@@ -40,7 +47,6 @@ set :update_assets_version, true
 set :clear_controllers,     true
 
 # Permissions
-set :webserver_user,      "www-data"
 set :permission_method,   :acl
 set :use_set_permissions, true
 
