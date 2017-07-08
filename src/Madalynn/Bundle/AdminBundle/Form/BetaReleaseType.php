@@ -12,10 +12,11 @@
 
 namespace Madalynn\Bundle\AdminBundle\Form;
 
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Doctrine\ORM\EntityRepository;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class BetaReleaseType extends AbstractType
 {
@@ -24,7 +25,7 @@ class BetaReleaseType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('version', 'entity', array(
+        $builder->add('version', EntityType::class, array(
                         'label'         => 'backend.beta_release.field.version',
                         'class'         => 'Madalynn\\Bundle\\MainBundle\\Entity\\AndroircVersion',
                         'query_builder' => function(EntityRepository $er) {
@@ -42,7 +43,7 @@ class BetaReleaseType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
             'data_class' => 'Madalynn\\Bundle\\MainBundle\\Entity\\BetaRelease',
@@ -52,7 +53,7 @@ class BetaReleaseType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function getName()
+    public function getBlockPrefix()
     {
         return 'admin_beta_release';
     }

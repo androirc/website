@@ -1,39 +1,39 @@
 admin_change_log_list:
-    pattern:  /{page}
+    path:  /{page}
     defaults: { _controller: "AdminBundle:ChangeLog:list", page: 1 }
     requirements:
         page:  \d+
 
 admin_change_log_filter:
-    pattern:  /filter
+    path:  /filter
     defaults: { _controller: "AdminBundle:ChangeLog:filter" }
 
 admin_change_log_clear:
-    pattern:  /clear
+    path:  /clear
     defaults: { _controller: "AdminBundle:ChangeLog:clear" }
 
 admin_change_log_show:
-    pattern:  /{id}/show
+    path:  /{id}/show
     defaults: { _controller: "AdminBundle:ChangeLog:show" }
 
 admin_change_log_new:
-    pattern:  /new
+    path:  /new
     defaults: { _controller: "AdminBundle:ChangeLog:new" }
 
 admin_change_log_create:
-    pattern:  /create
+    path:  /create
     defaults: { _controller: "AdminBundle:ChangeLog:create" }
-    requirements: { _method: post }
+    methods: [POST]
 
 admin_change_log_edit:
-    pattern:  /{id}/edit
+    path:  /{id}/edit
     defaults: { _controller: "AdminBundle:ChangeLog:edit" }
 
 admin_change_log_update:
-    pattern:  /{id}/update
+    path:  /{id}/update
     defaults: { _controller: "AdminBundle:ChangeLog:update" }
-    requirements: { _method: post }
+    methods: [POST]
 
 admin_change_log_delete:
-    pattern:  /{id}/delete
+    path:  /{id}/delete
     defaults: { _controller: "AdminBundle:ChangeLog:delete" }

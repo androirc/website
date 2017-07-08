@@ -13,8 +13,10 @@
 namespace Madalynn\Bundle\AdminBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\LanguageType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class TipType extends AbstractType
 {
@@ -23,11 +25,11 @@ class TipType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('language', 'language', array(
+        $builder->add('language', LanguageType::class, array(
                     'preferred_choices' => array('en', 'fr'),
                     'label'             => 'backend.tip.field.language'
                 ))
-                ->add('content', 'textarea', array('label' => 'backend.tip.field.content'))
+                ->add('content', TextareaType::class, array('label' => 'backend.tip.field.content'))
                 ->add('static', null, array(
                     'required' => false,
                     'label'    => 'backend.tip.field.static'
@@ -37,7 +39,7 @@ class TipType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
             'data_class' => 'Madalynn\\Bundle\\MainBundle\\Entity\\Tip',
@@ -47,7 +49,7 @@ class TipType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function getName()
+    public function getBlockPrefix()
     {
         return 'admin_tip';
     }

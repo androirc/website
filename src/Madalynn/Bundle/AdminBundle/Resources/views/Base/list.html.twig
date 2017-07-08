@@ -20,12 +20,13 @@
         {% if has_filter %}
             <div class="span3">
                 <h1>{{ 'backend.actions.filter'|trans }}</h1>
-                <form class="form" action="{{ path('admin_' ~ entity_name ~ '_filter') }}" method="post" {{ form_enctype(filter_form) }}>
+                {{ form_start(filter_form, {'action': path('admin_' ~ entity_name ~ '_filter'), 'method': 'post' }) }}
                     {{ form_widget(filter_form) }}
                     <div>
                         <button type="submit" class="btn btn-primary">{{ 'backend.actions.filter_button'|trans }}</button>
                     </div>
                 </form>
+                {{ form_end(filter_form) }}
             </div>
         {% endif %}
     </div>

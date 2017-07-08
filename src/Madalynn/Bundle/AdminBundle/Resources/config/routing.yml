@@ -1,6 +1,6 @@
 # Dashboard
 admin_dashboard:
-    pattern: /
+    path: /
     defaults: { _controller: AdminBundle:Main:dashboard }
 
 # Article

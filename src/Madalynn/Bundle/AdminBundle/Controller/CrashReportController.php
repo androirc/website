@@ -14,12 +14,15 @@ namespace Madalynn\Bundle\AdminBundle\Controller;
 
 use Doctrine\ORM\QueryBuilder;
 
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\HttpFoundation\Request;
+
 class CrashReportController extends CRUDController
 {
     protected $filters = array(
         array(
             'name'  => 'androircVersion',
-            'type'  => 'text',
+            'type'  => TextType::class,
             'label' => 'backend.crash_report.field.androirc'
         )
     );
@@ -95,7 +98,7 @@ class CrashReportController extends CRUDController
         throw new \BadMethodCallException('This action is not supported for this entity.');
     }
 
-    public function createAction()
+    public function createAction(Request $request)
     {
         throw new \BadMethodCallException('This action is not supported for this entity.');
     }
@@ -105,7 +108,7 @@ class CrashReportController extends CRUDController
         throw new \BadMethodCallException('This action is not supported for this entity.');
     }
 
-    public function updateAction($id)
+    public function updateAction(Request $request, $id)
     {
         throw new \BadMethodCallException('This action is not supported for this entity.');
     }

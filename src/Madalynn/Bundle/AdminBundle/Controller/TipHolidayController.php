@@ -18,7 +18,7 @@ class TipHolidayController extends CRUDController
 {
     protected function getForm()
     {
-        return new TipHolidayType();
+        return TipHolidayType::class;
     }
 
     protected function getClass()

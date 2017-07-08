@@ -2,15 +2,10 @@
 
 //include "maintenance.php";
 
-use Symfony\Component\ClassLoader\ApcClassLoader;
 use Symfony\Component\HttpFoundation\Request;
 
-$loader = require_once __DIR__.'/../app/bootstrap.php.cache';
-
-$loader = new ApcClassLoader('androirc', $loader);
-$loader->register(true);
-
-require_once __DIR__.'/../app/AppKernel.php';
+require __DIR__.'/../app/autoload.php';
+require_once __DIR__.'/../app/bootstrap.php.cache';
 
 $kernel = new AppKernel('prod', false);
 $kernel->loadClassCache();

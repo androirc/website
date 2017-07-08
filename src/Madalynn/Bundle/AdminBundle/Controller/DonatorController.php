@@ -18,7 +18,7 @@ class DonatorController extends CRUDController
 {
     protected function getForm()
     {
-        return new DonatorType();
+        return DonatorType::class;
     }
 
     protected function getClass()

@@ -1,0 +1,4 @@
+set :domain,          ""
+set :user,            ""
+set :webserver_user,  ""
+set :ssh_proxy,       ""

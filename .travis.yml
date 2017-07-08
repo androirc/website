@@ -1,14 +1,14 @@
 language: php
 
 php:
-    - 5.3
-    - 5.4
-    - 5.5
+    - 5.6
+    - 7.0
+    - 7.1
 
 before_script:
     - cp app/config/parameters.yml.test app/config/parameters.yml
-    - wget -nc http://getcomposer.org/composer.phar
-    - php composer.phar install --prefer-dist --dev
+    - composer install --prefer-dist
+    - ./app/console --version
     - ./bin/travis
 
 branches:
@@ -16,8 +16,4 @@ branches:
         - master
         - develop
 
-script: phpunit -c app/
-
-notifications:
-    email:
-        - mewt@madalynn.eu
+script: ./bin/phpunit -c app/

@@ -14,7 +14,7 @@ namespace Madalynn\Bundle\MainBundle\Twig\Extension;
 
 use Symfony\Component\Routing\RouterInterface;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Locale\Locale;
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 /**
  * The locale extension
@@ -51,9 +51,9 @@ class LocaleExtension extends \Twig_Extension
     public function getFunctions()
     {
         return array(
-            'path_locale'      => new \Twig_Function_Method($this, 'getPathLocale', array('is_safe' => array('html'))),
-            'locales'          => new \Twig_Function_Method($this, 'getLocales'),
-            'display_language' => new \Twig_Function_Method($this, 'getDisplayLanguage'),
+            'path_locale'      => new \Twig_SimpleFunction('path_locale',      array($this, 'getPathLocale'), array('is_safe' => array('html'))),
+            'locales'          => new \Twig_SimpleFunction('locales',         array($this, 'getLocales')),
+            'display_language' => new \Twig_SimpleFunction('display_language', array($this, 'getDisplayLanguage')),
         );
     }
 
@@ -64,7 +64,7 @@ class LocaleExtension extends \Twig_Extension
      */
     public function getDisplayLanguage($locale)
     {
-        return Locale::getDisplayLanguage($locale, $locale);
+        return \Locale::getDisplayLanguage($locale, $locale);
     }
 
     /**
@@ -107,7 +107,7 @@ class LocaleExtension extends \Twig_Extension
 
         $query = $request->getQueryString() ? '?'.$request->getQueryString() : '';
 
-        return $this->router->generate($id, array_merge($parameters, array('_locale' => $locale)), $absolute).$query;
+        return $this->router->generate($id, array_merge($parameters, array('_locale' => $locale)), $absolute ? UrlGeneratorInterface::ABSOLUTE_PATH : UrlGeneratorInterface::RELATIVE_PATH).$query;
     }
 
     /**

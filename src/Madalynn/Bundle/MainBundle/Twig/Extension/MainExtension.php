@@ -13,6 +13,7 @@
 namespace Madalynn\Bundle\MainBundle\Twig\Extension;
 
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Madalynn\Bundle\MainBundle\Entity\Article;
 use Madalynn\Bundle\MainBundle\Entity\ChangeLog;
 
@@ -50,9 +51,9 @@ class MainExtension extends \Twig_Extension
     public function getFilters()
     {
         return array(
-            'sha1'  => new \Twig_Filter_Method($this, 'sha1'),
-            'md5'   => new \Twig_Filter_Method($this, 'md5'),
-            'parse' => new \Twig_Filter_Method($this, 'parseTwig', array('is_safe' => array('html'))),
+            'sha1'  => new \Twig_SimpleFilter('sha1', array($this, 'sha1')),
+            'md5'   => new \Twig_SimpleFilter('md5', array($this, 'md5')),
+            'parse' => new \Twig_SimpleFilter('parse', array($this, 'parseTwig'), array('is_safe' => array('html'))),
         );
     }
 
@@ -62,9 +63,9 @@ class MainExtension extends \Twig_Extension
     public function getFunctions()
     {
         return array(
-            'article_url'  => new \Twig_Function_Method($this, 'getArticlePath', array('is_safe' => array('html'))),
-            'archive_name' => new \Twig_Function_Method($this, 'getArchiveName'),
-            'changelog'    => new \Twig_Function_Method($this, 'displayChangelog', array('is_safe' => array('html'))),
+            'article_url'  => new \Twig_SimpleFunction('article_url', array($this, 'getArticlePath'), array('is_safe' => array('html'))),
+            'archive_name' => new \Twig_SimpleFunction('archive_name', array($this, 'getArchiveName')),
+            'changelog'    => new \Twig_SimpleFunction('changelog', array($this, 'displayChangelog'), array('is_safe' => array('html'))),
         );
     }
 
@@ -151,7 +152,7 @@ class MainExtension extends \Twig_Extension
             'slug' => $article->getSlug()
         );
 
-        return $this->container->get('router')->generate('blog_show', $params, $absolute);
+        return $this->container->get('router')->generate('blog_show', $params, $absolute ? UrlGeneratorInterface::ABSOLUTE_PATH : UrlGeneratorInterface::RELATIVE_PATH);
     }
 
     /**
