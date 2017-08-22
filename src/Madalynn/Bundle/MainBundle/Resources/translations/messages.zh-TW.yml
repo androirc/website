@@ -26,7 +26,7 @@ frontend:
   beta:
     description: "下載 AndroIRC 最新搶鮮版"
     download_button: "下載最新搶鮮版"
-    no_beta: "很抱歉...目前暫無搶鮮版可用。請稍候回來，並請持續留意我們的 Facebook、Twitter 與 Google+"
+    no_beta: "很抱歉…目前暫無搶鮮版可用。請稍候回來，並請持續留意我們的 Facebook、Twitter 與 Google+"
     warning: "此版本在 Google Play 不存在。警告：此版本用於測試目的且可能/會含有 Bug。"
     contact_us: "若您發現了任何 Bug，請聯絡我們。"
     new_beta: "可用下載的最新搶鮮版 (%version%)。您會在下方找到變更清單。"
@@ -66,7 +66,7 @@ frontend:
       description: "支援 2.1 及以上之 Android 版本，AndroIRC 永遠跟隨甚至是到剛出爐的 Jelly Bean 版本之最新的 Android 使用者界面設計規範。有這樣一個親切的界面，任何操作都能輕鬆上手！"
     others:
       name: "以及更多"
-      description: "英文、法文、韓文、簡體中文、丹麥文……AndroIRC 支援超過 10 種界面語言並且完全可以調整以符合您的需求。聊天紀錄、多聊天伺服器、應用啟動時自動連線、安全連線(SSL)、NickServ 身份驗證、暱稱與頻道名稱自動補完以及更多特色皆在 Android™ 最棒的 IRC 客戶端應用中。"
+      description: "英文、法文、韓文、簡體中文、丹麥文… AndroIRC 支援超過 10 種介面語言並且完全可以調整以符合您的需求。聊天紀錄、多聊天伺服器、應用啟動時自動連線、安全連線(SSL)、NickServ 身分驗證、暱稱與頻道名稱自動補完以及更多特色皆在 Android™ 最棒的 IRC 用戶端應用中。"
     free:
-      name: "一切的一切...皆免費"
+      name: "一切的一切…皆免費"
       description: "AndroIRC 在 Google Play 上免費提供！若您想助 AndroIRC 開發一臂之力，我們亦提供付費版。"
