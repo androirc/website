@@ -63,10 +63,10 @@ frontend:
       description: "AndroIRC 支援如 NickServ 這樣標準的驗證系統，它也具有 freenode 所需的進階功能，如「簡單驗證及安全性階層 (SASL)」身分驗證。您亦必須能夠完全支援 FiSH 協定以加密交談。"
     ui:
       name: "完全整合的精美介面"
-      description: "Available for Android 2.1 and above, AndroIRC always follows the latest Android guideline regarding user interface even for the new Jelly Bean release. With it thoughtful interface, everything is at hand!"
+      description: "支援 2.1 及以上之 Android 版本，AndroIRC 永遠跟隨甚至是到剛出爐的 Jelly Bean 版本之最新的 Android 使用者界面設計規範。有這樣一個親切的界面，任何操作都能輕鬆上手！"
     others:
       name: "以及更多"
-      description: "英文、法文、韓文、簡體中文、丹麥文... AndroIRC is available in more than 10 languages and fully configurable to fit your needs. Logging, multiple servers, auto-connection at launch, secured connection (SSL), NickServ authentication, nicks and channels completion and much more, inside the best IRC client for Android™."
+      description: "英文、法文、韓文、簡體中文、丹麥文……AndroIRC 支援超過 10 種界面語言並且完全可以調整以符合您的需求。聊天紀錄、多聊天伺服器、應用啟動時自動連線、安全連線(SSL)、NickServ 身份驗證、暱稱與頻道名稱自動補完以及更多特色皆在 Android™ 最棒的 IRC 客戶端應用中。"
     free:
       name: "一切的一切...皆免費"
       description: "AndroIRC 在 Google Play 上免費提供！若您想助 AndroIRC 開發一臂之力，我們亦提供付費版。"
