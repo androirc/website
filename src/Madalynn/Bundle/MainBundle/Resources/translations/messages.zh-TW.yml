@@ -3,7 +3,7 @@ frontend:
   description: "探索 AndroIRC，您的 Android 裝置上最讚的 IRC 用戶端。AndroIRC 支援多重伺服器連線(加密或不加密)、mIRC 色彩、啟動時自動加入頻道、nickserv/sasl 驗證、記錄、主題、FiSH，以及更多。所有的一切皆免費！"
   keywords: "android, irc, client, free, app, mirc, androirc, market, play, logging, sasl, authentication, blowfish, plain, identification, nickserv, themes, smartphone, application, apps, ircd, communication, internet, relay, chat, server, freenode, epiknet, quakenet, efnet, undernet, ident, nick, nickname, chan, channel, kick, ban, op, halfop, voice"
   home_title: "AndroIRC - 您的 Android 裝置所需的最讚的 IRC 用戶端"
-  author: "翻譯者：LNDDYL 聯絡方式：https://t.me/LNDDYL"
+  author: "翻譯者：LNDDYL(https://t.me/LNDDYL) & Ｖ字龍(Vdragon.Taiwan@gmail.com)"
   menu:
     blog: "部落格"
     download: "下載"
